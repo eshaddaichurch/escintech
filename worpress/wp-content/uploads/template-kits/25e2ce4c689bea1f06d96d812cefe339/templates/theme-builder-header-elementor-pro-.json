@@ -1,0 +1,168 @@
+{
+    "version": "0.4",
+    "title": "Theme Builder \u2013 Header (Elementor Pro)",
+    "type": "header",
+    "metadata": {
+        "template_type": "section-header",
+        "include_in_zip": "1",
+        "elementor_pro_required": "1",
+        "elementor_library_type": "header",
+        "elementor_pro_conditions": [
+            "include\/general"
+        ],
+        "additional_template_information": [
+            "This is a \"Header\" template for Elementor Pro.",
+            "This template will display on: Entire Site."
+        ],
+        "wp_page_template": "default"
+    },
+    "content": [
+        {
+            "id": "32a087d4",
+            "settings": {
+                "content_width": {
+                    "unit": "px",
+                    "size": "1440",
+                    "sizes": []
+                },
+                "padding": {
+                    "unit": "em",
+                    "top": "0.5",
+                    "right": "0",
+                    "bottom": "0.5",
+                    "left": "0",
+                    "isLinked": ""
+                }
+            },
+            "elements": [
+                {
+                    "id": "1227407c",
+                    "settings": {
+                        "_column_size": "100",
+                        "_inline_size": "",
+                        "content_position": "center"
+                    },
+                    "elements": [
+                        {
+                            "id": "45477011",
+                            "settings": {
+                                "layout": "full_width",
+                                "structure": "30"
+                            },
+                            "elements": [
+                                {
+                                    "id": "2ea90fbb",
+                                    "settings": {
+                                        "_column_size": "33",
+                                        "_inline_size": "20.006",
+                                        "_inline_size_tablet": "90",
+                                        "_inline_size_mobile": "80"
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "e059dc0",
+                                            "settings": {
+                                                "image": {
+                                                    "url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Logo-Kidzy.png",
+                                                    "id": "907"
+                                                },
+                                                "align": "left"
+                                            },
+                                            "elements": [],
+                                            "isInner": false,
+                                            "widgetType": "image",
+                                            "elType": "widget"
+                                        }
+                                    ],
+                                    "isInner": "1",
+                                    "elType": "column"
+                                },
+                                {
+                                    "id": "683b8dab",
+                                    "settings": {
+                                        "_column_size": "33",
+                                        "_inline_size": "59.652",
+                                        "_inline_size_tablet": "10",
+                                        "_inline_size_mobile": "20",
+                                        "content_position": "center"
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "6c221795",
+                                            "settings": {
+                                                "align_items": "center",
+                                                "indicator": "chevron",
+                                                "color_menu_item": "#3E3E3E",
+                                                "background_color_dropdown_item": "#F4F4F4",
+                                                "color_dropdown_item_hover": "#FAFAFA",
+                                                "background_color_dropdown_item_hover": "#FC643B",
+                                                "color_dropdown_item_active": "#FAFAFA",
+                                                "background_color_dropdown_item_active": "#FC643B",
+                                                "__globals__": {
+                                                    "color_menu_item": "globals\/colors?id=text",
+                                                    "background_color_dropdown_item": "globals\/colors?id=377cfb8",
+                                                    "color_dropdown_item_hover": "globals\/colors?id=primary",
+                                                    "background_color_dropdown_item_hover": "globals\/colors?id=accent",
+                                                    "background_color_dropdown_item_active": "globals\/colors?id=accent",
+                                                    "color_dropdown_item_active": "globals\/colors?id=primary",
+                                                    "toggle_background_color": "globals\/colors?id=accent",
+                                                    "toggle_color": "globals\/colors?id=primary",
+                                                    "pointer_color_menu_item_hover": "globals\/colors?id=accent",
+                                                    "pointer_color_menu_item_active": "globals\/colors?id=accent",
+                                                    "dropdown_typography_typography": "globals\/typography?id=text"
+                                                }
+                                            },
+                                            "elements": [],
+                                            "isInner": false,
+                                            "widgetType": "nav-menu",
+                                            "elType": "widget"
+                                        }
+                                    ],
+                                    "isInner": "1",
+                                    "elType": "column"
+                                },
+                                {
+                                    "id": "474b30a2",
+                                    "settings": {
+                                        "_column_size": "33",
+                                        "_inline_size": "20.008",
+                                        "content_position": "center",
+                                        "hide_tablet": "hidden-tablet",
+                                        "hide_mobile": "hidden-phone"
+                                    },
+                                    "elements": [
+                                        {
+                                            "id": "3bb91ad7",
+                                            "settings": {
+                                                "text": "Pre - Registration",
+                                                "align": "right",
+                                                "__globals__": {
+                                                    "button_text_color": "globals\/colors?id=accent",
+                                                    "background_color": "globals\/colors?id=e9f28fe",
+                                                    "button_background_hover_color": "globals\/colors?id=accent",
+                                                    "hover_color": "globals\/colors?id=primary"
+                                                }
+                                            },
+                                            "elements": [],
+                                            "isInner": false,
+                                            "widgetType": "button",
+                                            "elType": "widget"
+                                        }
+                                    ],
+                                    "isInner": "1",
+                                    "elType": "column"
+                                }
+                            ],
+                            "isInner": "1",
+                            "elType": "section"
+                        }
+                    ],
+                    "isInner": "",
+                    "elType": "column"
+                }
+            ],
+            "isInner": "",
+            "elType": "section"
+        }
+    ]
+}

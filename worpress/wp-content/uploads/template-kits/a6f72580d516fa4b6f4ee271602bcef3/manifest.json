@@ -1,0 +1,2025 @@
+{
+    "manifest_version": "1.0.9",
+    "title": "Home School",
+    "page_builder": "elementor",
+    "kit_version": "1.0.0",
+    "templates": [
+        {
+            "name": "Global Kit Styles",
+            "screenshot": "screenshots\/default-kit.jpg",
+            "source": "templates\/global.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "global-styles",
+                "include_in_zip": "1",
+                "elementor_pro_required": null,
+                "additional_template_information": [
+                    "These are the global theme styles configured through the Elementor Theme Styles area."
+                ]
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Page: Home",
+            "screenshot": "screenshots\/page-home.jpg",
+            "source": "templates\/page-home.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/template-kit\/home\/",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-home",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Block: 2 col photo with vertical icons",
+            "screenshot": "screenshots\/block-2-col-photo-with-vertical-icons.jpg",
+            "source": "templates\/block-2-col-photo-with-vertical-icons.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/template-kit\/block-2-column-text-and-circle-photo-with-vertical-icon-boxes\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-about",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Block: 2 column photo and text icon list",
+            "screenshot": "screenshots\/block-2-column-photo-and-text-icon-list.jpg",
+            "source": "templates\/block-2-column-photo-and-text-icon-list.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/template-kit\/block-2-column-photo-and-text-icon-list\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-services",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Block: Features large icon boxes",
+            "screenshot": "screenshots\/block-features-large-icon-boxes.jpg",
+            "source": "templates\/block-features-large-icon-boxes.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/template-kit\/block-features-large-icon-boxes\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-services",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Block: Quote box with photo bg",
+            "screenshot": "screenshots\/block-quote-box-with-photo-bg.jpg",
+            "source": "templates\/block-quote-box-with-photo-bg.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/template-kit\/block-quote-box-with-photo-background\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-testimonial",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Block: Staff circle boxes",
+            "screenshot": "screenshots\/block-staff-circle-boxes.jpg",
+            "source": "templates\/block-staff-circle-boxes.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/template-kit\/block-staff-circle-boxes\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-team",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Block: Contact details with map",
+            "screenshot": "screenshots\/block-contact-details-with-map.jpg",
+            "source": "templates\/block-contact-details-with-map.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/template-kit\/block-contact-details-with-map\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-contact",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Block: Map full width",
+            "screenshot": "screenshots\/block-map-full-width.jpg",
+            "source": "templates\/block-map-full-width.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/template-kit\/block-map-full-width\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-map",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Block: Call to action bar - Form - Pro",
+            "screenshot": "screenshots\/block-call-to-action-bar-form-pro.jpg",
+            "source": "templates\/block-call-to-action-bar-form-pro.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/template-kit\/block-call-to-action-bar-newsletter-form-pro\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-cta",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Woo Commerce Single Product",
+            "screenshot": "screenshots\/woo-commerce-single-product.jpg",
+            "source": "templates\/woo-commerce-single-product.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/?elementor_library=woo-commerce-single-product",
+            "type": "product",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-product",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "product",
+                "elementor_pro_conditions": [
+                    "include\/product"
+                ],
+                "additional_template_information": [
+                    "This is a \"Product\" template for Elementor Pro.",
+                    "This template will display on: Products."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Woo Commerce Product Archive",
+            "screenshot": "screenshots\/woo-commerce-product-archive.jpg",
+            "source": "templates\/woo-commerce-product-archive.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/?elementor_library=woo-commerce-product-archive",
+            "type": "product-archive",
+            "category": "page",
+            "metadata": {
+                "template_type": "archive-product",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "product-archive",
+                "elementor_pro_conditions": [
+                    "include\/product_archive"
+                ],
+                "additional_template_information": [
+                    "This is a \"Product Archive\" template for Elementor Pro.",
+                    "This template will display on: All Product Archives."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Post Single",
+            "screenshot": "screenshots\/post-single.jpg",
+            "source": "templates\/post-single.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/?elementor_library=post-single",
+            "type": "single",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-post",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "single",
+                "elementor_pro_conditions": [
+                    "include\/singular\/post"
+                ],
+                "additional_template_information": [
+                    "This is a \"Single\" template for Elementor Pro.",
+                    "This template will display on: Posts."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Post Archive",
+            "screenshot": "screenshots\/post-archive.jpg",
+            "source": "templates\/post-archive.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/?elementor_library=post-archive-2",
+            "type": "archive",
+            "category": "page",
+            "metadata": {
+                "template_type": "archive-blog",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "archive",
+                "elementor_pro_conditions": [
+                    "include\/archive\/post_archive"
+                ],
+                "additional_template_information": [
+                    "This is a \"Archive\" template for Elementor Pro.",
+                    "This template will display on: Posts Archive."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Footer",
+            "screenshot": "screenshots\/footer.jpg",
+            "source": "templates\/footer.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/?elementor_library=footer",
+            "type": "footer",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-footer",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "footer",
+                "elementor_pro_conditions": [
+                    "include\/general"
+                ],
+                "additional_template_information": [
+                    "This is a \"Footer\" template for Elementor Pro.",
+                    "This template will display on: Entire Site."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Header Pro - Archive Title",
+            "screenshot": "screenshots\/header-pro-archive-title.jpg",
+            "source": "templates\/header-pro-archive-title.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/?elementor_library=header-pro-archive-title",
+            "type": "header",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-header",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "header",
+                "elementor_pro_conditions": [
+                    "include\/archive\/post_archive",
+                    "include\/singular\/post"
+                ],
+                "additional_template_information": [
+                    "This is a \"Header\" template for Elementor Pro.",
+                    "This template will display on: Posts Archive &amp; Posts."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block: Header with page title",
+            "screenshot": "screenshots\/block-header-with-page-title.jpg",
+            "source": "templates\/block-header-with-page-title.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/template-kit\/block-header-with-page-title\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-header",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block - Woo Commerce Products - Pro",
+            "screenshot": "screenshots\/block-woo-commerce-products-pro.jpg",
+            "source": "templates\/block-woo-commerce-products-pro.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/template-kit\/block-woo-commerce-products-pro\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-product",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block: Call to action bar with button",
+            "screenshot": "screenshots\/block-call-to-action-bar-with-button.jpg",
+            "source": "templates\/block-call-to-action-bar-with-button.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/template-kit\/block-call-to-action-bar-with-button\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-cta",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Block: 2 col text and circle photo right",
+            "screenshot": "screenshots\/block-2-col-text-and-circle-photo-right.jpg",
+            "source": "templates\/block-2-col-text-and-circle-photo-right.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/template-kit\/block-2-column-text-and-circle-photo-right\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-about",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Page: About",
+            "screenshot": "screenshots\/page-about.jpg",
+            "source": "templates\/page-about.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/template-kit\/about\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Page: Contact",
+            "screenshot": "screenshots\/page-contact.jpg",
+            "source": "templates\/page-contact.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/template-kit\/contact\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Page: Contact Pro",
+            "screenshot": "screenshots\/page-contact-pro.jpg",
+            "source": "templates\/page-contact-pro.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/template-kit\/contact-pro\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Page: Home Pro",
+            "screenshot": "screenshots\/page-home-pro.jpg",
+            "source": "templates\/page-home-pro.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/template-kit\/home-pro\/",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-home",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block: Header and Hero with photos",
+            "screenshot": "screenshots\/block-header-and-hero-with-photos.jpg",
+            "source": "templates\/block-header-and-hero-with-photos.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/template-kit\/block-header-and-hero-with-photos\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-hero",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block: Subject colour boxes bar",
+            "screenshot": "screenshots\/block-subject-colour-boxes-bar.jpg",
+            "source": "templates\/block-subject-colour-boxes-bar.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/template-kit\/block-subject-colour-boxes-bar\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-cta",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Block: 4 icon box circles",
+            "screenshot": "screenshots\/block-4-icon-box-circles.jpg",
+            "source": "templates\/block-4-icon-box-circles.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/template-kit\/block-4-icon-box-circles\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-cta",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Block - Testimonial Carousel - Pro",
+            "screenshot": "screenshots\/block-testimonial-carousel-pro.jpg",
+            "source": "templates\/block-testimonial-carousel-pro.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/template-kit\/block-testimonial-carousel-pro\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-testimonial",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block: 3 info boxes circle photos",
+            "screenshot": "screenshots\/block-3-info-boxes-circle-photos.jpg",
+            "source": "templates\/block-3-info-boxes-circle-photos.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/template-kit\/block-3-info-boxes-circle-photos\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-services",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Block: 2 testimonials on photo bg",
+            "screenshot": "screenshots\/block-2-testimonials-on-photo-bg.jpg",
+            "source": "templates\/block-2-testimonials-on-photo-bg.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/template-kit\/block-2-testimonials-on-photo-background\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-testimonial",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Block: 4 Column product layout",
+            "screenshot": "screenshots\/block-4-column-product-layout.jpg",
+            "source": "templates\/block-4-column-product-layout.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/template-kit\/block-4-column-product-layout\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-product",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block: Footer",
+            "screenshot": "screenshots\/block-footer.jpg",
+            "source": "templates\/block-footer.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/template-kit\/block-footer\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-footer",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Block: Contact details with form - Pro",
+            "screenshot": "screenshots\/block-contact-details-with-form-pro.jpg",
+            "source": "templates\/block-contact-details-with-form-pro.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/template-kit\/block-contact-details-with-form-pro\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-contact",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block: Header with slideshow - Pro",
+            "screenshot": "screenshots\/block-header-with-slideshow-pro.jpg",
+            "source": "templates\/block-header-with-slideshow-pro.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/template-kit\/block-header-with-slideshow-pro\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-hero",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Block: 3 Blog Posts - Pro",
+            "screenshot": "screenshots\/block-3-blog-posts-pro.jpg",
+            "source": "templates\/block-3-blog-posts-pro.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/template-kit\/block-3-blog-posts-pro\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-other",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Header",
+            "screenshot": "screenshots\/header.jpg",
+            "source": "templates\/header.json",
+            "preview_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/?elementor_library=header",
+            "type": "header",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-header",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "header",
+                "elementor_pro_conditions": [
+                    "include\/general",
+                    "exclude\/singular\/front_page"
+                ],
+                "additional_template_information": [
+                    "This is a \"Header\" template for Elementor Pro.",
+                    "This template will display on: Entire Site."
+                ]
+            },
+            "elementor_pro_required": true
+        }
+    ],
+    "required_plugins": [
+        {
+            "name": "Elementor Pro",
+            "version": "2.8.5",
+            "file": "elementor-pro\/elementor-pro.php",
+            "author": "Elementor.com"
+        },
+        {
+            "name": "WooCommerce",
+            "version": "4.0.1",
+            "file": "woocommerce\/woocommerce.php",
+            "author": "Automattic"
+        },
+        {
+            "name": "Elementor",
+            "version": "2.9.7",
+            "file": "elementor\/elementor.php",
+            "author": "Elementor.com"
+        }
+    ],
+    "images": [
+        {
+            "filename": "header-left-crop.png",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/header-left-crop-600x976.png",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                }
+            ],
+            "filesize": 40536,
+            "dimensions": [
+                740,
+                1204
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/set-of-brochure-annual-report-design-templates-2GD5SBX"
+        },
+        {
+            "filename": "header-right-1.png",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/header-right-1-600x587.png",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/header-pro-archive-title.json",
+                    "name": "Header Pro - Archive Title"
+                },
+                {
+                    "source": "templates\/block-header-with-page-title.json",
+                    "name": "Block: Header with page title"
+                },
+                {
+                    "source": "templates\/page-about.json",
+                    "name": "Page: About"
+                },
+                {
+                    "source": "templates\/page-contact.json",
+                    "name": "Page: Contact"
+                },
+                {
+                    "source": "templates\/page-contact-pro.json",
+                    "name": "Page: Contact Pro"
+                },
+                {
+                    "source": "templates\/page-home-pro.json",
+                    "name": "Page: Home Pro"
+                },
+                {
+                    "source": "templates\/block-header-and-hero-with-photos.json",
+                    "name": "Block: Header and Hero with photos"
+                },
+                {
+                    "source": "templates\/block-header-with-slideshow-pro.json",
+                    "name": "Block: Header with slideshow - Pro"
+                },
+                {
+                    "source": "templates\/header.json",
+                    "name": "Header"
+                }
+            ],
+            "filesize": 89237,
+            "dimensions": [
+                1230,
+                1204
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/set-of-brochure-annual-report-design-templates-2GD5SBX"
+        },
+        {
+            "filename": "logo-homeschool.jpg",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/logo-homeschool.jpg",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/footer.json",
+                    "name": "Footer"
+                },
+                {
+                    "source": "templates\/header-pro-archive-title.json",
+                    "name": "Header Pro - Archive Title"
+                },
+                {
+                    "source": "templates\/block-header-with-page-title.json",
+                    "name": "Block: Header with page title"
+                },
+                {
+                    "source": "templates\/page-about.json",
+                    "name": "Page: About"
+                },
+                {
+                    "source": "templates\/page-contact.json",
+                    "name": "Page: Contact"
+                },
+                {
+                    "source": "templates\/page-contact-pro.json",
+                    "name": "Page: Contact Pro"
+                },
+                {
+                    "source": "templates\/page-home-pro.json",
+                    "name": "Page: Home Pro"
+                },
+                {
+                    "source": "templates\/block-header-and-hero-with-photos.json",
+                    "name": "Block: Header and Hero with photos"
+                },
+                {
+                    "source": "templates\/block-footer.json",
+                    "name": "Block: Footer"
+                },
+                {
+                    "source": "templates\/block-header-with-slideshow-pro.json",
+                    "name": "Block: Header with slideshow - Pro"
+                },
+                {
+                    "source": "templates\/header.json",
+                    "name": "Header"
+                }
+            ],
+            "filesize": 33591,
+            "dimensions": [
+                520,
+                120
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/education-icons-W4MY3A"
+        },
+        {
+            "filename": "4circles.png",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/4circles.png",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/header-pro-archive-title.json",
+                    "name": "Header Pro - Archive Title"
+                },
+                {
+                    "source": "templates\/block-header-with-page-title.json",
+                    "name": "Block: Header with page title"
+                },
+                {
+                    "source": "templates\/page-about.json",
+                    "name": "Page: About"
+                },
+                {
+                    "source": "templates\/page-contact.json",
+                    "name": "Page: Contact"
+                },
+                {
+                    "source": "templates\/page-contact-pro.json",
+                    "name": "Page: Contact Pro"
+                },
+                {
+                    "source": "templates\/page-home-pro.json",
+                    "name": "Page: Home Pro"
+                },
+                {
+                    "source": "templates\/block-header-and-hero-with-photos.json",
+                    "name": "Block: Header and Hero with photos"
+                },
+                {
+                    "source": "templates\/block-header-with-slideshow-pro.json",
+                    "name": "Block: Header with slideshow - Pro"
+                },
+                {
+                    "source": "templates\/header.json",
+                    "name": "Header"
+                }
+            ],
+            "filesize": 1456,
+            "dimensions": [
+                92,
+                32
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "circle-dots-over.png",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/circle-dots-over.png",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/block-header-and-hero-with-photos.json",
+                    "name": "Block: Header and Hero with photos"
+                }
+            ],
+            "filesize": 4058,
+            "dimensions": [
+                330,
+                330
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/set-of-brochure-annual-report-design-templates-LVRY2ZD"
+        },
+        {
+            "filename": "beautiful-mother-helping-her-daughter-with-homewor-BELMZW4.jpg",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/beautiful-mother-helping-her-daughter-with-homewor-BELMZW4-600x353.jpg",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/block-header-and-hero-with-photos.json",
+                    "name": "Block: Header and Hero with photos"
+                }
+            ],
+            "filesize": 106734,
+            "dimensions": [
+                800,
+                471
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-BELMZW4"
+        },
+        {
+            "filename": "little-girl-drewing-VGJZ9E3.jpg",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/little-girl-drewing-VGJZ9E3-600x400.jpg",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/block-header-and-hero-with-photos.json",
+                    "name": "Block: Header and Hero with photos"
+                }
+            ],
+            "filesize": 109087,
+            "dimensions": [
+                800,
+                533
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-VGJZ9E3"
+        },
+        {
+            "filename": "icon-art.png",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/icon-art.png",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/page-home-pro.json",
+                    "name": "Page: Home Pro"
+                },
+                {
+                    "source": "templates\/block-subject-colour-boxes-bar.json",
+                    "name": "Block: Subject colour boxes bar"
+                }
+            ],
+            "filesize": 6645,
+            "dimensions": [
+                158,
+                158
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/education-icons-W4MY3A"
+        },
+        {
+            "filename": "icon-stem.png",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/icon-stem.png",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/page-home-pro.json",
+                    "name": "Page: Home Pro"
+                },
+                {
+                    "source": "templates\/block-subject-colour-boxes-bar.json",
+                    "name": "Block: Subject colour boxes bar"
+                }
+            ],
+            "filesize": 4383,
+            "dimensions": [
+                158,
+                158
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/education-icons-W4MY3A"
+        },
+        {
+            "filename": "icon-reading.png",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/icon-reading.png",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/page-home-pro.json",
+                    "name": "Page: Home Pro"
+                },
+                {
+                    "source": "templates\/block-subject-colour-boxes-bar.json",
+                    "name": "Block: Subject colour boxes bar"
+                }
+            ],
+            "filesize": 4253,
+            "dimensions": [
+                158,
+                158
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/education-icons-W4MY3A"
+        },
+        {
+            "filename": "icon-maths.png",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/icon-maths.png",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/page-home-pro.json",
+                    "name": "Page: Home Pro"
+                },
+                {
+                    "source": "templates\/block-subject-colour-boxes-bar.json",
+                    "name": "Block: Subject colour boxes bar"
+                }
+            ],
+            "filesize": 2290,
+            "dimensions": [
+                158,
+                158
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/education-icons-W4MY3A"
+        },
+        {
+            "filename": "icon-online.png",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/icon-online.png",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/page-home-pro.json",
+                    "name": "Page: Home Pro"
+                },
+                {
+                    "source": "templates\/block-subject-colour-boxes-bar.json",
+                    "name": "Block: Subject colour boxes bar"
+                }
+            ],
+            "filesize": 2577,
+            "dimensions": [
+                158,
+                158
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/education-icons-W4MY3A"
+        },
+        {
+            "filename": "icon-sport.png",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/icon-sport.png",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/page-home-pro.json",
+                    "name": "Page: Home Pro"
+                },
+                {
+                    "source": "templates\/block-subject-colour-boxes-bar.json",
+                    "name": "Block: Subject colour boxes bar"
+                }
+            ],
+            "filesize": 6343,
+            "dimensions": [
+                158,
+                158
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/education-icons-W4MY3A"
+        },
+        {
+            "filename": "shapes-cirlces.png",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/shapes-cirlces.png",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/block-2-col-photo-with-vertical-icons.json",
+                    "name": "Block: 2 col photo with vertical icons"
+                },
+                {
+                    "source": "templates\/block-2-col-text-and-circle-photo-right.json",
+                    "name": "Block: 2 col text and circle photo right"
+                },
+                {
+                    "source": "templates\/page-about.json",
+                    "name": "Page: About"
+                },
+                {
+                    "source": "templates\/page-home-pro.json",
+                    "name": "Page: Home Pro"
+                },
+                {
+                    "source": "templates\/block-3-info-boxes-circle-photos.json",
+                    "name": "Block: 3 info boxes circle photos"
+                },
+                {
+                    "source": "templates\/block-3-blog-posts-pro.json",
+                    "name": "Block: 3 Blog Posts - Pro"
+                }
+            ],
+            "filesize": 1790,
+            "dimensions": [
+                166,
+                179
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "underline.png",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/underline.png",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/block-2-col-photo-with-vertical-icons.json",
+                    "name": "Block: 2 col photo with vertical icons"
+                },
+                {
+                    "source": "templates\/block-2-column-photo-and-text-icon-list.json",
+                    "name": "Block: 2 column photo and text icon list"
+                },
+                {
+                    "source": "templates\/block-features-large-icon-boxes.json",
+                    "name": "Block: Features large icon boxes"
+                },
+                {
+                    "source": "templates\/block-staff-circle-boxes.json",
+                    "name": "Block: Staff circle boxes"
+                },
+                {
+                    "source": "templates\/block-contact-details-with-map.json",
+                    "name": "Block: Contact details with map"
+                },
+                {
+                    "source": "templates\/woo-commerce-single-product.json",
+                    "name": "Woo Commerce Single Product"
+                },
+                {
+                    "source": "templates\/post-single.json",
+                    "name": "Post Single"
+                },
+                {
+                    "source": "templates\/block-woo-commerce-products-pro.json",
+                    "name": "Block - Woo Commerce Products - Pro"
+                },
+                {
+                    "source": "templates\/block-2-col-text-and-circle-photo-right.json",
+                    "name": "Block: 2 col text and circle photo right"
+                },
+                {
+                    "source": "templates\/page-about.json",
+                    "name": "Page: About"
+                },
+                {
+                    "source": "templates\/page-contact.json",
+                    "name": "Page: Contact"
+                },
+                {
+                    "source": "templates\/page-contact-pro.json",
+                    "name": "Page: Contact Pro"
+                },
+                {
+                    "source": "templates\/page-home-pro.json",
+                    "name": "Page: Home Pro"
+                },
+                {
+                    "source": "templates\/block-3-info-boxes-circle-photos.json",
+                    "name": "Block: 3 info boxes circle photos"
+                },
+                {
+                    "source": "templates\/block-4-column-product-layout.json",
+                    "name": "Block: 4 Column product layout"
+                },
+                {
+                    "source": "templates\/block-contact-details-with-form-pro.json",
+                    "name": "Block: Contact details with form - Pro"
+                },
+                {
+                    "source": "templates\/block-3-blog-posts-pro.json",
+                    "name": "Block: 3 Blog Posts - Pro"
+                }
+            ],
+            "filesize": 4623,
+            "dimensions": [
+                426,
+                20
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/set-of-brochure-annual-report-design-templates-2GD5SBX"
+        },
+        {
+            "filename": "over-circles-fade.png",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/over-circles-fade.png",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/block-2-col-text-and-circle-photo-right.json",
+                    "name": "Block: 2 col text and circle photo right"
+                },
+                {
+                    "source": "templates\/page-home-pro.json",
+                    "name": "Page: Home Pro"
+                },
+                {
+                    "source": "templates\/block-3-info-boxes-circle-photos.json",
+                    "name": "Block: 3 info boxes circle photos"
+                },
+                {
+                    "source": "templates\/block-3-blog-posts-pro.json",
+                    "name": "Block: 3 Blog Posts - Pro"
+                }
+            ],
+            "filesize": 4192,
+            "dimensions": [
+                414,
+                356
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/set-of-brochure-annual-report-design-templates-LVRY2ZD"
+        },
+        {
+            "filename": "close-up-of-mother-helping-her-child-with-homework-234SWAL.jpg",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/close-up-of-mother-helping-her-child-with-homework-234SWAL-600x401.jpg",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/block-2-col-text-and-circle-photo-right.json",
+                    "name": "Block: 2 col text and circle photo right"
+                },
+                {
+                    "source": "templates\/page-home-pro.json",
+                    "name": "Page: Home Pro"
+                }
+            ],
+            "filesize": 163147,
+            "dimensions": [
+                800,
+                534
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-234SWAL"
+        },
+        {
+            "filename": "over-circle-lines.png",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/over-circle-lines.png",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/block-2-col-photo-with-vertical-icons.json",
+                    "name": "Block: 2 col photo with vertical icons"
+                },
+                {
+                    "source": "templates\/block-2-col-text-and-circle-photo-right.json",
+                    "name": "Block: 2 col text and circle photo right"
+                },
+                {
+                    "source": "templates\/page-about.json",
+                    "name": "Page: About"
+                },
+                {
+                    "source": "templates\/page-home-pro.json",
+                    "name": "Page: Home Pro"
+                }
+            ],
+            "filesize": 1447,
+            "dimensions": [
+                406,
+                381
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/set-of-brochure-annual-report-design-templates-LVRY2ZD"
+        },
+        {
+            "filename": "bg-left2.png",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/bg-left2-600x673.png",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/block-call-to-action-bar-form-pro.json",
+                    "name": "Block: Call to action bar - Form - Pro"
+                },
+                {
+                    "source": "templates\/woo-commerce-single-product.json",
+                    "name": "Woo Commerce Single Product"
+                },
+                {
+                    "source": "templates\/block-call-to-action-bar-with-button.json",
+                    "name": "Block: Call to action bar with button"
+                },
+                {
+                    "source": "templates\/page-about.json",
+                    "name": "Page: About"
+                },
+                {
+                    "source": "templates\/page-contact.json",
+                    "name": "Page: Contact"
+                },
+                {
+                    "source": "templates\/page-contact-pro.json",
+                    "name": "Page: Contact Pro"
+                },
+                {
+                    "source": "templates\/page-home-pro.json",
+                    "name": "Page: Home Pro"
+                },
+                {
+                    "source": "templates\/block-4-icon-box-circles.json",
+                    "name": "Block: 4 icon box circles"
+                }
+            ],
+            "filesize": 31276,
+            "dimensions": [
+                1200,
+                1346
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/set-of-brochure-annual-report-design-templates-2GD5SBX"
+        },
+        {
+            "filename": "background-right2.png",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/background-right2.png",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/block-call-to-action-bar-form-pro.json",
+                    "name": "Block: Call to action bar - Form - Pro"
+                },
+                {
+                    "source": "templates\/block-call-to-action-bar-with-button.json",
+                    "name": "Block: Call to action bar with button"
+                },
+                {
+                    "source": "templates\/page-about.json",
+                    "name": "Page: About"
+                },
+                {
+                    "source": "templates\/page-contact.json",
+                    "name": "Page: Contact"
+                },
+                {
+                    "source": "templates\/page-contact-pro.json",
+                    "name": "Page: Contact Pro"
+                },
+                {
+                    "source": "templates\/page-home-pro.json",
+                    "name": "Page: Home Pro"
+                },
+                {
+                    "source": "templates\/block-4-icon-box-circles.json",
+                    "name": "Block: 4 icon box circles"
+                }
+            ],
+            "filesize": 6252,
+            "dimensions": [
+                488,
+                972
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/set-of-brochure-annual-report-design-templates-2GD5SBX"
+        },
+        {
+            "filename": "afro-mom-and-daughter-doing-school-homework-on-sof-QHHEQDH.jpg",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/afro-mom-and-daughter-doing-school-homework-on-sof-QHHEQDH-600x400.jpg",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/block-3-info-boxes-circle-photos.json",
+                    "name": "Block: 3 info boxes circle photos"
+                }
+            ],
+            "filesize": 124282,
+            "dimensions": [
+                800,
+                533
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-QHHEQDH"
+        },
+        {
+            "filename": "underline-yellow.png",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/underline-yellow.png",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/block-quote-box-with-photo-bg.json",
+                    "name": "Block: Quote box with photo bg"
+                },
+                {
+                    "source": "templates\/block-staff-circle-boxes.json",
+                    "name": "Block: Staff circle boxes"
+                },
+                {
+                    "source": "templates\/page-about.json",
+                    "name": "Page: About"
+                },
+                {
+                    "source": "templates\/page-home-pro.json",
+                    "name": "Page: Home Pro"
+                },
+                {
+                    "source": "templates\/block-testimonial-carousel-pro.json",
+                    "name": "Block - Testimonial Carousel - Pro"
+                },
+                {
+                    "source": "templates\/block-3-info-boxes-circle-photos.json",
+                    "name": "Block: 3 info boxes circle photos"
+                },
+                {
+                    "source": "templates\/block-2-testimonials-on-photo-bg.json",
+                    "name": "Block: 2 testimonials on photo bg"
+                }
+            ],
+            "filesize": 4578,
+            "dimensions": [
+                426,
+                20
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/set-of-brochure-annual-report-design-templates-2GD5SBX"
+        },
+        {
+            "filename": "girl-with-brush-drawing-sun-on-paper-PND2R36.jpg",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/girl-with-brush-drawing-sun-on-paper-PND2R36-600x400.jpg",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/block-2-col-photo-with-vertical-icons.json",
+                    "name": "Block: 2 col photo with vertical icons"
+                },
+                {
+                    "source": "templates\/page-about.json",
+                    "name": "Page: About"
+                },
+                {
+                    "source": "templates\/block-3-info-boxes-circle-photos.json",
+                    "name": "Block: 3 info boxes circle photos"
+                }
+            ],
+            "filesize": 92640,
+            "dimensions": [
+                800,
+                533
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-PND2R36"
+        },
+        {
+            "filename": "underline-blue.png",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/underline-blue.png",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/page-contact-pro.json",
+                    "name": "Page: Contact Pro"
+                },
+                {
+                    "source": "templates\/block-3-info-boxes-circle-photos.json",
+                    "name": "Block: 3 info boxes circle photos"
+                },
+                {
+                    "source": "templates\/block-contact-details-with-form-pro.json",
+                    "name": "Block: Contact details with form - Pro"
+                }
+            ],
+            "filesize": 4585,
+            "dimensions": [
+                426,
+                20
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/set-of-brochure-annual-report-design-templates-2GD5SBX"
+        },
+        {
+            "filename": "teenage-girls-are-singing-and-playing-guitars-they-NJUHDBF.jpg",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/teenage-girls-are-singing-and-playing-guitars-they-NJUHDBF-600x338.jpg",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/block-3-info-boxes-circle-photos.json",
+                    "name": "Block: 3 info boxes circle photos"
+                }
+            ],
+            "filesize": 116008,
+            "dimensions": [
+                800,
+                450
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-NJUHDBF"
+        },
+        {
+            "filename": "sisters-drawing-ZVSPNX9.jpg",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/sisters-drawing-ZVSPNX9-600x400.jpg",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/block-2-column-photo-and-text-icon-list.json",
+                    "name": "Block: 2 column photo and text icon list"
+                },
+                {
+                    "source": "templates\/page-about.json",
+                    "name": "Page: About"
+                },
+                {
+                    "source": "templates\/page-home-pro.json",
+                    "name": "Page: Home Pro"
+                },
+                {
+                    "source": "templates\/block-testimonial-carousel-pro.json",
+                    "name": "Block - Testimonial Carousel - Pro"
+                },
+                {
+                    "source": "templates\/block-2-testimonials-on-photo-bg.json",
+                    "name": "Block: 2 testimonials on photo bg"
+                }
+            ],
+            "filesize": 114059,
+            "dimensions": [
+                800,
+                533
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-ZVSPNX9"
+        },
+        {
+            "filename": "bg-right3.png",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/bg-right3.png",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/block-staff-circle-boxes.json",
+                    "name": "Block: Staff circle boxes"
+                },
+                {
+                    "source": "templates\/post-single.json",
+                    "name": "Post Single"
+                },
+                {
+                    "source": "templates\/block-woo-commerce-products-pro.json",
+                    "name": "Block - Woo Commerce Products - Pro"
+                },
+                {
+                    "source": "templates\/page-about.json",
+                    "name": "Page: About"
+                },
+                {
+                    "source": "templates\/page-home-pro.json",
+                    "name": "Page: Home Pro"
+                },
+                {
+                    "source": "templates\/block-4-column-product-layout.json",
+                    "name": "Block: 4 Column product layout"
+                }
+            ],
+            "filesize": 13460,
+            "dimensions": [
+                577,
+                620
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/set-of-brochure-annual-report-design-templates-2GD5SBX"
+        },
+        {
+            "filename": "bg-left-3.png",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/bg-left-3.png",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/block-features-large-icon-boxes.json",
+                    "name": "Block: Features large icon boxes"
+                },
+                {
+                    "source": "templates\/block-staff-circle-boxes.json",
+                    "name": "Block: Staff circle boxes"
+                },
+                {
+                    "source": "templates\/post-single.json",
+                    "name": "Post Single"
+                },
+                {
+                    "source": "templates\/block-woo-commerce-products-pro.json",
+                    "name": "Block - Woo Commerce Products - Pro"
+                },
+                {
+                    "source": "templates\/page-about.json",
+                    "name": "Page: About"
+                },
+                {
+                    "source": "templates\/page-home-pro.json",
+                    "name": "Page: Home Pro"
+                },
+                {
+                    "source": "templates\/block-4-column-product-layout.json",
+                    "name": "Block: 4 Column product layout"
+                }
+            ],
+            "filesize": 5996,
+            "dimensions": [
+                384,
+                506
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/set-of-brochure-annual-report-design-templates-2GD5SBX"
+        },
+        {
+            "filename": "students-vocabulary-coloring-workbook-PYNBN5M.jpg",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/students-vocabulary-coloring-workbook-PYNBN5M-600x357.jpg",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/block-4-column-product-layout.json",
+                    "name": "Block: 4 Column product layout"
+                }
+            ],
+            "filesize": 111988,
+            "dimensions": [
+                1100,
+                655
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-PYNBN5M"
+        },
+        {
+            "filename": "kids-learning-world-map-with-continents-countries-P6JMDXV.jpg",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/kids-learning-world-map-with-continents-countries-P6JMDXV-600x369.jpg",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/block-4-column-product-layout.json",
+                    "name": "Block: 4 Column product layout"
+                }
+            ],
+            "filesize": 180959,
+            "dimensions": [
+                1100,
+                677
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-P6JMDXV"
+        },
+        {
+            "filename": "kindergarten-students-workbooks-on-teacher-table-P6GHVYH.jpg",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/kindergarten-students-workbooks-on-teacher-table-P6GHVYH-600x400.jpg",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/block-4-column-product-layout.json",
+                    "name": "Block: 4 Column product layout"
+                }
+            ],
+            "filesize": 188952,
+            "dimensions": [
+                1100,
+                734
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-P6GHVYH"
+        },
+        {
+            "filename": "kids-hands-holding-colored-pencils-painting-on-art-PDQS5H5.jpg",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/kids-hands-holding-colored-pencils-painting-on-art-PDQS5H5-600x414.jpg",
+            "templates": [
+                {
+                    "source": "templates\/page-home.json",
+                    "name": "Page: Home"
+                },
+                {
+                    "source": "templates\/block-quote-box-with-photo-bg.json",
+                    "name": "Block: Quote box with photo bg"
+                },
+                {
+                    "source": "templates\/page-about.json",
+                    "name": "Page: About"
+                },
+                {
+                    "source": "templates\/block-4-column-product-layout.json",
+                    "name": "Block: 4 Column product layout"
+                }
+            ],
+            "filesize": 121881,
+            "dimensions": [
+                1100,
+                759
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-PDQS5H5"
+        },
+        {
+            "filename": "mother-and-son-crafting-together-at-home-LTK34BD.jpg",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/04\/mother-and-son-crafting-together-at-home-LTK34BD-600x400.jpg",
+            "templates": [
+                {
+                    "source": "templates\/block-2-col-photo-with-vertical-icons.json",
+                    "name": "Block: 2 col photo with vertical icons"
+                },
+                {
+                    "source": "templates\/page-about.json",
+                    "name": "Page: About"
+                }
+            ],
+            "filesize": 120655,
+            "dimensions": [
+                800,
+                533
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-LTK34BD"
+        },
+        {
+            "filename": "bg-circles5.png",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/04\/bg-circles5-600x603.png",
+            "templates": [
+                {
+                    "source": "templates\/block-2-column-photo-and-text-icon-list.json",
+                    "name": "Block: 2 column photo and text icon list"
+                },
+                {
+                    "source": "templates\/woo-commerce-single-product.json",
+                    "name": "Woo Commerce Single Product"
+                },
+                {
+                    "source": "templates\/page-about.json",
+                    "name": "Page: About"
+                }
+            ],
+            "filesize": 23106,
+            "dimensions": [
+                913,
+                918
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/set-of-brochure-annual-report-design-templates-2GD5SBX"
+        },
+        {
+            "filename": "bg-mixed.png",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/04\/bg-mixed.png",
+            "templates": [
+                {
+                    "source": "templates\/block-2-column-photo-and-text-icon-list.json",
+                    "name": "Block: 2 column photo and text icon list"
+                },
+                {
+                    "source": "templates\/block-contact-details-with-map.json",
+                    "name": "Block: Contact details with map"
+                },
+                {
+                    "source": "templates\/woo-commerce-single-product.json",
+                    "name": "Woo Commerce Single Product"
+                },
+                {
+                    "source": "templates\/page-about.json",
+                    "name": "Page: About"
+                },
+                {
+                    "source": "templates\/page-contact.json",
+                    "name": "Page: Contact"
+                },
+                {
+                    "source": "templates\/page-contact-pro.json",
+                    "name": "Page: Contact Pro"
+                },
+                {
+                    "source": "templates\/block-contact-details-with-form-pro.json",
+                    "name": "Block: Contact details with form - Pro"
+                }
+            ],
+            "filesize": 2539,
+            "dimensions": [
+                568,
+                438
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/set-of-brochure-annual-report-design-templates-2GD5SBX"
+        },
+        {
+            "filename": "wiggle-circle.png",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/04\/wiggle-circle.png",
+            "templates": [
+                {
+                    "source": "templates\/block-features-large-icon-boxes.json",
+                    "name": "Block: Features large icon boxes"
+                },
+                {
+                    "source": "templates\/page-about.json",
+                    "name": "Page: About"
+                }
+            ],
+            "filesize": 4567,
+            "dimensions": [
+                458,
+                462
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/set-of-brochure-annual-report-design-templates-LVRY2ZD"
+        },
+        {
+            "filename": "portrait-of-female-elementary-school-teacher-stand-5ECDT7K.jpg",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/04\/portrait-of-female-elementary-school-teacher-stand-5ECDT7K-600x600.jpg",
+            "templates": [
+                {
+                    "source": "templates\/block-staff-circle-boxes.json",
+                    "name": "Block: Staff circle boxes"
+                },
+                {
+                    "source": "templates\/page-about.json",
+                    "name": "Page: About"
+                }
+            ],
+            "filesize": 98098,
+            "dimensions": [
+                800,
+                800
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-5ECDT7K"
+        },
+        {
+            "filename": "portrait-of-male-elementary-school-teacher-standin-FHS34DB.jpg",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/04\/portrait-of-male-elementary-school-teacher-standin-FHS34DB-600x600.jpg",
+            "templates": [
+                {
+                    "source": "templates\/block-staff-circle-boxes.json",
+                    "name": "Block: Staff circle boxes"
+                },
+                {
+                    "source": "templates\/page-about.json",
+                    "name": "Page: About"
+                }
+            ],
+            "filesize": 175165,
+            "dimensions": [
+                800,
+                800
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-FHS34DB"
+        },
+        {
+            "filename": "meet-best-teacher-in-our-school-LJ46UWR.jpg",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/04\/meet-best-teacher-in-our-school-LJ46UWR-600x600.jpg",
+            "templates": [
+                {
+                    "source": "templates\/block-staff-circle-boxes.json",
+                    "name": "Block: Staff circle boxes"
+                },
+                {
+                    "source": "templates\/page-about.json",
+                    "name": "Page: About"
+                }
+            ],
+            "filesize": 116729,
+            "dimensions": [
+                800,
+                800
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-LJ46UWR"
+        },
+        {
+            "filename": "placeholder.png",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/04\/placeholder-600x400.png",
+            "templates": [
+                {
+                    "source": "templates\/post-single.json",
+                    "name": "Post Single"
+                }
+            ],
+            "filesize": 6146,
+            "dimensions": [
+                1200,
+                800
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "Elementor default"
+        },
+        {
+            "filename": "header-left.png",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/03\/header-left-600x875.png",
+            "templates": [
+                {
+                    "source": "templates\/header-pro-archive-title.json",
+                    "name": "Header Pro - Archive Title"
+                },
+                {
+                    "source": "templates\/block-header-with-page-title.json",
+                    "name": "Block: Header with page title"
+                },
+                {
+                    "source": "templates\/page-about.json",
+                    "name": "Page: About"
+                },
+                {
+                    "source": "templates\/page-contact.json",
+                    "name": "Page: Contact"
+                },
+                {
+                    "source": "templates\/page-contact-pro.json",
+                    "name": "Page: Contact Pro"
+                },
+                {
+                    "source": "templates\/page-home-pro.json",
+                    "name": "Page: Home Pro"
+                },
+                {
+                    "source": "templates\/block-header-and-hero-with-photos.json",
+                    "name": "Block: Header and Hero with photos"
+                },
+                {
+                    "source": "templates\/block-header-with-slideshow-pro.json",
+                    "name": "Block: Header with slideshow - Pro"
+                },
+                {
+                    "source": "templates\/header.json",
+                    "name": "Header"
+                }
+            ],
+            "filesize": 18764,
+            "dimensions": [
+                826,
+                1204
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/set-of-brochure-annual-report-design-templates-2GD5SBX"
+        },
+        {
+            "filename": "template-kit-492-1585962296-e1585963695931.jpg",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/04\/template-kit-492-1585962296-e1585963695931-600x790.jpg",
+            "templates": [
+                {
+                    "source": "templates\/block-call-to-action-bar-with-button.json",
+                    "name": "Block: Call to action bar with button"
+                }
+            ],
+            "filesize": 253086,
+            "dimensions": [
+                1367,
+                1799
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "girls-are-reading-a-book-N4MYFTR.jpg",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/04\/girls-are-reading-a-book-N4MYFTR-600x401.jpg",
+            "templates": [
+                {
+                    "source": "templates\/page-home-pro.json",
+                    "name": "Page: Home Pro"
+                },
+                {
+                    "source": "templates\/block-header-with-slideshow-pro.json",
+                    "name": "Block: Header with slideshow - Pro"
+                }
+            ],
+            "filesize": 161109,
+            "dimensions": [
+                800,
+                534
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-N4MYFTR"
+        },
+        {
+            "filename": "girl-sitting-at-a-table-working-on-a-laptop-comput-LDYZET7.jpg",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/04\/girl-sitting-at-a-table-working-on-a-laptop-comput-LDYZET7-600x400.jpg",
+            "templates": [
+                {
+                    "source": "templates\/page-home-pro.json",
+                    "name": "Page: Home Pro"
+                },
+                {
+                    "source": "templates\/block-header-with-slideshow-pro.json",
+                    "name": "Block: Header with slideshow - Pro"
+                }
+            ],
+            "filesize": 124321,
+            "dimensions": [
+                800,
+                533
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-LDYZET7"
+        },
+        {
+            "filename": "young-woman-helping-girl-with-homework-8BSC5RF.jpg",
+            "thumbnail_url": "https:\/\/demos.bakerwebdev.net\/homeschool\/wp-content\/uploads\/sites\/13\/2020\/04\/young-woman-helping-girl-with-homework-8BSC5RF-600x401.jpg",
+            "templates": [
+                {
+                    "source": "templates\/page-home-pro.json",
+                    "name": "Page: Home Pro"
+                },
+                {
+                    "source": "templates\/block-header-with-slideshow-pro.json",
+                    "name": "Block: Header with slideshow - Pro"
+                }
+            ],
+            "filesize": 152089,
+            "dimensions": [
+                800,
+                534
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-8BSC5RF"
+        }
+    ]
+}

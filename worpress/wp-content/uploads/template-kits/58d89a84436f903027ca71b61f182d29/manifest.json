@@ -1,0 +1,1177 @@
+{
+    "manifest_version": "1.0.19",
+    "title": "Musicy \u2013 Music School Elementor Template Kit",
+    "page_builder": "elementor",
+    "kit_version": "1.0.0",
+    "templates": [
+        {
+            "name": "Global Kit Styles",
+            "screenshot": "screenshots\/global-kit-styles.jpg",
+            "source": "templates\/global.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "global-styles",
+                "include_in_zip": "1",
+                "elementor_pro_required": null,
+                "additional_template_information": [
+                    "These are the global theme styles configured through the Elementor Theme Styles area."
+                ]
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Home",
+            "screenshot": "screenshots\/home.jpg",
+            "source": "templates\/home.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com\/musicy\/template-kit\/home\/",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-home",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "About Us",
+            "screenshot": "screenshots\/about-us.jpg",
+            "source": "templates\/about-us.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com\/musicy\/template-kit\/about-us\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "News",
+            "screenshot": "screenshots\/news.jpg",
+            "source": "templates\/news.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com\/musicy\/template-kit\/news\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Single Post",
+            "screenshot": "screenshots\/single-post.jpg",
+            "source": "templates\/single-post.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com\/musicy\/template-kit\/single-post\/",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-post",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Class",
+            "screenshot": "screenshots\/class.jpg",
+            "source": "templates\/class.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com\/musicy\/template-kit\/class\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Class Detail",
+            "screenshot": "screenshots\/class-detail.jpg",
+            "source": "templates\/class-detail.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com\/musicy\/template-kit\/class-detail\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Pricing Plan",
+            "screenshot": "screenshots\/pricing-plan.jpg",
+            "source": "templates\/pricing-plan.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com\/musicy\/template-kit\/pricing-plan\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Teacher",
+            "screenshot": "screenshots\/teacher.jpg",
+            "source": "templates\/teacher.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com\/musicy\/template-kit\/teacher\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "FAQ",
+            "screenshot": "screenshots\/faq.jpg",
+            "source": "templates\/faq.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com\/musicy\/template-kit\/faq\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Metform - Contact Us",
+            "screenshot": "screenshots\/metform-contact-us.jpg",
+            "source": "templates\/metform-contact-us.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com\/musicy\/template-kit\/metform-contact-us\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Contact Us",
+            "screenshot": "screenshots\/contact-us.jpg",
+            "source": "templates\/contact-us.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com\/musicy\/template-kit\/contact-us\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "404 Page",
+            "screenshot": "screenshots\/404-page.jpg",
+            "source": "templates\/404-page.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com\/musicy\/template-kit\/404-page\/",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-404",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Header",
+            "screenshot": "screenshots\/header.jpg",
+            "source": "templates\/header.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com\/musicy\/template-kit\/header\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-header",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Footer",
+            "screenshot": "screenshots\/footer.jpg",
+            "source": "templates\/footer.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com\/musicy\/template-kit\/footer\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-footer",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        }
+    ],
+    "required_plugins": [
+        {
+            "name": "MetForm",
+            "version": "1.4.9",
+            "file": "metform\/metform.php",
+            "author": "Wpmet"
+        },
+        {
+            "name": "Elementor",
+            "version": "3.2.4",
+            "file": "elementor\/elementor.php",
+            "author": "Elementor.com"
+        },
+        {
+            "name": "Elementor - Header, Footer & Blocks",
+            "version": "1.5.9",
+            "file": "header-footer-elementor\/header-footer-elementor.php",
+            "author": "Brainstorm Force, Nikhil Chavan"
+        },
+        {
+            "name": "Jeg Elementor Kit",
+            "version": "1.10.2",
+            "file": "jeg-elementor-kit\/jeg-elementor-kit.php",
+            "author": "JegStudio"
+        }
+    ],
+    "images": [
+        {
+            "filename": "group-of-homeschooling-children-with-teacher-having-music-lesson-indoors-coronavirus-concept-.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/group-of-homeschooling-children-with-teacher-having-music-lesson-indoors-coronavirus-concept--800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/news.json",
+                    "name": "News"
+                },
+                {
+                    "source": "templates\/single-post.json",
+                    "name": "Single Post"
+                },
+                {
+                    "source": "templates\/class-detail.json",
+                    "name": "Class Detail"
+                }
+            ],
+            "filesize": 291270,
+            "dimensions": [
+                2000,
+                1333
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-6A9UG7E"
+        },
+        {
+            "filename": "school-boy-playing-synthesizer-at-home-e1626148126788.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/school-boy-playing-synthesizer-at-home-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 122460,
+            "dimensions": [
+                1290,
+                860
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-9SYRHNK"
+        },
+        {
+            "filename": "music.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/music-800x534.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 298013,
+            "dimensions": [
+                2000,
+                1334
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-MD7XA9Q"
+        },
+        {
+            "filename": "close-up-of-mixed-race-schoolboy-playing-violin-in-classroom-at-elementary-school-e1625727730653.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/close-up-of-mixed-race-schoolboy-playing-violin-in-classroom-at-elementary-school-e1625727730653-800x548.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/pricing-plan.json",
+                    "name": "Pricing Plan"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                }
+            ],
+            "filesize": 221075,
+            "dimensions": [
+                1945,
+                1333
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/image-V239UCP"
+        },
+        {
+            "filename": "group-of-homeschooling-children-with-teacher-having-music-lesson-indoors-coronavirus-concept-1-1-e1626148006985.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/group-of-homeschooling-children-with-teacher-having-music-lesson-indoors-coronavirus-concept-1-1-800x492.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                }
+            ],
+            "filesize": 127232,
+            "dimensions": [
+                1290,
+                794
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-N9DMXUG"
+        },
+        {
+            "filename": "playing-the-music-e1626147937950.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/playing-the-music-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/class.json",
+                    "name": "Class"
+                }
+            ],
+            "filesize": 186865,
+            "dimensions": [
+                1290,
+                860
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-P6QU5D9"
+        },
+        {
+            "filename": "male-pupil-with-teacher-playing-piano-in-music-lesson-1.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/male-pupil-with-teacher-playing-piano-in-music-lesson-1-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/class.json",
+                    "name": "Class"
+                }
+            ],
+            "filesize": 283200,
+            "dimensions": [
+                2000,
+                1333
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-PVYWK82"
+        },
+        {
+            "filename": "learning-guitar-game.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/learning-guitar-game-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/class.json",
+                    "name": "Class"
+                },
+                {
+                    "source": "templates\/class-detail.json",
+                    "name": "Class Detail"
+                }
+            ],
+            "filesize": 293534,
+            "dimensions": [
+                2000,
+                1333
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-92XBETG"
+        },
+        {
+            "filename": "girl-playing-the-violin.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/girl-playing-the-violin-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/class.json",
+                    "name": "Class"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                }
+            ],
+            "filesize": 189508,
+            "dimensions": [
+                2000,
+                1333
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-4X39UKM"
+        },
+        {
+            "filename": "guitar1.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/guitar1.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/class.json",
+                    "name": "Class"
+                }
+            ],
+            "filesize": 3059,
+            "dimensions": [
+                128,
+                128
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/music-outline-icon-3JRY94X"
+        },
+        {
+            "filename": "vocal1.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/vocal1.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/class.json",
+                    "name": "Class"
+                }
+            ],
+            "filesize": 2527,
+            "dimensions": [
+                128,
+                129
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/music-outline-icon-3JRY94X"
+        },
+        {
+            "filename": "drum1.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/drum1.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/class.json",
+                    "name": "Class"
+                }
+            ],
+            "filesize": 3205,
+            "dimensions": [
+                128,
+                129
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/music-outline-icon-3JRY94X"
+        },
+        {
+            "filename": "piano1.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/piano1.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/class.json",
+                    "name": "Class"
+                }
+            ],
+            "filesize": 1361,
+            "dimensions": [
+                129,
+                128
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/music-outline-icon-3JRY94X"
+        },
+        {
+            "filename": "saxo1.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/saxo1.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/class.json",
+                    "name": "Class"
+                }
+            ],
+            "filesize": 2087,
+            "dimensions": [
+                129,
+                129
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/music-outline-icon-3JRY94X"
+        },
+        {
+            "filename": "dj1.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/dj1.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/class.json",
+                    "name": "Class"
+                }
+            ],
+            "filesize": 3047,
+            "dimensions": [
+                128,
+                129
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/music-outline-icon-3JRY94X"
+        },
+        {
+            "filename": "learning-e1626147970198.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/learning-800x1238.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/class.json",
+                    "name": "Class"
+                }
+            ],
+            "filesize": 131912,
+            "dimensions": [
+                833,
+                1290
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-ZA4HC3V"
+        },
+        {
+            "filename": "D2YMQVN.jpeg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/D2YMQVN-800x1078.jpeg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/class.json",
+                    "name": "Class"
+                }
+            ],
+            "filesize": 147271,
+            "dimensions": [
+                957,
+                1290
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-D2YMQVN"
+        },
+        {
+            "filename": "XJDYDWE.jpeg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/XJDYDWE-800x1078.jpeg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/class.json",
+                    "name": "Class"
+                }
+            ],
+            "filesize": 113616,
+            "dimensions": [
+                957,
+                1290
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-XJDYDWE"
+        },
+        {
+            "filename": "group-of-homeschooling-children-with-teacher-having-music-lesson-indoors-coronavirus-concept-1-2-e1626147997980.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/group-of-homeschooling-children-with-teacher-having-music-lesson-indoors-coronavirus-concept-1-2-800x536.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/pricing-plan.json",
+                    "name": "Pricing Plan"
+                },
+                {
+                    "source": "templates\/teacher.json",
+                    "name": "Teacher"
+                }
+            ],
+            "filesize": 120013,
+            "dimensions": [
+                1290,
+                864
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-J32QZH5"
+        },
+        {
+            "filename": "E4Z6KX9.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/E4Z6KX9.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/pricing-plan.json",
+                    "name": "Pricing Plan"
+                },
+                {
+                    "source": "templates\/teacher.json",
+                    "name": "Teacher"
+                }
+            ],
+            "filesize": 186610,
+            "dimensions": [
+                497,
+                497
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-E4Z6KX9"
+        },
+        {
+            "filename": "EWC24GN.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/EWC24GN.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/pricing-plan.json",
+                    "name": "Pricing Plan"
+                },
+                {
+                    "source": "templates\/teacher.json",
+                    "name": "Teacher"
+                }
+            ],
+            "filesize": 235395,
+            "dimensions": [
+                497,
+                497
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-EWC24GN"
+        },
+        {
+            "filename": "3PQNVSH.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/3PQNVSH.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/pricing-plan.json",
+                    "name": "Pricing Plan"
+                },
+                {
+                    "source": "templates\/teacher.json",
+                    "name": "Teacher"
+                }
+            ],
+            "filesize": 292764,
+            "dimensions": [
+                497,
+                497
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-3PQNVSH"
+        },
+        {
+            "filename": "PCXJHSB.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/PCXJHSB.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/pricing-plan.json",
+                    "name": "Pricing Plan"
+                },
+                {
+                    "source": "templates\/teacher.json",
+                    "name": "Teacher"
+                }
+            ],
+            "filesize": 214773,
+            "dimensions": [
+                497,
+                497
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-PCXJHSB"
+        },
+        {
+            "filename": "a-group-of-small-school-kids-and-teacher-with-guitar-sitting-on-the-floor-in-class-e1626148034185.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/a-group-of-small-school-kids-and-teacher-with-guitar-sitting-on-the-floor-in-class-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/pricing-plan.json",
+                    "name": "Pricing Plan"
+                }
+            ],
+            "filesize": 117548,
+            "dimensions": [
+                1290,
+                860
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-UNRFLPN"
+        },
+        {
+            "filename": "jackson.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/jackson.png",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                }
+            ],
+            "filesize": 1738,
+            "dimensions": [
+                241,
+                63
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/jarvitts-signature-L2YN87E"
+        },
+        {
+            "filename": "94VHKRA.jpeg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/94VHKRA.jpeg",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/teacher.json",
+                    "name": "Teacher"
+                }
+            ],
+            "filesize": 63820,
+            "dimensions": [
+                544,
+                687
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-94VHKRA"
+        },
+        {
+            "filename": "G9CBPRU.jpeg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/G9CBPRU.jpeg",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/teacher.json",
+                    "name": "Teacher"
+                }
+            ],
+            "filesize": 70671,
+            "dimensions": [
+                544,
+                687
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-G9CBPRU"
+        },
+        {
+            "filename": "Z8VAR3H.jpeg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/Z8VAR3H.jpeg",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/teacher.json",
+                    "name": "Teacher"
+                }
+            ],
+            "filesize": 72400,
+            "dimensions": [
+                544,
+                687
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-Z8VAR3H"
+        },
+        {
+            "filename": "a-small-pile-of-newspapers-e1626148056440.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/a-small-pile-of-newspapers-800x486.jpg",
+            "templates": [
+                {
+                    "source": "templates\/news.json",
+                    "name": "News"
+                }
+            ],
+            "filesize": 129692,
+            "dimensions": [
+                1290,
+                784
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/image-AWKG3ZT"
+        },
+        {
+            "filename": "piano-keyboard-piano-keys-viewed-from-above.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/piano-keyboard-piano-keys-viewed-from-above-800x534.jpg",
+            "templates": [
+                {
+                    "source": "templates\/single-post.json",
+                    "name": "Single Post"
+                }
+            ],
+            "filesize": 243637,
+            "dimensions": [
+                2000,
+                1334
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/image-47HRTPP"
+        },
+        {
+            "filename": "music-lesson-with-kids-e1626148075313.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/music-lesson-with-kids-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/class.json",
+                    "name": "Class"
+                }
+            ],
+            "filesize": 149102,
+            "dimensions": [
+                1290,
+                860
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-PG4WREZ"
+        },
+        {
+            "filename": "adjusting-guitar-strings.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/adjusting-guitar-strings-800x534.jpg",
+            "templates": [
+                {
+                    "source": "templates\/class-detail.json",
+                    "name": "Class Detail"
+                }
+            ],
+            "filesize": 204831,
+            "dimensions": [
+                2000,
+                1335
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-D8H2M2B"
+        },
+        {
+            "filename": "play-music-guitar-e1626148095988.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/play-music-guitar-800x1200.jpg",
+            "templates": [
+                {
+                    "source": "templates\/pricing-plan.json",
+                    "name": "Pricing Plan"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                }
+            ],
+            "filesize": 128293,
+            "dimensions": [
+                860,
+                1290
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-YJDAT7Z"
+        },
+        {
+            "filename": "a-little-girl-learns-to-play-the-guitar-by-sheet-music--e1626060903818.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/a-little-girl-learns-to-play-the-guitar-by-sheet-music--e1626060903818-800x927.jpg",
+            "templates": [
+                {
+                    "source": "templates\/pricing-plan.json",
+                    "name": "Pricing Plan"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                }
+            ],
+            "filesize": 253739,
+            "dimensions": [
+                1333,
+                1545
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-XXJ9BZ5"
+        },
+        {
+            "filename": "school-boy-playing-synthesizer-at-home-1-e1626148117897.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/school-boy-playing-synthesizer-at-home-1-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/teacher.json",
+                    "name": "Teacher"
+                }
+            ],
+            "filesize": 130467,
+            "dimensions": [
+                1290,
+                860
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-4UA9C9D"
+        },
+        {
+            "filename": "54N8USY.jpeg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/54N8USY.jpeg",
+            "templates": [
+                {
+                    "source": "templates\/teacher.json",
+                    "name": "Teacher"
+                }
+            ],
+            "filesize": 102615,
+            "dimensions": [
+                544,
+                687
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-54N8USY"
+        },
+        {
+            "filename": "FMT4QB7.jpeg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/FMT4QB7.jpeg",
+            "templates": [
+                {
+                    "source": "templates\/teacher.json",
+                    "name": "Teacher"
+                }
+            ],
+            "filesize": 63045,
+            "dimensions": [
+                544,
+                687
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-FMT4QB7"
+        },
+        {
+            "filename": "9vdfl2v.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/9vdfl2v.jpg",
+            "templates": [
+                {
+                    "source": "templates\/teacher.json",
+                    "name": "Teacher"
+                }
+            ],
+            "filesize": 85538,
+            "dimensions": [
+                544,
+                687
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-9VDFL2V"
+        },
+        {
+            "filename": "silhouette-of-a-violin.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/silhouette-of-a-violin-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                }
+            ],
+            "filesize": 183529,
+            "dimensions": [
+                2000,
+                1333
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/image-H9DXMD6"
+        },
+        {
+            "filename": "training-piano.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/training-piano-800x534.jpg",
+            "templates": [
+                {
+                    "source": "templates\/contact-us.json",
+                    "name": "Contact Us"
+                }
+            ],
+            "filesize": 228704,
+            "dimensions": [
+                2000,
+                1335
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-AJ7VEFW"
+        },
+        {
+            "filename": "woman-play-a-music-on-ukulele.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/woman-play-a-music-on-ukulele-800x422.jpg",
+            "templates": [
+                {
+                    "source": "templates\/404-page.json",
+                    "name": "404 Page"
+                }
+            ],
+            "filesize": 161883,
+            "dimensions": [
+                2000,
+                1055
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-HY36HWE"
+        },
+        {
+            "filename": "logo-2.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/musicy\/wp-content\/uploads\/sites\/121\/2021\/07\/logo-2.png",
+            "templates": [
+                {
+                    "source": "templates\/header.json",
+                    "name": "Header"
+                },
+                {
+                    "source": "templates\/footer.json",
+                    "name": "Footer"
+                }
+            ],
+            "filesize": 14349,
+            "dimensions": [
+                653,
+                200
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/thunder-microphone-logo-G9T9MM5"
+        }
+    ]
+}

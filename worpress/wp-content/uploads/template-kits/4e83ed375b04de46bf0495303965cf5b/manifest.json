@@ -1,0 +1,1379 @@
+{
+    "manifest_version": "1.0.19",
+    "title": "Educatico - Template Kit For Education, School & Online Course",
+    "page_builder": "elementor",
+    "kit_version": "1.0.0",
+    "templates": [
+        {
+            "name": "Global Kit Styles",
+            "screenshot": "screenshots\/global-kit-styles.png",
+            "source": "templates\/global.json",
+            "preview_url": "https:\/\/brosurku.online\/kits",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "global-styles",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "additional_template_information": [
+                    "These are the global theme styles configured through the Elementor Theme Styles area."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Event",
+            "screenshot": "screenshots\/event.png",
+            "source": "templates\/event.json",
+            "preview_url": "https:\/\/brosurku.online\/kits\/educatico\/template-kit\/event\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Homepage",
+            "screenshot": "screenshots\/homepage.png",
+            "source": "templates\/homepage.json",
+            "preview_url": "https:\/\/brosurku.online\/kits\/educatico\/template-kit\/homepage\/",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-home",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Blog",
+            "screenshot": "screenshots\/blog.png",
+            "source": "templates\/blog.json",
+            "preview_url": "https:\/\/brosurku.online\/kits\/educatico\/template-kit\/blog\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Single Course",
+            "screenshot": "screenshots\/single-course.png",
+            "source": "templates\/single-course.json",
+            "preview_url": "https:\/\/brosurku.online\/kits\/educatico\/template-kit\/single-course\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Courses",
+            "screenshot": "screenshots\/courses.png",
+            "source": "templates\/courses.json",
+            "preview_url": "https:\/\/brosurku.online\/kits\/educatico\/template-kit\/courses\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Gallery",
+            "screenshot": "screenshots\/gallery.png",
+            "source": "templates\/gallery.json",
+            "preview_url": "https:\/\/brosurku.online\/kits\/educatico\/template-kit\/gallery\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Teachers",
+            "screenshot": "screenshots\/teachers.png",
+            "source": "templates\/teachers.json",
+            "preview_url": "https:\/\/brosurku.online\/kits\/educatico\/template-kit\/teachers\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "About Us",
+            "screenshot": "screenshots\/about-us.png",
+            "source": "templates\/about-us.json",
+            "preview_url": "https:\/\/brosurku.online\/kits\/educatico\/template-kit\/about-us\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Contact",
+            "screenshot": "screenshots\/contact.png",
+            "source": "templates\/contact.json",
+            "preview_url": "https:\/\/brosurku.online\/kits\/educatico\/template-kit\/contact\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "educatico V1 - Archive",
+            "screenshot": "screenshots\/educatico-v1-archive.png",
+            "source": "templates\/educatico-v1-archive.json",
+            "preview_url": "https:\/\/brosurku.online\/kits\/educatico\/?elementor_library=educatico-v1-archive",
+            "type": "archive",
+            "category": "page",
+            "metadata": {
+                "template_type": "archive-blog",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "archive",
+                "elementor_pro_conditions": [
+                    "include\/archive"
+                ],
+                "additional_template_information": [
+                    "This is a \"Archive\" template for Elementor Pro.",
+                    "This template will display on: All Archives."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "educatico V1 - Error 404",
+            "screenshot": "screenshots\/educatico-v1-error-404.png",
+            "source": "templates\/educatico-v1-error-404.json",
+            "preview_url": "https:\/\/brosurku.online\/kits\/educatico\/?elementor_library=educatico-v1-error-404",
+            "type": "error-404",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-404",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "error-404",
+                "elementor_pro_conditions": [
+                    "include\/singular\/not_found404"
+                ],
+                "additional_template_information": [
+                    "This is a \"Error 404\" template for Elementor Pro.",
+                    "This template will display on: 404 Page."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "educatico V1 - Single Post",
+            "screenshot": "screenshots\/educatico-v1-single-post.png",
+            "source": "templates\/educatico-v1-single-post.json",
+            "preview_url": "https:\/\/brosurku.online\/kits\/educatico\/?elementor_library=educatico-v1-single-post",
+            "type": "single-post",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-post",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "single-post",
+                "elementor_pro_conditions": [
+                    "include\/singular\/post"
+                ],
+                "additional_template_information": [
+                    "This is a \"Single Post\" template for Elementor Pro.",
+                    "This template will display on: Posts."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "educatico V1 - Footer",
+            "screenshot": "screenshots\/educatico-v1-footer.png",
+            "source": "templates\/educatico-v1-footer.json",
+            "preview_url": "https:\/\/brosurku.online\/kits\/educatico\/?elementor_library=educatico-v1-footer",
+            "type": "footer",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-footer",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "footer",
+                "elementor_pro_conditions": [
+                    "include\/general"
+                ],
+                "additional_template_information": [
+                    "This is a \"Footer\" template for Elementor Pro.",
+                    "This template will display on: Entire Site."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "educatico V1 - Header",
+            "screenshot": "screenshots\/educatico-v1-header.png",
+            "source": "templates\/educatico-v1-header.json",
+            "preview_url": "https:\/\/brosurku.online\/kits\/educatico\/?elementor_library=educatico-v1-header",
+            "type": "header",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-header",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "header",
+                "elementor_pro_conditions": [
+                    "include\/general"
+                ],
+                "additional_template_information": [
+                    "This is a \"Header\" template for Elementor Pro.",
+                    "This template will display on: Entire Site."
+                ]
+            },
+            "elementor_pro_required": true
+        }
+    ],
+    "required_plugins": [
+        {
+            "name": "ElementsKit Lite",
+            "version": "2.1.6",
+            "file": "elementskit-lite\/elementskit-lite.php",
+            "author": "Wpmet"
+        },
+        {
+            "name": "Elementor Pro",
+            "version": "3.0.9",
+            "file": "elementor-pro\/elementor-pro.php",
+            "author": "Elementor.com"
+        },
+        {
+            "name": "Elementor",
+            "version": "3.1.1",
+            "file": "elementor\/elementor.php",
+            "author": "Elementor.com"
+        },
+        {
+            "name": "Premium Addons for Elementor",
+            "version": "4.2.4",
+            "file": "premium-addons-for-elementor\/premium-addons-for-elementor.php",
+            "author": "Leap13"
+        }
+    ],
+    "images": [
+        {
+            "filename": "interior-of-a-modern-bright-office-classroom.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/interior-of-a-modern-bright-office-classroom-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/event.json",
+                    "name": "Event"
+                },
+                {
+                    "source": "templates\/blog.json",
+                    "name": "Blog"
+                },
+                {
+                    "source": "templates\/courses.json",
+                    "name": "Courses"
+                }
+            ],
+            "filesize": 366915,
+            "dimensions": [
+                2000,
+                1333
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-UVP58FK"
+        },
+        {
+            "filename": "engineering-robotics-class-teamwork.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/engineering-robotics-class-teamwork-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/event.json",
+                    "name": "Event"
+                },
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/courses.json",
+                    "name": "Courses"
+                }
+            ],
+            "filesize": 362911,
+            "dimensions": [
+                2000,
+                1333
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-HTGSQ7N"
+        },
+        {
+            "filename": "workplace-in-library.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/workplace-in-library-800x546.jpg",
+            "templates": [
+                {
+                    "source": "templates\/event.json",
+                    "name": "Event"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 409878,
+            "dimensions": [
+                2000,
+                1364
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-GDVVTVK"
+        },
+        {
+            "filename": "school-girl-experimenting-with-chemical-in-laboratory-at-school.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/school-girl-experimenting-with-chemical-in-laboratory-at-school-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/event.json",
+                    "name": "Event"
+                },
+                {
+                    "source": "templates\/courses.json",
+                    "name": "Courses"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 243040,
+            "dimensions": [
+                2000,
+                1333
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-YXFWMSZ"
+        },
+        {
+            "filename": "creative-team-enjoying-communication-in-modern-office.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/creative-team-enjoying-communication-in-modern-office-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/event.json",
+                    "name": "Event"
+                },
+                {
+                    "source": "templates\/single-course.json",
+                    "name": "Single Course"
+                }
+            ],
+            "filesize": 403742,
+            "dimensions": [
+                2000,
+                1333
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-UCJ6X4R"
+        },
+        {
+            "filename": "tutor-with-group-of-mature-college-students-working-in-library.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/tutor-with-group-of-mature-college-students-working-in-library-800x534.jpg",
+            "templates": [
+                {
+                    "source": "templates\/event.json",
+                    "name": "Event"
+                },
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/courses.json",
+                    "name": "Courses"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                },
+                {
+                    "source": "templates\/teachers.json",
+                    "name": "Teachers"
+                }
+            ],
+            "filesize": 353200,
+            "dimensions": [
+                2000,
+                1334
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-PR68ZQC"
+        },
+        {
+            "filename": "view-of-the-grounds-of-harvard-university-in-boston-campus-learn-education-old-prestige-historic-e1614181958963.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/view-of-the-grounds-of-harvard-university-in-boston-campus-learn-education-old-prestige-historic-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/contact.json",
+                    "name": "Contact"
+                }
+            ],
+            "filesize": 182549,
+            "dimensions": [
+                1080,
+                720
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-GVXYQDD"
+        },
+        {
+            "filename": "logo-19_w.png",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/logo-19_w.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 2600,
+            "dimensions": [
+                177,
+                100
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/logoipsum.com\/"
+        },
+        {
+            "filename": "logo-20_w.png",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/logo-20_w.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 2589,
+            "dimensions": [
+                177,
+                100
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/logoipsum.com\/"
+        },
+        {
+            "filename": "logo-21_w.png",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/logo-21_w.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 2961,
+            "dimensions": [
+                177,
+                100
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/logoipsum.com\/"
+        },
+        {
+            "filename": "logo-22_w.png",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/logo-22_w.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 3132,
+            "dimensions": [
+                177,
+                100
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/logoipsum.com\/"
+        },
+        {
+            "filename": "blob.png",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/blob-800x756.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/courses.json",
+                    "name": "Courses"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                },
+                {
+                    "source": "templates\/teachers.json",
+                    "name": "Teachers"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                },
+                {
+                    "source": "templates\/contact.json",
+                    "name": "Contact"
+                },
+                {
+                    "source": "templates\/educatico-v1-single-post.json",
+                    "name": "educatico V1 - Single Post"
+                }
+            ],
+            "filesize": 35232,
+            "dimensions": [
+                976,
+                922
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "young-students-in-college-library-1024x682-1-e1614182161476.png",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/young-students-in-college-library-1024x682-1-800x533.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 213945,
+            "dimensions": [
+                400,
+                415
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/young-students-in-college-library-N9TSYEM"
+        },
+        {
+            "filename": "students-outdoors.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/students-outdoors-800x1199.jpg",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                }
+            ],
+            "filesize": 419592,
+            "dimensions": [
+                1335,
+                2000
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-5TWD6ZF"
+        },
+        {
+            "filename": "students-and-teacher.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/students-and-teacher-800x1200.jpg",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                }
+            ],
+            "filesize": 455295,
+            "dimensions": [
+                1333,
+                2000
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-RVRHBBJ"
+        },
+        {
+            "filename": "06-e1613602191289.png",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/06-800x800.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                }
+            ],
+            "filesize": 182283,
+            "dimensions": [
+                1444,
+                1444
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/12-seamless-map-topographic-pattern-8HCDAWL"
+        },
+        {
+            "filename": "asian-college-student-on-campus.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/asian-college-student-on-campus-800x1200.jpg",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 363451,
+            "dimensions": [
+                1333,
+                2000
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-K7EKWMV"
+        },
+        {
+            "filename": "student-at-school.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/student-at-school-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/courses.json",
+                    "name": "Courses"
+                }
+            ],
+            "filesize": 303499,
+            "dimensions": [
+                2000,
+                1333
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-5TUMJ9V"
+        },
+        {
+            "filename": "shape.png",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/shape-800x800.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/blog.json",
+                    "name": "Blog"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                }
+            ],
+            "filesize": 39865,
+            "dimensions": [
+                941,
+                941
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "teacher-by-workplace.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/teacher-by-workplace-800x1200.jpg",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/teachers.json",
+                    "name": "Teachers"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                }
+            ],
+            "filesize": 273235,
+            "dimensions": [
+                1333,
+                2000
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-DTQFWME"
+        },
+        {
+            "filename": "smiling-science-teacher.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/smiling-science-teacher-800x1200.jpg",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/teachers.json",
+                    "name": "Teachers"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                }
+            ],
+            "filesize": 322220,
+            "dimensions": [
+                1333,
+                2000
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-YXXHLVC"
+        },
+        {
+            "filename": "young-teacher-near-chalkboard-in-school-classroom-talking-to-class.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/young-teacher-near-chalkboard-in-school-classroom-talking-to-class-800x1202.jpg",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/teachers.json",
+                    "name": "Teachers"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                }
+            ],
+            "filesize": 249051,
+            "dimensions": [
+                1331,
+                2000
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-PY36KQ3"
+        },
+        {
+            "filename": "aged-teacher-e1614181846527.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/aged-teacher-800x1200.jpg",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/single-course.json",
+                    "name": "Single Course"
+                },
+                {
+                    "source": "templates\/teachers.json",
+                    "name": "Teachers"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                }
+            ],
+            "filesize": 185421,
+            "dimensions": [
+                840,
+                1260
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-AM5GVPM"
+        },
+        {
+            "filename": "earth-2.0.png",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/earth-2.0-800x190.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                }
+            ],
+            "filesize": 54681,
+            "dimensions": [
+                2520,
+                600
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/uilogos.co\/"
+        },
+        {
+            "filename": "hex-lab.png",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/hex-lab-800x229.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                }
+            ],
+            "filesize": 12283,
+            "dimensions": [
+                2100,
+                600
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/uilogos.co\/"
+        },
+        {
+            "filename": "muzica.png",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/muzica-800x200.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                }
+            ],
+            "filesize": 26718,
+            "dimensions": [
+                2400,
+                600
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/uilogos.co\/"
+        },
+        {
+            "filename": "solaytic.png",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/solaytic-800x257.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                }
+            ],
+            "filesize": 26622,
+            "dimensions": [
+                1870,
+                600
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/uilogos.co\/"
+        },
+        {
+            "filename": "utosia-2.png",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/utosia-2-800x205.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                }
+            ],
+            "filesize": 17452,
+            "dimensions": [
+                2340,
+                600
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/uilogos.co\/"
+        },
+        {
+            "filename": "velocity-9.png",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/velocity-9-800x206.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                }
+            ],
+            "filesize": 38343,
+            "dimensions": [
+                2333,
+                600
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/uilogos.co\/"
+        },
+        {
+            "filename": "zoo-tv.png",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/zoo-tv-800x252.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                }
+            ],
+            "filesize": 13965,
+            "dimensions": [
+                1902,
+                600
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/uilogos.co\/"
+        },
+        {
+            "filename": "listening-to-teacher.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/listening-to-teacher-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/single-course.json",
+                    "name": "Single Course"
+                },
+                {
+                    "source": "templates\/courses.json",
+                    "name": "Courses"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                },
+                {
+                    "source": "templates\/teachers.json",
+                    "name": "Teachers"
+                }
+            ],
+            "filesize": 432710,
+            "dimensions": [
+                2000,
+                1333
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-AM7G8L7"
+        },
+        {
+            "filename": "teacher-at-lesson.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/teacher-at-lesson-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/courses.json",
+                    "name": "Courses"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 231760,
+            "dimensions": [
+                2000,
+                1333
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-VENZ6YS"
+        },
+        {
+            "filename": "school-education.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/school-education-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/courses.json",
+                    "name": "Courses"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 290041,
+            "dimensions": [
+                2000,
+                1333
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-RVBLGTV"
+        },
+        {
+            "filename": "happy-young-teacher-embracing-with-pupils-in-class.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/happy-young-teacher-embracing-with-pupils-in-class-800x1199.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 389836,
+            "dimensions": [
+                1335,
+                2000
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-EL46222"
+        },
+        {
+            "filename": "young-group-of-business-colleagues-working-together-in-cafe.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/young-group-of-business-colleagues-working-together-in-cafe-800x534.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 393481,
+            "dimensions": [
+                2000,
+                1335
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-HWA89T3"
+        },
+        {
+            "filename": "woman-in-university.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/woman-in-university-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                }
+            ],
+            "filesize": 338125,
+            "dimensions": [
+                2000,
+                1333
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-9R4TYQV"
+        },
+        {
+            "filename": "happy-students-or-bachelors-in-mortar-boards.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/happy-students-or-bachelors-in-mortar-boards-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 306405,
+            "dimensions": [
+                2000,
+                1333
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-PY525YX"
+        },
+        {
+            "filename": "school-kids-reading-books-in-library-at-school.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/school-kids-reading-books-in-library-at-school-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 348451,
+            "dimensions": [
+                2000,
+                1333
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-3Q6S4WF"
+        },
+        {
+            "filename": "empty-school-classroom-back-to-school-.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/empty-school-classroom-back-to-school--800x552.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 385124,
+            "dimensions": [
+                2000,
+                1380
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-4KB9QQW"
+        },
+        {
+            "filename": "happy-young-successful-student-or-teacher-in-eyeglasses-and-white-shirt.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/happy-young-successful-student-or-teacher-in-eyeglasses-and-white-shirt-800x1200.jpg",
+            "templates": [
+                {
+                    "source": "templates\/teachers.json",
+                    "name": "Teachers"
+                }
+            ],
+            "filesize": 388254,
+            "dimensions": [
+                1333,
+                2000
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-BKSQNG6"
+        },
+        {
+            "filename": "teacher-using-digital-tablet.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/teacher-using-digital-tablet-800x1200.jpg",
+            "templates": [
+                {
+                    "source": "templates\/teachers.json",
+                    "name": "Teachers"
+                }
+            ],
+            "filesize": 192205,
+            "dimensions": [
+                1333,
+                2000
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-AEJBEM9"
+        },
+        {
+            "filename": "portrait-of-male-elementary-school-teacher-standing-in-classroom.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/portrait-of-male-elementary-school-teacher-standing-in-classroom-800x1200.jpg",
+            "templates": [
+                {
+                    "source": "templates\/teachers.json",
+                    "name": "Teachers"
+                }
+            ],
+            "filesize": 529968,
+            "dimensions": [
+                1333,
+                2000
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-HKVZWJS"
+        },
+        {
+            "filename": "portrait-of-female-elementary-school-teacher-standing-in-classroom.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/portrait-of-female-elementary-school-teacher-standing-in-classroom-800x1200.jpg",
+            "templates": [
+                {
+                    "source": "templates\/teachers.json",
+                    "name": "Teachers"
+                }
+            ],
+            "filesize": 312576,
+            "dimensions": [
+                1333,
+                2000
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-5ECDT7K"
+        },
+        {
+            "filename": "platform-for-teachers-at-university-e1614181983109.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/platform-for-teachers-at-university-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About Us"
+                }
+            ],
+            "filesize": 145048,
+            "dimensions": [
+                1080,
+                720
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-PKS969N"
+        },
+        {
+            "filename": "yellow-school-supplies-over-the-blue-pastel-background-education-studing-and-back-to-school.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/yellow-school-supplies-over-the-blue-pastel-background-education-studing-and-back-to-school-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/contact.json",
+                    "name": "Contact"
+                },
+                {
+                    "source": "templates\/educatico-v1-archive.json",
+                    "name": "educatico V1 - Archive"
+                }
+            ],
+            "filesize": 497999,
+            "dimensions": [
+                2000,
+                1333
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/image-YB8MZVK"
+        },
+        {
+            "filename": "Owl-Bachelor.png",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/Owl-Bachelor.png",
+            "templates": [
+                {
+                    "source": "templates\/educatico-v1-error-404.json",
+                    "name": "educatico V1 - Error 404"
+                }
+            ],
+            "filesize": 62972,
+            "dimensions": [
+                474,
+                502
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/owl-bachelor-cartoon-logo-B3GS9FJ"
+        },
+        {
+            "filename": "startup-business-people-face-smile-expression-portrait-e1612945686564.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/startup-business-people-face-smile-expression-portrait-e1612945686564-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/educatico-v1-single-post.json",
+                    "name": "educatico V1 - Single Post"
+                }
+            ],
+            "filesize": 131784,
+            "dimensions": [
+                1000,
+                1000
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-PZQ3GMA"
+        },
+        {
+            "filename": "black-student-standing-in-front-of-group-of-other-students.jpg",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/black-student-standing-in-front-of-group-of-other-students-800x376.jpg",
+            "templates": [
+                {
+                    "source": "templates\/educatico-v1-footer.json",
+                    "name": "educatico V1 - Footer"
+                }
+            ],
+            "filesize": 213295,
+            "dimensions": [
+                2000,
+                940
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-7ZQR2L4"
+        },
+        {
+            "filename": "logo-educatico.png",
+            "thumbnail_url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/logo-educatico-800x214.png",
+            "templates": [
+                {
+                    "source": "templates\/educatico-v1-footer.json",
+                    "name": "educatico V1 - Footer"
+                },
+                {
+                    "source": "templates\/educatico-v1-header.json",
+                    "name": "educatico V1 - Header"
+                }
+            ],
+            "filesize": 33684,
+            "dimensions": [
+                1470,
+                393
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        }
+    ]
+}

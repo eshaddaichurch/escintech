@@ -1,0 +1,609 @@
+{
+    "version": "0.4",
+    "title": "Teachers",
+    "type": "page",
+    "metadata": {
+        "template_type": "single-page",
+        "include_in_zip": "1",
+        "elementor_pro_required": "1",
+        "wp_page_template": "elementor_header_footer"
+    },
+    "content": [
+        {
+            "id": "573dadc4",
+            "settings": {
+                "_ob_glider_nav_pos_y_alt": "50% - 25px",
+                "_ob_glider_nav_pos_x_prev_alt": "0%",
+                "_ob_glider_nav_pos_x_next_alt": "0%",
+                "padding": {
+                    "unit": "em",
+                    "top": "5",
+                    "right": "0",
+                    "bottom": "5",
+                    "left": "0",
+                    "isLinked": false
+                },
+                "background_background": "classic",
+                "background_color": "#011627",
+                "background_overlay_background": "classic",
+                "background_overlay_image": {
+                    "url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/listening-to-teacher.jpg",
+                    "id": 355
+                },
+                "background_overlay_position": "top center",
+                "background_overlay_repeat": "no-repeat",
+                "background_overlay_size": "cover"
+            },
+            "elements": [
+                {
+                    "id": "434fc4f5",
+                    "settings": {
+                        "_column_size": 100,
+                        "_inline_size": null
+                    },
+                    "elements": [
+                        {
+                            "id": "6b952403",
+                            "settings": {
+                                "title": "Add Your Heading Text Here",
+                                "header_size": "h1",
+                                "__dynamic__": {
+                                    "title": "[elementor-tag id=\"8d9abae\" name=\"post-title\" settings=\"%7B%7D\"]"
+                                }
+                            },
+                            "elements": [],
+                            "isInner": false,
+                            "widgetType": "heading",
+                            "elType": "widget"
+                        },
+                        {
+                            "id": "1c8d9316",
+                            "settings": {
+                                "view": "inline",
+                                "icon_list": [
+                                    {
+                                        "text": "Home",
+                                        "selected_icon": {
+                                            "value": "",
+                                            "library": ""
+                                        },
+                                        "_id": "dde21d0"
+                                    },
+                                    {
+                                        "text": "List Item #2",
+                                        "selected_icon": {
+                                            "value": "fas fa-chevron-circle-right",
+                                            "library": "fa-solid"
+                                        },
+                                        "_id": "057ccc2",
+                                        "__dynamic__": {
+                                            "text": "[elementor-tag id=\"4b0806b\" name=\"post-title\" settings=\"%7B%7D\"]"
+                                        }
+                                    }
+                                ],
+                                "space_between": {
+                                    "unit": "px",
+                                    "size": 16,
+                                    "sizes": []
+                                },
+                                "icon_size": {
+                                    "unit": "px",
+                                    "size": 21,
+                                    "sizes": []
+                                },
+                                "text_indent": {
+                                    "unit": "px",
+                                    "size": 16,
+                                    "sizes": []
+                                },
+                                "icon_color": "#41EAD4",
+                                "text_color": "#FFFFFF"
+                            },
+                            "elements": [],
+                            "isInner": false,
+                            "widgetType": "icon-list",
+                            "elType": "widget"
+                        }
+                    ],
+                    "isInner": false,
+                    "elType": "column"
+                }
+            ],
+            "isInner": false,
+            "elType": "section"
+        },
+        {
+            "id": "5735ebe6",
+            "settings": {
+                "_ob_glider_nav_pos_y_alt": "50% - 25px",
+                "_ob_glider_nav_pos_x_prev_alt": "0%",
+                "_ob_glider_nav_pos_x_next_alt": "0%",
+                "padding": {
+                    "unit": "em",
+                    "top": "",
+                    "right": "",
+                    "bottom": "",
+                    "left": "",
+                    "isLinked": true
+                },
+                "padding_mobile": {
+                    "unit": "em",
+                    "top": "1",
+                    "right": "1",
+                    "bottom": "1",
+                    "left": "1",
+                    "isLinked": true
+                }
+            },
+            "elements": [
+                {
+                    "id": "49e7a671",
+                    "settings": {
+                        "_column_size": 100,
+                        "_inline_size": null,
+                        "background_background": "classic",
+                        "box_shadow_box_shadow": {
+                            "horizontal": 0,
+                            "vertical": 0,
+                            "blur": 20,
+                            "spread": 0,
+                            "color": "rgba(0, 0, 0, 0.1)"
+                        },
+                        "margin": {
+                            "unit": "em",
+                            "top": "0",
+                            "right": "0",
+                            "bottom": "0",
+                            "left": "0",
+                            "isLinked": false
+                        },
+                        "margin_mobile": {
+                            "unit": "px",
+                            "top": "0",
+                            "right": "0",
+                            "bottom": "0",
+                            "left": "0",
+                            "isLinked": true
+                        },
+                        "padding": {
+                            "unit": "em",
+                            "top": "2",
+                            "right": "2",
+                            "bottom": "2",
+                            "left": "2",
+                            "isLinked": true
+                        },
+                        "padding_mobile": {
+                            "unit": "em",
+                            "top": "0",
+                            "right": "0",
+                            "bottom": "0",
+                            "left": "0",
+                            "isLinked": true
+                        }
+                    },
+                    "elements": [
+                        {
+                            "id": "37feed75",
+                            "settings": {
+                                "multiple": "yes",
+                                "premium_person_text_align": "center",
+                                "premium_person_name_heading": "h3",
+                                "persons_per_row": "25%",
+                                "persons_per_row_tablet": "50%",
+                                "spacing": {
+                                    "unit": "em",
+                                    "top": "1",
+                                    "right": "1",
+                                    "bottom": "1",
+                                    "left": "1",
+                                    "isLinked": true
+                                },
+                                "premium_person_name": "John Frank",
+                                "premium_person_title": "Developer",
+                                "premium_person_facebook": "#",
+                                "premium_person_twitter": "#",
+                                "premium_person_instagram": "#",
+                                "premium_person_dribbble": "#",
+                                "multiple_persons": [
+                                    {
+                                        "multiple_name": "James Philiph",
+                                        "_id": "b5b0f99",
+                                        "multiple_image": {
+                                            "url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/teacher-by-workplace.jpg",
+                                            "id": 287
+                                        },
+                                        "multiple_title": "Math Teacher",
+                                        "multiple_description": "",
+                                        "multiple_facebook": "#",
+                                        "multiple_twitter": "#",
+                                        "multiple_instagram": "#",
+                                        "multiple_dribbble": "#"
+                                    },
+                                    {
+                                        "multiple_name": "Erica Lee",
+                                        "_id": "71fcbd7",
+                                        "multiple_image": {
+                                            "url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/smiling-science-teacher.jpg",
+                                            "id": 288
+                                        },
+                                        "multiple_title": "English Teacher",
+                                        "multiple_description": "",
+                                        "multiple_facebook": "#",
+                                        "multiple_twitter": "#",
+                                        "multiple_instagram": "#",
+                                        "multiple_dribbble": "#"
+                                    },
+                                    {
+                                        "multiple_name": "Miler Cullen",
+                                        "_id": "5a06c33",
+                                        "multiple_image": {
+                                            "url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/young-teacher-near-chalkboard-in-school-classroom-talking-to-class.jpg",
+                                            "id": 289
+                                        },
+                                        "multiple_title": "Economic Teacher",
+                                        "multiple_description": "",
+                                        "multiple_facebook": "#",
+                                        "multiple_twitter": "#",
+                                        "multiple_instagram": "#",
+                                        "multiple_dribbble": "#"
+                                    },
+                                    {
+                                        "multiple_name": "Robert Deniro",
+                                        "multiple_image": {
+                                            "url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/aged-teacher.jpg",
+                                            "id": 290
+                                        },
+                                        "multiple_title": "Chemistry Teacher",
+                                        "multiple_description": "",
+                                        "multiple_facebook": "#",
+                                        "multiple_twitter": "#",
+                                        "multiple_instagram": "#",
+                                        "multiple_dribbble": "#",
+                                        "_id": "8c8c1e2"
+                                    },
+                                    {
+                                        "multiple_name": "Diana Rose",
+                                        "multiple_image": {
+                                            "url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/happy-young-successful-student-or-teacher-in-eyeglasses-and-white-shirt.jpg",
+                                            "id": 373
+                                        },
+                                        "multiple_title": "Chemistry Teacher",
+                                        "multiple_description": "",
+                                        "multiple_facebook": "#",
+                                        "multiple_twitter": "#",
+                                        "multiple_instagram": "#",
+                                        "multiple_dribbble": "#",
+                                        "_id": "041d81a"
+                                    },
+                                    {
+                                        "multiple_name": "Merry Luke",
+                                        "multiple_image": {
+                                            "url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/teacher-using-digital-tablet.jpg",
+                                            "id": 374
+                                        },
+                                        "multiple_title": "Design Teacher",
+                                        "multiple_description": "",
+                                        "multiple_facebook": "#",
+                                        "multiple_twitter": "#",
+                                        "multiple_instagram": "#",
+                                        "multiple_dribbble": "#",
+                                        "_id": "9ae28d4"
+                                    },
+                                    {
+                                        "multiple_name": "Bryan Emmanuel",
+                                        "multiple_image": {
+                                            "url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/portrait-of-male-elementary-school-teacher-standing-in-classroom.jpg",
+                                            "id": 375
+                                        },
+                                        "multiple_title": "Chemistry Teacher",
+                                        "multiple_description": "",
+                                        "multiple_facebook": "#",
+                                        "multiple_twitter": "#",
+                                        "multiple_instagram": "#",
+                                        "multiple_dribbble": "#",
+                                        "_id": "27d51f7"
+                                    },
+                                    {
+                                        "multiple_name": "Jean Philiph",
+                                        "multiple_image": {
+                                            "url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/portrait-of-female-elementary-school-teacher-standing-in-classroom.jpg",
+                                            "id": 376
+                                        },
+                                        "multiple_title": "Spanish Teacher",
+                                        "multiple_description": "",
+                                        "multiple_facebook": "#",
+                                        "multiple_twitter": "#",
+                                        "multiple_instagram": "#",
+                                        "multiple_dribbble": "#",
+                                        "_id": "9b31c64"
+                                    }
+                                ],
+                                "css_filters_saturate": {
+                                    "unit": "px",
+                                    "size": 25,
+                                    "sizes": []
+                                }
+                            },
+                            "elements": [],
+                            "isInner": false,
+                            "widgetType": "premium-addon-person",
+                            "elType": "widget"
+                        }
+                    ],
+                    "isInner": false,
+                    "elType": "column"
+                }
+            ],
+            "isInner": false,
+            "elType": "section"
+        },
+        {
+            "id": "20093938",
+            "settings": {
+                "content_width": {
+                    "unit": "px",
+                    "size": 650,
+                    "sizes": []
+                },
+                "_ob_glider_nav_pos_y_alt": "50% - 25px",
+                "_ob_glider_nav_pos_x_prev_alt": "0%",
+                "_ob_glider_nav_pos_x_next_alt": "0%",
+                "background_background": "video",
+                "background_video_link": "https:\/\/www.youtube.com\/watch?v=e0Mh_H5ivdE",
+                "background_video_fallback": {
+                    "url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/listening-to-teacher.jpg",
+                    "id": 355
+                },
+                "background_overlay_background": "classic",
+                "background_overlay_color": "#0244A1",
+                "background_overlay_opacity": {
+                    "unit": "px",
+                    "size": 0.7,
+                    "sizes": []
+                },
+                "padding": {
+                    "unit": "em",
+                    "top": "10",
+                    "right": "0",
+                    "bottom": "10",
+                    "left": "0",
+                    "isLinked": false
+                },
+                "padding_mobile": {
+                    "unit": "em",
+                    "top": "5",
+                    "right": "0",
+                    "bottom": "5",
+                    "left": "0",
+                    "isLinked": false
+                }
+            },
+            "elements": [
+                {
+                    "id": "5969506a",
+                    "settings": {
+                        "_column_size": 100,
+                        "_inline_size": null
+                    },
+                    "elements": [
+                        {
+                            "id": "6d4f890b",
+                            "settings": {
+                                "title": "Join Us",
+                                "header_size": "h6",
+                                "align": "center",
+                                "title_color": "#FFFFFF"
+                            },
+                            "elements": [],
+                            "isInner": false,
+                            "widgetType": "heading",
+                            "elType": "widget"
+                        },
+                        {
+                            "id": "2d8a80aa",
+                            "settings": {
+                                "title": "Does Your Interest Become a Teacher?",
+                                "header_size": "h1",
+                                "align": "center",
+                                "title_color": "#FFFFFF"
+                            },
+                            "elements": [],
+                            "isInner": false,
+                            "widgetType": "heading",
+                            "elType": "widget"
+                        },
+                        {
+                            "id": "2aec6252",
+                            "settings": {
+                                "title": "Interdum felis malesuada aenean porttitor bibendum. Accumsan massa venenatis ad si.",
+                                "header_size": "h4",
+                                "align": "center",
+                                "title_color": "#FFFFFF"
+                            },
+                            "elements": [],
+                            "isInner": false,
+                            "widgetType": "heading",
+                            "elType": "widget"
+                        },
+                        {
+                            "id": "61cde954",
+                            "settings": {
+                                "text": "Become Teacher",
+                                "align": "center",
+                                "size": "md"
+                            },
+                            "elements": [],
+                            "isInner": false,
+                            "widgetType": "button",
+                            "elType": "widget"
+                        }
+                    ],
+                    "isInner": false,
+                    "elType": "column"
+                }
+            ],
+            "isInner": false,
+            "elType": "section"
+        },
+        {
+            "id": "4cc7cede",
+            "settings": {
+                "content_position": "middle",
+                "_ob_glider_nav_pos_y_alt": "50% - 25px",
+                "_ob_glider_nav_pos_x_prev_alt": "0%",
+                "_ob_glider_nav_pos_x_next_alt": "0%",
+                "structure": "20",
+                "padding": {
+                    "unit": "em",
+                    "top": "5",
+                    "right": "0",
+                    "bottom": "5",
+                    "left": "0",
+                    "isLinked": false
+                }
+            },
+            "elements": [
+                {
+                    "id": "3f109636",
+                    "settings": {
+                        "_column_size": 50,
+                        "_inline_size": null,
+                        "background_background": "classic",
+                        "background_image": {
+                            "url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/blob.png",
+                            "id": 130
+                        },
+                        "background_position": "center center",
+                        "background_repeat": "no-repeat",
+                        "background_size": "initial",
+                        "background_bg_width": {
+                            "unit": "%",
+                            "size": 69,
+                            "sizes": []
+                        },
+                        "padding": {
+                            "unit": "em",
+                            "top": "2",
+                            "right": "2",
+                            "bottom": "2",
+                            "left": "2",
+                            "isLinked": true
+                        }
+                    },
+                    "elements": [
+                        {
+                            "id": "50193058",
+                            "settings": {
+                                "image": {
+                                    "url": "https:\/\/brosurku.online\/kits\/educatico\/wp-content\/uploads\/sites\/19\/2021\/02\/tutor-with-group-of-mature-college-students-working-in-library.jpg",
+                                    "id": 386
+                                },
+                                "width": {
+                                    "unit": "%",
+                                    "size": 85,
+                                    "sizes": []
+                                },
+                                "width_tablet": {
+                                    "unit": "%",
+                                    "size": 100,
+                                    "sizes": []
+                                },
+                                "css_filters_saturate": {
+                                    "unit": "px",
+                                    "size": 25,
+                                    "sizes": []
+                                },
+                                "css_filters_hover_css_filter": "custom",
+                                "image_border_radius": {
+                                    "unit": "px",
+                                    "top": "5",
+                                    "right": "5",
+                                    "bottom": "5",
+                                    "left": "5",
+                                    "isLinked": true
+                                }
+                            },
+                            "elements": [],
+                            "isInner": false,
+                            "widgetType": "image",
+                            "elType": "widget"
+                        }
+                    ],
+                    "isInner": false,
+                    "elType": "column"
+                },
+                {
+                    "id": "747b75cd",
+                    "settings": {
+                        "_column_size": 50,
+                        "_inline_size": null,
+                        "padding": {
+                            "unit": "em",
+                            "top": "2",
+                            "right": "2",
+                            "bottom": "2",
+                            "left": "2",
+                            "isLinked": true
+                        }
+                    },
+                    "elements": [
+                        {
+                            "id": "472de5ff",
+                            "settings": {
+                                "title": "Become a Teacher",
+                                "header_size": "h6",
+                                "align_mobile": "center"
+                            },
+                            "elements": [],
+                            "isInner": false,
+                            "widgetType": "heading",
+                            "elType": "widget"
+                        },
+                        {
+                            "id": "709ac66d",
+                            "settings": {
+                                "title": "Let's Make Education Better",
+                                "align_mobile": "center"
+                            },
+                            "elements": [],
+                            "isInner": false,
+                            "widgetType": "heading",
+                            "elType": "widget"
+                        },
+                        {
+                            "id": "272a2c9c",
+                            "settings": {
+                                "editor": "<p>Ad ac tortor et blandit cras. Accumsan aliquet quis malesuada curae tortor. Urna dolor penatibus volutpat potenti rhoncus.<\/p><p>Aliquam amet commodo pulvinar venenatis. Lobortis etiam vivamus vitae fermentum phasellus scelerisque mi nisl accumsan. Consectetur nam habitant interdum class. Condimentum tincidunt aliquet consectetuer mauris curae a eget quam.<\/p>"
+                            },
+                            "elements": [],
+                            "isInner": false,
+                            "widgetType": "text-editor",
+                            "elType": "widget"
+                        },
+                        {
+                            "id": "7a3f7361",
+                            "settings": {
+                                "text": "Talk To Us",
+                                "align_mobile": "center",
+                                "size": "md"
+                            },
+                            "elements": [],
+                            "isInner": false,
+                            "widgetType": "button",
+                            "elType": "widget"
+                        }
+                    ],
+                    "isInner": false,
+                    "elType": "column"
+                }
+            ],
+            "isInner": false,
+            "elType": "section"
+        }
+    ],
+    "page_settings": {
+        "eael_ext_toc_title": "Table of Contents",
+        "template": "elementor_header_footer"
+    }
+}

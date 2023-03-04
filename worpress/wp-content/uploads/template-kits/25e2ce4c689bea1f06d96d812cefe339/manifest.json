@@ -1,0 +1,2289 @@
+{
+    "manifest_version": "1.0.19",
+    "title": "Kidzy",
+    "page_builder": "elementor",
+    "kit_version": "1.0.1",
+    "templates": [
+        {
+            "name": "Global Kit Styles",
+            "screenshot": "screenshots\/global-kit-styles.png",
+            "source": "templates\/global.json",
+            "preview_url": "https:\/\/templatekit.tokomoo.com",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "global-styles",
+                "include_in_zip": "1",
+                "elementor_pro_required": null,
+                "additional_template_information": [
+                    "These are the global theme styles configured through the Elementor Theme Styles area."
+                ]
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Homepage",
+            "screenshot": "screenshots\/homepage.jpg",
+            "source": "templates\/homepage.json",
+            "preview_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/template-kit\/homepage\/",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-home",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Page 01 - Class",
+            "screenshot": "screenshots\/page-01-class.png",
+            "source": "templates\/page-01-class.json",
+            "preview_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/template-kit\/class\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Page 02 - Class Detail",
+            "screenshot": "screenshots\/page-02-class-detail.png",
+            "source": "templates\/page-02-class-detail.json",
+            "preview_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/template-kit\/class-detail\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Page 03 - Contact",
+            "screenshot": "screenshots\/page-03-contact.png",
+            "source": "templates\/page-03-contact.json",
+            "preview_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/template-kit\/contact\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Page 04 - About Us",
+            "screenshot": "screenshots\/page-04-about-us.jpg",
+            "source": "templates\/page-04-about-us.json",
+            "preview_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/template-kit\/about-us\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Page 05 - Teacher",
+            "screenshot": "screenshots\/page-05-teacher.png",
+            "source": "templates\/page-05-teacher.json",
+            "preview_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/template-kit\/teacher\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Page 06 - Teacher Detail",
+            "screenshot": "screenshots\/page-06-teacher-detail.png",
+            "source": "templates\/page-06-teacher-detail.json",
+            "preview_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/template-kit\/teacher-detail\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Page 07 - Event & Competition",
+            "screenshot": "screenshots\/page-07-event-competition.png",
+            "source": "templates\/page-07-event-competition.json",
+            "preview_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/template-kit\/event-competition\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Page 08 - Gallery",
+            "screenshot": "screenshots\/page-08-gallery.jpg",
+            "source": "templates\/page-08-gallery.json",
+            "preview_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/template-kit\/gallery\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Page 09 - Pricing",
+            "screenshot": "screenshots\/page-09-pricing.png",
+            "source": "templates\/page-09-pricing.json",
+            "preview_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/template-kit\/pricing\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Theme Builder \u2013 Footer (Elementor Pro)",
+            "screenshot": "screenshots\/theme-builder-footer-elementor-pro-.png",
+            "source": "templates\/theme-builder-footer-elementor-pro-.json",
+            "preview_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/?elementor_library=theme-builder-footer-elementor-pro",
+            "type": "footer",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-footer",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "footer",
+                "elementor_pro_conditions": [
+                    "include\/general"
+                ],
+                "additional_template_information": [
+                    "This is a \"Footer\" template for Elementor Pro.",
+                    "This template will display on: Entire Site."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Theme Builder \u2013 Header (Elementor Pro)",
+            "screenshot": "screenshots\/theme-builder-header-elementor-pro-.png",
+            "source": "templates\/theme-builder-header-elementor-pro-.json",
+            "preview_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/?elementor_library=theme-builder-header-elementor-pro",
+            "type": "header",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-header",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "header",
+                "elementor_pro_conditions": [
+                    "include\/general"
+                ],
+                "additional_template_information": [
+                    "This is a \"Header\" template for Elementor Pro.",
+                    "This template will display on: Entire Site."
+                ]
+            },
+            "elementor_pro_required": true
+        }
+    ],
+    "required_plugins": [
+        {
+            "name": "Elementor",
+            "version": "3.2.5",
+            "file": "elementor\/elementor.php",
+            "author": "Elementor.com"
+        },
+        {
+            "name": "Elementor Pro",
+            "version": "3.2.0",
+            "file": "elementor-pro\/elementor-pro.php",
+            "author": "Elementor.com"
+        }
+    ],
+    "images": [
+        {
+            "filename": "Path-1.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Path-1-600x487.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 6713,
+            "dimensions": [
+                765,
+                621
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "children-standing-in-circle-PF5A7B3.jpg",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/children-standing-in-circle-PF5A7B3.jpg",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 535481,
+            "dimensions": [
+                757,
+                1136
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-PF5A7B3"
+        },
+        {
+            "filename": "school-girls-and-boy-playing-on-laptop-in-school-D4YBH2W-1.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/school-girls-and-boy-playing-on-laptop-in-school-D4YBH2W-1.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 103605,
+            "dimensions": [
+                314,
+                232
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-D4YBH2W"
+        },
+        {
+            "filename": "Wave-1.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Wave-1.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 1047,
+            "dimensions": [
+                275,
+                182
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "Elipse-Group.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Elipse-Group-600x151.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 842,
+            "dimensions": [
+                1442,
+                364
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "Wave-2.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Wave-2.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/page-04-about-us.json",
+                    "name": "Page 04 - About Us"
+                }
+            ],
+            "filesize": 2675,
+            "dimensions": [
+                347,
+                204
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "Icon-1.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Icon-1.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 1916,
+            "dimensions": [
+                90,
+                90
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/40-science-and-education-icons-94MKRW"
+        },
+        {
+            "filename": "Icon-2.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Icon-2.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 2106,
+            "dimensions": [
+                90,
+                90
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/40-science-and-education-icons-94MKRW"
+        },
+        {
+            "filename": "Path-2.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Path-2.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 4337,
+            "dimensions": [
+                375,
+                418
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "portrait-of-smiling-high-school-student-group-with-UH7K4V8.jpg",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/portrait-of-smiling-high-school-student-group-with-UH7K4V8.jpg",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 162859,
+            "dimensions": [
+                613,
+                409
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-UH7K4V8"
+        },
+        {
+            "filename": "Icon-3.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Icon-3.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 1879,
+            "dimensions": [
+                90,
+                90
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/40-science-and-education-icons-94MKRW"
+        },
+        {
+            "filename": "Icon-4.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Icon-4.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 2013,
+            "dimensions": [
+                90,
+                90
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/40-science-and-education-icons-94MKRW"
+        },
+        {
+            "filename": "Wave-4.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Wave-4.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/page-02-class-detail.json",
+                    "name": "Page 02 - Class Detail"
+                }
+            ],
+            "filesize": 1307,
+            "dimensions": [
+                292,
+                89
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "portrait-of-male-elementary-school-teacher-standin-HKVZWJS.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/portrait-of-male-elementary-school-teacher-standin-HKVZWJS.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/page-02-class-detail.json",
+                    "name": "Page 02 - Class Detail"
+                },
+                {
+                    "source": "templates\/page-04-about-us.json",
+                    "name": "Page 04 - About Us"
+                },
+                {
+                    "source": "templates\/page-05-teacher.json",
+                    "name": "Page 05 - Teacher"
+                },
+                {
+                    "source": "templates\/page-08-gallery.json",
+                    "name": "Page 08 - Gallery"
+                }
+            ],
+            "filesize": 4364,
+            "dimensions": [
+                45,
+                45
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-HKVZWJS"
+        },
+        {
+            "filename": "school-students-and-chemistry-teacher-FZJW7SF.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/school-students-and-chemistry-teacher-FZJW7SF.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/page-01-class.json",
+                    "name": "Page 01 - Class"
+                },
+                {
+                    "source": "templates\/page-02-class-detail.json",
+                    "name": "Page 02 - Class Detail"
+                }
+            ],
+            "filesize": 135316,
+            "dimensions": [
+                244,
+                356
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-FZJW7SF"
+        },
+        {
+            "filename": "Teacher-2.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Teacher-2.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/page-01-class.json",
+                    "name": "Page 01 - Class"
+                },
+                {
+                    "source": "templates\/page-02-class-detail.json",
+                    "name": "Page 02 - Class Detail"
+                }
+            ],
+            "filesize": 5083,
+            "dimensions": [
+                45,
+                45
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-DTQFWME"
+        },
+        {
+            "filename": "asking-schoolgirl-PVYM9HT.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/asking-schoolgirl-PVYM9HT.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/page-01-class.json",
+                    "name": "Page 01 - Class"
+                },
+                {
+                    "source": "templates\/page-02-class-detail.json",
+                    "name": "Page 02 - Class Detail"
+                }
+            ],
+            "filesize": 133862,
+            "dimensions": [
+                244,
+                356
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-PVYM9HT"
+        },
+        {
+            "filename": "Teacher-1.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Teacher-1.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/page-01-class.json",
+                    "name": "Page 01 - Class"
+                },
+                {
+                    "source": "templates\/page-02-class-detail.json",
+                    "name": "Page 02 - Class Detail"
+                }
+            ],
+            "filesize": 3713,
+            "dimensions": [
+                45,
+                45
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-AEJBEM9"
+        },
+        {
+            "filename": "session-at-school-4FQJKFW.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/session-at-school-4FQJKFW.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/page-01-class.json",
+                    "name": "Page 01 - Class"
+                },
+                {
+                    "source": "templates\/page-02-class-detail.json",
+                    "name": "Page 02 - Class Detail"
+                }
+            ],
+            "filesize": 107540,
+            "dimensions": [
+                244,
+                356
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-4FQJKFW"
+        },
+        {
+            "filename": "teacher-using-digital-tablet-AEJBEM9.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/teacher-using-digital-tablet-AEJBEM9.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/page-04-about-us.json",
+                    "name": "Page 04 - About Us"
+                },
+                {
+                    "source": "templates\/page-06-teacher-detail.json",
+                    "name": "Page 06 - Teacher Detail"
+                }
+            ],
+            "filesize": 125567,
+            "dimensions": [
+                300,
+                400
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-AEJBEM9"
+        },
+        {
+            "filename": "handsome-business-teacher-preparing-for-lecture-JRZX7TN.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/handsome-business-teacher-preparing-for-lecture-JRZX7TN.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/page-04-about-us.json",
+                    "name": "Page 04 - About Us"
+                },
+                {
+                    "source": "templates\/page-06-teacher-detail.json",
+                    "name": "Page 06 - Teacher Detail"
+                }
+            ],
+            "filesize": 171346,
+            "dimensions": [
+                300,
+                400
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-JRZX7TN"
+        },
+        {
+            "filename": "teacher-by-workplace-DTQFWM.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/teacher-by-workplace-DTQFWM.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/page-04-about-us.json",
+                    "name": "Page 04 - About Us"
+                },
+                {
+                    "source": "templates\/page-06-teacher-detail.json",
+                    "name": "Page 06 - Teacher Detail"
+                }
+            ],
+            "filesize": 164535,
+            "dimensions": [
+                300,
+                400
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-DTQFWME"
+        },
+        {
+            "filename": "smiling-science-teacher-YXXHLVC.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/smiling-science-teacher-YXXHLVC.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/page-04-about-us.json",
+                    "name": "Page 04 - About Us"
+                },
+                {
+                    "source": "templates\/page-06-teacher-detail.json",
+                    "name": "Page 06 - Teacher Detail"
+                }
+            ],
+            "filesize": 131071,
+            "dimensions": [
+                300,
+                400
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-YXXHLVC"
+        },
+        {
+            "filename": "Icon-5.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Icon-5.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 924,
+            "dimensions": [
+                105,
+                100
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/education-icons-set-1-blue-series-7FND9D"
+        },
+        {
+            "filename": "Icon-7.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Icon-7.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 1004,
+            "dimensions": [
+                74,
+                96
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/40-science-and-education-icons-94MKRW"
+        },
+        {
+            "filename": "Icon-6.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Icon-6.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 1076,
+            "dimensions": [
+                99,
+                99
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/40-science-and-education-icons-94MKRW"
+        },
+        {
+            "filename": "Icon-8.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Icon-8.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 1108,
+            "dimensions": [
+                95,
+                95
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/40-science-and-education-icons-94MKRW"
+        },
+        {
+            "filename": "teacher-and-kids-looking-on-tablet-computer-during-Z93CVLY.jpg",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/teacher-and-kids-looking-on-tablet-computer-during-Z93CVLY-800x437.jpg",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 374313,
+            "dimensions": [
+                1201,
+                656
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-Z93CVLY"
+        },
+        {
+            "filename": "Dash-Wave.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Dash-Wave-600x566.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 6537,
+            "dimensions": [
+                712,
+                672
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "Wave-5.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Wave-5.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/page-03-contact.json",
+                    "name": "Page 03 - Contact"
+                }
+            ],
+            "filesize": 1566,
+            "dimensions": [
+                387,
+                298
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "kids-posing-in-halloween-costume-5JXTFFY-1.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/kids-posing-in-halloween-costume-5JXTFFY-1.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/page-07-event-competition.json",
+                    "name": "Page 07 - Event & Competition"
+                }
+            ],
+            "filesize": 167888,
+            "dimensions": [
+                400,
+                281
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-5JXTFFY"
+        },
+        {
+            "filename": "group-of-children-blowing-party-horns-P4KM5NU-1.jpg",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/group-of-children-blowing-party-horns-P4KM5NU-1.jpg",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                },
+                {
+                    "source": "templates\/page-07-event-competition.json",
+                    "name": "Page 07 - Event & Competition"
+                }
+            ],
+            "filesize": 31368,
+            "dimensions": [
+                400,
+                281
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-P4KM5NU"
+        },
+        {
+            "filename": "smiling-girls-and-boys-PA49GVJ.jpg",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/smiling-girls-and-boys-PA49GVJ.jpg",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 58083,
+            "dimensions": [
+                570,
+                546
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-PA49GVJ"
+        },
+        {
+            "filename": "young-sportswomen-and-schoolboy-in-activewear-cree-2PELHR9.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/young-sportswomen-and-schoolboy-in-activewear-cree-2PELHR9.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 143557,
+            "dimensions": [
+                285,
+                253
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-2PELHR9"
+        },
+        {
+            "filename": "kids-just-being-kids-RD27RUH.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/kids-just-being-kids-RD27RUH.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 150278,
+            "dimensions": [
+                285,
+                253
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-RD27RUH"
+        },
+        {
+            "filename": "group-of-high-school-students-running-out-of-schoo-M7CTE4B.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/group-of-high-school-students-running-out-of-schoo-M7CTE4B.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 155475,
+            "dimensions": [
+                369,
+                280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-M7CTE4B"
+        },
+        {
+            "filename": "schoolgirl-studying-in-classroom-PWLN8V7.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/schoolgirl-studying-in-classroom-PWLN8V7.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 83599,
+            "dimensions": [
+                202,
+                280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-PWLN8V7"
+        },
+        {
+            "filename": "portrait-of-happy-pre-adolescent-boy-T2Z4AU5.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/portrait-of-happy-pre-adolescent-boy-T2Z4AU5.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 160442,
+            "dimensions": [
+                350,
+                400
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-T2Z4AU5"
+        },
+        {
+            "filename": "Path-3.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Path-3.png",
+            "templates": [
+                {
+                    "source": "templates\/homepage.json",
+                    "name": "Homepage"
+                }
+            ],
+            "filesize": 4626,
+            "dimensions": [
+                408,
+                457
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "Elipse-Group-2.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Elipse-Group-2-600x210.png",
+            "templates": [
+                {
+                    "source": "templates\/page-01-class.json",
+                    "name": "Page 01 - Class"
+                },
+                {
+                    "source": "templates\/page-02-class-detail.json",
+                    "name": "Page 02 - Class Detail"
+                },
+                {
+                    "source": "templates\/page-03-contact.json",
+                    "name": "Page 03 - Contact"
+                },
+                {
+                    "source": "templates\/page-04-about-us.json",
+                    "name": "Page 04 - About Us"
+                },
+                {
+                    "source": "templates\/page-05-teacher.json",
+                    "name": "Page 05 - Teacher"
+                },
+                {
+                    "source": "templates\/page-06-teacher-detail.json",
+                    "name": "Page 06 - Teacher Detail"
+                },
+                {
+                    "source": "templates\/page-07-event-competition.json",
+                    "name": "Page 07 - Event & Competition"
+                },
+                {
+                    "source": "templates\/page-08-gallery.json",
+                    "name": "Page 08 - Gallery"
+                },
+                {
+                    "source": "templates\/page-09-pricing.json",
+                    "name": "Page 09 - Pricing"
+                }
+            ],
+            "filesize": 1448,
+            "dimensions": [
+                1440,
+                504
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "Wave-6.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Wave-6.png",
+            "templates": [
+                {
+                    "source": "templates\/page-01-class.json",
+                    "name": "Page 01 - Class"
+                },
+                {
+                    "source": "templates\/page-02-class-detail.json",
+                    "name": "Page 02 - Class Detail"
+                },
+                {
+                    "source": "templates\/page-03-contact.json",
+                    "name": "Page 03 - Contact"
+                },
+                {
+                    "source": "templates\/page-04-about-us.json",
+                    "name": "Page 04 - About Us"
+                },
+                {
+                    "source": "templates\/page-05-teacher.json",
+                    "name": "Page 05 - Teacher"
+                },
+                {
+                    "source": "templates\/page-06-teacher-detail.json",
+                    "name": "Page 06 - Teacher Detail"
+                },
+                {
+                    "source": "templates\/page-07-event-competition.json",
+                    "name": "Page 07 - Event & Competition"
+                },
+                {
+                    "source": "templates\/page-08-gallery.json",
+                    "name": "Page 08 - Gallery"
+                },
+                {
+                    "source": "templates\/page-09-pricing.json",
+                    "name": "Page 09 - Pricing"
+                }
+            ],
+            "filesize": 5023,
+            "dimensions": [
+                580,
+                321
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "Wave-7.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Wave-7.png",
+            "templates": [
+                {
+                    "source": "templates\/page-01-class.json",
+                    "name": "Page 01 - Class"
+                },
+                {
+                    "source": "templates\/page-02-class-detail.json",
+                    "name": "Page 02 - Class Detail"
+                },
+                {
+                    "source": "templates\/page-03-contact.json",
+                    "name": "Page 03 - Contact"
+                },
+                {
+                    "source": "templates\/page-04-about-us.json",
+                    "name": "Page 04 - About Us"
+                },
+                {
+                    "source": "templates\/page-05-teacher.json",
+                    "name": "Page 05 - Teacher"
+                },
+                {
+                    "source": "templates\/page-06-teacher-detail.json",
+                    "name": "Page 06 - Teacher Detail"
+                },
+                {
+                    "source": "templates\/page-07-event-competition.json",
+                    "name": "Page 07 - Event & Competition"
+                },
+                {
+                    "source": "templates\/page-08-gallery.json",
+                    "name": "Page 08 - Gallery"
+                },
+                {
+                    "source": "templates\/page-09-pricing.json",
+                    "name": "Page 09 - Pricing"
+                }
+            ],
+            "filesize": 4837,
+            "dimensions": [
+                590,
+                396
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "Path.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Path.png",
+            "templates": [
+                {
+                    "source": "templates\/page-01-class.json",
+                    "name": "Page 01 - Class"
+                },
+                {
+                    "source": "templates\/page-02-class-detail.json",
+                    "name": "Page 02 - Class Detail"
+                },
+                {
+                    "source": "templates\/page-03-contact.json",
+                    "name": "Page 03 - Contact"
+                },
+                {
+                    "source": "templates\/page-04-about-us.json",
+                    "name": "Page 04 - About Us"
+                },
+                {
+                    "source": "templates\/page-05-teacher.json",
+                    "name": "Page 05 - Teacher"
+                },
+                {
+                    "source": "templates\/page-06-teacher-detail.json",
+                    "name": "Page 06 - Teacher Detail"
+                },
+                {
+                    "source": "templates\/page-07-event-competition.json",
+                    "name": "Page 07 - Event & Competition"
+                },
+                {
+                    "source": "templates\/page-08-gallery.json",
+                    "name": "Page 08 - Gallery"
+                },
+                {
+                    "source": "templates\/page-09-pricing.json",
+                    "name": "Page 09 - Pricing"
+                }
+            ],
+            "filesize": 76,
+            "dimensions": [
+                2,
+                28
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "woman-26YNYU8.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/woman-26YNYU8.png",
+            "templates": [
+                {
+                    "source": "templates\/page-01-class.json",
+                    "name": "Page 01 - Class"
+                },
+                {
+                    "source": "templates\/page-04-about-us.json",
+                    "name": "Page 04 - About Us"
+                },
+                {
+                    "source": "templates\/page-05-teacher.json",
+                    "name": "Page 05 - Teacher"
+                },
+                {
+                    "source": "templates\/page-08-gallery.json",
+                    "name": "Page 08 - Gallery"
+                }
+            ],
+            "filesize": 5555,
+            "dimensions": [
+                50,
+                50
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-26YNYU8"
+        },
+        {
+            "filename": "modern-man-5ZNHUT3.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/modern-man-5ZNHUT3.png",
+            "templates": [
+                {
+                    "source": "templates\/page-01-class.json",
+                    "name": "Page 01 - Class"
+                },
+                {
+                    "source": "templates\/page-04-about-us.json",
+                    "name": "Page 04 - About Us"
+                },
+                {
+                    "source": "templates\/page-05-teacher.json",
+                    "name": "Page 05 - Teacher"
+                },
+                {
+                    "source": "templates\/page-08-gallery.json",
+                    "name": "Page 08 - Gallery"
+                }
+            ],
+            "filesize": 5186,
+            "dimensions": [
+                50,
+                50
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-5ZNHUT3"
+        },
+        {
+            "filename": "schoolboy-raising-hand-to-answer-in-elementary-sch-XACYWN2.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/schoolboy-raising-hand-to-answer-in-elementary-sch-XACYWN2.png",
+            "templates": [
+                {
+                    "source": "templates\/page-01-class.json",
+                    "name": "Page 01 - Class"
+                }
+            ],
+            "filesize": 102463,
+            "dimensions": [
+                244,
+                356
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-XACYWN2"
+        },
+        {
+            "filename": "happy-little-boy-enjoying-art-class-GB3RZHU-1.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/happy-little-boy-enjoying-art-class-GB3RZHU-1.png",
+            "templates": [
+                {
+                    "source": "templates\/page-01-class.json",
+                    "name": "Page 01 - Class"
+                }
+            ],
+            "filesize": 154873,
+            "dimensions": [
+                244,
+                356
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-GB3RZHU"
+        },
+        {
+            "filename": "lesson-of-english-A7BG8LC-1.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/lesson-of-english-A7BG8LC-1.png",
+            "templates": [
+                {
+                    "source": "templates\/page-01-class.json",
+                    "name": "Page 01 - Class"
+                }
+            ],
+            "filesize": 112352,
+            "dimensions": [
+                244,
+                356
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-A7BG8LC"
+        },
+        {
+            "filename": "teacher-instructing-elementary-school-kids-in-clas-P54STUW-1.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/teacher-instructing-elementary-school-kids-in-clas-P54STUW-1.png",
+            "templates": [
+                {
+                    "source": "templates\/page-01-class.json",
+                    "name": "Page 01 - Class"
+                },
+                {
+                    "source": "templates\/page-08-gallery.json",
+                    "name": "Page 08 - Gallery"
+                }
+            ],
+            "filesize": 141351,
+            "dimensions": [
+                350,
+                280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-P54STUW"
+        },
+        {
+            "filename": "junior-football-team-7P54C8Z.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/junior-football-team-7P54C8Z.png",
+            "templates": [
+                {
+                    "source": "templates\/page-01-class.json",
+                    "name": "Page 01 - Class"
+                },
+                {
+                    "source": "templates\/page-08-gallery.json",
+                    "name": "Page 08 - Gallery"
+                }
+            ],
+            "filesize": 171833,
+            "dimensions": [
+                350,
+                280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-7P54C8Z"
+        },
+        {
+            "filename": "difficult-exam-in-elementary-school-5S9KMNQ.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/difficult-exam-in-elementary-school-5S9KMNQ.png",
+            "templates": [
+                {
+                    "source": "templates\/page-01-class.json",
+                    "name": "Page 01 - Class"
+                },
+                {
+                    "source": "templates\/page-08-gallery.json",
+                    "name": "Page 08 - Gallery"
+                }
+            ],
+            "filesize": 141242,
+            "dimensions": [
+                350,
+                280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-5S9KMNQ"
+        },
+        {
+            "filename": "Path-4.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Path-4-600x533.png",
+            "templates": [
+                {
+                    "source": "templates\/page-01-class.json",
+                    "name": "Page 01 - Class"
+                }
+            ],
+            "filesize": 6271,
+            "dimensions": [
+                663,
+                589
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "helping-with-homework-5U6SBPZ.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/helping-with-homework-5U6SBPZ.png",
+            "templates": [
+                {
+                    "source": "templates\/page-01-class.json",
+                    "name": "Page 01 - Class"
+                }
+            ],
+            "filesize": 76326,
+            "dimensions": [
+                324,
+                218
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-5U6SBPZ"
+        },
+        {
+            "filename": "girl-doing-homework-or-online-education-6QJ7S9V.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/girl-doing-homework-or-online-education-6QJ7S9V.png",
+            "templates": [
+                {
+                    "source": "templates\/page-01-class.json",
+                    "name": "Page 01 - Class"
+                }
+            ],
+            "filesize": 71012,
+            "dimensions": [
+                297,
+                191
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-6QJ7S9V"
+        },
+        {
+            "filename": "group-of-happy-elementary-school-students-talking-PT545EB.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/group-of-happy-elementary-school-students-talking-PT545EB.png",
+            "templates": [
+                {
+                    "source": "templates\/page-01-class.json",
+                    "name": "Page 01 - Class"
+                }
+            ],
+            "filesize": 94391,
+            "dimensions": [
+                291,
+                187
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-PT545EB"
+        },
+        {
+            "filename": "speculating-on-the-subject-STAPV59.jpg",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/speculating-on-the-subject-STAPV59-600x343.jpg",
+            "templates": [
+                {
+                    "source": "templates\/page-02-class-detail.json",
+                    "name": "Page 02 - Class Detail"
+                }
+            ],
+            "filesize": 39740,
+            "dimensions": [
+                700,
+                400
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-STAPV59"
+        },
+        {
+            "filename": "Img-Detail-Class.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Img-Detail-Class.png",
+            "templates": [
+                {
+                    "source": "templates\/page-02-class-detail.json",
+                    "name": "Page 02 - Class Detail"
+                }
+            ],
+            "filesize": 58629,
+            "dimensions": [
+                220,
+                157
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-PVYM9HT"
+        },
+        {
+            "filename": "laughing-at-lesson-MWP2CGJ.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/laughing-at-lesson-MWP2CGJ.png",
+            "templates": [
+                {
+                    "source": "templates\/page-02-class-detail.json",
+                    "name": "Page 02 - Class Detail"
+                }
+            ],
+            "filesize": 61984,
+            "dimensions": [
+                220,
+                157
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-MWP2CGJ"
+        },
+        {
+            "filename": "checking-paper-42JTER9.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/checking-paper-42JTER9.png",
+            "templates": [
+                {
+                    "source": "templates\/page-02-class-detail.json",
+                    "name": "Page 02 - Class Detail"
+                }
+            ],
+            "filesize": 54541,
+            "dimensions": [
+                220,
+                157
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-42JTER9"
+        },
+        {
+            "filename": "Img-Teacher.jpg",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Img-Teacher.jpg",
+            "templates": [
+                {
+                    "source": "templates\/page-02-class-detail.json",
+                    "name": "Page 02 - Class Detail"
+                }
+            ],
+            "filesize": 40498,
+            "dimensions": [
+                500,
+                600
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-DTQFWME"
+        },
+        {
+            "filename": "Address.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Address.png",
+            "templates": [
+                {
+                    "source": "templates\/page-03-contact.json",
+                    "name": "Page 03 - Contact"
+                }
+            ],
+            "filesize": 643,
+            "dimensions": [
+                150,
+                150
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/education-icons-set-1-blue-series-7FND9D"
+        },
+        {
+            "filename": "Phone-Email.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Phone-Email.png",
+            "templates": [
+                {
+                    "source": "templates\/page-03-contact.json",
+                    "name": "Page 03 - Contact"
+                }
+            ],
+            "filesize": 938,
+            "dimensions": [
+                150,
+                150
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/education-icons-set-4-blue-series-RD2MWW"
+        },
+        {
+            "filename": "Work-Hours.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Work-Hours.png",
+            "templates": [
+                {
+                    "source": "templates\/page-03-contact.json",
+                    "name": "Page 03 - Contact"
+                }
+            ],
+            "filesize": 1002,
+            "dimensions": [
+                150,
+                150
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/basic-essentials-icons-set-Y4XDXZV\/preview\/2"
+        },
+        {
+            "filename": "Wave-8.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Wave-8-600x69.png",
+            "templates": [
+                {
+                    "source": "templates\/page-03-contact.json",
+                    "name": "Page 03 - Contact"
+                },
+                {
+                    "source": "templates\/page-04-about-us.json",
+                    "name": "Page 04 - About Us"
+                },
+                {
+                    "source": "templates\/page-05-teacher.json",
+                    "name": "Page 05 - Teacher"
+                },
+                {
+                    "source": "templates\/page-07-event-competition.json",
+                    "name": "Page 07 - Event & Competition"
+                },
+                {
+                    "source": "templates\/page-08-gallery.json",
+                    "name": "Page 08 - Gallery"
+                }
+            ],
+            "filesize": 15776,
+            "dimensions": [
+                1636,
+                188
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "Img-about-1.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Img-about-1-600x529.png",
+            "templates": [
+                {
+                    "source": "templates\/page-04-about-us.json",
+                    "name": "Page 04 - About Us"
+                }
+            ],
+            "filesize": 547766,
+            "dimensions": [
+                654,
+                577
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-UH7K4V8"
+        },
+        {
+            "filename": "Img-about-2.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Img-about-2-600x444.png",
+            "templates": [
+                {
+                    "source": "templates\/page-04-about-us.json",
+                    "name": "Page 04 - About Us"
+                }
+            ],
+            "filesize": 434179,
+            "dimensions": [
+                744,
+                550
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-D4YBH2W"
+        },
+        {
+            "filename": "teacher-instructing-elementary-school-kids-in-clas-P54STUW.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/teacher-instructing-elementary-school-kids-in-clas-P54STUW.png",
+            "templates": [
+                {
+                    "source": "templates\/page-04-about-us.json",
+                    "name": "Page 04 - About Us"
+                }
+            ],
+            "filesize": 134853,
+            "dimensions": [
+                370,
+                243
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-P54STUW"
+        },
+        {
+            "filename": "portrait-of-sports-teacher-and-school-kids-in-bask-P5URUXE.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/portrait-of-sports-teacher-and-school-kids-in-bask-P5URUXE.png",
+            "templates": [
+                {
+                    "source": "templates\/page-04-about-us.json",
+                    "name": "Page 04 - About Us"
+                }
+            ],
+            "filesize": 150644,
+            "dimensions": [
+                370,
+                243
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-P5URUXE"
+        },
+        {
+            "filename": "schoolboy-with-microscope-and-copybook-in-science-QUHLD8Q.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/schoolboy-with-microscope-and-copybook-in-science-QUHLD8Q.png",
+            "templates": [
+                {
+                    "source": "templates\/page-04-about-us.json",
+                    "name": "Page 04 - About Us"
+                }
+            ],
+            "filesize": 99937,
+            "dimensions": [
+                370,
+                243
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-QUHLD8Q"
+        },
+        {
+            "filename": "schoolgirl-making-diy-robot-at-stem-lab-34H76D8.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/schoolgirl-making-diy-robot-at-stem-lab-34H76D8.png",
+            "templates": [
+                {
+                    "source": "templates\/page-04-about-us.json",
+                    "name": "Page 04 - About Us"
+                }
+            ],
+            "filesize": 136617,
+            "dimensions": [
+                370,
+                243
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-34H76D8"
+        },
+        {
+            "filename": "a-group-of-cheerful-small-school-kids-in-canteen-e-GE6JMQN.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/a-group-of-cheerful-small-school-kids-in-canteen-e-GE6JMQN.png",
+            "templates": [
+                {
+                    "source": "templates\/page-04-about-us.json",
+                    "name": "Page 04 - About Us"
+                }
+            ],
+            "filesize": 123446,
+            "dimensions": [
+                370,
+                243
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-GE6JMQN"
+        },
+        {
+            "filename": "children-drawing-at-library-PSL7KE2.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/children-drawing-at-library-PSL7KE2.png",
+            "templates": [
+                {
+                    "source": "templates\/page-04-about-us.json",
+                    "name": "Page 04 - About Us"
+                }
+            ],
+            "filesize": 154870,
+            "dimensions": [
+                370,
+                243
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-PSL7KE2"
+        },
+        {
+            "filename": "Teacher-3.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Teacher-3.png",
+            "templates": [
+                {
+                    "source": "templates\/page-05-teacher.json",
+                    "name": "Page 05 - Teacher"
+                }
+            ],
+            "filesize": 108264,
+            "dimensions": [
+                280,
+                350
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-AEJBEM9"
+        },
+        {
+            "filename": "Teacher-4.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Teacher-4.png",
+            "templates": [
+                {
+                    "source": "templates\/page-05-teacher.json",
+                    "name": "Page 05 - Teacher"
+                }
+            ],
+            "filesize": 132222,
+            "dimensions": [
+                280,
+                350
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-JRZX7TN"
+        },
+        {
+            "filename": "Teacher-5.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Teacher-5.png",
+            "templates": [
+                {
+                    "source": "templates\/page-05-teacher.json",
+                    "name": "Page 05 - Teacher"
+                }
+            ],
+            "filesize": 142535,
+            "dimensions": [
+                280,
+                350
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-DTQFWME"
+        },
+        {
+            "filename": "Teacher-6.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Teacher-6.png",
+            "templates": [
+                {
+                    "source": "templates\/page-05-teacher.json",
+                    "name": "Page 05 - Teacher"
+                }
+            ],
+            "filesize": 109405,
+            "dimensions": [
+                280,
+                350
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-YXXHLVC"
+        },
+        {
+            "filename": "Teacher-7.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Teacher-7.png",
+            "templates": [
+                {
+                    "source": "templates\/page-05-teacher.json",
+                    "name": "Page 05 - Teacher"
+                }
+            ],
+            "filesize": 160392,
+            "dimensions": [
+                280,
+                350
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-HKVZWJS"
+        },
+        {
+            "filename": "Teacher-8.jpg",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Teacher-8.jpg",
+            "templates": [
+                {
+                    "source": "templates\/page-05-teacher.json",
+                    "name": "Page 05 - Teacher"
+                },
+                {
+                    "source": "templates\/page-06-teacher-detail.json",
+                    "name": "Page 06 - Teacher Detail"
+                }
+            ],
+            "filesize": 211298,
+            "dimensions": [
+                500,
+                751
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/portrait-of-female-elementary-school-teacher-stand-5ECDT7K"
+        },
+        {
+            "filename": "Path-5.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Path-5-600x537.png",
+            "templates": [
+                {
+                    "source": "templates\/page-05-teacher.json",
+                    "name": "Page 05 - Teacher"
+                },
+                {
+                    "source": "templates\/page-06-teacher-detail.json",
+                    "name": "Page 06 - Teacher Detail"
+                }
+            ],
+            "filesize": 6619,
+            "dimensions": [
+                751,
+                672
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "young-businesswoman-at-office-CZCJ975.jpg",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/young-businesswoman-at-office-CZCJ975-800x534.jpg",
+            "templates": [
+                {
+                    "source": "templates\/page-05-teacher.json",
+                    "name": "Page 05 - Teacher"
+                },
+                {
+                    "source": "templates\/page-06-teacher-detail.json",
+                    "name": "Page 06 - Teacher Detail"
+                }
+            ],
+            "filesize": 228757,
+            "dimensions": [
+                964,
+                643
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-CZCJ975"
+        },
+        {
+            "filename": "1-1-september-1st-academic-academy-afterschool-age-Q8MJL25.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/1-1-september-1st-academic-academy-afterschool-age-Q8MJL25.png",
+            "templates": [
+                {
+                    "source": "templates\/page-07-event-competition.json",
+                    "name": "Page 07 - Event & Competition"
+                }
+            ],
+            "filesize": 119316,
+            "dimensions": [
+                360,
+                250
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-Q8MJL25"
+        },
+        {
+            "filename": "Event-1.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Event-1.png",
+            "templates": [
+                {
+                    "source": "templates\/page-07-event-competition.json",
+                    "name": "Page 07 - Event & Competition"
+                }
+            ],
+            "filesize": 157920,
+            "dimensions": [
+                360,
+                250
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-2PELHR9"
+        },
+        {
+            "filename": "boys-fighting-at-competition-LU44EG9.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/boys-fighting-at-competition-LU44EG9.png",
+            "templates": [
+                {
+                    "source": "templates\/page-07-event-competition.json",
+                    "name": "Page 07 - Event & Competition"
+                }
+            ],
+            "filesize": 70876,
+            "dimensions": [
+                360,
+                250
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-LU44EG9"
+        },
+        {
+            "filename": "a-group-of-students-and-a-teacher-awarding-a-prize-YXJ8BY8.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/a-group-of-students-and-a-teacher-awarding-a-prize-YXJ8BY8.png",
+            "templates": [
+                {
+                    "source": "templates\/page-07-event-competition.json",
+                    "name": "Page 07 - Event & Competition"
+                }
+            ],
+            "filesize": 143527,
+            "dimensions": [
+                360,
+                250
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-YXJ8BY8"
+        },
+        {
+            "filename": "kids-pulling-faces-PG28DS6.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/kids-pulling-faces-PG28DS6.png",
+            "templates": [
+                {
+                    "source": "templates\/page-07-event-competition.json",
+                    "name": "Page 07 - Event & Competition"
+                }
+            ],
+            "filesize": 109363,
+            "dimensions": [
+                360,
+                250
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-PG28DS6"
+        },
+        {
+            "filename": "Event-2.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Event-2.png",
+            "templates": [
+                {
+                    "source": "templates\/page-07-event-competition.json",
+                    "name": "Page 07 - Event & Competition"
+                }
+            ],
+            "filesize": 162850,
+            "dimensions": [
+                360,
+                250
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-7P54C8Z"
+        },
+        {
+            "filename": "Gallery-1.jpg",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Gallery-1-600x460.jpg",
+            "templates": [
+                {
+                    "source": "templates\/page-08-gallery.json",
+                    "name": "Page 08 - Gallery"
+                }
+            ],
+            "filesize": 97803,
+            "dimensions": [
+                770,
+                590
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-PA49GVJ"
+        },
+        {
+            "filename": "african-schoolboy-studying-at-school-S8PVFX8.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/african-schoolboy-studying-at-school-S8PVFX8.png",
+            "templates": [
+                {
+                    "source": "templates\/page-08-gallery.json",
+                    "name": "Page 08 - Gallery"
+                }
+            ],
+            "filesize": 184040,
+            "dimensions": [
+                370,
+                280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-S8PVFX8"
+        },
+        {
+            "filename": "Gallery-2.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Gallery-2.png",
+            "templates": [
+                {
+                    "source": "templates\/page-08-gallery.json",
+                    "name": "Page 08 - Gallery"
+                }
+            ],
+            "filesize": 139337,
+            "dimensions": [
+                370,
+                280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-M7CTE4B"
+        },
+        {
+            "filename": "perform-art-class.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/perform-art-class.png",
+            "templates": [
+                {
+                    "source": "templates\/page-08-gallery.json",
+                    "name": "Page 08 - Gallery"
+                }
+            ],
+            "filesize": 109369,
+            "dimensions": [
+                370,
+                280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/girls-doing-gymnastics-3UZTQ5D"
+        },
+        {
+            "filename": "Gallery-3.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Gallery-3.png",
+            "templates": [
+                {
+                    "source": "templates\/page-08-gallery.json",
+                    "name": "Page 08 - Gallery"
+                }
+            ],
+            "filesize": 174583,
+            "dimensions": [
+                370,
+                280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-2PELHR9"
+        },
+        {
+            "filename": "Gallery-4.jpg",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Gallery-4.jpg",
+            "templates": [
+                {
+                    "source": "templates\/page-08-gallery.json",
+                    "name": "Page 08 - Gallery"
+                }
+            ],
+            "filesize": 37022,
+            "dimensions": [
+                370,
+                280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-RD27RUH"
+        },
+        {
+            "filename": "smiling-african-boy-raising-hand-in-school-WUXAY2J.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/smiling-african-boy-raising-hand-in-school-WUXAY2J.png",
+            "templates": [
+                {
+                    "source": "templates\/page-08-gallery.json",
+                    "name": "Page 08 - Gallery"
+                }
+            ],
+            "filesize": 109611,
+            "dimensions": [
+                370,
+                280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-WUXAY2J"
+        },
+        {
+            "filename": "blonde-girl-reading-book-in-school-classroom-QSUG4SA.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/blonde-girl-reading-book-in-school-classroom-QSUG4SA.png",
+            "templates": [
+                {
+                    "source": "templates\/page-08-gallery.json",
+                    "name": "Page 08 - Gallery"
+                }
+            ],
+            "filesize": 114655,
+            "dimensions": [
+                370,
+                280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-QSUG4SA"
+        },
+        {
+            "filename": "teacher-working-together-with-students-9H2D9PN.jpg",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/teacher-working-together-with-students-9H2D9PN-600x460.jpg",
+            "templates": [
+                {
+                    "source": "templates\/page-08-gallery.json",
+                    "name": "Page 08 - Gallery"
+                }
+            ],
+            "filesize": 49462,
+            "dimensions": [
+                770,
+                590
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-9H2D9PN"
+        },
+        {
+            "filename": "Letter.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Letter.png",
+            "templates": [
+                {
+                    "source": "templates\/page-09-pricing.json",
+                    "name": "Page 09 - Pricing"
+                }
+            ],
+            "filesize": 1260,
+            "dimensions": [
+                120,
+                120
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/education-icons-set-4-blue-series-RD2MWW"
+        },
+        {
+            "filename": "Logo-Kidzy-2.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Logo-Kidzy-2.png",
+            "templates": [
+                {
+                    "source": "templates\/theme-builder-footer-elementor-pro-.json",
+                    "name": "Theme Builder \u2013 Footer (Elementor Pro)"
+                }
+            ],
+            "filesize": 1467,
+            "dimensions": [
+                156,
+                64
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "Logo-Kidzy.png",
+            "thumbnail_url": "https:\/\/templatekit.tokomoo.com\/schoolkit\/wp-content\/uploads\/sites\/25\/2021\/06\/Logo-Kidzy.png",
+            "templates": [
+                {
+                    "source": "templates\/theme-builder-header-elementor-pro-.json",
+                    "name": "Theme Builder \u2013 Header (Elementor Pro)"
+                }
+            ],
+            "filesize": 1489,
+            "dimensions": [
+                156,
+                64
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        }
+    ]
+}

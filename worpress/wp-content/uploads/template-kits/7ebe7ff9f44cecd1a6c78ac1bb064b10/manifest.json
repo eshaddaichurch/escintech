@@ -1,0 +1,1815 @@
+{
+    "manifest_version": "1.0.14",
+    "title": "Obra - Kids Education Template Kit",
+    "page_builder": "elementor",
+    "kit_version": "1.1.0",
+    "templates": [
+        {
+            "name": "Global Kit Styles",
+            "screenshot": "screenshots\/default-kit.jpg",
+            "source": "templates\/global.json",
+            "preview_url": "http:\/\/templatekits.c-kav.com\/demo2",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "global-styles",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "additional_template_information": [
+                    "These are the global theme styles configured through the Elementor Theme Styles area."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Home 2",
+            "screenshot": "screenshots\/home-2.jpg",
+            "source": "templates\/home-2.json",
+            "preview_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/template-kit\/home-2\/",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-home",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Home 1",
+            "screenshot": "screenshots\/home-1.jpg",
+            "source": "templates\/home-1.json",
+            "preview_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/template-kit\/home-1\/",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-home",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Obra - Footer 1",
+            "screenshot": "screenshots\/obra-footer-1.jpg",
+            "source": "templates\/obra-footer-1.json",
+            "preview_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/?elementor_library=obra-footer-1",
+            "type": "footer",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-footer",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "footer",
+                "additional_template_information": [
+                    "This is a \"Footer\" template for Elementor Pro."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Obra - Footer 2",
+            "screenshot": "screenshots\/obra-footer-2.jpg",
+            "source": "templates\/obra-footer-2.json",
+            "preview_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/?elementor_library=obra-footer-2",
+            "type": "footer",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-footer",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "footer",
+                "elementor_pro_conditions": [
+                    "include\/general"
+                ],
+                "additional_template_information": [
+                    "This is a \"Footer\" template for Elementor Pro.",
+                    "This template will display on: Entire Site."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Obra \u2013 Archive",
+            "screenshot": "screenshots\/obra-archive.jpg",
+            "source": "templates\/obra-archive.json",
+            "preview_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/?elementor_library=obra-archive",
+            "type": "archive",
+            "category": "page",
+            "metadata": {
+                "template_type": "archive-category",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "archive",
+                "elementor_pro_conditions": [
+                    "include\/archive"
+                ],
+                "additional_template_information": [
+                    "This is a \"Archive\" template for Elementor Pro.",
+                    "This template will display on: All Archives."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Obra - Post single 1 with sidebar",
+            "screenshot": "screenshots\/obra-post-single-1-with-sidebar.jpg",
+            "source": "templates\/obra-post-single-1-with-sidebar.json",
+            "preview_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/?elementor_library=obra-post-single-1-with-sidebar",
+            "type": "single",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-post",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "single",
+                "elementor_pro_conditions": [
+                    "include\/singular"
+                ],
+                "additional_template_information": [
+                    "This is a \"Single\" template for Elementor Pro.",
+                    "This template will display on: All Singular."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Obra - Search popup",
+            "screenshot": "screenshots\/obra-search-popup.jpg",
+            "source": "templates\/obra-search-popup.json",
+            "preview_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/?elementor_library=obra-search-popup",
+            "type": "popup",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-popup",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "popup",
+                "additional_template_information": [
+                    "This is a \"Popup\" template for Elementor Pro."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Obra - Full screen menu",
+            "screenshot": "screenshots\/obra-full-screen-menu.jpg",
+            "source": "templates\/obra-full-screen-menu.json",
+            "preview_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/?elementor_library=obra-full-screen-menu",
+            "type": "popup",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-popup",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "popup",
+                "additional_template_information": [
+                    "This is a \"Popup\" template for Elementor Pro."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Common Elements",
+            "screenshot": "screenshots\/common-elements.jpg",
+            "source": "templates\/common-elements.json",
+            "preview_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/template-kit\/common-elements\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "About us",
+            "screenshot": "screenshots\/about-us.jpg",
+            "source": "templates\/about-us.json",
+            "preview_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/template-kit\/about-us\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Blog \u2013 classic",
+            "screenshot": "screenshots\/blog-classic.jpg",
+            "source": "templates\/blog-classic.json",
+            "preview_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/template-kit\/blog-classic\/",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "archive-blog",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Our team",
+            "screenshot": "screenshots\/our-team.jpg",
+            "source": "templates\/our-team.json",
+            "preview_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/template-kit\/our-team\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Contact us 1",
+            "screenshot": "screenshots\/contact-us-1.jpg",
+            "source": "templates\/contact-us-1.json",
+            "preview_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/template-kit\/contact-us-1\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Learning",
+            "screenshot": "screenshots\/learning.jpg",
+            "source": "templates\/learning.json",
+            "preview_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/template-kit\/learning\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Curriculum details",
+            "screenshot": "screenshots\/curriculum-details.jpg",
+            "source": "templates\/curriculum-details.json",
+            "preview_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/template-kit\/curriculum-details\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Gallery",
+            "screenshot": "screenshots\/gallery.jpg",
+            "source": "templates\/gallery.json",
+            "preview_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/template-kit\/gallery\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Campus",
+            "screenshot": "screenshots\/campus.jpg",
+            "source": "templates\/campus.json",
+            "preview_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/template-kit\/campus\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Contact us 2",
+            "screenshot": "screenshots\/contact-us-2.jpg",
+            "source": "templates\/contact-us-2.json",
+            "preview_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/template-kit\/contact-us-2\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Blog \u2013 Minimal",
+            "screenshot": "screenshots\/blog-minimal.jpg",
+            "source": "templates\/blog-minimal.json",
+            "preview_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/template-kit\/blog-minimal\/",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "archive-blog",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Obra - Header 1",
+            "screenshot": "screenshots\/obra-header-1.jpg",
+            "source": "templates\/obra-header-1.json",
+            "preview_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/?elementor_library=obra-header-1",
+            "type": "header",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-header",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "header",
+                "elementor_pro_conditions": [
+                    "include\/general"
+                ],
+                "additional_template_information": [
+                    "This is a \"Header\" template for Elementor Pro.",
+                    "This template will display on: Entire Site."
+                ]
+            },
+            "elementor_pro_required": true
+        }
+    ],
+    "required_plugins": [
+        {
+            "name": "Elementor Pro",
+            "version": "2.9.2",
+            "file": "elementor-pro\/elementor-pro.php",
+            "author": "Elementor.com"
+        },
+        {
+            "name": "Elementor",
+            "version": "2.9.8",
+            "file": "elementor\/elementor.php",
+            "author": "Elementor.com"
+        }
+    ],
+    "images": [
+        {
+            "filename": "bg-03.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/bg-03-600x338.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                }
+            ],
+            "filesize": 251627,
+            "dimensions": [
+                1920,
+                1080
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/child-plays-in-an-astronaut-costume-PKV3AX5"
+        },
+        {
+            "filename": "bg-03-m.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/bg-03-m-600x810.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                }
+            ],
+            "filesize": 195296,
+            "dimensions": [
+                800,
+                1080
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/child-plays-in-an-astronaut-costume-PKV3AX5"
+        },
+        {
+            "filename": "content-img-05.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/content-img-05-600x450.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/contact-us-1.json",
+                    "name": "Contact us 1"
+                },
+                {
+                    "source": "templates\/learning.json",
+                    "name": "Learning"
+                },
+                {
+                    "source": "templates\/curriculum-details.json",
+                    "name": "Curriculum details"
+                },
+                {
+                    "source": "templates\/campus.json",
+                    "name": "Campus"
+                }
+            ],
+            "filesize": 139134,
+            "dimensions": [
+                1200,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/girl-in-an-astronaut-costume-PHE98D5"
+        },
+        {
+            "filename": "arrow1.png",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/arrow1.png",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                }
+            ],
+            "filesize": 2623,
+            "dimensions": [
+                182,
+                42
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "arrow2.png",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/arrow2.png",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                }
+            ],
+            "filesize": 2652,
+            "dimensions": [
+                182,
+                42
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "gallery-img-01.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/gallery-img-01-600x450.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                },
+                {
+                    "source": "templates\/obra-post-single-1-with-sidebar.json",
+                    "name": "Obra - Post single 1 with sidebar"
+                },
+                {
+                    "source": "templates\/blog-classic.json",
+                    "name": "Blog \u2013 classic"
+                },
+                {
+                    "source": "templates\/learning.json",
+                    "name": "Learning"
+                },
+                {
+                    "source": "templates\/curriculum-details.json",
+                    "name": "Curriculum details"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                },
+                {
+                    "source": "templates\/campus.json",
+                    "name": "Campus"
+                },
+                {
+                    "source": "templates\/blog-minimal.json",
+                    "name": "Blog \u2013 Minimal"
+                }
+            ],
+            "filesize": 173733,
+            "dimensions": [
+                1200,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/children-dream-PEGBYJ6"
+        },
+        {
+            "filename": "gallery-img-10.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/gallery-img-10-600x450.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 110283,
+            "dimensions": [
+                1200,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/group-of-happy-kids-PVRWSMN"
+        },
+        {
+            "filename": "gallery-img-09.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/gallery-img-09-600x450.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 175310,
+            "dimensions": [
+                1200,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/concept-of-early-childhood-education-painting-tale-YDXLA56"
+        },
+        {
+            "filename": "gallery-img-07.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/gallery-img-07-600x450.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 132408,
+            "dimensions": [
+                1200,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/happy-children-building-robots-at-robotics-school-PQHPA3R"
+        },
+        {
+            "filename": "gallery-img-08.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/gallery-img-08-600x450.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 108143,
+            "dimensions": [
+                1200,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/happy-girl-building-robot-at-robotics-school-PAW3MWY"
+        },
+        {
+            "filename": "gallery-img-06.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/gallery-img-06-600x450.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                },
+                {
+                    "source": "templates\/obra-post-single-1-with-sidebar.json",
+                    "name": "Obra - Post single 1 with sidebar"
+                },
+                {
+                    "source": "templates\/blog-classic.json",
+                    "name": "Blog \u2013 classic"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                },
+                {
+                    "source": "templates\/blog-minimal.json",
+                    "name": "Blog \u2013 Minimal"
+                }
+            ],
+            "filesize": 131233,
+            "dimensions": [
+                1200,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/little-guitarist-PUUXGK2"
+        },
+        {
+            "filename": "gallery-img-04.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/gallery-img-04-600x450.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                },
+                {
+                    "source": "templates\/obra-post-single-1-with-sidebar.json",
+                    "name": "Obra - Post single 1 with sidebar"
+                },
+                {
+                    "source": "templates\/blog-classic.json",
+                    "name": "Blog \u2013 classic"
+                },
+                {
+                    "source": "templates\/learning.json",
+                    "name": "Learning"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                },
+                {
+                    "source": "templates\/blog-minimal.json",
+                    "name": "Blog \u2013 Minimal"
+                }
+            ],
+            "filesize": 256672,
+            "dimensions": [
+                1200,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/education-students-people-knowledge-concept-PGW49MU"
+        },
+        {
+            "filename": "gallery-img-05.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/gallery-img-05-600x450.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                },
+                {
+                    "source": "templates\/obra-post-single-1-with-sidebar.json",
+                    "name": "Obra - Post single 1 with sidebar"
+                },
+                {
+                    "source": "templates\/blog-classic.json",
+                    "name": "Blog \u2013 classic"
+                },
+                {
+                    "source": "templates\/learning.json",
+                    "name": "Learning"
+                },
+                {
+                    "source": "templates\/curriculum-details.json",
+                    "name": "Curriculum details"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                },
+                {
+                    "source": "templates\/campus.json",
+                    "name": "Campus"
+                },
+                {
+                    "source": "templates\/blog-minimal.json",
+                    "name": "Blog \u2013 Minimal"
+                }
+            ],
+            "filesize": 204216,
+            "dimensions": [
+                1200,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/happy-kids-are-painting-at-home-LLREXVU"
+        },
+        {
+            "filename": "content-img-01.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/content-img-01-600x450.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/learning.json",
+                    "name": "Learning"
+                },
+                {
+                    "source": "templates\/curriculum-details.json",
+                    "name": "Curriculum details"
+                },
+                {
+                    "source": "templates\/campus.json",
+                    "name": "Campus"
+                }
+            ],
+            "filesize": 188012,
+            "dimensions": [
+                1200,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/school-counselor-and-pupil-PHQRUXG"
+        },
+        {
+            "filename": "content-img-06.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/content-img-06-600x450.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/learning.json",
+                    "name": "Learning"
+                },
+                {
+                    "source": "templates\/curriculum-details.json",
+                    "name": "Curriculum details"
+                },
+                {
+                    "source": "templates\/campus.json",
+                    "name": "Campus"
+                }
+            ],
+            "filesize": 210146,
+            "dimensions": [
+                1200,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/happy-family-painting-together-GQ5CNEM"
+        },
+        {
+            "filename": "content-img-03.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/content-img-03-600x450.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/learning.json",
+                    "name": "Learning"
+                },
+                {
+                    "source": "templates\/curriculum-details.json",
+                    "name": "Curriculum details"
+                },
+                {
+                    "source": "templates\/campus.json",
+                    "name": "Campus"
+                }
+            ],
+            "filesize": 118632,
+            "dimensions": [
+                1200,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/a-professional-child-education-therapist-having-a--A6GRUB7"
+        },
+        {
+            "filename": "content-img-02.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/content-img-02-600x450.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our team"
+                },
+                {
+                    "source": "templates\/learning.json",
+                    "name": "Learning"
+                },
+                {
+                    "source": "templates\/curriculum-details.json",
+                    "name": "Curriculum details"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                },
+                {
+                    "source": "templates\/campus.json",
+                    "name": "Campus"
+                }
+            ],
+            "filesize": 144717,
+            "dimensions": [
+                1200,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/happy-children-building-robots-at-robotics-school-PFE6CPW"
+        },
+        {
+            "filename": "testimonial-img-01.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/testimonial-img-01.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our team"
+                }
+            ],
+            "filesize": 37919,
+            "dimensions": [
+                500,
+                500
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/smiling-group-of-ethnically-diverse-professional-b-E54D7RY"
+        },
+        {
+            "filename": "testimonial-img-02.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/testimonial-img-02.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our team"
+                }
+            ],
+            "filesize": 34002,
+            "dimensions": [
+                500,
+                500
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/smiling-group-of-ethnically-diverse-professional-b-E54D7RY"
+        },
+        {
+            "filename": "testimonial-img-03.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/testimonial-img-03.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our team"
+                }
+            ],
+            "filesize": 32847,
+            "dimensions": [
+                500,
+                500
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/smiling-group-of-ethnically-diverse-professional-b-E54D7RY"
+        },
+        {
+            "filename": "logo-08.png",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/logo-08.png",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our team"
+                }
+            ],
+            "filesize": 8791,
+            "dimensions": [
+                500,
+                300
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/logoipsum.com\/"
+        },
+        {
+            "filename": "logo-07.png",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/logo-07.png",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our team"
+                }
+            ],
+            "filesize": 9891,
+            "dimensions": [
+                500,
+                300
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/logoipsum.com\/"
+        },
+        {
+            "filename": "logo-04.png",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/logo-04.png",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our team"
+                }
+            ],
+            "filesize": 9490,
+            "dimensions": [
+                500,
+                300
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/logoipsum.com\/"
+        },
+        {
+            "filename": "logo-02.png",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/logo-02.png",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our team"
+                }
+            ],
+            "filesize": 8149,
+            "dimensions": [
+                500,
+                300
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/logoipsum.com\/"
+        },
+        {
+            "filename": "logo-06.png",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/logo-06.png",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our team"
+                }
+            ],
+            "filesize": 8307,
+            "dimensions": [
+                500,
+                300
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/logoipsum.com\/"
+        },
+        {
+            "filename": "logo-05.png",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/logo-05.png",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our team"
+                }
+            ],
+            "filesize": 9933,
+            "dimensions": [
+                500,
+                300
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/logoipsum.com\/"
+        },
+        {
+            "filename": "bg-02.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/bg-02-600x338.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                },
+                {
+                    "source": "templates\/obra-archive.json",
+                    "name": "Obra \u2013 Archive"
+                },
+                {
+                    "source": "templates\/obra-post-single-1-with-sidebar.json",
+                    "name": "Obra - Post single 1 with sidebar"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/blog-classic.json",
+                    "name": "Blog \u2013 classic"
+                },
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our team"
+                },
+                {
+                    "source": "templates\/contact-us-1.json",
+                    "name": "Contact us 1"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                },
+                {
+                    "source": "templates\/contact-us-2.json",
+                    "name": "Contact us 2"
+                },
+                {
+                    "source": "templates\/blog-minimal.json",
+                    "name": "Blog \u2013 Minimal"
+                }
+            ],
+            "filesize": 205647,
+            "dimensions": [
+                1920,
+                1080
+            ],
+            "image_source": "cc0",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/unsplash.com\/photos\/OO89_95aUC0"
+        },
+        {
+            "filename": "icon-email.png",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/icon-email.png",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                }
+            ],
+            "filesize": 15064,
+            "dimensions": [
+                400,
+                400
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/simple-icons-BSK3HF"
+        },
+        {
+            "filename": "content-img-09.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/content-img-09-600x450.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-2.json",
+                    "name": "Home 2"
+                },
+                {
+                    "source": "templates\/campus.json",
+                    "name": "Campus"
+                }
+            ],
+            "filesize": 75177,
+            "dimensions": [
+                1200,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/child-is-playing-superhero-PWBQFF8"
+        },
+        {
+            "filename": "bg-01.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/bg-01-600x338.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                }
+            ],
+            "filesize": 141668,
+            "dimensions": [
+                1920,
+                1080
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/girl-playing-with-toy-airplane-PYGQ2BX"
+        },
+        {
+            "filename": "cloud-overlay-2.png",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/cloud-overlay-2-600x296.png",
+            "templates": [
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                }
+            ],
+            "filesize": 98472,
+            "dimensions": [
+                1920,
+                946
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "bg-01-m-1.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/bg-01-m-1-600x450.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                }
+            ],
+            "filesize": 159524,
+            "dimensions": [
+                1200,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/girl-playing-with-toy-airplane-PYGQ2BX"
+        },
+        {
+            "filename": "gallery-img-03.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/gallery-img-03-600x450.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                },
+                {
+                    "source": "templates\/obra-post-single-1-with-sidebar.json",
+                    "name": "Obra - Post single 1 with sidebar"
+                },
+                {
+                    "source": "templates\/blog-classic.json",
+                    "name": "Blog \u2013 classic"
+                },
+                {
+                    "source": "templates\/learning.json",
+                    "name": "Learning"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                },
+                {
+                    "source": "templates\/blog-minimal.json",
+                    "name": "Blog \u2013 Minimal"
+                }
+            ],
+            "filesize": 139134,
+            "dimensions": [
+                1200,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/girl-in-an-astronaut-costume-PHE98D5"
+        },
+        {
+            "filename": "gallery-img-02.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/gallery-img-02-600x450.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home-1.json",
+                    "name": "Home 1"
+                },
+                {
+                    "source": "templates\/obra-post-single-1-with-sidebar.json",
+                    "name": "Obra - Post single 1 with sidebar"
+                },
+                {
+                    "source": "templates\/blog-classic.json",
+                    "name": "Blog \u2013 classic"
+                },
+                {
+                    "source": "templates\/learning.json",
+                    "name": "Learning"
+                },
+                {
+                    "source": "templates\/curriculum-details.json",
+                    "name": "Curriculum details"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                },
+                {
+                    "source": "templates\/campus.json",
+                    "name": "Campus"
+                },
+                {
+                    "source": "templates\/blog-minimal.json",
+                    "name": "Blog \u2013 Minimal"
+                }
+            ],
+            "filesize": 133228,
+            "dimensions": [
+                1200,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/happy-children-building-robots-at-robotics-school-PEKKJEW"
+        },
+        {
+            "filename": "logo-light.png",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/logo-light-600x142.png",
+            "templates": [
+                {
+                    "source": "templates\/obra-footer-1.json",
+                    "name": "Obra - Footer 1"
+                },
+                {
+                    "source": "templates\/obra-footer-2.json",
+                    "name": "Obra - Footer 2"
+                }
+            ],
+            "filesize": 10335,
+            "dimensions": [
+                1000,
+                236
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "half-img-01.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/half-img-01-600x675.jpg",
+            "templates": [
+                {
+                    "source": "templates\/obra-post-single-1-with-sidebar.json",
+                    "name": "Obra - Post single 1 with sidebar"
+                },
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/blog-classic.json",
+                    "name": "Blog \u2013 classic"
+                },
+                {
+                    "source": "templates\/contact-us-1.json",
+                    "name": "Contact us 1"
+                },
+                {
+                    "source": "templates\/curriculum-details.json",
+                    "name": "Curriculum details"
+                },
+                {
+                    "source": "templates\/contact-us-2.json",
+                    "name": "Contact us 2"
+                },
+                {
+                    "source": "templates\/blog-minimal.json",
+                    "name": "Blog \u2013 Minimal"
+                }
+            ],
+            "filesize": 152170,
+            "dimensions": [
+                960,
+                1080
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/astronaut-P2GZPP6"
+        },
+        {
+            "filename": "person-01.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/person-01.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our team"
+                }
+            ],
+            "filesize": 59917,
+            "dimensions": [
+                500,
+                500
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/multiple-portraits-of-women-and-men-LXJ2NY9"
+        },
+        {
+            "filename": "person-02.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/person-02.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our team"
+                }
+            ],
+            "filesize": 80171,
+            "dimensions": [
+                500,
+                500
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/multiple-portraits-of-women-and-men-LXJ2NY9"
+        },
+        {
+            "filename": "person-04.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/person-04.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our team"
+                }
+            ],
+            "filesize": 37433,
+            "dimensions": [
+                500,
+                500
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/multiple-portraits-of-women-and-men-LXJ2NY9"
+        },
+        {
+            "filename": "person-03.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/person-03.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about-us.json",
+                    "name": "About us"
+                },
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our team"
+                }
+            ],
+            "filesize": 38485,
+            "dimensions": [
+                500,
+                500
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/multiple-portraits-of-women-and-men-LXJ2NY9"
+        },
+        {
+            "filename": "person-06.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/person-06.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our team"
+                }
+            ],
+            "filesize": 33458,
+            "dimensions": [
+                500,
+                500
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/multiple-portraits-of-women-and-men-LXJ2NY9"
+        },
+        {
+            "filename": "person-07.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/person-07.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our team"
+                }
+            ],
+            "filesize": 39212,
+            "dimensions": [
+                500,
+                500
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/multiple-portraits-of-women-and-men-LXJ2NY9"
+        },
+        {
+            "filename": "person-05.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/person-05.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our team"
+                }
+            ],
+            "filesize": 32749,
+            "dimensions": [
+                500,
+                500
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/multiple-portraits-of-women-and-men-LXJ2NY9"
+        },
+        {
+            "filename": "person-09.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/person-09.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our team"
+                }
+            ],
+            "filesize": 36937,
+            "dimensions": [
+                500,
+                500
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/multiple-portraits-of-women-and-men-LXJ2NY9"
+        },
+        {
+            "filename": "person-08.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/person-08.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our team"
+                }
+            ],
+            "filesize": 40276,
+            "dimensions": [
+                500,
+                500
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/multiple-portraits-of-women-and-men-LXJ2NY9"
+        },
+        {
+            "filename": "person-10.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/person-10.jpg",
+            "templates": [
+                {
+                    "source": "templates\/our-team.json",
+                    "name": "Our team"
+                }
+            ],
+            "filesize": 30432,
+            "dimensions": [
+                500,
+                500
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/multiple-portraits-of-women-and-men-LXJ2NY9"
+        },
+        {
+            "filename": "content-img-04.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/content-img-04-600x450.jpg",
+            "templates": [
+                {
+                    "source": "templates\/contact-us-1.json",
+                    "name": "Contact us 1"
+                },
+                {
+                    "source": "templates\/learning.json",
+                    "name": "Learning"
+                },
+                {
+                    "source": "templates\/curriculum-details.json",
+                    "name": "Curriculum details"
+                },
+                {
+                    "source": "templates\/campus.json",
+                    "name": "Campus"
+                }
+            ],
+            "filesize": 175310,
+            "dimensions": [
+                1200,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/concept-of-early-childhood-education-painting-tale-YDXLA56"
+        },
+        {
+            "filename": "half-img-04.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/half-img-04-600x675.jpg",
+            "templates": [
+                {
+                    "source": "templates\/learning.json",
+                    "name": "Learning"
+                },
+                {
+                    "source": "templates\/contact-us-2.json",
+                    "name": "Contact us 2"
+                }
+            ],
+            "filesize": 76140,
+            "dimensions": [
+                960,
+                1080
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/child-is-playing-superhero-PWBQFF8"
+        },
+        {
+            "filename": "half-img-02.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/half-img-02-600x675.jpg",
+            "templates": [
+                {
+                    "source": "templates\/learning.json",
+                    "name": "Learning"
+                },
+                {
+                    "source": "templates\/curriculum-details.json",
+                    "name": "Curriculum details"
+                }
+            ],
+            "filesize": 157687,
+            "dimensions": [
+                960,
+                1080
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/girl-playing-with-toy-airplane-PYGQ2BX"
+        },
+        {
+            "filename": "content-img-07.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/content-img-07-600x450.jpg",
+            "templates": [
+                {
+                    "source": "templates\/learning.json",
+                    "name": "Learning"
+                }
+            ],
+            "filesize": 250427,
+            "dimensions": [
+                1200,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/education-students-people-knowledge-concept-PGW49MU"
+        },
+        {
+            "filename": "half-img-03.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/half-img-03-600x675.jpg",
+            "templates": [
+                {
+                    "source": "templates\/curriculum-details.json",
+                    "name": "Curriculum details"
+                },
+                {
+                    "source": "templates\/campus.json",
+                    "name": "Campus"
+                },
+                {
+                    "source": "templates\/contact-us-2.json",
+                    "name": "Contact us 2"
+                }
+            ],
+            "filesize": 90289,
+            "dimensions": [
+                960,
+                1080
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/child-is-playing-pilot-D86SEBQ"
+        },
+        {
+            "filename": "content-img-08.jpg",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/content-img-08-600x450.jpg",
+            "templates": [
+                {
+                    "source": "templates\/curriculum-details.json",
+                    "name": "Curriculum details"
+                },
+                {
+                    "source": "templates\/campus.json",
+                    "name": "Campus"
+                }
+            ],
+            "filesize": 88407,
+            "dimensions": [
+                1200,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/child-is-playing-pilot-D86SEBQ"
+        },
+        {
+            "filename": "logo.png",
+            "thumbnail_url": "http:\/\/templatekits.c-kav.com\/demo2\/obra\/wp-content\/uploads\/sites\/8\/2020\/05\/logo-600x142.png",
+            "templates": [
+                {
+                    "source": "templates\/obra-header-1.json",
+                    "name": "Obra - Header 1"
+                }
+            ],
+            "filesize": 10313,
+            "dimensions": [
+                1000,
+                236
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        }
+    ]
+}

@@ -1,0 +1,1705 @@
+{
+    "manifest_version": "1.0.21",
+    "title": "Edudemy \u2013 School & Education Elementor Template Kit",
+    "page_builder": "elementor",
+    "kit_version": "1.0.0",
+    "templates": [
+        {
+            "name": "Global Kit Styles",
+            "screenshot": "screenshots\/global-kit-styles.jpg",
+            "source": "templates\/global.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "global-styles",
+                "include_in_zip": "1",
+                "elementor_pro_required": null,
+                "additional_template_information": [
+                    "These are the global theme styles configured through the Elementor Theme Styles area."
+                ]
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Home",
+            "screenshot": "screenshots\/home.jpg",
+            "source": "templates\/home.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/template-kit\/home\/",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-home",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "About",
+            "screenshot": "screenshots\/about.jpg",
+            "source": "templates\/about.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/template-kit\/about\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "MetForm Contact 1",
+            "screenshot": "screenshots\/metform-contact-1.jpg",
+            "source": "templates\/metform-contact-1.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/template-kit\/metform-facilities-form\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-contact",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Facilities",
+            "screenshot": "screenshots\/facilities.jpg",
+            "source": "templates\/facilities.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/template-kit\/facilities\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Gallery",
+            "screenshot": "screenshots\/gallery.jpg",
+            "source": "templates\/gallery.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/template-kit\/gallery\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "MetForm Contact 2",
+            "screenshot": "screenshots\/metform-contact-2.jpg",
+            "source": "templates\/metform-contact-2.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/template-kit\/metform-contact-form\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-contact",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Contact",
+            "screenshot": "screenshots\/contact.jpg",
+            "source": "templates\/contact.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/template-kit\/contact\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "FAQ",
+            "screenshot": "screenshots\/faq.jpg",
+            "source": "templates\/faq.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/template-kit\/faq\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Blog",
+            "screenshot": "screenshots\/blog.jpg",
+            "source": "templates\/blog.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/template-kit\/blog\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Single Blog",
+            "screenshot": "screenshots\/single-blog.jpg",
+            "source": "templates\/single-blog.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/template-kit\/single-blog\/",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-post",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Page 404",
+            "screenshot": "screenshots\/page-404.jpg",
+            "source": "templates\/page-404.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/template-kit\/page-404\/",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-404",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Header",
+            "screenshot": "screenshots\/header.jpg",
+            "source": "templates\/header.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/template-kit\/header\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-header",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Footer",
+            "screenshot": "screenshots\/footer.jpg",
+            "source": "templates\/footer.json",
+            "preview_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/template-kit\/footer\/",
+            "type": "section",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-footer",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        }
+    ],
+    "required_plugins": [
+        {
+            "name": "Jeg Elementor Kit",
+            "version": "2.1.0",
+            "file": "jeg-elementor-kit\/jeg-elementor-kit.php",
+            "author": "Jegstudio"
+        },
+        {
+            "name": "MetForm",
+            "version": "1.5.4",
+            "file": "metform\/metform.php",
+            "author": "Wpmet"
+        },
+        {
+            "name": "Elementor",
+            "version": "3.4.4",
+            "file": "elementor\/elementor.php",
+            "author": "Elementor.com"
+        }
+    ],
+    "images": [
+        {
+            "filename": "cheerful-students-at-university.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/cheerful-students-at-university-800x548.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 295596,
+            "dimensions": [
+                1920,
+                1314
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-JFBWAZV"
+        },
+        {
+            "filename": "class12.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/class12.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 2484,
+            "dimensions": [
+                135,
+                135
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/dygo-education-icons-GW9RSDJ"
+        },
+        {
+            "filename": "guru12.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/guru12.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 2233,
+            "dimensions": [
+                135,
+                135
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/education-and-learning-color-vector-line-icons-8LXZM4M"
+        },
+        {
+            "filename": "kurikulum12.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/kurikulum12.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 2309,
+            "dimensions": [
+                134,
+                134
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/dygo-education-icons-GW9RSDJ"
+        },
+        {
+            "filename": "university-life-girls-walking-after-classes-outdoors-e1638157722624.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/university-life-girls-walking-after-classes-outdoors-800x548.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 313591,
+            "dimensions": [
+                1920,
+                1314
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-7GKMBVT"
+        },
+        {
+            "filename": "circleElement-e1637636159572.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/circleElement-e1637636159572.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/facilities.json",
+                    "name": "Facilities"
+                },
+                {
+                    "source": "templates\/contact.json",
+                    "name": "Contact"
+                }
+            ],
+            "filesize": 873,
+            "dimensions": [
+                75,
+                58
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/www.figma.com\/file\/wgM82dNg3eDA5eoKBrZhyw\/Sakola_SchoolWebsite_AllPage?node-id=0%3A1"
+        },
+        {
+            "filename": "3d-printing-class.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/3d-printing-class-800x548.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 274620,
+            "dimensions": [
+                1920,
+                1314
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-PQCFVNB"
+        },
+        {
+            "filename": "young-woman-get-graduation-e1638161421581.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/young-woman-get-graduation-e1636942189160-800x422.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 158056,
+            "dimensions": [
+                1920,
+                1013
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-UXN69MQ"
+        },
+        {
+            "filename": "lamp1.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/lamp1.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 5017,
+            "dimensions": [
+                134,
+                134
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/dygo-education-icons-GW9RSDJ"
+        },
+        {
+            "filename": "medal-1.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/medal-1.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 6417,
+            "dimensions": [
+                135,
+                135
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/dygo-education-icons-GW9RSDJ"
+        },
+        {
+            "filename": "college-life-at-columbia-university-e1638161461940.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/10\/college-life-at-columbia-university-e1638161461940-800x548.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/facilities.json",
+                    "name": "Facilities"
+                }
+            ],
+            "filesize": 289102,
+            "dimensions": [
+                1920,
+                1314
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/image-1461940"
+        },
+        {
+            "filename": "paint.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/paint.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/facilities.json",
+                    "name": "Facilities"
+                }
+            ],
+            "filesize": 4556,
+            "dimensions": [
+                135,
+                135
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/dygo-education-icons-GW9RSDJ"
+        },
+        {
+            "filename": "ball-1.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/ball-1.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/facilities.json",
+                    "name": "Facilities"
+                }
+            ],
+            "filesize": 4896,
+            "dimensions": [
+                135,
+                134
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/education-and-learning-color-vector-line-icons-8LXZM4M"
+        },
+        {
+            "filename": "Galery.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/Galery.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/facilities.json",
+                    "name": "Facilities"
+                }
+            ],
+            "filesize": 2519,
+            "dimensions": [
+                135,
+                135
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/dygo-education-icons-GW9RSDJ"
+        },
+        {
+            "filename": "book-library.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/book-library.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/facilities.json",
+                    "name": "Facilities"
+                }
+            ],
+            "filesize": 1543,
+            "dimensions": [
+                135,
+                135
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/dygo-education-icons-GW9RSDJ"
+        },
+        {
+            "filename": "student-searching-book-in-university-library-e1638161901961.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/student-searching-book-in-university-library-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/facilities.json",
+                    "name": "Facilities"
+                }
+            ],
+            "filesize": 328318,
+            "dimensions": [
+                1920,
+                1280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-P9TZ89Q"
+        },
+        {
+            "filename": "teacher-3.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/teacher-3-800x1067.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 330259,
+            "dimensions": [
+                1440,
+                1920
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/cheerful-male-teacher-crossing-his-arms-by-chest-w-E3E3YMD"
+        },
+        {
+            "filename": "teacher-2.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/teacher-2-800x1067.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 223650,
+            "dimensions": [
+                1440,
+                1920
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/teacher-teaching-at-university-JHJJPBF"
+        },
+        {
+            "filename": "teacher-1.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/teacher-1-800x1067.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 280848,
+            "dimensions": [
+                1440,
+                1920
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/portrait-of-teacher-smiling-in-school-corridor-7SJQAGW"
+        },
+        {
+            "filename": "the-university-of-zurich-e1638161964302.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/10\/the-university-of-zurich-e1638161964302-800x548.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 288518,
+            "dimensions": [
+                1920,
+                1314
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/image-1964302"
+        },
+        {
+            "filename": "student-1.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/student-1.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 3326,
+            "dimensions": [
+                135,
+                135
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/education-and-learning-color-vector-line-icons-8LXZM4M"
+        },
+        {
+            "filename": "graduates-1.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/graduates-1.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 4238,
+            "dimensions": [
+                134,
+                134
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/dygo-education-icons-GW9RSDJ"
+        },
+        {
+            "filename": "tropy-1.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/tropy-1.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 3757,
+            "dimensions": [
+                135,
+                135
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/dygo-education-icons-GW9RSDJ"
+        },
+        {
+            "filename": "positif-L.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/positif-L.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 2586,
+            "dimensions": [
+                135,
+                136
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/dygo-education-icons-GW9RSDJ"
+        },
+        {
+            "filename": "after-school.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/after-school.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 5088,
+            "dimensions": [
+                135,
+                134
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/dygo-education-icons-GW9RSDJ"
+        },
+        {
+            "filename": "studying-in-college-2021-09-24-03-36-04-utc-min-min_11zon-e1638162198168.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/10\/studying-in-college-2021-09-24-03-36-04-utc-min-min_11zon-800x488.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/contact.json",
+                    "name": "Contact"
+                }
+            ],
+            "filesize": 274598,
+            "dimensions": [
+                1920,
+                1172
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/studying-in-college-RHRJQP8"
+        },
+        {
+            "filename": "students-studying-in-the-library.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/students-studying-in-the-library-800x1200.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                },
+                {
+                    "source": "templates\/contact.json",
+                    "name": "Contact"
+                }
+            ],
+            "filesize": 382403,
+            "dimensions": [
+                1333,
+                2000
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-7HFGZQK"
+        },
+        {
+            "filename": "portrait-of-high-school-students-outside-college-buildings-e1638162480293.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/portrait-of-high-school-students-outside-college-buildings-e1638162480293-800x548.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/contact.json",
+                    "name": "Contact"
+                }
+            ],
+            "filesize": 316108,
+            "dimensions": [
+                1920,
+                1314
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-2480293"
+        },
+        {
+            "filename": "successful-man-e1638162304581.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/successful-man-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 198231,
+            "dimensions": [
+                1920,
+                1280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-E8JS5VQ"
+        },
+        {
+            "filename": "woman-e1636693299819.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/woman-e1636693299819-800x867.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 95034,
+            "dimensions": [
+                1230,
+                1333
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-FFR87TU"
+        },
+        {
+            "filename": "confident-mature-teacher-freelancer-woman-mother-businesswoman-on-video-online-conference-e1638162350317.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/confident-mature-teacher-freelancer-woman-mother-businesswoman-on-video-online-conference-800x534.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 217349,
+            "dimensions": [
+                1920,
+                1281
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-TUX6V5Y"
+        },
+        {
+            "filename": "senior-man.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/senior-man-800x1200.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 257550,
+            "dimensions": [
+                1333,
+                2000
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-PSLM7F8"
+        },
+        {
+            "filename": "students-posing-with-profession-at-graduation-ceremony-e1638162407384.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/students-posing-with-profession-at-graduation-ceremony-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 236921,
+            "dimensions": [
+                1920,
+                1280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-8GHRYV6"
+        },
+        {
+            "filename": "students-sitting-on-wooden-desks-in-classroom-e1638162740851.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/students-sitting-on-wooden-desks-in-classroom-800x534.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 267282,
+            "dimensions": [
+                1920,
+                1282
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-FKT89NY"
+        },
+        {
+            "filename": "teacher-helps-high-school-student-with-technology-vertical.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/teacher-helps-high-school-student-with-technology-vertical-800x1199.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 325070,
+            "dimensions": [
+                1334,
+                2000
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-P7X8MZ2"
+        },
+        {
+            "filename": "businesswoman-receiving-award-from-businessman-at-a-business-seminar-in-office-building-e1638162782842.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/businesswoman-receiving-award-from-businessman-at-a-business-seminar-in-office-building-800x513.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 141461,
+            "dimensions": [
+                1920,
+                1231
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-WS2MNYB"
+        },
+        {
+            "filename": "teacher-headmaster-tutor-student-lector-working-at-desk-looking-at-the-camera-in-school-classroom-e1638162827614.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/teacher-headmaster-tutor-student-lector-working-at-desk-looking-at-the-camera-in-school-classroom-800x534.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 193721,
+            "dimensions": [
+                1920,
+                1281
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-STRUFTT"
+        },
+        {
+            "filename": "patner-3.2.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/patner-3.2-800x723.png",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 24522,
+            "dimensions": [
+                1149,
+                1038
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/finance-trading-consulting-logo-payment-service-MJY9CBZ"
+        },
+        {
+            "filename": "patner-1.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/patner-1-800x732.png",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 38481,
+            "dimensions": [
+                971,
+                888
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/education-logo-LPV3D6T"
+        },
+        {
+            "filename": "athens-greece-the-academy-buildings-e1638164255506.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/athens-greece-the-academy-buildings-800x456.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 313105,
+            "dimensions": [
+                1920,
+                1095
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-PN9K4QX"
+        },
+        {
+            "filename": "staff-meeting--e1638164314656.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/staff-meeting--800x524.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 193184,
+            "dimensions": [
+                1920,
+                1258
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-GFX4XT6"
+        },
+        {
+            "filename": "happy-college-graduates-chatting-e1638164379297.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/happy-college-graduates-chatting-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 203031,
+            "dimensions": [
+                1920,
+                1280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-FUBGHM6"
+        },
+        {
+            "filename": "a-group-of-boys-in-soccer-team-shirts-holding-a-trophy-and-celebrating-a-win--e1638164532840.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/a-group-of-boys-in-soccer-team-shirts-holding-a-trophy-and-celebrating-a-win--800x534.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 150753,
+            "dimensions": [
+                1920,
+                1281
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-K33M7JD"
+        },
+        {
+            "filename": "gambar-6.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/gambar-6-800x1067.png",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 321641,
+            "dimensions": [
+                1440,
+                1920
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/smiling-science-teacher-YXXHLVC"
+        },
+        {
+            "filename": "teacher-5.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/teacher-5-800x1067.png",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 341076,
+            "dimensions": [
+                1440,
+                1920
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/mature-vietnamese-school-teacher-9QLMYST"
+        },
+        {
+            "filename": "Untitled-1-1.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/Untitled-1-1-800x1067.png",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                }
+            ],
+            "filesize": 343505,
+            "dimensions": [
+                1440,
+                1920
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/teacher-of-secondary-school-B5JZMR6"
+        },
+        {
+            "filename": "partial-view-of-students-writing-during-lecture-in-college-e1638164587941.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/partial-view-of-students-writing-during-lecture-in-college-800x534.jpg",
+            "templates": [
+                {
+                    "source": "templates\/facilities.json",
+                    "name": "Facilities"
+                }
+            ],
+            "filesize": 236870,
+            "dimensions": [
+                1920,
+                1282
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-JMFXJRJ"
+        },
+        {
+            "filename": "teacher-standing-in-front-of-the-class-room-full-of-teenage-students-e1638164643308.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/teacher-standing-in-front-of-the-class-room-full-of-teenage-students-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/facilities.json",
+                    "name": "Facilities"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 206534,
+            "dimensions": [
+                1920,
+                1280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-66N77P9"
+        },
+        {
+            "filename": "students-in-library-e1638164681213.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/students-in-library-800x534.jpg",
+            "templates": [
+                {
+                    "source": "templates\/facilities.json",
+                    "name": "Facilities"
+                },
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 297887,
+            "dimensions": [
+                1920,
+                1282
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-5VGSSKY"
+        },
+        {
+            "filename": "teacher-at-work-in-painting-class-with-senior-students-e1638164740737.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/teacher-at-work-in-painting-class-with-senior-students-800x422.jpg",
+            "templates": [
+                {
+                    "source": "templates\/facilities.json",
+                    "name": "Facilities"
+                }
+            ],
+            "filesize": 188663,
+            "dimensions": [
+                1920,
+                1013
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-P9BBDNU"
+        },
+        {
+            "filename": "map-dot-pattern.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/map-dot-pattern-800x449.png",
+            "templates": [
+                {
+                    "source": "templates\/facilities.json",
+                    "name": "Facilities"
+                }
+            ],
+            "filesize": 25430,
+            "dimensions": [
+                1693,
+                950
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/square-dotted-world-map-and-earth-globes-Q676QDA"
+        },
+        {
+            "filename": "phone-1.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/phone-1.png",
+            "templates": [
+                {
+                    "source": "templates\/facilities.json",
+                    "name": "Facilities"
+                },
+                {
+                    "source": "templates\/contact.json",
+                    "name": "Contact"
+                }
+            ],
+            "filesize": 4809,
+            "dimensions": [
+                135,
+                134
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/phone-outline-icon-K87AG2G"
+        },
+        {
+            "filename": "email-1.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/email-1.png",
+            "templates": [
+                {
+                    "source": "templates\/facilities.json",
+                    "name": "Facilities"
+                },
+                {
+                    "source": "templates\/contact.json",
+                    "name": "Contact"
+                }
+            ],
+            "filesize": 3056,
+            "dimensions": [
+                134,
+                134
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/phone-outline-icon-K87AG2G"
+        },
+        {
+            "filename": "office.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/office.png",
+            "templates": [
+                {
+                    "source": "templates\/facilities.json",
+                    "name": "Facilities"
+                },
+                {
+                    "source": "templates\/contact.json",
+                    "name": "Contact"
+                }
+            ],
+            "filesize": 3316,
+            "dimensions": [
+                135,
+                135
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/dygo-education-icons-GW9RSDJ"
+        },
+        {
+            "filename": "university-students-resting-in-campus-smiling-to-camera-e1638164777791.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/university-students-resting-in-campus-smiling-to-camera-800x412.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 288109,
+            "dimensions": [
+                1920,
+                988
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-UWCXPVS"
+        },
+        {
+            "filename": "young-woman-in-art-class.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/young-woman-in-art-class-800x1200.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 350300,
+            "dimensions": [
+                1333,
+                2000
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-2LQVY7B"
+        },
+        {
+            "filename": "students-raising-hands-in-college-e1638164822554.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/students-raising-hands-in-college-800x534.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                }
+            ],
+            "filesize": 285767,
+            "dimensions": [
+                1920,
+                1282
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-L63TN9X"
+        },
+        {
+            "filename": "teacher-with-her-students-e1638164863937.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/teacher-with-her-students-800x534.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 282959,
+            "dimensions": [
+                1920,
+                1282
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-CME72SH"
+        },
+        {
+            "filename": "happy-young-university-students-friends-studying-with-books-at-university.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/happy-young-university-students-friends-studying-with-books-at-university-800x1200.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 322858,
+            "dimensions": [
+                1333,
+                2000
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-NSDWMB9"
+        },
+        {
+            "filename": "young-students-at-the-school-library-e1638164917730.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/young-students-at-the-school-library-800x534.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 348029,
+            "dimensions": [
+                1920,
+                1282
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-VJ2AR42"
+        },
+        {
+            "filename": "young-people-working-at-business-seminar-e1638165039150.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/young-people-working-at-business-seminar-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                },
+                {
+                    "source": "templates\/single-blog.json",
+                    "name": "Single Blog"
+                }
+            ],
+            "filesize": 198152,
+            "dimensions": [
+                1920,
+                1280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-RW9UFTU"
+        },
+        {
+            "filename": "happy-caucasian-woman-on-her-graduation-day-at-university--e1638165077800.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/happy-caucasian-woman-on-her-graduation-day-at-university--800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 163546,
+            "dimensions": [
+                1920,
+                1280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-HNVZSME"
+        },
+        {
+            "filename": "library-goers-e1638165150989.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/library-goers-800x520.jpg",
+            "templates": [
+                {
+                    "source": "templates\/gallery.json",
+                    "name": "Gallery"
+                }
+            ],
+            "filesize": 246496,
+            "dimensions": [
+                1920,
+                1248
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-Z3ANMSC"
+        },
+        {
+            "filename": "young-friendly-operator-agent-with-headsets-working-in-a-call-center--e1638165245186.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/young-friendly-operator-agent-with-headsets-working-in-a-call-center--800x450.jpg",
+            "templates": [
+                {
+                    "source": "templates\/contact.json",
+                    "name": "Contact"
+                }
+            ],
+            "filesize": 131443,
+            "dimensions": [
+                1920,
+                1079
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-EM9MA84"
+        },
+        {
+            "filename": "young-friendly-operator-woman-agent-or-business-woman-with-headsets-working-in-a-call-centre-e1638165623907.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/young-friendly-operator-woman-agent-or-business-woman-with-headsets-working-in-a-call-centre-e1637741305580-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/contact.json",
+                    "name": "Contact"
+                }
+            ],
+            "filesize": 154031,
+            "dimensions": [
+                1920,
+                1280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-MU396TB"
+        },
+        {
+            "filename": "asian-woman-studying-online-course-distance-education-on-laptop-e1638165921274.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/asian-woman-studying-online-course-distance-education-on-laptop-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                }
+            ],
+            "filesize": 182237,
+            "dimensions": [
+                1440,
+                1440
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-UT5VDUF"
+        },
+        {
+            "filename": "students-shoot-e1638165958107.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/students-shoot-800x800.jpg",
+            "templates": [
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                }
+            ],
+            "filesize": 217421,
+            "dimensions": [
+                1440,
+                1440
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-Y63SH3Z"
+        },
+        {
+            "filename": "group-of-asian-students-showing-hands-talking-question-with-teacher-in-class--e1638165345364.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/group-of-asian-students-showing-hands-talking-question-with-teacher-in-class--e1637212703968-800x466.jpg",
+            "templates": [
+                {
+                    "source": "templates\/blog.json",
+                    "name": "Blog"
+                }
+            ],
+            "filesize": 227280,
+            "dimensions": [
+                1920,
+                1119
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-M8RR8FT"
+        },
+        {
+            "filename": "teacher-sitting-in-classroom-e1638165381179.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/10\/teacher-sitting-in-classroom-800x533.jpg",
+            "templates": [
+                {
+                    "source": "templates\/blog.json",
+                    "name": "Blog"
+                },
+                {
+                    "source": "templates\/single-blog.json",
+                    "name": "Single Blog"
+                }
+            ],
+            "filesize": 150143,
+            "dimensions": [
+                1920,
+                1280
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-EDLH44H"
+        },
+        {
+            "filename": "panoramic-shot-of-students-at-desks-in-university-e1638165428876.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/panoramic-shot-of-students-at-desks-in-university-800x248.jpg",
+            "templates": [
+                {
+                    "source": "templates\/single-blog.json",
+                    "name": "Single Blog"
+                }
+            ],
+            "filesize": 79840,
+            "dimensions": [
+                1920,
+                596
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-ZAP38SA"
+        },
+        {
+            "filename": "businesswoman-standing-near-podium-and-giving-presentation-to-the-audience-in-auditorium-e1638165486997.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/businesswoman-standing-near-podium-and-giving-presentation-to-the-audience-in-auditorium-800x497.jpg",
+            "templates": [
+                {
+                    "source": "templates\/single-blog.json",
+                    "name": "Single Blog"
+                }
+            ],
+            "filesize": 148736,
+            "dimensions": [
+                1920,
+                1193
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-V2NK6UG"
+        },
+        {
+            "filename": "diverse-people-in-a-seminar-e1638165532181.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/diverse-people-in-a-seminar-800x555.jpg",
+            "templates": [
+                {
+                    "source": "templates\/single-blog.json",
+                    "name": "Single Blog"
+                }
+            ],
+            "filesize": 363237,
+            "dimensions": [
+                1920,
+                1332
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-37KTHYV"
+        },
+        {
+            "filename": "woman-laptop-browsing-searching-social-networking-technology-con-e1638165568898.jpg",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/woman-laptop-browsing-searching-social-networking-technology-con-800x534.jpg",
+            "templates": [
+                {
+                    "source": "templates\/page-404.json",
+                    "name": "Page 404"
+                }
+            ],
+            "filesize": 138529,
+            "dimensions": [
+                1920,
+                1282
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/image-PQ6LXSV"
+        },
+        {
+            "filename": "LOGO-Edudemy-e1638331443279.png",
+            "thumbnail_url": "https:\/\/templatekit.jegtheme.com\/edudemy\/wp-content\/uploads\/sites\/202\/2021\/11\/LOGO-Edudemy-800x191.png",
+            "templates": [
+                {
+                    "source": "templates\/header.json",
+                    "name": "Header"
+                },
+                {
+                    "source": "templates\/footer.json",
+                    "name": "Footer"
+                }
+            ],
+            "filesize": 8413,
+            "dimensions": [
+                600,
+                143
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/templatekit.jegtheme.com\/edudemy\/"
+        }
+    ]
+}

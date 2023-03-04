@@ -1,0 +1,1311 @@
+{
+    "manifest_version": "1.0.20",
+    "title": "Edukids | Kindergarten & Child Care Elementor Template Kit",
+    "page_builder": "elementor",
+    "kit_version": "1.0.1",
+    "templates": [
+        {
+            "name": "Global Kit Styles",
+            "screenshot": "screenshots\/global-kit-styles.jpg",
+            "source": "templates\/global.json",
+            "preview_url": "https:\/\/demo.bosathemes.com",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "global-styles",
+                "include_in_zip": "1",
+                "elementor_pro_required": null,
+                "additional_template_information": [
+                    "These are the global theme styles configured through the Elementor Theme Styles area."
+                ]
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Header",
+            "screenshot": "screenshots\/header.jpg",
+            "source": "templates\/header.json",
+            "preview_url": "https:\/\/demo.bosathemes.com\/edukids\/?elementor_library=header",
+            "type": "header",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-header",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "header",
+                "elementor_pro_conditions": [
+                    "include\/general"
+                ],
+                "additional_template_information": [
+                    "This is a \"Header\" template for Elementor Pro.",
+                    "This template will display on: Entire Site."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Footer",
+            "screenshot": "screenshots\/footer.jpg",
+            "source": "templates\/footer.json",
+            "preview_url": "https:\/\/demo.bosathemes.com\/edukids\/?elementor_library=footer",
+            "type": "footer",
+            "category": "section",
+            "metadata": {
+                "template_type": "section-footer",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "footer",
+                "elementor_pro_conditions": [
+                    "include\/general"
+                ],
+                "additional_template_information": [
+                    "This is a \"Footer\" template for Elementor Pro.",
+                    "This template will display on: Entire Site."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Home",
+            "screenshot": "screenshots\/home.jpg",
+            "source": "templates\/home.json",
+            "preview_url": "https:\/\/demo.bosathemes.com\/edukids\/template-kit\/home\/",
+            "type": "section",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-home",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Coming Soon",
+            "screenshot": "screenshots\/coming-soon.jpg",
+            "source": "templates\/coming-soon.json",
+            "preview_url": "https:\/\/demo.bosathemes.com\/edukids\/template-kit\/coming-soon\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Archive",
+            "screenshot": "screenshots\/archive.jpg",
+            "source": "templates\/archive.json",
+            "preview_url": "https:\/\/demo.bosathemes.com\/edukids\/?elementor_library=archive",
+            "type": "archive",
+            "category": "page",
+            "metadata": {
+                "template_type": "archive-blog",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "archive",
+                "elementor_pro_conditions": [
+                    "include\/archive"
+                ],
+                "additional_template_information": [
+                    "This is a \"Archive\" template for Elementor Pro.",
+                    "This template will display on: All Archives."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Single Post",
+            "screenshot": "screenshots\/single-post.jpg",
+            "source": "templates\/single-post.json",
+            "preview_url": "https:\/\/demo.bosathemes.com\/edukids\/?elementor_library=single-post",
+            "type": "single-post",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-post",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "single-post",
+                "elementor_pro_conditions": [
+                    "include\/singular\/post"
+                ],
+                "additional_template_information": [
+                    "This is a \"Single Post\" template for Elementor Pro.",
+                    "This template will display on: Posts."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Search Results",
+            "screenshot": "screenshots\/search-results.jpg",
+            "source": "templates\/search-results.json",
+            "preview_url": "https:\/\/demo.bosathemes.com\/edukids\/?elementor_library=search-results",
+            "type": "search-results",
+            "category": "page",
+            "metadata": {
+                "template_type": "archive-search",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "search-results",
+                "elementor_pro_conditions": [
+                    "include\/archive\/search"
+                ],
+                "additional_template_information": [
+                    "This is a \"Search Results\" template for Elementor Pro.",
+                    "This template will display on: Search Results."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Single Page",
+            "screenshot": "screenshots\/single-page.jpg",
+            "source": "templates\/single-page.json",
+            "preview_url": "https:\/\/demo.bosathemes.com\/edukids\/?elementor_library=single-page",
+            "type": "single-page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "single-page",
+                "elementor_pro_conditions": [
+                    "include\/singular\/page"
+                ],
+                "additional_template_information": [
+                    "This is a \"Single Page\" template for Elementor Pro.",
+                    "This template will display on: Pages."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "404 page",
+            "screenshot": "screenshots\/404-page.jpg",
+            "source": "templates\/404-page.json",
+            "preview_url": "https:\/\/demo.bosathemes.com\/edukids\/?elementor_library=404-page",
+            "type": "error-404",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-404",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "error-404",
+                "elementor_pro_conditions": [
+                    "include\/singular\/not_found404"
+                ],
+                "additional_template_information": [
+                    "This is a \"Error 404\" template for Elementor Pro.",
+                    "This template will display on: 404 Page."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Shop",
+            "screenshot": "screenshots\/shop.jpg",
+            "source": "templates\/shop.json",
+            "preview_url": "https:\/\/demo.bosathemes.com\/edukids\/?elementor_library=shop",
+            "type": "product-archive",
+            "category": "page",
+            "metadata": {
+                "template_type": "archive-product",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "product-archive",
+                "elementor_pro_conditions": [
+                    "include\/product_archive"
+                ],
+                "additional_template_information": [
+                    "This is a \"Product Archive\" template for Elementor Pro.",
+                    "This template will display on: All Product Archives."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Single Product",
+            "screenshot": "screenshots\/single-product.jpg",
+            "source": "templates\/single-product.json",
+            "preview_url": "https:\/\/demo.bosathemes.com\/edukids\/?elementor_library=single-product",
+            "type": "product",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-product",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1",
+                "elementor_library_type": "product",
+                "elementor_pro_conditions": [
+                    "include\/product"
+                ],
+                "additional_template_information": [
+                    "This is a \"Product\" template for Elementor Pro.",
+                    "This template will display on: Products."
+                ]
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "About",
+            "screenshot": "screenshots\/about.jpg",
+            "source": "templates\/about.json",
+            "preview_url": "https:\/\/demo.bosathemes.com\/edukids\/template-kit\/about\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Classes",
+            "screenshot": "screenshots\/classes.jpg",
+            "source": "templates\/classes.json",
+            "preview_url": "https:\/\/demo.bosathemes.com\/edukids\/template-kit\/classes\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Class Detail",
+            "screenshot": "screenshots\/class-detail.jpg",
+            "source": "templates\/class-detail.json",
+            "preview_url": "https:\/\/demo.bosathemes.com\/edukids\/template-kit\/class-detail\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Career",
+            "screenshot": "screenshots\/career.jpg",
+            "source": "templates\/career.json",
+            "preview_url": "https:\/\/demo.bosathemes.com\/edukids\/template-kit\/career\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Career Detail",
+            "screenshot": "screenshots\/career-detail.jpg",
+            "source": "templates\/career-detail.json",
+            "preview_url": "https:\/\/demo.bosathemes.com\/edukids\/template-kit\/career-detail\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "FAQ",
+            "screenshot": "screenshots\/faq.jpg",
+            "source": "templates\/faq.json",
+            "preview_url": "https:\/\/demo.bosathemes.com\/edukids\/template-kit\/faq\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Events",
+            "screenshot": "screenshots\/events.jpg",
+            "source": "templates\/events.json",
+            "preview_url": "https:\/\/demo.bosathemes.com\/edukids\/template-kit\/events\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Event Detail",
+            "screenshot": "screenshots\/event-detail.jpg",
+            "source": "templates\/event-detail.json",
+            "preview_url": "https:\/\/demo.bosathemes.com\/edukids\/template-kit\/event-detail\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Team",
+            "screenshot": "screenshots\/team.jpg",
+            "source": "templates\/team.json",
+            "preview_url": "https:\/\/demo.bosathemes.com\/edukids\/template-kit\/team\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": null
+            },
+            "elementor_pro_required": false
+        },
+        {
+            "name": "Facilities",
+            "screenshot": "screenshots\/facilities.jpg",
+            "source": "templates\/facilities.json",
+            "preview_url": "https:\/\/demo.bosathemes.com\/edukids\/template-kit\/facilities\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Activities",
+            "screenshot": "screenshots\/activities.jpg",
+            "source": "templates\/activities.json",
+            "preview_url": "https:\/\/demo.bosathemes.com\/edukids\/template-kit\/activities\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        },
+        {
+            "name": "Contact Us",
+            "screenshot": "screenshots\/contact-us.jpg",
+            "source": "templates\/contact-us.json",
+            "preview_url": "https:\/\/demo.bosathemes.com\/edukids\/template-kit\/contact-us\/",
+            "type": "page",
+            "category": "page",
+            "metadata": {
+                "template_type": "single-page",
+                "include_in_zip": "1",
+                "elementor_pro_required": "1"
+            },
+            "elementor_pro_required": true
+        }
+    ],
+    "required_plugins": [
+        {
+            "name": "Elementor Pro",
+            "version": "3.3.6",
+            "file": "elementor-pro\/elementor-pro.php",
+            "author": "Elementor.com"
+        },
+        {
+            "name": "Elementor",
+            "version": "3.4.2",
+            "file": "elementor\/elementor.php",
+            "author": "Elementor.com"
+        },
+        {
+            "name": "ElementsKit Lite",
+            "version": "2.3.6",
+            "file": "elementskit-lite\/elementskit-lite.php",
+            "author": "Wpmet"
+        },
+        {
+            "name": "WooCommerce",
+            "version": "5.6.0",
+            "file": "woocommerce\/woocommerce.php",
+            "author": "Automattic"
+        }
+    ],
+    "images": [
+        {
+            "filename": "footer-vector-01.png",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/footer-vector-01.png",
+            "templates": [
+                {
+                    "source": "templates\/footer.json",
+                    "name": "Footer"
+                }
+            ],
+            "filesize": 18849,
+            "dimensions": [
+                414,
+                211
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/happy-kids-on-rainbow-with-magical-unicorns-U5F6X8"
+        },
+        {
+            "filename": "banner-1550-900-img1.jpg",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/banner-1550-900-img1-800x465.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/coming-soon.json",
+                    "name": "Coming Soon"
+                },
+                {
+                    "source": "templates\/class-detail.json",
+                    "name": "Class Detail"
+                },
+                {
+                    "source": "templates\/event-detail.json",
+                    "name": "Event Detail"
+                }
+            ],
+            "filesize": 992751,
+            "dimensions": [
+                1550,
+                900
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/cute-girl-playing-with-paint-in-art-class-85QTUD9"
+        },
+        {
+            "filename": "vector-bg-img1-left-2.png",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/vector-bg-img1-left-2.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/classes.json",
+                    "name": "Classes"
+                },
+                {
+                    "source": "templates\/team.json",
+                    "name": "Team"
+                }
+            ],
+            "filesize": 45064,
+            "dimensions": [
+                260,
+                1306
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "vector-bg-img1-right.png",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/vector-bg-img1-right.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/team.json",
+                    "name": "Team"
+                }
+            ],
+            "filesize": 36590,
+            "dimensions": [
+                195,
+                1104
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "img4.jpg",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img4.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/events.json",
+                    "name": "Events"
+                },
+                {
+                    "source": "templates\/activities.json",
+                    "name": "Activities"
+                }
+            ],
+            "filesize": 87230,
+            "dimensions": [
+                300,
+                330
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/painting-together-P9VHLJH"
+        },
+        {
+            "filename": "vector-bg-img2-left2.png",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/vector-bg-img2-left2.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 27386,
+            "dimensions": [
+                136,
+                181
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "vector-bg-img2-right.png",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/vector-bg-img2-right.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 29182,
+            "dimensions": [
+                156,
+                229
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "img2.jpg",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img2.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/events.json",
+                    "name": "Events"
+                },
+                {
+                    "source": "templates\/activities.json",
+                    "name": "Activities"
+                }
+            ],
+            "filesize": 75131,
+            "dimensions": [
+                300,
+                330
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/emotion-emoticons-used-by-a-psychologist-during-a--D2BFM6T"
+        },
+        {
+            "filename": "img35.png",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img35-800x351.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 163536,
+            "dimensions": [
+                915,
+                402
+            ],
+            "image_source": "self_created",
+            "person_or_place": "no",
+            "image_urls": ""
+        },
+        {
+            "filename": "img34.png",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img34.png",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 246895,
+            "dimensions": [
+                500,
+                379
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/happy-kids-are-painting-at-home-FSC2Q9C"
+        },
+        {
+            "filename": "img7.jpg",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img7-800x387.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                }
+            ],
+            "filesize": 694060,
+            "dimensions": [
+                1550,
+                750
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/boys-and-girls-dancing-PZNK4D9"
+        },
+        {
+            "filename": "img8.jpg",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img8.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/classes.json",
+                    "name": "Classes"
+                },
+                {
+                    "source": "templates\/events.json",
+                    "name": "Events"
+                },
+                {
+                    "source": "templates\/activities.json",
+                    "name": "Activities"
+                }
+            ],
+            "filesize": 77139,
+            "dimensions": [
+                330,
+                240
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/happy-little-girl-in-protective-hat-riding-her-bik-W9757CG"
+        },
+        {
+            "filename": "img9.jpg",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img9.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/classes.json",
+                    "name": "Classes"
+                },
+                {
+                    "source": "templates\/class-detail.json",
+                    "name": "Class Detail"
+                },
+                {
+                    "source": "templates\/events.json",
+                    "name": "Events"
+                },
+                {
+                    "source": "templates\/event-detail.json",
+                    "name": "Event Detail"
+                },
+                {
+                    "source": "templates\/activities.json",
+                    "name": "Activities"
+                }
+            ],
+            "filesize": 95008,
+            "dimensions": [
+                330,
+                240
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/adorable-kids-playing-with-constructor-on-floor-in-ZP6VC78"
+        },
+        {
+            "filename": "img10.jpg",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img10.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/classes.json",
+                    "name": "Classes"
+                },
+                {
+                    "source": "templates\/events.json",
+                    "name": "Events"
+                },
+                {
+                    "source": "templates\/activities.json",
+                    "name": "Activities"
+                }
+            ],
+            "filesize": 70843,
+            "dimensions": [
+                330,
+                240
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/kindergarten-age-girl-learning-about-the-planets-a-EKX3YDA"
+        },
+        {
+            "filename": "img5.jpg",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img5.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/events.json",
+                    "name": "Events"
+                },
+                {
+                    "source": "templates\/activities.json",
+                    "name": "Activities"
+                }
+            ],
+            "filesize": 185463,
+            "dimensions": [
+                390,
+                545
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/cute-girl-playing-with-paint-in-art-class-85QTUD9"
+        },
+        {
+            "filename": "img6.jpg",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img6-800x387.jpg",
+            "templates": [
+                {
+                    "source": "templates\/home.json",
+                    "name": "Home"
+                },
+                {
+                    "source": "templates\/events.json",
+                    "name": "Events"
+                },
+                {
+                    "source": "templates\/activities.json",
+                    "name": "Activities"
+                }
+            ],
+            "filesize": 764414,
+            "dimensions": [
+                1550,
+                750
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/funny-kids-FUBQSQJ"
+        },
+        {
+            "filename": "img18.jpg",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img18-800x284.jpg",
+            "templates": [
+                {
+                    "source": "templates\/archive.json",
+                    "name": "Archive"
+                },
+                {
+                    "source": "templates\/search-results.json",
+                    "name": "Search Results"
+                },
+                {
+                    "source": "templates\/single-page.json",
+                    "name": "Single Page"
+                },
+                {
+                    "source": "templates\/shop.json",
+                    "name": "Shop"
+                },
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/classes.json",
+                    "name": "Classes"
+                },
+                {
+                    "source": "templates\/class-detail.json",
+                    "name": "Class Detail"
+                },
+                {
+                    "source": "templates\/career.json",
+                    "name": "Career"
+                },
+                {
+                    "source": "templates\/career-detail.json",
+                    "name": "Career Detail"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                },
+                {
+                    "source": "templates\/events.json",
+                    "name": "Events"
+                },
+                {
+                    "source": "templates\/event-detail.json",
+                    "name": "Event Detail"
+                },
+                {
+                    "source": "templates\/team.json",
+                    "name": "Team"
+                },
+                {
+                    "source": "templates\/facilities.json",
+                    "name": "Facilities"
+                },
+                {
+                    "source": "templates\/activities.json",
+                    "name": "Activities"
+                },
+                {
+                    "source": "templates\/contact-us.json",
+                    "name": "Contact Us"
+                }
+            ],
+            "filesize": 530904,
+            "dimensions": [
+                1550,
+                550
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/sitting-kids-playing-looking-concept-PGJJ4YM"
+        },
+        {
+            "filename": "img22.jpg",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img22.jpg",
+            "templates": [
+                {
+                    "source": "templates\/archive.json",
+                    "name": "Archive"
+                },
+                {
+                    "source": "templates\/single-post.json",
+                    "name": "Single Post"
+                },
+                {
+                    "source": "templates\/class-detail.json",
+                    "name": "Class Detail"
+                }
+            ],
+            "filesize": 20685,
+            "dimensions": [
+                150,
+                150
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/portrait-of-smiling-male-school-teacher-standing-i-7KLZDMS"
+        },
+        {
+            "filename": "img38.png",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img38.png",
+            "templates": [
+                {
+                    "source": "templates\/shop.json",
+                    "name": "Shop"
+                }
+            ],
+            "filesize": 94507,
+            "dimensions": [
+                500,
+                402
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/playground-slide-YS8BY3L"
+        },
+        {
+            "filename": "img36.png",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img36.png",
+            "templates": [
+                {
+                    "source": "templates\/shop.json",
+                    "name": "Shop"
+                }
+            ],
+            "filesize": 137041,
+            "dimensions": [
+                500,
+                402
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/childrens-play-house-AE2WKGY"
+        },
+        {
+            "filename": "img37.png",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img37.png",
+            "templates": [
+                {
+                    "source": "templates\/shop.json",
+                    "name": "Shop"
+                }
+            ],
+            "filesize": 143752,
+            "dimensions": [
+                500,
+                402
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "no",
+            "image_urls": "https:\/\/elements.envato.com\/toy-train-L4FAGT"
+        },
+        {
+            "filename": "img20.jpg",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img20.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/faq.json",
+                    "name": "FAQ"
+                }
+            ],
+            "filesize": 102575,
+            "dimensions": [
+                480,
+                330
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/emotion-emoticons-used-by-a-psychologist-during-a--D2BFM6T"
+        },
+        {
+            "filename": "img21.jpg",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img21.jpg",
+            "templates": [
+                {
+                    "source": "templates\/about.json",
+                    "name": "About"
+                },
+                {
+                    "source": "templates\/class-detail.json",
+                    "name": "Class Detail"
+                },
+                {
+                    "source": "templates\/events.json",
+                    "name": "Events"
+                },
+                {
+                    "source": "templates\/event-detail.json",
+                    "name": "Event Detail"
+                }
+            ],
+            "filesize": 125765,
+            "dimensions": [
+                480,
+                330
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/painting-together-P9VHLJH"
+        },
+        {
+            "filename": "img31.jpg",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img31.jpg",
+            "templates": [
+                {
+                    "source": "templates\/classes.json",
+                    "name": "Classes"
+                },
+                {
+                    "source": "templates\/activities.json",
+                    "name": "Activities"
+                }
+            ],
+            "filesize": 79434,
+            "dimensions": [
+                330,
+                240
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/mother-or-nursery-teacher-teaches-her-children-to--QK27JT7"
+        },
+        {
+            "filename": "img32.jpg",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img32.jpg",
+            "templates": [
+                {
+                    "source": "templates\/classes.json",
+                    "name": "Classes"
+                }
+            ],
+            "filesize": 73932,
+            "dimensions": [
+                330,
+                240
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/painting-together-P9VHLJH"
+        },
+        {
+            "filename": "img30.jpg",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img30.jpg",
+            "templates": [
+                {
+                    "source": "templates\/classes.json",
+                    "name": "Classes"
+                }
+            ],
+            "filesize": 94497,
+            "dimensions": [
+                330,
+                240
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/sitting-on-a-carpet-P8BAWTX"
+        },
+        {
+            "filename": "img16.jpg",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img16-800x383.jpg",
+            "templates": [
+                {
+                    "source": "templates\/class-detail.json",
+                    "name": "Class Detail"
+                },
+                {
+                    "source": "templates\/career-detail.json",
+                    "name": "Career Detail"
+                },
+                {
+                    "source": "templates\/events.json",
+                    "name": "Events"
+                },
+                {
+                    "source": "templates\/event-detail.json",
+                    "name": "Event Detail"
+                }
+            ],
+            "filesize": 547858,
+            "dimensions": [
+                1150,
+                550
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/tutor-and-multicultural-kids-playing-with-construc-M27G27Q"
+        },
+        {
+            "filename": "img14.jpg",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img14-800x383.jpg",
+            "templates": [
+                {
+                    "source": "templates\/class-detail.json",
+                    "name": "Class Detail"
+                },
+                {
+                    "source": "templates\/events.json",
+                    "name": "Events"
+                },
+                {
+                    "source": "templates\/event-detail.json",
+                    "name": "Event Detail"
+                }
+            ],
+            "filesize": 407146,
+            "dimensions": [
+                1150,
+                550
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/mother-or-nursery-teacher-teaches-her-children-to--QK27JT7"
+        },
+        {
+            "filename": "img15.jpg",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img15-800x383.jpg",
+            "templates": [
+                {
+                    "source": "templates\/events.json",
+                    "name": "Events"
+                }
+            ],
+            "filesize": 462123,
+            "dimensions": [
+                1150,
+                550
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/happy-educator-hugging-adorable-kids-in-kindergart-CSSFQDV"
+        },
+        {
+            "filename": "img3-300-260.jpg",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img3-300-260.jpg",
+            "templates": [
+                {
+                    "source": "templates\/events.json",
+                    "name": "Events"
+                }
+            ],
+            "filesize": 65183,
+            "dimensions": [
+                300,
+                260
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/two-little-boys-have-fun-and-sitting-in-suitcase-i-P2NQ8SR"
+        },
+        {
+            "filename": "img25.jpg",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img25.jpg",
+            "templates": [
+                {
+                    "source": "templates\/team.json",
+                    "name": "Team"
+                }
+            ],
+            "filesize": 81601,
+            "dimensions": [
+                320,
+                320
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/portrait-of-smiling-male-school-teacher-standing-i-7BJLS3R"
+        },
+        {
+            "filename": "img24.jpg",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img24.jpg",
+            "templates": [
+                {
+                    "source": "templates\/team.json",
+                    "name": "Team"
+                }
+            ],
+            "filesize": 60032,
+            "dimensions": [
+                320,
+                320
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/young-teacher-at-university-XG8ZTHV"
+        },
+        {
+            "filename": "img27.jpg",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img27.jpg",
+            "templates": [
+                {
+                    "source": "templates\/team.json",
+                    "name": "Team"
+                }
+            ],
+            "filesize": 59104,
+            "dimensions": [
+                320,
+                320
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/education-teachers-university-and-schools-concept--JA74V7F"
+        },
+        {
+            "filename": "img26.jpg",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img26.jpg",
+            "templates": [
+                {
+                    "source": "templates\/team.json",
+                    "name": "Team"
+                }
+            ],
+            "filesize": 62090,
+            "dimensions": [
+                320,
+                320
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/smiling-science-teacher-YXXHLVC"
+        },
+        {
+            "filename": "img29.jpg",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img29.jpg",
+            "templates": [
+                {
+                    "source": "templates\/team.json",
+                    "name": "Team"
+                }
+            ],
+            "filesize": 79090,
+            "dimensions": [
+                320,
+                320
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/cheerful-women-in-printing-office-JQ5K4XE"
+        },
+        {
+            "filename": "img28.jpg",
+            "thumbnail_url": "https:\/\/demo.bosathemes.com\/edukids\/wp-content\/uploads\/sites\/14\/2021\/08\/img28.jpg",
+            "templates": [
+                {
+                    "source": "templates\/team.json",
+                    "name": "Team"
+                }
+            ],
+            "filesize": 82095,
+            "dimensions": [
+                320,
+                320
+            ],
+            "image_source": "envato_elements",
+            "person_or_place": "yes",
+            "image_urls": "https:\/\/elements.envato.com\/cheerful-women-in-printing-office-JQ5K4XE"
+        }
+    ]
+}

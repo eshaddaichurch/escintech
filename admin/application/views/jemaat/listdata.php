@@ -1,0 +1,524 @@
+<?php  
+  $this->load->view("template/header");
+  $this->load->view("template/topmenu");
+  $this->load->view("template/sidemenu");
+
+?>
+<style>
+  .nav-tabs .nav-link.active {
+    font-weight:bold;
+    background-color: transparent;
+    border-bottom:3px solid #dd0000;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+}
+
+</style>
+  <div class="row" id="toni-breadcrumb">
+    <div class="col-6">
+        <h4 class="text-dark mt-2">Jemaat</h4>
+    </div>  
+    <div class="col-6">
+      <ol class="breadcrumb float-sm-right">
+        <li class="breadcrumb-item"><a href="<?php echo(site_url()) ?>">Home</a></li>
+        <li class="breadcrumb-item active">Jemaat</li>
+      </ol>
+      
+    </div>
+  </div>
+
+  <div class="row" id="toni-content">
+    <div class="col-md-12">
+      <div class="card" id="cardcontent">
+        <div class="card-header">
+          <h5 class="card-title">List Data Jemaat Gereja Elshaddai</h5>
+          <a href="<?php echo(site_url('jemaat/tambah')) ?>" class="btn btn-sm btn-primary float-right"><i class="fa fa-plus-circle"></i> Tambah Data</a>
+        </div>
+        <div class="card-body">
+
+          
+
+          <div class="row">
+            <div class="col-md-12">
+              <?php 
+                $pesan = $this->session->flashdata("pesan");
+                if (!empty($pesan)) {
+                  echo $pesan;
+                }
+              ?>
+            </div> 
+            <div class="col-md-12">
+              <!-- datatable -->
+              <div class="table-responsive">
+                <table class="table table-bordered table-striped table-condesed" id="table">
+                  <thead>
+                    <tr class="bg-primary" style="">
+                      <th style="width: 5%; text-align: center;">No</th>
+                      <th style="text-align: center;">No AJ</th>
+                      <th style="text-align: center;">Nama / NIK</th>
+                      <th style="text-align: center;">Tempat/ <br>Tgl Lahir</th>
+                      <th style="text-align: center;">JK</th>
+                      <th style="text-align: center;">Status<br>Jemaat</th>
+                      <th style="text-align: center; width: 15%;">Aksi</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    
+                  </tbody>              
+                </table>
+              </div>
+              <a href="">Klik saya</a>
+              <button>Klik saya</button>
+            </div>
+
+
+
+          </div> <!-- /.row -->
+        </div> <!-- ./card-body -->
+      </div> <!-- /.card -->
+    </div> <!-- /.col -->
+  </div> <!-- /.row -->
+  <!-- Main row -->
+
+
+
+
+<?php $this->load->view("template/footer") ?>
+
+
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="modalinfojemaat">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Info Detail Jemaat</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+
+        <div class="row">
+            <div class="col-md-12 text-center ">
+                <nav class="nav-justified ">
+                  <div class="nav nav-tabs " id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link active" id="pop1-tab" data-toggle="tab" href="#pop1" role="tab" aria-controls="pop1" aria-selected="true">Data Jemaat</a>
+                    <a class="nav-item nav-link" id="pop2-tab" data-toggle="tab" href="#pop2" role="tab" aria-controls="pop2" aria-selected="false">Kontak Darurat</a>
+                    <a class="nav-item nav-link" id="pop3-tab" data-toggle="tab" href="#pop3" role="tab" aria-controls="pop3" aria-selected="false">Pendidikan Dan Pekerjaan</a>
+                    <a class="nav-item nav-link" id="pop4-tab" data-toggle="tab" href="#pop4" role="tab" aria-controls="pop4" aria-selected="false">Keluarga</a>
+                    <a class="nav-item nav-link" id="pop5-tab" data-toggle="tab" href="#pop5" role="tab" aria-controls="pop5" aria-selected="false">Event Dan Kelas</a>
+
+                  </div>
+                </nav>
+                <div class="tab-content" id="nav-tabContent">
+                  <div class="tab-pane fade show active" id="pop1" role="tabpanel" aria-labelledby="pop1-tab">
+                        <div class="pt-3"></div>
+                          <table class="table">
+                            <tbody>
+                                <tr class="text-left">
+                                  <td style="width: 25%;">Nama Lengkap</td>
+                                  <td style="width: 5%;">:</td>
+                                  <td id="tdnamalengkap"></td>
+                                </tr>
+                                <tr class="text-left">
+                                  <td>Nama Panggilan</td>
+                                  <td>:</td>
+                                  <td id="tdnamapanggilan"></td>
+                                </tr>
+                                <tr class="text-left">
+                                  <td>No AJ</td>
+                                  <td>:</td>
+                                  <td id="tdnoaj"></td>
+                                </tr>
+                                <tr class="text-left">
+                                  <td>Kewarganegaraan</td>
+                                  <td>:</td>
+                                  <td id="tdkewarganegaraan"></td>
+                                </tr>
+                                
+                                <tr class="text-left">
+                                  <td>Tempat / Tgl. Lahir</td>
+                                  <td>:</td>
+                                  <td id="tdtempatlahir"></td>
+                                </tr>
+                                <tr class="text-left">
+                                  <td>Jenis Kelamin</td>
+                                  <td>:</td>
+                                  <td id="tdjeniskelamin"></td>
+                                </tr>
+                                <tr class="text-left">
+                                  <td>Status Pernikahan</td>
+                                  <td>:</td>
+                                  <td id="tdstatusnikah"></td>
+                                </tr>
+                                <tr class="text-left">
+                                  <td>Golongan Darah</td>
+                                  <td>:</td>
+                                  <td id="tdgoldarah"></td>
+                                </tr>
+                                <tr class="text-left">
+                                  <td>No. Telp</td>
+                                  <td>:</td>
+                                  <td id="tdnotelp"></td>
+                                </tr>
+                                <tr class="text-left">
+                                  <td>No. HP</td>
+                                  <td>:</td>
+                                  <td id="tdnohp"></td>
+                                </tr>
+                                <tr class="text-left">
+                                  <td>Email</td>
+                                  <td>:</td>
+                                  <td id="tdemail"></td>
+                                </tr>
+                                <tr class="text-left">
+                                  <td>Facebook</td>
+                                  <td>:</td>
+                                  <td id="tdfacebook"></td>
+                                </tr>
+                                <tr class="text-left">
+                                  <td>Instagram</td>
+                                  <td>:</td>
+                                  <td id="tdinstagram"></td>
+                                </tr>
+                                <tr class="text-left">
+                                  <td>Alamat Rumah</td>
+                                  <td>:</td>
+                                  <td id="tdalamatrumah"></td>
+                                </tr>
+                                <tr class="text-left">
+                                  <td>RT/RW</td>
+                                  <td>:</td>
+                                  <td id="tdrtrw"></td>
+                                </tr>
+                                <tr class="text-left">
+                                  <td>Kelurahan</td>
+                                  <td>:</td>
+                                  <td id="tdkelurahan"></td>
+                                </tr>
+                                <tr class="text-left">
+                                  <td>Kecamatan</td>
+                                  <td>:</td>
+                                  <td id="tdkecamatan"></td>
+                                </tr>
+                                <tr class="text-left">
+                                  <td>Kabupaten/Kota</td>
+                                  <td>:</td>
+                                  <td id="tdkabupatenkota"></td>
+                                </tr>
+                                <tr class="text-left">
+                                  <td>Propinsi</td>
+                                  <td>:</td>
+                                  <td id="tdpropinsi"></td>
+                                </tr>
+                                <tr class="text-left">
+                                  <td>Kodepos</td>
+                                  <td>:</td>
+                                  <td id="tdkodepos"></td>
+                                </tr>
+                                <tr class="text-left">
+                                  <td>Status Jemaat</td>
+                                  <td>:</td>
+                                  <td id="tdstatusjemaat"></td>
+                                </tr>
+                                <tr class="text-left">
+                                  <td>Nama DC</td>
+                                  <td>:</td>
+                                  <td id="tdnamadc"></td>
+                                </tr>
+                                
+                            </tbody>
+                          </table>
+                    </div>
+
+                  <div class="tab-pane fade" id="pop2" role="tabpanel" aria-labelledby="pop2-tab">
+                       <div class="pt-3"></div>
+                        <table class="table">
+                            <tbody>
+                                <tr class="text-left">
+                                  <td style="width: 25%;">Nama</td>
+                                  <td style="width: 5%;">:</td>
+                                  <td id="tddaruratnama"></td>
+                                </tr>
+                                <tr class="text-left">
+                                  <td>Hubungan</td>
+                                  <td>:</td>
+                                  <td id="tddarurathubungan"></td>
+                                </tr>
+                                <tr class="text-left">
+                                  <td>Telepon</td>
+                                  <td>:</td>
+                                  <td id="tddarurattelepon"></td>
+                                </tr>
+                            </tbody>
+                          </table>
+                      
+                  </div>
+                  <div class="tab-pane fade" id="pop3" role="tabpanel" aria-labelledby="pop3-tab">
+                       <div class="pt-3"></div>
+                         <table class="table">
+                            <tbody>
+                                <tr class="text-left">
+                                  <td style="width: 25%;">Pendidikan Terakhir</td>
+                                  <td style="width: 5%;">:</td>
+                                  <td id="tdpendidikanterakhir"></td>
+                                </tr>
+                                <tr class="text-left">
+                                  <td>Nama Sekolah</td>
+                                  <td>:</td>
+                                  <td id="tdnamasekolah"></td>
+                                </tr>
+                                <tr class="text-left">
+                                  <td>Pekerjaan</td>
+                                  <td>:</td>
+                                  <td id="tdpekerjaan"></td>
+                                </tr>
+                                <tr class="text-left">
+                                  <td>Nama Perusahaan</td>
+                                  <td>:</td>
+                                  <td id="tdnamaperusahaan"></td>
+                                </tr>
+                                <tr class="text-left">
+                                  <td>Sektor Industri</td>
+                                  <td>:</td>
+                                  <td id="tdsektorindustri"></td>
+                                </tr>
+                                <tr class="text-left">
+                                  <td>Alamat Kantor</td>
+                                  <td>:</td>
+                                  <td id="tdalamatkantor"></td>
+                                </tr>
+                                 <tr class="text-left">
+                                  <td>No. Telp Kantor</td>
+                                  <td>:</td>
+                                  <td id="tdnotelpkantor"></td>
+                                </tr>
+                            </tbody>
+                          </table>
+                      
+                  </div>
+
+					<div class="tab-pane fade" id="pop4" role="tabpanel" aria-labelledby="pop4-tab">
+						<div class="pt-3"></div>
+            <div class="row">
+              <div class="col-12">
+    						<table class="table">
+    							<tbody>
+    							<tr class="text-left">
+    								<td style="width: 25%;">Kepala Keluarga</td>
+    								<td style="width: 5%;">:</td>
+    								<td id="tdpendidikanterakhir"></td>
+    							</tr>
+    							<tr class="text-left">
+    								<td>Istri</td>
+    								<td>:</td>
+    								<td id="tdnamasekolah"> 
+                    </td>
+    							</tr>
+    							<tr class="text-left">
+    								<td>Anak</td>
+    								<td>:</td>
+    								<td id="tdpekerjaan"></td>
+    							</tr>
+    							<tr class="text-left">
+    								<td>ART</td>
+    								<td>:</td>
+    								<td id="tdnamaperusahaan"></td>
+    							</tr>
+    							</tbody>
+    						</table>
+                
+              </div>
+              <div class="col-12">
+                <a href="<?php echo site_url('jemaat/ubahkeluarga/') ?>" class="btn btn-primary float-left" id="btnubahkeluarga" data-idjemaat=""><i class="fa fa-edit"></i> Ubah Data Keluarga</a>
+              </div>
+            </div>
+
+					</div>
+
+					<div class="tab-pane fade" id="pop5" role="tabpanel" aria-labelledby="pop5-tab">
+						<div class="pt-3"></div>
+						<table class="table">
+							<tbody>
+							<tr class="text-left">
+								<td style="width: 25%;">Membership Class</td>
+								<td style="width: 5%;">:</td>
+								<td> <li><a href="Sertifikat" title="">Sertifikat MC</a></li> </td>
+							</tr>
+							<tr class="text-left">
+								<td>Foundation Class 1</td>
+								<td>:</td>
+								<td id=""></td>
+							</tr>
+							<tr class="text-left">
+								<td>Foundation Class 2</td>
+								<td>:</td>
+								<td id=""></td>
+							</tr>
+							<tr class="text-left">
+								<td>Foundation Class 3</td>
+								<td>:</td>
+								<td id=""></td>
+							</tr>
+							<tr class="text-left">
+								<td>Grade 1</td>
+								<td>:</td>
+								<td id=""></td>
+							</tr>
+							<tr class="text-left">
+								<td>Grade 2</td>
+								<td>:</td>
+								<td id=""></td>
+							<tr class="text-left">
+								<td>Grade 3</td>
+								<td>:</td>
+								<td id=""></td>
+							</tbody>
+						</table>
+
+					</div>
+                  
+                </div>
+            </div>
+        </div>
+
+        
+      </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+            </div>
+    </div>
+  </div>
+</div>
+
+
+<script type="text/javascript">
+
+  var table;
+
+  $(document).ready(function() {
+
+    //defenisi datatable
+    table = $("#table").DataTable({ 
+        "select": true,
+        "processing": true, 
+        "serverSide": true, 
+        "order": [], 
+         "ajax": {
+            "url": "<?php echo site_url('jemaat/datatablesource')?>",
+            "type": "POST"
+        },
+        "columnDefs": [
+                        { "targets": [ 0 ], "orderable": false, "className": "dt-body-center" },
+                        { "targets": [ 1 ], "className": "dt-body-center" },
+                        { "targets": [ 2 ], "className": "dt-body-center" },
+                        { "targets": [ 3 ], "className": "dt-body-center" },
+                        { "targets": [ 4 ], "className": "dt-body-center" },
+                        { "targets": [ 5 ], "className": "dt-body-center" },
+                        { "targets": [ 6 ], "orderable": false, "className": "dt-body-center" },
+        ],
+ 
+    });
+
+  }); //end (document).ready
+
+  
+  $(document).on("click", "#hapus", function(e) {
+    var link = $(this).attr("href");
+    e.preventDefault();
+
+    bootbox.confirm("Anda yakin ingin menghapus data ini ?", function(result) {
+      if (result) {
+        document.location.href = link;
+      }
+    });
+  });  
+
+  
+
+  
+  $(document).on('click', '#tampilinfojemaat', function(event) {
+    event.preventDefault();
+    $('#modalinfojemaat').modal({backdrop: 'static', keyboard: false});
+    $('#modalinfojemaat').modal('show');
+
+    var idjemaat = $(this).attr("data-idjemaat");
+
+    $.ajax({
+      url: '<?php echo site_url('jemaat/get_info_detail') ?>',
+      type: 'GET',
+      dataType: 'json',
+      data: {'idjemaat': idjemaat},
+    })
+    .done(function(get_info_detailResult) {
+      console.log(get_info_detailResult);
+      var jemaat = get_info_detailResult.rsJemaat;
+
+      $('#tdnoaj').html(jemaat['noaj']);
+
+      $('#tdkewarganegaraan').html(jemaat['kewarganegaraan']);
+
+      $('#tdnamalengkap').html(jemaat['namalengkap']);
+      $('#tdnamapanggilan').html(jemaat['namapanggilan']);
+      $('#tdstatusnikah').html(jemaat['statuspernikahan']);
+      $('#tdjeniskelamin').html(jemaat['jeniskelamin']);
+      $('#tdtempatlahir').html(jemaat['tempatlahir']);
+      $('#tdgoldarah').html(jemaat['golongandarah']);
+      $('#tdnotelp').html(jemaat['notelp']);
+      $('#tdnohp').html(jemaat['nohp']);
+      $('#tdemail').html(jemaat['email']);
+      $('#tdfacebook').html(jemaat['facebook']);
+      $('#tdinstagram').html(jemaat['instagram']);
+      $('#tdalamatrumah').html(jemaat['alamatrumah']);
+      $('#tdrtrw').html(jemaat['rtrw']);
+      $('#tdkelurahan').html(jemaat['kelurahan']);
+      $('#tdkecamatan').html(jemaat['kecamatan']);
+
+      $('#tdkabupatenkota').html(jemaat['kotakabupaten']);
+
+      $('#tdpropinsi').html(jemaat['propinsi']);
+      $('#tdkodepos').html(jemaat['kodepos']);
+      $('#tdstatusjemaat').html(jemaat['statusjemaat']);
+      $('#tdnamadc').html(jemaat['namadc']);
+
+
+      $('#tddarurattelepon').html(jemaat['notelpdarurat']);
+      $('#tddarurathubungan').html(jemaat['hubungan']);
+      $('#tddaruratnama').html(jemaat['namadarurat']);
+
+      $('#tdpendidikanterakhir').html(jemaat['pendidikanterakhir']);
+      $('#tdnamasekolah').html(jemaat['namasekolah']);
+      $('#tdpekerjaan').html(jemaat['pekerjaan']);
+      $('#tdnamaperusahaan').html(jemaat['namaperusahaan']);
+      $('#tdsektorindustri').html(jemaat['sektorindustri']);
+      $('#tdalamatkantor').html(jemaat['alamatkantor']);
+      $('#tdnotelpkantor').html(jemaat['notelpkantor']);
+
+      $('#btnubahkeluarga').attr('data-idjemaat', get_info_detailResult ['idencrypt']);
+
+    })
+    .fail(function() {
+      console.log("error get get_info_detail");
+    });
+    
+  });
+
+
+  $(document).on("click", "#btnubahkeluarga", function(e) {
+    var link = $(this).attr("href");
+    var idjemaat = $(this).attr("data-idjemaat");
+    e.preventDefault();
+    if (idjemaat=="") {
+      return;
+    }
+
+    link += idjemaat;
+    document.location.href = link;
+
+  });  
+</script>
+
+</body>
+</html>
+
