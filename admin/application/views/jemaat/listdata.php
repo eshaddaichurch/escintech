@@ -32,7 +32,7 @@
     <div class="col-md-12">
       <div class="card" id="cardcontent">
         <div class="card-header">
-          <h5 class="card-title">List Data Jemaat Gereja Elshaddai</h5>
+          <h5 class="card-title">List Data Jemaat</h5>
           <a href="<?php echo(site_url('jemaat/tambah')) ?>" class="btn btn-sm btn-primary float-right"><i class="fa fa-plus-circle"></i> Tambah Data</a>
         </div>
         <div class="card-body">
