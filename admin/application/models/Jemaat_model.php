@@ -83,14 +83,98 @@ class Jemaat_model extends CI_Model {
 
     public function simpan($data)
     {       
-        return $this->db->insert($this->tabel, $data);
+        $this->db->trans_begin();
+        $this->db->insert($this->tabel, $data);
+
+        $nokaj = $this->db->query("SELECT create_nokaj() as nokaj")->row()->nokaj;
+
+        $dataFamily = array(
+                            'nokaj' => $nokaj, 
+                            'idjemaat' => $data['idjemaat'], 
+                            'idhubunganfamily' => 'A01', 
+                            'tglinsert' => date('Y-m-d H:i:s'),
+                            'tglupdate' => date('Y-m-d H:i:s'),
+                        );
+        $this->db->insert('jemaatfamily', $dataFamily);
+
+        if ($this->db->trans_status() === FALSE){
+            $this->db->trans_rollback();
+            return false;
+        }else{
+            $this->db->trans_commit();
+            return true;
+        }
     }
 
     public function update($data, $idjemaat)
     {
+        $this->db->trans_begin();
+
         $this->db->where('idjemaat', $idjemaat);
-        return $this->db->update($this->tabel, $data);
+        $this->db->update($this->tabel, $data);
+
+
+        if ($data['statusjemaat']=='Jemaat' || $data['statusjemaat']=='' ) {
+            
+            $cekKeluarga = $this->db->query("select count(*) as cekKeluarga from jemaatfamily where idjemaat='".$idjemaat."'")->row()->cekKeluarga;
+            if ($cekKeluarga==0) {
+                $nokaj = $this->db->query("SELECT create_nokaj() as nokaj")->row()->nokaj;
+                $dataFamily = array(
+                                    'nokaj' => $nokaj, 
+                                    'idjemaat' => $idjemaat, 
+                                    'idhubunganfamily' => 'A01', 
+                                    'tglinsert' => date('Y-m-d H:i:s'),
+                                    'tglupdate' => date('Y-m-d H:i:s'),
+                                );
+                $this->db->insert('jemaatfamily', $dataFamily);
+            }
+
+        }
+
+
+        if ($this->db->trans_status() === FALSE){
+            $this->db->trans_rollback();
+            return false;
+        }else{
+            $this->db->trans_commit();
+            return true;
+        }
+
     }
+
+    public function simpanubahkeluarga($idjemaat, $idjemaatfamily, $idhubunganfamily)
+    {
+        $this->db->trans_begin();
+            // =====================================
+
+            $noKeluarga = $this->db->query("select nokaj from jemaatfamily where idjemaat='".$idjemaat."'")->row()->nokaj;
+
+
+            $this->db->query("delete from jemaatfamily where idjemaat='".$idjemaatfamily."'");
+
+            $dataJemaatFamilyBaru = array(
+                                            'nokaj' => $noKeluarga, 
+                                            'idjemaat' => $idjemaatfamily, 
+                                            'idhubunganfamily' => $idhubunganfamily, 
+                                            'tglinsert' => date('Y-m-d H:i:s'), 
+                                            'tglupdate' => date('Y-m-d H:i:s'), 
+                                        );
+            $this->db->insert('jemaatfamily', $dataJemaatFamilyBaru);
+
+
+
+            // ==================================== =
+        if ($this->db->trans_status() === FALSE){
+            $this->db->trans_rollback();
+            return false;
+        }else{
+            $this->db->trans_commit();
+            return true;
+        }
+
+    }
+
+
 
 }
 

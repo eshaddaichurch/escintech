@@ -48,17 +48,17 @@
                           <tr>
                             <td>Nama Jemaat</td>
                             <td>:</td>
-                            <td></td>
+                            <td><?php echo $rowjemaat->namalengkap ?></td>
                           </tr>
                           <tr>
                             <td>Tempat/ Tgl Lahir</td>
                             <td>:</td>
-                            <td></td>
+                            <td><?php echo $rowjemaat->tempatlahir.'/ '.tglindonesialengkap($rowjemaat->tanggallahir) ?></td>
                           </tr>
                           <tr>
                             <td>Jenis Kelamin</td>
                             <td>:</td>
-                            <td></td>
+                            <td><?php echo $rowjemaat->jeniskelamin ?></td>
                           </tr>
                         </thead>
                       </table>
@@ -67,19 +67,19 @@
                       <table class="table">
                         <thead>
                           <tr>
-                            <td>No KAJ</td>
+                            <td>No AJ</td>
                             <td>:</td>
-                            <td></td>
+                            <td><?php echo $rowjemaat->noaj ?></td>
                           </tr>
                           <tr>
                             <td>NIK</td>
                             <td>:</td>
-                            <td></td>
+                            <td><?php echo $rowjemaat->nik ?></td>
                           </tr>
                           <tr>
                             <td>No HP</td>
                             <td>:</td>
-                            <td></td>
+                            <td><?php echo $rowjemaat->nohp ?></td>
                           </tr>
                         </thead>
                       </table>
@@ -92,31 +92,80 @@
                           <div class="row">
                             <div class="col-md-10">
                               <h5>List Anggota Keluarga</h5>
+                              <h3>No Keluarga : <?php echo $rsCekKeluarga->row()->nokaj ?></h3>
                             </div>
                             <div class="col-md-2">
-                              <button class="btn btn-md btn-primary float-right" id="btnTambahKeluarga"><i class="fa fa-plus"></i> Tambah Keluarga</button>
+                              <button class="btn btn-md btn-primary float-right mt-4" id="btnTambahKeluarga"><i class="fa fa-plus"></i> Tambah Keluarga</button>
                             </div>
                           </div>
                         </div>
                         <div class="card-body">
                           <div class="row">
+                              <?php 
+                                $idjemaatfamily = '';
+                                $namaKepalaKeluarga = '-';
+
+                                
+                                if ($rsCekKeluarga->num_rows()>0) {
+                                  $idjemaatfamily = $rsCekKeluarga->row()->idjemaatfamily;
+
+                                  $rowKepalaKeluarga = $this->db->query("
+                                      select * from v_jemaatfamily where nokaj='".$rsCekKeluarga->row()->nokaj."' and idhubunganfamily='A01'
+                                    ");
+
+                                  if ($rowKepalaKeluarga->num_rows()>0) {
+                                    $namaKepalaKeluarga = $rowKepalaKeluarga->row()->namalengkap;
+                                  }
+
+
+                                }
+
+                              ?>
                               <div class="col-4">  
                                 <h5>Kepala Keluarga</h5>
                                 <ul>
-                                    <li>Toni Simanjuntak</li>
+                                    <li><?php echo $namaKepalaKeluarga ?></li>
                                 </ul>
                               </div>
                               <div class="col-4">  
                                 <h5>Istri dan Anak</h5>
                                 <ul> 
-                                    <li><span class="badge badge-secondary">Istri</span> F. Napituulu</li> 
-                                    <li><span class="badge badge-secondary">Anak</span> Gibeon</li> 
+                                    <?php  
+              
+
+                                      $rsIstriAnak = $this->db->query("select * from v_jemaatfamily 
+                                                        where nokaj='".$rsCekKeluarga->row()->nokaj."' 
+                                                        and idhubunganfamily in ('B01', 'C01')
+                                                        order by idhubunganfamily asc
+                                                  ");
+                                      if ($rsIstriAnak->num_rows()>0) {
+                                        foreach ($rsIstriAnak->result() as $rowIstriAnak) {
+                                          echo '
+                                            <li><span class="badge badge-secondary">'.$rowIstriAnak->namahubungan.'</span>&nbsp;&nbsp;&nbsp;&nbsp;'.$rowIstriAnak->namalengkap.'</li> 
+                                          ';
+                                        }
+                                      }
+                                    ?>
+
                                 </ul>
                               </div> 
                               <div class="col-4">  
                                 <h5>Keluarga Lainnya</h5>
                                 <ul> 
-                                    <li><span class="badge badge-secondary">ART</span> Budi</li> 
+                                    <?php  
+                                      $rsKeluargaLainnya = $this->db->query("select * from v_jemaatfamily 
+                                                        where nokaj='".$rsCekKeluarga->row()->nokaj."' 
+                                                        and idhubunganfamily in ('D01')
+                                                        order by idhubunganfamily asc
+                                                  ");
+                                      if ($rsKeluargaLainnya->num_rows()>0) {
+                                        foreach ($rsKeluargaLainnya->result() as $rowKeluargaLainnya) {
+                                          echo '
+                                            <li><span class="badge badge-secondary">'.$rowKeluargaLainnya->namahubungan.'</span> &nbsp;&nbsp;&nbsp;&nbsp;'.$rowKeluargaLainnya->namalengkap.'</li> 
+                                          ';
+                                        }
+                                      }
+                                    ?>
                                 </ul>
                               </div> 
                           </div>
@@ -162,7 +211,7 @@
           <div class="form-group row">
             <label for="" class="col-md-3 col-form-label">Nama Jemaat</label>
             <div class="col-md-9">
-              <select name="idjemaat" id="idjemaat" class="form-control">
+              <select name="idjemaatfamily" id="idjemaatfamily" class="form-control select2">
                 <option value="">Pilih nama jemaat...</option>
                 <?php 
                   $rsJemaat = $this->App->getJemaat();
@@ -263,8 +312,11 @@
   
 
   $('#btnTambahKeluarga').click(function(e) {
+
     $('#modalTambahKeluarga').modal('show');
+    $('#idjemaat').val(idjemaat);
   });
+  
 
   $('#btnbatal').click(function(event) {
     $('#modalTambahKeluarga').modal('hide');

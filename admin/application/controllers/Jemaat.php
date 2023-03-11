@@ -198,6 +198,12 @@ class Jemaat extends CI_Controller {
 
             $idjemaat = $this->db->query("select create_idjemaat('".date('Y-m-d')."') as idjemaat")->row()->idjemaat;
 
+            if ($statusjemaat=='Jemaat') {
+                $noaj = $this->db->query("SELECT create_noaj() as noaj")->row()->noaj;
+            }else{
+                $noaj = '';
+            }
+
             $data = array(
                             'idjemaat'   => $idjemaat, 
                             'noaj'   => $noaj, 
@@ -243,47 +249,104 @@ class Jemaat extends CI_Controller {
             $simpan = $this->Jemaat_model->simpan($data);      
         }else{ 
 
-            $data = array(
-                            'noaj'   => $noaj, 
-                            'nik'   => $nik, 
-                            'kewarganegaraan'   => $kewarganegaraan, 
-                            'namalengkap'   => $namalengkap, 
-                            'namapanggilan'   => $namapanggilan, 
-                            'tempatlahir'   => $tempatlahir, 
-                            'tanggallahir'   => $tanggallahir, 
-                            'jeniskelamin'   => $jeniskelamin, 
-                            'statuspernikahan'   => $statuspernikahan, 
-                            'golongandarah'   => $golongandarah, 
-                            'notelp'   => $notelp, 
-                            'nohp'   => $nohp, 
-                            'email'   => $email, 
-                            'facebook'   => $facebook, 
-                            'instagram'   => $instagram, 
-                            'namadarurat'   => $namadarurat, 
-                            'hubungan'   => $hubungan, 
-                            'notelpdarurat'   => $notelpdarurat, 
-                            'pendidikanterakhir'   => $pendidikanterakhir, 
-                            'namasekolah'   => $namasekolah, 
-                            'pekerjaan'   => $pekerjaan, 
-                            'namaperusahaan'   => $namaperusahaan, 
-                            'sektorindustri'   => $sektorindustri, 
-                            'alamatkantor'   => $alamatkantor, 
-                            'notelpkantor'   => $notelpkantor, 
-                            'alamatrumah'   => $alamatrumah, 
-                            'rtrw'   => $rtrw, 
-                            'kelurahan'   => $kelurahan, 
-                            'kecamatan'   => $kecamatan, 
-                            'kotakabupaten'   => $kotakabupaten, 
-                            'propinsi'   => $propinsi, 
-                            'kodepos'   => $kodepos, 
-                            'foto'   => $foto, 
-                            'tanggalupdate'   => $tanggalupdate, 
-                            'username'   => $username, 
-                            'password'   => md5($password), 
-                            'lastlogin'   => $lastlogin, 
-                            'statusjemaat'   => $statusjemaat, 
-                            'tanggalinsert'   => $tanggalinsert,                      
-                        );
+            if ($noaj=='') {
+                
+                
+
+                if ($statusjemaat=='Jemaat' || $statusjemaat=='') {
+                    $noaj = $this->db->query("SELECT create_noaj() as noaj")->row()->noaj;
+                }else{
+                    $noaj = '';
+                }
+
+            }
+
+
+            if ($statusjemaat!='') {
+                
+                $data = array(
+                                'noaj'   => $noaj, 
+                                'nik'   => $nik, 
+                                'kewarganegaraan'   => $kewarganegaraan, 
+                                'namalengkap'   => $namalengkap, 
+                                'namapanggilan'   => $namapanggilan, 
+                                'tempatlahir'   => $tempatlahir, 
+                                'tanggallahir'   => $tanggallahir, 
+                                'jeniskelamin'   => $jeniskelamin, 
+                                'statuspernikahan'   => $statuspernikahan, 
+                                'golongandarah'   => $golongandarah, 
+                                'notelp'   => $notelp, 
+                                'nohp'   => $nohp, 
+                                'email'   => $email, 
+                                'facebook'   => $facebook, 
+                                'instagram'   => $instagram, 
+                                'namadarurat'   => $namadarurat, 
+                                'hubungan'   => $hubungan, 
+                                'notelpdarurat'   => $notelpdarurat, 
+                                'pendidikanterakhir'   => $pendidikanterakhir, 
+                                'namasekolah'   => $namasekolah, 
+                                'pekerjaan'   => $pekerjaan, 
+                                'namaperusahaan'   => $namaperusahaan, 
+                                'sektorindustri'   => $sektorindustri, 
+                                'alamatkantor'   => $alamatkantor, 
+                                'notelpkantor'   => $notelpkantor, 
+                                'alamatrumah'   => $alamatrumah, 
+                                'rtrw'   => $rtrw, 
+                                'kelurahan'   => $kelurahan, 
+                                'kecamatan'   => $kecamatan, 
+                                'kotakabupaten'   => $kotakabupaten, 
+                                'propinsi'   => $propinsi, 
+                                'kodepos'   => $kodepos, 
+                                'foto'   => $foto, 
+                                'tanggalupdate'   => $tanggalupdate, 
+                                'username'   => $username, 
+                                'password'   => md5($password), 
+                                'lastlogin'   => $lastlogin, 
+                                'statusjemaat'   => $statusjemaat, 
+                                'tanggalinsert'   => $tanggalinsert,                      
+                            );
+            }else{
+                $data = array(
+                                'noaj'   => $noaj, 
+                                'nik'   => $nik, 
+                                'kewarganegaraan'   => $kewarganegaraan, 
+                                'namalengkap'   => $namalengkap, 
+                                'namapanggilan'   => $namapanggilan, 
+                                'tempatlahir'   => $tempatlahir, 
+                                'tanggallahir'   => $tanggallahir, 
+                                'jeniskelamin'   => $jeniskelamin, 
+                                'statuspernikahan'   => $statuspernikahan, 
+                                'golongandarah'   => $golongandarah, 
+                                'notelp'   => $notelp, 
+                                'nohp'   => $nohp, 
+                                'email'   => $email, 
+                                'facebook'   => $facebook, 
+                                'instagram'   => $instagram, 
+                                'namadarurat'   => $namadarurat, 
+                                'hubungan'   => $hubungan, 
+                                'notelpdarurat'   => $notelpdarurat, 
+                                'pendidikanterakhir'   => $pendidikanterakhir, 
+                                'namasekolah'   => $namasekolah, 
+                                'pekerjaan'   => $pekerjaan, 
+                                'namaperusahaan'   => $namaperusahaan, 
+                                'sektorindustri'   => $sektorindustri, 
+                                'alamatkantor'   => $alamatkantor, 
+                                'notelpkantor'   => $notelpkantor, 
+                                'alamatrumah'   => $alamatrumah, 
+                                'rtrw'   => $rtrw, 
+                                'kelurahan'   => $kelurahan, 
+                                'kecamatan'   => $kecamatan, 
+                                'kotakabupaten'   => $kotakabupaten, 
+                                'propinsi'   => $propinsi, 
+                                'kodepos'   => $kodepos, 
+                                'foto'   => $foto, 
+                                'tanggalupdate'   => $tanggalupdate, 
+                                'username'   => $username, 
+                                'password'   => md5($password), 
+                                'lastlogin'   => $lastlogin, 
+                                'tanggalinsert'   => $tanggalinsert,                      
+                            );
+            }
             $simpan = $this->Jemaat_model->update($data, $idjemaat);
         }
 
@@ -368,7 +431,63 @@ class Jemaat extends CI_Controller {
                     SELECT * FROM v_jemaat WHERE idjemaat = '$idjemaat'
             ");
 
-        echo json_encode(array('rsJemaat'=>$rsJemaat->row(), 'idencrypt' => $this->encrypt->encode($idjemaat)) );
+        $nokaj = $this->db->query("select * from v_jemaatfamily where idjemaat='".$idjemaat."'")->row()->nokaj;
+
+        $rsKepalaKeluarga = $this->db->query("select * from v_jemaatfamily where nokaj='".$nokaj."' and idhubunganfamily='A01'");
+        $arrKepalaKeluarga = array();
+        if ($rsKepalaKeluarga->num_rows()>0) {
+            foreach ($rsKepalaKeluarga->result() as $rowKepalaKeluarga) {
+                array_push($arrKepalaKeluarga, array(
+                                                    'idjemaatfamily' => $rowKepalaKeluarga->idjemaatfamily, 
+                                                    'nokaj' => $rowKepalaKeluarga->nokaj, 
+                                                    'idjemaat' => $rowKepalaKeluarga->idjemaat, 
+                                                    'idhubunganfamily' => $rowKepalaKeluarga->idhubunganfamily, 
+                                                    'noaj' => $rowKepalaKeluarga->noaj, 
+                                                    'namalengkap' => $rowKepalaKeluarga->namalengkap, 
+                                                    'nik' => $rowKepalaKeluarga->nik, 
+                                                    'namahubungan' => $rowKepalaKeluarga->namahubungan, 
+                                                ));
+            }
+
+        }
+
+        $rsIstriAnak = $this->db->query("select * from v_jemaatfamily where nokaj='".$nokaj."' and idhubunganfamily in('B01', 'C01')");
+        $arrIstriAnak = array();
+        if ($rsIstriAnak->num_rows()>0) {
+            foreach ($rsIstriAnak->result() as $rowIstriAnak) {
+                array_push($arrIstriAnak, array(
+                                                    'idjemaatfamily' => $rowIstriAnak->idjemaatfamily, 
+                                                    'nokaj' => $rowIstriAnak->nokaj, 
+                                                    'idjemaat' => $rowIstriAnak->idjemaat, 
+                                                    'idhubunganfamily' => $rowIstriAnak->idhubunganfamily, 
+                                                    'noaj' => $rowIstriAnak->noaj, 
+                                                    'namalengkap' => $rowIstriAnak->namalengkap, 
+                                                    'nik' => $rowIstriAnak->nik, 
+                                                    'namahubungan' => $rowIstriAnak->namahubungan, 
+                                                ));
+            }
+
+        }
+        $rsLainnya = $this->db->query("select * from v_jemaatfamily where nokaj='".$nokaj."' and idhubunganfamily not in('A01', 'B01', 'C01') ");
+
+        $arrLainnya = array();
+        if ($rsLainnya->num_rows()>0) {
+            foreach ($rsLainnya->result() as $rowLainnya) {
+                array_push($arrLainnya, array(
+                                                    'idjemaatfamily' => $rowLainnya->idjemaatfamily, 
+                                                    'nokaj' => $rowLainnya->nokaj, 
+                                                    'idjemaat' => $rowLainnya->idjemaat, 
+                                                    'idhubunganfamily' => $rowLainnya->idhubunganfamily, 
+                                                    'noaj' => $rowLainnya->noaj, 
+                                                    'namalengkap' => $rowLainnya->namalengkap, 
+                                                    'nik' => $rowLainnya->nik, 
+                                                    'namahubungan' => $rowLainnya->namahubungan, 
+                                                ));
+            }
+
+        }
+
+        echo json_encode(array('rsJemaat'=>$rsJemaat->row(), 'idencrypt' => $this->encrypt->encode($idjemaat), 'arrKepalaKeluarga'=>$arrKepalaKeluarga, 'arrIstriAnak'=>$arrIstriAnak, 'arrLainnya'=>$arrLainnya) );
     }
 
 
@@ -376,7 +495,8 @@ class Jemaat extends CI_Controller {
     {
         $idjemaat = $this->encrypt->decode($idjemaat);
 
-        if ($this->Jemaat_model->get_by_id($idjemaat)->num_rows()<1) {
+        $rowjemaat = $this->Jemaat_model->get_by_id($idjemaat); 
+        if ($rowjemaat->num_rows()<1) {
             $pesan = '<div>
                         <div class="alert alert-danger alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -387,6 +507,13 @@ class Jemaat extends CI_Controller {
             redirect('jemaat');
             exit();
         };
+
+        $rsCekKeluarga = $this->db->query("
+                                      select * from jemaatfamily where idjemaat='".$idjemaat."'
+                                    ");
+
+        $data['rsCekKeluarga'] =$rsCekKeluarga;        
+        $data['rowjemaat'] =$rowjemaat->row();        
         $data['idjemaat'] =$idjemaat;        
         $data['menu'] = 'jemaat';
         $this->load->view('jemaat/ubahkeluarga', $data);
@@ -395,7 +522,28 @@ class Jemaat extends CI_Controller {
     public function simpanubahkeluarga()
     {
         $idjemaat = $this->input->post('idjemaat');
+        $idjemaatfamily = $this->input->post('idjemaatfamily');
         $idhubunganfamily = $this->input->post('idhubunganfamily');
+
+        $simpan = $this->Jemaat_model->simpanubahkeluarga($idjemaat, $idjemaatfamily, $idhubunganfamily);
+        if ($simpan) {
+            $pesan = '<div>
+                        <div class="alert alert-success alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            <strong>Berhasil!</strong> Data berhasil disimpan!
+                        </div>
+                    </div>';
+        }else{
+            $pesan = '<div>
+                        <div class="alert alert-danger alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            <strong>Gagal!</strong> Data gagal disimpan!
+                        </div>
+                    </div>';
+        }
+
+        $this->session->set_flashdata('pesan', $pesan);
+        redirect('jemaat');   
 
         
     }

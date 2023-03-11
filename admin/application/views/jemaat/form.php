@@ -198,7 +198,6 @@
                       <select name="statusjemaat" id="statusjemaat" class="form-control">
                         <option value="">Pilih status jemaat...</option>
                         <option value="Jemaat">Jemaat</option>
-                        <option value="Volunteer">Volunteer</option>
                         <option value="Simpatisan">Simpatisan</option>
                       </select>
                     </div>
@@ -359,6 +358,8 @@
 
     //---------------------------------------------------------> JIKA EDIT DATA
     if ( idjemaat != "" ) { 
+
+
           $.ajax({
               type        : 'POST', 
               url         : '<?php echo site_url("Jemaat/get_edit_data") ?>', 
@@ -406,8 +407,12 @@
             $("#lastlogin").val(result.lastlogin);
             $("#statusjemaat").val(result.statusjemaat);
             $("#tanggalinsert").val(result.tanggalinsert);
-          }); 
 
+            if (result.statusjemaat=='Jemaat') {
+              $('#statusjemaat').attr('disabled', true);
+            }
+
+          }); 
 
           $("#lbljudul").html("Edit Data Jemaat");
           $("#lblactive").html("Edit");

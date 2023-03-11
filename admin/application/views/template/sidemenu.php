@@ -292,25 +292,6 @@
                   }
                 ?> -->
                 
-            <li class="nav-item has-treeview <?php echo ($dropdownselected) ? 'menu-open' : '' ?>">
-                  <a href="#" class="nav-link <?php echo ($dropdownselected) ? 'active' : '' ?>">
-                    <i class="nav-icon fas fa-users"></i>
-                    <p>
-                      Disciples Community
-                      <i class="right far fa-angle-left"></i>
-                    </p>
-                  </a>
-                      <ul class="nav nav-treeview"> 
-
-                        <li class="nav-item">
-                          <a href="<?php echo(site_url("disciplescommunity")) ?>" class="nav-link <?php echo ($menu=='disciplescommunity') ? 'active' : '' ?>">
-                          <i class="fas fa-address-book nac-icon"  ></i>
-                            <p>  List Data DC</p>
-                          </a>
-                        </li>
-
-                       </ul> 
-            </li>  
 
 
 
@@ -318,6 +299,37 @@
           </li>
 
          
+
+         <?php  
+            $menudropdown = array("KL101");
+            if (in_array($menu, $menudropdown)) {
+              $dropdownselected = true;
+            }else{
+              $dropdownselected = false;
+            }
+          ?>
+
+          <li class="nav-item has-treeview <?php echo ($dropdownselected) ? 'menu-open' : '' ?>">
+            <a href="#" class="nav-link <?php echo ($dropdownselected) ? 'active' : '' ?>">
+              <i class="nav-icon fas fa-database"></i>
+              <p>
+                Care
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">              
+                  
+                  <li class="nav-item">
+                    <a href="<?php echo(site_url("registrasikelas/index/KL101")) ?>" class="nav-link <?php echo ($menu=='KL101') ? 'active' : '' ?>">
+                      <i class="fas fa-users"></i>
+                      <p>Marriage Class (MAC) </p>
+                    </a>
+                  </li>
+              
+
+            </ul>
+          </li>
+
 
           <li class="nav-item">
             <a href="<?php echo(site_url('login/keluar')) ?>" class="nav-link text-warning">

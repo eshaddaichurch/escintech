@@ -302,35 +302,95 @@
 					<div class="tab-pane fade" id="pop4" role="tabpanel" aria-labelledby="pop4-tab">
 						<div class="pt-3"></div>
             <div class="row">
-              <div class="col-12">
-    						<table class="table">
-    							<tbody>
-    							<tr class="text-left">
-    								<td style="width: 25%;">Kepala Keluarga</td>
-    								<td style="width: 5%;">:</td>
-    								<td id="tdpendidikanterakhir"></td>
-    							</tr>
-    							<tr class="text-left">
-    								<td>Istri</td>
-    								<td>:</td>
-    								<td id="tdnamasekolah"> 
-                    </td>
-    							</tr>
-    							<tr class="text-left">
-    								<td>Anak</td>
-    								<td>:</td>
-    								<td id="tdpekerjaan"></td>
-    							</tr>
-    							<tr class="text-left">
-    								<td>ART</td>
-    								<td>:</td>
-    								<td id="tdnamaperusahaan"></td>
-    							</tr>
-    							</tbody>
-    						</table>
-                
+              <div class="col-12 text-left mt-2">
+                <h5>DATA JEMAAT</h5>
               </div>
-              <div class="col-12">
+
+              <div class="col-12 mb-3">
+                <div class="row">
+                    <div class="col-6 text-left">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <td>Nama Jemaat</td>
+                            <td>:</td>
+                            <td class="tdnamajemaat"></td>
+                          </tr>
+                          <tr>
+                            <td>Tempat/ Tgl Lahir</td>
+                            <td>:</td>
+                            <td class="tdtempatlahir"></td>
+                          </tr>
+                          <tr>
+                            <td>Jenis Kelamin</td>
+                            <td>:</td>
+                            <td class="tdjeniskelamin"></td>
+                          </tr>
+                        </thead>
+                      </table>
+                    </div>
+                    <div class="col-6 text-left">
+                      <table class="table">
+                        <thead>
+                          <tr>
+                            <td>No AJ</td>
+                            <td>:</td>
+                            <td class="tdnoaj"></td>
+                          </tr>
+                          <tr>
+                            <td>NIK</td>
+                            <td>:</td>
+                            <td class="tdnik"></td>
+                          </tr>
+                          <tr>
+                            <td>No HP</td>
+                            <td>:</td>
+                            <td class="tdnohp"></td>
+                          </tr>
+                        </thead>
+                      </table>
+                    </div>
+                </div>
+              </div>
+
+              <div class="col-12"><hr></div>
+
+              <div class="col-4">
+                <div class="row">
+                  <div class="col-12">
+        						<h5 class="text-left">Kepala Keluarga</h5>
+                  </div>
+                  <div class="col-12 text-left" id="divKepalaKeluarga">
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="row">
+                  <div class="col-12">
+                    <h5 class="text-left">Istri / Anak</h5>
+                    <div class="col-12 text-left">
+                      <div class="row" id="divIstriAnak">
+                        
+                      </div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="row">
+                  <div class="col-12">
+                    <h5 class="text-left">Lainnya</h5>
+                    <div class="col-12 text-left">
+                      <div class="row" id="divLainnya">
+                        
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12 mt-5">
                 <a href="<?php echo site_url('jemaat/ubahkeluarga/') ?>" class="btn btn-primary float-left" id="btnubahkeluarga" data-idjemaat=""><i class="fa fa-edit"></i> Ubah Data Keluarga</a>
               </div>
             </div>
@@ -453,6 +513,7 @@
     })
     .done(function(get_info_detailResult) {
       console.log(get_info_detailResult);
+
       var jemaat = get_info_detailResult.rsJemaat;
 
       $('#tdnoaj').html(jemaat['noaj']);
@@ -496,6 +557,39 @@
       $('#tdnotelpkantor').html(jemaat['notelpkantor']);
 
       $('#btnubahkeluarga').attr('data-idjemaat', get_info_detailResult ['idencrypt']);
+
+      $('.tdnamajemaat').html(jemaat['namalengkap']);
+      $('.tdtempatlahir').html(jemaat['tempatlahir']+"/ "+tgldmy(jemaat['tanggallahir']));
+      $('.tdjeniskelamin').html(jemaat['jeniskelamin']);
+      $('.tdnoaj').html(jemaat['noaj']);
+      $('.tdnik').html(jemaat['nik']);
+      $('.tdnohp').html(jemaat['nohp']);
+
+
+      var arrKepala = get_info_detailResult.arrKepalaKeluarga;
+      $('#divKepalaKeluarga').empty();
+      for (var i = 0; i < arrKepala.length; i++) {
+          var addText = `<span><i class="fas fa-chevron-right"></i> `+arrKepala[i]['namalengkap']+`</span>`;
+          $('#divKepalaKeluarga').append(addText);
+      }
+
+      var arrIstriAnak = get_info_detailResult.arrIstriAnak;
+      $('#divIstriAnak').empty();
+      for (var i = 0; i < arrIstriAnak.length; i++) {
+          var addText = `<div class="col-12">
+                          <span><i class="fas fa-chevron-right"></i> <span class="badge badge-secondary">`+arrIstriAnak[i]['namahubungan']+`</span> &nbsp;&nbsp;&nbsp;`+arrIstriAnak[i]['namalengkap']+`</span>
+                        </div>`;
+          $('#divIstriAnak').append(addText);
+      }
+
+      var arrLainnya = get_info_detailResult.arrLainnya;
+      $('#divLainnya').empty();
+      for (var i = 0; i < arrLainnya.length; i++) {
+          var addText = `<div class="col-12">
+                          <span><i class="fas fa-chevron-right"></i> <span class="badge badge-secondary">`+arrLainnya[i]['namahubungan']+`</span> &nbsp;&nbsp;&nbsp;`+arrLainnya[i]['namalengkap']+`</span>
+                        </div>`;
+          $('#divLainnya').append(addText);
+      }
 
     })
     .fail(function() {

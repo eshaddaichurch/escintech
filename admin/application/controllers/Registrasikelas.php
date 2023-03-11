@@ -151,6 +151,24 @@ class Registrasikelas extends CI_Controller {
                                 ';
                         break;
 
+                    case 'KL101':
+                        $row[] = '
+                                    <!-- Example split btn-warning button -->
+                                    <div class="btn-group dropleft">
+                                      <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <span class="sr-only">Toggle Dropdown</span>
+                                      </button>
+                                      <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="'.site_url('registrasikelas/cetaksertifikat/'.$rowdata->idregistrasikelas).'" target="_blank">Cetak Sertifikat</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="'.site_url('registrasikelas/delete/'.$this->encrypt->encode($rowdata->idregistrasikelas) ).'/'.$rowdata->idkelas.'" id="hapus">Hapus</a>
+                                      </div>
+
+                                      <a href="'.site_url( 'registrasikelas/edit/'.$this->encrypt->encode($rowdata->idregistrasikelas) ).'/'.$rowdata->idkelas.'" class="btn btn-warning">Edit</a>
+                                    </div>
+                                ';
+                        break;
+
                     default:
                         
                         $row[] = '
@@ -409,6 +427,9 @@ class Registrasikelas extends CI_Controller {
                 break;
             case 'KL008':
                 $report = 'sertifikatvc';
+                break;
+            case 'KL101':
+                $report = 'sertifikatpmc';
                 break;
             default:
                 $report = '';
