@@ -38,6 +38,8 @@
                   // link untuk home
                   if (empty($linkmenu) || $linkmenu=='/') {
                     $linkmenu = site_url();
+                  }else if (substr($linkmenu, 0,1)=='/') {
+                    $linkmenu = site_url($linkmenu.'/'.$this->encrypt->encode($rowsubmenu->idmenu));
                   }
 
                   if (empty($menu)) {
@@ -81,6 +83,13 @@
                           break;
                       }
 
+                      // link untuk home
+                      if (empty($linkmenu) || $linkmenu=='/') {
+                        $linkmenu = site_url();
+                      }else if (substr($linkmenu, 0,1)=='/') {
+                        $linkmenu = site_url($linkmenu.'/'.$this->encrypt->encode($rowsubmenu->idmenu));
+                      }
+
                       $openinnewtab = '';
                       if ($rowsubmenu->openinnewtab=="1") {
                         $openinnewtab = ' target="_blank" ';
@@ -111,7 +120,7 @@
 
             </li>
 
-            <li><a class="getstarted scrollto" href="#about">Login</a></li>
+            <li><a class="getstarted scrollto show-form-login" href="#about">Login</a></li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->

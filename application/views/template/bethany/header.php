@@ -24,9 +24,28 @@
   <!-- Template Main CSS File -->
   <link href="<?php echo site_url('assets/bethany/') ?>assets/css/style.css" rel="stylesheet">
 
+  <!-- datatables -->
+  <link href="<?php echo (base_url("admin/assets/")) ?>datatables2/css/jquery.dataTables.min.css" rel="stylesheet">
+
+  <!-- jquery-confirm -->
+  <link rel="stylesheet" href="<?php echo (base_url("admin/assets/")) ?>jquery-confirm/css/jquery-confirm.min.css">
+
+  <!-- jquery-ui -->
+  <link rel="stylesheet" href="<?php echo (base_url("admin/assets/")) ?>jquery-ui/themes/base/jquery-ui.css">
+
   <!-- Font Awesome Icons 5.1 -->
   <link rel="stylesheet" href="<?php echo (base_url()) ?>admin/assets/adminlte/plugins/fontawesome-free/css/all.min.css">
 
+  <!-- Google Font: Source Sans Pro -->
+  <link href="<?php echo (base_url()) ?>admin/assets/googleapis/googleapis.css" rel="stylesheet">
+  //
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+
+  <!-- select2 -->
+  <link href="<?php echo (base_url()) ?>admin/assets/select2/css/select2.min.css" rel="stylesheet" />
+
+  <!-- custom -->
+  <link href="<?php echo (base_url()) ?>admin/assets/custom/custom.css" rel="stylesheet" />
   <!-- =======================================================
   * Template Name: Bethany - v4.7.0
   * Template URL: https://bootstrapmade.com/bethany-free-onepage-bootstrap-theme/
