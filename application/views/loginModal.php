@@ -51,7 +51,7 @@
 
                 <div class="col-md-12">
                   <button type="submit" class="btn btn-primary float-end" id="btnLogin">Login</button>
-                  <button type="button" class="btn btn-secondary float-end me-2" data-dismiss="modal">Batal</button>
+                  <button type="button" class="btn btn-secondary float-end me-2" data-bs-dismiss="modal">Batal</button>
                 </div>
               </div>
             </div>
@@ -107,18 +107,9 @@
           .done(function(cekLoginResult) {
             console.log("success");
             if (cekLoginResult.success) {
-
+              window.open("<?php echo site_url() ?>","_self");
             }else{
-              $('#divAlert').empty();
-              var addText = `
-                        <div class="alert alert-danger d-flex align-items-center" role="alert">
-                          <i class="fas fa-exclamation-triangle"></i> 
-                          <div>
-                            `+cekLoginResult.msg+`
-                          </div>
-                        </div>
-              `;
-              $('#divAlert').html(addText)
+              swal('Informasi', cekLoginResult.msg, 'info');
             }
           })
           .fail(function() {

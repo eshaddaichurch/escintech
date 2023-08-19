@@ -85,7 +85,7 @@
 
                 <div class="col-md-12">
                   <button type="submit" class="btn btn-primary float-end">Daftar</button>
-                  <button type="button" class="btn btn-secondary float-end me-2" data-dismiss="modal">Batal</button>
+                  <button type="button" class="btn btn-secondary float-end me-2" data-bs-dismiss="modal">Batal</button>
                 </div>
               </div>
             </div>
@@ -158,55 +158,29 @@
            }
          },
          password: {
-           validators: {
-             notEmpty: {
-               message: "password tidak boleh kosong"
-             },
-           }
-         },
+          validators:{
+            stringLength: {
+                min: 6,
+                max: 25,
+                message: 'Panjang karakter minimal 6 sd 25 karakter'
+            },
+            callback: {
+                            message: 'Password tidak boleh kosong',
+                            callback: function (value, validator, password) {
+
+                                if ( $('#password').val()=='') {
+                                  return {
+                                      valid: false,
+                                      message: 'Password tidak boleh kosong'
+                                  }
+                                }
+                              return true
+                            }
+                        }
+          }
+        },
 
        }
-     }).on('success.form.bv', function(e){
-          e.preventDefault();
-          var email = $("#emaillogin").val();
-          var password = $("#passwordlogin").val();
-
-          // console.log(password);
-
-          $.ajax({
-            url: '<?php echo site_url('login/cekLoginAjax') ?>',
-            type: 'POST',
-            dataType: 'json',
-            data: {'email': email, 'password': password},
-          })
-          .done(function(cekLoginResult) {
-            console.log("success");
-            if (cekLoginResult.success) {
-
-            }else{
-              $('#divAlert').empty();
-              var addText = `
-                        <div class="alert alert-danger d-flex align-items-center" role="alert">
-                          <i class="fas fa-exclamation-triangle"></i> 
-                          <div>
-                            `+cekLoginResult.msg+`
-                          </div>
-                        </div>
-              `;
-              $('#divAlert').html(addText)
-            }
-          })
-          .fail(function() {
-            $('#divAlert').empty();
-              var addText = `
-                        <div class="alert alert-danger d-flex align-items-center" role="alert">
-                          <i class="fas fa-exclamation-triangle"></i> 
-                          <div>
-                            error script!
-                          </div>
-                        </div>
-              `;
-            $('#divAlert').html(addText)
-          })
-    });
+     });
+    
   </script>

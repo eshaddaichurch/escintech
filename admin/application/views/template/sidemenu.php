@@ -266,8 +266,15 @@
             <ul class="nav nav-treeview">              
                   
                   <li class="nav-item">
+                    <a href="<?php echo(site_url("konfirmasikelas/")) ?>" class="nav-link <?php echo ($menu=='konfirmasikelas') ? 'active' : '' ?>">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Konfirmasi Pendaftaran</p>
+                    </a>
+                  </li>
+
+                  <li class="nav-item">
                     <a href="<?php echo(site_url("registrasikelas/index/KL001")) ?>" class="nav-link <?php echo ($menu=='KL001') ? 'active' : '' ?>">
-                      <i class="fas fa-users"></i>
+                      <i class="far fa-circle nav-icon"></i>
                       <p>Membership Class </p>
                     </a>
                   </li>
@@ -275,49 +282,49 @@
 
                   <li class="nav-item">
                     <a href="<?php echo(site_url("registrasikelas/index/KL002")) ?>" class="nav-link <?php echo ($menu=='KL002') ? 'active' : '' ?>">
-                    <i class="fas fa-user na-icon"></i>
+                    <i class="far fa-circle nav-icon"></i>
                       <p>Foundation Class 1</p>
                     </a>
                   </li>
                   
                   <li class="nav-item">
                     <a href="<?php echo(site_url("registrasikelas/index/KL003")) ?>" class="nav-link <?php echo ($menu=='KL003') ? 'active' : '' ?>">
-                      <i class="fas fa-user na-icon"></i>
+                      <i class="far fa-circle nav-icon"></i>
                       <p>Foundation Class 2</p>
                     </a>
                   </li>
 
                   <li class="nav-item">
                     <a href="<?php echo(site_url("registrasikelas/index/KL004")) ?>" class="nav-link <?php echo ($menu=='KL004') ? 'active' : '' ?>">
-                      <i class="fas fa-user na-icon"></i>
+                      <i class="far fa-circle nav-icon"></i>
                       <p>Foundation Class 3</p>
                     </a>
                   </li>
 
                   <li class="nav-item">
                     <a href="<?php echo(site_url("registrasikelas/index/KL005")) ?>" class="nav-link <?php echo ($menu=='KL005') ? 'active' : '' ?>">
-                      <i class="fas fa-user na-icon"></i>
+                      <i class="far fa-circle nav-icon"></i>
                       <p>Grade 1</p>
                     </a>
                   </li>
 
                   <li class="nav-item">
                     <a href="<?php echo(site_url("registrasikelas/index/KL006")) ?>" class="nav-link <?php echo ($menu=='KL006') ? 'active' : '' ?>">
-                      <i class="fas fa-user na-icon"></i>
+                      <i class="far fa-circle nav-icon"></i>
                       <p>Grade 2</p>
                     </a>
                   </li>
 
                   <li class="nav-item">
                     <a href="<?php echo(site_url("registrasikelas/index/KL007")) ?>" class="nav-link <?php echo ($menu=='KL007') ? 'active' : '' ?>">
-                      <i class="fas fa-user na-icon"></i>
+                      <i class="far fa-circle nav-icon"></i>
                       <p>Grade 3</p>
                     </a>
                   </li>
 
                   <li class="nav-item">
                     <a href="<?php echo(site_url("registrasikelas/index/KL008")) ?>" class="nav-link <?php echo ($menu=='KL008') ? 'active' : '' ?>">
-                      <i class="fas fa-user na-icon"></i>
+                      <i class="far fa-circle nav-icon"></i>
                       <p>Folunteer Class</p>
                     </a>
                   </li>

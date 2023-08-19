@@ -12,7 +12,7 @@ class Login extends CI_Controller {
     public function keluar()
     {
         $this->session->sess_destroy(); 
-        redirect('login');
+        redirect( site_url() );
     }
 
     public function index()
@@ -39,10 +39,15 @@ class Login extends CI_Controller {
             if ($kirim->num_rows() > 0) {
                 $result = $kirim->row();
 
+                if ($result->statusverifikasiemail==0) {
+                    echo json_encode(array('msg' => "Email anda belum diverifikasi."));
+                    exit();
+                }
+
                 if (empty($result->foto)) {
                     $foto = base_url('admin/images/user-01.png');
                 }else{
-                    $foto = base_url('admin/uploads/pengguna/'.$result.foto);
+                    $foto = base_url('admin/uploads/jemaat/'.$result->foto);
                 }
 
                 $data = array(
@@ -59,6 +64,67 @@ class Login extends CI_Controller {
             	echo json_encode(array('msg' => "Email atau password anda salah"));
             }
         }
+    }
+
+    public function simpanregistrasi()
+    {
+        $namalengkap = $this->input->post('namalengkap');
+        $jeniskelamin = $this->input->post('jeniskelamin');
+        $tempatlahir = $this->input->post('tempatlahir');
+        $tanggallahir = $this->input->post('tanggallahir');
+        $alamatrumah = $this->input->post('alamatrumah');
+        $nohp = $this->input->post('namalengkap');
+        $email = $this->input->post('email');
+        $password = $this->input->post('password');
+        $tanggalinsert = date('Y-m-d H:i:s');
+        $idjemaat = $this->db->query("select create_idjemaat('".$tanggalinsert."') as idjemaat")->row()->idjemaat;
+
+        /*Periksa Email*/
+        if ($this->Login_model->emailsudahada($email)) {
+            $pesan = "<script>
+                            swal('Informasi', 'Email ".$email." sudah pernah terdaftar.', 'warning')
+                                .then(function(){
+                                        $('#registrasiModal').modal('show');
+                                        $('#namalengkap').val('".$namalengkap."');
+                                        $('#jeniskelamin').val('".$jeniskelamin."');
+                                        $('#tempatlahir').val('".$tempatlahir."');
+                                        $('#tanggallahir').val('".$tanggallahir."');
+                                        $('#alamatrumah').val('".$alamatrumah."');
+                                        $('#nohp').val('".$nohp."');
+                                        $('#email').val('".$email."');
+                                    })
+                        </script>";
+            $this->session->set_flashdata('pesan', $pesan);
+            redirect(site_url());  
+        }
+
+        $data = array(
+                        'idjemaat' => $idjemaat, 
+                        'namalengkap' => $namalengkap, 
+                        'jeniskelamin' => $idjemaat, 
+                        'tempatlahir' => $tempatlahir, 
+                        'tanggallahir' => $tanggallahir, 
+                        'alamatrumah' => $alamatrumah, 
+                        'nohp' => $nohp, 
+                        'email' => $email, 
+                        'password' => md5($password), 
+                        'tanggalinsert' => $tanggalinsert,
+                        'statusjemaat' => 'Umum',
+                    );
+
+        $simpan = $this->Login_model->simpanregistrasi($data);
+        if ($simpan) {
+            $pesan = "<script>
+                                swal('Informasi', 'Data berhasil disimpan! Silahkan buka email dan verifikasi email anda. Apabila tidak ada di dalam folder kotak masuk, coba periksa di dalam folder spam.', 'success').then(function(){
+                                        $('#loginModal').modal('show');
+                                    })
+                      </script>";
+        }else{
+            $eror = $this->db->error();         
+            $pesan = "<script>swal('Informasi', 'Data gagal disimpan! Pesan Error: ".$eror['code'].' '.$eror['message']."', 'error')</script>";
+        }
+        $this->session->set_flashdata('pesan', $pesan);
+        redirect(site_url());  
     }
 
 }

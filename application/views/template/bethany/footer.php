@@ -123,6 +123,13 @@
 
 
   <?php 
+    $pesan = $this->session->flashdata('pesan');
+    if (!empty($pesan)) {
+      echo $pesan;
+    }
+  ?>
+  
+  <?php 
   $this->load->view('loginModal');
   $this->load->view('registrasiModal');
   ?>

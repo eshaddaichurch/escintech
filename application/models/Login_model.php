@@ -9,6 +9,22 @@ class Login_model extends CI_Model {
         return $this->db->query($query);
     }
 
+    public function simpanregistrasi($data)
+    {
+    	return $this->db->insert('jemaat', $data);
+    }
+
+    public function emailsudahada($email)
+    {
+    	$this->db->where('email', $email);
+    	$rsCekEmail = $this->db->get('jemaat');
+    	if ($rsCekEmail->num_rows()>0) {
+    		return true;
+    	}else{
+    		return false;
+    	}
+    }
+
 }
 
 /* End of file Login_model.php */

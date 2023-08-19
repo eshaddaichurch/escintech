@@ -170,6 +170,14 @@
                                       }
                                     }
 
+                                    $sudahPernahDaftar = $this->Nextstep_model->sudahPernahDaftar($rowJadwal->idjadwalevent, $this->session->userdata('idjemaat'));
+
+                                    if ($sudahPernahDaftar) {
+                                      $button = '<button href="#" class="btn btn-success btn-sm" data-idjadwalevent="'.$rowJadwal->idjadwalevent.'" disabled>Daftar Sekarang</button>';
+                                    }else{
+                                      $button = '<a href="#" class="btn btn-success btn-sm" data-idjadwalevent="'.$rowJadwal->idjadwalevent.'" id="btnDaftar">Daftar Sekarang</a>';
+                                    }
+
                                     echo '
                                       <tr>
                                         <td style="width: 5%; text-align: center;">'.$no++.'</td>
@@ -178,11 +186,72 @@
                                         <td style="width: 15%; text-align: center;">'.$jamEvent.'</td>
                                         <td style="width: 15%; text-align: center;">'.$jumlahPeserta.'</td>
                                         <td style="width: 15%; text-align: center;">
-                                          <a href="#" class="btn btn-success btn-sm" id="btn-daftar">Daftar Sekarang</a>
+                                          '.$button.'
                                         </td>
                                       </tr>
-
                                     ';
+
+                                    if ($sudahPernahDaftar) {
+                                      $rsDaftar = $this->db->query("select * from v_jadwaleventregistrasi where idjadwalevent='".$rowJadwal->idjadwalevent."' and idjemaat='".$this->session->userdata('idjemaat')."'");
+                                      if ($rsDaftar->num_rows()>0) {
+                                        foreach ($rsDaftar->result() as $rowDaftar) {
+
+
+                                          if ($rowDaftar->statuskonfirmasi=='Menunggu') {
+                                            echo '
+                                              <tr>
+                                                <td style="width: 100%; text-align: center;" colspan="6">
+                                                  <div class="alert alert-warning" role="alert">
+                                                    <strong>Nama Jemaat : '.$rowDaftar->namalengkap.'</strong><br>
+                                                    <strong>Tgl Pengajuan : '.date('d-m-Y H:i:s', strtotime($rowDaftar->tglregistrasi)).'</strong><br>
+                                                    <strong>Status Pengajuan : '.$rowDaftar->statuskonfirmasi.'</strong><br><br>
+                                                    Pengajuan pendaftaran kelas anda masih dalam proses <strong>Menunggu</strong>!
+                                                  </div>
+                                                </td>
+                                              </tr>
+                                            ';;
+                                          }
+
+                                          if ($rowDaftar->statuskonfirmasi=='Disetujui') {
+                                            echo '
+                                              <tr>
+                                                <td style="width: 100%; text-align: center;" colspan="6">
+                                                  <div class="alert alert-success" role="alert">
+                                                    <strong>Nama Jemaat : '.$rowDaftar->namalengkap.'</strong><br>
+                                                    <strong>Tgl Pengajuan : '.date('d-m-Y H:i:s', strtotime($rowDaftar->tglregistrasi)).'</strong><br>
+                                                    <strong>Status Pengajuan : '.$rowDaftar->statuskonfirmasi.'</strong><br><br>
+                                                    Pengajuan pendaftaran kelas sudah <strong>Disetujui</strong>!<br>
+                                                    Silahkan datang pada waktu jadwal yang telah ditentukan.
+                                                  </div>
+                                                </td>
+                                              </tr>
+                                            ';;
+                                          }
+
+
+                                          if ($rowDaftar->statuskonfirmasi=='Disetujui') {
+                                            echo '
+                                              <tr>
+                                                <td style="width: 100%; text-align: center;" colspan="6">
+                                                  <div class="alert alert-danger" role="alert">
+                                                    <strong>Nama Jemaat : '.$rowDaftar->namalengkap.'</strong><br>
+                                                    <strong>Tgl Pengajuan : '.date('d-m-Y H:i:s', strtotime($rowDaftar->tglregistrasi)).'</strong><br>
+                                                    <strong>Status Pengajuan : '.$rowDaftar->statuskonfirmasi.'</strong><br><br>
+                                                    Pengajuan pendaftaran kelas <strong>Ditolak</strong>!<br>
+                                                    '.$rowDaftar->keterangankonfirmasi.'.
+                                                  </div>
+                                                </td>
+                                              </tr>
+                                            ';;
+                                          }
+
+
+                                        }
+                                      }
+
+                                    }
+
+
                                   }
                                 }else{
                                   echo '
@@ -214,6 +283,50 @@
 
     <?php $this->load->view('template/bethany/footer'); ?>
 
+    <script>
+
+      $(document).on('click', '#btnDaftar', function(e) {
+        var idjadwalevent = $(this).attr('data-idjadwalevent');
+
+        e.preventDefault();
+
+        swal({
+          title: "Daftar Kelas?",
+          text: "Anda ingin mendaftar di kelas ini? Pastikan anda sudah memenuhi persyaratan untuk mendaftar.",
+          icon: "warning",
+          buttons: ["Batal!", "Ya!"],
+          dangerMode: true,
+        })
+        .then((daftarkelas) => {
+          if (daftarkelas) {
+
+            $.ajax({
+              url: '<?php echo site_url('nextstep/daftar') ?>',
+              type: 'POST',
+              dataType: 'json',
+              data: {'idjadwalevent': idjadwalevent},
+            })
+            .done(function(daftarResult) {
+              console.log(daftarResult);
+
+              if (daftarResult.success) {
+                swal("Berhasil", "Pengajuan pendaftaran kelas next step anda berhasil disimpan. Periksa kembali status pengajuan pendaftaran anda dalam 2x24 Jam", "success")
+                  .then(function(){
+                    window.open("<?php echo site_url('nextstep/kelas/'.$kelas_slug.'/'.$this->encrypt->encode($menu)) ?>", "_self");
+                  });
+              }else{
+                swal("Gagal", daftarResult.msg, "info");
+              }
+            })
+            .fail(function() {
+              console.log("error");
+            });
+
+          }
+        });
+
+      });
+    </script>
 </body>
 
 </html>

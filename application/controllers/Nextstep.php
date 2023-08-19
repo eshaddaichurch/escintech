@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Nextstep extends CI_Controller {
+class Nextstep extends MY_Controller {
 
 	public function __construct()
 	{
@@ -34,6 +34,40 @@ class Nextstep extends CI_Controller {
 		$data['rowKelas'] = $rowKelas;
 		$this->load->view('nextstep/kelas', $data);
 
+	}
+
+	public function daftar()
+	{
+		$idjadwalevent = $this->input->post('idjadwalevent');
+		$idjemaat = $this->session->userdata('idjemaat');
+
+		if (empty($idjemaat)) {
+			echo json_encode(array('msg' => "Session login anda telah berakhir, silahkan refresh halaman dan login kembali"));
+			exit();
+		}
+
+		if ($this->Nextstep_model->sudahPernahDaftar($idjadwalevent, $idjemaat)) {
+			echo json_encode(array('msg' => "Anda sudah pernah mendaftar di jadwal kelas ini."));
+			exit();
+		}
+
+		$idregistrasi = $this->db->query("SELECT create_idregistrasievent('".date('Y-m-d')."') as idregistrasi")->row()->idregistrasi;
+		$data = array(
+						'idregistrasi' => $idregistrasi, 
+						'idjadwalevent' => $idjadwalevent, 
+						'tglregistrasi' => date('Y-m-d H:i:s'), 
+						'idjemaat' => $idjemaat, 
+						'statuskonfirmasi' => 'Menunggu',	 
+					);
+		// echo json_encode($data);
+		// exit();
+
+		$simpan = $this->Nextstep_model->daftar($data);
+		if ($simpan) {
+			echo json_encode(array('success' => true));
+		}else{
+			echo json_encode(array('msg' => "Gagal registrasi kelas"));
+		}
 	}
 
 }

@@ -120,7 +120,26 @@
 
             </li>
 
-            <li><a class="getstarted scrollto show-form-login" href="#about">Login</a></li>
+            <?php 
+            if (empty($this->session->userdata('idjemaat'))) {
+              echo '<li><a class="getstarted scrollto show-form-login" href="#">Login</a></li>';  
+            }else{
+              $active = '';
+
+              echo '
+              <li class="dropdown"><a href="#" class=""><span>'.$this->session->userdata('namalengkap').'</span> <i class="bi bi-chevron-down"></i></a>
+                        <ul>
+                          <li><a href="#">Profil Saya</a></li>
+                          <li><a href="#">Ubah Password</a></li>
+                          <li><a href="#">Kumunitas</a></li>
+                          <li><a href="#">Sertifikat Saya</a></li>
+                        </ul>
+                      </li>
+
+              ';  
+              echo '<li><a class="getstarted scrollto" href="'.site_url('login/keluar').'">Logout</a></li>';  
+            } 
+            ?>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
