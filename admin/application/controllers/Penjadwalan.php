@@ -74,7 +74,9 @@ class Penjadwalan extends CI_Controller {
                 $row[] = $rowdata->subtema;
                 $row[] = $rowdata->idpengkhotbah;
                 $row[] = $rowdata->videoembed; 
-                $row[] = $rowdata->gambarsampul;            
+                $row[] = '<img src="'.base_url('uploads/event/'. $rowdata->gambarsampul).'" alt="" style=" width: 80%;">';             
+
+                // $row[] = $rowdata->gambarsampul;            
                 $row[] = '<a href="'.site_url( 'penjadwalan/edit/'.$this->encrypt->encode($rowdata->idjadwalevent) ).'" class="btn btn-sm btn-warning btn-circle"><i class="fa fa-edit"></i></a> | 
                         <a href="'.site_url('penjadwalan/delete/'.$this->encrypt->encode($rowdata->idjadwalevent) ).'" class="btn btn-sm btn-danger btn-circle" id="hapus"><i class="fa fa-trash"></i></a>';
                 $data[] = $row;
