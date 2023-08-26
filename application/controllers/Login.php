@@ -114,8 +114,8 @@ class Login extends CI_Controller {
 
         $simpan = $this->Login_model->simpanregistrasi($data);
         if ($simpan) {
-            $textemail = '<a href="'.site_url('login/verifikasiemail/'.$email).'">Verifikasi Email</a>'
-            $this->App->sendEmailDaftar($email, 'Konfirmasi Pendaftaran MyEsc', $textemail)
+            $textemail = '<a href="'.site_url('login/verifikasiemail/'.$email).'">Verifikasi Email</a>';
+            $this->App->sendEmailDaftar($email, 'Konfirmasi Pendaftaran MyEsc', $textemail);
 
             $pesan = "<script>
                                 swal('Informasi', 'Data berhasil disimpan! Silahkan buka email dan verifikasi email anda. Apabila tidak ada di dalam folder kotak masuk, coba periksa di dalam folder spam.', 'success').then(function(){
