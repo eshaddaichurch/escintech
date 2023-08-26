@@ -114,7 +114,7 @@ class Login extends CI_Controller {
 
         $simpan = $this->Login_model->simpanregistrasi($data);
         if ($simpan) {
-            $textemail = '<a href="'.site_url('login/verifikasiemail/'.$email).'">Verifikasi Email</a>';
+            $textemail = '<a href="'.site_url('login/verifikasiemail/'.$this->encrypt->encode($email)).'">Verifikasi Email</a>';
             $this->App->sendEmailDaftar($email, 'Konfirmasi Pendaftaran MyEsc', $textemail);
 
             $pesan = "<script>
@@ -132,16 +132,31 @@ class Login extends CI_Controller {
 
     public function verifikasiemail($email)
     {
-        $simpan = $this->db->query("update jemaat set statusverifikasiemail='1' where email='$email' ");
-         if ($simpan) {
-            $pesan = "<script>
-                                swal('Informasi', 'Email berhasil di verifikasi.', 'success');
-                      </script>";
+        $email = $this->encrypt->decode($email);
+
+        /*Periksa Email*/
+        if ($this->Login_model->emailsudahada($email)) {
+
+            $simpan = $this->db->query("update jemaat set statusverifikasiemail='1' where email='$email' ");
+             if ($simpan) {
+                $pesan = "<script>
+                                    swal('Informasi', 'Email berhasil di verifikasi.', 'success');
+                          </script>";
+            }else{
+                $pesan = "<script>swal('Informasi', 'Email gagal diverifikasi!', 'error')</script>";
+            }
+            $this->session->set_flashdata('pesan', $pesan);
+            redirect(site_url());  
+
         }else{
-            $pesan = "<script>swal('Informasi', 'Email gagal diverifikasi!', 'error')</script>";
+
+            $pesan = "<script>
+                            swal('Informasi', 'Email tidak ditemukan.', 'warning');
+                        </script>";
+            $this->session->set_flashdata('pesan', $pesan);
+            redirect(site_url());  
         }
-        $this->session->set_flashdata('pesan', $pesan);
-        redirect(site_url());  
+
     }
 
 }
