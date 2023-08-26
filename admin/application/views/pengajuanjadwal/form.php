@@ -271,15 +271,15 @@
                                           <div class="form-group row required" id="divpenanggungjawab">
                                             <label for="" class="col-md-3 col-form-label">Nama Penanggung Jawab</label>
                                             <div class="col-md-9">
-                                              <select name="idpenanggungjawab" id="idpenanggungjawab" class="form-control select2">
+                                              <select name="namapenanggungjawab" id="namapenanggungjawab" class="form-control select2">
                                                 <option value="">Pilih nama penanggung jawab...</option>
 
                                                 <?php 
-                                                  $rsJemaat = $this->Jemaat_model->get_all("Jemaat");
-                                                  if ($rsJemaat->num_rows()>0) {
-                                                    foreach ($rsJemaat->result() as $row) {
+                                                  $rsDepartement = $this->App->getDepartement();
+                                                  if ($rsDepartement->num_rows()>0) {
+                                                    foreach ($rsDepartement->result() as $row) {
                                                       echo '
-                                                        <option value="'.$row->idjemaat.'">'.$row->namalengkap.'</option>
+                                                        <option value="'.$row->namahead.'">'.$row->namahead.'</option>
                                                       ';
                                                     }
                                                   }
@@ -886,7 +886,7 @@ $('input[type=radio][name=jenisjadwal]').change();
             $("#tanggaljadwal").val(result.tanggaljadwal);
             $("#namaevent").val(result.namaevent);
             $("#deskripsi").val(result.deskripsi);
-            $("#idpenanggungjawab").val(result.idpenanggungjawab);
+            $("#namapenanggungjawab").val(result.namapenanggungjawab);
             $("#gambarsampul").val(result.gambarsampul);
           }); 
 
@@ -967,7 +967,7 @@ $('input[type=radio][name=jenisjadwal]').change();
         if (stepDirection==2) {         
           var namaevent = $('#namaevent').val();
           var iddepartement = $('#iddepartement').val();
-          var idpenanggungjawab = $('#idpenanggungjawab').val();
+          var namapenanggungjawab = $('#namapenanggungjawab').val();
           var onsitestatus = $('input[type=radio][name=onsiteOptions]').val();
           var aplikasiDigunakanOptions = $('input[type=radio][name=aplikasiDigunakanOptions]').val();
 
@@ -987,10 +987,10 @@ $('input[type=radio][name=jenisjadwal]').change();
           return false;
           } 
 
-          if (idpenanggungjawab=="") {
+          if (namapenanggungjawab=="") {
           swal("Informasi", "Nama penanggungjawab event tidak boleh kosong!", "info")
           .then(function(){
-            $('#idpenanggungjawab').focus();
+            $('#namapenanggungjawab').focus();
           });;
           return false;
           } 
@@ -1047,7 +1047,7 @@ $('input[type=radio][name=jenisjadwal]').change();
     var idkelas       = $("#idkelas").val();
     var iddepartement       = $("#iddepartement").val();
     var idpengkhotbah = $('#idpengkhotbah').val();
-    var idpenanggungjawab       = $("#idpenanggungjawab").val();
+    var namapenanggungjawab       = $("#namapenanggungjawab").val();
     var jumlahvolunteer = $('#jumlahvolunteer').val();
     var jumlahjemaat = $('#jumlahjemaat').val();
     var onsitestatus = $('input[type=radio][name=onsiteOptions]').val();
@@ -1143,7 +1143,6 @@ $('input[type=radio][name=jenisjadwal]').change();
       var harusdaftar = 0;
     }
 
-
     var formData = {
             "idjadwalevent"       : idjadwalevent,
             "jenisjadwal"       : jenisjadwal,
@@ -1153,7 +1152,7 @@ $('input[type=radio][name=jenisjadwal]').change();
             "subtema"       : subtema,
             "iddepartement"       : iddepartement,
             "idpengkhotbah"       : idpengkhotbah,
-            "idpenanggungjawab"       : idpenanggungjawab,
+            "namapenanggungjawab"       : namapenanggungjawab,
             "jumlahvolunteer"       : jumlahvolunteer,
             "jumlahjemaat"       : jumlahjemaat,
             "onsitestatus"       : onsitestatus,
@@ -1179,15 +1178,15 @@ $('input[type=radio][name=jenisjadwal]').change();
         };
 
 
-      //console.log(isidatatable);
-      // console.log(formData);
+
+      // console.log(isidatatable);
       // return;
       $.ajax({
                 type        : 'POST', 
                 url         : '<?php echo site_url("pengajuanjadwal/simpanjadwalevent") ?>', 
                 data        : formData, 
                 dataType    : 'json', 
-                encode      : true
+                encode      : true,
             })
             .done(function(simpanjadwaleventResult){
 

@@ -21,6 +21,15 @@ class App extends CI_Model {
 		return $this->db->get("v_pengkhotbah");
 	}
 
+	public function getDepartement($iddepartement="")
+	{
+		if (!empty($iddepartement)) {
+			$this->db->where("iddepartement", $iddepartement);
+		}
+		$this->db->order_by('namadepartement', 'asc');
+		return $this->db->get('v_departement');
+	}
+
 	public function getJemaatSimpatisan($idjemaat='')
 	{
 		if ($idjemaat!="") {
@@ -34,6 +43,33 @@ class App extends CI_Model {
 	public function APPBASEURL()
 	{
 		return str_replace('/admin', '', site_url());
+	}
+
+
+	public function uploadImage($file, $namaFile, $namaFileLama, $foldername)
+	{
+        $this->load->library('image_lib');
+
+		if (!empty($file[$namaFile]['name'])) {
+            $config['upload_path']          = 'uploads/'.$foldername.'/';
+            $config['allowed_types']        = 'gif|jpg|png|jpeg';
+            $config['remove_space']         = TRUE;
+            $config['max_size']            = '2000KB';
+            
+
+            $this->load->library('upload', $config);           
+            if ($this->upload->do_upload($namaFile)) {
+                $foto = $this->upload->data('file_name');
+                $size = $this->upload->data('file_size');
+                $ext  = $this->upload->data('file_ext'); 
+            }else{
+                $foto = $namaFileLama;
+            }          
+        }else{          
+            $foto = $namaFileLama;
+        }
+
+        return $foto;
 	}
 
 }

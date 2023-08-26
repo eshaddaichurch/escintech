@@ -188,7 +188,7 @@ class Pengajuanjadwal extends CI_Controller {
         $subtema           = $this->input->post('subtema');
         $iddepartement           = $this->input->post('iddepartement');
         $idpengkhotbah           = $this->input->post('idpengkhotbah');
-        $idpenanggungjawab           = $this->input->post('idpenanggungjawab');
+        $namapenanggungjawab           = $this->input->post('namapenanggungjawab');
         $jumlahvolunteer           = $this->input->post('jumlahvolunteer');
         $jumlahjemaat           = $this->input->post('jumlahjemaat');
         $onsitestatus           = $this->input->post('onsitestatus');
@@ -207,7 +207,6 @@ class Pengajuanjadwal extends CI_Controller {
         $konsepPengumumanOptions           = $this->input->post('konsepPengumumanOptions');
         $detailKonsepPengumuman           = $this->input->post('detailKonsepPengumuman');
         $tampilkanDiWebsiteOptions           = $this->input->post('tampilkanDiWebsiteOptions');
-        $foto           = $this->input->post('foto');
         $deskripsi           = $this->input->post('deskripsi');
         $harusdaftar           = $this->input->post('harusdaftar');
         $halYangDisampaian           = $this->input->post('halYangDisampaian');
@@ -243,13 +242,15 @@ class Pengajuanjadwal extends CI_Controller {
             $idkelas = null;
         }
 
+        $foto = $this->App->uploadImage($_FILES, 'foto', '', 'pengajuanjadwal');
+
         $idjadwalevent = $this->db->query("select create_idjadwalevent('".date('Y-m-d')."') as idjadwalevent ")->row()->idjadwalevent;
 
         $arrayhead = array(
                             'idjadwalevent' => $idjadwalevent,
                             'namaevent' => $namaevent,
                             'deskripsi' => $deskripsi,
-                            'idpenanggungjawab' => $idpenanggungjawab,
+                            'namapenanggungjawab' => $namapenanggungjawab,
                             'gambarsampul' => $foto,
                             'iddepartement' => $iddepartement,
                             'tglinsert' => $tglinsert,

@@ -42,10 +42,10 @@
                   <thead>
                     <tr class="bg-primary" style="">
                       <th style="width: 5%; text-align: center;">No</th>
-                      <th style="text-align: center;">ID Departement</th>
+                      <th style="width: 15%; text-align: center;">Head Departement</th>
+                      <th style="width: 5%; text-align: center;">ID Departement</th>
                       <th style="text-align: center;">Nama Departement</th>
                       <th style="text-align: center;">Nama Group</th>
-                      <th style="text-align: center;">Departement Head</th>
                       <th style="text-align: center; width: 15%;">Aksi</th>
                     </tr>
                   </thead>
@@ -91,7 +91,7 @@
         },
         "columnDefs": [
                         { "targets": [ 0 ], "orderable": false, "className": "dt-body-center" },
-                        { "targets": [ 1 ], "className": "dt-body-center" },
+                        { "targets": [ 1 ], "orderable": false, "className": "dt-body-center" },
                         { "targets": [ 2 ], "className": "dt-body-center" },
                         { "targets": [ 3 ], "className": "dt-body-center" },
                         { "targets": [ 4 ], "className": "dt-body-center" },

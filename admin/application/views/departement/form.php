@@ -24,7 +24,7 @@
 
 
 
-     <form action="<?php echo (site_url('departement/simpan')) ?>" method="post" id="form">
+     <form action="<?php echo (site_url('departement/simpan')) ?>" method="post" id="form" enctype="multipart/form-data">
        <div class="row">
          <div class="col-md-12">
            <div class="card" id="cardcontent">
@@ -75,19 +75,7 @@
                <div class="form-group row required">
                  <label for="" class="col-md-3 col-form-label">Departement Head</label>
                  <div class="col-md-9">
-                   <select name="idjemaathead" id="idjemaathead" class="form-control select2">
-                     <option value="">Pilih nama kepala departement</option>
-                     <?php
-                      $this->db->order_by('namalengkap', 'asc');
-                      $rsjemaat = $this->Jemaat_model->get_all();
-                      if ($rsjemaat->num_rows() > 0) {
-                        foreach ($rsjemaat->result() as $row) {
-                          echo '
-                                <option value="' . $row->idjemaat . '">' . $row->namalengkap . '</option>
-                              ';
-                        }
-                      }
-                      ?>
+                  <input type="text" name="namahead" id="namahead" class="form-control" placeholder="Nama Head">
                    </select>
                  </div>
                </div>
@@ -100,6 +88,22 @@
                      <option value="Aktif">Aktif</option>
                      <option value="Tidak Aktif">Tidak Aktif</option>
                    </select>
+                 </div>
+               </div>
+
+
+               <div class="form-group row required">
+                 <label for="" class="col-md-3 col-form-label">Foto Head <small class="text-danger"> (Max 1MB)</small></label>
+                 <div class="col-md-9">
+                  <div class="row">
+                    <div class="col-12">
+                       <input type="file" name="fotohead" id="fotohead">
+                       <input type="hidden" name="fotohead_lama" id="fotohead_lama">
+                    </div>
+                    <div class="col-12">
+                      <a href="" id="linkFotoHead" target="_blank"></a>
+                    </div>
+                  </div>
                  </div>
                </div>
 
@@ -153,8 +157,12 @@
            $("#iddepartement").val(result.iddepartement);
            $("#namadepartement").val(result.namadepartement);
            $("#idgroup").val(result.idgroup).trigger('change');
-           $("#idjemaathead").val(result.idjemaathead).trigger('change');
+           $("#namahead").val(result.namahead).trigger('change');
            $("#statusaktif").val(result.statusaktif);
+           $("#fotohead_lama").val(result.fotohead);
+
+           $('#linkFotoHead').html(result.fotohead);
+           $('#linkFotoHead').attr('href', "<?php echo base_url('uploads/departement/') ?>"+result.fotohead);
 
          });
 
@@ -182,7 +190,7 @@
              },
            }
          },
-         idjemaathead: {
+         namahead: {
            validators: {
              notEmpty: {
                message: "kepala group tidak boleh kosong"

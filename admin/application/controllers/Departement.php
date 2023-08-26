@@ -64,14 +64,20 @@ class Departement extends CI_Controller {
         $data = array();
 
         if ($RsData->num_rows()>0) {
+            
             foreach ($RsData->result() as $rowdata) {
+                if (!empty($rowdata->fotohead)) {
+                    $fotohead = '<img src="'.base_url('uploads/departement/'.$rowdata->fotohead).'" alt="" style="width: 80%;">' ;
+                }else{
+                    $fotohead = '<img src="'.base_url('images/user-01.png').'" alt="" style="width: 80%;">' ;
+                }
                 $no++;
                 $row = array();
                 $row[] = $no;
+                $row[] = $fotohead.'<br>'.$rowdata->namahead;
                 $row[] = $rowdata->iddepartement;
                 $row[] = $rowdata->namadepartement;
                 $row[] = $rowdata->namagroup;
-                $row[] = $rowdata->namalengkap;
                 $row[] = '<a href="'.site_url( 'departement/edit/'.$this->encrypt->encode($rowdata->iddepartement) ).'" class="btn btn-sm btn-warning btn-circle"><i class="fa fa-edit"></i></a> | 
                         <a href="'.site_url('departement/delete/'.$this->encrypt->encode($rowdata->iddepartement) ).'" class="btn btn-sm btn-danger btn-circle" id="hapus"><i class="fa fa-trash"></i></a>';
                 $data[] = $row;
@@ -130,11 +136,15 @@ class Departement extends CI_Controller {
     {       
         $iddepartement             = $this->input->post('iddepartement');
         $namadepartement        = $this->input->post('namadepartement');
-        $idjemaathead        = $this->input->post('idjemaathead');
+        $namahead        = $this->input->post('namahead');
         $idgroup        = $this->input->post('idgroup');
         $statusaktif        = $this->input->post('statusaktif');
         $tanggalinsert        = date('Y-m-d H:i:s');
+
         $tanggalupdate        = date('Y-m-d H:i:s');
+            
+        $fotohead_lama = $this->input->post('fotohead_lama');
+        $fotohead = $this->App->uploadImage($_FILES, "fotohead", $fotohead_lama, 'departement');
 
         if ( $iddepartement=='' ) {  
 
@@ -144,7 +154,8 @@ class Departement extends CI_Controller {
                             'iddepartement'   => $iddepartement, 
                             'namadepartement'   => $namadepartement, 
                             'idgroup'   => $idgroup, 
-                            'idjemaathead'   => $idjemaathead, 
+                            'namahead'   => $namahead, 
+                            'fotohead'   => $fotohead, 
                             'statusaktif'   => $statusaktif, 
                         );
             $simpan = $this->Departement_model->simpan($data);      
@@ -154,9 +165,12 @@ class Departement extends CI_Controller {
                             'iddepartement'   => $iddepartement, 
                             'namadepartement'   => $namadepartement, 
                             'idgroup'   => $idgroup, 
-                            'idjemaathead'   => $idjemaathead, 
+                            'namahead'   => $namahead, 
+                            'fotohead'   => $fotohead, 
                             'statusaktif'   => $statusaktif, 
                         );
+            // var_dump($data);
+            // exit();
             $simpan = $this->Departement_model->update($data, $iddepartement);
         }
 
@@ -192,7 +206,8 @@ class Departement extends CI_Controller {
                             'namadepartement'     =>  $RsData->namadepartement,  
                             'idgroup'     =>  $RsData->idgroup,  
                             'statusaktif'     =>  $RsData->statusaktif,  
-                            'idjemaathead'     =>  $RsData->idjemaathead,  
+                            'namahead'     =>  $RsData->namahead,  
+                            'fotohead'     =>  $RsData->fotohead,  
                         );
 
         echo(json_encode($data));

@@ -3,7 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class App extends CI_Model {
 
-	public function sendEmailDaftar($email, $subject, $textemail)
+    public function sendEmailDaftar($email, $subject, $textemail)
     {
             $this->load->library('email');
 
