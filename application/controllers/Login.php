@@ -114,6 +114,9 @@ class Login extends CI_Controller {
 
         $simpan = $this->Login_model->simpanregistrasi($data);
         if ($simpan) {
+            $textemail = '<a href="'.site_url('login/verifikasiemail/'.$email).'">Verifikasi Email</a>'
+            $this->App->sendEmailDaftar($email, 'Konfirmasi Pendaftaran MyEsc', $textemail)
+
             $pesan = "<script>
                                 swal('Informasi', 'Data berhasil disimpan! Silahkan buka email dan verifikasi email anda. Apabila tidak ada di dalam folder kotak masuk, coba periksa di dalam folder spam.', 'success').then(function(){
                                         $('#loginModal').modal('show');
@@ -122,6 +125,20 @@ class Login extends CI_Controller {
         }else{
             $eror = $this->db->error();         
             $pesan = "<script>swal('Informasi', 'Data gagal disimpan! Pesan Error: ".$eror['code'].' '.$eror['message']."', 'error')</script>";
+        }
+        $this->session->set_flashdata('pesan', $pesan);
+        redirect(site_url());  
+    }
+
+    public function verifikasiemail($email)
+    {
+        $simpan = $this->db->query("update jemaat set statusverifikasiemail='1' where email='$email' ");
+         if ($simpan) {
+            $pesan = "<script>
+                                swal('Informasi', 'Email berhasil di verifikasi.', 'success');
+                      </script>";
+        }else{
+            $pesan = "<script>swal('Informasi', 'Email gagal diverifikasi!', 'error')</script>";
         }
         $this->session->set_flashdata('pesan', $pesan);
         redirect(site_url());  
