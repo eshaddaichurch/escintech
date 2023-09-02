@@ -150,3 +150,129 @@
     });
 
   </script>
+
+
+  
+
+<script>
+
+  function createTimeStamp(dates)
+  {    
+    var datesSpliet = dates.split("-");
+    var newDate = datesSpliet[1]+"/"+datesSpliet[2]+"/"+datesSpliet[0];
+    var tStamp = new Date(newDate).getTime();
+    var tStampStr = tStamp.toString();
+    return tStampStr.substring(0,10);
+  }
+
+  function timestampToDate(nTimestamp)
+  {
+    var date = new Date(nTimestamp * 1000);
+    var hours = date.getHours();
+    var minutes = "0" + date.getMinutes();
+    var seconds = "0" + date.getSeconds();
+    var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+    // console.log(date);
+    return date;
+  }
+
+  function setCookie(cname, cvalue) {
+    var date = new Date();
+    // var exdays = date.setDate(date.getDate() + 1); //1day
+    var exdays = 1; // 1 hour
+    const d = new Date();
+    d.setTime(d.getTime() + (exdays * 60 * 60 * 1000));
+    let expires = "expires="+ d.toUTCString();
+    document.cookie = cname + "=" + cvalue + ";" + expires;
+  }
+
+  function getCookie(cname) {
+    let name = cname + "=";
+    let decodedCookie = decodeURIComponent(document.cookie);
+    let ca = decodedCookie.split(';');
+    for(let i = 0; i <ca.length; i++) {
+      let c = ca[i];
+      while (c.charAt(0) == ' ') {
+        c = c.substring(1);
+      }
+      if (c.indexOf(name) == 0) {
+        return c.substring(name.length, c.length);
+      }
+    }
+    return "";
+  }
+
+  function formatDate(date) {
+    date = new Date(date);
+    return (
+      [
+        date.getFullYear(),
+        padTo2Digits(date.getMonth() + 1),
+        padTo2Digits(date.getDate()),
+      ].join('-')
+    );
+  }
+
+  function formatDateTime(date) {
+    return (
+      [
+        date.getFullYear(),
+        padTo2Digits(date.getMonth() + 1),
+        padTo2Digits(date.getDate()),
+      ].join('-') +
+      ' ' +
+      [
+        padTo2Digits(date.getHours()),
+        padTo2Digits(date.getMinutes()),
+        // padTo2Digits(date.getSeconds()),  // 👈️ can also add seconds
+      ].join(':')
+    );
+  }
+
+
+  function padTo2Digits(num) {
+    return num.toString().padStart(2, '0');
+  }
+
+
+  function addSelectOption(selectId, optValue, optText)
+  {
+    var select = document.getElementById(selectId);
+    var option = document.createElement("option");
+    option.value = optValue;
+    option.innerHTML = optText;
+    select.appendChild(option);
+  }
+
+  function tglHariIni()
+  {
+    var now = new Date();
+    var day = ("0" + now.getDate()).slice(-2);
+    var month = ("0" + (now.getMonth() + 1)).slice(-2);
+    var today = now.getFullYear()+"-"+(month)+"-"+(day) ;
+    return today;
+  }
+
+  function tgldmy(date) {
+    date = new Date(date);
+    return (
+      [
+        padTo2Digits(date.getDate()),
+        padTo2Digits(date.getMonth() + 1),
+        date.getFullYear(),
+      ].join('-')
+    );
+  }
+
+  function tglymd(date) {
+    date = new Date(date);
+    return (
+      [
+        date.getFullYear(),
+        padTo2Digits(date.getMonth() + 1),
+        padTo2Digits(date.getDate()),
+      ].join('-')
+    );
+  }
+
+</script>
