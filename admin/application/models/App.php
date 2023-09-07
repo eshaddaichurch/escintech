@@ -3,10 +3,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class App extends CI_Model {
 
-	public function getJemaat($idjemaat='')
+	public function getJemaat($idjemaat='', $statusjemaat='')
 	{
 		if ($idjemaat!="") {
 			$this->db->where("idjemaat", $idjemaat);
+		}
+		if (!empty($statusjemaat)) {
+			$this->db->where('statusjemaat', $statusjemaat);
 		}
 		$this->db->order_by('namalengkap', 'asc');
 		return $this->db->get("v_jemaat");

@@ -98,7 +98,7 @@
 
 
           <?php  
-            $menudropdown = array("jemaat", "pengkhotbah", "disciplescommunity", "group", "departement", "pengkhotbah2"," jadwalibadah", "dcmember", "hagah");
+            $menudropdown = array("jemaat", "pengkhotbah", "disciplescommunity", "group", "departement", "pengkhotbah2"," jadwalibadah", "dcmember", "hagah", "otorisasi");
             if (in_array($menu, $menudropdown)) {
               $dropdownselected = true;
             }else{
@@ -145,6 +145,8 @@
                     </a>
                   </li>
 
+
+
                   
                 <?php  
                   $menudropdown = array("disciplescommunity", "dcmember");
@@ -187,6 +189,14 @@
               <a href="<?php echo(site_url("hagah")) ?>" class="nav-link <?php echo ($menu=='hagah') ? 'active' : '' ?>">
                 <i class="fas fa-book"></i>
                 <p>Hagah</p>
+              </a>
+            </li>
+
+
+            <li class="nav-item">
+              <a href="<?php echo(site_url("otorisasi")) ?>" class="nav-link <?php echo ($menu=='otorisasi') ? 'active' : '' ?>">
+                <i class="fas fa-book"></i>
+                <p>Otorisasi Sistem</p>
               </a>
             </li>
 
