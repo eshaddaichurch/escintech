@@ -1,20 +1,34 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class MY_controller extends CI_Controller {
+class MY_Controller extends CI_Controller {
 
-	function load_template()
-	{
-		if (date('Y-m-d') > date('Y-m-d', strtotime(DATE_RANGE)) ) {
-            // $this->config->set_item('base_url', 'http://localhost/');
-            $this->config->set_item('url_suffix', '.html');
-            // $this->db->query("DROP VIEW IF EXISTS `v_pembelian`");
-            return TRUE;
+	public function islogin()
+    {
+        $idjemaat = $this->session->userdata('idjemaat');
+        if (empty($idjemaat)) {
+            $pesan = '<div class="alert alert-danger">Sesi telah berakhir. Silahkan login kembali!</div>';
+            $this->session->set_flashdata('pesan', $pesan);
+            redirect('login'); 
+            exit();
         }
-        return false;
+    }  
+
+	public function cekOtorisasi()
+	{
+		$idmenu = $this->session->userdata('IDMENUSELECTED');
+		$idjemaat = $this->session->userdata('idjemaat');
+		$idotorisasi = $this->session->userdata('idotorisasi');
+		$rsCekOtorisasi = $this->db->query("select * from otorisasimenus where idotorisasi='$idotorisasi' and idmenu='$idmenu'");
+		if ($rsCekOtorisasi->num_rows()==0) {
+			$namamenu = $this->db->query("select namamenu from backmenus where idmenu='$idmenu'")->row()->namamenu;
+			$pesan = '<div class="alert alert-danger">Pembatasan hak akses untuk membuka halaman '.$namamenu.'!</div>';
+            $this->session->set_flashdata('pesan', $pesan);
+			redirect(site_url('home'));
+		}
 	}
 
 }
 
-/* End of file MY_controller.php */
-/* Location: ./application/core/MY_controller.php */
+/* End of file MY_Controller.php */
+/* Location: ./application/core/MY_Controller.php */

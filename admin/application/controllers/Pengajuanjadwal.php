@@ -1,27 +1,18 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Pengajuanjadwal extends CI_Controller {
+class Pengajuanjadwal extends MY_Controller {
 
 	public function __construct()
     {
         parent::__construct();
-        $this->is_login();
+        $this->islogin();
         $this->load->model('pengajuanjadwal_model');
         $this->load->model('Departement_model');
         $this->load->model('Jemaat_model');
+        $this->session->set_userdata( 'IDMENUSELECTED', 'P200' );
+        $this->cekOtorisasi();
     }
-    
-    public function is_login()
-    {
-        $idjemaat = $this->session->userdata('idjemaat');
-        if (empty($idjemaat)) {
-            $pesan = '<div class="alert alert-danger">Sesi telah berakhir. Silahkan login kembali!</div>';
-            $this->session->set_flashdata('pesan', $pesan);
-            redirect('login'); 
-            exit();
-        }
-    }   
 
     public function index()
     {

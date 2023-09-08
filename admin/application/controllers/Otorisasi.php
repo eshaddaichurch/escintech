@@ -1,25 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Otorisasi extends CI_Controller {
+class Otorisasi extends MY_Controller {
 
 	public function __construct()
     {
         parent::__construct();
-        $this->is_login();
+        $this->islogin();
         $this->load->model('Otorisasi_model');
+        $this->session->set_userdata( 'IDMENUSELECTED', 'M700' );
+        $this->cekOtorisasi();
     }
-
-    public function is_login()
-    {
-        $idjemaat = $this->session->userdata('idjemaat');
-        if (empty($idjemaat)) {
-            $pesan = '<div class="alert alert-danger">Sesi telah berakhir. Silahkan login kembali!</div>';
-            $this->session->set_flashdata('pesan', $pesan);
-            redirect('login'); 
-            exit();
-        }
-    }   
 
     public function index()
     {
@@ -268,25 +259,21 @@ class Otorisasi extends CI_Controller {
         redirect('otorisasi');   
     }
 
-    public function updatemenu()
+    public function simpanmenu()
     {
     	$idotorisasi = $this->input->post('idotorisasi');
-    	$idmenu = $this->input->post('idmenu');
-    	$comment = $this->input->post('comment');
+    	$arrMenu = $this->input->post('arrMenu');
+        // echo json_encode($arrMenu);
+        // exit();
+        $dataMenu = array();
+        foreach ($arrMenu as $value) {
+            array_push($dataMenu, array(
+                                        'idotorisasi' => $idotorisasi, 
+                                        'idmenu' => $value, 
+                                    ));
+        }
 
-    	if ($comment=='add') {
-    		$data = array(
-    						'idotorisasi' => $idotorisasi,
-    						'idmenu' => $idmenu,
-    					);
-    		// echo json_encode($data);
-    		// exit();
-    		$simpan = $this->db->insert('otorisasimenus', $data);
-    	}else{
-    		$simpan = $this->db->query("delete from otorisasimenus where idotorisasi='$idotorisasi' and idmenu='$idmenu' ");
-
-    	}
-
+        $simpan = $this->Otorisasi_model->simpanmenu($dataMenu, $idotorisasi);
     	if ($simpan) {
     		echo json_encode( array('success' => true));
     	}else{

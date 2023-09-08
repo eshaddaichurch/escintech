@@ -5,7 +5,7 @@ class Login_model extends CI_Model {
 
     public function cek_login($username, $password)
     {
-        $query = "select * from jemaat where username='".$username."' and password='".$password."'";
+        $query = "select * from v_loginadmin where username='".$username."' and password='".$password."'";
         return $this->db->query($query);
     }
 

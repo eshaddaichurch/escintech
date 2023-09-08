@@ -1,48 +1,31 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Dcmember extends CI_Controller {
+class Dcmember extends MY_Controller {
 
     public function __construct()
     {
         parent::__construct();
-        $this->is_login();
+        $this->islogin();
         $this->load->model('Dcmember_model');
         $this->load->library('image_lib');
-
-        
+        $this->session->set_userdata( 'IDMENUSELECTED', 'M502' );
+        $this->cekOtorisasi();
     }
 
-                    //login
-                    public function is_login()
-                    {
-                        $idjemaat = $this->session->userdata('idjemaat');
-                        if (empty($idjemaat)) {
-                            $pesan = '<div class="alert alert-danger">Sesi telah berakhir. Silahkan login kembali!</div>';
-                            $this->session->set_flashdata('pesan', $pesan);
-                            redirect('login'); 
-                            exit();
-                        }
-                    }   
+    public function index()
+    {
+        $data['menu'] = 'dcmember';
+        $this->load->view('dcmember/listdata_dcmember', $data);
+    }   
 
+    public function tambah()
+    {       
+        $data['iddc'] = '';        
+        $data['menu'] = 'ddcmember';  
+        $this->load->view('dcmember/form_dcm', $data);
+    }
     
-                        public function index()
-                        {
-                            $data['menu'] = 'dcmember';
-                            $this->load->view('dcmember/listdata_dcmember', $data);
-                        }   
-
-                        public function tambah()
-                        {       
-                            $data['iddc'] = '';        
-                            $data['menu'] = 'ddcmember';  
-                            $this->load->view('dcmember/form_dcm', $data);
-    }
-    // pause
-
-
-
-
     public function edit($iddcmember)
     {       
         $iddcmember = $this->encrypt->decode($iddcmember);

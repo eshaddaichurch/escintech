@@ -50,6 +50,8 @@ class Login extends CI_Controller {
                     'idjemaat' => $result->idjemaat,
                     'namalengkap' => $result->namalengkap,
                     'namapanggilan' => $result->namapanggilan,
+                    'idotorisasi' => $result->idotorisasi,
+                    'namaotorisasi' => $result->namaotorisasi,
                     'foto' => $foto,
                 );
 

@@ -85,7 +85,7 @@
                                 <tr>
                                   <td style="width: 100%; text-alignment: left;">
                                     <div class="form-check">
-                                      '.$spasi.'<input class="form-check-input form-check-otorisasi" type="checkbox" value="" id="chk'.$row->idmenu.'" data-idmenu="'.$row->idmenu.'" '.$checked.'>
+                                      '.$spasi.'<input class="form-check-input form-check-otorisasi" type="checkbox" value="'.$row->idmenu.'" id="chk'.$row->idmenu.'" data-idmenu="'.$row->idmenu.'" '.$checked.'>
                                       <label class="form-check-label" for="chk'.$row->idmenu.'" style="">
                                         '.$row->namamenu.'
                                       </label>
@@ -104,6 +104,7 @@
               </div> <!-- ./card-body -->
 
               <div class="card-footer">
+                <button type="submit" class="btn btn-primary float-right"><i class="fa fa-save"></i> Simpan</button>
                 <a href="<?php echo(site_url('otorisasi')) ?>" class="btn btn-default float-right mr-1 ml-1"><i class="fa fa-chevron-circle-left"></i> Kembali</a>
               </div>
             </div> <!-- /.card -->
@@ -137,39 +138,79 @@
   }); 
 
 
-
-  $(document).on("change", ".form-check-otorisasi", function(e) {
-    var idotorisasi = $('#idotorisasi').val();
-    var idmenu = $(this).attr("data-idmenu");
+  $('#form').submit(function(e) {
     e.preventDefault();
+    var idotorisasi = $('#idotorisasi').val();
+    var array = [];
+    var checkboxes = document.querySelectorAll('input[type=checkbox]:checked')
 
-    if ($(this).prop("checked")) {
-      var comment = 'add';
-    }else{
-      var comment = 'remove';
+    for (var i = 0; i < checkboxes.length; i++) {
+      var idmenu = checkboxes[i].value;
+      if (idmenu.length!=0 && idmenu.length!=1) {
+        array.push(idmenu);
+      }
     }
+    var formData = {
+                      "idotorisasi": idotorisasi,
+                      "arrMenu": array,
+                    }
+    // console.log(formData);
+
 
     $.ajax({
-      url: '<?php echo site_url('otorisasi/updatemenu') ?>',
+      url: '<?php echo site_url('otorisasi/simpanmenu') ?>',
       type: 'POST',
       dataType: 'json',
-      data: {'idotorisasi': idotorisasi, 'idmenu': idmenu, 'comment': comment},
+      data: formData,
     })
-    .done(function(updatemenuResult) {
-      console.log(updatemenuResult);
-
-      if (updatemenuResult.success) {
-        console.log("success");
+    .done(function(simpanmenuResult) {
+      console.log(simpanmenuResult);
+      if (simpanmenuResult.success) {
+        swal("Berhasil", "Data berhasil disimpan!", "success")
+          .then(function(){
+            window.open("<?php echo site_url('otorisasi') ?>","_self")
+          })
       }else{
-        console.log("failed");
+        swal("Informasi", "Data gagal disimpan!", "error");
       }
     })
     .fail(function() {
-      console.log("error updatemenu");
+      console.log("error simpanmenu");
     });
     
+  });
+  // $(document).on("change", ".form-check-otorisasi", function(e) {
+  //   var idotorisasi = $('#idotorisasi').val();
+  //   var idmenu = $(this).attr("data-idmenu");
+  //   e.preventDefault();
 
-  });  
+  //   if ($(this).prop("checked")) {
+  //     var comment = 'add';
+  //   }else{
+  //     var comment = 'remove';
+  //   }
+
+  //   $.ajax({
+  //     url: '<?php echo site_url('otorisasi/updatemenu') ?>',
+  //     type: 'POST',
+  //     dataType: 'json',
+  //     data: {'idotorisasi': idotorisasi, 'idmenu': idmenu, 'comment': comment},
+  //   })
+  //   .done(function(updatemenuResult) {
+  //     console.log(updatemenuResult);
+
+  //     if (updatemenuResult.success) {
+  //       console.log("success");
+  //     }else{
+  //       console.log("failed");
+  //     }
+  //   })
+  //   .fail(function() {
+  //     console.log("error updatemenu");
+  //   });
+    
+
+  // });  
 
 </script>
 

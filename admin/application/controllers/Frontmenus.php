@@ -1,29 +1,18 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Frontmenus extends CI_Controller {
+class Frontmenus extends MY_Controller {
 
 	public function __construct()
 	{
 		parent::__construct();
-        $this->is_login();
+        $this->islogin();
         $this->load->model('Frontmenus_model');
         $this->load->model('Pages_model');
         $this->load->model('Pageskategori_model');
-		//Do your magic here
+        $this->session->set_userdata( 'IDMENUSELECTED', '0005' );
+        $this->cekOtorisasi();
 	}
-
-
-	public function is_login()
-    {
-        $idjemaat = $this->session->userdata('idjemaat');
-        if (empty($idjemaat)) {
-            $pesan = '<div class="alert alert-danger">Sesi telah berakhir. Silahkan login kembali!</div>';
-            $this->session->set_flashdata('pesan', $pesan);
-            redirect('login'); 
-            exit();
-        }
-    }   
 
 	public function index()
 	{

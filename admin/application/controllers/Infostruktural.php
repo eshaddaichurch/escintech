@@ -1,27 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Infostruktural extends CI_Controller {
+class Infostruktural extends MY_Controller {
 
 	public function __construct()
     {
         parent::__construct();
-        $this->is_login();
+        $this->islogin();
         $this->load->model('Infostruktural_model');
     }
-
-    public function is_login()
-    {
-        $idjemaat = $this->session->userdata('idjemaat');
-        if (empty($idjemaat)) {
-            $pesan = '<div class="alert alert-danger">Sesi telah berakhir. Silahkan login kembali!</div>';
-            $this->session->set_flashdata('pesan', $pesan);
-            redirect('login'); 
-            exit();
-        }
-    }   
-
-    
 
     public function index()
     {

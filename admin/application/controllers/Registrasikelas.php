@@ -1,30 +1,51 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Registrasikelas extends CI_Controller {
+class Registrasikelas extends MY_Controller {
 
 	public function __construct()
     {
         parent::__construct();
-        $this->is_login();
+        $this->islogin();
         $this->load->model('Registrasikelas_model');
     }
 
-    public function is_login()
-    {
-        $idjemaat = $this->session->userdata('idjemaat');
-        if (empty($idjemaat)) {
-            $pesan = '<div class="alert alert-danger">Sesi telah berakhir. Silahkan login kembali!</div>';
-            $this->session->set_flashdata('pesan', $pesan);
-            redirect('login'); 
-            exit();
-        }
-    }   
-
-    
-
     public function index($idkelas)
     {
+        switch ($idkelas) {
+            case 'KL001':
+                $this->session->set_userdata( 'IDMENUSELECTED', 'N200' );
+                break;
+            case 'KL002':
+                $this->session->set_userdata( 'IDMENUSELECTED', 'N300' );
+                break;
+            case 'KL003':
+                $this->session->set_userdata( 'IDMENUSELECTED', 'N400' );
+                break;
+            case 'KL004':
+                $this->session->set_userdata( 'IDMENUSELECTED', 'N500' );
+                break;
+            case 'KL005':
+                $this->session->set_userdata( 'IDMENUSELECTED', 'N600' );
+                break;
+            case 'KL006':
+                $this->session->set_userdata( 'IDMENUSELECTED', 'N700' );
+                break;
+            case 'KL007':
+                $this->session->set_userdata( 'IDMENUSELECTED', 'N800' );
+                break;
+            case 'KL008':
+                $this->session->set_userdata( 'IDMENUSELECTED', 'N900' );
+                break;
+            case 'KL101':
+                $this->session->set_userdata( 'IDMENUSELECTED', 'C100' );
+                break;
+            default:
+                $this->session->set_userdata( 'IDMENUSELECTED', '' );
+                break;
+        }
+        $this->cekOtorisasi();
+        
         $data['rowkelas'] = $this->db->query("select * from kelas where idkelas='$idkelas'")->row();
         $data['idkelas'] = $idkelas;
         $data['menu'] = $idkelas;

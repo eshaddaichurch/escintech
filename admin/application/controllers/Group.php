@@ -1,28 +1,17 @@
  <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Group extends CI_Controller {
+class Group extends MY_Controller {
 
 	public function __construct()
     {
         parent::__construct();
-        $this->is_login();
+        $this->islogin();
         $this->load->model('Group_model');
         $this->load->model('Jemaat_model');
+        $this->session->set_userdata( 'IDMENUSELECTED', 'M300' );
+        $this->cekOtorisasi();
     }
-
-    public function is_login()
-    {
-        $idjemaat = $this->session->userdata('idjemaat');
-        if (empty($idjemaat)) {
-            $pesan = '<div class="alert alert-danger">Sesi telah berakhir. Silahkan login kembali!</div>';
-            $this->session->set_flashdata('pesan', $pesan);
-            redirect('login'); 
-            exit();
-        }
-    }   
-
-    
 
     public function index()
     {

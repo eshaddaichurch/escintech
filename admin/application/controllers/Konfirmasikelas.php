@@ -1,27 +1,16 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Konfirmasikelas extends CI_Controller {
+class Konfirmasikelas extends MY_Controller {
 
 	public function __construct()
     {
         parent::__construct();
-        $this->is_login();
+        $this->islogin();
         $this->load->model('Konfirmasikelas_model');
-    }
-
-    public function is_login()
-    {
-        $idjemaat = $this->session->userdata('idjemaat');
-        if (empty($idjemaat)) {
-            $pesan = '<div class="alert alert-danger">Sesi telah berakhir. Silahkan login kembali!</div>';
-            $this->session->set_flashdata('pesan', $pesan);
-            redirect('login'); 
-            exit();
-        }
-    }   
-
-    
+        $this->session->set_userdata( 'IDMENUSELECTED', 'N100' );
+        $this->cekOtorisasi();
+    }    
 
     public function index($idkelas)
     {

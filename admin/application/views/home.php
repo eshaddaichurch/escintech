@@ -21,8 +21,19 @@
     <div class="col-md-12">
       <div class="card" id="cardcontent">
         <div class="card-body">
-
-            <h1 class="text-center">Selamat Datang Kembali <?php echo $this->session->userdata("namapengguna") ?></h1>
+          <div class="row">
+            <div class="col-md-12">
+              <?php 
+                $pesan = $this->session->flashdata("pesan");
+                if (!empty($pesan)) {
+                  echo $pesan;
+                }
+              ?>
+            </div>
+            <div class="col-12">
+              <h1 class="text-center">Selamat Datang Kembali <?php echo $this->session->userdata("namapengguna") ?></h1>
+            </div> 
+          </div>
 
         </div> <!-- ./card-body -->
       </div> <!-- /.card -->

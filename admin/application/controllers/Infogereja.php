@@ -1,28 +1,17 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Infogereja extends CI_Controller {
+class Infogereja extends MY_Controller {
 
 	public function __construct()
     {
         parent::__construct();
-        $this->is_login();
+        $this->islogin();
         $this->load->model('Infogereja_model');
         $this->load->library('image_lib');
+        $this->session->set_userdata( 'IDMENUSELECTED', '0002' );
+        $this->cekOtorisasi();
     }
-
-    public function is_login()
-    {
-        $idjemaat = $this->session->userdata('idjemaat');
-        if (empty($idjemaat)) {
-            $pesan = '<div class="alert alert-danger">Sesi telah berakhir. Silahkan login kembali!</div>';
-            $this->session->set_flashdata('pesan', $pesan);
-            redirect('login'); 
-            exit();
-        }
-    }   
-
-    
 
     public function index()
     {

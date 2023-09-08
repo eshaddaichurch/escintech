@@ -1,42 +1,31 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Pengkhotbah2 extends CI_Controller {
+class Pengkhotbah2 extends MY_Controller {
 
     public function __construct()
 
     {
         parent::__construct();
-        $this->is_login();
+        $this->islogin();
         $this->load->model('Pengkhotbah2_model');
+        $this->session->set_userdata( 'IDMENUSELECTED', 'M200' );
+        $this->cekOtorisasi();
 
         
     }
-
-                    //login
-                    public function is_login()
-                    {
-                        $idjemaat = $this->session->userdata('idjemaat');
-                        if (empty($idjemaat)) {
-                            $pesan = '<div class="alert alert-danger">Sesi telah berakhir. Silahkan login kembali!</div>';
-                            $this->session->set_flashdata('pesan', $pesan);
-                            redirect('login'); 
-                            exit();
-                        }
-                    }   
-
     
-                        public function index()
-                        {
-                            $data['menu'] = 'pengkhotbah2';
-                            $this->load->view('pengkhotbah/listdata', $data);
-                        }   
+    public function index()
+    {
+        $data['menu'] = 'pengkhotbah2';
+        $this->load->view('pengkhotbah/listdata', $data);
+    }   
 
-                        public function tambah()
-                        {       
-                            $data['idpengkhotbah'] = '';        
-                            $data['menu'] = 'pengkhotbah2';  
-                            $this->load->view('pengkhotbah/form', $data);
+    public function tambah()
+    {       
+        $data['idpengkhotbah'] = '';        
+        $data['menu'] = 'pengkhotbah2';  
+        $this->load->view('pengkhotbah/form', $data);
     }
 
     public function edit($idpengkhotbah)
@@ -59,54 +48,54 @@ class Pengkhotbah2 extends CI_Controller {
         $this->load->view('pengkhotbah/form', $data);
     }
 
-            public function datatablesource()
-            {
-                $RsData = $this->Pengkhotbah2_model->get_datatables();
-                $no = $_POST['start'];
-                $data = array();
+    public function datatablesource()
+    {
+        $RsData = $this->Pengkhotbah2_model->get_datatables();
+        $no = $_POST['start'];
+        $data = array();
 
-                if ($RsData->num_rows()>0) {
-                    foreach ($RsData->result() as $rowdata) {
-                        $no++;
-                        $row = array();
-                        $row[] = $no;
-                        $row[] = $rowdata->idjemaat;
-                        $row[] = $rowdata->namalengkap;
-                        $row[] = $rowdata->nohp;
-                        $row[] = $rowdata->email;             
-                        $row[] = date('d-m-Y', strtotime($rowdata->tanggalskpengkotbah)) ;             
-                        $row[] = date('d-m-Y', strtotime($rowdata->tanggalskberakhir));             
-                        $row[] = $rowdata->keterangan;             
-                        $row[] = $rowdata->statusaktif;             
-                        $row[] = '<a href="'.site_url( 'pengkhotbah2/edit/'.$this->encrypt->encode($rowdata->idpengkhotbah) ).'" class="btn btn-sm btn-warning btn-circle"><i class="fa fa-edit"></i></a> | 
-                                <a href="'.site_url('pengkhotbah2/delete/'.$this->encrypt->encode($rowdata->idpengkhotbah) ).'" class="btn btn-sm btn-danger btn-circle" id="hapus"><i class="fa fa-trash"></i></a>';
-                        $data[] = $row;
-                    }
-                }
+        if ($RsData->num_rows()>0) {
+            foreach ($RsData->result() as $rowdata) {
+                $no++;
+                $row = array();
+                $row[] = $no;
+                $row[] = $rowdata->idjemaat;
+                $row[] = $rowdata->namalengkap;
+                $row[] = $rowdata->nohp;
+                $row[] = $rowdata->email;             
+                $row[] = date('d-m-Y', strtotime($rowdata->tanggalskpengkotbah)) ;             
+                $row[] = date('d-m-Y', strtotime($rowdata->tanggalskberakhir));             
+                $row[] = $rowdata->keterangan;             
+                $row[] = $rowdata->statusaktif;             
+                $row[] = '<a href="'.site_url( 'pengkhotbah2/edit/'.$this->encrypt->encode($rowdata->idpengkhotbah) ).'" class="btn btn-sm btn-warning btn-circle"><i class="fa fa-edit"></i></a> | 
+                        <a href="'.site_url('pengkhotbah2/delete/'.$this->encrypt->encode($rowdata->idpengkhotbah) ).'" class="btn btn-sm btn-danger btn-circle" id="hapus"><i class="fa fa-trash"></i></a>';
+                $data[] = $row;
+            }
+        }
 
-                $output = array(
-                                "draw" => $_POST['draw'],
-                                "recordsTotal" => $this->Pengkhotbah2_model->count_all(),
-                                "recordsFiltered" => $this->Pengkhotbah2_model->count_filtered(),
-                                "data" => $data,
-                        );
-                echo json_encode($output);
-            } 
+        $output = array(
+                        "draw" => $_POST['draw'],
+                        "recordsTotal" => $this->Pengkhotbah2_model->count_all(),
+                        "recordsFiltered" => $this->Pengkhotbah2_model->count_filtered(),
+                        "data" => $data,
+                );
+        echo json_encode($output);
+    } 
 
-                            public function delete($idpengkhotbah)
-                            {
-                                $idpengkhotbah = $this->encrypt->decode($idpengkhotbah);  
-                                $rsdata = $this->Pengkhotbah2_model->get_by_id($idpengkhotbah);
-                                if ($rsdata->num_rows()<1) {
-                                    $pesan = '<div>
-                                                <div class="alert alert-danger alert-dismissable">
-                                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-                                                    <strong>Ilegal!</strong> Data tidak ditemukan! 
-                                                </div>
-                                            </div>';
-                                    $this->session->set_flashdata('pesan', $pesan);
-                                    redirect('pengkhotbah');
-                                    exit();
+    public function delete($idpengkhotbah)
+    {
+        $idpengkhotbah = $this->encrypt->decode($idpengkhotbah);  
+        $rsdata = $this->Pengkhotbah2_model->get_by_id($idpengkhotbah);
+        if ($rsdata->num_rows()<1) {
+            $pesan = '<div>
+                        <div class="alert alert-danger alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            <strong>Ilegal!</strong> Data tidak ditemukan! 
+                        </div>
+                    </div>';
+            $this->session->set_flashdata('pesan', $pesan);
+            redirect('pengkhotbah');
+            exit();
               };
 
         $hapus = $this->Pengkhotbah2_model->hapus($idpengkhotbah);

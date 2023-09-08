@@ -1,47 +1,30 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Disciplescommunity extends CI_Controller {
+class Disciplescommunity extends MY_Controller {
 
     public function __construct()
     {
         parent::__construct();
-        $this->is_login();
+        $this->islogin();
         $this->load->model('Disciplescommunity_model');
         $this->load->library('image_lib');
-
-        
+        $this->session->set_userdata( 'IDMENUSELECTED', 'M501' );
+        $this->cekOtorisasi();
     }
 
-                    //login
-                    public function is_login()
-                    {
-                        $idjemaat = $this->session->userdata('idjemaat');
-                        if (empty($idjemaat)) {
-                            $pesan = '<div class="alert alert-danger">Sesi telah berakhir. Silahkan login kembali!</div>';
-                            $this->session->set_flashdata('pesan', $pesan);
-                            redirect('login'); 
-                            exit();
-                        }
-                    }   
+    public function index()
+    {
+        $data['menu'] = 'disciplescommunity';  //
+        $this->load->view('dc-view/listdata_dc', $data);
+    }   
 
-    
-                        public function index()
-                        {
-                            $data['menu'] = 'disciplescommunity';  //
-                            $this->load->view('dc-view/listdata_dc', $data);
-                        }   
-
-                        public function tambah()
-                        {       
-                            $data['iddc'] = '';        
-                            $data['menu'] = 'disciplescommunity';  
-                            $this->load->view('dc-view/form_dc', $data);
+    public function tambah()
+    {       
+        $data['iddc'] = '';        
+        $data['menu'] = 'disciplescommunity';  
+        $this->load->view('dc-view/form_dc', $data);
     }
-    // pause
-
-
-
 
     public function edit($iddc)
     {       
@@ -63,60 +46,60 @@ class Disciplescommunity extends CI_Controller {
         $this->load->view('dc-view/form_dc', $data);
     }
 
-            public function datatablesource()
-            {
-                $RsData = $this->Disciplescommunity_model->get_datatables();
-                $no = $_POST['start'];
-                $data = array();
+    public function datatablesource()
+    {
+        $RsData = $this->Disciplescommunity_model->get_datatables();
+        $no = $_POST['start'];
+        $data = array();
 
-                if ($RsData->num_rows()>0) {
-                    foreach ($RsData->result() as $rowdata) {
-                        $no++;
-                        $row = array();
-                        $row[] = $no;
-                        $row[] = $rowdata->iddc;
-                        $row[] = $rowdata->namadc;
-                        $row[] = $rowdata->namadm;
-                        $row[] = $rowdata->kategoridc;
-                        $row[] = $rowdata->haridc;             
-                        $row[] = $rowdata->jamdc;             
-                        $row[] = $rowdata->alamatdc;             
-                        $row[] = '<img src="'.base_url('uploads/dc/'. $rowdata->fotodc).'" alt="" style=" width: 80%;">';             
-                        // $row[] = $rowdata->fotodc;    
+        if ($RsData->num_rows()>0) {
+            foreach ($RsData->result() as $rowdata) {
+                $no++;
+                $row = array();
+                $row[] = $no;
+                $row[] = $rowdata->iddc;
+                $row[] = $rowdata->namadc;
+                $row[] = $rowdata->namadm;
+                $row[] = $rowdata->kategoridc;
+                $row[] = $rowdata->haridc;             
+                $row[] = $rowdata->jamdc;             
+                $row[] = $rowdata->alamatdc;             
+                $row[] = '<img src="'.base_url('uploads/dc/'. $rowdata->fotodc).'" alt="" style=" width: 80%;">';             
+                // $row[] = $rowdata->fotodc;    
 
-                        $row[] = date('d-m-Y', strtotime($rowdata->tanggalinsert)) ;             
-                        $row[] = date('d-m-Y', strtotime($rowdata->tanggalupdate));                        
-                        $row[] = $rowdata->statusaktif;             
-                        $row[] = '<a href="'.site_url( 'disciplescommunity/edit/'.$this->encrypt->encode($rowdata->iddc) ).'" class="btn btn-sm btn-warning btn-circle"><i class="fa fa-edit"></i></a> | 
-                                <a href="'.site_url('disciplescommunity/delete/'.$this->encrypt->encode($rowdata->iddc) ).'" class="btn btn-sm btn-danger btn-circle" id="hapus"><i class="fa fa-trash"></i></a>';
-                        $data[] = $row;
-                    }
-                }
+                $row[] = date('d-m-Y', strtotime($rowdata->tanggalinsert)) ;             
+                $row[] = date('d-m-Y', strtotime($rowdata->tanggalupdate));                        
+                $row[] = $rowdata->statusaktif;             
+                $row[] = '<a href="'.site_url( 'disciplescommunity/edit/'.$this->encrypt->encode($rowdata->iddc) ).'" class="btn btn-sm btn-warning btn-circle"><i class="fa fa-edit"></i></a> | 
+                        <a href="'.site_url('disciplescommunity/delete/'.$this->encrypt->encode($rowdata->iddc) ).'" class="btn btn-sm btn-danger btn-circle" id="hapus"><i class="fa fa-trash"></i></a>';
+                $data[] = $row;
+            }
+        }
 
-                $output = array(
-                                "draw" => $_POST['draw'],
-                                "recordsTotal" => $this->Disciplescommunity_model->count_all(),
-                                "recordsFiltered" => $this->Disciplescommunity_model->count_filtered(),
-                                "data" => $data,
-                        );
-                echo json_encode($output);
-            } 
+        $output = array(
+                        "draw" => $_POST['draw'],
+                        "recordsTotal" => $this->Disciplescommunity_model->count_all(),
+                        "recordsFiltered" => $this->Disciplescommunity_model->count_filtered(),
+                        "data" => $data,
+                );
+        echo json_encode($output);
+    } 
 
-                            public function delete($iddc)
-                            {
-                                $iddc = $this->encrypt->decode($iddc);  
-                                $rsdata = $this->Disciplescommunity_model->get_by_id($iddc);
-                                if ($rsdata->num_rows()<1) {
-                                    $pesan = '<div>
-                                                <div class="alert alert-danger alert-dismissable">
-                                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-                                                    <strong>Ilegal!</strong> Data tidak ditemukan! 
-                                                </div>
-                                            </div>';
-                                    $this->session->set_flashdata('pesan', $pesan);
-                                    redirect('disciplescommunity');
-                                    exit();
-              };
+    public function delete($iddc)
+    {
+        $iddc = $this->encrypt->decode($iddc);  
+        $rsdata = $this->Disciplescommunity_model->get_by_id($iddc);
+        if ($rsdata->num_rows()<1) {
+            $pesan = '<div>
+                        <div class="alert alert-danger alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            <strong>Ilegal!</strong> Data tidak ditemukan! 
+                        </div>
+                    </div>';
+            $this->session->set_flashdata('pesan', $pesan);
+            redirect('disciplescommunity');
+            exit();
+        };
 
         $hapus = $this->Disciplescommunity_model->hapus($iddc);
         if ($hapus) {       
@@ -140,9 +123,6 @@ class Disciplescommunity extends CI_Controller {
         redirect('disciplescommunity');        
 
     }
-
-
-
 
     public function simpan()
     {       
