@@ -9,7 +9,7 @@ class Otorisasi extends MY_Controller {
         $this->islogin();
         $this->load->model('Otorisasi_model');
         $this->session->set_userdata( 'IDMENUSELECTED', 'M700' );
-        $this->cekOtorisasi();
+        // $this->cekOtorisasi();
     }
 
     public function index()
