@@ -42,7 +42,7 @@
             $IDMENUSELECTED = $this->session->userdata('IDMENUSELECTED');
 
             $rsSidemenu = $this->db->query("
-                                            select * from v_sidemenus where idotorisasi='0000' order by nomorurut
+                                            select * from v_sidemenus where idotorisasi='".$this->session->userdata('idotorisasi')."' order by nomorurut
                                           ");
             $generateMenu = '';
             $parentidmenu_old = '';

@@ -43,11 +43,21 @@ class App extends CI_Model {
 		return $this->db->get("v_jemaat");
 	}
 
+
+	public function getKelas($idkelas='')
+	{
+		if ($idkelas!="") {
+			$this->db->where("idkelas", $idkelas);
+		}
+		$this->db->where("statusaktif", 'Aktif');
+		$this->db->order_by('idkelas', 'asc');
+		return $this->db->get("kelas");
+	}
+
 	public function APPBASEURL()
 	{
 		return str_replace('/admin', '', site_url());
 	}
-
 
 	public function uploadImage($file, $namaFile, $namaFileLama, $foldername)
 	{

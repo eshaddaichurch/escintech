@@ -12,28 +12,17 @@ class Konfirmasikelas extends MY_Controller {
         $this->cekOtorisasi();
     }    
 
-    public function index($idkelas)
+    public function index()
     {
-        $data['rowkelas'] = $this->db->query("select * from kelas where idkelas='$idkelas'")->row();
-        $data['idkelas'] = $idkelas;
-        $data['menu'] = $idkelas;
-        $this->load->view('registrasikelas/listdata', $data);
+        $data['menu'] = '';
+        $this->load->view('konfirmasikelas/listdata', $data);
     }   
 
-    public function tambah($idkelas)
+    public function konfirmasi($idregistrasi)
     {       
-    	$data['rowkelas'] = $this->db->query("select * from kelas where idkelas='$idkelas'")->row();
-        $data['idkelas'] = $idkelas;
-        $data['idregistrasikelas'] = '';        
-        $data['menu'] = $idkelas;  
-        $this->load->view('registrasikelas/form', $data);
-    }
-
-    public function edit($idregistrasikelas, $idkelas)
-    {       
-        $idregistrasikelas = $this->encrypt->decode($idregistrasikelas);
-
-        if ($this->Konfirmasikelas_model->get_by_id($idregistrasikelas)->num_rows()<1) {
+        $idregistrasi = $this->encrypt->decode($idregistrasi);
+        $rsRegistrasi = $this->Konfirmasikelas_model->get_by_id($idregistrasi);
+        if ($rsRegistrasi->num_rows()<1) {
             $pesan = '<div>
                         <div class="alert alert-danger alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -41,14 +30,21 @@ class Konfirmasikelas extends MY_Controller {
                         </div>
                     </div>';
             $this->session->set_flashdata('pesan', $pesan);
-            redirect('registrasikelas');
+            redirect('konfirmasikelas');
             exit();
         };
-        $data['rowkelas'] = $this->db->query("select * from kelas where idkelas='$idkelas'")->row();
-        $data['idkelas'] = $idkelas;
-        $data['idregistrasikelas'] =$idregistrasikelas;        
-        $data['menu'] = $idkelas;
-        $this->load->view('registrasikelas/form', $data);
+        $rowRegistrasi = $rsRegistrasi->row();
+        $idjemaat = $rowRegistrasi->idjemaat;
+        $rowJemaat = $this->App->getJemaat($idjemaat)->row();
+
+        $rowJadwalEvent = $this->db->query("select * from v_jadwalevent where idjadwalevent='".$rowRegistrasi->idjadwalevent."'")->row();
+
+        $data['rowJadwalEvent'] = $rowJadwalEvent;
+        $data['rowRegistrasi'] = $rowRegistrasi;
+        $data['rowJemaat'] = $rowJemaat;
+        $data['idregistrasi'] =$idregistrasi;        
+        $data['menu'] = '';
+        $this->load->view('konfirmasikelas/form', $data);
     }
 
     public function datatablesource()
@@ -59,127 +55,34 @@ class Konfirmasikelas extends MY_Controller {
 
         if ($RsData->num_rows()>0) {
             foreach ($RsData->result() as $rowdata) {
+
+                switch ($rowdata->statuskonfirmasi) {
+                    case 'Disetujui':
+                        $statuskonfirmasi = '<span class="badge badge-success">'.$rowdata->statuskonfirmasi.'</span>';
+                        if (!empty($rowdata->keterangankonfirmasi)) {
+                            $statuskonfirmasi .= '<br>Keterangan: '.$rowdata->keterangankonfirmasi;
+                        }
+                        break;
+                    case 'Ditolak':
+                        $statuskonfirmasi = '<span class="badge badge-danger">'.$rowdata->statuskonfirmasi.'</span>';
+                        if (!empty($rowdata->keterangankonfirmasi)) {
+                            $statuskonfirmasi .= '<br>Keterangan: '.$rowdata->keterangankonfirmasi;
+                        }
+                        break;
+                    default:
+                        $statuskonfirmasi = '<span class="badge badge-warning">Menunggu</span>';
+                        break;
+                }
+
                 $no++;
                 $row = array();
                 $row[] = $no;
-                $row[] = $rowdata->idregistrasikelas;
-                $row[] = $rowdata->namalengkap.'<br>'.$rowdata->jeniskelamin.'<br> '.$rowdata->tempatlahir.' '.$rowdata->tanggallahir;
-                $row[] = $rowdata->alamatrumah;
-                $row[] = $rowdata->notelp.'<br>'.$rowdata->email;
-                $row[] = $rowdata->nomorsertifikat.'<br>'.$rowdata->tglsertifikat;
+                $row[] = formatHariTanggalJam($rowdata->tglregistrasi);
+                $row[] = $rowdata->namalengkap;
+                $row[] = $rowdata->namakelas;
+                $row[] = $statuskonfirmasi;
 
-                switch ($rowdata->idkelas) {
-                    case 'KL002':
-                        $row[] = '
-                                    <!-- Example split btn-warning button -->
-                                    <div class="btn-group dropleft">
-                                      <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span class="sr-only">Toggle Dropdown</span>
-                                      </button>
-                                      <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="'.site_url('registrasikelas/cetaksertifikat/'.$rowdata->idregistrasikelas).'" target="_blank">Cetak Sertifikat</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="'.site_url('registrasikelas/delete/'.$this->encrypt->encode($rowdata->idregistrasikelas) ).'/'.$rowdata->idkelas.'" id="hapus">Hapus</a>
-                                      </div>
-
-                                      <a href="'.site_url( 'registrasikelas/edit/'.$this->encrypt->encode($rowdata->idregistrasikelas) ).'/'.$rowdata->idkelas.'" class="btn btn-warning">Edit</a>
-                                    </div>
-                                ';
-                        break;
-                    case 'KL003':
-                        $row[] = '
-                                    <!-- Example split btn-warning button -->
-                                    <div class="btn-group dropleft">
-                                      <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span class="sr-only">Toggle Dropdown</span>
-                                      </button>
-                                      <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="'.site_url('registrasikelas/cetaksertifikat/'.$rowdata->idregistrasikelas).'" target="_blank">Cetak Sertifikat</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="'.site_url('registrasikelas/delete/'.$this->encrypt->encode($rowdata->idregistrasikelas) ).'/'.$rowdata->idkelas.'" id="hapus">Hapus</a>
-                                      </div>
-
-                                      <a href="'.site_url( 'registrasikelas/edit/'.$this->encrypt->encode($rowdata->idregistrasikelas) ).'/'.$rowdata->idkelas.'" class="btn btn-warning">Edit</a>
-                                    </div>
-                                ';
-                        break;
-
-                    case 'KL004':
-                        $row[] = '
-                                    <!-- Example split btn-warning button -->
-                                    <div class="btn-group dropleft">
-                                      <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span class="sr-only">Toggle Dropdown</span>
-                                      </button>
-                                      <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="'.site_url('registrasikelas/cetaksertifikat/'.$rowdata->idregistrasikelas).'" target="_blank">Cetak Sertifikat</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="'.site_url('registrasikelas/delete/'.$this->encrypt->encode($rowdata->idregistrasikelas) ).'/'.$rowdata->idkelas.'" id="hapus">Hapus</a>
-                                      </div>
-
-                                      <a href="'.site_url( 'registrasikelas/edit/'.$this->encrypt->encode($rowdata->idregistrasikelas) ).'/'.$rowdata->idkelas.'" class="btn btn-warning">Edit</a>
-                                    </div>
-                                ';
-                        break;
-
-                    case 'KL008':
-                        $row[] = '
-                                    <!-- Example split btn-warning button -->
-                                    <div class="btn-group dropleft">    
-                                      <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span class="sr-only">Toggle Dropdown</span>
-                                      </button>
-                                      <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="'.site_url('registrasikelas/cetaksertifikat/'.$rowdata->idregistrasikelas).'" target="_blank">Cetak Sertifikat</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="'.site_url('registrasikelas/delete/'.$this->encrypt->encode($rowdata->idregistrasikelas) ).'/'.$rowdata->idkelas.'" id="hapus">Hapus</a>
-                                      </div>
-
-                                      <a href="'.site_url( 'registrasikelas/edit/'.$this->encrypt->encode($rowdata->idregistrasikelas) ).'/'.$rowdata->idkelas.'" class="btn btn-warning">Edit</a>
-                                    </div>
-                                ';
-                        break;
-
-                    case 'KL101':
-                        $row[] = '
-                                    <!-- Example split btn-warning button -->
-                                    <div class="btn-group dropleft">
-                                      <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        <span class="sr-only">Toggle Dropdown</span>
-                                      </button>
-                                      <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="'.site_url('registrasikelas/cetaksertifikat/'.$rowdata->idregistrasikelas).'" target="_blank">Cetak Sertifikat</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="'.site_url('registrasikelas/delete/'.$this->encrypt->encode($rowdata->idregistrasikelas) ).'/'.$rowdata->idkelas.'" id="hapus">Hapus</a>
-                                      </div>
-
-                                      <a href="'.site_url( 'registrasikelas/edit/'.$this->encrypt->encode($rowdata->idregistrasikelas) ).'/'.$rowdata->idkelas.'" class="btn btn-warning">Edit</a>
-                                    </div>
-                                ';
-                        break;
-
-                    default:
-                        
-                        $row[] = '
-                            <!-- Example split btn-warning button -->
-                            <div class="btn-group dropleft">
-                              <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="sr-only">Toggle Dropdown</span>
-                              </button>
-                              <div class="dropdown-menu">
-                                <a class="dropdown-item" href="'.site_url('registrasikelas/inputnilaimateri/'.$rowdata->idregistrasikelas).'">Nilai Materi</a>
-                                <a class="dropdown-item" href="'.site_url('registrasikelas/cetaksertifikat/'.$rowdata->idregistrasikelas).'" target="_blank">Cetak Sertifikat</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="'.site_url('registrasikelas/delete/'.$this->encrypt->encode($rowdata->idregistrasikelas) ).'/'.$rowdata->idkelas.'" id="hapus">Hapus</a>
-                              </div>
-
-                              <a href="'.site_url( 'registrasikelas/edit/'.$this->encrypt->encode($rowdata->idregistrasikelas) ).'/'.$rowdata->idkelas.'" class="btn btn-warning">Edit</a>
-                            </div>
-                        ';
-                        break;
-                }
-                // $row[] = '<a href="'.site_url( 'registrasikelas/edit/'.$this->encrypt->encode($rowdata->idregistrasikelas) ).'/'.$rowdata->idkelas.'" class="btn btn-sm btn-warning btn-circle"><i class="fa fa-edit"></i></a> | 
-                //         <a href="'.site_url('registrasikelas/delete/'.$this->encrypt->encode($rowdata->idregistrasikelas) ).'/'.$rowdata->idkelas.'" class="btn btn-sm btn-danger btn-circle" id="hapus"><i class="fa fa-trash"></i></a>';
+                $row[] = '<a href="'.site_url( 'konfirmasikelas/konfirmasi/'.$this->encrypt->encode($rowdata->idregistrasi) ).'" class="btn btn-sm btn-success btn-circle"><i class="fa fa-check"></i> Konfirmasi</a>';
                 $data[] = $row;
             }
         }
@@ -193,114 +96,40 @@ class Konfirmasikelas extends MY_Controller {
         echo json_encode($output);
     }
 
-    public function delete($idregistrasikelas, $idkelas)
-    {
-        $idregistrasikelas = $this->encrypt->decode($idregistrasikelas);  
-        $rsdata = $this->Konfirmasikelas_model->get_by_id($idregistrasikelas);
-        if ($rsdata->num_rows()<1) {
-            $pesan = '<div>
-                        <div class="alert alert-danger alert-dismissable">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-                            <strong>Ilegal!</strong> Data tidak ditemukan! 
-                        </div>
-                    </div>';
-            $this->session->set_flashdata('pesan', $pesan);
-            redirect('registrasikelas');
-            exit();
-        };
-
-        $hapus = $this->Konfirmasikelas_model->hapus($idregistrasikelas);
-        if ($hapus) {       
-            $pesan = '<div>
-                        <div class="alert alert-success alert-dismissable">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-                            <strong>Berhasil!</strong> Data berhasil dihapus!
-                        </div>
-                    </div>';
-        }else{
-            $eror = $this->db->error();         
-            $pesan = '<div>
-                        <div class="alert alert-danger alert-dismissable">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-                            <strong>Gagal!</strong> Data gagal dihapus karena sudah digunakan! <br>
-                        </div>
-                    </div>';
-        }
-
-        $this->session->set_flashdata('pesan', $pesan);
-        redirect('registrasikelas/index/'.$idkelas);        
-
-    }
-
     public function simpan()
     {       
-        $idregistrasikelas             	= $this->input->post('idregistrasikelas');
-        $nomorsertifikat             	= $this->input->post('nomorsertifikat');
-        $tglsertifikat             	= $this->input->post('tglsertifikat');
-        $idjemaat             	= $this->input->post('idjemaat');
-        $idkelas             	= $this->input->post('idkelas');
-        $tanggalinsert = date('Y-m-d H:i:s');
+        $idregistrasi             	= $this->input->post('idregistrasi');
+        $status             	= $this->input->post('status');
+        $keterangankonfirmasi             	= $this->input->post('keterangankonfirmasi');
+        $idpengguna = $this->session->userdata('idjemaat');
+        $tglkonfirmasi = date('Y-m-d H:i:s');
 
 
-        if ( $idregistrasikelas=='' ) {  
+    	$data = array(
+                        'statuskonfirmasi'   => $status, 
+                        'tglkonfirmasi'   => $tglkonfirmasi,
+                        'idpenggunakonfirmasi'   => $idpengguna,
+                        'keterangankonfirmasi'   => $keterangankonfirmasi,
+                    );
 
-            $idregistrasikelas = $this->db->query("select create_idregistrasikelas('".$tanggalinsert."', '$idkelas') as idregistrasikelas")->row()->idregistrasikelas;
-
-            $data = array(
-                            'idregistrasikelas'   => $idregistrasikelas, 
-                            'tglsertifikat'   => $tglsertifikat, 
-                            'idjemaat'   => $idjemaat, 
-                            'idkelas'   => $idkelas, 
-                            'tanggalinsert'   => $tanggalinsert, 
-                            'tanggalupdate'   => $tanggalinsert, 
-                            'idpengguna'   => $this->session->userdata('idjemaat'), 
-                            'statuslulus'   => '1',
-                            'nomorsertifikat'   => $nomorsertifikat
-                        );
-            $simpan = $this->Konfirmasikelas_model->simpan($data);      
-        }else{ 
-        	$data = array(
-                            'idregistrasikelas'   => $idregistrasikelas, 
-                            'tglsertifikat'   => $tglsertifikat, 
-                            'idjemaat'   => $idjemaat, 
-                            'idkelas'   => $idkelas, 
-                            'tanggalupdate'   => $tanggalinsert, 
-                            'idpengguna'   => $this->session->userdata('idjemaat'), 
-                            'nomorsertifikat'   => $nomorsertifikat
-                        );
-            $simpan = $this->Konfirmasikelas_model->update($data, $idregistrasikelas);
-        }
+        $simpan = $this->Konfirmasikelas_model->update($data, $idregistrasi, $status);
 
         if ($simpan) {
-            $pesan = '<div>
-                        <div class="alert alert-success alert-dismissable">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-                            <strong>Berhasil!</strong> Data berhasil disimpan!
-                        </div>
-                    </div>';
+            echo json_encode(array('success' => true));
         }else{
-            $eror = $this->db->error();         
-            $pesan = '<div>
-                        <div class="alert alert-danger alert-dismissable">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-                            <strong>Gagal!</strong> Data gagal disimpan! <br>
-                            Pesan Error : '.$eror['code'].' '.$eror['message'].'
-                        </div>
-                    </div>';
+            echo json_encode(array('msg' => "Data gagal disimpan."));
         }
 
-        $this->session->set_flashdata('pesan', $pesan);
-        redirect('registrasikelas/index/'.$idkelas);   
     }
     
     public function get_edit_data()
     {
-        $idregistrasikelas = $this->input->post('idregistrasikelas');
-        $RsData = $this->Konfirmasikelas_model->get_by_id($idregistrasikelas)->row();
+        $idregistrasi = $this->input->post('idregistrasi');
+        $RsData = $this->Konfirmasikelas_model->get_by_id($idregistrasi)->row();
 
         $data = array( 
-                            'idregistrasikelas'     =>  $RsData->idregistrasikelas,  
-                            'tglregistrasikelas'     =>  $RsData->tglregistrasikelas,  
+                            'idregistrasi'     =>  $RsData->idregistrasi,  
+                            'tglregistrasi'     =>  $RsData->tglregistrasi,  
                             'tglsertifikat'     =>  $RsData->tglsertifikat,  
                             'idjemaat'     =>  $RsData->idjemaat,  
                             'idkelas'     =>  $RsData->idkelas,  
@@ -311,126 +140,16 @@ class Konfirmasikelas extends MY_Controller {
         echo(json_encode($data));
     }
 
-    public function inputnilaimateri($idregistrasikelas)
+
+    public function cekStatusTerakhir()
     {
-        $rsregistrasi = $this->Konfirmasikelas_model->get_by_id($idregistrasikelas)->row();     
-
-        $data['rowkelas'] = $this->db->query("select * from kelas where idkelas='".$rsregistrasi->idkelas."'")->row();
-        $data['rsregistrasi'] = $rsregistrasi;
-        $data['idregistrasikelas'] = $idregistrasikelas;
-        $data['menu'] = $rsregistrasi->idkelas;
-        $this->load->view('registrasikelas/inputnilaimateri', $data);
-    }
-
-    public function simpanmateri()
-    {
-        $idregistrasikelas = $this->input->post('idregistrasikelas');
-        $idkelas = $this->input->post('idkelas');
-
-        // echo "select create_idregistrasikelasmateri('".$idregistrasikelas."' as idregistrasikelasmateri)";
-        // exit();
-        $rsmateri = $this->Konfirmasikelas_model->getmateri($idkelas);
-        if ($rsmateri->num_rows()>0) {
-
-            $this->db->query("delete from registrasikelasmateri where idregistrasikelas='$idregistrasikelas'");
-
-
-            foreach ($rsmateri->result() as $rowmateri) {
-                
-                $idregistrasikelasmateri = $this->db->query("select create_idregistrasikelasmateri('".$idregistrasikelas."') as idregistrasikelasmateri")->row()->idregistrasikelasmateri;
-
-                $datamateri = array(
-                                    'idregistrasikelasmateri' => $idregistrasikelasmateri, 
-                                    'idregistrasikelas' => $idregistrasikelas, 
-                                    'idkelasmateri' => $rowmateri->idkelasmateri, 
-                                    'judulmateri' => $rowmateri->judulmateri, 
-                                    'tglpelaksanaan' => tgldb($this->input->post("tglpelaksanaan".$rowmateri->idkelasmateri)) , 
-                                    'nilaimateri' => $this->input->post("nilaimateri".$rowmateri->idkelasmateri), 
-                                );
-
-                $simpan = $this->Konfirmasikelas_model->simpanmateri($datamateri);
-            }
+        $idregistrasi = $this->input->get('idregistrasi');
+        $status = $this->db->query("select * from v_jadwaleventregistrasi where idregistrasi='$idregistrasi' ");
+        $statuskonfirmasi = '';
+        if ($status->num_rows()>0) {
+            $statuskonfirmasi = $status->row()->statuskonfirmasi;
         }
-
-        if ($simpan) {
-            $pesan = '<div>
-                        <div class="alert alert-success alert-dismissable">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-                            <strong>Berhasil!</strong> Data berhasil disimpan!
-                        </div>
-                    </div>';
-        }else{
-            $eror = $this->db->error();         
-            $pesan = '<div>
-                        <div class="alert alert-danger alert-dismissable">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-                            <strong>Gagal!</strong> Data gagal disimpan! <br>
-                            Pesan Error : '.$eror['code'].' '.$eror['message'].'
-                        </div>
-                    </div>';
-        }
-
-        $this->session->set_flashdata('pesan', $pesan);
-        redirect('registrasikelas/index/'.$idkelas);  
-
-    }
-
-    public function get_edit_data_nilai()
-    {
-        $idregistrasikelas = $this->input->get('idregistrasikelas');
-
-        $rsnilai =  $this->db->query("select * from registrasikelasmateri where idregistrasikelas='".$idregistrasikelas."'");
-        echo json_encode($rsnilai->result());
-    }
-
-
-    public function cetaksertifikat($idregistrasikelas)
-    {
-        
-        // error_reporting(0);
-        $this->load->library('Pdf');
-
-
-        $rsregistrasi         = $this->db->query("
-                                        select * from v_registrasikelas where idregistrasikelas='".$idregistrasikelas."'
-                                    ")->row();
-        
-        $idkelas = $rsregistrasi->idkelas;
-        switch ($idkelas) {
-            case 'KL002':
-                $report = 'sertifikatfc1';
-                break;
-            case 'KL003':
-                $report = 'sertifikatfc2';
-                break;
-            case 'KL004':
-                $report = 'sertifikatfc3';
-                break;
-            case 'KL005':
-                $report = 'sertifikatgrade1';
-                break;
-            case 'KL006':
-                $report = 'sertifikatgrade2';
-                break;
-            case 'KL007':
-                $report = 'sertifikatgrade3';
-                break;
-            case 'KL008':
-                $report = 'sertifikatvc';
-                break;
-            case 'KL101':
-                $report = 'sertifikatpmc';
-                break;
-            default:
-                $report = '';
-                break;
-        }
-
-        $data['rsregistrasi'] = $rsregistrasi;
-        $data['idregistrasikelas'] = $idregistrasikelas;
-        $this->load->view('registrasikelas/'.$report, $data);
-        
-
+        echo json_encode($statuskonfirmasi);
     }
 
 }

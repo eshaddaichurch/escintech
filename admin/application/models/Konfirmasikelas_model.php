@@ -1,15 +1,15 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Konfirmasipendaftaran_model extends CI_Model {
+class Konfirmasikelas_model extends CI_Model {
 
-	var $tabelview = 'v_registrasikelas';
-    var $tabel     = 'registrasikelas';
-    var $idregistrasikelas = 'idregistrasikelas';
+	var $tabelview = 'v_pendaftarankelas';
+    var $tabel     = 'jadwaleventregistrasi';
+    var $idregistrasi = 'idregistrasi';
 
-    var $column_order = array(null, 'idregistrasikelas', 'namalengkap', 'alamatrumah', 'notelp', 'nomorsertifikat', null);
-    var $column_search = array('idregistrasikelas', 'namalengkap', 'alamatrumah', 'notelp', 'nomorsertifikat');
-    var $order = array('idregistrasikelas' => 'desc'); // default order 
+    var $column_order = array(null, 'tglregistrasi', 'namalengkap', 'namakelas', 'statuskonfirmasi', null);
+    var $column_search = array('tglregistrasi', 'namalengkap', 'namakelas', 'statuskonfirmasi');
+    var $order = array('idregistrasi' => 'desc'); // default order 
 
 
     function get_datatables()
@@ -22,8 +22,11 @@ class Konfirmasipendaftaran_model extends CI_Model {
 
     private function _get_datatables_query()
     {   
-        $this->db->where('idkelas', $_POST['idkelas']);
-        $this->db->from($this->tabelview);
+        $idkelas = $_POST['idkelas'];
+        if (!empty($idkelas)) {
+            $this->db->where('idkelas', $idkelas);
+        }
+        $this->db->from($this->tabelview);  
         $i = 0;
         foreach ($this->column_search as $item) 
         {
@@ -70,93 +73,39 @@ class Konfirmasipendaftaran_model extends CI_Model {
         return $this->db->get($this->tabelview);
     }
 
-    public function get_by_id($idregistrasikelas)
+    public function get_by_id($idregistrasi)
     {
-        $this->db->where('idregistrasikelas', $idregistrasikelas);
+        $this->db->where('idregistrasi', $idregistrasi);
         return $this->db->get($this->tabelview);
     }
 
-    public function hapus($idregistrasikelas)
+    public function getKelas($limit, $offset)
     {
-        $this->db->trans_begin();
-        try {
-            
-            $this->db->query("delete from registrasikelasmateri where idregistrasikelas='$idregistrasikelas'");
-        
-            $this->db->where('idregistrasikelas', $idregistrasikelas);      
-            $this->db->delete($this->tabel);
-
-            if ($this->db->trans_status() === FALSE){
-                $this->db->trans_rollback();
-                return false;
-            }else{
-                $this->db->trans_commit();
-                return true;
-            }
-        } catch (Exception $e) {
-            $this->db->trans_rollback();
-            return false;
-        }
-        
+        return $this->db->query("
+                SELECT * FROM KELAS ORDER BY idkelas LIMIT $limit OFFSET $offset
+            ");
     }
 
-    public function simpan($data)
-    {       
-        $this->db->trans_begin();
-
-        try {
-            
-            $this->db->insert($this->tabel, $data);
-
-
-            $rskelasmateri = $this->db->query("select * from kelasmateri where idkelas='".$data['idkelas']."' order by idkelasmateri");
-            if ($rskelasmateri->num_rows()>0) {
-                foreach ($rskelasmateri->result() as $rowmateri) {
-                    
-                    $idregistrasikelasmateri = $this->db->query("select create_idregistrasikelasmateri('".$data['idregistrasikelas']."') as idregistrasikelasmateri")->row()->idregistrasikelasmateri;
-
-                    $this->db->query("
-                            INSERT INTO registrasikelasmateri (idregistrasikelasmateri, idregistrasikelas, idkelasmateri, judulmateri, tglpelaksanaan, nilaimateri)
-                                 VALUES('".$idregistrasikelasmateri."', '".$data['idregistrasikelas']."', '".$rowmateri->idkelasmateri."', '".$rowmateri->judulmateri."', '".$data['tglsertifikat']."', '')
-                        ");
-
-                }
-            }
-
-
-            if ($this->db->trans_status() === FALSE){
-                $this->db->trans_rollback();
-                return false;
-            }else{
-                $this->db->trans_commit();
-                return true;
-            }
-        } catch (Exception $e) {
-            $this->db->trans_rollback();
-            return false;
-        }
-        return $this->db->insert($this->tabel, $data);
+    public function getSertifikat($idjemaat, $idkelas)
+    {
+        return $this->db->query("
+                SELECT * FROM registrasikelas where idjemaat='$idjemaat' and idkelas='$idkelas' and statuslulus='1' limit 1
+                ");
     }
 
-    public function update($data, $idregistrasikelas)
+    public function update($data, $idregistrasi, $status)
     {
-        $this->db->where('idregistrasikelas', $idregistrasikelas);
+
+        if ($status=='Disetujui') {
+            $dataRegistrasi = array(
+                                        '' => , 
+                                    );
+        }
+        $this->db->where('idregistrasi', $idregistrasi);
         return $this->db->update($this->tabel, $data);
-    }
-
-    public function getmateri($idkelas)
-    {
-        $this->db->where('idkelas', $idkelas);
-        return $this->db->get('kelasmateri');
-    }
-
-    public function simpanmateri($data)
-    {
-        return $this->db->insert('registrasikelasmateri', $data);
-
     }
 
 }
 
-/* End of file Konfirmasipendaftaran_model.php */
-/* Location: ./application/models/Konfirmasipendaftaran_model.php */
+/* End of file Konfirmasikelas_model.php */
+/* Location: ./application/models/Konfirmasikelas_model.php */
