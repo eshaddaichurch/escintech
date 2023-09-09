@@ -20,8 +20,8 @@ class MY_Controller extends CI_Controller {
 		$idjemaat = $this->session->userdata('idjemaat');
 		$idotorisasi = $this->session->userdata('idotorisasi');
 
-		echo "select * from otorisasimenus where idotorisasi='$idotorisasi' and idmenu='$idmenu'";
-		exit();
+		// echo "select * from otorisasimenus where idotorisasi='$idotorisasi' and idmenu='$idmenu'";
+		// exit();
 		
 		$rsCekOtorisasi = $this->db->query("select * from otorisasimenus where idotorisasi='$idotorisasi' and idmenu='$idmenu'");
 		if ($rsCekOtorisasi->num_rows()==0) {
