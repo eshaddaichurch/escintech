@@ -42,8 +42,8 @@ INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, no
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
 	VALUES('P200', 'Pengajuan Jadwal', 'P000', 'pengajuanjadwal', 'Aktif', 102, 1, NULL);
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
-	VALUES('P300', 'Konfirmasi Jadwal', 'P000', 'konfirmasijadwal', 'Aktif', 103, 1, NULL);
-
+	VALUES('P300', 'Konfirmasi Jadwal', 'P000', 'konfirmasijadwal', 'Aktif', 104, 1, NULL);
+	
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
 	VALUES('N000', 'Next Step', NULL, NULL, 'Aktif', 200, 0, 'fas fa-walking');
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)

@@ -7,7 +7,7 @@ class Pengajuanjadwal extends MY_Controller {
     {
         parent::__construct();
         $this->islogin();
-        $this->load->model('pengajuanjadwal_model');
+        $this->load->model('Pengajuanjadwal_model');
         $this->load->model('Departement_model');
         $this->load->model('Jemaat_model');
         $this->session->set_userdata( 'IDMENUSELECTED', 'P200' );
@@ -15,6 +15,13 @@ class Pengajuanjadwal extends MY_Controller {
     }
 
     public function index()
+    {
+        $data['idjadwalevent'] = '';        
+        $data['menu'] = 'pengajuanjadwal';  
+        $this->load->view('pengajuanjadwal/listdata', $data);
+    }   
+
+    public function tambah()
     {
         $data['idjadwalevent'] = '';        
         $data['menu'] = 'pengajuanjadwal';  
@@ -33,7 +40,7 @@ class Pengajuanjadwal extends MY_Controller {
     {       
         $idjadwalevent = $this->encrypt->decode($idjadwalevent);
 
-        if ($this->pengajuanjadwal_model->get_by_id($idjadwalevent)->num_rows()<1) {
+        if ($this->Pengajuanjadwal_model->get_by_id($idjadwalevent)->num_rows()<1) {
             $pesan = '<div>
                         <div class="alert alert-danger alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -51,40 +58,66 @@ class Pengajuanjadwal extends MY_Controller {
 
     public function datatablesource()
     {
-        $RsData = $this->pengajuanjadwal_model->get_datatables();
+        $RsData = $this->Pengajuanjadwal_model->get_datatables();
         $no = $_POST['start'];
         $data = array();
 
         if ($RsData->num_rows()>0) {
             foreach ($RsData->result() as $rowdata) {
+                $tglmulai = '';
+                $tglselesai = '';
+                if (!empty($rowdata->tglmulai)) {
+                    $tglmulai = date('Y-m-d', strtotime($rowdata->tglmulai));
+                }
+
+                if (!empty($rowdata->tglselesai)) {
+                    $tglselesai = date('Y-m-d', strtotime($rowdata->tglselesai));
+                }
+
+                $tglevent = '';
+                if ($tglmulai==$tglselesai) {
+                    $tglevent = $tglmulai;
+                }else{
+                    $tglevent = $tglmulai.'<br>Sd. '.$tglselesai;
+                }
+
+                switch ($rowdata->statuskonfirmasi) {
+                    case 'Menunggu':
+                        $statuskonfirmasi = '<span class="badge badge-warning">Menunggu</span>';
+                        break;
+                    case 'Disetujui':
+                        $statuskonfirmasi = '<span class="badge badge-success">Disetujui</span>';
+                        break;
+                    case 'Ditolak':
+                        $statuskonfirmasi = '<span class="badge badge-danger">Ditolak</span>';
+                        break;
+                    
+                    default:
+                        $statuskonfirmasi = '<span class="badge badge-warning">Menunggu</span>';
+                        break;
+                }
+
                 $no++;
                 $row = array();
                 $row[] = $no;
-                $row[] = $rowdata->idjadwalevent;                                                                 
-                $row[] = date('d-m-Y', strtotime($rowdata->tanggaljadwal));             
-                $row[] = $rowdata->tema; 
-                $row[] = $rowdata->subtema;
-                $row[] = $rowdata->idpengkhotbah;
-                $row[] = $rowdata->videoembed; 
-                $row[] = $rowdata->gambarsampul;            
+                $row[] = $tglevent;
+                $row[] = '<strong>'.$rowdata->namaevent.'</strong>'.'<br>'.$rowdata->namadepartement;
+                $row[] = $rowdata->jenisjadwal;
+                $row[] = $statuskonfirmasi;
                 $row[] = '<a href="'.site_url( 'pengajuanjadwal/edit/'.$this->encrypt->encode($rowdata->idjadwalevent) ).'" class="btn btn-sm btn-warning btn-circle"><i class="fa fa-edit"></i></a> | 
                         <a href="'.site_url('pengajuanjadwal/delete/'.$this->encrypt->encode($rowdata->idjadwalevent) ).'" class="btn btn-sm btn-danger btn-circle" id="hapus"><i class="fa fa-trash"></i></a>';
                 $data[] = $row;
-                
             }
         }
 
-        
-
-
         $output = array(
                         "draw" => $_POST['draw'],
-                        "recordsTotal" => $this->pengajuanjadwal_model->count_all(),
-                        "recordsFiltered" => $this->pengajuanjadwal_model->count_filtered(),
+                        "recordsTotal" => $this->Pengajuanjadwal_model->count_all(),
+                        "recordsFiltered" => $this->Pengajuanjadwal_model->count_filtered(),
                         "data" => $data,
                 );
         echo json_encode($output);
-    } 
+    }
 
     public function datatablejadwalevendetail()
     {
@@ -111,6 +144,7 @@ class Pengajuanjadwal extends MY_Controller {
                 $row[] = $rowdata->jamselesai;
                 $row[] = $rowdata->tgljadwaleventmulai.' s/d '.$rowdata->tgljadwaleventselesai;
                 $row[] = $rowdata->jammulai.' s/d '.$rowdata->jamselesai;
+                $row[] = $rowdata->lokasievent;
                 if ($rowdata->diulangsetiapminggu==1) {
                     $diulangsetiapminggu = 'Ya';
                 }else{
@@ -129,8 +163,8 @@ class Pengajuanjadwal extends MY_Controller {
         
     public function delete($idjadwalevent)
     {
-        // $idjadwalevent = $this->encrypt->decode($idjadwalevent);  
-        $rsdata = $this->pengajuanjadwal_model->get_by_id($idjadwalevent);
+        $idjadwalevent = $this->encrypt->decode($idjadwalevent);  
+        $rsdata = $this->Pengajuanjadwal_model->get_by_id($idjadwalevent);
         if ($rsdata->num_rows()<1) {
             $pesan = '<div>
                         <div class="alert alert-danger alert-dismissable">
@@ -143,7 +177,20 @@ class Pengajuanjadwal extends MY_Controller {
             exit();
       	};
 
-        $hapus = $this->pengajuanjadwal_model->hapus($idjadwalevent);
+        $rowPengajuan = $rsdata->row();
+        if ($rowPengajuan->statuskonfirmasi!='Menunggu') {
+          $pesan = '<div>
+                        <div class="alert alert-danger alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            <strong>Uppss!</strong> Pengajuan ini sudah '.$rowPengajuan->statuskonfirmasi.'. Tidak bisa dihapus lagi! 
+                        </div>
+                    </div>';
+            $this->session->set_flashdata('pesan', $pesan);
+            redirect('pengajuanjadwal');
+            exit();  
+        }
+
+        $hapus = $this->Pengajuanjadwal_model->hapus($idjadwalevent);
         if ($hapus) {       
             $pesan = '<div>
                         <div class="alert alert-success alert-dismissable">
@@ -171,7 +218,7 @@ class Pengajuanjadwal extends MY_Controller {
     {
         // $isidatatable       = $_REQUEST['isidatatable'];
         $isidatatable       = $this->input->post('isidatatable');
-        $idjadwalevent           = $this->input->post('idpengeluaran');
+        $idjadwalevent           = $this->input->post('idjadwalevent');
         $idkelas           = $this->input->post('idkelas');
         $jenisjadwal           = $this->input->post('jenisjadwal');
         $namaevent           = $this->input->post('namaevent');
@@ -233,137 +280,275 @@ class Pengajuanjadwal extends MY_Controller {
             $idkelas = null;
         }
 
-        $foto = $this->App->uploadImage($_FILES, 'foto', '', 'pengajuanjadwal');
+        $foto_lama = $this->input->post('foto_lama');
+        $foto = $this->App->uploadImage($_FILES, 'foto', $foto_lama, 'pengajuanjadwal');
 
-        $idjadwalevent = $this->db->query("select create_idjadwalevent('".date('Y-m-d')."') as idjadwalevent ")->row()->idjadwalevent;
+        if (empty($idjadwalevent)) {
+            
+            $idjadwalevent = $this->db->query("select create_idjadwalevent('".date('Y-m-d')."') as idjadwalevent ")->row()->idjadwalevent;
 
-        $arrayhead = array(
-                            'idjadwalevent' => $idjadwalevent,
-                            'namaevent' => $namaevent,
-                            'deskripsi' => $deskripsi,
-                            'namapenanggungjawab' => $namapenanggungjawab,
-                            'gambarsampul' => $foto,
-                            'iddepartement' => $iddepartement,
-                            'tglinsert' => $tglinsert,
-                            'tglupdate' => $tglupdate,
-                            'idpengguna' => $idpengguna,
-                            'jenisjadwal' => $jenisjadwal,
-                            'idpengkhotbah' => $idpengkhotbah,
-                            'streamingurl' => $streamingurl,
-                            'tema' => $tema,
-                            'subtema' => $subtema,
-                            'harusdaftar' => $harusdaftar,
-                            'jumlahvolunteer' => $jumlahvolunteer,
-                            'jumlahjemaat' => $jumlahjemaat,
-                            'onsitestatus' => $onsitestatus,
-                            'aplikasidigunakan' => $aplikasiDigunakanOptions,
-                            'diumumkankejemaat' => $diumumkanKeJemaatOptions,
-                            'tglmulaidiumumkan' => $tglmulaidiumumkan,
-                            'tglselesaidiumumkan' => $tglselesaidiumumkan,
-                            'pengumumandisampaikanmelalui' => $pengumumanDisampaikanMelaluiOptions,
-                            'konseppengumuman' => $konsepPengumumanOptions,
-                            'detailkonseppengumuman' => $detailKonsepPengumuman,
-                            'tampilkandiwebsite' => $tampilkanDiWebsiteOptions,
-                            'halyangdisampaian' => $halYangDisampaian,
-                            'rundown' => $rundown,
-                            'idkelas' => $idkelas,
-                            );
+            $arrayhead = array(
+                                'idjadwalevent' => $idjadwalevent,
+                                'namaevent' => $namaevent,
+                                'deskripsi' => $deskripsi,
+                                'namapenanggungjawab' => $namapenanggungjawab,
+                                'gambarsampul' => $foto,
+                                'iddepartement' => $iddepartement,
+                                'tglinsert' => $tglinsert,
+                                'tglupdate' => $tglupdate,
+                                'idpengguna' => $idpengguna,
+                                'jenisjadwal' => $jenisjadwal,
+                                'idpengkhotbah' => $idpengkhotbah,
+                                'streamingurl' => $streamingurl,
+                                'tema' => $tema,
+                                'subtema' => $subtema,
+                                'harusdaftar' => $harusdaftar,
+                                'jumlahvolunteer' => $jumlahvolunteer,
+                                'jumlahjemaat' => $jumlahjemaat,
+                                'onsitestatus' => $onsitestatus,
+                                'aplikasidigunakan' => $aplikasiDigunakanOptions,
+                                'diumumkankejemaat' => $diumumkanKeJemaatOptions,
+                                'tglmulaidiumumkan' => $tglmulaidiumumkan,
+                                'tglselesaidiumumkan' => $tglselesaidiumumkan,
+                                'pengumumandisampaikanmelalui' => $pengumumanDisampaikanMelaluiOptions,
+                                'konseppengumuman' => $konsepPengumumanOptions,
+                                'detailkonseppengumuman' => $detailKonsepPengumuman,
+                                'tampilkandiwebsite' => $tampilkanDiWebsiteOptions,
+                                'halyangdisampaian' => $halYangDisampaian,
+                                'rundown' => $rundown,
+                                'idkelas' => $idkelas,
+                                );
 
-        
-
-
-        //-------------------------------- >> Tempat Dan Waktu 
-        $i=0;
-        $arrTempatWaktu=array();       
-        foreach ($isidatatable as $item) {
-                    $tgljadwaleventmulai    = $item[2];
-                    $tgljadwaleventselesai  = $item[3];
-                    $jammulai               = $item[4];
-                    $jamselesai             = $item[5];
-                    $lokasievent             = $item[8];
-                    $diulangsetiapminggu             = $item[9];
-            $i++;
-            $detail = array(
-                            'idjadwalevent' => $idjadwalevent,
-                            'tgljadwaleventmulai' => $tgljadwaleventmulai,
-                            'tgljadwaleventselesai' => $tgljadwaleventselesai,
-                            'jammulai' => $jammulai,
-                            'jamselesai' => $jamselesai,
-                            'diulangsetiapminggu' => $diulangsetiapminggu,
-                            );
-            array_push($arrTempatWaktu, $detail);              
-        }
+            
 
 
-        //-------------------------------- >> Pelayanan Yang dibutuhkan
-        $i=0;
-        $arrPelayanan=array();  
-        if ($tablePelayanan!=NULL) {
-                foreach ($tablePelayanan as $item) {
-                            $idpelayanan    = $item[2];
+            //-------------------------------- >> Tempat Dan Waktu 
+            $i=0;
+            $arrTempatWaktu=array();       
+            foreach ($isidatatable as $item) {
+                        $tgljadwaleventmulai    = $item[2];
+                        $tgljadwaleventselesai  = $item[3];
+                        $jammulai               = $item[4];
+                        $jamselesai             = $item[5];
+                        $lokasievent             = $item[8];
+                        $diulangsetiapminggu             = $item[9];
+                $i++;
+                $detail = array(
+                                'idjadwalevent' => $idjadwalevent,
+                                'tgljadwaleventmulai' => $tgljadwaleventmulai,
+                                'tgljadwaleventselesai' => $tgljadwaleventselesai,
+                                'jammulai' => $jammulai,
+                                'jamselesai' => $jamselesai,
+                                'diulangsetiapminggu' => $diulangsetiapminggu,
+                                );
+                array_push($arrTempatWaktu, $detail);              
+            }
+
+
+            //-------------------------------- >> Pelayanan Yang dibutuhkan
+            $i=0;
+            $arrPelayanan=array();  
+            if ($tablePelayanan!=NULL) {
+                    foreach ($tablePelayanan as $item) {
+                                $idpelayanan    = $item[2];
+                        $i++;
+                        $detail = array(
+                                        'idjadwalevent' => $idjadwalevent,
+                                        'idpelayanan' => $idpelayanan,
+                                        );
+                        array_push($arrPelayanan, $detail);              
+                    }
+                 }     
+
+
+            //-------------------------------- >> Inventaris Yang dibutuhkan
+            $i=0;
+            $arrInventaris=array();       
+            if ($tableInventaris!=NULL) {
+                foreach ($tableInventaris as $item) {
+                            $idinventaris    = $item[2];
+                            $qty    = $item[3];
                     $i++;
                     $detail = array(
                                     'idjadwalevent' => $idjadwalevent,
-                                    'idpelayanan' => $idpelayanan,
+                                    'idinventaris' => $idinventaris,
+                                    'qty' => $qty,
                                     );
-                    array_push($arrPelayanan, $detail);              
+                    array_push($arrInventaris, $detail);              
                 }
-             }     
+            }
+
+            //-------------------------------- >> RUangan 
+            $i=0;
+            $arrRuangan=array();       
+            if ($tableRuangan!=NULL) {
+                foreach ($tableRuangan as $item) {
+                            $idruangan    = $item[2];
+                    $i++;
+                    $detail = array(
+                                    'idjadwalevent' => $idjadwalevent,
+                                    'idruangan' => $idruangan,                                
+                                    );
+                    array_push($arrRuangan, $detail);              
+                }
+            }
 
 
-        //-------------------------------- >> Inventaris Yang dibutuhkan
-        $i=0;
-        $arrInventaris=array();       
-        if ($tableInventaris!=NULL) {
-            foreach ($tableInventaris as $item) {
-                        $idinventaris    = $item[2];
-                        $qty    = $item[3];
+
+            //-------------------------------- >> Parkiran 
+            $i=0;
+
+            $arrParkiran=array();       
+            if ($tableParkiran!=NULL) {
+                foreach ($tableParkiran as $item) {
+                            $idparkiran    = $item[2];
+                    $i++;
+                    $detail = array(
+                                    'idjadwalevent' => $idjadwalevent,
+                                    'idparkiran' => $idparkiran,                                
+                                    );
+                    array_push($arrParkiran, $detail);              
+                }
+            }
+
+            $simpan  = $this->Pengajuanjadwal_model->simpanjadwalevent($arrayhead, $arrTempatWaktu, $arrPelayanan, $arrInventaris, $arrRuangan, $arrParkiran, $idjadwalevent);
+        }else{
+
+            $arrayhead = array(
+                                'idjadwalevent' => $idjadwalevent,
+                                'namaevent' => $namaevent,
+                                'deskripsi' => $deskripsi,
+                                'namapenanggungjawab' => $namapenanggungjawab,
+                                'gambarsampul' => $foto,
+                                'iddepartement' => $iddepartement,
+                                'tglupdate' => $tglupdate,
+                                'jenisjadwal' => $jenisjadwal,
+                                'idpengkhotbah' => $idpengkhotbah,
+                                'streamingurl' => $streamingurl,
+                                'tema' => $tema,
+                                'subtema' => $subtema,
+                                'harusdaftar' => $harusdaftar,
+                                'jumlahvolunteer' => $jumlahvolunteer,
+                                'jumlahjemaat' => $jumlahjemaat,
+                                'onsitestatus' => $onsitestatus,
+                                'aplikasidigunakan' => $aplikasiDigunakanOptions,
+                                'diumumkankejemaat' => $diumumkanKeJemaatOptions,
+                                'tglmulaidiumumkan' => $tglmulaidiumumkan,
+                                'tglselesaidiumumkan' => $tglselesaidiumumkan,
+                                'pengumumandisampaikanmelalui' => $pengumumanDisampaikanMelaluiOptions,
+                                'konseppengumuman' => $konsepPengumumanOptions,
+                                'detailkonseppengumuman' => $detailKonsepPengumuman,
+                                'tampilkandiwebsite' => $tampilkanDiWebsiteOptions,
+                                'halyangdisampaian' => $halYangDisampaian,
+                                'rundown' => $rundown,
+                                'idkelas' => $idkelas,
+                                'statuskonfirmasi' => 'Menunggu',
+                                'idpenggunakonfirmasi' => NULL,
+                                'tglkonfirmasi' => NULL,
+                                'keterangankonfirmasi' => NULL,
+                                );
+
+            
+
+
+            //-------------------------------- >> Tempat Dan Waktu 
+            $i=0;
+            $arrTempatWaktu=array();       
+            foreach ($isidatatable as $item) {
+                        $tgljadwaleventmulai    = $item[2];
+                        $tgljadwaleventselesai  = $item[3];
+                        $jammulai               = $item[4];
+                        $jamselesai             = $item[5];
+                        $lokasievent             = $item[8];
+                        $diulangsetiapminggu             = $item[9];
                 $i++;
                 $detail = array(
                                 'idjadwalevent' => $idjadwalevent,
-                                'idinventaris' => $idinventaris,
-                                'qty' => $qty,
+                                'tgljadwaleventmulai' => $tgljadwaleventmulai,
+                                'tgljadwaleventselesai' => $tgljadwaleventselesai,
+                                'jammulai' => $jammulai,
+                                'jamselesai' => $jamselesai,
+                                'diulangsetiapminggu' => $diulangsetiapminggu,
                                 );
-                array_push($arrInventaris, $detail);              
+                array_push($arrTempatWaktu, $detail);              
             }
+
+
+            //-------------------------------- >> Pelayanan Yang dibutuhkan
+            // echo json_encode(array('msg' => $tablePelayanan));
+            // exit();
+            $i=0;
+            $arrPelayanan=array();  
+            if ($tablePelayanan!=NULL) {
+                    foreach ($tablePelayanan as $item) {
+                                $idpelayanan    = $item[2];
+                        $i++;
+                        $detail = array(
+                                        'idjadwalevent' => $idjadwalevent,
+                                        'idpelayanan' => $idpelayanan,
+                                        );
+                        array_push($arrPelayanan, $detail);              
+                    }
+                 }     
+
+
+            //-------------------------------- >> Inventaris Yang dibutuhkan
+            $i=0;
+            $arrInventaris=array();       
+            if ($tableInventaris!=NULL) {
+                foreach ($tableInventaris as $item) {
+                            $idinventaris    = $item[2];
+                            $qty    = $item[3];
+                    $i++;
+                    $detail = array(
+                                    'idjadwalevent' => $idjadwalevent,
+                                    'idinventaris' => $idinventaris,
+                                    'qty' => $qty,
+                                    );
+                    array_push($arrInventaris, $detail);              
+                }
+            }
+
+            //-------------------------------- >> RUangan 
+            $i=0;
+            $arrRuangan=array();       
+            if ($tableRuangan!=NULL) {
+                foreach ($tableRuangan as $item) {
+                            $idruangan    = $item[2];
+                    $i++;
+                    $detail = array(
+                                    'idjadwalevent' => $idjadwalevent,
+                                    'idruangan' => $idruangan,                                
+                                    );
+                    array_push($arrRuangan, $detail);              
+                }
+            }
+
+
+
+            //-------------------------------- >> Parkiran 
+            $i=0;
+
+            $arrParkiran=array();       
+            if ($tableParkiran!=NULL) {
+                foreach ($tableParkiran as $item) {
+                            $idparkiran    = $item[2];
+                    $i++;
+                    $detail = array(
+                                    'idjadwalevent' => $idjadwalevent,
+                                    'idparkiran' => $idparkiran,                                
+                                    );
+                    array_push($arrParkiran, $detail);              
+                }
+            }
+
+            
+
+            $simpan  = $this->Pengajuanjadwal_model->updatejadwalevent($arrayhead, $arrTempatWaktu, $arrPelayanan, $arrInventaris, $arrRuangan, $arrParkiran, $idjadwalevent);
         }
 
-        //-------------------------------- >> RUangan 
-        $i=0;
-        $arrRuangan=array();       
-        if ($tableRuangan!=NULL) {
-            foreach ($tableRuangan as $item) {
-                        $idruangan    = $item[2];
-                $i++;
-                $detail = array(
-                                'idjadwalevent' => $idjadwalevent,
-                                'idruangan' => $idruangan,                                
-                                );
-                array_push($arrRuangan, $detail);              
-            }
-        }
-
-
-
-        //-------------------------------- >> Parkiran 
-        $i=0;
-
-        $arrParkiran=array();       
-        if ($tableParkiran!=NULL) {
-            foreach ($tableParkiran as $item) {
-                        $idparkiran    = $item[2];
-                $i++;
-                $detail = array(
-                                'idjadwalevent' => $idjadwalevent,
-                                'idparkiran' => $idparkiran,                                
-                                );
-                array_push($arrParkiran, $detail);              
-            }
-        }
-
-        $simpan  = $this->pengajuanjadwal_model->simpanjadwalevent($arrayhead, $arrTempatWaktu, $arrPelayanan, $arrInventaris, $arrRuangan, $arrParkiran, $idjadwalevent);
         if ($simpan) { 
-            $simpanextract = $this->pengajuanjadwal_model->extractTanggalJadwal($idjadwalevent);
+            $simpanextract = $this->Pengajuanjadwal_model->extractTanggalJadwal($idjadwalevent);
 
             if (!$simpanextract) {
                 $eror = $this->db->error(); 
@@ -386,17 +571,66 @@ class Pengajuanjadwal extends MY_Controller {
     {
         
         $idjadwalevent = $this->input->post('idjadwalevent');
-        $RsData = $this->pengajuanjadwal_model->get_by_id($idjadwalevent)->row();
+        $RsData = $this->db->query("
+                select * from jadwalevent where idjadwalevent='$idjadwalevent'
+            ")->row();
 
-        $data = array( 
-                            'idjadwalevent' => $RsData->idjadwalevent,
-                            'tanggaljadwal' => $RsData->tanggaljadwal,
-                            'tema'   => $RsData->tema,  
-                            'subtema'   => $RsData->subtema,
-                            'idpengkhotbah' => $RsData->idpengkhotbah,
-                            'videoembed' => $RsData->videoembed,
-                            'gambarsampul' => $RsData->gambarsampul,
 
+        $rsPelayanan = $this->db->query("
+                select * from v_jadwaleventdetailpelayanan where idjadwalevent='$idjadwalevent' order by idpelayanan
+            ")->result();
+
+        $rsRuangan = $this->db->query("
+                select * from v_jadwaleventdetailruangan where idjadwalevent='$idjadwalevent' order by idruangan
+            ")->result();
+
+        $rsInventaris = $this->db->query("
+                select * from v_jadwaleventdetailinventaris where idjadwalevent='$idjadwalevent' order by idinventaris
+            ")->result();
+
+        $rsParkiran = $this->db->query("
+                select * from v_jadwaleventdetailparkiran where idjadwalevent='$idjadwalevent' order by idparkiran
+            ")->result();
+
+        $data = array(
+                            'idjadwalevent'=> $RsData->idjadwalevent,
+                            'namaevent'=> $RsData->namaevent,
+                            'deskripsi'=> $RsData->deskripsi,
+                            'idpenanggungjawab'=> $RsData->idpenanggungjawab,
+                            'gambarsampul'=> $RsData->gambarsampul,
+                            'iddepartement'=> $RsData->iddepartement,
+                            'tglinsert'=> $RsData->tglinsert,
+                            'tglupdate'=> $RsData->tglupdate,
+                            'idpengguna'=> $RsData->idpengguna,
+                            'jenisjadwal'=> $RsData->jenisjadwal,
+                            'idpengkhotbah'=> $RsData->idpengkhotbah,
+                            'streamingurl'=> $RsData->streamingurl,
+                            'tema'=> $RsData->tema,
+                            'subtema'=> $RsData->subtema,
+                            'harusdaftar'=> $RsData->harusdaftar,
+                            'jumlahvolunteer'=> $RsData->jumlahvolunteer,
+                            'jumlahjemaat'=> $RsData->jumlahjemaat,
+                            'onsitestatus'=> $RsData->onsitestatus,
+                            'aplikasidigunakan'=> $RsData->aplikasidigunakan,
+                            'diumumkankejemaat'=> $RsData->diumumkankejemaat,
+                            'tglmulaidiumumkan'=> $RsData->tglmulaidiumumkan,
+                            'tglselesaidiumumkan'=> $RsData->tglselesaidiumumkan,
+                            'pengumumandisampaikanmelalui'=> $RsData->pengumumandisampaikanmelalui,
+                            'konseppengumuman'=> $RsData->konseppengumuman,
+                            'detailkonseppengumuman'=> $RsData->detailkonseppengumuman,
+                            'tampilkandiwebsite'=> $RsData->tampilkandiwebsite,
+                            'halyangdisampaian'=> $RsData->halyangdisampaian,
+                            'rundown'=> $RsData->rundown,
+                            'statuskonfirmasi'=> $RsData->statuskonfirmasi,
+                            'idpenggunakonfirmasi'=> $RsData->idpenggunakonfirmasi,
+                            'tglkonfirmasi'=> $RsData->tglkonfirmasi,
+                            'keterangankonfirmasi'=> $RsData->keterangankonfirmasi,
+                            'idkelas'=> $RsData->idkelas,
+                            'namapenanggungjawab'=> $RsData->namapenanggungjawab,
+                            'rsPelayanan'=> $rsPelayanan,
+                            'rsRuangan'=> $rsRuangan,
+                            'rsInventaris'=> $rsInventaris,
+                            'rsParkiran'=> $rsParkiran,
                      );
 
         echo(json_encode($data));

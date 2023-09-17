@@ -101,7 +101,7 @@
                                     <div class="col-md-4 text-lg">
                                       
                                       <div class="card">
-                                        <div class="card-body" id="cardJenisJadwal">
+                                        <div class="card-body">
                                           
                                           <div class="form-check mt-3">
                                             <input class="form-check-input" type="radio" name="jenisjadwal" id="exampleRadios1" value="Disciple Community" checked>
@@ -686,9 +686,7 @@
                                                     <div class="form-group row required">
                                                       <label for="" class="col-md-3 col-form-label">Gambar Sampul</label>
                                                       <div class="col-md-9">
-                                                        <input type="file" name="foto" id="foto" value="foto"><br>
-                                                        <a href="" id="foto_link" target="_blank"></a>
-                                                        <input type="hidden" name="foto_lama" id="foto_lama" value="foto_lama">
+                                                        <input type="file" name="foto" id="foto" value="foto">
                                                       </div>
                                                     </div> 
                                                   </div>
@@ -870,14 +868,14 @@
       $('#divtampildifront').fadeOut();
       $('#divpengkhotbah').fadeOut();
       $('#divAplikasiDigunakan').fadeOut();
-$('input[type=radio][name=jenisjadwal]').change();
+      $('input[type=radio][name=jenisjadwal]').change();
 
     //---------------------------------------------------------> JIKA EDIT DATA
     if ( idjadwalevent != "" ) {  //edit (ada isi idjadwalevent)
 
           $.ajax({
               type        : 'POST', 
-              url         : '<?php echo site_url("pengajuanjadwal/get_edit_data") ?>', 
+              url         : '<?php echo site_url("listjadwal/get_edit_data") ?>', 
               data        : {'idjadwalevent': idjadwalevent}, 
               dataType    : 'json', 
               encode      : true
@@ -885,185 +883,11 @@ $('input[type=radio][name=jenisjadwal]').change();
           .done(function(result) {
             console.log(result);
             $("#idjadwalevent").val(result.idjadwalevent).trigger('change');
-
-            var els = document.getElementsByName("jenisjadwal");
-            for (var i = 0; i < els.length; i++){
-              var ovalue = els[i].value;
-              var oid = els[i].id;
-              if (ovalue==result.jenisjadwal) {
-                  $('#'+oid).prop('checked', true);
-                  $('#'+oid).trigger('change');
-              }
-            }
-                  
-            $('#namaevent').val(result.namaevent);
-            $('#deskripsi').val(result.deskripsi);
-            $('#namapenanggungjawab').val(result.namapenanggungjawab).trigger('change');
-            $('#foto_lama').val(result.gambarsampul);
-            $('#foto_link').html(result.gambarsampul);
-            $('#foto_link').attr('href', "<?php echo base_url('uploads/pengajuanjadwal/') ?>"+result.gambarsampul);
-            $('#iddepartement').val(result.iddepartement).trigger('change');
-            $('#idpengkhotbah').val(result.idpengkhotbah).trigger('change');
-            $('#streamingurl').val(result.streamingurl);
-            $('#tema').val(result.tema);
-            $('#subtema').val(result.subtema);
-
-            if (result.harusdaftar=='1') {
-              $('#jemaatPendaftaran1').prop("checked", true);
-            }else{
-              $('#jemaatPendaftaran2').prop("checked", true);
-            }
-            $('#jumlahvolunteer').val(result.jumlahvolunteer);
-            $('#jumlahjemaat').val(result.jumlahjemaat);
-            
-            if (result.onsitestatus=='Ya') {
-              $('#onsite1').prop('checked', true);
-            }else{
-              $('#onsite2').prop('checked', true);
-            }
-
-            if (result.aplikasidigunakan=='Zoom') {
-              $('#aplikasiDigunakan1').prop('checked', true);
-            }else{
-              $('#aplikasiDigunakan2').prop('checked', true);
-            }
-
-            if (result.diumumkankejemaat=='Ya') {
-              $('#diumumkanKeJemaat1').prop('checked', true).trigger('change');
-            }else{
-              $('#diumumkanKeJemaat2').prop('checked', true).trigger('change');
-            }
-
-            if (result.tglmulaidiumumkan!='' && result.tglmulaidiumumkan!=null) {
-              $('#tglmulaidiumumkan').val(tglymd(result.tglmulaidiumumkan));
-            }
-
-            if (result.tglselesaidiumumkan!='' && result.tglselesaidiumumkan!=null) {
-              $('#tglselesaidiumumkan').val(tglymd(result.tglselesaidiumumkan));
-            }
-
-            switch(result.pengumumandisampaikanmelalui) {
-              case 'Via Instagram':
-                $('#pengumumanDisampaikanMelalui2').prop('checked', true);
-                break;
-              case 'Via Live di ibadah minggu melalui MC':
-                $('#pengumumanDisampaikanMelalui3').prop('checked', true);
-                break;
-              default:
-                $('#pengumumanDisampaikanMelalui1').prop('checked', true);
-
-            }   
-
-            switch(result.konseppengumuman) {
-              case 'Slide + Audio':
-                $('#konsepPengumuman2').prop('checked', true);
-                break;
-              case 'Filming':
-                $('#konsepPengumuman3').prop('checked', true);
-                break
-              case 'Flyer':
-                $('#konsepPengumuman4').prop('checked', true);
-                break;
-              default:
-                $('#konsepPengumuman1').prop('checked', true);
-            }   
-
-            $('#detailKonsepPengumuman').val(result.detailkonseppengumuman);
-
-            if (result.tampilkandiwebsite=='Ya') {
-              $('#tampilkanDiWebsite1').prop('checked', true).trigger('change');
-            }else{
-              $('#tampilkanDiWebsite2').prop('checked', true).trigger('change');
-            }
-            $('#halYangDisampaian').val(result.halyangdisampaian);
-            $('#rundown').val(result.rundown);
-            $('#idkelas').val(result.idkelas).trigger('change');            
-
-
-            if (result.rsPelayanan.length>0) {
-              $('#tablePelayanan tbody').empty();
-              var nomor = 1;
-              for (var i = 0; i < result.rsPelayanan.length; i++) {
-
-                var addText = `<tr>
-                        <td style="width: 5%; text-align: center;"><a href="#" class="btnmodal-removepelayanan"><i class="fa fa-trash text-danger"></i></a></td>
-                        <td style="width: 5%; text-align: left;">`+nomor+`.</td>
-                        <td style="width: 5%; text-align: left; display: none;">`+result.rsPelayanan[i]['idpelayanan']+`</td>
-                        <td><input type="hidden" id="textIdPelayanan`+nomor+`" value="`+result.rsPelayanan[i]['idpelayanan']+`">`+result.rsPelayanan[i]['namapelayanan']+`</td>
-                      </tr>`;
-        
-                $('#tablePelayanan tbody').append(addText);
-                nomor++;
-              }
-            }
-
-
-            if (result.rsRuangan.length>0) {
-              $('#tableRuangan tbody').empty();
-              var nomor = 1;
-              for (var i = 0; i < result.rsRuangan.length; i++) {
-
-                var addText = `<tr>
-                    <td style="width: 5%; text-align: center;"><a href="#" class="btnmodal-removeruangan"><i class="fa fa-trash text-danger"></i></a></td>
-                    <td style="width: 5%; text-align: left;">`+nomor+`.</td>
-                    <td style="display: none;">`+result.rsRuangan[i]['idruangan']+`</td>
-                    <td><input type="hidden" id="textidruangan`+nomor+`" value="`+result.rsRuangan[i]['idruangan']+`">`+result.rsRuangan[i]['namaruangan']+`</td>
-                  </tr>`;
-    
-                $('#tableRuangan tbody').append(addText);
-                nomor++;
-              }
-            }
-
-
-            if (result.rsInventaris.length>0) {
-              $('#tableInventaris tbody').empty();
-              var nomor = 1;
-              for (var i = 0; i < result.rsInventaris.length; i++) {
-
-                
-                var addText = `<tr>
-                    <td style="width: 5%; text-align: center;"><a href="#" class="btnmodal-removeinventaris"><i class="fa fa-trash text-danger"></i></a></td>
-                    <td style="width: 5%; text-align: left;">
-                      <input type="hidden" id="textqtyinventaris`+nomor+`" value="`+result.rsInventaris[i]['qty']+`">
-                      `+nomor+`.
-                    </td>
-                    <td style="display: none;">`+result.rsInventaris[i]['idinventaris']+`</td>
-                    <td style="display: none;">`+result.rsInventaris[i]['qty']+`</td>
-                    <td>
-                        <input type="hidden" id="textidinventaris`+nomor+`" value="`+result.rsInventaris[i]['idinventaris']+`">
-                        `+result.rsInventaris[i]['namainventaris']+` (`+result.rsInventaris[i]['qty']+` `+result.rsInventaris[i]['satuan']+`)
-                    </td>
-                  </tr>`;
-    
-                $('#tableInventaris tbody').append(addText);
-
-                nomor++;
-              }
-            }
-
-            if (result.rsParkiran.length>0) {
-              $('#tableParkiran tbody').empty();
-              var nomor = 1;
-              for (var i = 0; i < result.rsParkiran.length; i++) {
-
-                
-                var addText = `<tr>
-                        <td style="width: 5%; text-align: center;"><a href="#" class="btnmodal-removeparkiran"><i class="fa fa-trash text-danger"></i></a></td>
-                        <td style="width: 5%; text-align: left;">`+nomor+`.</td>
-                        <td style="display: none;">`+result.rsParkiran[i]['idparkiran']+`</td>
-                        <td><input type="hidden" class="textidparkiran" id="textidparkiran`+nomor+`" value="`+result.rsParkiran[i]['idparkiran']+`">`+result.rsParkiran[i]['namaparkiran']+`</td>
-                      </tr>`;
-        
-                $('#tableParkiran tbody').append(addText);
-                nomor++;
-              }
-            }
-
-
-            
-
-
+            $("#tanggaljadwal").val(result.tanggaljadwal);
+            $("#namaevent").val(result.namaevent);
+            $("#deskripsi").val(result.deskripsi);
+            $("#namapenanggungjawab").val(result.namapenanggungjawab);
+            $("#gambarsampul").val(result.gambarsampul);
           }); 
 
 
@@ -1283,7 +1107,6 @@ $('input[type=radio][name=jenisjadwal]').change();
     var detailKonsepPengumuman = $('#detailKonsepPengumuman').val();
     var tampilkanDiWebsiteOptions       = $('input[type=radio][name=tampilkanDiWebsiteOptions]:checked').val();
     var foto = $('#foto').val();
-    var foto_lama = $('#foto_lama').val();
     var deskripsi = $('#deskripsi').val();
     var jemaatPendaftaranOptions       = $('input[type=radio][name=jemaatPendaftaranOptions]:checked').val();
     var halYangDisampaian = $('#halYangDisampaian').val();
@@ -1304,7 +1127,7 @@ $('input[type=radio][name=jenisjadwal]').change();
     }
 
     if (tampilkanDiWebsiteOptions=='Ya') {
-      if (foto=="" && foto_lama=="") {
+      if (foto=="") {
         swal("Gambar Sampul!", "Gambar sampul belum ada.", "info");
         return false;
       }
@@ -1360,7 +1183,7 @@ $('input[type=radio][name=jenisjadwal]').change();
       // return;
       $.ajax({
                 type        : 'POST', 
-                url         : '<?php echo site_url("pengajuanjadwal/simpanjadwalevent") ?>', 
+                url         : '<?php echo site_url("listjadwal/simpanjadwalevent") ?>', 
                 data        : formData, 
                 dataType    : 'json', 
                 encode      : true,

@@ -3,13 +3,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Pengajuanjadwal_model extends CI_Model {
 
-	var $tabelview = 'jadwalevent';
+	var $tabelview = 'v_jadwalevent';
     var $tabel     = 'jadwalevent';
     var $idjadwalevent = 'idjadwalevent';
 
-    var $column_order = array(null,'idjadwalevent','tanggaljadwal','tema','subtema','idpengkhotbah','videoembed','gambarsampul', null );
-    var $column_search = array('idjadwalevent','tanggaljadwal','tema','subtema','idpengkotbah','videoembed','gambarsampul');
-    var $order = array('idjadwalevent' => 'asc'); // default order 
+    var $column_order = array(null, 'tglmulai', 'namaevent', 'jenisjadwal', 'statuskonfirmasi', null);
+    var $column_search = array('tglmulai', 'namaevent', 'jenisjadwal', 'statuskonfirmasi');
+    var $order = array('idjadwalevent' => 'desc'); // default order 
 
 
     function get_datatables()
@@ -22,6 +22,10 @@ class Pengajuanjadwal_model extends CI_Model {
 
     private function _get_datatables_query()
     {   
+        if ($this->session->userdata('idotorisasi')!='0000') {
+            $this->db->where('idpengguna', $this->session->userdata('idjemaat'));
+        }
+        
         $this->db->from($this->tabelview);
         $i = 0;
         foreach ($this->column_search as $item) 
@@ -78,20 +82,42 @@ class Pengajuanjadwal_model extends CI_Model {
 
     public function hapus($idjadwalevent)
     {
-        $this->db->query("delete from jadwaleventdetailtanggal_2 where idjadwalevent='$idjadwalevent'");
 
-        $this->db->query("delete from jadwaleventdetailtanggal where idjadwalevent='$idjadwalevent'");
+        try {
+            
+            $this->db->trans_begin();
+            
 
-        $this->db->query("delete from jadwaleventdetailpelayanan where idjadwalevent='$idjadwalevent'");
+            $this->db->query("delete from jadwaleventregistrasi where idjadwalevent='$idjadwalevent'");
 
-        $this->db->query("delete from jadwaleventdetailinventaris where idjadwalevent='$idjadwalevent'");
+            $this->db->query("delete from jadwaleventdetailtanggal_2 where idjadwalevent='$idjadwalevent'");
 
-        $this->db->query("delete from jadwaleventdetailruangan where idjadwalevent='$idjadwalevent'");
+            $this->db->query("delete from jadwaleventdetailtanggal where idjadwalevent='$idjadwalevent'");
 
-        $this->db->query("delete from jadwaleventdetailparkiran where idjadwalevent='$idjadwalevent'");
+            $this->db->query("delete from jadwaleventdetailpelayanan where idjadwalevent='$idjadwalevent'");
 
-        $this->db->where('idjadwalevent', $idjadwalevent);      
-        return $this->db->delete($this->tabel);
+            $this->db->query("delete from jadwaleventdetailinventaris where idjadwalevent='$idjadwalevent'");
+
+            $this->db->query("delete from jadwaleventdetailruangan where idjadwalevent='$idjadwalevent'");
+
+            $this->db->query("delete from jadwaleventdetailparkiran where idjadwalevent='$idjadwalevent'");
+
+            $this->db->where('idjadwalevent', $idjadwalevent);      
+            $this->db->delete('jadwalevent');
+
+            if ($this->db->trans_status() === FALSE){
+                    $this->db->trans_rollback();
+                    return false;
+            }else{
+                    $this->db->trans_commit();
+                    return true;
+            }
+            
+        } catch (Exception $e) {
+            $this->db->trans_rollback();
+            return false;
+        }
+
     }
 
     public function simpan($data)
@@ -121,6 +147,47 @@ class Pengajuanjadwal_model extends CI_Model {
             $this->db->insert_batch('jadwaleventdetailruangan', $arrRuangan);
 
             $this->db->query("delete from jadwaleventdetailparkiran where idjadwalevent='$idjadwalevent'");
+            $this->db->insert_batch('jadwaleventdetailparkiran', $arrParkiran);
+
+            
+            if ($this->db->trans_status() === FALSE){
+                    $this->db->trans_rollback();
+                    return false;
+            }else{
+                    $this->db->trans_commit();
+                    return true;
+            }
+
+
+        } catch (Exception $e) {
+            $this->db->trans_rollback();
+            return false;
+        }
+    }
+
+
+    public function updatejadwalevent($arrayhead, $arrTempatWaktu, $arrPelayanan, $arrInventaris, $arrRuangan, $arrParkiran, $idjadwalevent)
+    {
+        try {
+            
+            $this->db->trans_begin();
+            
+            $this->db->query("delete from jadwaleventdetailtanggal_2 where idjadwalevent='$idjadwalevent'");
+            $this->db->query("delete from jadwaleventdetailtanggal where idjadwalevent='$idjadwalevent'");
+            $this->db->query("delete from jadwaleventdetailpelayanan where idjadwalevent='$idjadwalevent'");
+            $this->db->query("delete from jadwaleventdetailinventaris where idjadwalevent='$idjadwalevent'");
+            $this->db->query("delete from jadwaleventdetailruangan where idjadwalevent='$idjadwalevent'");
+            $this->db->query("delete from jadwaleventdetailparkiran where idjadwalevent='$idjadwalevent'");
+
+
+            $this->db->where('idjadwalevent', $idjadwalevent);
+            $this->db->update('jadwalevent', $arrayhead);
+
+
+            $this->db->insert_batch('jadwaleventdetailtanggal', $arrTempatWaktu);
+            $this->db->insert_batch('jadwaleventdetailpelayanan', $arrPelayanan);
+            $this->db->insert_batch('jadwaleventdetailinventaris', $arrInventaris);
+            $this->db->insert_batch('jadwaleventdetailruangan', $arrRuangan);
             $this->db->insert_batch('jadwaleventdetailparkiran', $arrParkiran);
 
             
@@ -223,32 +290,6 @@ class Pengajuanjadwal_model extends CI_Model {
         return $this->db->update($this->tabel, $data);
     }
 
-
-    public function updatejadwalevent($arrayhead, $arraydetail, $idjadwalevent)
-    {
-        try {
-            
-            $this->db->trans_begin();
-            
-            $this->db->where('idjadwalevent', $idjadwalevent);
-            $this->db->update('jadwalevent', $arrayhead);
-            $this->db->query("delete from jadwaleventdetailtanggal where idjadwalevent='$idjadwalevent'");
-            $this->db->insert_batch('jadwaleventdetailtanggal', $arraydetail);
-
-            if ($this->db->trans_status() === FALSE){
-                    $this->db->trans_rollback();
-                    return false;
-            }else{
-                    $this->db->trans_commit();
-                    return true;
-            }
-
-
-        } catch (Exception $e) {
-            $this->db->trans_rollback();
-            return false;
-        }
-    }
 
 }
 
