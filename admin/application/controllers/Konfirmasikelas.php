@@ -116,32 +116,32 @@ class Konfirmasikelas extends MY_Controller {
         $simpan = $this->Konfirmasikelas_model->update($data, $idregistrasi, $status);
 
         if ($simpan) {
-            $judul = $status.' - Pendaftaran Kelas Next Step';
-            $rsRegistrasi = $this->db->query("select * from v_pendaftarankelas where idregistrasi='$idregistrasi'")->row();
-            $idjadwalevent = $rsRegistrasi->idjadwalevent;
-            $rsJadwal = $this->db->query("select * from v_jadwalevent where idjadwalevent='$idjadwalevent'")->row();
-            $rowKelas = $this->db->query("select * from kelas where idkelas='$rsJadwal->idkelas'")->row();
-            $namakelas = $rowKelas->namakelas;
+            // $judul = $status.' - Pendaftaran Kelas Next Step';
+            // $rsRegistrasi = $this->db->query("select * from v_pendaftarankelas where idregistrasi='$idregistrasi'")->row();
+            // $idjadwalevent = $rsRegistrasi->idjadwalevent;
+            // $rsJadwal = $this->db->query("select * from v_jadwalevent where idjadwalevent='$idjadwalevent'")->row();
+            // $rowKelas = $this->db->query("select * from kelas where idkelas='$rsJadwal->idkelas'")->row();
+            // $namakelas = $rowKelas->namakelas;
 
-            if ($status=='Disetujui') {
-                $textemail = '
-                    <h1>Selamat!!! Pendaftaran Kelas Next Step Anda Telah Disetujui</h1>
-                      <p>Shalom Toni,</p>
-                      <p>Kelas '.$namakelas.' akan dimulai pada tanggal '.tglindonesialengkap($rsJadwal->tglmulai).' sampai dengan tanggal '.tglindonesialengkap($rsJadwal->tglselesai).' pada jam '.date('H:i', strtotime($rsJadwal->tglmulai)).' WIB. Datanglah tepat waktu untuk mengikuti kelas ini.</p>
-                      <p>Tuhan Yesus Memberkati. Apabila ada yang kurang jelas dapat menghubungi staf admin di Gereja Elshaddai, Terimakasih</p>
-                      <p>Shalom, <a href="https://myesc.id">myesc.id</a></p>
-                ';
-            }else{
-                $textemail = '
-                    <h1>Mohon Maaf!!! Pendaftaran Kelas Next Step Anda Ditolak</h1>
-                      <p>Shalom Toni,</p>
-                      <p>Pendaftaran Kelas '.$namakelas.' anda ditolak, adapun alasan penolakan anda sbb:</p>
-                      <p>'.$rsRegistrasi->keterangankonfirmasi.'</p>
-                      <p>Tuhan Yesus Memberkati. Apabila ada yang kurang jelas dapat menghubungi staf admin di Gereja Elshaddai, Terimakasih</p>
-                      <p>Shalom, <a href="https://myesc.id">myesc.id</a></p>
-                ';
-            }   
-            $this->App->sendEmailNextStep($email, $judul, $textemail);
+            // if ($status=='Disetujui') {
+            //     $textemail = '
+            //         <h1>Selamat!!! Pendaftaran Kelas Next Step Anda Telah Disetujui</h1>
+            //           <p>Shalom Toni,</p>
+            //           <p>Kelas '.$namakelas.' akan dimulai pada tanggal '.tglindonesialengkap($rsJadwal->tglmulai).' sampai dengan tanggal '.tglindonesialengkap($rsJadwal->tglselesai).' pada jam '.date('H:i', strtotime($rsJadwal->tglmulai)).' WIB. Datanglah tepat waktu untuk mengikuti kelas ini.</p>
+            //           <p>Tuhan Yesus Memberkati. Apabila ada yang kurang jelas dapat menghubungi staf admin di Gereja Elshaddai, Terimakasih</p>
+            //           <p>Shalom, <a href="https://myesc.id">myesc.id</a></p>
+            //     ';
+            // }else{
+            //     $textemail = '
+            //         <h1>Mohon Maaf!!! Pendaftaran Kelas Next Step Anda Ditolak</h1>
+            //           <p>Shalom Toni,</p>
+            //           <p>Pendaftaran Kelas '.$namakelas.' anda ditolak, adapun alasan penolakan anda sbb:</p>
+            //           <p>'.$rsRegistrasi->keterangankonfirmasi.'</p>
+            //           <p>Tuhan Yesus Memberkati. Apabila ada yang kurang jelas dapat menghubungi staf admin di Gereja Elshaddai, Terimakasih</p>
+            //           <p>Shalom, <a href="https://myesc.id">myesc.id</a></p>
+            //     ';
+            // }   
+            // $this->App->sendEmailNextStep($email, $judul, $textemail);
 
             echo json_encode(array('success' => true));
         }else{
