@@ -223,6 +223,7 @@
                     <div class="col-12">
                       <button class="btn btn-success btn-lg" id="btnDisetujui"><i class="fa fa-check"></i> Disetujui</button>
                       <button class="btn btn-danger btn-lg" id="btnDitolak"><i class="fa fa-times"></i> Ditolak</button>
+                      <a href="<?php echo site_url('konfirmasikelas') ?>" class="btn btn-sm btn-default float-right">Kembali</a>
                     </div>
 
                   </div> <!-- row -->
@@ -370,11 +371,15 @@
     var idregistrasi = $('#idregistrasi').val();
     var keterangankonfirmasi = $('#keterangankonfirmasi').val();
 
+    var formData = {'idregistrasi': idregistrasi, 'status': status, 'keterangankonfirmasi': keterangankonfirmasi};
+    // console.log(formData);
+    // return;
+    
     $.ajax({
       url: '<?php echo site_url('konfirmasikelas/simpan') ?>',
       type: 'POST',
       dataType: 'json',
-      data: {'idregistrasi': idregistrasi, 'status': status, 'keterangankonfirmasi': keterangankonfirmasi},
+      data: formData,
     })
     .done(function(simpanResult) {
       console.log(simpanResult);
@@ -384,7 +389,7 @@
             window.location.href = "<?php echo(site_url('konfirmasikelas')) ?>";
         });
       }else{
-        swal('Berhasil', simpanResult.msg, 'info');
+        swal('Gagal', simpanResult.msg, 'info');
       }
     })
     .fail(function() {

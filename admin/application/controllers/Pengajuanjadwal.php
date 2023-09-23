@@ -39,8 +39,8 @@ class Pengajuanjadwal extends MY_Controller {
     public function edit($idjadwalevent)
     {       
         $idjadwalevent = $this->encrypt->decode($idjadwalevent);
-
-        if ($this->Pengajuanjadwal_model->get_by_id($idjadwalevent)->num_rows()<1) {
+        $rsPengajuan = $this->Pengajuanjadwal_model->get_by_id($idjadwalevent); 
+        if ($rsPengajuan->num_rows()<1) {
             $pesan = '<div>
                         <div class="alert alert-danger alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -51,6 +51,20 @@ class Pengajuanjadwal extends MY_Controller {
             redirect('pengajuanjadwal');
             exit();
         };
+
+        $statuskonfirmasi = $rsPengajuan->row()->statuskonfirmasi;
+        if ($statuskonfirmasi=='Disetujui' || $statuskonfirmasi=='Ditolak') {
+          $pesan = '<div>
+                        <div class="alert alert-danger alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            <strong>Upss!</strong> Data ini sudah "'.$statuskonfirmasi.'" tidak bisa diedit lagi! 
+                        </div>
+                    </div>';
+            $this->session->set_flashdata('pesan', $pesan);
+            redirect('pengajuanjadwal');
+            exit();  
+        }
+
         $data['idjadwalevent'] =$idjadwalevent;        
         $data['menu'] = 'pengajuanjadwal';
         $this->load->view('pengajuanjadwal/form', $data);
