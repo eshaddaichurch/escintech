@@ -589,7 +589,7 @@
                                                   <div class="row">
                                                     
                                                     <div class="col-12">
-                                                      <div class="form-group row required">
+                                                      <div class="form-group row">
                                                         <label for="" class="col-md-5 col-form-label">Tgl Acara Mulai Diumumkan</label>
                                                         <div class="col-md-7">
                                                           <input type="date" name="tglmulaidiumumkan" id="tglmulaidiumumkan" class="form-control">
@@ -597,7 +597,7 @@
                                                       </div>
                                                     </div>
                                                     <div class="col-12">
-                                                      <div class="form-group row required">
+                                                      <div class="form-group row">
                                                         <label for="" class="col-md-5 col-form-label">Tgl Acara Selesai Diumumkan</label>
                                                         <div class="col-md-7">
                                                           <input type="date" name="tglselesaidiumumkan" id="tglselesaidiumumkan" class="form-control">
@@ -606,7 +606,30 @@
                                                     </div>
 
                                                     <div class="col-12">
-                                                      <div class="form-group row required">
+                                                      <div class="form-group row">
+                                                        <label for="" class="col-md-5 col-form-label">Pengumuman Disampaikan Melalui</label>
+                                                        <div class="col-md-7">
+                                                          <?php  
+                                                            $rsPengumuman = $this->App->getJenisPengumuman();
+                                                            if ($rsPengumuman->num_rows()>0) {
+
+                                                              foreach ($rsPengumuman->result() as $rowPengumuman) {
+
+                                                                echo '
+                                                                  <div class="form-check form-check-inline">
+                                                                    <input class="form-check-input" type="checkbox" name="idjenispengumuman" id="idjenispengumuman'.$rowPengumuman->idjenispengumuman.'" value="'.$rowPengumuman->idjenispengumuman.'">
+                                                                    <label class="form-check-label" for="idjenispengumuman'.$rowPengumuman->idjenispengumuman.'">'.$rowPengumuman->namajenispengumuman.'</label>
+                                                                  </div>
+                                                                ';
+                                                              }
+                                                            }
+                                                          ?>
+                                                        </div>
+                                                      </div>
+                                                    </div>
+
+                                                    <!--<div class="col-12">
+                                                      <div class="form-group row">
                                                         <label for="" class="col-md-5 col-form-label">Pengumuman Disampaikan Melalui</label>
                                                         <div class="col-md-7">
                                                           <div class="form-check form-check-inline">
@@ -623,10 +646,10 @@
                                                           </div>
                                                         </div>
                                                       </div>
-                                                    </div>
+                                                    </div> -->
 
                                                     <div class="col-12">
-                                                      <div class="form-group row required">
+                                                      <div class="form-group row">
                                                         <label for="" class="col-md-5 col-form-label">Konsep Pengumuman</label>
                                                         <div class="col-md-7">
                                                           <div class="form-check form-check-inline">
@@ -942,18 +965,6 @@ $('input[type=radio][name=jenisjadwal]').change();
               $('#tglselesaidiumumkan').val(tglymd(result.tglselesaidiumumkan));
             }
 
-            switch(result.pengumumandisampaikanmelalui) {
-              case 'Via Instagram':
-                $('#pengumumanDisampaikanMelalui2').prop('checked', true);
-                break;
-              case 'Via Live di ibadah minggu melalui MC':
-                $('#pengumumanDisampaikanMelalui3').prop('checked', true);
-                break;
-              default:
-                $('#pengumumanDisampaikanMelalui1').prop('checked', true);
-
-            }   
-
             switch(result.konseppengumuman) {
               case 'Slide + Audio':
                 $('#konsepPengumuman2').prop('checked', true);
@@ -1057,6 +1068,13 @@ $('input[type=radio][name=jenisjadwal]').change();
         
                 $('#tableParkiran tbody').append(addText);
                 nomor++;
+              }
+            }
+
+
+            if (result.rsJenisPengumuman.length>0) {
+              for (var i = 0; i < result.rsJenisPengumuman.length; i++) {
+                $('#idjenispengumuman'+result.rsJenisPengumuman[i]['idjenispengumuman']).prop('checked', true);
               }
             }
 
@@ -1278,7 +1296,8 @@ $('input[type=radio][name=jenisjadwal]').change();
     var diumumkanKeJemaatOptions       = $('input[type=radio][name=diumumkanKeJemaatOptions]:checked').val();
     var tglmulaidiumumkan = $('#tglmulaidiumumkan').val();
     var tglselesaidiumumkan = $('#tglselesaidiumumkan').val();
-    var pengumumanDisampaikanMelaluiOptions       = $('input[type=radio][name=pengumumanDisampaikanMelaluiOptions]:checked').val();
+    // var pengumumanDisampaikanMelaluiOptions       = $('input[type=radio][name=pengumumanDisampaikanMelaluiOptions]:checked').val();
+    var pengumumanDisampaikanMelaluiOptions = '';
     var konsepPengumumanOptions       = $('input[type=radio][name=konsepPengumumanOptions]:checked').val();
     var detailKonsepPengumuman = $('#detailKonsepPengumuman').val();
     var tampilkanDiWebsiteOptions       = $('input[type=radio][name=tampilkanDiWebsiteOptions]:checked').val();
@@ -1289,6 +1308,10 @@ $('input[type=radio][name=jenisjadwal]').change();
     var halYangDisampaian = $('#halYangDisampaian').val();
     var rundown = $('#rundown').val();
 
+    var jenisPengumuman = [];
+    $("input:checkbox[name=idjenispengumuman]:checked").each(function(){
+      jenisPengumuman.push($(this).val());
+    });
 
     if (diumumkanKeJemaatOptions=='Ya') {
       var tglmulaidiumumkan = $('#tglmulaidiumumkan').val();
@@ -1300,6 +1323,10 @@ $('input[type=radio][name=jenisjadwal]').change();
       if (tglselesaidiumumkan=="") {
         swal("Tgl Selesai Dimumumkan!", "Tanggal selesai diumumkan belum ada.", "info");
         return false;
+      }
+      if (jenisPengumuman.length==0) {
+        swal("Pengumuman Disampaikan Melalui!", "Pengumuman disampaikan melalui belum dipilih.", "info");
+        return false; 
       }
     }
 
@@ -1344,6 +1371,7 @@ $('input[type=radio][name=jenisjadwal]').change();
             "tglmulaidiumumkan"       : tglmulaidiumumkan,
             "tglselesaidiumumkan"       : tglselesaidiumumkan,
             "pengumumanDisampaikanMelaluiOptions"       : pengumumanDisampaikanMelaluiOptions,
+            "jenisPengumuman"       : jenisPengumuman,
             "konsepPengumumanOptions"       : konsepPengumumanOptions,
             "detailKonsepPengumuman"       : detailKonsepPengumuman,
             "tampilkanDiWebsiteOptions"       : tampilkanDiWebsiteOptions,
@@ -1367,7 +1395,7 @@ $('input[type=radio][name=jenisjadwal]').change();
             })
             .done(function(simpanjadwaleventResult){
 
-                // console.log(simpanjadwaleventResult);
+                console.log(simpanjadwaleventResult);
 
                 if (simpanjadwaleventResult.success) {
                     swal({

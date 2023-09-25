@@ -54,6 +54,16 @@ class App extends CI_Model {
 		return $this->db->get("kelas");
 	}
 
+	public function getJenisPengumuman($idjenispengumuman="")
+	{
+		if (!empty($idjenispengumuman)) {
+			$this->db->where('idjenispengumuman', $idjenispengumuman);
+		}
+		$this->db->where('statusaktif', 'Aktif');
+		$this->db->order_by('idjenispengumuman', 'Asc');
+		return $this->db->get('jenispengumuman');
+	}
+
 	public function APPBASEURL()
 	{
 		return str_replace('/admin', '', site_url());

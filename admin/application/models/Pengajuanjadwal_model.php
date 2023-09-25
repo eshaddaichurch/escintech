@@ -126,7 +126,7 @@ class Pengajuanjadwal_model extends CI_Model {
         return $this->db->insert($this->tabel, $data);
     }
 
-    public function simpanjadwalevent($arrayhead, $arrTempatWaktu, $arrPelayanan, $arrInventaris, $arrRuangan, $arrParkiran, $idjadwalevent)
+    public function simpanjadwalevent($arrayhead, $arrTempatWaktu, $arrPelayanan, $arrInventaris, $arrRuangan, $arrParkiran, $idjadwalevent, $arrIdJenisPengumuman)
     {
         try {
             
@@ -149,6 +149,10 @@ class Pengajuanjadwal_model extends CI_Model {
             $this->db->query("delete from jadwaleventdetailparkiran where idjadwalevent='$idjadwalevent'");
             $this->db->insert_batch('jadwaleventdetailparkiran', $arrParkiran);
 
+            $this->db->query("delete from jadwaleventjenispengumuman where idjadwalevent='$idjadwalevent'");
+            $this->db->insert_batch('jadwaleventjenispengumuman', $arrIdJenisPengumuman);
+
+
             
             if ($this->db->trans_status() === FALSE){
                     $this->db->trans_rollback();
@@ -166,7 +170,7 @@ class Pengajuanjadwal_model extends CI_Model {
     }
 
 
-    public function updatejadwalevent($arrayhead, $arrTempatWaktu, $arrPelayanan, $arrInventaris, $arrRuangan, $arrParkiran, $idjadwalevent)
+    public function updatejadwalevent($arrayhead, $arrTempatWaktu, $arrPelayanan, $arrInventaris, $arrRuangan, $arrParkiran, $idjadwalevent, $arrIdJenisPengumuman)
     {
         try {
             
@@ -178,6 +182,7 @@ class Pengajuanjadwal_model extends CI_Model {
             $this->db->query("delete from jadwaleventdetailinventaris where idjadwalevent='$idjadwalevent'");
             $this->db->query("delete from jadwaleventdetailruangan where idjadwalevent='$idjadwalevent'");
             $this->db->query("delete from jadwaleventdetailparkiran where idjadwalevent='$idjadwalevent'");
+            $this->db->query("delete from jadwaleventjenispengumuman where idjadwalevent='$idjadwalevent'");
 
 
             $this->db->where('idjadwalevent', $idjadwalevent);
@@ -189,6 +194,7 @@ class Pengajuanjadwal_model extends CI_Model {
             $this->db->insert_batch('jadwaleventdetailinventaris', $arrInventaris);
             $this->db->insert_batch('jadwaleventdetailruangan', $arrRuangan);
             $this->db->insert_batch('jadwaleventdetailparkiran', $arrParkiran);
+            $this->db->insert_batch('jadwaleventjenispengumuman', $arrIdJenisPengumuman);
 
             
             if ($this->db->trans_status() === FALSE){

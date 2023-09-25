@@ -256,6 +256,7 @@ class Pengajuanjadwal extends MY_Controller {
         $tglmulaidiumumkan           = $this->input->post('tglmulaidiumumkan');
         $tglselesaidiumumkan           = $this->input->post('tglselesaidiumumkan');
         $pengumumanDisampaikanMelaluiOptions           = $this->input->post('pengumumanDisampaikanMelaluiOptions');
+        $jenisPengumuman           = $this->input->post('jenisPengumuman');
         $konsepPengumumanOptions           = $this->input->post('konsepPengumumanOptions');
         $detailKonsepPengumuman           = $this->input->post('detailKonsepPengumuman');
         $tampilkanDiWebsiteOptions           = $this->input->post('tampilkanDiWebsiteOptions');
@@ -425,7 +426,24 @@ class Pengajuanjadwal extends MY_Controller {
                 }
             }
 
-            $simpan  = $this->Pengajuanjadwal_model->simpanjadwalevent($arrayhead, $arrTempatWaktu, $arrPelayanan, $arrInventaris, $arrRuangan, $arrParkiran, $idjadwalevent);
+
+            //-------------------------------- >> Jenis Pengumuman 
+            $i=0;
+
+            $arrIdJenisPengumuman=array();       
+            if (count($jenisPengumuman)>0) {
+                foreach ($jenisPengumuman as $item) {
+                            $idjenispengumuman    = $item;
+                    $i++;
+                    $detail = array(
+                                    'idjadwalevent' => $idjadwalevent,
+                                    'idjenispengumuman' => $idjenispengumuman,                                
+                                    );
+                    array_push($arrIdJenisPengumuman, $detail);              
+                }
+            }
+
+            $simpan  = $this->Pengajuanjadwal_model->simpanjadwalevent($arrayhead, $arrTempatWaktu, $arrPelayanan, $arrInventaris, $arrRuangan, $arrParkiran, $idjadwalevent, $arrIdJenisPengumuman);
         }else{
 
             $arrayhead = array(
@@ -557,8 +575,23 @@ class Pengajuanjadwal extends MY_Controller {
             }
 
             
+            //-------------------------------- >> Jenis Pengumuman 
+            $i=0;
 
-            $simpan  = $this->Pengajuanjadwal_model->updatejadwalevent($arrayhead, $arrTempatWaktu, $arrPelayanan, $arrInventaris, $arrRuangan, $arrParkiran, $idjadwalevent);
+            $arrIdJenisPengumuman=array();       
+            if (count($jenisPengumuman)>0) {
+                foreach ($jenisPengumuman as $item) {
+                            $idjenispengumuman    = $item;
+                    $i++;
+                    $detail = array(
+                                    'idjadwalevent' => $idjadwalevent,
+                                    'idjenispengumuman' => $idjenispengumuman,                                
+                                    );
+                    array_push($arrIdJenisPengumuman, $detail);              
+                }
+            }
+
+            $simpan  = $this->Pengajuanjadwal_model->updatejadwalevent($arrayhead, $arrTempatWaktu, $arrPelayanan, $arrInventaris, $arrRuangan, $arrParkiran, $idjadwalevent, $arrIdJenisPengumuman);
         }
 
         if ($simpan) { 
@@ -606,6 +639,10 @@ class Pengajuanjadwal extends MY_Controller {
                 select * from v_jadwaleventdetailparkiran where idjadwalevent='$idjadwalevent' order by idparkiran
             ")->result();
 
+        $rsJenisPengumuman = $this->db->query("
+                select * from jadwaleventjenispengumuman where idjadwalevent='$idjadwalevent' order by idjenispengumuman
+            ")->result();
+
         $data = array(
                             'idjadwalevent'=> $RsData->idjadwalevent,
                             'namaevent'=> $RsData->namaevent,
@@ -645,6 +682,7 @@ class Pengajuanjadwal extends MY_Controller {
                             'rsRuangan'=> $rsRuangan,
                             'rsInventaris'=> $rsInventaris,
                             'rsParkiran'=> $rsParkiran,
+                            'rsJenisPengumuman'=> $rsJenisPengumuman,
                      );
 
         echo(json_encode($data));
