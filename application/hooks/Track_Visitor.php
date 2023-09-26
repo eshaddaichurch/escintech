@@ -33,7 +33,7 @@ class Track_Visitor {
      * ignore controllers e.g. 'admin'
      */
     private $CONTROLLER_IGNORE_LIST = array(
-        'login'
+        'home', 'login'
     );
 
     /*
