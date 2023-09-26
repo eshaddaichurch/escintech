@@ -8,6 +8,7 @@ if (!defined('BASEPATH'))
  *
  * @author https://roytuts.com
  */
+#[\AllowDynamicProperties]
 class Track_Visitor {
     /*
      * Defines how many seconds a hit should be rememberd for. This prevents the
