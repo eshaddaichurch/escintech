@@ -90,7 +90,11 @@ class Track_Visitor {
         
         $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
         $uri_segments = explode('/', $uri_path);
-        $url_segment = $uri_segments[2];
+        if (isset($uri_segments[2])) {
+            $url_segment = $uri_segments[2];
+        }else{
+            $url_segment = 'home';
+        }
         
         if ($this->track_session() === TRUE) {
             //update the visitor log in the database, based on the current visitor
