@@ -32,7 +32,7 @@
             <a href="<?php echo(site_url()) ?>" class="nav-link <?php echo ($this->session->userdata('IDMENUSELECTED')=='HOME') ? 'active' : '' ?>">
               <i class="nav-icon fas fa-home"></i>
               <p>
-                Home
+                Dashboard Visitor
               </p>
             </a>
           </li>
