@@ -8,7 +8,6 @@ if (!defined('BASEPATH'))
  *
  * @author https://roytuts.com
  */
-#[AllowDynamicProperties]
 class Track_Visitor {
     /*
      * Defines how many seconds a hit should be rememberd for. This prevents the
@@ -33,7 +32,7 @@ class Track_Visitor {
      * ignore controllers e.g. 'admin'
      */
     private $CONTROLLER_IGNORE_LIST = array(
-        'home', 'login'
+        'login'
     );
 
     /*
@@ -88,6 +87,9 @@ class Track_Visitor {
 
     private function log_visitor() {
         
+        $uri_path = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
+        $uri_segments = explode('/', $uri_path);
+        $url_segment = $uri_segments[2];
         
         if ($this->track_session() === TRUE) {
             //update the visitor log in the database, based on the current visitor
@@ -98,7 +100,7 @@ class Track_Visitor {
             $temp_visitor_id = $this->ci->session->userdata('visitor_id');
             $visitor_id = isset($temp_visitor_id) ? $temp_visitor_id : 0;
             $no_of_visits = $this->ci->session->userdata('no_of_visits');
-            $current_page = current_url();
+            $current_page = $url_segment;
             $temp_current_page = $this->ci->session->userdata('current_page');
             if (isset($temp_current_page) && $temp_current_page != $current_page) {
                 $page_name = $this->ci->router->fetch_class() . '/' . $this->ci->router->fetch_method();
@@ -175,7 +177,7 @@ class Track_Visitor {
                 //subsequent visits to track this person
                 $this->ci->session->set_userdata('no_of_visits', $count);
                 //save the current page to session so we don't track if someone just refreshes the page
-                $current_page = current_url();
+                $current_page = $url_segment;
                 $this->ci->session->set_userdata('current_page', $current_page);
             }
         }
