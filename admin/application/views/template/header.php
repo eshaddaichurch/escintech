@@ -7,6 +7,8 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
   <title>ESC | admin</title>
+  <link href="<?php echo base_url('images/icon.png') ?>" rel="icon">
+  
 
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="<?php echo (base_url()) ?>assets/adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
