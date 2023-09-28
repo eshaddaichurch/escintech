@@ -56,10 +56,9 @@ class Hagah extends MY_Controller {
                 $no++;
                 $row = array();
                 $row[] = $no;
-                $row[] = $rowdata->tglhagah;
-                $row[] = $rowdata->namakitab;
-                $row[] = $rowdata->pasal1;
-                $row[] = $rowdata->pasal2;
+                $row[] = $rowdata->tahun;
+                $row[] = $rowdata->bulan.' - '.bulan($rowdata->bulan);
+                $row[] = $rowdata->namakitabawal.' '.$rowdata->pasalawal.' s/d '.$rowdata->namakitabakhir.' '.$rowdata->pasalakhir;
                 $row[] = '<a href="'.site_url( 'hagah/edit/'.$this->encrypt->encode($rowdata->idhagah) ).'" class="btn btn-sm btn-warning btn-circle"><i class="fa fa-edit"></i></a> | 
                         <a href="'.site_url('hagah/delete/'.$this->encrypt->encode($rowdata->idhagah) ).'" class="btn btn-sm btn-danger btn-circle" id="hapus"><i class="fa fa-trash"></i></a>';
                 $data[] = $row;
@@ -114,36 +113,104 @@ class Hagah extends MY_Controller {
 
     }
 
-    public function simpan()
-    {       
-        $idhagah             	= $this->input->post('idhagah');
-        $tglhagah        		= $this->input->post('tglhagah');
-        $idkitab        		= $this->input->post('idkitab');
-        $pasal1        		= $this->input->post('pasal1');
-        $pasal2        		= $this->input->post('pasal2');
+    public function simpanperbulan()
+    {
+        $idhagah = $this->input->post('idhagah');
+        $tahun = $this->input->post('tahun');
+        $bulan = $this->input->post('bulan');
+        $tglHagah = $this->input->post('tglHagah');
+        $tglinsert = date('Y-m-d H:i:s');
+        $arrDetail = array();
 
-        if ( $idhagah=='' ) {  
+        $i=1;
+        $kitabawal = '';
+        $kitabakhir = '';
 
-            $idhagah = $this->db->query("select create_idhagah('".$tglhagah."') as idhagah")->row()->idhagah;
+        if (empty($idhagah)) {
+            
+            $idhagah = substr($tahun,2,2).replwzero($bulan,2);
+            if ($this->Hagah_model->get_by_id($idhagah)->num_rows()>0) {
+                $pesan = '<div>
+                            <div class="alert alert-danger alert-dismissable">
+                                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                                <strong>'.bulan($bulan).' '.$tahun.'!</strong> Data hagah bulan ini sudah ada! 
+                            </div>
+                        </div>';
+                $this->session->set_flashdata('pesan', $pesan);
+                redirect('hagah');
+                exit();
+            };
 
-            $data = array(
-                            'idhagah'   => $idhagah, 
-                            'tglhagah'   => $tglhagah, 
-                            'idkitab'   => $idkitab, 
-                            'pasal1'   => $pasal1, 
-                            'pasal2'   => $pasal2, 
-                        );
-            $simpan = $this->Hagah_model->simpan($data);      
-        }else{ 
-        	$data = array(
-                            'idhagah'   => $idhagah, 
-                            'tglhagah'   => $tglhagah, 
-                            'idkitab'   => $idkitab, 
-                            'pasal1'   => $pasal1, 
-                            'pasal2'   => $pasal2, 
-                        );
-            $simpan = $this->Hagah_model->update($data, $idhagah);
+
+            foreach ($tglHagah as $value) {
+                if ($i==1) {
+                    $kitabawal = $this->input->post('namakitab'.$i);
+                    $pasalawal = $this->input->post('pasalmulai'.$i);
+                }
+
+                if ($i==count($tglHagah)) {
+                    $kitabakhir = $this->input->post('namakitab'.$i);
+                    $pasalakhir = $this->input->post('pasalakhir'.$i);
+                }
+
+                array_push($arrDetail, array(
+                                            'idhagah' => $idhagah, 
+                                            'tglHagah' => date('Y-m-d', strtotime($value)), 
+                                            'idkitab' => $this->input->post('namakitab'.$i), 
+                                            'pasal1' => $this->input->post('pasalmulai'.$i), 
+                                            'pasal2' => $this->input->post('pasalakhir'.$i), 
+                                        ));
+                $i++;
+            }
+
+            $arrHeader = array(
+                                'idhagah' => $idhagah, 
+                                'tahun' => $tahun, 
+                                'bulan' => $bulan, 
+                                'kitabawal' => $kitabawal, 
+                                'pasalawal' => $pasalawal, 
+                                'kitabakhir' => $kitabakhir, 
+                                'pasalakhir' => $pasalakhir, 
+                                'tglinsert' => $tglinsert, 
+                                'tglupdate' => $tglinsert, 
+                            );
+
+            $simpan = $this->Hagah_model->simpan($arrHeader, $arrDetail, $idhagah);      
+        }else{
+
+            foreach ($tglHagah as $value) {
+                if ($i==1) {
+                    $kitabawal = $this->input->post('namakitab'.$i);
+                    $pasalawal = $this->input->post('pasalmulai'.$i);
+                }
+
+                if ($i==count($tglHagah)) {
+                    $kitabakhir = $this->input->post('namakitab'.$i);
+                    $pasalakhir = $this->input->post('pasalakhir'.$i);
+                }
+
+                array_push($arrDetail, array(
+                                            'idhagah' => $idhagah, 
+                                            'tglHagah' => date('Y-m-d', strtotime($value)), 
+                                            'idkitab' => $this->input->post('namakitab'.$i), 
+                                            'pasal1' => $this->input->post('pasalmulai'.$i), 
+                                            'pasal2' => $this->input->post('pasalakhir'.$i), 
+                                        ));
+                $i++;
+            }
+
+            $arrHeader = array(
+                                'kitabawal' => $kitabawal, 
+                                'pasalawal' => $pasalawal, 
+                                'kitabakhir' => $kitabakhir, 
+                                'pasalakhir' => $pasalakhir, 
+                                'tglupdate' => $tglinsert, 
+                            );
+            // var_dump($arrDetail);
+            // exit();
+            $simpan = $this->Hagah_model->update($arrHeader, $arrDetail, $idhagah);      
         }
+
 
         if ($simpan) {
             $pesan = '<div>
@@ -164,24 +231,24 @@ class Hagah extends MY_Controller {
         }
 
         $this->session->set_flashdata('pesan', $pesan);
-        redirect('hagah');   
+        redirect('hagah');
     }
     
     public function get_edit_data()
     {
         $idhagah = $this->input->post('idhagah');
         $RsData = $this->Hagah_model->get_by_id($idhagah)->row();
-
-        $data = array( 
+        $dataHeader = array( 
                             'idhagah'     =>  $RsData->idhagah,  
-                            'tglhagah'     =>  $RsData->tglhagah,  
-                            'idkitab'     =>  $RsData->idkitab,  
-                            'pasal1'     =>  $RsData->pasal1,  
-                            'pasal2'     =>  $RsData->pasal2,  
+                            'tahun'     =>  $RsData->tahun,  
+                            'bulan'     =>  $RsData->bulan,  
                         );
 
-        echo(json_encode($data));
+        $RsDetail = $this->db->query("select * from hagah_detail where idhagah='$idhagah' order by tglhagah");
+
+        echo(json_encode( array('dataHeader' => $dataHeader, 'dataDetail' => $RsDetail->result())));
     }
+
 
 
 }

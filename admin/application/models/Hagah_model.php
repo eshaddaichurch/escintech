@@ -7,9 +7,9 @@ class Hagah_model extends CI_Model {
     var $tabel     = 'hagah';
     var $idhagah = 'idhagah';
 
-    var $column_order = array(null, 'tglhagah', 'namakitab', 'pasal1', 'pasal2', null);
-    var $column_search = array('namakitab', 'pasal1', 'pasal2');
-    var $order = array('idhagah' => 'desc'); // default order 
+    var $column_order = array(null, 'tahun', 'bulan', 'namakitabawal', null);
+    var $column_search = array('tahun', 'bulan', 'namakitabawal', 'namakitabakhir');
+    var $order = array('idhagah' => 'asc'); // default order 
 
 
     function get_datatables()
@@ -77,20 +77,78 @@ class Hagah_model extends CI_Model {
 
     public function hapus($idhagah)
     {
-        $this->db->where('idhagah', $idhagah);      
-        return $this->db->delete($this->tabel);
+        try {
+            $this->db->trans_begin();
+            
+            $this->db->query("delete from hagah_detail where idhagah='$idhagah'");
+            $this->db->query("delete from hagah where idhagah='$idhagah'");
+             
+            if ($this->db->trans_status() === FALSE){
+                    $this->db->trans_rollback();
+                    return false;
+            }else{
+                    $this->db->trans_commit();
+                    return true;
+            }            
+        } catch (Exception $e) {
+            $this->db->trans_rollback();
+            return false;
+        }
+
     }
 
-    public function simpan($data)
-    {       
-        return $this->db->insert($this->tabel, $data);
+    public function simpan($arrHeader, $arrDetail, $idhagah)
+    {    
+        try {
+               
+                $this->db->trans_begin();
+
+                $this->db->query("delete from hagah_detail where idhagah='$idhagah'");
+                $this->db->query("delete from hagah where idhagah='$idhagah'");
+
+                $this->db->insert('hagah', $arrHeader);
+                $this->db->insert_batch('hagah_detail', $arrDetail);
+
+                if ($this->db->trans_status() === FALSE){
+                        $this->db->trans_rollback();
+                        return false;
+                }else{
+                        $this->db->trans_commit();
+                        return true;
+                }
+
+           } catch (Exception $e) {
+               $this->db->trans_rollback();
+                return false;
+           }   
     }
 
-    public function update($data, $idhagah)
+    public function update($arrHeader, $arrDetail, $idhagah)
     {
-        $this->db->where('idhagah', $idhagah);
-        return $this->db->update($this->tabel, $data);
+        try {
+               
+                $this->db->trans_begin();
+
+                $this->db->query("delete from hagah_detail where idhagah='$idhagah'");
+
+                $this->db->where('idhagah', $idhagah);
+                $this->db->update('hagah', $arrHeader);
+                $this->db->insert_batch('hagah_detail', $arrDetail);
+
+                if ($this->db->trans_status() === FALSE){
+                        $this->db->trans_rollback();
+                        return false;
+                }else{
+                        $this->db->trans_commit();
+                        return true;
+                }
+
+           } catch (Exception $e) {
+               $this->db->trans_rollback();
+                return false;
+           }
     }
+
 
 }
 
