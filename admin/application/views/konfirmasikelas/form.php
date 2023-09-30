@@ -383,9 +383,9 @@
     })
     .done(function(simpanResult) {
 
-      $('#toni-content').empty();
-      $('#toni-content').append(simpanResult);
-      return;
+      // $('#toni-content').empty();
+      // $('#toni-content').append(simpanResult);
+      // return;
 
       console.log(simpanResult);
       if (simpanResult.success) {
