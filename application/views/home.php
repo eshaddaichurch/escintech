@@ -93,25 +93,44 @@
         <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
             <h1><?php echo $rowinfogereja->judulhomepage ?></h1>
             <h2><?php echo $rowinfogereja->subjudulhomepage ?></h2>
-            <a href="#about" class="btn-get-started scrollto">Mulai</a>
+            <?php  
+              if (!empty($rowinfogereja->urlbuttonhomepage)) {
+                echo '
+                  <a href="'.$rowinfogereja->urlbuttonhomepage.'" class="btn-get-started scrollto">Mulai</a>
+                ';
+              }
+            ?>
         </div>
     </section><!-- End Hero -->
 
     <main id="main">
 
-        <!-- ======= Clients Section ======= -->
-        <section id="clients" class="clients">
-            <div class="container">
+      <?php  
+        $rsHagah=$this->Home_model->get_hagah_hari_ini();
+        if ($rsHagah->num_rows()>0) {
+          $rowHagah = $rsHagah->row();
+          if ($rowHagah->pasal1!=$rowHagah->pasal2) {
+            $pasal = ' Pasal '.$rowHagah->pasal1.' s/d '.$rowHagah->pasal2;
+          }else{
+            $pasal = ' Pasal '.$rowHagah->pasal1;
+          }
 
-                <div class="row">
-                    <div class="col-12 p-5" style="font-size: 20px;">
-                        Bacaan Alkitab Hari ini <strong>Yesaya 1: 1</strong>
+          echo '
+            <section id="clients" class="clients">
+                <div class="container">
+
+                    <div class="row">
+                        <div class="col-12 p-5" style="font-size: 20px;">
+                            Bacaan Alkitab Hari ini <strong>'.$rowHagah->namakitab.$pasal.'</strong>
+                        </div>
+
                     </div>
 
                 </div>
-
-            </div>
-        </section><!-- End Clients Section -->
+            </section>
+          ';  
+        }
+      ?>
 
         <?php
         $this->load->view('template/bethany/section/about');

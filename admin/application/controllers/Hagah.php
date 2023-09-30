@@ -58,7 +58,7 @@ class Hagah extends MY_Controller {
                 $row[] = $no;
                 $row[] = $rowdata->tahun;
                 $row[] = $rowdata->bulan.' - '.bulan($rowdata->bulan);
-                $row[] = $rowdata->namakitabawal.' '.$rowdata->pasalawal.' s/d '.$rowdata->namakitabakhir.' '.$rowdata->pasalakhir;
+                $row[] = $rowdata->kitabawal.' '.$rowdata->pasalawal.' s/d '.$rowdata->kitabakhir.' '.$rowdata->pasalakhir;
                 $row[] = '<a href="'.site_url( 'hagah/edit/'.$this->encrypt->encode($rowdata->idhagah) ).'" class="btn btn-sm btn-warning btn-circle"><i class="fa fa-edit"></i></a> | 
                         <a href="'.site_url('hagah/delete/'.$this->encrypt->encode($rowdata->idhagah) ).'" class="btn btn-sm btn-danger btn-circle" id="hapus"><i class="fa fa-trash"></i></a>';
                 $data[] = $row;
@@ -156,7 +156,7 @@ class Hagah extends MY_Controller {
                 array_push($arrDetail, array(
                                             'idhagah' => $idhagah, 
                                             'tglHagah' => date('Y-m-d', strtotime($value)), 
-                                            'idkitab' => $this->input->post('namakitab'.$i), 
+                                            'namakitab' => $this->input->post('namakitab'.$i), 
                                             'pasal1' => $this->input->post('pasalmulai'.$i), 
                                             'pasal2' => $this->input->post('pasalakhir'.$i), 
                                         ));
@@ -192,7 +192,7 @@ class Hagah extends MY_Controller {
                 array_push($arrDetail, array(
                                             'idhagah' => $idhagah, 
                                             'tglHagah' => date('Y-m-d', strtotime($value)), 
-                                            'idkitab' => $this->input->post('namakitab'.$i), 
+                                            'namakitab' => $this->input->post('namakitab'.$i), 
                                             'pasal1' => $this->input->post('pasalmulai'.$i), 
                                             'pasal2' => $this->input->post('pasalakhir'.$i), 
                                         ));

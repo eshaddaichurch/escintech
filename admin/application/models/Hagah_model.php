@@ -7,8 +7,8 @@ class Hagah_model extends CI_Model {
     var $tabel     = 'hagah';
     var $idhagah = 'idhagah';
 
-    var $column_order = array(null, 'tahun', 'bulan', 'namakitabawal', null);
-    var $column_search = array('tahun', 'bulan', 'namakitabawal', 'namakitabakhir');
+    var $column_order = array(null, 'tahun', 'bulan', 'kitabawal', null);
+    var $column_search = array('tahun', 'bulan', 'kitabawal', 'kitabakhir');
     var $order = array('idhagah' => 'asc'); // default order 
 
 

@@ -79,14 +79,6 @@
                               <label for="">Nama Kitab</label>
                               <select name="namakitabautogenerate1" id="namakitabautogenerate1" class="form-control select2">
                                   <option value="">Pilih nama kitab...</option>
-                                  <?php  
-                                    $rskitab = $this->db->query("select * from kitab order by idkitab");
-                                    if ($rskitab->num_rows()>0) {
-                                      foreach ($rskitab->result() as $row) {
-                                          echo '<option value="'.$row->idkitab.'">'.$row->namakitab.'</option>';
-                                      }
-                                    }
-                                  ?>
                                 </select>
                             </div>
                             <div class="col-md-2">
@@ -100,14 +92,6 @@
                               <label for="">Nama Kitab</label>
                               <select name="namakitabautogenerate2" id="namakitabautogenerate2" class="form-control select2">
                                   <option value="">Pilih nama kitab...</option>
-                                  <?php  
-                                    $rskitab = $this->db->query("select * from kitab order by idkitab");
-                                    if ($rskitab->num_rows()>0) {
-                                      foreach ($rskitab->result() as $row) {
-                                          echo '<option value="'.$row->idkitab.'">'.$row->namakitab.'</option>';
-                                      }
-                                    }
-                                  ?>
                                 </select>
                             </div>
                             <div class="col-md-2">
@@ -141,14 +125,6 @@
                               <td style="text-align: center;">
                                 <select name="namakitab" id="namakitab" class="form-control select2">
                                   <option value="">Pilih nama kitab...</option>
-                                  <?php  
-                                    $rskitab = $this->db->query("select * from kitab order by idkitab");
-                                    if ($rskitab->num_rows()>0) {
-                                      foreach ($rskitab->result() as $row) {
-                                          echo '<option value="'.$row->idkitab.'">'.$row->namakitab.'</option>';
-                                      }
-                                    }
-                                  ?>
                                 </select>
                               </td>
                               <td style="text-align: center;">
@@ -228,7 +204,7 @@
             setTimeout(function (){
               if (result.dataDetail.length>0) {
                 for (var i = 1; i <= result.dataDetail.length; i++) {
-                  var namakitab = result.dataDetail[i-1]['idkitab'];
+                  var namakitab = result.dataDetail[i-1]['namakitab'];
                   var pasalmulai = result.dataDetail[i-1]['pasal1'];
                   var pasalakhir = result.dataDetail[i-1]['pasal2'];
 
@@ -278,7 +254,7 @@
     $('#tbodyTanggal').empty();
 
     $.ajax({
-      url: '<?php echo site_url('Ajax/getAllKitab') ?>',
+      url: '<?php echo site_url('Ajax/getNamaKitab') ?>',
       dataType: 'json',
     })
     .done(function(getAllKitabResult) {
@@ -329,8 +305,8 @@
     if (arrKitab.length>0) {
         var oOption = '';
         for (var i = 0; i < arrKitab.length; i++) {
-          addSelectOption(selectId, arrKitab[i]['idkitab'], arrKitab[i]['namakitab']);
-          if (idSelected!="" && idSelected==arrKitab[i]['idkitab']) {
+          addSelectOption(selectId, arrKitab[i]['namakitab'], arrKitab[i]['namakitab']);
+          if (idSelected!="" && idSelected==arrKitab[i]['namakitab']) {
             $('#'+selectId).val(idSelected).trigger('change');
           }    
         }

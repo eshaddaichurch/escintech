@@ -382,6 +382,11 @@
       data: formData,
     })
     .done(function(simpanResult) {
+
+      $('#toni-content').empty();
+      $('#toni-content').append(simpanResult);
+      return;
+
       console.log(simpanResult);
       if (simpanResult.success) {
         swal('Berhasil', 'Data berhasil disimpan!', 'success'

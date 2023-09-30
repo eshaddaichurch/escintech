@@ -24,6 +24,7 @@ class Home extends CI_Controller {
 
 	public function index()
 	{
+		
 		$rowinfogereja = $this->Home_model->get_infogereja();
 		$data["rowinfogereja"] = $rowinfogereja;	
 		$data["menu"] = "";	

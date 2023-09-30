@@ -2,9 +2,11 @@
 
 class Ajax extends CI_Controller {
 
-	public function getAllKitab()
+	public function getNamaKitab()
 	{
+		$this->db->select('namakitab');
 		$this->db->order_by('idkitab');
+		$this->db->group_by('namakitab');
 		$rsKitab = $this->db->get('kitab');
 		echo json_encode($rsKitab->result());
 	}

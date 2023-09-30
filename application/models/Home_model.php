@@ -39,6 +39,12 @@ class Home_model extends MY_Model {
 		}
 	}
 
+	public function get_hagah_hari_ini()
+	{
+		$this->db->where('tglhagah', date('Y-m-d'));
+		return $this->db->get('v_hagah_detail');
+	}
+
 }
 
 /* End of file Home_model.php */
