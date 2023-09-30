@@ -269,6 +269,7 @@ class Pengajuanjadwal extends MY_Controller {
         $idpengguna           = $this->session->userdata('idjemaat');
 
 
+
         //jika session berakhir
         if (empty($idpengguna)) { 
             echo json_encode(array('msg'=>"Session telah berakhir, Silahkan refresh halaman!"));
@@ -297,10 +298,11 @@ class Pengajuanjadwal extends MY_Controller {
 
         $foto_lama = $this->input->post('foto_lama');
         $foto = $this->App->uploadImage($_FILES, 'foto', $foto_lama, 'pengajuanjadwal');
-
         if (empty($idjadwalevent)) {
             
             $idjadwalevent = $this->db->query("select create_idjadwalevent('".date('Y-m-d')."') as idjadwalevent ")->row()->idjadwalevent;
+
+            
 
             $arrayhead = array(
                                 'idjadwalevent' => $idjadwalevent,
@@ -406,6 +408,7 @@ class Pengajuanjadwal extends MY_Controller {
                                     );
                     array_push($arrRuangan, $detail);              
                 }
+            
             }
 
 
@@ -430,8 +433,9 @@ class Pengajuanjadwal extends MY_Controller {
             //-------------------------------- >> Jenis Pengumuman 
             $i=0;
 
+            
             $arrIdJenisPengumuman=array();       
-            if (count($jenisPengumuman)>0) {
+            if ($jenisPengumuman!=NULL) {
                 foreach ($jenisPengumuman as $item) {
                             $idjenispengumuman    = $item;
                     $i++;
@@ -579,7 +583,7 @@ class Pengajuanjadwal extends MY_Controller {
             $i=0;
 
             $arrIdJenisPengumuman=array();       
-            if (count($jenisPengumuman)>0) {
+            if ($jenisPengumuman!=NULL) {
                 foreach ($jenisPengumuman as $item) {
                             $idjenispengumuman    = $item;
                     $i++;

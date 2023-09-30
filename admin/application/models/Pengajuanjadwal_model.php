@@ -149,8 +149,8 @@ class Pengajuanjadwal_model extends CI_Model {
             $this->db->query("delete from jadwaleventdetailparkiran where idjadwalevent='$idjadwalevent'");
             $this->db->insert_batch('jadwaleventdetailparkiran', $arrParkiran);
 
-            $this->db->query("delete from jadwaleventjenispengumuman where idjadwalevent='$idjadwalevent'");
-            $this->db->insert_batch('jadwaleventjenispengumuman', $arrIdJenisPengumuman);
+            // $this->db->query("delete from jadwaleventjenispengumuman where idjadwalevent='$idjadwalevent'");
+            // $this->db->insert_batch('jadwaleventjenispengumuman', $arrIdJenisPengumuman);
 
 
             

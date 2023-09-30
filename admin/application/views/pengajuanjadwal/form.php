@@ -1383,9 +1383,6 @@ $('input[type=radio][name=jenisjadwal]').change();
         };
 
 
-
-      // console.log(isidatatable);
-      // return;
       $.ajax({
                 type        : 'POST', 
                 url         : '<?php echo site_url("pengajuanjadwal/simpanjadwalevent") ?>', 

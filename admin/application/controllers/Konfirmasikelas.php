@@ -143,7 +143,7 @@ class Konfirmasikelas extends MY_Controller {
                       <p><a href="https://myesc.id">myesc.id</a></p>
                 ';
             }   
-            $this->App->sendEmailNextStep($email, $judul, $textemail);
+            $this->App->sendEmailNextStep($rsRegistrasi->email, $judul, $textemail);
             // echo json_encode($textemail);
 
             echo json_encode(array('success' => true));
