@@ -28,6 +28,12 @@ INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, no
 
 
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
+	VALUES('S000', 'Absen Kehadiran', NULL, NULL, 'Aktif', 40, 0, 'fa fa-clock');
+INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
+	VALUES('S100', 'Absen Ibadah Minggu', 'S000', 'absen', 'Aktif', 41, 1, NULL);
+
+
+INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
 	VALUES('M500', 'Disciples Community', NULL, NULL, 'Aktif', 50, 0, 'fas fa-address-card');
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
 	VALUES('M501', 'List Data DC', 'M500', 'disciplescommunity', 'Aktif', 51, 1, NULL);
