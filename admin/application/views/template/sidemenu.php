@@ -37,6 +37,15 @@
             </a>
           </li>
 
+          <li class="nav-item">
+            <a href="<?php echo(site_url('dashboard2')) ?>" class="nav-link <?php echo ($this->session->userdata('IDMENUSELECTED')=='dashboard2') ? 'active' : '' ?>">
+              <i class="nav-icon fas fa-home"></i>
+              <p>
+                Dashboard Kehadiran
+              </p>
+            </a>
+          </li>
+
 
           <?php  
             $IDMENUSELECTED = $this->session->userdata('IDMENUSELECTED');
