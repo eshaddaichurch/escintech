@@ -149,8 +149,8 @@ class Hagah extends MY_Controller {
                 }
 
                 if ($i==count($tglHagah)) {
-                    $kitabakhir = $this->input->post('namakitab'.$i);
-                    $pasalakhir = $this->input->post('pasalakhir'.$i);
+                    $kitabakhir = $this->input->post('sdnamakitab'.$i);
+                    $pasalakhir = $this->input->post('sdpasalakhir'.$i);
                 }
 
                 array_push($arrDetail, array(
@@ -159,6 +159,9 @@ class Hagah extends MY_Controller {
                                             'namakitab' => $this->input->post('namakitab'.$i), 
                                             'pasal1' => $this->input->post('pasalmulai'.$i), 
                                             'pasal2' => $this->input->post('pasalakhir'.$i), 
+                                            'sdnamakitab' => $this->input->post('sdnamakitab'.$i), 
+                                            'sdpasal1' => $this->input->post('sdpasalmulai'.$i), 
+                                            'sdpasal2' => $this->input->post('sdpasalakhir'.$i), 
                                         ));
                 $i++;
             }
@@ -185,8 +188,8 @@ class Hagah extends MY_Controller {
                 }
 
                 if ($i==count($tglHagah)) {
-                    $kitabakhir = $this->input->post('namakitab'.$i);
-                    $pasalakhir = $this->input->post('pasalakhir'.$i);
+                    $kitabakhir = $this->input->post('sdnamakitab'.$i);
+                    $pasalakhir = $this->input->post('sdpasalakhir'.$i);
                 }
 
                 array_push($arrDetail, array(
@@ -195,6 +198,9 @@ class Hagah extends MY_Controller {
                                             'namakitab' => $this->input->post('namakitab'.$i), 
                                             'pasal1' => $this->input->post('pasalmulai'.$i), 
                                             'pasal2' => $this->input->post('pasalakhir'.$i), 
+                                            'sdnamakitab' => $this->input->post('sdnamakitab'.$i), 
+                                            'sdpasal1' => $this->input->post('sdpasalmulai'.$i), 
+                                            'sdpasal2' => $this->input->post('sdpasalakhir'.$i), 
                                         ));
                 $i++;
             }

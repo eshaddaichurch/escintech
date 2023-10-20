@@ -208,9 +208,17 @@
                   var pasalmulai = result.dataDetail[i-1]['pasal1'];
                   var pasalakhir = result.dataDetail[i-1]['pasal2'];
 
+                  var sdnamakitab = result.dataDetail[i-1]['sdnamakitab'];
+                  var sdpasalmulai = result.dataDetail[i-1]['sdpasal1'];
+                  var sdpasalakhir = result.dataDetail[i-1]['sdpasal2'];
+
                   $('#namakitab'+i).val(namakitab);
                   $('#pasalmulai'+i).val(pasalmulai);
                   $('#pasalakhir'+i).val(pasalakhir);
+
+                  $('#sdnamakitab'+i).val(sdnamakitab);
+                  $('#sdpasalmulai'+i).val(sdpasalmulai);
+                  $('#sdpasalakhir'+i).val(sdpasalakhir);
                 }
               }
                         
@@ -271,18 +279,24 @@
                         <td style="text-align: center;">
                           <select name="namakitab`+i+`" id="namakitab`+i+`" class="form-control select2">
                           </select>
+                          <select name="sdnamakitab`+i+`" id="sdnamakitab`+i+`" class="form-control mt-2 select2">
+                          </select>
                         </td>
                         <td style="text-align: center;">
                           <input type="number" name="pasalmulai`+i+`" id="pasalmulai`+i+`" class="form-control" min="0" value="1">
+                          <input type="number" name="sdpasalmulai`+i+`" id="sdpasalmulai`+i+`" class="form-control mt-2" min="0" value="0">
                         </td>
                         <td style="text-align: center;">
                           <input type="number" name="pasalakhir`+i+`" id="pasalakhir`+i+`" class="form-control"
                            min="0" value="1">
+                           <input type="number" name="sdpasalakhir`+i+`" id="sdpasalakhir`+i+`" class="form-control mt-2"
+                           min="0" value="0">
                         </td>
                       </tr>
                       `;     
           $('#tbodyTanggal').append(addText);
           addKitabOption('namakitab'+i, getAllKitabResult);
+          addKitabOption('sdnamakitab'+i, getAllKitabResult);
           tglAwal.setDate(tglAwal.getDate()+1); 
       }
 
@@ -300,7 +314,11 @@
   function addKitabOption(selectId, arrKitab, idSelected="")
   {
     $('#'+selectId).empty();
-    addSelectOption(selectId, '', 'Pilih nama kitab...');    
+    if (selectId.substring(0,11)=='sdnamakitab') {
+      addSelectOption(selectId, '', 'Sampai dengan nama kitab (optional)');    
+    }else{
+      addSelectOption(selectId, '', 'Pilih nama kitab...');    
+    }
 
     if (arrKitab.length>0) {
         var oOption = '';
