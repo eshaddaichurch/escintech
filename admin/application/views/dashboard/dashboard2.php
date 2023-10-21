@@ -25,6 +25,50 @@
 
             <div class="row">
               
+              <div class="col-12 mb-3">
+
+                <div class="card card-body shadow">
+                  <div class="row">
+                    
+                    <div class="col-md-6">
+                      <div class="form-group">
+                        <label for="">Jenis Absen</label>
+                        <select name="idabsenjenis" id="idabsenjenis" class="form-control">
+                          <?php  
+                            $rsAbsenJenis = $this->db->query("select * from absenjenis where statusaktif='Aktif' order by idabsenjenis");
+                            if ($rsAbsenJenis->num_rows()>0) {
+                              foreach ($rsAbsenJenis->result() as $row) {
+                                echo '
+                                  <option value="'.$row->idabsenjenis.'">'.$row->namaabsenjenis.'</option>
+                                ';
+                              }
+                            }
+                          ?>
+                        </select>
+                      </div>
+                    </div>
+
+                    <div class="col-md-6">
+                      <div class="row">
+                        <div class="col-12">
+                          <label for="">Periode</label>
+                        </div>
+                        <div class="col-5">
+                          <input type="date" name="tglawal" id="tglawal" class="form-control" value="<?php echo date('Y-m-d') ?>">
+                        </div>
+                        <div class="col-1 text-center">
+                          S/D
+                        </div>
+                        <div class="col-5">
+                          <input type="date" name="tglakhir" id="tglakhir" class="form-control" value="<?php echo date('Y-m-d') ?>">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
               
               <div class="col-12 col-sm-6 col-md-3">
                 <div class="info-box">
@@ -192,10 +236,41 @@
 
 $(document).ready(function() {
   
+  loadGrafik();
+  
+
+
+
+
+      
+});
+
+
+
+$('#tglawal').change(function(e) {
+  loadGrafik();
+});
+$('#tglakhir').change(function(e) {
+  loadGrafik();
+});
+$('#idabsenjenis').change(function(e) {
+  loadGrafik();
+});
+
+
+function loadGrafik() {
+
+  var idabsenjenis = $('#idabsenjenis').val();
+  var tglawal = $('#tglawal').val();
+  var tglakhir = $('#tglakhir').val();
+
+
+  //INFO BOX
   $.ajax({
       url: '<?php echo site_url("dashboard2/getinfobox") ?>',
       type: 'GET',
       dataType: 'json',
+      data: {'idabsenjenis': idabsenjenis, 'tglawal': tglawal, 'tglakhir': tglakhir},
     })
     .done(function(resultinfo) {
       console.log(resultinfo);
@@ -219,17 +294,6 @@ $(document).ready(function() {
       console.log("error");
     });
 
-
-
-
-      
-});
-
-
-
-
-$(function () {
-  'use strict'
 
   var ticksStyle = {
     fontColor: '#495057',
@@ -428,7 +492,10 @@ $(function () {
     console.log("error pesentase");
   });
 
-});
+}
+
+
+
 
 </script>
 

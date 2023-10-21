@@ -30,7 +30,24 @@ INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, no
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
 	VALUES('S000', 'Absen Kehadiran', NULL, NULL, 'Aktif', 40, 0, 'fa fa-clock');
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
-	VALUES('S100', 'Absen Ibadah Minggu', 'S000', 'absen', 'Aktif', 41, 1, NULL);
+	VALUES('S100', 'Sunday Service', 'S000', 'absen/index/A01', 'Aktif', 41, 1, NULL);
+INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
+	VALUES('S101', 'Easter', 'S000', 'absen/index/A02', 'Aktif', 42, 1, NULL);
+INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
+	VALUES('S102', 'Ascension Day', 'S000', 'absen/index/A03', 'Aktif', 43, 1, NULL);
+INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
+	VALUES('S103', 'Good Friday Service', 'S000', 'absen/index/A04', 'Aktif', 44, 1, NULL);
+INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
+	VALUES('S104', 'Sunday Service', 'S000', 'absen/index/A05', 'Aktif', 45, 1, NULL);
+INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
+	VALUES('S105', 'Esc Women', 'S000', 'absen/index/A06', 'Aktif', 46, 1, NULL);
+INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
+	VALUES('S106', 'Esc Young Adult', 'S000', 'absen/index/A07', 'Aktif', 47, 1, NULL);
+INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
+	VALUES('S107', 'Esc Youth', 'S000', 'absen/index/A08', 'Aktif', 48, 1, NULL);
+INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
+	VALUES('S108', 'Esc Kids', 'S000', 'absen/index/A09', 'Aktif', 49, 1, NULL);
+
 
 
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)

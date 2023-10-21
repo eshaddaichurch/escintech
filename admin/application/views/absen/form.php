@@ -42,7 +42,7 @@
                   <h3 class="text-gray">Data Pengkhotbah</h3><hr>                    
 
                   <input type="hidden" name="idabsen" id="idabsen">                      
-                  <input type="hidden" name="idabsenjenis" id="idabsenjenis" value="A01">                      
+                  <input type="hidden" name="idabsenjenis" id="idabsenjenis" value="<?php echo $idabsenjenis ?>">                      
                   
                   <div class="form-group row">
                     <label for="" class="col-md-3 col-form-label">Tanggal</label>
@@ -52,23 +52,21 @@
                   </div>
 
                   <div class="form-group row">
-                    <label for="" class="col-md-3 col-form-label">Sesi Ibadah</label>
+                    <label for="" class="col-md-3 col-form-label">Sesi Ibadah (Optional)</label>
                     <div class="col-md-9">
                       <select name="idsesi" id="idsesi" class="form-control select2">
-                        <option value="">Pilih sesi..</option>
+                        <option value="">Tidak ada</option>
                         <?php  
                           $rsSesi = $this->db->query("select * from sesiibadahminggu");
                           if ($rsSesi->num_rows()>0) {
                             foreach ($rsSesi->result() as $rowSesi) {
                               echo '
-                                <option value="'.$rowSesi->idsesi.'">'.$rowSesi->namasesi.' Jam: '.date('H:i', strtotime($rowSesi->jammulai)).' - '.date('H:i', strtotime($rowSesi->jamselesai)).'</option>
+                                <option value="'.$rowSesi->idsesi.'">'.$rowSesi->namasesi.'</option>
                               ';
                             }
                           }
                         ?>
                       </select>
-
-
                     </div>
                   </div>  
 
@@ -195,13 +193,6 @@
           validators:{
             notEmpty: {
                 message: "tanggal absen tidak boleh kosong"
-            },
-          }
-        },
-        idsesi: {
-          validators:{
-            notEmpty: {
-                message: "nama sesi ibadah tidak boleh kosong"
             },
           }
         },

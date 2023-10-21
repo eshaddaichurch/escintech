@@ -17,10 +17,10 @@
                 if ($rsgrouphead->num_rows()>0) {
                   foreach ($rsgrouphead->result() as $row) {
 
-                    if (empty($row->foto)) {
+                    if (empty($row->fotogroup)) {
                       $foto = base_url('images/nofoto.png');
                     }else{
-                      $foto = base_url('uploads/jemaat/'.$row->foto);
+                      $foto = base_url('admin/uploads/group/'.$row->fotogroup);
                     }
 
                     $facebook = (!empty($row->facebook)) ? $row->facebook : '#';

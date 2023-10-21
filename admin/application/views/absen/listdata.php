@@ -7,12 +7,12 @@
 
   <div class="row" id="toni-breadcrumb">
     <div class="col-6">
-        <h4 class="text-dark mt-2">Absen Ibadah Minggu</h4>
+        <h4 class="text-dark mt-2">Absen <?php echo $rowabsenjenis->namaabsenjenis ?></h4>
     </div>  
     <div class="col-6">
       <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="<?php echo(site_url()) ?>">Home</a></li>
-        <li class="breadcrumb-item active">Absen Ibadah Minggu</li>
+        <li class="breadcrumb-item active">Absen <?php echo $rowabsenjenis->namaabsenjenis ?></li>
       </ol>
       
     </div>
@@ -22,8 +22,8 @@
     <div class="col-md-12">
       <div class="card" id="cardcontent">
         <div class="card-header">
-          <h5 class="card-title">List Ibadah Minggu</h5>
-          <a href="<?php echo(site_url('absen/tambah')) ?>" class="btn btn-sm btn-primary float-right"><i class="fa fa-plus-circle"></i> Tambah Data</a>
+          <h5 class="card-title">List <?php echo $rowabsenjenis->namaabsenjenis ?></h5>
+          <a href="<?php echo(site_url('absen/tambah/'.$idabsenjenis)) ?>" class="btn btn-sm btn-primary float-right"><i class="fa fa-plus-circle"></i> Tambah Data</a>
         </div>
         <div class="card-body">
           <div class="row">
@@ -76,6 +76,7 @@
 <script type="text/javascript">
 
   var table;
+  var idabsenjenis = "<?php echo $idabsenjenis ?>";
 
   $(document).ready(function() {
 
@@ -87,7 +88,10 @@
         "order": [], 
          "ajax": {
             "url": "<?php echo site_url('absen/datatablesource')?>",
-            "type": "POST"
+            "type": "POST",
+            "data": function ( d ) {
+                  d.idabsenjenis = idabsenjenis;
+              }
         },
         "columnDefs": [
                         { "targets": [ 0 ], "orderable": false, "className": "dt-body-center" },

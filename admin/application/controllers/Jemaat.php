@@ -193,6 +193,17 @@ class Jemaat extends MY_Controller {
                 $noaj = '';
             }
 
+            if ($this->Jemaat_model->sudahAdaNIK($nik)) {
+                $pesan = '<div>
+                        <div class="alert alert-danger alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            <strong>Gagal!</strong> Nik Sudah ada!
+                        </div>
+                    </div>';
+                $this->session->set_flashdata('pesan', $pesan);
+                redirect('jemaat');   
+            }
+            
             $data = array(
                             'idjemaat'   => $idjemaat, 
                             'noaj'   => $noaj, 

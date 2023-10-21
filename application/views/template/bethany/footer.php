@@ -18,22 +18,26 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Useful Links</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">About us</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Services</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?php echo site_url() ?>">Home</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?php echo site_url('pages/read/V0AAHVluBGYKYA~~/jesus') ?>">About Jesus</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?php echo site_url('pages/read/VUJSQAI1UjAJYw~~/sadfs') ?>">About Elshaddai</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?php echo site_url('kategori/index/U0YCBwM0UDIMZg~~/care') ?>">Care</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?php echo site_url('pages/read/AhNUT1NkVTcOZA~~/giving') ?>">Giving</a></li>
             </ul>
           </div>
 
           <div class="col-lg-3 col-md-6 footer-links">
-            <h4>Our Services</h4>
+            <h4>Next Step</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Web Development</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Product Management</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
-              <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?php echo site_url('nextstep/kelas/membership_class//BxdUQFhvVzUJYw~~') ?>">Membership Class</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?php echo site_url('nextstep/kelas/foundation_class_1//BxdUQFhvVzUJYw~~') ?>">Foundation Class 1</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?php echo site_url('nextstep/kelas/foundation_class_2//BxdUQFhvVzUJYw~~') ?>">Foundation Class 2</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?php echo site_url('nextstep/kelas/foundation_class_3//BxdUQFhvVzUJYw~~') ?>">Foundation Class 3</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?php echo site_url('nextstep/kelas/grade_1//BxdUQFhvVzUJYw~~') ?>">Grade 1</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?php echo site_url('nextstep/kelas/grade_2//BxdUQFhvVzUJYw~~') ?>">Grade 2</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?php echo site_url('nextstep/kelas/grade_3//BxdUQFhvVzUJYw~~') ?>">Grade 3</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?php echo site_url('nextstep/kelas/folunteer_class//BxdUQFhvVzUJYw~~') ?>">Folunteer Class</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="<?php echo site_url('nextstep/kelas/marriage_class//BxdUQFhvVzUJYw~~') ?>">Merriage Class</a></li>
             </ul>
           </div>
 

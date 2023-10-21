@@ -24,7 +24,7 @@
 
 
 
-      <form action="<?php echo(site_url('group/simpan')) ?>" method="post" id="form">                      
+      <form action="<?php echo(site_url('group/simpan')) ?>" method="post" id="form" enctype="multipart/form-data">                      
         <div class="row">
           <div class="col-md-12">
             <div class="card" id="cardcontent">
@@ -41,7 +41,7 @@
 
                   <h3 class="text-gray">Data Group</h3><hr>                    
 
-                  <input type="text" name="idgroup" id="idgroup">                      
+                  <input type="hidden" name="idgroup" id="idgroup">                      
                   <div class="form-group row required">
                     <label for="" class="col-md-3 col-form-label">Nama Group</label>
                     <div class="col-md-9">
@@ -78,6 +78,21 @@
                       </select>
                     </div>
                   </div>       
+
+                  <div class="form-group row required">
+                   <label for="" class="col-md-3 col-form-label">Foto Group <small class="text-danger"> (Max 200KB)</small></label>
+                   <div class="col-md-9">
+                    <div class="row">
+                      <div class="col-12">
+                         <input type="file" name="fotogroup" id="fotogroup">
+                         <input type="hidden" name="fotogroup_lama" id="fotogroup_lama">
+                      </div>
+                      <div class="col-12">
+                        <a href="" id="linkfotogroup" target="_blank"></a>
+                      </div>
+                    </div>
+                   </div>
+                 </div>
 
                                        
 
@@ -129,7 +144,11 @@
             $("#namagroup").val(result.namagroup);
             $("#idjemaathead").val(result.idjemaathead).trigger('change');
             $("#statusaktif").val(result.statusaktif);
-            
+            $("#fotogroup_lama").val(result.fotogroup);
+
+             $('#linkFotogroup').html(result.fotogroup);
+             $('#linkFotogroup').attr('href', "<?php echo base_url('uploads/group/') ?>"+result.fotogroup);
+
           }); 
 
 

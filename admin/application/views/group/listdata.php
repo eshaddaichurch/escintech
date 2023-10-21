@@ -42,8 +42,8 @@
                   <thead>
                     <tr class="bg-primary" style="">
                       <th style="width: 5%; text-align: center;">No</th>
-                      <th style="text-align: center;">ID Group</th>
-                      <th style="text-align: center;">Nama Group</th>
+                      <th style="width: 10%; text-align: center;">#</th>
+                      <th style="text-align: left;">Nama Group</th>
                       <th style="text-align: center;">Group Head</th>
                       <th style="text-align: center; width: 15%;">Aksi</th>
                     </tr>
@@ -91,7 +91,7 @@
         "columnDefs": [
                         { "targets": [ 0 ], "orderable": false, "className": "dt-body-center" },
                         { "targets": [ 1 ], "className": "dt-body-center" },
-                        { "targets": [ 2 ], "className": "dt-body-center" },
+                        { "targets": [ 2 ], "className": "dt-body-left" },
                         { "targets": [ 3 ], "className": "dt-body-center" },
                         { "targets": [ 4 ], "orderable": false, "className": "dt-body-center" },
         ],

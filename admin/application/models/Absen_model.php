@@ -21,6 +21,8 @@ class Absen_model extends CI_Model {
 
     private function _get_datatables_query()
     {   
+        $idabsenjenis = $_POST['idabsenjenis'];
+        $this->db->where('idabsenjenis', $idabsenjenis);
         $this->db->from($this->tabelview);
         $i = 0;
         foreach ($this->column_search as $item) 

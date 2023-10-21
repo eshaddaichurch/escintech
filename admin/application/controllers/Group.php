@@ -54,11 +54,17 @@ class Group extends MY_Controller {
 
         if ($RsData->num_rows()>0) {
             foreach ($RsData->result() as $rowdata) {
+                if (!empty($rowdata->fotogroup)) {
+                    $fotogroup = '<img src="'.base_url('uploads/group/'.$rowdata->fotogroup).'" alt="" style="width: 80%;">' ;
+                }else{
+                    $fotogroup = '<img src="'.base_url('images/user-01.png').'" alt="" style="width: 80%;">' ;
+                }
+
                 $no++;
                 $row = array();
                 $row[] = $no;
-                $row[] = $rowdata->idgroup;
-                $row[] = $rowdata->namagroup;
+                $row[] = $fotogroup;
+                $row[] = $rowdata->idgroup.' - '.$rowdata->namagroup;
                 $row[] = $rowdata->namalengkap;
                 $row[] = '<a href="'.site_url( 'group/edit/'.$this->encrypt->encode($rowdata->idgroup) ).'" class="btn btn-sm btn-warning btn-circle"><i class="fa fa-edit"></i></a> | 
                         <a href="'.site_url('group/delete/'.$this->encrypt->encode($rowdata->idgroup) ).'" class="btn btn-sm btn-danger btn-circle" id="hapus"><i class="fa fa-trash"></i></a>';
@@ -123,6 +129,10 @@ class Group extends MY_Controller {
         $tanggalinsert        = date('Y-m-d H:i:s');
         $tanggalupdate        = date('Y-m-d H:i:s');
 
+        $fotogroup_lama = $this->input->post('fotogroup_lama');
+        $fotogroup = $this->App->uploadImage($_FILES, "fotogroup", $fotogroup_lama, 'group');
+        // var_dump($fotogroup);
+        // exit();
         if ( $idgroup=='' ) {  
 
             $idgroup = $this->db->query("select create_idgroup() as idgroup")->row()->idgroup;
@@ -132,6 +142,7 @@ class Group extends MY_Controller {
                             'namagroup'   => $namagroup, 
                             'idjemaathead'   => $idjemaathead, 
                             'statusaktif'   => $statusaktif, 
+                            'fotogroup'   => $fotogroup, 
                         );
             $simpan = $this->Group_model->simpan($data);      
         }else{ 
@@ -141,6 +152,7 @@ class Group extends MY_Controller {
                             'namagroup'   => $namagroup, 
                             'idjemaathead'   => $idjemaathead, 
                             'statusaktif'   => $statusaktif, 
+                            'fotogroup'   => $fotogroup, 
                         );
             $simpan = $this->Group_model->update($data, $idgroup);
         }

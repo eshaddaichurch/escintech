@@ -22,6 +22,7 @@ class Jemaat_model extends CI_Model {
 
     private function _get_datatables_query()
     {   
+        $this->db->where('statusjemaat <>', "Umum");
         $this->db->from($this->tabelview);
         $i = 0;
         foreach ($this->column_search as $item) 
@@ -196,6 +197,17 @@ class Jemaat_model extends CI_Model {
 
 
     }
+
+    public function sudahAdaNIK($nik)
+     {
+         $this->db->where('nik', $nik);
+        $rsTemp = $this->db->get($this->tabelview);
+        if ($rsTemp->num_rows()>0) {
+            return true;
+        }else{
+            return false;
+        }
+     } 
 
 
 }

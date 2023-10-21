@@ -8,26 +8,62 @@ class Absen extends MY_Controller {
         parent::__construct();
         $this->islogin();
         $this->load->model('Absen_model');
-        $this->session->set_userdata( 'IDMENUSELECTED', 'S100' );
         $this->cekOtorisasi();
 
         
     }
     
-    public function index()
+    public function index($idabsenjenis)
     {
+        switch ($idabsenjenis) {
+            case 'A01':
+                $this->session->set_userdata( 'IDMENUSELECTED', 'S100' );
+                break;
+            case 'A02':
+                $this->session->set_userdata( 'IDMENUSELECTED', 'S101' );
+                break;
+            case 'A03': 
+                $this->session->set_userdata( 'IDMENUSELECTED', 'S102' );
+                break;
+            case 'A04':
+                $this->session->set_userdata( 'IDMENUSELECTED', 'S103' );
+                break;
+            case 'A05':
+                $this->session->set_userdata( 'IDMENUSELECTED', 'S104' );
+                break;
+            case 'A06':
+                $this->session->set_userdata( 'IDMENUSELECTED', 'S105' );
+                break;
+            case 'A07':
+                $this->session->set_userdata( 'IDMENUSELECTED', 'S106' );
+                break;
+            case 'A08':
+                $this->session->set_userdata( 'IDMENUSELECTED', 'S107' );
+                break;
+            case 'A09':
+                $this->session->set_userdata( 'IDMENUSELECTED', 'S108' );
+                break;
+            
+            default:
+                $this->session->set_userdata( 'IDMENUSELECTED', 'S100' );
+                break;
+        }
+        $data['idabsenjenis'] = $idabsenjenis;
+        $data['rowabsenjenis'] = $this->db->query("select * from absenjenis where idabsenjenis='".$idabsenjenis."'")->row();
         $data['menu'] = 'Absen';
         $this->load->view('absen/listdata', $data);
     }   
 
-    public function tambah()
+    public function tambah($idabsenjenis)
     {       
+        $data['idabsenjenis'] = $idabsenjenis;
+        $data['rowabsenjenis'] = $this->db->query("select * from absenjenis where idabsenjenis='".$idabsenjenis."'")->row();
         $data['idabsen'] = '';        
         $data['menu'] = 'Absen';  
         $this->load->view('absen/form', $data);
     }
 
-    public function edit($idabsen)
+    public function edit($idabsenjenis)
     {       
         $idabsen = $this->encrypt->decode($idabsen);
 
@@ -42,6 +78,8 @@ class Absen extends MY_Controller {
             redirect('absen');
             exit();
         };
+        $data['idabsenjenis'] = $idabsenjenis;
+        $data['rowabsenjenis'] = $this->db->query("select * from absenjenis where idabsenjenis='".$idabsenjenis."'")->row();
         $data['idabsen'] =$idabsen;        
         $data['menu'] = 'Absen';
         $this->load->view('absen/form', $data);
@@ -92,6 +130,7 @@ class Absen extends MY_Controller {
             redirect('absen');
             exit();
               };
+        $idabsenjenis = $rsdata->row()->idabsenjenis;
 
         $hapus = $this->Absen_model->hapus($idabsen);
         if ($hapus) {       
@@ -112,7 +151,7 @@ class Absen extends MY_Controller {
         }
 
         $this->session->set_flashdata('pesan', $pesan);
-        redirect('absen');        
+        redirect('absen/index/'.$idabsenjenis);        
 
     }
 
@@ -127,7 +166,10 @@ class Absen extends MY_Controller {
         $idjemaatcounter             = $this->input->post('idjemaatcounter');
         $statusaktif             = 'Aktif';
                         
-
+        if ($idsesi=='') {
+            $idsesi = NULL;
+        }
+        
         if ( $idabsen=='' ) {  
 
             $idabsen = $this->db->query("select create_idabsen('".date('Y-m-d')."') as idabsen")->row()->idabsen;
@@ -175,7 +217,7 @@ class Absen extends MY_Controller {
         }
 
         $this->session->set_flashdata('pesan', $pesan);
-        redirect('absen');   
+        redirect('absen/index/'.$idabsenjenis);   
     }
     
 

@@ -36,7 +36,8 @@ class Dashboard2 extends MY_controller {
 
     public function getgrafikabsen()
     {
-    	$rsAbsen = $this->Dashboard2_model->getgrafikabsen();
+        $idabsenjenis = $this->input->get('idabsenjenis');
+    	$rsAbsen = $this->Dashboard2_model->getgrafikabsen($idabsenjenis);
     	$datatanggal = array();
     	$datahadiribadah1 = array();
     	$datahadiribadah2 = array();
@@ -71,10 +72,39 @@ class Dashboard2 extends MY_controller {
     }
 
 
+    public function getescwomengrafik()
+    {
+        $rsAbsen = $this->Dashboard2_model->getescwomengrafik();
+        $datatanggal = array();
+        $datahadiribadah1 = array();
+        $datahadiribadah2 = array();
+        $datahadiribadah3 = array();
+        $datahadiribadah4 = array();
+
+        $jumlah = 0;
+        if ($rsAbsen->num_rows()>0) {
+            $i = 1;
+            foreach ($rsAbsen->result() as $rowAbsen) {
+                $datatanggal[] = date('d-M', strtotime($rowAbsen->tglabsen));
+                $datahadiribadah[] = $rowAbsen->jumlahhadir;
+                $i++;
+            }           
+        }
+        $jumlahPerMinggu = $jumlah/$i;
+
+        $data = array(
+                        'datatanggal' => $datatanggal, 
+                        'datahadiribadah' => $datahadiribadah, 
+                        'jumlahi' => $i, 
+                    );
+        echo json_encode( $data );
+    }
+
+
     public function getpersentase()
     {
     	
-    	$rsAbsen = $this->Dashboard2_model->getgrafikabsen();
+    	$rsAbsen = $this->Dashboard2_model->getgrafikabsen('A01');
     	$datatanggal = array();
     	$datapersentase = array();
 

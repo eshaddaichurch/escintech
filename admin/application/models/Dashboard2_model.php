@@ -64,19 +64,31 @@ class Dashboard2_model extends CI_Model {
     	return $lebihkurang;
     }
 
-    public function getgrafikabsen()
+    public function getgrafikabsen($idabsenjenis)
     {
-    	$sql = "SELECT tglabsen, idabsenjenis,
+    	$sql = "SELECT tglabsen, idabsenjenis, idsesi, sum(jumlahhadir) as jumlahhadir,
 					SUM(CASE WHEN idsesi='001' THEN jumlahhadir ELSE 0 END) AS jumlahibadah1, 
 					SUM(CASE WHEN idsesi='002' THEN jumlahhadir ELSE 0 END) AS jumlahibadah2,
 					SUM(CASE WHEN idsesi='003' THEN jumlahhadir ELSE 0 END) AS jumlahibadah3,
 					SUM(CASE WHEN idsesi='004' THEN jumlahhadir ELSE 0 END) AS jumlahibadah4	
 				FROM absen
-				WHERE idabsenjenis='A01' AND tglabsen >= NOW() - INTERVAL 6 MONTH
-				GROUP BY tglabsen, idabsenjenis
+				WHERE idabsenjenis='$idabsenjenis' AND tglabsen >= NOW() - INTERVAL 6 MONTH
+				GROUP BY tglabsen, idabsenjenis, idsesi
 				ORDER BY tglabsen";
 		$rsAbsen = $this->db->query($sql);
+
 		return $rsAbsen;
+    }
+
+    public function getescwomengrafik()
+    {
+        $sql = "SELECT tglabsen, idabsenjenis, idsesi,sum(jumlahhadir) as jumlahhadir
+                FROM absen
+                WHERE idabsenjenis='A06' AND tglabsen >= NOW() - INTERVAL 6 MONTH
+                GROUP BY tglabsen, idabsenjenis,idsesi
+                ORDER BY tglabsen";
+        $rsAbsen = $this->db->query($sql);
+        return $rsAbsen;
     }
 
 }
