@@ -12,7 +12,7 @@
     <div class="col-6">
       <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="<?php echo(site_url()) ?>">Home</a></li>
-        <li class="breadcrumb-item"><a href="<?php echo(site_url('absen')) ?>">Absen Ibadah Minggu</a></li>
+        <li class="breadcrumb-item"><a href="<?php echo(site_url('absen')) ?>">Absen Ibadah Raya Minggu</a></li>
         <li class="breadcrumb-item active" id="lblactive"></li>
       </ol>
       
