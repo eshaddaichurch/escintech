@@ -4,11 +4,13 @@
 
         <div class="row content">
           <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
-            <iframe width="520" height="315" src="https://www.youtube.com/embed/w0HiKLMrc7E" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            
+
+              <iframe width="520" height="315" src="https://www.youtube.com/embed/ZFm5ss30Z0E" title="Ps.Wilan,M.Th - Forgiveness - Untuk Kalangan Sendiri" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left" data-aos-delay="200">
-            <h3>IBADAH MINGGU 3 JULI 2022</h3>
+            <h3>IBADAH RAYA MINGGU 12 NOVEMBER 2022</h3>
             <p>
               THE FOUNDATION OF PRAYER
             </p>
