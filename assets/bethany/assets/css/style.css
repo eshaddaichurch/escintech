@@ -10,11 +10,11 @@
 --------------------------------------------------------------*/
 body {
   font-family: "Open Sans", sans-serif;
-  color: #444444;
+  color: #0f0f0f;
 }
 
 a {
-  color: #EE6F09;
+  color: #ff8100;
   text-decoration: none;
 }
 
@@ -37,7 +37,7 @@ h1, h2, h3, h4, h5, h6 {
   right: 15px;
   bottom: 15px;
   z-index: 996;
-  background: #EE6F09;
+  background: #f4f4f4;
   width: 40px;
   height: 40px;
   border-radius: 50px;
@@ -49,7 +49,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 0;
 }
 .back-to-top:hover {
-  background: #00c28e;
+  background: #ff0903;
   color: #fff;
 }
 .back-to-top.active {
@@ -75,17 +75,19 @@ h1, h2, h3, h4, h5, h6 {
   top: 20px;
 }
 #header .header-container {
-  background: #fff;
+  background: transparent;
+
 }
 #header.header-scrolled {
-  background: #fff;
+  background: rgb(255,129,0);
+background: linear-gradient(312deg, rgba(255,129,0,1) 30%, rgba(255,9,3,1) 77%);
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   top: 0;
 }
 #header .logo {
   overflow: hidden;
   padding: 16px 30px 12px 30px;
-  background: #EE6F09;
+  background: transparent;
 }
 #header .logo h1 {
   font-size: 26px;
@@ -95,7 +97,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: "Poppins", sans-serif;
 }
 #header .logo h1 a, #header .logo h1 a:hover {
-  color: #fff;
+  color:#f4f4f4;
   text-decoration: none;
 }
 #header .logo img {
@@ -107,10 +109,10 @@ h1, h2, h3, h4, h5, h6 {
   #header {
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
     top: 0;
-    background: #EE6F09;
+    background: #f4f4f4;
   }
   #header.header-scrolled, #header .header-container {
-    background: #EE6F09;
+    background: #f4f4f4;
   }
   #header .logo {
     padding-left: 0;
@@ -144,7 +146,7 @@ h1, h2, h3, h4, h5, h6 {
   align-items: center;
   justify-content: space-between;
   padding: 10px 0 10px 30px;
-  color: #36343a;
+  color: #f4f4f4;
   transition: 0.3s;
   font-size: 13px;
   font-weight: 500;
@@ -159,19 +161,22 @@ h1, h2, h3, h4, h5, h6 {
   margin-left: 5px;
 }
 .navbar a:hover, .navbar .active, .navbar .active:focus, .navbar li:hover > a {
-  color: #EE6F09;
+  color: #f4f4f4;
+
+
 }
 .navbar .getstarted, .navbar .getstarted:focus {
-  background: #EE6F09;
+  background: rgb(255,129,0);
+background: linear-gradient(312deg, rgba(255,129,0,1) 30%, rgba(255,9,3,1) 77%);
   padding: 10px 25px;
   margin-left: 30px;
   margin-right: 15px;
   border-radius: 50px;
-  color: #fff;
+  color: #f4f4f4;
 }
 .navbar .getstarted:hover, .navbar .getstarted:focus:hover {
-  color: #fff;
-  background: #00b383;
+  color: #f4f4f4;
+  background: #ff0903;
 }
 .navbar .dropdown ul {
   display: block;
@@ -183,7 +188,7 @@ h1, h2, h3, h4, h5, h6 {
   z-index: 99;
   opacity: 0;
   visibility: hidden;
-  background: #fff;
+  background: linear-gradient(312deg, rgba(255,129,0,1) 30%, rgba(255,9,3,1) 77%);
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
   transition: 0.3s;
 }
@@ -199,7 +204,9 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 12px;
 }
 .navbar .dropdown ul a:hover, .navbar .dropdown ul .active:hover, .navbar .dropdown ul li:hover > a {
-  color: #EE6F09;
+  color: #f4f4f4;
+  background: rgb(255,129,0);
+background: linear-gradient(312deg, rgba(255,129,0,1) 30%, rgba(255,9,3,1) 77%);
 }
 .navbar .dropdown:hover > ul {
   opacity: 1;
@@ -408,7 +415,7 @@ section {
 # Counts
 --------------------------------------------------------------*/
 .counts {
-  background: #EE6F09;
+  background: linear-gradient(312deg, rgba(255,129,0,1) 30%, rgba(255,9,3,1) 77%);
   padding: 40px 0 20px 0;
   color: #fff;
 }
@@ -801,7 +808,7 @@ section {
 # Team
 --------------------------------------------------------------*/
 .team {
-  background: #fff;
+  background: #f4f4f4;
 }
 .team .member {
   position: relative;
@@ -884,7 +891,7 @@ section {
 .contact .info {
   padding: 30px;
   width: 100%;
-  background: #fff;
+  background: linear-gradient(312deg, rgba(255,129,0,1) 30%, rgba(255,9,3,1) 77%);
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
 .contact .info i {
@@ -893,7 +900,7 @@ section {
   float: left;
   width: 44px;
   height: 44px;
-  background: #EE6F09;
+  background: linear-gradient(312deg, rgba(255,129,0,1) 30%, rgba(255,9,3,1) 77%);
   display: flex;
   justify-content: center;
   align-items: center;

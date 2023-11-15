@@ -12,7 +12,7 @@
 #hero {
   width: 100%;
   height: 40vh;
-  background: url("<?php echo base_url('images/banner2.jpg') ?>") center center;
+  background: url("<?php echo base_url('images/banner_for.jpg') ?>") center center;
   background-size: cover;
   position: relative;
 }
