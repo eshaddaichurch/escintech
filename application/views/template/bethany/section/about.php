@@ -12,7 +12,7 @@
           <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left" data-aos-delay="200">
             <h3>IBADAH RAYA MINGGU 12 NOVEMBER 2022</h3>
             <p>
-              THE FOUNDATION OF PRAYER
+              THE FORGIVENESS
             </p>
             <ul>
               <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequa</li>
