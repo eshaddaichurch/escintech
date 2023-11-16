@@ -9,8 +9,6 @@ class Absen extends MY_Controller {
         $this->islogin();
         $this->load->model('Absen_model');
         $this->cekOtorisasi();
-
-        
     }
     
     public function index($idabsenjenis)
@@ -63,8 +61,9 @@ class Absen extends MY_Controller {
         $this->load->view('absen/form', $data);
     }
 
-    public function edit($idabsenjenis)
+    public function edit($idabsenjenis, $idabsen)
     {       
+        $idabsenjenis = $this->encrypt->decode($idabsenjenis);
         $idabsen = $this->encrypt->decode($idabsen);
 
         if ($this->Absen_model->get_by_id($idabsen)->num_rows()<1) {
@@ -75,7 +74,7 @@ class Absen extends MY_Controller {
                         </div>
                     </div>';
             $this->session->set_flashdata('pesan', $pesan);
-            redirect('absen');
+            redirect('absen/index/'.$idabsenjenis);
             exit();
         };
         $data['idabsenjenis'] = $idabsenjenis;
@@ -100,8 +99,8 @@ class Absen extends MY_Controller {
                 $row[] = $rowdata->namalengkap.'<br>'.$rowdata->namasesi;
                 $row[] = $rowdata->namasesi;
                 $row[] = $rowdata->jumlahhadir;             
-                $row[] = '<a href="'.site_url( 'absen/edit/'.$this->encrypt->encode($rowdata->idabsen) ).'" class="btn btn-sm btn-warning btn-circle"><i class="fa fa-edit"></i></a> | 
-                        <a href="'.site_url('absen/delete/'.$this->encrypt->encode($rowdata->idabsen) ).'" class="btn btn-sm btn-danger btn-circle" id="hapus"><i class="fa fa-trash"></i></a>';
+                $row[] = '<a href="'.site_url( 'absen/edit/'.$this->encrypt->encode($rowdata->idabsenjenis).'/'.$this->encrypt->encode($rowdata->idabsen) ).'" class="btn btn-sm btn-warning btn-circle"><i class="fa fa-edit"></i></a> | 
+                        <a href="'.site_url('absen/delete/'.$this->encrypt->encode($rowdata->idabsenjenis).'/'.$this->encrypt->encode($rowdata->idabsen) ).'" class="btn btn-sm btn-danger btn-circle" id="hapus"><i class="fa fa-trash"></i></a>';
                 $data[] = $row;
             }
         }
@@ -115,8 +114,9 @@ class Absen extends MY_Controller {
         echo json_encode($output);
     } 
 
-    public function delete($idabsen)
+    public function delete($idabsenjenis, $idabsen)
     {
+        $idabsenjenis = $this->encrypt->decode($idabsenjenis);  
         $idabsen = $this->encrypt->decode($idabsen);  
         $rsdata = $this->Absen_model->get_by_id($idabsen);
         if ($rsdata->num_rows()<1) {
@@ -130,7 +130,7 @@ class Absen extends MY_Controller {
             redirect('absen');
             exit();
               };
-        $idabsenjenis = $rsdata->row()->idabsenjenis;
+        // $idabsenjenis = $rsdata->row()->idabsenjenis;
 
         $hapus = $this->Absen_model->hapus($idabsen);
         if ($hapus) {       

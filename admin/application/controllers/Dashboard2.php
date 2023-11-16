@@ -19,6 +19,9 @@ class Dashboard2 extends MY_controller {
 
     public function getinfobox()
     {
+        
+
+
         $kehadiranbulanini = $this->Dashboard2_model->kehadiranbulanini();
        	$kehadiranbulanlalu = $this->Dashboard2_model->kehadiranbulanlalu();
        	$kenaikanbulanlalu = $this->Dashboard2_model->kenaikanbulanlalu($kehadiranbulanlalu);
@@ -36,8 +39,13 @@ class Dashboard2 extends MY_controller {
 
     public function getgrafikabsen()
     {
+
         $idabsenjenis = $this->input->get('idabsenjenis');
-    	$rsAbsen = $this->Dashboard2_model->getgrafikabsen($idabsenjenis);
+        $tglawal = $this->input->get('tglawal');
+        $tglakhir = $this->input->get('tglakhir');
+
+
+    	$rsAbsen = $this->Dashboard2_model->getgrafikabsen($idabsenjenis, $tglawal, $tglakhir);
     	$datatanggal = array();
     	$datahadiribadah1 = array();
     	$datahadiribadah2 = array();
@@ -45,8 +53,8 @@ class Dashboard2 extends MY_controller {
     	$datahadiribadah4 = array();
 
 		$jumlah = 0;
+		$i = 1;
     	if ($rsAbsen->num_rows()>0) {
-    		$i = 1;
 	    	foreach ($rsAbsen->result() as $rowAbsen) {
 	    		$datatanggal[] = date('d-M', strtotime($rowAbsen->tglabsen));
 	    		$datahadiribadah1[] = $rowAbsen->jumlahibadah1;
@@ -104,7 +112,11 @@ class Dashboard2 extends MY_controller {
     public function getpersentase()
     {
     	
-    	$rsAbsen = $this->Dashboard2_model->getgrafikabsen('A01');
+        $idabsenjenis = $this->input->get('idabsenjenis');
+        $tglawal = $this->input->get('tglawal');
+        $tglakhir = $this->input->get('tglakhir');
+    	$rsAbsen = $this->Dashboard2_model->getgrafikabsen($idabsenjenis, $tglawal, $tglakhir);
+
     	$datatanggal = array();
     	$datapersentase = array();
 
@@ -113,8 +125,8 @@ class Dashboard2 extends MY_controller {
 		$jumlah = 0;
 		$totalpersentase = 0;
 
+		$i = 1;
     	if ($rsAbsen->num_rows()>0) {
-    		$i = 1;
 	    	foreach ($rsAbsen->result() as $rowAbsen) {
 	    		$datatanggal[] = date('d-M', strtotime($rowAbsen->tglabsen));
 	    		$jumlah = $rowAbsen->jumlahibadah1 + $rowAbsen->jumlahibadah2 + $rowAbsen->jumlahibadah3 + $rowAbsen->jumlahibadah4;

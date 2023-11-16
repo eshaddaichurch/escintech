@@ -25,50 +25,7 @@
 
             <div class="row">
               
-              <div class="col-12 mb-3">
-
-                <div class="card card-body shadow">
-                  <div class="row">
-                    
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <label for="">Jenis Absen</label>
-                        <select name="idabsenjenis" id="idabsenjenis" class="form-control">
-                          <?php  
-                            $rsAbsenJenis = $this->db->query("select * from absenjenis where statusaktif='Aktif' order by idabsenjenis");
-                            if ($rsAbsenJenis->num_rows()>0) {
-                              foreach ($rsAbsenJenis->result() as $row) {
-                                echo '
-                                  <option value="'.$row->idabsenjenis.'">'.$row->namaabsenjenis.'</option>
-                                ';
-                              }
-                            }
-                          ?>
-                        </select>
-                      </div>
-                    </div>
-
-                    <div class="col-md-6">
-                      <div class="row">
-                        <div class="col-12">
-                          <label for="">Periode</label>
-                        </div>
-                        <div class="col-5">
-                          <input type="date" name="tglawal" id="tglawal" class="form-control" value="<?php echo date('Y-m-d') ?>">
-                        </div>
-                        <div class="col-1 text-center">
-                          S/D
-                        </div>
-                        <div class="col-5">
-                          <input type="date" name="tglakhir" id="tglakhir" class="form-control" value="<?php echo date('Y-m-d') ?>">
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                </div>
-
-              </div>
+              
               
               <div class="col-12 col-sm-6 col-md-3">
                 <div class="info-box">
@@ -131,80 +88,138 @@
               </div>
 
 
-
-              <div class="col-lg-6">
+              <div class="col-12">
                 <div class="card">
-                  <div class="card-header border-0">
-                    <div class="d-flex justify-content-between">
-                      <h3 class="card-title">Grafik Kehadiran Jemaat 6 Bulan Terakhir</h3>
-                      <!-- <a href="javascript:void(0);">View Report</a> -->
-                    </div>
-                  </div>
                   <div class="card-body">
-                    <div class="d-flex">
-                      <p class="d-flex flex-column">
-                        <span class="text-bold text-lg">Rata-rata Per Minggu: <span id="totalhit">0</span></span>
-                        <span id="jumlahi">0 Minggu</span>
-                      </p>
-                      <!-- <p class="ml-auto d-flex flex-column text-right">
-                        <span class="text-success">
-                          <i class="fas fa-arrow-up"></i> 12.5%
-                        </span>
-                        <span class="text-muted">Since last week</span>
-                      </p> -->
-                    </div>
+                    <div class="row">
+                      
 
-                    <div class="position-relative mb-4">
-                      <canvas id="visitors-chart" height="200"></canvas>
-                    </div>
+                      <div class="col-12 mb-3">
 
-                    <div class="d-flex flex-row justify-content-end">
-                      <span class="mr-2">
-                        <i class="fas fa-square " style="color: #007bff;"></i> Ibadah I
-                      </span>
+                        <div class="card card-body shadow">
+                          <div class="row">
+                            
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label for="">Jenis Absen</label>
+                                <select name="idabsenjenis" id="idabsenjenis" class="form-control">
+                                  <?php  
+                                    $rsAbsenJenis = $this->db->query("select * from absenjenis where statusaktif='Aktif' order by idabsenjenis");
+                                    if ($rsAbsenJenis->num_rows()>0) {
+                                      foreach ($rsAbsenJenis->result() as $row) {
+                                        echo '
+                                          <option value="'.$row->idabsenjenis.'">'.$row->namaabsenjenis.'</option>
+                                        ';
+                                      }
+                                    }
+                                  ?>
+                                </select>
+                              </div>
+                            </div>
 
-                      <span>
-                        <i class="fas fa-square text-gray" style="color: #27D18B;"></i> Ibadah II
-                      </span>
-                      <span>
-                        <i class="fas fa-square text-gray" style="color: #EAC575;"></i> Ibadah III
-                      </span>
-                      <span>
-                        <i class="fas fa-square text-gray" style="color: #D31D48;"></i> Ibadah IV
-                      </span>
+                            <div class="col-md-6">
+                              <div class="row">
+                                <div class="col-12">
+                                  <label for="">Periode</label>
+                                </div>
+                                <div class="col-5">
+                                  <input type="date" name="tglawal" id="tglawal" class="form-control" value="<?php echo date('Y-m-01') ?>">
+                                </div>
+                                <div class="col-1 text-center">
+                                  S/D
+                                </div>
+                                <div class="col-5">
+                                  <input type="date" name="tglakhir" id="tglakhir" class="form-control" value="<?php echo date('Y-m-t') ?>">
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+
+                        </div>
+
+                      </div>
+
+
+                      <div class="col-lg-6">
+                        <div class="card">
+                          <div class="card-header border-0">
+                            <div class="d-flex justify-content-between">
+                              <h3 class="card-title">Grafik Kehadiran Jemaat 6 Bulan Terakhir</h3>
+                              <!-- <a href="javascript:void(0);">View Report</a> -->
+                            </div>
+                          </div>
+                          <div class="card-body">
+                            <div class="d-flex">
+                              <p class="d-flex flex-column">
+                                <span class="text-bold text-lg">Rata-rata Per Minggu: <span id="totalhit">0</span></span>
+                                <span id="jumlahi">0 Minggu</span>
+                              </p>
+                              <!-- <p class="ml-auto d-flex flex-column text-right">
+                                <span class="text-success">
+                                  <i class="fas fa-arrow-up"></i> 12.5%
+                                </span>
+                                <span class="text-muted">Since last week</span>
+                              </p> -->
+                            </div>
+
+                            <div class="position-relative mb-4">
+                              <canvas id="visitors-chart" height="200"></canvas>
+                            </div>
+
+                            <div class="d-flex flex-row justify-content-end">
+                              <span class="mr-2">
+                                <i class="fas fa-square " style="color: #007bff;"></i> Ibadah I
+                              </span>
+
+                              <span>
+                                <i class="fas fa-square text-gray" style="color: #27D18B;"></i> Ibadah II
+                              </span>
+                              <span>
+                                <i class="fas fa-square text-gray" style="color: #EAC575;"></i> Ibadah III
+                              </span>
+                              <span>
+                                <i class="fas fa-square text-gray" style="color: #D31D48;"></i> Ibadah IV
+                              </span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+
+                      <div class="col-6">
+                        <div class="card">
+                          <div class="card-header border-0">
+                            <div class="d-flex justify-content-between">
+                              <h3 class="card-title">Persentasi Kenaikan/Penurunan Kehadiran Jemaat</h3>
+                            </div>
+                          </div>
+                          <div class="card-body">
+                            <div class="d-flex">
+                              <p class="d-flex flex-column">
+                                <span class="text-bold text-lg">Rata-rata Kenaikan/Penurunan: <span id="totalnewvisitor">0%</span></span>
+                                <span>6 Bulan Terakhir</span>
+                              </p>
+                            </div>
+
+                            <div class="position-relative mb-4">
+                              <canvas id="sales-chart" height="200"></canvas>
+                            </div>
+
+                            <div class="d-flex flex-row justify-content-end">
+                              <span class="mr-2">
+                                <i class="fas fa-square text-primary"></i> New Visitor
+                              </span>
+                            </div>
+                          </div>
+                        </div> 
+                      </div>
+
                     </div>
                   </div>
                 </div>
               </div>
 
 
-              <div class="col-6">
-                <div class="card">
-                  <div class="card-header border-0">
-                    <div class="d-flex justify-content-between">
-                      <h3 class="card-title">Persentasi Kenaikan/Penurunan Kehadiran Jemaat</h3>
-                    </div>
-                  </div>
-                  <div class="card-body">
-                    <div class="d-flex">
-                      <p class="d-flex flex-column">
-                        <span class="text-bold text-lg">Rata-rata Kenaikan/Penurunan: <span id="totalnewvisitor">0%</span></span>
-                        <span>6 Bulan Terakhir</span>
-                      </p>
-                    </div>
-
-                    <div class="position-relative mb-4">
-                      <canvas id="sales-chart" height="200"></canvas>
-                    </div>
-
-                    <div class="d-flex flex-row justify-content-end">
-                      <span class="mr-2">
-                        <i class="fas fa-square text-primary"></i> New Visitor
-                      </span>
-                    </div>
-                  </div>
-                </div> 
-              </div>
 
 
 
@@ -236,8 +251,8 @@
 
 $(document).ready(function() {
   
+  loadInfoBox();
   loadGrafik();
-  
 
 
 
@@ -257,20 +272,13 @@ $('#idabsenjenis').change(function(e) {
   loadGrafik();
 });
 
-
-function loadGrafik() {
-
-  var idabsenjenis = $('#idabsenjenis').val();
-  var tglawal = $('#tglawal').val();
-  var tglakhir = $('#tglakhir').val();
-
-
+function loadInfoBox() {
+  
   //INFO BOX
   $.ajax({
       url: '<?php echo site_url("dashboard2/getinfobox") ?>',
       type: 'GET',
       dataType: 'json',
-      data: {'idabsenjenis': idabsenjenis, 'tglawal': tglawal, 'tglakhir': tglakhir},
     })
     .done(function(resultinfo) {
       console.log(resultinfo);
@@ -294,6 +302,13 @@ function loadGrafik() {
       console.log("error");
     });
 
+}
+
+function loadGrafik() {
+
+  var idabsenjenis = $('#idabsenjenis').val();
+  var tglawal = $('#tglawal').val();
+  var tglakhir = $('#tglakhir').val();
 
   var ticksStyle = {
     fontColor: '#495057',
@@ -310,6 +325,7 @@ function loadGrafik() {
     url: '<?php echo site_url("dashboard2/getgrafikabsen") ?>',
     type: 'GET',
     dataType: 'json',
+    data: {'idabsenjenis': idabsenjenis, 'tglawal': tglawal, 'tglakhir': tglakhir},
   })
   .done(function(getgrafikabsenResult) {
     // console.log(getgrafikabsenResult);
@@ -419,6 +435,7 @@ function loadGrafik() {
     url: '<?php echo site_url("dashboard2/getpersentase") ?>',
     type: 'GET',
     dataType: 'json',
+    data: {'idabsenjenis': idabsenjenis, 'tglawal': tglawal, 'tglakhir': tglakhir},
   })
   .done(function(getpersentaseResult) {
     // console.log(getpersentaseResult);
