@@ -24,9 +24,7 @@
 
   <div class="row" id="toni-content">
     <div class="col-12">
-      <button type="button" class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModalCenter">
-        <i class="fa fa-plus"></i> Tambah Jadwal
-      </button>
+        <a href="<?php echo(site_url('pengajuanjadwal/tambah')) ?>" class="btn btn-sm btn-primary float-right"><i class="fa fa-plus-circle"></i> Tambah Data</a>
     </div>
     <div class="col-md-12 mt-3">
 
@@ -38,7 +36,7 @@
             <!-- /.col -->
             <div class="col-md-9">
               <div class="card card-primary">
-                <div class="card-body p-0">
+                <div class="card-body p-0 text-center">
                   <!-- THE CALENDAR -->
                   <div id="calendar"></div>
                 </div>
@@ -59,50 +57,56 @@
 
 <?php $this->load->view("template/footer") ?>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
+<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" id="modalDetailEvent">
+  <div class="modal-dialog modal-lg">
     <div class="modal-content">
-      <div class="modal-body">
+      <div class="modal-header">
+        <h3 id="modalJudul"></h3>
+      </div>
+      <div class="modal-body text-lg">
         <div class="container-fluid">
           <div class="row">
-
             <div class="col-12">
-              <a href="<?php echo site_url('penjadwalan/tambahjadwalibadah') ?>">
-                <div class="card">
-                  <div class="card-body text-center bg-escbg">
-                    <h5>Jadwal Ibadah</h5>
-                  </div>
-                </div>
-              </a>
+              <table>
+                <tbody>
+                  <tr>
+                    <td style="width: 15%;">Nama Departemen</td>
+                    <td style="width: 5%; text-align: center;">:</td>
+                    <td style="width: 30%; text-align: left;" id="namadepartementModal"></td>
+                    <td style="width: 15%;">Penanggungjawab</td>
+                    <td style="width: 5%; text-align: center;">:</td>
+                    <td style="width: 30%; text-align: left;" id="namapenanggungjawabModal"></td>
+                  </tr>
+                  <tr>
+                    <td style="width: 15%;">Jenis Jadwal</td>
+                    <td style="width: 5%; text-align: center;">:</td>
+                    <td style="width: 30%; text-align: left;" id="jenisjadwalModal"></td>
+                    <td style="width: 15%;">Status Konfirmasi</td>
+                    <td style="width: 5%; text-align: center;">:</td>
+                    <td style="width: 30%; text-align: left;" id="statuskonfirmasiModal"></td>
+                  </tr>
+                  <tr>
+                    <td style="width: 15%;">Tanggal Mulai Event</td>
+                    <td style="width: 5%; text-align: center;">:</td>
+                    <td style="width: 30%; text-align: left;" id="tanggalMulaiEventModal"></td>
+                    <td style="width: 15%;">Tanggal Berakhir Event</td>
+                    <td style="width: 5%; text-align: center;">:</td>
+                    <td style="width: 30%; text-align: left;" id="tanggalSelesaiEventModal"></td>
+                  </tr>
+                  <tr>
+                    <td style="width: 15%;">Deskripsi</td>
+                    <td style="width: 5%; text-align: center;">:</td>
+                    <td style="width: 80%; text-align: left;" colspan="4" id="deskripsiModal"></td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-
-            <div class="col-12">
-              <a href="<?php echo site_url('penjadwalan/tambahjadwalevent') ?>">
-                <div class="card">
-                  <div class="card-body text-center bg-escbg">
-                    <h5>Jadwal Event</h5>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-            
-            <div class="col-12">
-              <a href="<?php echo site_url('penjadwalan/tambahjadwalkelas') ?>">
-                <div class="card">
-                  <div class="card-body text-center bg-escbg">
-                    <h5>Jadwal Kelas</h5>
-                  </div>
-                </div>
-              </a>
-            </div>
-
-
-
           </div>
         </div>
-      </div>      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
     </div>
   </div>
 </div>
@@ -112,7 +116,6 @@
 <!-- fullCalendar 2.2.5 -->
 <script src="<?php echo(base_url()) ?>assets/moment/moment.min.js"></script>
 <script src="<?php echo(base_url()) ?>assets/fullcalendar/main.js"></script>
-<!-- <script src="<?php echo(base_url()) ?>assets/adminlte/dist/js/demo.js"></script> -->
 
 <script>
 
@@ -160,6 +163,36 @@
             //   // if so, remove the element from the "Draggable Events" list
             //   info.draggedEl.parentNode.removeChild(info.draggedEl);
             // }
+          },
+          eventClick: function(info) {
+            // console.log(info.event.extendedProps);
+            var idjadwalevent = info.event.extendedProps.idjadwalevent;
+            $('#modalDetailEvent').modal('show');
+
+            $.ajax({
+              url: '<?php echo site_url('penjadwalan/getDetailJadwal') ?>',
+              type: 'GET',
+              dataType: 'json',
+              data: {'idjadwalevent': idjadwalevent},
+            })
+            .done(function(resultDetail) {
+              console.log(resultDetail);   
+              $('#modalJudul').html(resultDetail['namaevent']);
+              $('#namadepartementModal').html(resultDetail['namadepartement']);
+              $('#namapenanggungjawabModal').html(resultDetail['namapenanggungjawab']);
+              $('#jenisjadwalModal').html(resultDetail['jenisjadwal']);
+              $('#deskripsiModal').html(resultDetail['deskripsi']);
+              $('#statuskonfirmasiModal').html(resultDetail['statuskonfirmasi']);
+              $('#tanggalMulaiEventModal').html(resultDetail['tglmulai']);
+              $('#tanggalSelesaiEventModal').html(resultDetail['tglselesai']);
+            })
+            .fail(function() {
+              console.log("error");
+            });
+            
+
+            // change the border color just for fun
+            // info.el.style.borderColor = 'red';
           }
         });
 
@@ -169,8 +202,48 @@
 
       })
       .fail(function() {
-        console.log("error");
+        console.log("error getCalenderDetail");
       });
+
+
+      /* ADDING EVENTS */
+      var currColor = '#3c8dbc' //Red by default
+      // Color chooser button
+      $('#color-chooser > li > a').click(function (e) {
+        e.preventDefault()
+        // Save color
+        currColor = $(this).css('color')
+        // Add color effect to button
+        $('#add-new-event').css({
+          'background-color': currColor,
+          'border-color'    : currColor
+        })
+      })
+      $('#add-new-event').click(function (e) {
+        e.preventDefault()
+        // Get value and make sure it is not null
+        var val = $('#new-event').val()
+        if (val.length == 0) {
+          return
+        }
+
+        // Create events
+        var event = $('<div />')
+        event.css({
+          'background-color': currColor,
+          'border-color'    : currColor,
+          'color'           : '#fff'
+        }).addClass('external-event')
+        event.text(val)
+        $('#external-events').prepend(event)
+
+        // Add draggable funtionality
+        ini_events(event)
+
+        // Remove event from text input
+        $('#new-event').val('')
+      })
+
       
     });
 

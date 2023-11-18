@@ -1001,7 +1001,7 @@ table.fc-header{
                 allDay: false,
                 start: new Date(jammulai),
                 end: new Date(jamselesai),
-                className: 'success'
+                className: 'info'
               }
             ) 
           // url: 'https://ccp.cloudaccess.net/aff.php?aff=5188',

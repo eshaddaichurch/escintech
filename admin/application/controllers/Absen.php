@@ -8,7 +8,6 @@ class Absen extends MY_Controller {
         parent::__construct();
         $this->islogin();
         $this->load->model('Absen_model');
-        $this->cekOtorisasi();
     }
     
     public function index($idabsenjenis)
@@ -46,6 +45,7 @@ class Absen extends MY_Controller {
                 $this->session->set_userdata( 'IDMENUSELECTED', 'S100' );
                 break;
         }
+        $this->cekOtorisasi();
         $data['idabsenjenis'] = $idabsenjenis;
         $data['rowabsenjenis'] = $this->db->query("select * from absenjenis where idabsenjenis='".$idabsenjenis."'")->row();
         $data['menu'] = 'Absen';

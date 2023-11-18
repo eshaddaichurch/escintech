@@ -108,6 +108,14 @@
                </div>
 
 
+               <div class="form-group row">
+                 <label for="" class="col-md-3 col-form-label">Warna Penjadwalan</label>
+                 <div class="col-md-3">
+                   <input type="color" name="warnapenjadwalan" id="warnapenjadwalan" class="form-control" value="#E68302">
+                 </div>
+               </div>
+
+
 
              </div> <!-- ./card-body -->
 
@@ -159,6 +167,11 @@
            $("#idgroup").val(result.idgroup).trigger('change');
            $("#namahead").val(result.namahead).trigger('change');
            $("#statusaktif").val(result.statusaktif);
+           if (result.warnapenjadwalan=="" || result.warnapenjadwalan==null) {
+             $("#warnapenjadwalan").val("#E68302");
+           }else{
+             $("#warnapenjadwalan").val(result.warnapenjadwalan);
+           }
            $("#fotohead_lama").val(result.fotohead);
 
            $('#linkFotoHead').html(result.fotohead);
@@ -171,6 +184,7 @@
        $("#lblactive").html("Edit");
 
      } else {
+       $("#warnapenjadwalan").val("#E68302");
        $("#lbljudul").html("Tambah Data Departement");
        $("#lblactive").html("Tambah");
      }

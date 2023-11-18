@@ -17,7 +17,7 @@ class Penjadwalan extends MY_Controller {
     public function index()
     {
         $data['menu'] = 'penjadwalan';
-        $this->load->view('penjadwalan/listdata', $data);
+        $this->load->view('penjadwalan/listdata2', $data);
     }   
 
     public function tambahjadwal()
@@ -442,6 +442,46 @@ class Penjadwalan extends MY_Controller {
     {
         $rsparkiran = $this->db->query("select * from parkiran where statusaktif='Aktif' order by idparkiran");
         echo json_encode($rsparkiran->result());
+    }
+
+
+    public function getCalenderDetail()
+    {
+        $rsjadwal = $this->db->query("
+                select * from v_jadwalevent
+            ");
+        $arrCalender = array();
+        if ($rsjadwal->num_rows()>0) {
+            foreach ($rsjadwal->result() as $row) {
+
+                if (!empty($row->warnapenjadwalan)) {
+                    $warnapenjadwalan = $row->warnapenjadwalan;
+                }else{
+                    $warnapenjadwalan = '#E68302';
+                }
+                array_push($arrCalender, array(
+                                                'idjadwalevent' => $row->idjadwalevent, 
+                                                'title' => $row->namaevent, 
+                                                'start' => date('Y-m-d', strtotime($row->tglmulai)), 
+                                                'end' => date('Y-m-d', strtotime($row->tglselesai)), 
+                                                'backgroundColor' => $warnapenjadwalan, 
+                                                'borderColor' => $warnapenjadwalan, 
+                                                'allDay' => false, 
+                                                'url' => "", 
+                                            ));
+            }
+        }
+        echo json_encode($arrCalender);
+    }
+
+    public function getDetailJadwal()
+    {
+        $idjadwalevent = $this->input->get('idjadwalevent');
+
+        $rsJadwalDetail = $this->db->query("
+                    select * from v_jadwalevent where idjadwalevent='$idjadwalevent'
+                ");
+        echo json_encode($rsJadwalDetail->row());
     }
 
 }

@@ -92,3 +92,9 @@ INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, no
 	VALUES('C000', 'Care', NULL, NULL, 'Aktif', 300, 0, 'fas fa-people-carry');
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
 	VALUES('C100', 'Marriage Class', 'C000', 'registrasikelas/index/KL101', 'Aktif', 301, 1, NULL);
+
+
+INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
+	VALUES('L000', 'Laporan', NULL, NULL, 'Aktif', 900, 0, 'fas fa-print');
+INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
+	VALUES('L100', 'Lap Data Jemaat', 'L000', 'lapdatajemaat', 'Aktif', 901, 1, NULL);

@@ -60,11 +60,19 @@ class Departement extends MY_Controller {
                 }else{
                     $fotohead = '<img src="'.base_url('images/user-01.png').'" alt="" style="width: 80%;">' ;
                 }
+                if (empty($rowdata->warnapenjadwalan)) {
+                    $warnapenjadwalan = '#E68302';
+                }else{
+                    $warnapenjadwalan = $rowdata->warnapenjadwalan;
+                }
                 $no++;
                 $row = array();
                 $row[] = $no;
                 $row[] = $fotohead.'<br>'.$rowdata->namahead;
                 $row[] = $rowdata->iddepartement;
+                $row[] = '<div style="border: 1px solid; background-color: '.$warnapenjadwalan.';">
+                          &nbsp;
+                        </div>';
                 $row[] = $rowdata->namadepartement;
                 $row[] = $rowdata->namagroup;
                 $row[] = '<a href="'.site_url( 'departement/edit/'.$this->encrypt->encode($rowdata->iddepartement) ).'" class="btn btn-sm btn-warning btn-circle"><i class="fa fa-edit"></i></a> | 
@@ -128,6 +136,7 @@ class Departement extends MY_Controller {
         $namahead        = $this->input->post('namahead');
         $idgroup        = $this->input->post('idgroup');
         $statusaktif        = $this->input->post('statusaktif');
+        $warnapenjadwalan        = $this->input->post('warnapenjadwalan');
         $tanggalinsert        = date('Y-m-d H:i:s');
 
         $tanggalupdate        = date('Y-m-d H:i:s');
@@ -146,6 +155,7 @@ class Departement extends MY_Controller {
                             'namahead'   => $namahead, 
                             'fotohead'   => $fotohead, 
                             'statusaktif'   => $statusaktif, 
+                            'warnapenjadwalan'   => $warnapenjadwalan, 
                         );
             $simpan = $this->Departement_model->simpan($data);      
         }else{ 
@@ -157,6 +167,7 @@ class Departement extends MY_Controller {
                             'namahead'   => $namahead, 
                             'fotohead'   => $fotohead, 
                             'statusaktif'   => $statusaktif, 
+                            'warnapenjadwalan'   => $warnapenjadwalan, 
                         );
             // var_dump($data);
             // exit();
@@ -197,6 +208,7 @@ class Departement extends MY_Controller {
                             'statusaktif'     =>  $RsData->statusaktif,  
                             'namahead'     =>  $RsData->namahead,  
                             'fotohead'     =>  $RsData->fotohead,  
+                            'warnapenjadwalan'     =>  $RsData->warnapenjadwalan,  
                         );
 
         echo(json_encode($data));

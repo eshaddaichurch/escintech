@@ -7,7 +7,7 @@ class Departement_model extends CI_Model {
     var $tabel     = 'departement';
     var $iddepartement = 'iddepartement';
 
-    var $column_order = array(null, null,'iddepartement','namadepartement','namagroup', null );
+    var $column_order = array(null, null,'iddepartement', null,'namadepartement','namagroup', null );
     var $column_search = array('iddepartement','namadepartement','namagroup', 'namahead');
     var $order = array('namadepartement' => 'asc'); // default order 
 

@@ -44,6 +44,7 @@
                       <th style="width: 5%; text-align: center;">No</th>
                       <th style="width: 15%; text-align: center;">Head Departement</th>
                       <th style="width: 5%; text-align: center;">ID Departement</th>
+                      <th style="width: 5%; text-align: center;">Warna</th>
                       <th style="text-align: center;">Nama Departement</th>
                       <th style="text-align: center;">Nama Group</th>
                       <th style="text-align: center; width: 15%;">Aksi</th>
@@ -93,9 +94,10 @@
                         { "targets": [ 0 ], "orderable": false, "className": "dt-body-center" },
                         { "targets": [ 1 ], "orderable": false, "className": "dt-body-center" },
                         { "targets": [ 2 ], "className": "dt-body-center" },
-                        { "targets": [ 3 ], "className": "dt-body-center" },
+                        { "targets": [ 3 ], "orderable": false, "className": "dt-body-center" },
                         { "targets": [ 4 ], "className": "dt-body-center" },
-                        { "targets": [ 5 ], "orderable": false, "className": "dt-body-center" },
+                        { "targets": [ 5 ], "className": "dt-body-center" },
+                        { "targets": [ 6 ], "orderable": false, "className": "dt-body-center" },
         ],
  
     });
