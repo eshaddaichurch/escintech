@@ -144,14 +144,14 @@
                         <div class="card">
                           <div class="card-header border-0">
                             <div class="d-flex justify-content-between">
-                              <h3 class="card-title">Grafik Kehadiran Jemaat 6 Bulan Terakhir</h3>
+                              <h3 class="card-title">Grafik Kehadiran Jemaat</h3>
                               <!-- <a href="javascript:void(0);">View Report</a> -->
                             </div>
                           </div>
                           <div class="card-body">
                             <div class="d-flex">
                               <p class="d-flex flex-column">
-                                <span class="text-bold text-lg">Rata-rata Per Minggu: <span id="totalhit">0</span></span>
+                                <span class="text-bold text-lg">Rata-rata Kehadiran: <span id="totalhit">0</span></span>
                                 <span id="jumlahi">0 Minggu</span>
                               </p>
                               <!-- <p class="ml-auto d-flex flex-column text-right">
@@ -281,7 +281,7 @@ function loadInfoBox() {
       dataType: 'json',
     })
     .done(function(resultinfo) {
-      console.log(resultinfo);
+      // console.log(resultinfo);
       $('#kehadiranbulanini').html(numberWithCommas(resultinfo.kehadiranbulanini));
       $('#kehadiranbulanlalu').html(numberWithCommas(resultinfo.kehadiranbulanlalu));
       $('#kenaikanbulanlalu').html(resultinfo.kenaikanbulanlalu);
@@ -328,7 +328,7 @@ function loadGrafik() {
     data: {'idabsenjenis': idabsenjenis, 'tglawal': tglawal, 'tglakhir': tglakhir},
   })
   .done(function(getgrafikabsenResult) {
-    // console.log(getgrafikabsenResult);
+    console.log(getgrafikabsenResult);
     $('#totalhit').html(getgrafikabsenResult.jumlahPerMinggu+' Jemaat');
     $('#jumlahi').html(getgrafikabsenResult.jumlahi+' Minggu');
 

@@ -51,25 +51,33 @@
                   <div class="form-group row required">
                     <label for="" class="col-md-3 col-form-label">Group Head</label>
                     <div class="col-md-9">
-                      <select name="idjemaathead" id="idjemaathead" class="form-control select2">
-                        <option value="">Pilih nama kepala group</option>
-                        <?php  
-                          $this->db->order_by('namalengkap', 'asc');
-                          $rsjemaat = $this->Jemaat_model->get_all();
-                          if ($rsjemaat->num_rows()>0) {
-                            foreach ($rsjemaat->result() as $row) {
-                              echo '
-                                <option value="'.$row->idjemaat.'">'.$row->namalengkap.'</option>
-                              ';
-                            }
-                          }
-                        ?>
-                      </select>
+                      <input type="text" name="namalengkap" id="namalengkap" class="form-control" placeholder="Nama Kepala Grup">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="" class="col-md-3 col-form-label">Email</label>
+                    <div class="col-md-9">
+                      <input type="email" name="email" id="email" class="form-control" placeholder="Email">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="" class="col-md-3 col-form-label">facebook</label>
+                    <div class="col-md-9">
+                      <input type="text" name="facebook" id="facebook" class="form-control" placeholder="Url Facebook">
+                    </div>
+                  </div>
+
+                  <div class="form-group row">
+                    <label for="" class="col-md-3 col-form-label">Instagram</label>
+                    <div class="col-md-9">
+                      <input type="text" name="instagram" id="instagram" class="form-control" placeholder="Url Instagram">
                     </div>
                   </div>
 
 
-                  <div class="form-group row required">
+                  <div class="form-group row">
                     <label for="" class="col-md-3 col-form-label">Status Aktif</label>
                     <div class="col-md-9">
                       <select name="statusaktif" id="statusaktif" class="form-control">
@@ -145,6 +153,10 @@
             $("#idjemaathead").val(result.idjemaathead).trigger('change');
             $("#statusaktif").val(result.statusaktif);
             $("#fotogroup_lama").val(result.fotogroup);
+            $("#namalengkap").val(result.namalengkap);
+            $("#email").val(result.email);
+            $("#facebook").val(result.facebook);
+            $("#instagram").val(result.instagram);
 
              $('#linkFotogroup').html(result.fotogroup);
              $('#linkFotogroup').attr('href', "<?php echo base_url('uploads/group/') ?>"+result.fotogroup);
@@ -175,10 +187,10 @@
             },
           }
         },
-        idjemaathead: {
+        namalengkap: {
           validators:{
             notEmpty: {
-                message: "kepala group tidak boleh kosong"
+                message: "nama kepala group tidak boleh kosong"
             },
           }
         },

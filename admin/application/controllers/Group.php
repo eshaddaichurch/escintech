@@ -126,6 +126,11 @@ class Group extends MY_Controller {
         $namagroup        = $this->input->post('namagroup');
         $idjemaathead        = $this->input->post('idjemaathead');
         $statusaktif        = $this->input->post('statusaktif');
+        $namalengkap        = $this->input->post('namalengkap');
+        $email        = $this->input->post('email');
+        $facebook           = $this->input->post('facebook');
+        $instagram           = $this->input->post('instagram');
+
         $tanggalinsert        = date('Y-m-d H:i:s');
         $tanggalupdate        = date('Y-m-d H:i:s');
 
@@ -143,6 +148,10 @@ class Group extends MY_Controller {
                             'idjemaathead'   => $idjemaathead, 
                             'statusaktif'   => $statusaktif, 
                             'fotogroup'   => $fotogroup, 
+                            'namalengkap'   => $namalengkap, 
+                            'email'   => $email, 
+                            'facebook'   => $facebook, 
+                            'instagram'   => $instagram, 
                         );
             $simpan = $this->Group_model->simpan($data);      
         }else{ 
@@ -153,6 +162,10 @@ class Group extends MY_Controller {
                             'idjemaathead'   => $idjemaathead, 
                             'statusaktif'   => $statusaktif, 
                             'fotogroup'   => $fotogroup, 
+                            'namalengkap'   => $namalengkap, 
+                            'email'   => $email, 
+                            'facebook'   => $facebook, 
+                            'instagram'   => $instagram, 
                         );
             $simpan = $this->Group_model->update($data, $idgroup);
         }
@@ -189,6 +202,11 @@ class Group extends MY_Controller {
                             'namagroup'     =>  $RsData->namagroup,  
                             'statusaktif'     =>  $RsData->statusaktif,  
                             'idjemaathead'     =>  $RsData->idjemaathead,  
+                            'namalengkap'     =>  $RsData->namalengkap,  
+                            'email'     =>  $RsData->email,  
+                            'facebook'     =>  $RsData->facebook,  
+                            'instagram'     =>  $RsData->instagram,  
+                            'fotogroup'     =>  $RsData->fotogroup,  
                         );
 
         echo(json_encode($data));

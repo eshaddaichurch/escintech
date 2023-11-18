@@ -13,7 +13,7 @@
             <div class="row">
 
               <?php  
-                $rsgrouphead = $this->db->query("select * from v_group where idjemaathead is not null and idjemaathead != '' order by namagroup");
+                $rsgrouphead = $this->db->query("select * from v_group where statusaktif='Aktif' order by namagroup");
                 if ($rsgrouphead->num_rows()>0) {
                   foreach ($rsgrouphead->result() as $row) {
 

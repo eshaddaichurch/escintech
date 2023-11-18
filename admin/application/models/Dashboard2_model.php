@@ -66,14 +66,14 @@ class Dashboard2_model extends CI_Model {
 
     public function getgrafikabsen($idabsenjenis, $tglawal, $tglakhir)
     {
-    	$sql = "SELECT tglabsen, idabsenjenis, idsesi, sum(jumlahhadir) as jumlahhadir,
+    	$sql = "SELECT tglabsen, idabsenjenis, sum(jumlahhadir) as jumlahhadir,
 					SUM(CASE WHEN idsesi='001' THEN jumlahhadir ELSE 0 END) AS jumlahibadah1, 
 					SUM(CASE WHEN idsesi='002' THEN jumlahhadir ELSE 0 END) AS jumlahibadah2,
 					SUM(CASE WHEN idsesi='003' THEN jumlahhadir ELSE 0 END) AS jumlahibadah3,
 					SUM(CASE WHEN idsesi='004' THEN jumlahhadir ELSE 0 END) AS jumlahibadah4	
 				FROM absen
 				WHERE idabsenjenis='$idabsenjenis' AND convert(tglabsen, date) between '".date('Y-m-d', strtotime($tglawal))."' and '".date('Y-m-d', strtotime($tglakhir))."'
-				GROUP BY tglabsen, idabsenjenis, idsesi
+				GROUP BY tglabsen, idabsenjenis
 				ORDER BY tglabsen";
 		$rsAbsen = $this->db->query($sql);
 

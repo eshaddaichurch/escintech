@@ -24,8 +24,8 @@ class Dashboard2 extends MY_controller {
 
         $kehadiranbulanini = $this->Dashboard2_model->kehadiranbulanini();
        	$kehadiranbulanlalu = $this->Dashboard2_model->kehadiranbulanlalu();
-       	$kenaikanbulanlalu = $this->Dashboard2_model->kenaikanbulanlalu($kehadiranbulanlalu);
-       	$kenaikanbulanini = $this->Dashboard2_model->kenaikanbulanini($kehadiranbulanini, $kehadiranbulanlalu);
+       	$kenaikanbulanlalu = number_format($this->Dashboard2_model->kenaikanbulanlalu($kehadiranbulanlalu));
+       	$kenaikanbulanini = number_format($this->Dashboard2_model->kenaikanbulanini($kehadiranbulanini, $kehadiranbulanlalu));
 
         $data = array(
         				'kehadiranbulanini' => $kehadiranbulanini,
@@ -65,7 +65,7 @@ class Dashboard2 extends MY_controller {
 	    		$i++;
 	    	}    		
     	}
-    	$jumlahPerMinggu = $jumlah/$i;
+    	$jumlahPerMinggu = number_format($jumlah/$i);
 
     	$data = array(
     					'datatanggal' => $datatanggal, 
