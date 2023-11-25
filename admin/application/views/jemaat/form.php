@@ -7,7 +7,7 @@
 
  <div class="row" id="toni-breadcrumb">
    <div class="col-6">
-     <h4 class="text-dark mt-2">pengkhotbah</h4>
+     <h4 class="text-dark mt-2">Data Jemaat</h4>
    </div>
    <div class="col-6">
      <ol class="breadcrumb float-sm-right">
@@ -39,292 +39,385 @@
                   ?>
                </div>
 
-               <h3 class="text-gray">Data Jemaat</h3>
-               <hr>
 
                <input type="hidden" name="idjemaat" id="idjemaat">
-               <div class="form-group row">
-                 <label for="" class="col-md-3 col-form-label">No AJ</label>
-                 <div class="col-md-9">
-                   <input type="text" name="noaj" id="noaj" class="form-control" placeholder="Auto" readonly="">
+
+               <div class="row">
+                 <div class="col-12">
+                   <h5 class="text-muted">DATA SOSIAL MEDIA</h5><hr>
                  </div>
-               </div>
-               <div class="form-group row required">
-                 <label for="" class="col-md-3 col-form-label">NIK</label>
+
                  <div class="col-md-3">
-                   <input type="text" name="nik" id="nik" class="form-control" placeholder="Masukkan NIK" autofocus="">
+                   <div class="form-group">
+                     <label for="" class="">No AJ</label>
+                     <input type="text" name="noaj" id="noaj" class="form-control" placeholder="Auto" readonly="">
+                   </div>
                  </div>
-               </div>
-               <div class="form-group row required">
-                 <label for="" class="col-md-3 col-form-label">Kewarganegaraan</label>
-                 <div class="col-md-9">
-                   <select name="kewarganegaraan" id="kewarganegaraan" class="form-control">
-                     <option value="">Pilih kewarganegaraan...</option>
-                     <option value="Indonesia">Indonesia</option>
-                     <option value="Asing">Asing</option>
-                   </select>
-                 </div>
-               </div>
-               <div class="form-group row required">
-                 <label for="" class="col-md-3 col-form-label">Nama Lengkap</label>
-                 <div class="col-md-9">
-                   <input type="text" name="namalengkap" id="namalengkap" class="form-control" placeholder="Masukkan nama lengkap">
-                 </div>
-               </div>
-               <div class="form-group row required">
-                 <label for="" class="col-md-3 col-form-label">Nama Panggilan</label>
-                 <div class="col-md-9">
-                   <input type="text" name="namapanggilan" id="namapanggilan" class="form-control" placeholder="Masukkan nama panggilan">
-                 </div>
-               </div>
-               <div class="form-group row required">
-                 <label for="" class="col-md-3 col-form-label">Tempat / Tgl Lahir</label>
-                 <div class="col-md-5">
-                   <input type="text" name="tempatlahir" id="tempatlahir" class="form-control" placeholder="Masukkan tempat lahir">
-                 </div>
-                 <label for="" class="col-md-1 col-form-label">/</label>
+
                  <div class="col-md-3">
-                   <input type="date" name="tanggallahir" id="tanggallahir" class="form-control">
+                   <div class="form-group required">
+                     <label for="" class="">NIK</label>
+                     <input type="text" name="nik" id="nik" class="form-control" placeholder="Masukkan NIK" autofocus="">
+                   </div>
                  </div>
-               </div>
-               <div class="form-group row required">
-                 <label for="" class="col-md-3 col-form-label">Jenis Kelamin</label>
-                 <div class="col-md-9">
-                   <select name="jeniskelamin" id="jeniskelamin" class="form-control">
-                     <option value="">Pilih jenis kelamin...</option>
-                     <option value="Laki-laki">Laki-laki</option>
-                     <option value="Perempuan">Perempuan</option>
-                   </select>
-                 </div>
-               </div>
-               <div class="form-group row required">
-                 <label for="" class="col-md-3 col-form-label">Status Pernikahan</label>
-                 <div class="col-md-9">
-                   <select name="statuspernikahan" id="statuspernikahan" class="form-control">
-                     <option value="">Pilih status pernikahan</option>
-                     <option value="Belum Kawin">Belum Kawin</option>
-                     <option value="Kawin">Kawin</option>
-                     <option value="Janda/ Duda">Janda/ Duda</option>
-                   </select>
-                 </div>
-               </div>
-               <div class="form-group row">
-                 <label for="" class="col-md-3 col-form-label">golongandarah</label>
-                 <div class="col-md-9">
-                   <select name="golongandarah" id="golongandarah" class="form-control">
-                     <option value="">Pilih golongan darah...</option>
-                     <option value="A">A</option>
-                     <option value="B">B</option>
-                     <option value="AB">AB</option>
-                     <option value="O">O</option>
-                   </select>
-                 </div>
-               </div>
-               <div class="form-group row">
-                 <label for="" class="col-md-3 col-form-label">No Telepon.</label>
+
                  <div class="col-md-3">
-                   <input type="text" name="notelp" id="notelp" class="form-control" placeholder="Masukkan nomor telepon">
+                   <div class="form-group required">
+                     <label for="" class="">Kewarganegaraan</label>
+                     <select name="kewarganegaraan" id="kewarganegaraan" class="form-control">
+                       <option value="">Pilih kewarganegaraan...</option>
+                       <option value="Indonesia">Indonesia</option>
+                       <option value="Asing">Asing</option>
+                     </select>
+                   </div>
                  </div>
-                 <label for="" class="col-md-3 col-form-label text-right">No HP.</label>
+
                  <div class="col-md-3">
-                   <input type="text" name="nohp" id="nohp" class="form-control" placeholder="Masukkan nomor hp">
+                   <div class="form-group required">
+                     <label for="" class="">Nama Lengkap</label>
+                     <input type="text" name="namalengkap" id="namalengkap" class="form-control" placeholder="Masukkan nama lengkap">
+                   </div>
                  </div>
-               </div>
-               <div class="form-group row">
-                 <label for="" class="col-md-3 col-form-label">Email</label>
-                 <div class="col-md-9">
-                   <input type="email" name="email" id="email" class="form-control" placeholder="contoh@gmail.com">
+
+                 <div class="col-md-3">
+                   <div class="form-group required">
+                     <label for="" class="">Nama Panggilan</label>
+                     <input type="text" name="namapanggilan" id="namapanggilan" class="form-control" placeholder="Masukkan nama panggilan">
+                   </div>
                  </div>
-               </div>
-               <div class="form-group row">
-                 <label for="" class="col-md-3 col-form-label">Url Facebook</label>
-                 <div class="col-md-9">
-                   <input type="text" name="facebook" id="facebook" class="form-control" placeholder="Masukkan url facebook">
+
+                 <div class="col-md-3">
+                   <div class="form-group required">
+                     <label for="" class="">Tempat / Tgl Lahir</label>
+                     <input type="text" name="tempatlahir" id="tempatlahir" class="form-control" placeholder="Masukkan tempat lahir">
+                   </div>
                  </div>
-               </div>
-               <div class="form-group row">
-                 <label for="" class="col-md-3 col-form-label">Url Instagram</label>
-                 <div class="col-md-9">
-                   <input type="text" name="instagram" id="instagram" class="form-control" placeholder="Masukkan url instagram">
+
+                 <div class="col-md-3">
+                   <div class="form-group required">
+                     <label for="" class="">Tgl Lahir</label>
+                     <input type="date" name="tanggallahir" id="tanggallahir" class="form-control">
+                     
+                   </div>
+                 </div>
+
+
+                 <div class="col-md-3">
+                   <div class="form-group required">
+                     <label for="" class="">Jenis Kelamin</label>
+                     <select name="jeniskelamin" id="jeniskelamin" class="form-control">
+                       <option value="">Pilih jenis kelamin...</option>
+                       <option value="Laki-laki">Laki-laki</option>
+                       <option value="Perempuan">Perempuan</option>
+                     </select>
+                     
+                   </div>
+                 </div>
+
+                 <div class="col-md-3">
+                   <div class="form-group required">
+                     <label for="" class="">Status Pernikahan</label>
+                     <select name="statuspernikahan" id="statuspernikahan" class="form-control">
+                       <option value="">Pilih status pernikahan</option>
+                       <option value="Belum Kawin">Belum Kawin</option>
+                       <option value="Kawin">Kawin</option>
+                       <option value="Janda/ Duda">Janda/ Duda</option>
+                     </select>
+
+                   </div>
+                 </div>
+
+                 <div class="col-md-3">
+                   <div class="form-group">
+                     <label for="" class="">Golongan Darah</label>
+                     <select name="golongandarah" id="golongandarah" class="form-control">
+                       <option value="">Pilih golongan darah...</option>
+                       <option value="A">A</option>
+                       <option value="B">B</option>
+                       <option value="AB">AB</option>
+                       <option value="O">O</option>
+                     </select>
+                   </div>
+                 </div>
+
+
+                 <div class="col-md-3">
+                   <div class="form-group required mt-3">
+                     <label for="" class="">Status Jemaat</label>
+                     <select name="statusjemaat" id="statusjemaat" class="form-control">
+                       <option value="">Pilih status jemaat...</option>
+                       <option value="Jemaat">Jemaat</option>
+                       <option value="Simpatisan">Simpatisan</option>
+                     </select>
+                   </div>
+                   
                  </div>
                </div>
 
 
 
-               <div class="form-group row">
-                 <label for="" class="col-md-3 col-form-label">Alamat Rumah</label>
-                 <div class="col-md-9">
-                   <textarea name="alamatrumah" id="alamatrumah" class="form-control" rows="2" placeholder="Masukkan alamat rumah"></textarea>
+
+
+
+               <div class="row">
+                 <div class="col-12">
+                   <h5 class="text-muted">DATA SOSIAL MEDIA</h5><hr>
                  </div>
-               </div>
-               <div class="form-group row">
-                 <label for="" class="col-md-3 col-form-label">RT/ RW</label>
-                 <div class="col-md-2">
-                   <input type="text" name="rtrw" id="rtrw" class="form-control" placeholder="000/000">
-                 </div>
-               </div>
-               <div class="form-group row">
-                 <label for="" class="col-md-3 col-form-label">Kelurahan</label>
-                 <div class="col-md-9">
-                   <input type="text" name="kelurahan" id="kelurahan" class="form-control" placeholder="Masukkan kelurahan">
-                 </div>
-               </div>
-               <div class="form-group row">
-                 <label for="" class="col-md-3 col-form-label">Kecamatan</label>
-                 <div class="col-md-5">
-                   <input type="text" name="kecamatan" id="kecamatan" class="form-control" placeholder="Masukkan kecamatan">
-                 </div>
-               </div>
-               <div class="form-group row">
-                 <label for="" class="col-md-3 col-form-label">Kabupaten/Kota</label>
-                 <div class="col-md-5">
-                   <input type="text" name="kotakabupaten" id="kotakabupaten" class="form-control" placeholder="Masukkan kabupaten kota">
-                 </div>
-               </div>
-               <div class="form-group row">
-                 <label for="" class="col-md-3 col-form-label">Propinsi</label>
-                 <div class="col-md-9">
-                   <input type="text" name="propinsi" id="propinsi" class="form-control" placeholder="Masukkan propinsi">
-                 </div>
-               </div>
-               <div class="form-group row">
-                 <label for="" class="col-md-3 col-form-label">Kode Pos</label>
-                 <div class="col-md-9">
-                   <input type="text" name="kodepos" id="kodepos" class="form-control" placeholder="Masukkan kode pos">
-                 </div>
-               </div>
-               <div class="form-group row required">
-                 <label for="" class="col-md-3 col-form-label">Status Jemaat</label>
                  <div class="col-md-4">
-                   <select name="statusjemaat" id="statusjemaat" class="form-control">
-                     <option value="">Pilih status jemaat...</option>
-                     <option value="Jemaat">Jemaat</option>
-                     <option value="Simpatisan">Simpatisan</option>
-                   </select>
+                   <div class="form-group">
+                     <label for="" class="">No Telepon.</label>
+                     <input type="text" name="notelp" id="notelp" class="form-control" placeholder="Masukkan nomor telepon">
+                   </div>
                  </div>
+                 
+                 <div class="col-md-4">
+                   <div class="form-group">
+                     <label for="" class=" text-right">No HP.</label>
+                     <input type="text" name="nohp" id="nohp" class="form-control" placeholder="Masukkan nomor hp">
+                   </div>
+                 </div>
+
+                 <div class="col-md-4">
+                   <div class="form-group">
+                     <label for="" class="">Email</label>
+                     <input type="email" name="email" id="email" class="form-control" placeholder="contoh@gmail.com">
+                   </div>
+                 </div>
+
+                 <div class="col-md-6">
+                   <div class="form-group">
+                     <label for="" class="">Url Instagram</label>
+                     <input type="text" name="instagram" id="instagram" class="form-control" placeholder="Masukkan url instagram">
+                   </div>
+                 </div>
+
+
+                 <div class="col-md-6">
+                   <div class="form-group">
+                     <label for="" class="">Url Facebook</label>
+                     <input type="text" name="facebook" id="facebook" class="form-control" placeholder="Masukkan url facebook">
+                   </div>
+                 </div>
+
+
+               </div>
+
+              
+
+
+               <div class="row">
+                 <div class="col-12 mt-3">
+                   <h5 class="text-muted">DATA ALAMAT JEMAAT</h5><hr>
+                 </div>
+                 <div class="col-md-3">
+                   <div class="form-group">
+                     <label for="" class="">Alamat Rumah</label>
+                     <textarea name="alamatrumah" id="alamatrumah" class="form-control" rows="4" placeholder="Masukkan alamat rumah"></textarea>
+                   </div>
+                 </div>
+                 <div class="col-md-9">
+                   <div class="row">
+                     <div class="col-md-2">
+                       <label for="" class="">RT/ RW</label>
+                       <input type="text" name="rtrw" id="rtrw" class="form-control" placeholder="000/000">
+                     </div>
+                     <div class="col-md-3">
+                       <label for="" class="">Kode Pos</label>
+                       <input type="text" name="kodepos" id="kodepos" class="form-control" placeholder="Masukkan kode pos">
+                     </div>
+                     <div class="col-7"></div>
+                     <div class="col-md-3">
+                       <label for="" class="">Propinsi</label>
+                       <select name="propinsi" id="propinsi" class="form-control select2">
+                         <option value="">Pilih nama propinsi ...</option>
+                         <?php
+                              $rsProvinsi = $this->db->query("select * from provinsi order by namaprovinsi");
+                              if ($rsProvinsi->num_rows()>0) {
+                                  foreach ($rsProvinsi->result() as $row) {
+                                      echo '
+                                          <option value="'.$row->idprovinsi.'">'.$row->namaprovinsi.'</option>
+                                      ';
+                                  }
+                              }
+                          ?>
+
+                       </select>
+                     </div>
+                     <div class="col-md-3">
+                       <label for="" class="">Kabupaten/Kota</label>
+                       <select name="kotakabupaten" id="kotakabupaten" class="form-control select2">
+                         <option value="">Pilih nama kabupaten ...</option>
+                       </select>
+                     </div>
+                     <div class="col-md-3">
+                       <label for="" class="">Kecamatan</label>
+                        <select name="kecamatan" id="kecamatan" class="form-control select2">
+                           <option value="">Pilih nama kecamatan ...</option>
+                         </select>
+                     </div>
+                     <div class="col-md-3">
+                       <label for="" class="">Kelurahan</label>
+                       <select name="kelurahan" id="kelurahan" class="form-control select2">
+                           <option value="">Pilih nama kelurahan ...</option>
+                         </select>
+                     </div>
+                   </div>
+                 </div>
+
+
+               </div>
+
+               
+
+
+               <div class="row">
+                  <div class="col-12 mt-3">
+                     <h5 class="text-muted">INFORMASI LOGIN</h5><hr>
+                   </div>
+
+                 <div class="col-md-4">
+                   <div class="form-group">
+                     <label for="" class="">Username</label>
+                     <input type="text" name="username" id="username" class="form-control" placeholder="Masukkan username">
+                   </div>
+                 </div>
+
+                 <div class="col-md-4">
+                   <div class="form-group">
+                     <label for="" class="">password</label>
+                     <input type="password" name="password" id="password" class="form-control" placeholder="*************">
+                   </div>
+                 </div>
+
+                 <div class="col-md-4">
+                   <div class="form-group">
+                     <label for="" class="">Ulangi password</label>
+                     <input type="password" name="password2" id="password2" class="form-control" placeholder="*************">
+                   </div>
+                 </div>
+
                </div>
 
 
-               <h3 class="text-gray mt-5">INFORMASI LOGIN</h3>
-               <hr>
-               <div class="form-group row required">
-                 <label for="" class="col-md-3 col-form-label">Username</label>
-                 <div class="col-md-9">
-                   <input type="text" name="username" id="username" class="form-control" placeholder="Masukkan username">
+               <div class="row">
+                 <div class="col-12 mt-3">
+                     <h5 class="text-muted">KONTAK DARURAT YANG BISA DIHUBUNGI</h5><hr>
                  </div>
-               </div>
-               <div class="form-group row required">
-                 <label for="" class="col-md-3 col-form-label">password</label>
-                 <div class="col-md-9">
-                   <input type="password" name="password" id="password" class="form-control" placeholder="*************">
+                 <div class="col-md-4">
+                   <div class="form-group">
+                     <label for="" class="">Nama</label>
+                     <input type="text" name="namadarurat" id="namadarurat" class="form-control" placeholder="Masukkan namadarurat">
+                     
+                   </div>
                  </div>
-               </div>
-               <div class="form-group row required">
-                 <label for="" class="col-md-3 col-form-label">Ulangi password</label>
-                 <div class="col-md-9">
-                   <input type="password" name="password2" id="password2" class="form-control" placeholder="*************">
+
+                 <div class="col-md-4">
+                   <div class="form-group">
+                     <label for="" class="">Hubungan</label>
+                     <select name="hubungan" id="hubungan" class="form-control">
+                       <option value="">Pilih hubungan...</option>
+                       <option value="Ayah">Ayah</option>
+                       <option value="Ibu">Ibu</option>
+                       <option value="Istri/ Suami">Istri/ Suami</option>
+                       <option value="Anak">Anak</option>
+                       <option value="Saudara">Saudara</option>
+                       <option value="Kerabat">Kerabat</option>
+                     </select>
+                   </div>
                  </div>
+
+                 <div class="col-md-4">
+                   <div class="form-group">
+                     <label for="" class="">No Telp.</label>
+                     <input type="text" name="notelpdarurat" id="notelpdarurat" class="form-control" placeholder="Masukkan notelp darurat">
+                   </div>
+                 </div>
+
                </div>
 
 
+               <div class="row">
+                 <div class="col-12 mt-3">
+                     <h5 class="text-muted">PENDIDIKAN DAN PEKERJAAN</h5><hr>
+                 </div>
 
 
 
-               <h3 class="text-gray mt-5">KONTAK DARURAT YANG BISA DIHUBUNGI</h3>
-               <hr>
-               <div class="form-group row">
-                 <label for="" class="col-md-3 col-form-label">Nama</label>
-                 <div class="col-md-9">
-                   <input type="text" name="namadarurat" id="namadarurat" class="form-control" placeholder="Masukkan namadarurat">
+                 <div class="col-md-3">
+                   <div class="form-group">
+                      <label for="" class="">Pendidikan Terakhir</label>
+                      <select name="pendidikanterakhir" id="pendidikanterakhir" class="form-control">
+                       <option value="">Pilih pendidikan terakhir</option>
+                       <option value="SD">SD</option>
+                       <option value="SMP">SMP</option>
+                       <option value="SMA/ SMK">SMA/ SMK</option>
+                       <option value="D1">D1</option>
+                       <option value="D2">D2</option>
+                       <option value="D3">D3</option>
+                       <option value="S1">S1</option>
+                       <option value="S2">S2</option>
+                       <option value="S3">S3</option>
+                       <option value="Lainnya">Lainnya</option>
+                     </select>
+                   </div>
                  </div>
-               </div>
-               <div class="form-group row">
-                 <label for="" class="col-md-3 col-form-label">Hubungan</label>
-                 <div class="col-md-9">
-                   <select name="hubungan" id="hubungan" class="form-control">
-                     <option value="">Pilih hubungan...</option>
-                     <option value="Ayah">Ayah</option>
-                     <option value="Ibu">Ibu</option>
-                     <option value="Istri/ Suami">Istri/ Suami</option>
-                     <option value="Anak">Anak</option>
-                     <option value="Saudara">Saudara</option>
-                     <option value="Kerabat">Kerabat</option>
-                   </select>
+
+                 <div class="col-md-3">
+                   <div class="form-group">
+                     <label for="" class="">Nama Sekolah</label>
+                     <input type="text" name="namasekolah" id="namasekolah" class="form-control" placeholder="Masukkan nama sekolah">
+                   </div>
                  </div>
-               </div>
-               <div class="form-group row">
-                 <label for="" class="col-md-3 col-form-label">No Telp.</label>
-                 <div class="col-md-9">
-                   <input type="text" name="notelpdarurat" id="notelpdarurat" class="form-control" placeholder="Masukkan notelp darurat">
+
+                 <div class="col-md-3">
+                   <div class="form-group">
+                     <label for="" class="">Pekerjaan</label>
+                     <select name="pekerjaan" id="pekerjaan" class="form-control">
+                       <option value="">Pilih pekerjaan...</option>
+                       <option value="Swasta">Swasta</option>
+                       <option value="Wiraswasta">Wiraswasta</option>
+                       <option value="Pegawai Negeri">Pegawai Negeri</option>
+                       <option value="TNI">TNI</option>
+                       <option value="POLRI">POLRI</option>
+                       <option value="Gembala">Gembala</option>
+                     </select>
+                   </div>
                  </div>
-               </div>
+
+                 <div class="col-md-3">
+                   <div class="form-group">
+                     <label for="" class="">Nama Perusahaan</label>
+                     <input type="text" name="namaperusahaan" id="namaperusahaan" class="form-control" placeholder="Masukkan nama perusahaan">
+                   </div>
+                 </div>
+
+                 <div class="col-md-3">
+                   <div class="form-group">
+                     <label for="" class="">Alamat Kantor</label>
+                     <textarea name="alamatkantor" id="alamatkantor" class="form-control" rows="2" placeholder="Masukkan alamat kantor"></textarea>
+                   </div>
+                 </div>
+
+                 <div class="col-md-3">
+                   <div class="form-group">
+                     <label for="" class="">Sektor Industri</label>
+                     <input type="text" name="sektorindustri" id="sektorindustri" class="form-control" placeholder="Masukkan sektorindustri">
+                   </div>
+                 </div>
 
 
+                 <div class="col-md-3">
+                   <div class="form-group">
+                     <label for="" class="">No Telepon Kantor</label>
+                     <input type="text" name="notelpkantor" id="notelpkantor" class="form-control" placeholder="Masukkan nomor telepon kantor">
+                   </div>
+                 </div>
 
-               <h3 class="text-gray mt-5">Pendidikan dan Pekerjaan</h3>
-               <hr>
-               <div class="form-group row">
-                 <label for="" class="col-md-3 col-form-label">Pendidikan Terakhir</label>
-                 <div class="col-md-9">
-                   <select name="pendidikanterakhir" id="pendidikanterakhir" class="form-control">
-                     <option value="">Pilih pendidikan terakhir</option>
-                     <option value="SD">SD</option>
-                     <option value="SMP">SMP</option>
-                     <option value="SMA/ SMK">SMA/ SMK</option>
-                     <option value="D1">D1</option>
-                     <option value="D2">D2</option>
-                     <option value="D3">D3</option>
-                     <option value="S1">S1</option>
-                     <option value="S2">S2</option>
-                     <option value="S3">S3</option>
-                     <option value="Lainnya">Lainnya</option>
-                   </select>
-                 </div>
+
                </div>
-               <div class="form-group row">
-                 <label for="" class="col-md-3 col-form-label">Nama Sekolah</label>
-                 <div class="col-md-9">
-                   <input type="text" name="namasekolah" id="namasekolah" class="form-control" placeholder="Masukkan nama sekolah">
-                 </div>
-               </div>
-               <div class="form-group row">
-                 <label for="" class="col-md-3 col-form-label">Pekerjaan</label>
-                 <div class="col-md-9">
-                   <select name="pekerjaan" id="pekerjaan" class="form-control">
-                     <option value="">Pilih pekerjaan...</option>
-                     <option value="Swasta">Swasta</option>
-                     <option value="Wiraswasta">Wiraswasta</option>
-                     <option value="Pegawai Negeri">Pegawai Negeri</option>
-                     <option value="TNI">TNI</option>
-                     <option value="POLRI">POLRI</option>
-                     <option value="Gembala">Gembala</option>
-                   </select>
-                 </div>
-               </div>
-               <div class="form-group row">
-                 <label for="" class="col-md-3 col-form-label">Nama Perusahaan</label>
-                 <div class="col-md-9">
-                   <input type="text" name="namaperusahaan" id="namaperusahaan" class="form-control" placeholder="Masukkan nama perusahaan">
-                 </div>
-               </div>
-               <div class="form-group row">
-                 <label for="" class="col-md-3 col-form-label">Sektor Industri</label>
-                 <div class="col-md-9">
-                   <input type="text" name="sektorindustri" id="sektorindustri" class="form-control" placeholder="Masukkan sektorindustri">
-                 </div>
-               </div>
-               <div class="form-group row">
-                 <label for="" class="col-md-3 col-form-label">Alamat Kantor</label>
-                 <div class="col-md-9">
-                   <textarea name="alamatkantor" id="alamatkantor" class="form-control" rows="2" placeholder="Masukkan alamat kantor"></textarea>
-                 </div>
-               </div>
-               <div class="form-group row">
-                 <label for="" class="col-md-3 col-form-label">No Telepon Kantor</label>
-                 <div class="col-md-9">
-                   <input type="text" name="notelpkantor" id="notelpkantor" class="form-control" placeholder="Masukkan nomor telepon kantor">
-                 </div>
-               </div>
+                
+
+
 
 
 
@@ -402,10 +495,10 @@
            $("#notelpkantor").val(result.notelpkantor);
            $("#alamatrumah").val(result.alamatrumah);
            $("#rtrw").val(result.rtrw);
-           $("#kelurahan").val(result.kelurahan);
-           $("#kecamatan").val(result.kecamatan);
-           $("#kotakabupaten").val(result.kotakabupaten);
-           $("#propinsi").val(result.propinsi);
+           $("#propinsi").val(result.propinsi).trigger('change');
+           $("#kotakabupaten").val(result.kotakabupaten).trigger('change');
+           $("#kecamatan").val(result.kecamatan).trigger('change');
+           $("#kelurahan").val(result.kelurahan).trigger('change');
            $("#kodepos").val(result.kodepos);
            $("#foto").val(result.foto);
            $("#tanggalupdate").val(result.tanggalupdate);
@@ -414,6 +507,9 @@
            $("#statusjemaat").val(result.statusjemaat);
            $("#tanggalinsert").val(result.tanggalinsert);
 
+           getKabupaten(result.propinsi, result.kotakabupaten);
+           getKecamatan(result.kotakabupaten, result.kecamatan);
+           
            if (result.statusjemaat == 'Jemaat') {
              $('#statusjemaat').attr('disabled', true);
            }
@@ -544,6 +640,120 @@
        placeholder: "000/000"
      });
    }); //end (document).ready
+
+
+
+
+
+    function getKabupaten(idprovinsi, idkabupatendefault="")
+    {
+
+        $('#kotakabupaten').empty();
+        $('#idkecamatan').empty();
+
+        addSelectOption('kotakabupaten', '', 'Pilih kabupaten/ kota ...')
+        addSelectOption('kecamatan', '', 'Pilih kecamatan ...')
+        
+        $.ajax({
+            url: '<?= site_url('jemaat/getKabupaten') ?>',
+            type: 'GET',
+            dataType: 'json',
+            data: {'idprovinsi': idprovinsi},
+        })
+        .done(function(response) {
+            console.log(response);
+            if (response.length>0) {
+                for (var i = 0; i < response.length; i++) {
+                    // console.log(response[i]);
+                    addSelectOption('kotakabupaten', response[i]['idkabupaten'], response[i]['namakabupaten']);
+                    if (idkabupatendefault!="" && idkabupatendefault==response[i]['idkabupaten']) {
+                        $('#kotakabupaten').val(response[i]['idkabupaten']).trigger('change');
+                    }
+                }
+            }
+        })
+        .fail(function() {
+            console.log('error getKabupaten');
+        });
+
+    }
+
+    $('#propinsi').change(function(e){
+        var idprovinsi = $(this).val();
+        getKabupaten(idprovinsi);
+    });
+
+    $('#kotakabupaten').change(function(e){
+        var idkabupaten = $(this).val();
+        getKecamatan(idkabupaten);
+    });
+
+    function getKecamatan(idkabupaten, idkecamatandefault="")
+    {
+
+        $('#kecamatan').empty();
+        // console.log(idkabupaten);
+
+        addSelectOption('kecamatan', '', 'Pilih kecamatan ...')
+        
+        $.ajax({
+            url: '<?= site_url('jemaat/getKecamatan') ?>',
+            type: 'GET',
+            dataType: 'json',
+            data: {'idkabupaten': idkabupaten},
+        })
+        .done(function(response) {
+            // console.log(response);
+            if (response.length>0) {
+                for (var i = 0; i < response.length; i++) {
+                    console.log(response[i]);
+                    addSelectOption('kecamatan', response[i]['idkecamatan'], response[i]['namakecamatan']);
+                    if (idkecamatandefault!="" && idkecamatandefault==response[i]['idkecamatan']) {
+                        $('#kecamatan').val(response[i]['idkecamatan']).trigger('change');
+                    }
+                }
+            }
+        })
+        .fail(function() {
+            console.log('error getKecamatan');
+        });
+
+    }
+
+    function getdesa(idkecamatan, iddesadefault="")
+    {
+
+        $('#kelurahan').empty();
+
+        addSelectOption('kelurahan', '', 'Pilih kelurahan ...')
+        
+        $.ajax({
+            url: '<?= site_url('jemaat/getKelurahan') ?>',
+            type: 'GET',
+            dataType: 'json',
+            data: {'idkecamatan': idkecamatan},
+        })
+        .done(function(response) {
+            console.log(response);
+            if (response.length>0) {
+                for (var i = 0; i < response.length; i++) {
+                    console.log(response[i]);
+                    addSelectOption('kelurahan', response[i]['idkelurahan'], response[i]['namakecamatan']);
+                    if (iddesadefault!="" && iddesadefault==response[i]['idkelurahan']) {
+                        $('#kelurahan').val(response[i]['idkelurahan']).trigger('change');
+                    }
+                }
+            }
+        })
+        .fail(function() {
+            console.log('error getKecamatan');
+        });
+
+    }
+
+
+
+
  </script>
 
  </body>

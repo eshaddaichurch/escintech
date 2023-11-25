@@ -38,9 +38,15 @@ class Lapdatajemaat extends MY_Controller {
         $statuspernikahan    = urldecode($this->uri->segment(5));
         $pekerjaan     = urldecode($this->uri->segment(6));
         $statusjemaat         = $this->uri->segment(7);
-        $chkumur = $this->uri->segment(8);
-        $umur1 = $this->uri->segment(9);
-        $umur2 = $this->uri->segment(10);
+        $golongandarah         = $this->uri->segment(8);
+        $chkumur = $this->uri->segment(9);
+        $umur1 = $this->uri->segment(10);
+        $umur2 = $this->uri->segment(11);
+
+        $propinsi = $this->uri->segment(12);
+        $kotakabupaten = $this->uri->segment(13);
+        $kecamatan = $this->uri->segment(14);
+        $kelurahan = $this->uri->segment(15);
         
         $where = '';
         if ($jeniskelamin != '-') {
@@ -57,6 +63,21 @@ class Lapdatajemaat extends MY_Controller {
         }
         if ($chkumur == '1') {
             $and_where .= " and umur between '$umur1' and '$umur2'  ";
+        }
+        if ($golongandarah != '-') {
+            $and_where .= " and golongandarah='$golongandarah' ";
+        }
+        if ($propinsi != '-') {
+            $and_where .= " and propinsi='$propinsi' ";
+        }
+        if ($kotakabupaten != '-') {
+            $and_where .= " and kotakabupaten='$kotakabupaten' ";
+        }
+        if ($kecamatan != '-') {
+            $and_where .= " and kecamatan='$kecamatan' ";
+        }
+        if ($kelurahan != '-') {
+            $and_where .= " and kelurahan='$kelurahan' ";
         }
 
 

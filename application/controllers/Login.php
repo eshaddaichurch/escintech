@@ -69,6 +69,7 @@ class Login extends CI_Controller {
     public function simpanregistrasi()
     {
         $namalengkap = $this->input->post('namalengkap');
+        $nik = $this->input->post('nik');
         $jeniskelamin = $this->input->post('jeniskelamin');
         $tempatlahir = $this->input->post('tempatlahir');
         $tanggallahir = $this->input->post('tanggallahir');
@@ -77,7 +78,6 @@ class Login extends CI_Controller {
         $email = $this->input->post('email');
         $password = $this->input->post('password');
         $tanggalinsert = date('Y-m-d H:i:s');
-        $idjemaat = $this->db->query("select create_idjemaat('".$tanggalinsert."') as idjemaat")->row()->idjemaat;
 
         /*Periksa Email*/
         if ($this->Login_model->emailsudahada($email)) {
@@ -98,21 +98,58 @@ class Login extends CI_Controller {
             redirect(site_url());  
         }
 
-        $data = array(
-                        'idjemaat' => $idjemaat, 
-                        'namalengkap' => $namalengkap, 
-                        'jeniskelamin' => $idjemaat, 
-                        'tempatlahir' => $tempatlahir, 
-                        'tanggallahir' => $tanggallahir, 
-                        'alamatrumah' => $alamatrumah, 
-                        'nohp' => $nohp, 
-                        'email' => $email, 
-                        'password' => md5($password), 
-                        'tanggalinsert' => $tanggalinsert,
-                        'statusjemaat' => 'Umum',
-                    );
+        $sudahAdaNIK = $this->Login_model->sudahAdaNIK($nik);
 
-        $simpan = $this->Login_model->simpanregistrasi($data);
+        $sudahAdaNIKTgllahir = $this->Login_model->sudahAdaNIKTgllahir($nik, $tanggallahir);
+
+
+        if ($sudahAdaNIK && !$sudahAdaNIKTgllahir) {
+            $pesan = "<script>
+                            swal('Informasi', 'Nik tidak cocok dengan tanggal lahir anda.', 'warning');
+                        </script>";
+            $this->session->set_flashdata('pesan', $pesan);
+            redirect(site_url());  
+        }
+
+
+        if ($sudahAdaNIKTgllahir) {
+            
+            $idjemaat = $this->Login_model->getIdJemaatByNIK($nik)->idjemaat;
+
+            $data = array(
+                            'namalengkap' => $namalengkap, 
+                            'nik' => $nik, 
+                            'jeniskelamin' => $idjemaat, 
+                            'tempatlahir' => $tempatlahir, 
+                            'nohp' => $nohp, 
+                            'email' => $email, 
+                            'password' => md5($password), 
+                        );
+
+            $simpan = $this->Login_model->updateregistrasi($data, $idjemaat);
+
+        }else{
+            $idjemaat = $this->db->query("select create_idjemaat('".$tanggalinsert."') as idjemaat")->row()->idjemaat;
+
+            $data = array(
+                            'idjemaat' => $idjemaat, 
+                            'namalengkap' => $namalengkap, 
+                            'nik' => $nik, 
+                            'jeniskelamin' => $idjemaat, 
+                            'tempatlahir' => $tempatlahir, 
+                            'tanggallahir' => $tanggallahir, 
+                            'alamatrumah' => $alamatrumah, 
+                            'nohp' => $nohp, 
+                            'email' => $email, 
+                            'password' => md5($password), 
+                            'tanggalinsert' => $tanggalinsert,
+                            'statusjemaat' => 'Umum',
+                        );
+
+            $simpan = $this->Login_model->simpanregistrasi($data);
+
+        }
+
         if ($simpan) {
             $textemail = '<a href="'.site_url('login/verifikasiemail/'.$this->encrypt->encode($email)).'">Verifikasi Email</a>';
             $this->App->sendEmailDaftar($email, 'Konfirmasi Pendaftaran MyEsc', $textemail);

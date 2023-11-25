@@ -88,8 +88,9 @@ $table .= '
                     <th width="30%" style="text-align:center;">Nama Lengkap</th>
                     <th width="5%" style="text-align:center;">JK</th>
                     <th width="5%" style="text-align:center;">Umur</th>
+                    <th width="5%" style="text-align:center;">Gol<br>Darah</th>
                     <th width="15%" style="text-align:center;">Status<br>Pernikahan</th>
-                    <th width="15%" style="text-align:center;">Pekerjaan</th>
+                    <th width="10%" style="text-align:center;">Pekerjaan</th>
                     <th width="10%" style="text-align:center;">Status</th>
                 </tr>
             </thead></tbody>';
@@ -110,8 +111,9 @@ if ($rsJemaat->num_rows() > 0) {
                 <td width="30%" style="text-align:left;">'.$row->namalengkap.'</td>
                 <td width="5%" style="text-align:center;">'.$jeniskelamin.'</td>
                 <td width="5%" style="text-align:center;">'.$row->umur.' Thn</td>
+                <td width="5%" style="text-align:center;">'.$row->golongandarah.'</td>
                 <td width="15%" style="text-align:center;">'.$row->statuspernikahan.'</td>
-                <td width="15%" style="text-align:center;">'.$row->pekerjaan.'</td>
+                <td width="10%" style="text-align:center;">'.$row->pekerjaan.'</td>
                 <td width="10%" style="text-align:center;">'.$row->statusjemaat.'</td>
             </tr>
         ';

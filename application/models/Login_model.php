@@ -25,6 +25,40 @@ class Login_model extends CI_Model {
     	}
     }
 
+    public function sudahAdaNIK($nik)
+    {
+        $query = "select * from jemaat where nik='".$nik."'";
+        $rsTest = $this->db->query($query);
+        if ($rsTest->num_rows()>0) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function sudahAdaNIKTgllahir($nik, $tanggallahir)
+    {
+        $query = "select * from jemaat where nik='".$nik."' and tanggallahir='".date('Y-m-d', strtotime($tanggallahir))."'";
+        $rsTest = $this->db->query($query);
+        if ($rsTest->num_rows()>0) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    public function getIdJemaatByNIK($nik)
+    {
+        $query = "select * from jemaat where nik='".$nik."'";
+        return $this->db->query($query)->row();
+    }
+
+    public function updateregistrasi($data, $idjemaat)
+    {
+        $this->db->where('idjemaat', $idjemaat);
+        return $this->db->update('jemaat', $data);
+    }
+
 }
 
 /* End of file Login_model.php */

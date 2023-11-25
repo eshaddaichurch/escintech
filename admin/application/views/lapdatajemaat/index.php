@@ -108,6 +108,65 @@
 
                       <div class="col-md-12">
                         <div class="form-group row">
+                          <label for="" class="col-md-4 col-form-label">Golongan Darah</label>
+                          <div class="col-md-8">
+                            <select name="golongandarah" id="golongandarah" class="form-control select2">
+                              <option value="-">Semua</option>
+                              <option value="A">A</option>
+                               <option value="B">B</option>
+                               <option value="AB">AB</option>
+                               <option value="O">O</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-12">
+                        <div class="form-group row">
+                          <label for="" class="col-md-4 col-form-label">Wilayah</label>
+                          <div class="col-md-8">
+                            <div class="row">
+                              <div class="col-12">
+                                <select name="propinsi" id="propinsi" class="form-control select2">
+                                   <option value="">Semua propinsi ...</option>
+                                   <?php
+                                        $rsProvinsi = $this->db->query("select * from provinsi order by namaprovinsi");
+                                        if ($rsProvinsi->num_rows()>0) {
+                                            foreach ($rsProvinsi->result() as $row) {
+                                                echo '
+                                                    <option value="'.$row->idprovinsi.'">'.$row->namaprovinsi.'</option>
+                                                ';
+                                            }
+                                        }
+                                    ?>
+
+                                 </select>
+                              </div>
+                              <div class="col-12 mt-1">
+                                <select name="kotakabupaten" id="kotakabupaten" class="form-control select2">
+                                   <option value="">Semua kota/kabupaten ...</option>
+                                 </select>
+                              </div>
+
+                              <div class="col-12 mt-1">
+                                <select name="kecamatan" id="kecamatan" class="form-control select2">
+                                   <option value="">Semua kecamatan ...</option>
+                                 </select>
+                              </div>
+
+                              <div class="col-12 mt-1">
+                                <select name="kelurahan" id="kelurahan" class="form-control select2">
+                                   <option value="">Semua kelurahan ...</option>
+                                 </select>
+                              </div>
+
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div class="col-md-12">
+                        <div class="form-group row">
                           <div class="col-md-4 col-form-label font-weight-bold">
                             <div class="form-check">
                               <input class="form-check-input" type="checkbox" value="" id="chkumur">
@@ -158,6 +217,117 @@
 
   }); //end (document).ready
 
+
+
+
+    function getKabupaten(idprovinsi, idkabupatendefault="")
+    {
+
+        $('#kotakabupaten').empty();
+        $('#idkecamatan').empty();
+
+        addSelectOption('kotakabupaten', '', 'Pilih kabupaten/ kota ...')
+        addSelectOption('kecamatan', '', 'Pilih kecamatan ...')
+        
+        $.ajax({
+            url: '<?= site_url('jemaat/getKabupaten') ?>',
+            type: 'GET',
+            dataType: 'json',
+            data: {'idprovinsi': idprovinsi},
+        })
+        .done(function(response) {
+            console.log(response);
+            if (response.length>0) {
+                for (var i = 0; i < response.length; i++) {
+                    // console.log(response[i]);
+                    addSelectOption('kotakabupaten', response[i]['idkabupaten'], response[i]['namakabupaten']);
+                    if (idkabupatendefault!="" && idkabupatendefault==response[i]['idkabupaten']) {
+                        $('#kotakabupaten').val(response[i]['idkabupaten']).trigger('change');
+                    }
+                }
+            }
+        })
+        .fail(function() {
+            console.log('error getKabupaten');
+        });
+
+    }
+
+    $('#propinsi').change(function(e){
+        var idprovinsi = $(this).val();
+        getKabupaten(idprovinsi);
+    });
+
+    $('#kotakabupaten').change(function(e){
+        var idkabupaten = $(this).val();
+        getKecamatan(idkabupaten);
+    });
+
+    function getKecamatan(idkabupaten, idkecamatandefault="")
+    {
+
+        $('#kecamatan').empty();
+        // console.log(idkabupaten);
+
+        addSelectOption('kecamatan', '', 'Pilih kecamatan ...')
+        
+        $.ajax({
+            url: '<?= site_url('jemaat/getKecamatan') ?>',
+            type: 'GET',
+            dataType: 'json',
+            data: {'idkabupaten': idkabupaten},
+        })
+        .done(function(response) {
+            // console.log(response);
+            if (response.length>0) {
+                for (var i = 0; i < response.length; i++) {
+                    console.log(response[i]);
+                    addSelectOption('kecamatan', response[i]['idkecamatan'], response[i]['namakecamatan']);
+                    if (idkecamatandefault!="" && idkecamatandefault==response[i]['idkecamatan']) {
+                        $('#kecamatan').val(response[i]['idkecamatan']).trigger('change');
+                    }
+                }
+            }
+        })
+        .fail(function() {
+            console.log('error getKecamatan');
+        });
+
+    }
+
+    function getdesa(idkecamatan, iddesadefault="")
+    {
+
+        $('#kelurahan').empty();
+
+        addSelectOption('kelurahan', '', 'Pilih kelurahan ...')
+        
+        $.ajax({
+            url: '<?= site_url('jemaat/getKelurahan') ?>',
+            type: 'GET',
+            dataType: 'json',
+            data: {'idkecamatan': idkecamatan},
+        })
+        .done(function(response) {
+            console.log(response);
+            if (response.length>0) {
+                for (var i = 0; i < response.length; i++) {
+                    console.log(response[i]);
+                    addSelectOption('kelurahan', response[i]['idkelurahan'], response[i]['namakecamatan']);
+                    if (iddesadefault!="" && iddesadefault==response[i]['idkelurahan']) {
+                        $('#kelurahan').val(response[i]['idkelurahan']).trigger('change');
+                    }
+                }
+            }
+        })
+        .fail(function() {
+            console.log('error getKecamatan');
+        });
+
+    }
+
+
+
   
   $('#cetak').click(function(){
         cetak_laporan('pdf');
@@ -175,6 +345,12 @@
       var statusjemaat       = $('#statusjemaat').val();
       var umur1       = $('#umur1').val();
       var umur2       = $('#umur2').val();
+      var golongandarah       = $('#golongandarah').val();
+
+      var propinsi       = $('#propinsi').val();
+      var kotakabupaten       = $('#kotakabupaten').val();
+      var kecamatan       = $('#kecamatan').val();
+      var kelurahan       = $('#kelurahan').val();
 
       if ($('#chkumur').prop("checked")) {
         var chkumur = '1';
@@ -182,9 +358,16 @@
         var chkumur = '0';
       }
       
+      if (propinsi=="") {propinsi="-"};
+      if (kotakabupaten=="") {kotakabupaten="-"};
+      if (kecamatan=="") {kecamatan="-"};
+      if (kelurahan=="") {kelurahan="-"};
 
-      window.open("<?php echo site_url('lapdatajemaat/cetak/') ?>" + jenis + "/" + jeniskelamin + "/" + statuspernikahan + "/" + pekerjaan + "/" + statusjemaat + "/" + chkumur + "/"+ umur1 + "/" + umur2 );
+      window.open("<?php echo site_url('lapdatajemaat/cetak/') ?>" + jenis + "/" + jeniskelamin + "/" + statuspernikahan + "/" + pekerjaan + "/" + statusjemaat + "/" + golongandarah + "/" + chkumur + "/"+ umur1 + "/" + umur2 + "/" + propinsi + "/" + kotakabupaten + "/" + kecamatan + "/" + kelurahan);
   }
+
+
+
 
 </script>
 

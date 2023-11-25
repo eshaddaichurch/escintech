@@ -608,6 +608,34 @@ class Jemaat extends MY_Controller {
         redirect('jemaat');
     }
 
+
+    public function getKabupaten()
+    {
+        $idprovinsi = $this->input->get('idprovinsi');
+        $query = $this->db->query("
+            select * from kabupaten where idprovinsi='$idprovinsi' order by namakabupaten
+        ");
+        echo json_encode($query->result());
+    }
+
+    public function getKecamatan()
+    {
+        $idkabupaten = $this->input->get('idkabupaten');
+        $query = $this->db->query("
+            select * from kecamatan where idkabupaten='$idkabupaten' order by namakecamatan
+        ");
+        echo json_encode($query->result());
+    }
+
+    public function getKelurahan()
+    {
+        $idkecamatan = $this->input->get('idkecamatan');
+        $query = $this->db->query("
+            select * from desa where idkecamatan='$idkecamatan' order by namadesa
+        ");
+        echo json_encode($query->result());
+    }
+
 }
 
 /* End of file Jemaat.php */

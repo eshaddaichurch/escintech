@@ -31,6 +31,12 @@
                 </div>
                 <div class="col-md-6 mt-3">
                   <div class="form-group">
+                    <label for="" class="">NIK</label>
+                    <input type="text" name="nik" id="nik" class="form-control" placeholder="Nomor Induk Kependudukan">
+                  </div>
+                </div>
+                <div class="col-md-6 mt-3">
+                  <div class="form-group">
                     <label for="" class="">Jenis Kelamin</label>
                     <select name="jeniskelamin" id="jeniskelamin" class="form-control">
                       <option value="">Pilih jenis kelamin...</option>
@@ -51,7 +57,7 @@
                     <input type="date" name="tanggallahir" id="tanggallahir" class="form-control">
                   </div>
                 </div>
-                <div class="col-md-6 mt-3">
+                <div class="col-md-6 mt-3" style="display: none;">
                   <div class="form-group">
                     <label for="" class="">Alamat Rumah</label>
                     <textarea name="alamatrumah" id="alamatrumah" class="form-control" rows="2" placeholder="Alamat tempat tinggal sekarang"></textarea>
@@ -115,6 +121,18 @@
              },
            }
          },
+         nik: {
+           validators: {
+             notEmpty: {
+               message: "nomor induk kependudukan tidak boleh kosong"
+             },
+             stringLength: {
+                min: 16,
+                max: 16,
+                message: 'Panjang karakter harus 16 karakter'
+            },
+           }
+         },
          jeniskelamin: {
            validators: {
              notEmpty: {
@@ -133,13 +151,6 @@
            validators: {
              notEmpty: {
                message: "tangggal lahir tidak boleh kosong"
-             },
-           }
-         },
-         alamatrumah: {
-           validators: {
-             notEmpty: {
-               message: "alamat rumah tidak boleh kosong"
              },
            }
          },

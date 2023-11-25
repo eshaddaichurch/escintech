@@ -23,32 +23,23 @@
   </div>
 
   <div class="row" id="toni-content">
-    <div class="col-12">
-        <a href="<?php echo(site_url('pengajuanjadwal/tambah')) ?>" class="btn btn-sm btn-primary float-right"><i class="fa fa-plus-circle"></i> Tambah Data</a>
-    </div>
     <div class="col-md-12 mt-3">
 
-       <!-- Main content -->
-      <section class="content">
-        <div class="container-fluid">
+      <div class="card" id="cardcontent">
+        <div class="card-header">
+          <h5 class="card-title">Kalender Jadwal</h5>
+          <a href="<?php echo(site_url('pengajuanjadwal/tambah')) ?>" class="btn btn-sm btn-primary float-right"><i class="fa fa-plus-circle"></i> Tambah Data</a>
+        </div>
+        <div class="card-body">
           <div class="row">
+            <div class="col-md-12">
+                <div id="calendar"></div>
 
-            <!-- /.col -->
-            <div class="col-md-9">
-              <div class="card card-primary">
-                <div class="card-body p-0 text-center">
-                  <!-- THE CALENDAR -->
-                  <div id="calendar"></div>
-                </div>
-                <!-- /.card-body -->
-              </div>
-              <!-- /.card -->
             </div>
-            <!-- /.col -->
           </div>
-          <!-- /.row -->
-        </div><!-- /.container-fluid -->
-      </section>
+        </div>
+      </div>
+
 
       
     </div> <!-- /.col -->
