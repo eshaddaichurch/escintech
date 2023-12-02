@@ -10,6 +10,9 @@ INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, no
 	VALUES('0004', 'Pages/ Halaman', '0001', 'pages', 'Aktif', 4, 1, NULL);
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
 	VALUES('0005', 'Kelola Menu', '0001', 'frontmenus', 'Aktif', 5, 1, NULL);
+INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
+	VALUES('0006', 'Cabang Gereja', '0001', 'cabanggereja', 'Aktif', 6, 1, NULL);
+	
 
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
 	VALUES('M000', 'Data Master', NULL, NULL, 'Aktif', 20, 0, 'fas fa-server');

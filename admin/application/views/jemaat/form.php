@@ -688,6 +688,11 @@
         getKecamatan(idkabupaten);
     });
 
+    $('#kecamatan').change(function(e){
+        var idkecamatan = $(this).val();
+        getdesa(idkecamatan);
+    });
+
     function getKecamatan(idkabupaten, idkecamatandefault="")
     {
 
@@ -738,9 +743,9 @@
             if (response.length>0) {
                 for (var i = 0; i < response.length; i++) {
                     console.log(response[i]);
-                    addSelectOption('kelurahan', response[i]['idkelurahan'], response[i]['namakecamatan']);
-                    if (iddesadefault!="" && iddesadefault==response[i]['idkelurahan']) {
-                        $('#kelurahan').val(response[i]['idkelurahan']).trigger('change');
+                    addSelectOption('kelurahan', response[i]['iddesa'], response[i]['namadesa']);
+                    if (iddesadefault!="" && iddesadefault==response[i]['iddesa']) {
+                        $('#kelurahan').val(response[i]['iddesa']).trigger('change');
                     }
                 }
             }
