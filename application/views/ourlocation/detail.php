@@ -196,7 +196,7 @@
         <div class="row mt-5">
             <div class="col-md-9 ps-5">
                 <div class="card">
-                    <div class="card-body" style="height: 800px;">
+                    <div class="card-body" style="min-height: 800px;">
                         <div class="row">
                           <div class="col-12 text-center font-weight-bold mb-5">
                             <h1><?php echo $rowCabang->namacabang ?></h1>

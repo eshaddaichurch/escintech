@@ -82,7 +82,7 @@ class Konfirmasikelas_model extends CI_Model {
     public function getKelas($limit, $offset)
     {
         return $this->db->query("
-                SELECT * FROM KELAS ORDER BY idkelas LIMIT $limit OFFSET $offset
+                SELECT * FROM kelas ORDER BY idkelas LIMIT $limit OFFSET $offset
             ");
     }
 

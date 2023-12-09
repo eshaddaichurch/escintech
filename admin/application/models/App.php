@@ -129,6 +129,22 @@ class App extends CI_Model {
             return $this->email->send();
     }
 
+    public function getCabangAkta($idcabangakta="")
+    {
+    	if (!empty($idcabangakta)) {
+    		$this->db->where('idcabangakta', $idcabangakta);
+    	}
+    	return $this->db->get('aktacabang');
+    }
+
+    public function getDaerahAkta($iddaerahakta="")
+    {
+    	if (!empty($iddaerahakta)) {
+    		$this->db->where('iddaerahakta', $iddaerahakta);
+    	}
+    	return $this->db->get('aktadaerah');
+    }
+
 }
 
 /* End of file App.php */

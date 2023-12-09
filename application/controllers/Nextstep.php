@@ -42,7 +42,7 @@ class Nextstep extends MY_Controller {
 		$idjemaat = $this->session->userdata('idjemaat');
 
 		if (empty($idjemaat)) {
-			echo json_encode(array('msg' => "Session login anda telah berakhir, silahkan refresh halaman dan login kembali"));
+			echo json_encode(array('msg' => "Anda harus login terlebih dahulu untuk mendaftar di kelas ini."));
 			exit();
 		}
 

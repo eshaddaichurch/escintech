@@ -98,6 +98,15 @@ INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, no
 
 
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
+	VALUES('T000', 'Akta', NULL, NULL, 'Aktif', 400, 0, 'fas fa-paperclip');
+INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
+	VALUES('T100', 'Penyerahan Anak', 'T000', 'aktapenyerahananak', 'Aktif', 401, 1, NULL);
+INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
+	VALUES('T200', 'Baptisan', 'T000', 'aktabaptisan', 'Aktif', 402, 2, NULL);
+INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
+	VALUES('T300', 'Nikah', 'T000', 'aktanikah', 'Aktif', 403, 3, NULL);
+
+INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
 	VALUES('L000', 'Laporan', NULL, NULL, 'Aktif', 900, 0, 'fas fa-print');
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
 	VALUES('L100', 'Lap Data Jemaat', 'L000', 'lapdatajemaat', 'Aktif', 901, 1, NULL);

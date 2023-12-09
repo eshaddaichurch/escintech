@@ -105,23 +105,6 @@ if (!defined('BASEPATH'))
 		return $strbulan;
 	}
 
-	function hari_libur($tanggal)
-	{
-		$CI =& get_instance();
-
-		$lreturn = FALSE;
-		$nhari = date("N", $tanggal);
-		if ($nhari == '7') {
-			$lreturn = TRUE;
-		}else{
-			$nlibur = $CI->db->query('select * from libur where tgl_libur= "'.date('Y-m-d', $tanggal).'"')->num_rows();
-			if ($nlibur>0) {
-				$lreturn = TRUE;
-			}
-		}
-		return $lreturn;
-	}
-
 
 
 	function hari($date){
@@ -317,6 +300,7 @@ if (!defined('BASEPATH'))
 		$cReturn = number_format($nNumber, $nDecimal, '.', ','); 
 		return $cReturn;
 	}
+
 
 	function replwzero($value, $jumlahchar)
 	{
