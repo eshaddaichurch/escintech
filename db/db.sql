@@ -74,6 +74,121 @@ CREATE TABLE `absenlokasi` (
 
 insert  into `absenlokasi`(`idabsenlokasi`,`namaabsenlokasi`,`statusaktif`) values ('001','Main Hall Lama','Aktif'),('002','Main Hall Baru','Aktif');
 
+/*Table structure for table `aktabaptisan` */
+
+DROP TABLE IF EXISTS `aktabaptisan`;
+
+CREATE TABLE `aktabaptisan` (
+  `idakta` char(10) NOT NULL,
+  `noakta` varchar(25) DEFAULT NULL,
+  `tglakta` date DEFAULT NULL,
+  `tglcetak` date DEFAULT NULL,
+  `dilakukanoleh` varchar(100) DEFAULT NULL,
+  `idjemaat` char(10) DEFAULT NULL,
+  `namaayah` varchar(50) DEFAULT NULL,
+  `namaibu` varchar(50) DEFAULT NULL,
+  `iddaerahakta` char(5) DEFAULT NULL,
+  `idcabangakta` char(5) DEFAULT NULL,
+  PRIMARY KEY (`idakta`),
+  KEY `idjemaat` (`idjemaat`),
+  KEY `iddaerahakta` (`iddaerahakta`),
+  KEY `idcabangakta` (`idcabangakta`),
+  CONSTRAINT `aktabaptisan_ibfk_1` FOREIGN KEY (`idjemaat`) REFERENCES `jemaat` (`idjemaat`),
+  CONSTRAINT `aktabaptisan_ibfk_2` FOREIGN KEY (`iddaerahakta`) REFERENCES `aktadaerah` (`iddaerahakta`),
+  CONSTRAINT `aktabaptisan_ibfk_3` FOREIGN KEY (`idcabangakta`) REFERENCES `aktacabang` (`idcabangakta`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+/*Data for the table `aktabaptisan` */
+
+/*Table structure for table `aktacabang` */
+
+DROP TABLE IF EXISTS `aktacabang`;
+
+CREATE TABLE `aktacabang` (
+  `idcabangakta` char(5) NOT NULL,
+  `namacabangakta` varchar(50) DEFAULT NULL,
+  `formatnomorakta` varchar(25) DEFAULT NULL,
+  `nomorotomatis` enum('Ya','Tidak') DEFAULT NULL,
+  `statusaktif` enum('Aktif','Tidak Aktif') DEFAULT NULL,
+  PRIMARY KEY (`idcabangakta`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+/*Data for the table `aktacabang` */
+
+/*Table structure for table `aktadaerah` */
+
+DROP TABLE IF EXISTS `aktadaerah`;
+
+CREATE TABLE `aktadaerah` (
+  `iddaerahakta` char(5) NOT NULL,
+  `namadaerahakta` varchar(100) DEFAULT NULL,
+  `statusaktif` enum('Aktif','Tidak Aktif') DEFAULT NULL,
+  PRIMARY KEY (`iddaerahakta`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+/*Data for the table `aktadaerah` */
+
+/*Table structure for table `aktanikah` */
+
+DROP TABLE IF EXISTS `aktanikah`;
+
+CREATE TABLE `aktanikah` (
+  `idakta` char(10) NOT NULL,
+  `noakta` varchar(25) DEFAULT NULL,
+  `tglakta` date DEFAULT NULL,
+  `tglcetak` date DEFAULT NULL,
+  `dilakukanoleh` varchar(100) DEFAULT NULL,
+  `idjemaatpria` char(10) DEFAULT NULL,
+  `namaayahpria` varchar(50) DEFAULT NULL,
+  `namaibupria` varchar(50) DEFAULT NULL,
+  `idjemaatwanita` char(10) DEFAULT NULL,
+  `namaayahwanita` varchar(50) DEFAULT NULL,
+  `namaibuwanita` varchar(50) DEFAULT NULL,
+  `iddaerahakta` char(5) DEFAULT NULL,
+  `idcabangakta` char(5) DEFAULT NULL,
+  PRIMARY KEY (`idakta`),
+  KEY `idjemaatpria` (`idjemaatpria`),
+  KEY `idjemaatwanita` (`idjemaatwanita`),
+  KEY `iddaerahakta` (`iddaerahakta`),
+  KEY `idcabangakta` (`idcabangakta`),
+  CONSTRAINT `aktanikah_ibfk_1` FOREIGN KEY (`idjemaatpria`) REFERENCES `jemaat` (`idjemaat`),
+  CONSTRAINT `aktanikah_ibfk_2` FOREIGN KEY (`idjemaatwanita`) REFERENCES `jemaat` (`idjemaat`),
+  CONSTRAINT `aktanikah_ibfk_3` FOREIGN KEY (`iddaerahakta`) REFERENCES `aktadaerah` (`iddaerahakta`),
+  CONSTRAINT `aktanikah_ibfk_4` FOREIGN KEY (`idcabangakta`) REFERENCES `cabanggereja` (`namacabang_slug`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+/*Data for the table `aktanikah` */
+
+/*Table structure for table `aktapenyerahananak` */
+
+DROP TABLE IF EXISTS `aktapenyerahananak`;
+
+CREATE TABLE `aktapenyerahananak` (
+  `idakta` char(10) NOT NULL,
+  `noakta` varchar(25) DEFAULT NULL,
+  `tglakta` date DEFAULT NULL,
+  `tglcetak` date DEFAULT NULL,
+  `dilakukanoleh` varchar(100) DEFAULT NULL,
+  `idjemaatanak` char(10) DEFAULT NULL,
+  `idjemaatayah` char(10) DEFAULT NULL,
+  `idjemaatibu` char(10) DEFAULT NULL,
+  `iddaerahakta` char(5) DEFAULT NULL,
+  `idcabangakta` char(5) DEFAULT NULL,
+  PRIMARY KEY (`idakta`),
+  KEY `idjemaatanak` (`idjemaatanak`),
+  KEY `idjemaatayah` (`idjemaatayah`),
+  KEY `idjemaatibu` (`idjemaatibu`),
+  KEY `iddaerahakta` (`iddaerahakta`),
+  KEY `idcabangakta` (`idcabangakta`),
+  CONSTRAINT `aktapenyerahananak_ibfk_1` FOREIGN KEY (`idjemaatanak`) REFERENCES `jemaat` (`idjemaat`),
+  CONSTRAINT `aktapenyerahananak_ibfk_2` FOREIGN KEY (`idjemaatayah`) REFERENCES `jemaat` (`idjemaat`),
+  CONSTRAINT `aktapenyerahananak_ibfk_3` FOREIGN KEY (`idjemaatibu`) REFERENCES `jemaat` (`idjemaat`),
+  CONSTRAINT `aktapenyerahananak_ibfk_4` FOREIGN KEY (`iddaerahakta`) REFERENCES `aktadaerah` (`iddaerahakta`),
+  CONSTRAINT `aktapenyerahananak_ibfk_5` FOREIGN KEY (`idcabangakta`) REFERENCES `aktacabang` (`idcabangakta`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+/*Data for the table `aktapenyerahananak` */
+
 /*Table structure for table `api_access` */
 
 DROP TABLE IF EXISTS `api_access`;
@@ -165,7 +280,7 @@ CREATE TABLE `backmenus` (
 
 /*Data for the table `backmenus` */
 
-insert  into `backmenus`(`idmenu`,`namamenu`,`parentidmenu`,`linkmenu`,`statusaktif`,`nomorurut`,`nlevels`,`fontawesomeicon`) values ('0001','Management Front End',NULL,NULL,'Aktif',1,0,'fas fa-newspaper'),('0002','Informasi Gereja','0001','infogereja','Aktif',2,1,NULL),('0003','Kategori Page/Halaman','0001','pageskategori','Aktif',3,1,NULL),('0004','Pages/ Halaman','0001','pages','Aktif',4,1,NULL),('0005','Kelola Menu','0001','frontmenus','Aktif',5,1,NULL),('0006','Cabang Gereja','0001','cabanggereja','Aktif',6,1,NULL),('C000','Care',NULL,NULL,'Aktif',300,0,'fas fa-people-carry'),('C100','Marriage Class','C000','registrasikelas/index/KL101','Aktif',301,1,NULL),('L000','Laporan',NULL,NULL,'Aktif',900,0,'fas fa-print'),('L100','Lap Data Jemaat','L000','lapdatajemaat','Aktif',901,1,NULL),('M000','Data Master',NULL,NULL,'Aktif',20,0,'fas fa-server'),('M100','Jemaat','M000','jemaat','Aktif',21,1,NULL),('M200','Pengkhotbah','M000','pengkhotbah2','Aktif',22,1,NULL),('M300','Group','M000','group','Aktif',23,1,NULL),('M400','Departement','M000','departement','Aktif',24,1,NULL),('M500','Disciples Community',NULL,NULL,'Aktif',50,0,'fas fa-address-card'),('M501','List Data DC','M500','disciplescommunity','Aktif',51,1,NULL),('M502','DC Member','M500','dcmember','Aktif',52,1,NULL),('M600','Hagah','M000','hagah','Aktif',28,1,NULL),('M700','Otorisasi Sistem','M000','otorisasi','Aktif',29,1,NULL),('N000','Next Step',NULL,NULL,'Aktif',200,0,'fas fa-walking'),('N100','Konfirmasi Pendaftaran','N000','konfirmasikelas','Aktif',201,1,NULL),('N200','Membership Class','N000','registrasikelas/index/KL001','Aktif',202,1,NULL),('N300','Fondation Class 1','N000','registrasikelas/index/KL002','Aktif',203,1,NULL),('N400','Fondation Class 2','N000','registrasikelas/index/KL003','Aktif',204,1,NULL),('N500','Fondation Class 3','N000','registrasikelas/index/KL004','Aktif',205,1,NULL),('N600','Grade 1','N000','registrasikelas/index/KL005','Aktif',206,1,NULL),('N700','Grade 2','N000','registrasikelas/index/KL006','Aktif',207,1,NULL),('N800','Grade 3','N000','registrasikelas/index/KL007','Aktif',208,1,NULL),('N900','Folunteer Class','N000','registrasikelas/index/KL008','Aktif',209,1,NULL),('P000','Penjadwalan',NULL,NULL,'Aktif',100,0,'fas fa-calendar-alt'),('P100','Kalender','P000','penjadwalan','Aktif',101,1,NULL),('P200','Pengajuan Jadwal','P000','pengajuanjadwal','Aktif',102,1,NULL),('P300','Konfirmasi Jadwal','P000','konfirmasijadwal','Aktif',104,1,NULL),('S000','Absen Kehadiran',NULL,NULL,'Aktif',40,0,'fa fa-clock'),('S100','Sunday Service','S000','absen/index/A01','Aktif',41,1,NULL),('S101','Easter','S000','absen/index/A02','Aktif',42,1,NULL),('S102','Ascension Day','S000','absen/index/A03','Aktif',43,1,NULL),('S103','Good Friday Service','S000','absen/index/A04','Aktif',44,1,NULL),('S104','Sunday Service','S000','absen/index/A05','Aktif',45,1,NULL),('S105','Esc Women','S000','absen/index/A06','Aktif',46,1,NULL),('S106','Esc Young Adult','S000','absen/index/A07','Aktif',47,1,NULL),('S107','Esc Youth','S000','absen/index/A08','Aktif',48,1,NULL),('S108','Esc Kids','S000','absen/index/A09','Aktif',49,1,NULL);
+insert  into `backmenus`(`idmenu`,`namamenu`,`parentidmenu`,`linkmenu`,`statusaktif`,`nomorurut`,`nlevels`,`fontawesomeicon`) values ('0001','Management Front End',NULL,NULL,'Aktif',1,0,'fas fa-newspaper'),('0002','Informasi Gereja','0001','infogereja','Aktif',2,1,NULL),('0003','Kategori Page/Halaman','0001','pageskategori','Aktif',3,1,NULL),('0004','Pages/ Halaman','0001','pages','Aktif',4,1,NULL),('0005','Kelola Menu','0001','frontmenus','Aktif',5,1,NULL),('0006','Cabang Gereja','0001','cabanggereja','Aktif',6,1,NULL),('C000','Care',NULL,NULL,'Aktif',300,0,'fas fa-people-carry'),('C100','Marriage Class','C000','registrasikelas/index/KL101','Aktif',301,1,NULL),('L000','Laporan',NULL,NULL,'Aktif',900,0,'fas fa-print'),('L100','Lap Data Jemaat','L000','lapdatajemaat','Aktif',901,1,NULL),('M000','Data Master',NULL,NULL,'Aktif',20,0,'fas fa-server'),('M100','Jemaat','M000','jemaat','Aktif',21,1,NULL),('M200','Pengkhotbah','M000','pengkhotbah2','Aktif',22,1,NULL),('M300','Group','M000','group','Aktif',23,1,NULL),('M400','Departement','M000','departement','Aktif',24,1,NULL),('M500','Disciples Community',NULL,NULL,'Aktif',50,0,'fas fa-address-card'),('M501','List Data DC','M500','disciplescommunity','Aktif',51,1,NULL),('M502','DC Member','M500','dcmember','Aktif',52,1,NULL),('M600','Hagah','M000','hagah','Aktif',28,1,NULL),('M700','Otorisasi Sistem','M000','otorisasi','Aktif',29,1,NULL),('N000','Next Step',NULL,NULL,'Aktif',200,0,'fas fa-walking'),('N100','Konfirmasi Pendaftaran','N000','konfirmasikelas','Aktif',201,1,NULL),('N200','Membership Class','N000','registrasikelas/index/KL001','Aktif',202,1,NULL),('N300','Fondation Class 1','N000','registrasikelas/index/KL002','Aktif',203,1,NULL),('N400','Fondation Class 2','N000','registrasikelas/index/KL003','Aktif',204,1,NULL),('N500','Fondation Class 3','N000','registrasikelas/index/KL004','Aktif',205,1,NULL),('N600','Grade 1','N000','registrasikelas/index/KL005','Aktif',206,1,NULL),('N700','Grade 2','N000','registrasikelas/index/KL006','Aktif',207,1,NULL),('N800','Grade 3','N000','registrasikelas/index/KL007','Aktif',208,1,NULL),('N900','Folunteer Class','N000','registrasikelas/index/KL008','Aktif',209,1,NULL),('P000','Penjadwalan',NULL,NULL,'Aktif',100,0,'fas fa-calendar-alt'),('P100','Kalender','P000','penjadwalan','Aktif',101,1,NULL),('P200','Pengajuan Jadwal','P000','pengajuanjadwal','Aktif',102,1,NULL),('P300','Konfirmasi Jadwal','P000','konfirmasijadwal','Aktif',104,1,NULL),('S000','Absen Kehadiran',NULL,NULL,'Aktif',40,0,'fa fa-clock'),('S100','Sunday Service','S000','absen/index/A01','Aktif',41,1,NULL),('S101','Easter','S000','absen/index/A02','Aktif',42,1,NULL),('S102','Ascension Day','S000','absen/index/A03','Aktif',43,1,NULL),('S103','Good Friday Service','S000','absen/index/A04','Aktif',44,1,NULL),('S104','Sunday Service','S000','absen/index/A05','Aktif',45,1,NULL),('S105','Esc Women','S000','absen/index/A06','Aktif',46,1,NULL),('S106','Esc Young Adult','S000','absen/index/A07','Aktif',47,1,NULL),('S107','Esc Youth','S000','absen/index/A08','Aktif',48,1,NULL),('S108','Esc Kids','S000','absen/index/A09','Aktif',49,1,NULL),('T000','Akta',NULL,NULL,'Aktif',400,0,'fas fa-paperclip'),('T100','Penyerahan Anak','T000','aktapenyerahananak','Aktif',401,1,NULL),('T200','Baptisan','T000','aktabaptisan','Aktif',402,2,NULL),('T300','Nikah','T000','aktanikah','Aktif',403,3,NULL);
 
 /*Table structure for table `cabanggereja` */
 
@@ -746,7 +861,7 @@ CREATE TABLE `jadwaleventregistrasi` (
 
 /*Data for the table `jadwaleventregistrasi` */
 
-insert  into `jadwaleventregistrasi`(`idregistrasi`,`idjadwalevent`,`tglregistrasi`,`idjemaat`,`statuskonfirmasi`,`tglkonfirmasi`,`idpenggunakonfirmasi`,`keterangankonfirmasi`) values ('2309090001','JE23080003','2023-09-09 12:31:25','2308260004','Ditolak','2023-09-30 13:49:46','2205280001','Data anda tidak lengkap. Mohon lengkapi terlebihdahulu kemudian lakukan pendaftaran lagi.');
+insert  into `jadwaleventregistrasi`(`idregistrasi`,`idjadwalevent`,`tglregistrasi`,`idjemaat`,`statuskonfirmasi`,`tglkonfirmasi`,`idpenggunakonfirmasi`,`keterangankonfirmasi`) values ('2309090001','JE23080003','2023-09-09 12:31:25','2308260004','Disetujui','2023-12-09 12:04:33','2205280001','');
 
 /*Table structure for table `jadwalibadahmingguan` */
 
@@ -997,7 +1112,7 @@ CREATE TABLE `otorisasimenus` (
 
 /*Data for the table `otorisasimenus` */
 
-insert  into `otorisasimenus`(`idotorisasi`,`idmenu`) values ('0001','0002'),('0001','0003'),('0001','0004'),('0001','0005'),('0001','M100'),('0001','M200'),('0001','M300'),('0001','M400'),('0001','M600'),('0001','M700'),('0001','M501'),('0001','M502'),('0001','P100'),('0001','P200'),('0001','P300'),('0001','N100'),('0001','N200'),('0001','N300'),('0001','N400'),('0001','N500'),('0001','N600'),('0001','N700'),('0001','N800'),('0001','N900'),('0001','C100'),('0002','0002'),('0002','P100'),('0002','P200'),('0002','P300'),('0000','0002'),('0000','0003'),('0000','0004'),('0000','0005'),('0000','0006'),('0000','M100'),('0000','M200'),('0000','M300'),('0000','M400'),('0000','M600'),('0000','M700'),('0000','S100'),('0000','S101'),('0000','S102'),('0000','S103'),('0000','S104'),('0000','S105'),('0000','S106'),('0000','S107'),('0000','S108'),('0000','M501'),('0000','M502'),('0000','P100'),('0000','P200'),('0000','P300'),('0000','N100'),('0000','N200'),('0000','N300'),('0000','N400'),('0000','N500'),('0000','N600'),('0000','N700'),('0000','N800'),('0000','N900'),('0000','C100'),('0000','L100');
+insert  into `otorisasimenus`(`idotorisasi`,`idmenu`) values ('0001','0002'),('0001','0003'),('0001','0004'),('0001','0005'),('0001','M100'),('0001','M200'),('0001','M300'),('0001','M400'),('0001','M600'),('0001','M700'),('0001','M501'),('0001','M502'),('0001','P100'),('0001','P200'),('0001','P300'),('0001','N100'),('0001','N200'),('0001','N300'),('0001','N400'),('0001','N500'),('0001','N600'),('0001','N700'),('0001','N800'),('0001','N900'),('0001','C100'),('0002','0002'),('0002','P100'),('0002','P200'),('0002','P300'),('0000','0002'),('0000','0003'),('0000','0004'),('0000','0005'),('0000','0006'),('0000','M100'),('0000','M200'),('0000','M300'),('0000','M400'),('0000','M600'),('0000','M700'),('0000','S100'),('0000','S101'),('0000','S102'),('0000','S103'),('0000','S104'),('0000','S105'),('0000','S106'),('0000','S107'),('0000','S108'),('0000','M501'),('0000','M502'),('0000','P100'),('0000','P200'),('0000','P300'),('0000','N100'),('0000','N200'),('0000','N300'),('0000','N400'),('0000','N500'),('0000','N600'),('0000','N700'),('0000','N800'),('0000','N900'),('0000','C100'),('0000','T100'),('0000','T200'),('0000','T300'),('0000','L100');
 
 /*Table structure for table `otorisasiuser` */
 
@@ -1176,7 +1291,7 @@ CREATE TABLE `registrasikelas` (
 
 /*Data for the table `registrasikelas` */
 
-insert  into `registrasikelas`(`idregistrasikelas`,`tglregistrasikelas`,`tglsertifikat`,`idjemaat`,`idkelas`,`tanggalinsert`,`tanggalupdate`,`idpengguna`,`nomorsertifikat`,`linkurlsertifikat`,`statuslulus`,`idjadwalevent`,`statuskonfirmasi`,`idpenggunakonfirmasi`,`tglkonfirmasi`,`keterangankonfirmasi`,`idregistrasijadwal`) values ('KL0012302080001',NULL,'2023-02-08','2207240001','KL001','2023-02-08 13:32:05','2023-02-08 13:32:05','2205280001','121212121',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),('KL0022302050001',NULL,'2023-02-05','2212140002','KL002','2023-02-05 12:33:30','2023-02-05 12:33:30','2205280001','',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),('KL0022302070001',NULL,'2023-02-07','2207240001','KL002','2023-02-07 13:47:54','2023-02-07 13:47:54','2205280001','122121212121',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),('KL0032302040001',NULL,'2023-02-03','2207240001','KL003','2023-02-04 13:59:59','2023-02-04 14:02:34','2205280001','81928192819',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),('KL0042302070001',NULL,'2023-02-07','2207240001','KL004','2023-02-07 13:48:26','2023-02-07 13:48:26','2205280001','1122334455',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),('KL0052302040001',NULL,'2023-02-04','2212140003','KL005','2023-02-04 16:17:22','2023-02-04 16:17:22','2205280001','12345',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),('KL0052302040002',NULL,'2023-02-04','2207240001','KL005','2023-02-04 16:21:32','2023-02-04 16:21:32','2205280001','',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),('KL0052302050001',NULL,'2023-02-28','2212140009','KL005','2023-02-05 17:16:47','2023-02-05 17:16:47','2205280001','',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),('KL0052302070001',NULL,'2023-02-07','2212130005','KL005','2023-02-07 13:47:26','2023-02-07 13:47:26','2205280001','123322123',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),('KL0052302080001',NULL,'2023-02-08','2207090001','KL005','2023-02-08 14:16:39','2023-02-08 14:16:39','2205280001','',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),('KL0062302070001',NULL,'2023-02-07','2207240001','KL006','2023-02-07 13:48:39','2023-02-07 13:48:39','2205280001','1122233344455',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),('KL0072302070001',NULL,'2023-02-07','2207240001','KL007','2023-02-07 13:48:59','2023-02-07 13:48:59','2205280001','11223344332211',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),('KL0082302070001',NULL,'2023-02-07','2207240001','KL008','2023-02-07 13:49:12','2023-02-07 13:49:12','2205280001','1122334444332211',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),('KL1012303040001',NULL,'2023-03-04','2207240001','KL101','2023-03-04 14:43:51','2023-03-04 14:43:51','2205280001','-',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),('KL1012303040002',NULL,'2023-03-04','2212140003','KL101','2023-03-04 15:07:26','2023-03-04 15:07:26','2205280001','-',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL);
+insert  into `registrasikelas`(`idregistrasikelas`,`tglregistrasikelas`,`tglsertifikat`,`idjemaat`,`idkelas`,`tanggalinsert`,`tanggalupdate`,`idpengguna`,`nomorsertifikat`,`linkurlsertifikat`,`statuslulus`,`idjadwalevent`,`statuskonfirmasi`,`idpenggunakonfirmasi`,`tglkonfirmasi`,`keterangankonfirmasi`,`idregistrasijadwal`) values ('KL0012302080001',NULL,'2023-02-08','2207240001','KL001','2023-02-08 13:32:05','2023-02-08 13:32:05','2205280001','121212121',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),('KL0022302050001',NULL,'2023-02-05','2212140002','KL002','2023-02-05 12:33:30','2023-02-05 12:33:30','2205280001','',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),('KL0022302070001',NULL,'2023-02-07','2207240001','KL002','2023-02-07 13:47:54','2023-02-07 13:47:54','2205280001','122121212121',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),('KL0022312090001','2023-12-09',NULL,'2308260004','KL002','2023-12-09 12:04:33','2023-12-09 12:04:33',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2309090001'),('KL0032302040001',NULL,'2023-02-03','2207240001','KL003','2023-02-04 13:59:59','2023-02-04 14:02:34','2205280001','81928192819',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),('KL0042302070001',NULL,'2023-02-07','2207240001','KL004','2023-02-07 13:48:26','2023-02-07 13:48:26','2205280001','1122334455',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),('KL0052302040001',NULL,'2023-02-04','2212140003','KL005','2023-02-04 16:17:22','2023-02-04 16:17:22','2205280001','12345',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),('KL0052302040002',NULL,'2023-02-04','2207240001','KL005','2023-02-04 16:21:32','2023-02-04 16:21:32','2205280001','',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),('KL0052302050001',NULL,'2023-02-28','2212140009','KL005','2023-02-05 17:16:47','2023-02-05 17:16:47','2205280001','',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),('KL0052302070001',NULL,'2023-02-07','2212130005','KL005','2023-02-07 13:47:26','2023-02-07 13:47:26','2205280001','123322123',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),('KL0052302080001',NULL,'2023-02-08','2207090001','KL005','2023-02-08 14:16:39','2023-02-08 14:16:39','2205280001','',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),('KL0062302070001',NULL,'2023-02-07','2207240001','KL006','2023-02-07 13:48:39','2023-02-07 13:48:39','2205280001','1122233344455',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),('KL0072302070001',NULL,'2023-02-07','2207240001','KL007','2023-02-07 13:48:59','2023-02-07 13:48:59','2205280001','11223344332211',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),('KL0082302070001',NULL,'2023-02-07','2207240001','KL008','2023-02-07 13:49:12','2023-02-07 13:49:12','2205280001','1122334444332211',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),('KL1012303040001',NULL,'2023-03-04','2207240001','KL101','2023-03-04 14:43:51','2023-03-04 14:43:51','2205280001','-',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL),('KL1012303040002',NULL,'2023-03-04','2212140003','KL101','2023-03-04 15:07:26','2023-03-04 15:07:26','2205280001','-',NULL,1,NULL,NULL,NULL,NULL,NULL,NULL);
 
 /*Table structure for table `registrasikelasmateri` */
 
@@ -1258,7 +1373,7 @@ CREATE TABLE `sidemenus` (
 
 /*Data for the table `sidemenus` */
 
-insert  into `sidemenus`(`idotorisasi`,`idmenu`,`isdropdown`,`menuonselected`) values ('0001','0002',0,''),('0001','0001',1,'0002,0003,0004,0005'),('0001','0003',0,''),('0001','0004',0,''),('0001','0005',0,''),('0001','M100',0,''),('0001','M000',1,'M100,M200,M300,M400,M600,M700'),('0001','M200',0,''),('0001','M300',0,''),('0001','M400',0,''),('0001','M600',0,''),('0001','M700',0,''),('0001','M501',0,''),('0001','M500',1,'M501,M502'),('0001','M502',0,''),('0001','P100',0,''),('0001','P000',1,'P100,P200,P300'),('0001','P200',0,''),('0001','P300',0,''),('0001','N100',0,''),('0001','N000',1,'N100,N200,N300,N400,N500,N600,N700,N800,N900'),('0001','N200',0,''),('0001','N300',0,''),('0001','N400',0,''),('0001','N500',0,''),('0001','N600',0,''),('0001','N700',0,''),('0001','N800',0,''),('0001','N900',0,''),('0001','C100',0,''),('0001','C000',1,'C100'),('0002','0002',0,''),('0002','0001',1,'0002,0003,0004,0005'),('0002','P100',0,''),('0002','P000',1,'P100,P200,P300'),('0002','P200',0,''),('0002','P300',0,''),('0000','0002',0,''),('0000','0001',1,'0002,0003,0004,0005,0006'),('0000','0003',0,''),('0000','0004',0,''),('0000','0005',0,''),('0000','0006',0,''),('0000','M100',0,''),('0000','M000',1,'M100,M200,M300,M400,M600,M700'),('0000','M200',0,''),('0000','M300',0,''),('0000','M400',0,''),('0000','M600',0,''),('0000','M700',0,''),('0000','S100',0,''),('0000','S000',1,'S100,S101,S102,S103,S104,S105,S106,S107,S108'),('0000','S101',0,''),('0000','S102',0,''),('0000','S103',0,''),('0000','S104',0,''),('0000','S105',0,''),('0000','S106',0,''),('0000','S107',0,''),('0000','S108',0,''),('0000','M501',0,''),('0000','M500',1,'M501,M502'),('0000','M502',0,''),('0000','P100',0,''),('0000','P000',1,'P100,P200,P300'),('0000','P200',0,''),('0000','P300',0,''),('0000','N100',0,''),('0000','N000',1,'N100,N200,N300,N400,N500,N600,N700,N800,N900'),('0000','N200',0,''),('0000','N300',0,''),('0000','N400',0,''),('0000','N500',0,''),('0000','N600',0,''),('0000','N700',0,''),('0000','N800',0,''),('0000','N900',0,''),('0000','C100',0,''),('0000','C000',1,'C100'),('0000','L100',0,''),('0000','L000',1,'L100');
+insert  into `sidemenus`(`idotorisasi`,`idmenu`,`isdropdown`,`menuonselected`) values ('0001','0002',0,''),('0001','0001',1,'0002,0003,0004,0005'),('0001','0003',0,''),('0001','0004',0,''),('0001','0005',0,''),('0001','M100',0,''),('0001','M000',1,'M100,M200,M300,M400,M600,M700'),('0001','M200',0,''),('0001','M300',0,''),('0001','M400',0,''),('0001','M600',0,''),('0001','M700',0,''),('0001','M501',0,''),('0001','M500',1,'M501,M502'),('0001','M502',0,''),('0001','P100',0,''),('0001','P000',1,'P100,P200,P300'),('0001','P200',0,''),('0001','P300',0,''),('0001','N100',0,''),('0001','N000',1,'N100,N200,N300,N400,N500,N600,N700,N800,N900'),('0001','N200',0,''),('0001','N300',0,''),('0001','N400',0,''),('0001','N500',0,''),('0001','N600',0,''),('0001','N700',0,''),('0001','N800',0,''),('0001','N900',0,''),('0001','C100',0,''),('0001','C000',1,'C100'),('0002','0002',0,''),('0002','0001',1,'0002,0003,0004,0005'),('0002','P100',0,''),('0002','P000',1,'P100,P200,P300'),('0002','P200',0,''),('0002','P300',0,''),('0000','0002',0,''),('0000','0001',1,'0002,0003,0004,0005,0006'),('0000','0003',0,''),('0000','0004',0,''),('0000','0005',0,''),('0000','0006',0,''),('0000','M100',0,''),('0000','M000',1,'M100,M200,M300,M400,M600,M700'),('0000','M200',0,''),('0000','M300',0,''),('0000','M400',0,''),('0000','M600',0,''),('0000','M700',0,''),('0000','S100',0,''),('0000','S000',1,'S100,S101,S102,S103,S104,S105,S106,S107,S108'),('0000','S101',0,''),('0000','S102',0,''),('0000','S103',0,''),('0000','S104',0,''),('0000','S105',0,''),('0000','S106',0,''),('0000','S107',0,''),('0000','S108',0,''),('0000','M501',0,''),('0000','M500',1,'M501,M502'),('0000','M502',0,''),('0000','P100',0,''),('0000','P000',1,'P100,P200,P300'),('0000','P200',0,''),('0000','P300',0,''),('0000','N100',0,''),('0000','N000',1,'N100,N200,N300,N400,N500,N600,N700,N800,N900'),('0000','N200',0,''),('0000','N300',0,''),('0000','N400',0,''),('0000','N500',0,''),('0000','N600',0,''),('0000','N700',0,''),('0000','N800',0,''),('0000','N900',0,''),('0000','C100',0,''),('0000','C000',1,'C100'),('0000','T100',0,''),('0000','T000',1,'T100,T200,T300'),('0000','T200',0,''),('0000','T300',0,''),('0000','L100',0,''),('0000','L000',1,'L100');
 
 /*Table structure for table `site_log` */
 
@@ -2092,6 +2207,31 @@ DROP TABLE IF EXISTS `v_absensi_ibadah_mingguan`;
  `jamselesai` time 
 )*/;
 
+/*Table structure for table `v_aktapenyerahananak` */
+
+DROP TABLE IF EXISTS `v_aktapenyerahananak`;
+
+/*!50001 DROP VIEW IF EXISTS `v_aktapenyerahananak` */;
+/*!50001 DROP TABLE IF EXISTS `v_aktapenyerahananak` */;
+
+/*!50001 CREATE TABLE  `v_aktapenyerahananak`(
+ `idakta` char(10) ,
+ `noakta` varchar(25) ,
+ `tglakta` date ,
+ `tglcetak` date ,
+ `dilakukanoleh` varchar(100) ,
+ `idjemaatanak` char(10) ,
+ `namajemaatanak` varchar(100) ,
+ `idjemaatayah` char(10) ,
+ `namajemaatayah` varchar(100) ,
+ `idjemaatibu` char(10) ,
+ `namajemaatibu` varchar(100) ,
+ `iddaerahakta` char(5) ,
+ `namadaerahakta` varchar(100) ,
+ `idcabangakta` char(5) ,
+ `namacabangakta` varchar(50) 
+)*/;
+
 /*Table structure for table `v_calenderevent` */
 
 DROP TABLE IF EXISTS `v_calenderevent`;
@@ -2746,6 +2886,13 @@ DROP TABLE IF EXISTS `v_sidemenus`;
 /*!50001 DROP VIEW IF EXISTS `v_absensi_ibadah_mingguan` */;
 
 /*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_absensi_ibadah_mingguan` AS select `absen`.`idabsen` AS `idabsen`,`absen`.`tglabsen` AS `tglabsen`,`absen`.`jumlahhadir` AS `jumlahhadir`,`absen`.`idabsenjenis` AS `idabsenjenis`,`absenjenis`.`namaabsenjenis` AS `namaabsenjenis`,`absen`.`idabsenlokasi` AS `idabsenlokasi`,`absenlokasi`.`namaabsenlokasi` AS `namaabsenlokasi`,`absen`.`idjemaatcounter` AS `idjemaatcounter`,`jemaat`.`namalengkap` AS `namalengkap`,`absen`.`idsesi` AS `idsesi`,case when `sesiibadahminggu`.`namasesi` is null then 'Tidak ada' else `sesiibadahminggu`.`namasesi` end AS `namasesi`,`sesiibadahminggu`.`jammulai` AS `jammulai`,`sesiibadahminggu`.`jamselesai` AS `jamselesai` from ((((`absen` join `absenjenis` on(`absen`.`idabsenjenis` = `absenjenis`.`idabsenjenis`)) join `absenlokasi` on(`absen`.`idabsenlokasi` = `absenlokasi`.`idabsenlokasi`)) join `jemaat` on(`absen`.`idjemaatcounter` = `jemaat`.`idjemaat`)) left join `sesiibadahminggu` on(`absen`.`idsesi` = `sesiibadahminggu`.`idsesi`)) */;
+
+/*View structure for view v_aktapenyerahananak */
+
+/*!50001 DROP TABLE IF EXISTS `v_aktapenyerahananak` */;
+/*!50001 DROP VIEW IF EXISTS `v_aktapenyerahananak` */;
+
+/*!50001 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER VIEW `v_aktapenyerahananak` AS select `aktapenyerahananak`.`idakta` AS `idakta`,`aktapenyerahananak`.`noakta` AS `noakta`,`aktapenyerahananak`.`tglakta` AS `tglakta`,`aktapenyerahananak`.`tglcetak` AS `tglcetak`,`aktapenyerahananak`.`dilakukanoleh` AS `dilakukanoleh`,`aktapenyerahananak`.`idjemaatanak` AS `idjemaatanak`,`jemaat`.`namalengkap` AS `namajemaatanak`,`aktapenyerahananak`.`idjemaatayah` AS `idjemaatayah`,`jemaat_1`.`namalengkap` AS `namajemaatayah`,`aktapenyerahananak`.`idjemaatibu` AS `idjemaatibu`,`jemaat_2`.`namalengkap` AS `namajemaatibu`,`aktapenyerahananak`.`iddaerahakta` AS `iddaerahakta`,`aktadaerah`.`namadaerahakta` AS `namadaerahakta`,`aktapenyerahananak`.`idcabangakta` AS `idcabangakta`,`aktacabang`.`namacabangakta` AS `namacabangakta` from (((((`aktapenyerahananak` join `jemaat` on(`aktapenyerahananak`.`idjemaatanak` = `jemaat`.`idjemaat`)) join `jemaat` `jemaat_1` on(`jemaat_1`.`idjemaat` = `aktapenyerahananak`.`idjemaatayah`)) join `aktadaerah` on(`aktapenyerahananak`.`iddaerahakta` = `aktadaerah`.`iddaerahakta`)) join `aktacabang` on(`aktapenyerahananak`.`idcabangakta` = `aktacabang`.`idcabangakta`)) join `jemaat` `jemaat_2` on(`aktapenyerahananak`.`idjemaatibu` = `jemaat_2`.`idjemaat`)) */;
 
 /*View structure for view v_calenderevent */
 
