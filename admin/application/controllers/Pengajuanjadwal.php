@@ -192,17 +192,17 @@ class Pengajuanjadwal extends MY_Controller {
       	};
 
         $rowPengajuan = $rsdata->row();
-        if ($rowPengajuan->statuskonfirmasi!='Menunggu') {
-          $pesan = '<div>
-                        <div class="alert alert-danger alert-dismissable">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-                            <strong>Uppss!</strong> Pengajuan ini sudah '.$rowPengajuan->statuskonfirmasi.'. Tidak bisa dihapus lagi! 
-                        </div>
-                    </div>';
-            $this->session->set_flashdata('pesan', $pesan);
-            redirect('pengajuanjadwal');
-            exit();  
-        }
+        // if ($rowPengajuan->statuskonfirmasi!='Menunggu') {
+        //   $pesan = '<div>
+        //                 <div class="alert alert-danger alert-dismissable">
+        //                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+        //                     <strong>Uppss!</strong> Pengajuan ini sudah '.$rowPengajuan->statuskonfirmasi.'. Tidak bisa dihapus lagi! 
+        //                 </div>
+        //             </div>';
+        //     $this->session->set_flashdata('pesan', $pesan);
+        //     redirect('pengajuanjadwal');
+        //     exit();  
+        // }
 
         $hapus = $this->Pengajuanjadwal_model->hapus($idjadwalevent);
         if ($hapus) {       

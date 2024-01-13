@@ -43,7 +43,6 @@
 
                   <input type="hidden" name="idgroup" id="idgroup">                      
 
-                  <h5><?php echo terbilang('1200000', 1) ?></h5>
                   <div class="form-group row required">
                     <label for="" class="col-md-3 col-form-label">Nomor Akta</label>
                     <div class="col-md-9">
