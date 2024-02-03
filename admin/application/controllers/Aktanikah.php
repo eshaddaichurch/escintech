@@ -1,36 +1,36 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Aktapenyerahananak extends MY_Controller {
+class Aktanikah extends MY_Controller {
 
 	public function __construct()
     {
         parent::__construct();
         $this->islogin();
-        $this->load->model('Aktapenyerahananak_model');
+        $this->load->model('Aktanikah_model');
         $this->load->model('Jemaat_model');
-        $this->session->set_userdata( 'IDMENUSELECTED', 'T100' );
+        $this->session->set_userdata( 'IDMENUSELECTED', 'T300' );
         $this->cekOtorisasi();
     }
 
     public function index()
     {
-        $data['menu'] = 'aktapenyerahananak';
-        $this->load->view('aktapenyerahananak/listdata', $data);
+        $data['menu'] = 'aktanikah';
+        $this->load->view('aktanikah/listdata', $data);
     }   
 
     public function tambah()
     {       
         $data['idakta'] = '';        
-        $data['menu'] = 'aktapenyerahananak';  
-        $this->load->view('aktapenyerahananak/form', $data);
+        $data['menu'] = 'aktanikah';  
+        $this->load->view('aktanikah/form', $data);
     }
 
     public function edit($idakta)
     {       
         $idakta = $this->encrypt->decode($idakta);
 
-        if ($this->Aktapenyerahananak_model->get_by_id($idakta)->num_rows()<1) {
+        if ($this->Aktanikah_model->get_by_id($idakta)->num_rows()<1) {
             $pesan = '<div>
                         <div class="alert alert-danger alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -38,17 +38,17 @@ class Aktapenyerahananak extends MY_Controller {
                         </div>
                     </div>';
             $this->session->set_flashdata('pesan', $pesan);
-            redirect('aktapenyerahananak');
+            redirect('aktanikah');
             exit();
         };
         $data['idakta'] =$idakta;        
-        $data['menu'] = 'aktapenyerahananak';
-        $this->load->view('aktapenyerahananak/form', $data);
+        $data['menu'] = 'aktanikah';
+        $this->load->view('aktanikah/form', $data);
     }
 
     public function datatablesource()
     {
-        $RsData = $this->Aktapenyerahananak_model->get_datatables();
+        $RsData = $this->Aktanikah_model->get_datatables();
         $no = $_POST['start'];
         $data = array();
 
@@ -59,19 +59,20 @@ class Aktapenyerahananak extends MY_Controller {
                 $row = array();
                 $row[] = $no;
                 $row[] = $rowdata->noakta.' - '.$rowdata->tglakta;
-                $row[] = $rowdata->namajemaatanak;
+                $row[] = $rowdata->namajemaatpria;
+                $row[] = $rowdata->namajemaatwanita;
                 $row[] = $rowdata->dilakukanoleh;
                 $row[] = $rowdata->namadaerahakta;
-                $row[] = '<a href="'.site_url( 'aktapenyerahananak/edit/'.$this->encrypt->encode($rowdata->idakta) ).'" class="btn btn-sm btn-warning btn-circle"><i class="fa fa-edit"></i></a> | 
-                        <a href="'.site_url('aktapenyerahananak/delete/'.$this->encrypt->encode($rowdata->idakta) ).'" class="btn btn-sm btn-danger btn-circle" id="hapus"><i class="fa fa-trash"></i></a>';
+                $row[] = '<a href="'.site_url( 'aktanikah/edit/'.$this->encrypt->encode($rowdata->idakta) ).'" class="btn btn-sm btn-warning btn-circle"><i class="fa fa-edit"></i></a> | 
+                        <a href="'.site_url('aktanikah/delete/'.$this->encrypt->encode($rowdata->idakta) ).'" class="btn btn-sm btn-danger btn-circle" id="hapus"><i class="fa fa-trash"></i></a>';
                 $data[] = $row;
             }
         }
 
         $output = array(
                         "draw" => $_POST['draw'],
-                        "recordsTotal" => $this->Aktapenyerahananak_model->count_all(),
-                        "recordsFiltered" => $this->Aktapenyerahananak_model->count_filtered(),
+                        "recordsTotal" => $this->Aktanikah_model->count_all(),
+                        "recordsFiltered" => $this->Aktanikah_model->count_filtered(),
                         "data" => $data,
                 );
         echo json_encode($output);
@@ -80,7 +81,7 @@ class Aktapenyerahananak extends MY_Controller {
     public function delete($idakta)
     {
         $idakta = $this->encrypt->decode($idakta);  
-        $rsdata = $this->Aktapenyerahananak_model->get_by_id($idakta);
+        $rsdata = $this->Aktanikah_model->get_by_id($idakta);
         if ($rsdata->num_rows()<1) {
             $pesan = '<div>
                         <div class="alert alert-danger alert-dismissable">
@@ -89,11 +90,11 @@ class Aktapenyerahananak extends MY_Controller {
                         </div>
                     </div>';
             $this->session->set_flashdata('pesan', $pesan);
-            redirect('aktapenyerahananak');
+            redirect('aktanikah');
             exit();
         };
 
-        $hapus = $this->Aktapenyerahananak_model->hapus($idakta);
+        $hapus = $this->Aktanikah_model->hapus($idakta);
         if ($hapus) {       
             $pesan = '<div>
                         <div class="alert alert-success alert-dismissable">
@@ -112,7 +113,7 @@ class Aktapenyerahananak extends MY_Controller {
         }
 
         $this->session->set_flashdata('pesan', $pesan);
-        redirect('aktapenyerahananak');        
+        redirect('aktanikah');        
 
     }
 
@@ -122,9 +123,12 @@ class Aktapenyerahananak extends MY_Controller {
         $noakta        = $this->input->post('noakta');
         $tglakta        = $this->input->post('tglakta');
         $dilakukanoleh        = $this->input->post('dilakukanoleh');
-        $idjemaatayah        = $this->input->post('idjemaatayah');
-        $idjemaatibu        = $this->input->post('idjemaatibu');
-        $idjemaatanak        = $this->input->post('idjemaatanak');
+        $namaayahpria        = $this->input->post('namaayahpria');
+        $namaibupria        = $this->input->post('namaibupria');
+        $idjemaatpria        = $this->input->post('idjemaatpria');
+        $namaayahwanita        = $this->input->post('namaayahwanita');
+        $namaibuwanita        = $this->input->post('namaibuwanita');
+        $idjemaatwanita        = $this->input->post('idjemaatwanita');
         $iddaerahakta        = $this->input->post('iddaerahakta');
         $idcabangakta        = $this->input->post('idcabangakta');
         
@@ -132,20 +136,25 @@ class Aktapenyerahananak extends MY_Controller {
         
         if ( $idakta=='' ) {  
 
-            $idakta = $this->db->query("select create_idaktaanak('".date('Y-m-d')."') as idakta")->row()->idakta;
+            $idakta = $this->db->query("select create_idaktanikah('".date('Y-m-d')."') as idakta")->row()->idakta;
 
             $data = array(
                             'idakta'   => $idakta, 
                             'noakta'   => $noakta, 
                             'tglakta'   => $tglakta, 
                             'dilakukanoleh'   => $dilakukanoleh, 
-                            'idjemaatanak'   => $idjemaatanak, 
-                            'idjemaatayah'   => $idjemaatayah, 
-                            'idjemaatibu'   => $idjemaatibu, 
+                            'idjemaatpria'   => $idjemaatpria, 
+                            'namaayahpria'   => $namaayahpria, 
+                            'namaibupria'   => $namaibupria, 
+                            'idjemaatwanita'   => $idjemaatwanita, 
+                            'namaayahwanita'   => $namaayahwanita, 
+                            'namaibuwanita'   => $namaibuwanita, 
                             'iddaerahakta'   => $iddaerahakta, 
                             'idcabangakta'   => $idcabangakta, 
                         );
-            $simpan = $this->Aktapenyerahananak_model->simpan($data);      
+            // var_dump($data);
+            // exit();
+            $simpan = $this->Aktanikah_model->simpan($data);      
         }else{ 
 
             $data = array(
@@ -153,13 +162,16 @@ class Aktapenyerahananak extends MY_Controller {
                             'noakta'   => $noakta, 
                             'tglakta'   => $tglakta, 
                             'dilakukanoleh'   => $dilakukanoleh, 
-                            'idjemaatanak'   => $idjemaatanak, 
-                            'idjemaatayah'   => $idjemaatayah, 
-                            'idjemaatibu'   => $idjemaatibu, 
+                            'idjemaatpria'   => $idjemaatpria, 
+                            'namaayahpria'   => $namaayahpria, 
+                            'namaibupria'   => $namaibupria, 
+                            'idjemaatwanita'   => $idjemaatwanita, 
+                            'namaayahwanita'   => $namaayahwanita, 
+                            'namaibuwanita'   => $namaibuwanita, 
                             'iddaerahakta'   => $iddaerahakta, 
                             'idcabangakta'   => $idcabangakta, 
                         );
-            $simpan = $this->Aktapenyerahananak_model->update($data, $idakta);
+            $simpan = $this->Aktanikah_model->update($data, $idakta);
         }
 
         if ($simpan) {
@@ -181,13 +193,13 @@ class Aktapenyerahananak extends MY_Controller {
         }
 
         $this->session->set_flashdata('pesan', $pesan);
-        redirect('aktapenyerahananak');   
+        redirect('aktanikah');   
     }
     
     public function get_edit_data()
     {
         $idakta = $this->input->post('idakta');
-        $RsData = $this->Aktapenyerahananak_model->get_by_id($idakta)->row();
+        $RsData = $this->Aktanikah_model->get_by_id($idakta)->row();
 
         
 
@@ -197,9 +209,12 @@ class Aktapenyerahananak extends MY_Controller {
                             'tglakta'     =>  $RsData->tglakta,  
                             'tglcetak'     =>  $RsData->tglcetak,  
                             'dilakukanoleh'     =>  $RsData->dilakukanoleh,  
-                            'idjemaatanak'     =>  $RsData->idjemaatanak,  
-                            'idjemaatayah'     =>  $RsData->idjemaatayah,  
-                            'idjemaatibu'     =>  $RsData->idjemaatibu,  
+                            'idjemaatpria'     =>  $RsData->idjemaatpria,  
+                            'namaayahpria'     =>  $RsData->namaayahpria,  
+                            'namaibupria'     =>  $RsData->namaibupria,  
+                            'idjemaatwanita'     =>  $RsData->idjemaatwanita,  
+                            'namaayahwanita'     =>  $RsData->namaayahwanita,  
+                            'namaibuwanita'     =>  $RsData->namaibuwanita,  
                             'iddaerahakta'     =>  $RsData->iddaerahakta,  
                             'idcabangakta'     =>  $RsData->idcabangakta,  
                         );
@@ -216,7 +231,7 @@ class Aktapenyerahananak extends MY_Controller {
                             'namadaerahakta' => $namadaerah, 
                             'statusaktif' => 'Aktif', 
                             );
-        $simpan = $this->Aktapenyerahananak_model->simpandaerah($dataDaerah);
+        $simpan = $this->Aktanikah_model->simpandaerah($dataDaerah);
         if ($simpan) {
             echo json_encode(array('success' => true));
         }else{
@@ -237,7 +252,7 @@ class Aktapenyerahananak extends MY_Controller {
                             'formatnomorakta' => $formatnomorakta, 
                             'statusaktif' => 'Aktif', 
                             );
-        $simpan = $this->Aktapenyerahananak_model->simpancabang($dataCabang);
+        $simpan = $this->Aktanikah_model->simpancabang($dataCabang);
         if ($simpan) {
             echo json_encode(array('success' => true));
         }else{
@@ -247,5 +262,5 @@ class Aktapenyerahananak extends MY_Controller {
 
 }
 
-/* End of file Aktapenyerahananak.php */
-/* Location: ./application/controllers/Aktapenyerahananak.php */
+/* End of file Aktanikah.php */
+/* Location: ./application/controllers/Aktanikah.php */

@@ -7,12 +7,12 @@
 
 <div class="row" id="toni-breadcrumb">
     <div class="col-6">
-        <h4 class="text-dark mt-2">Akta Penyerahan Anak</h4>
+        <h4 class="text-dark mt-2">Akta Baptisan</h4>
     </div>  
     <div class="col-6">
       <ol class="breadcrumb float-sm-right">
         <li class="breadcrumb-item"><a href="<?php echo(site_url()) ?>">Home</a></li>
-        <li class="breadcrumb-item"><a href="<?php echo(site_url('aktapenyerahananak')) ?>">Akta Penyerahan Anak</a></li>
+        <li class="breadcrumb-item"><a href="<?php echo(site_url('aktabaptisan')) ?>">Akta Baptisan</a></li>
         <li class="breadcrumb-item active" id="lblactive"></li>
       </ol>
       
@@ -24,7 +24,7 @@
 
 
 
-      <form action="<?php echo(site_url('aktapenyerahananak/simpan')) ?>" method="post" id="form" enctype="multipart/form-data">                      
+      <form action="<?php echo(site_url('aktabaptisan/simpan')) ?>" method="post" id="form" enctype="multipart/form-data">                      
         <div class="row">
           <div class="col-md-12">
             <div class="card" id="cardcontent">
@@ -39,7 +39,7 @@
                     ?>
                   </div> 
 
-                  <h3 class="text-gray">Data Akta Penyerahan Anak</h3><hr>                    
+                  <h3 class="text-gray">Data Akta Baptisan</h3><hr>                    
 
                   <input type="hidden" name="idakta" id="idakta">                      
 
@@ -64,14 +64,14 @@
                   </div>
 
                   <div class="form-group row required">
-                    <label for="" class="col-md-3 col-form-label">Nama Ayah</label>
+                    <label for="" class="col-md-3 col-form-label">Nama Jemaat</label>
                     <div class="col-md-9">
-                      <select name="idjemaatayah" id="idjemaatayah" class="form-control select2">
-                        <option value="">Pilih nama ayah ...</option>
+                      <select name="idjemaat" id="idjemaat" class="form-control select2">
+                        <option value="">Pilih nama jemaat ...</option>
                         <?php  
-                          $rsJemaatAyah = $this->App->getJemaat();
-                          if ($rsJemaatAyah->num_rows()>0) {
-                            foreach ($rsJemaatAyah->result() as $row) {
+                          $rsjemaat = $this->App->getJemaat();
+                          if ($rsjemaat->num_rows()>0) {
+                            foreach ($rsjemaat->result() as $row) {
                               echo '
                                   <option value="'.$row->idjemaat.'">'.$row->namalengkap.'</option>
                               ';
@@ -79,48 +79,23 @@
                           }
                         ?>
                       </select>
+                    </div>
+                  </div>
+
+
+                  <div class="form-group row required">
+                    <label for="" class="col-md-3 col-form-label">Nama Ayah</label>
+                    <div class="col-md-9">
+                      <input type="text" name="namaayah" id="namaayah" class="form-control" placeholder="nama ayah">
                     </div>
                   </div>
 
                   <div class="form-group row required">
                     <label for="" class="col-md-3 col-form-label">Nama Ibu</label>
                     <div class="col-md-9">
-                      <select name="idjemaatibu" id="idjemaatibu" class="form-control select2">
-                        <option value="">Pilih nama ibu ...</option>
-                        <?php  
-                          $rsJemaatIbu = $this->App->getJemaat();
-                          if ($rsJemaatIbu->num_rows()>0) {
-                            foreach ($rsJemaatIbu->result() as $row) {
-                              echo '
-                                  <option value="'.$row->idjemaat.'">'.$row->namalengkap.'</option>
-                              ';
-                            }
-                          }
-                        ?>
-                      </select>
+                      <input type="text" name="namaibu" id="namaibu" class="form-control" placeholder="nama ibu">
                     </div>
                   </div>
-
-                  <div class="form-group row required">
-                    <label for="" class="col-md-3 col-form-label">Nama Anak</label>
-                    <div class="col-md-9">
-                      <select name="idjemaatanak" id="idjemaatanak" class="form-control select2">
-                        <option value="">Pilih nama anak ...</option>
-                        <?php  
-                          $rsJemaatAnak = $this->App->getJemaat();
-                          if ($rsJemaatAnak->num_rows()>0) {
-                            foreach ($rsJemaatAnak->result() as $row) {
-                              echo '
-                                  <option value="'.$row->idjemaat.'">'.$row->namalengkap.'</option>
-                              ';
-                            }
-                          }
-                        ?>
-                      </select>
-                    </div>
-                  </div>
-
-
 
                   <div class="form-group row required">
                     <label for="" class="col-md-3 col-form-label">Nama Daerah TTD</label>
@@ -173,7 +148,7 @@
 
               <div class="card-footer">
                 <button type="submit" class="btn btn-primary float-right"><i class="fa fa-save"></i> Simpan</button>
-                <a href="<?php echo(site_url('aktapenyerahananak')) ?>" class="btn btn-default float-right mr-1 ml-1"><i class="fa fa-chevron-circle-left"></i> Kembali</a>
+                <a href="<?php echo(site_url('aktabaptisan')) ?>" class="btn btn-default float-right mr-1 ml-1"><i class="fa fa-chevron-circle-left"></i> Kembali</a>
               </div>
             </div> <!-- /.card -->
           </div> <!-- /.col -->
@@ -271,7 +246,7 @@
 
           $.ajax({
               type        : 'POST', 
-              url         : '<?php echo site_url("aktapenyerahananak/get_edit_data") ?>', 
+              url         : '<?php echo site_url("aktabaptisan/get_edit_data") ?>', 
               data        : {idakta: idakta}, 
               dataType    : 'json', 
               encode      : true
@@ -281,19 +256,19 @@
             $("#idakta").val(result.idakta);
             $("#noakta").val(result.noakta);
             $("#dilakukanoleh").val(result.dilakukanoleh);
-            $("#idjemaatanak").val(result.idjemaatanak).trigger('change');
-            $("#idjemaatayah").val(result.idjemaatayah).trigger('change');
-            $("#idjemaatibu").val(result.idjemaatibu).trigger('change');
+            $("#idjemaat").val(result.idjemaat).trigger('change');
+            $("#namaayah").val(result.namaayah);
+            $("#namaibu").val(result.namaibu);
             $("#iddaerahakta").val(result.iddaerahakta).trigger('change');
             $("#idcabangakta").val(result.idcabangakta).trigger('change');
           }); 
 
 
-          $("#lbljudul").html("Edit Data Akta Penyerahan Anak");
+          $("#lbljudul").html("Edit Data Akta Baptisan");
           $("#lblactive").html("Edit");
 
     }else{
-          $("#lbljudul").html("Tambah Data Akta Penyerahan Anak");
+          $("#lbljudul").html("Tambah Data Akta Baptisan");
           $("#lblactive").html("Tambah");
     }     
 
@@ -326,21 +301,21 @@
             },
           }
         },
-        idjemaatayah: {
+        namaayah: {
           validators:{
             notEmpty: {
                 message: "Nama ayah tidak boleh kosong"
             },
           }
         },
-        idjemaatibu: {
+        namaibu: {
           validators:{
             notEmpty: {
                 message: "Nama ibu tidak boleh kosong"
             },
           }
         },
-        idjemaatanak: {
+        idjemaat: {
           validators:{
             notEmpty: {
                 message: "Nama anak tidak boleh kosong"
@@ -377,7 +352,7 @@
 
     var namadaerah = $('#namadaerah').val();
     $.ajax({
-      url: '<?php echo site_url('aktapenyerahananak/simpandaerah') ?>',
+      url: '<?php echo site_url('aktabaptisan/simpandaerah') ?>',
       type: 'POST',
       dataType: 'json',
       data: {'namadaerah': namadaerah},
@@ -408,7 +383,7 @@
     var formatnomorakta = $('#formatnomorakta').val();
 
     $.ajax({
-      url: '<?php echo site_url('aktapenyerahananak/simpancabang') ?>',
+      url: '<?php echo site_url('aktabaptisan/simpancabang') ?>',
       type: 'POST',
       dataType: 'json',
       data: {'namacabang': namacabang, 'formatnomorakta': formatnomorakta},

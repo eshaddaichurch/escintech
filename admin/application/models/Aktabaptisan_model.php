@@ -1,10 +1,10 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Aktapenyerahananak_model extends CI_Model {
+class Aktabaptisan_model extends CI_Model {
 
-	var $tabelview = 'v_aktapenyerahananak';
-    var $tabel     = 'aktapenyerahananak';
+	var $tabelview = 'v_aktabaptisan';
+    var $tabel     = 'aktabaptisan';
     var $idakta = 'idakta';
 
     var $column_order = array(null,'idakta','namajemaatanak','dilakukanoleh', 'namaderahakta', null );
@@ -106,5 +106,5 @@ class Aktapenyerahananak_model extends CI_Model {
 
 
 
-/* End of file Aktapenyerahananak_model.php */
-/* Location: ./application/models/Aktapenyerahananak_model.php */
+/* End of file Aktabaptisan_model.php */
+/* Location: ./application/models/Aktabaptisan_model.php */

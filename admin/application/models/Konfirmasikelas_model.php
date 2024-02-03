@@ -109,24 +109,24 @@ class Konfirmasikelas_model extends CI_Model {
                 $idjemaat = $rsRegistrasi->idjemaat;
                 
 
-                $idregistrasikelas = $this->db->query("select create_idregistrasikelas('".date('Y-m-d')."', '".$idkelas."') as idregistrasikelas")->row()->idregistrasikelas;
+                // $idregistrasikelas = $this->db->query("select create_idregistrasikelas('".date('Y-m-d')."', '".$idkelas."') as idregistrasikelas")->row()->idregistrasikelas;
 
-                $dataRegistrasi = array(
-                                            'idregistrasikelas' => $idregistrasikelas,
-                                            'idregistrasijadwal' => $idregistrasi,
-                                            'tglregistrasikelas' => $data['tglkonfirmasi'],
-                                            'idjemaat' => $idjemaat,
-                                            'idkelas' => $idkelas,
-                                            'tanggalinsert' => date('Y-m-d H:i:s'),
-                                            'tanggalupdate' => date('Y-m-d H:i:s'),
+                // $dataRegistrasi = array(
+                //                             'idregistrasikelas' => $idregistrasikelas,
+                //                             'idregistrasijadwal' => $idregistrasi,
+                //                             'tglregistrasikelas' => $data['tglkonfirmasi'],
+                //                             'idjemaat' => $idjemaat,
+                //                             'idkelas' => $idkelas,
+                //                             'tanggalinsert' => date('Y-m-d H:i:s'),
+                //                             'tanggalupdate' => date('Y-m-d H:i:s'),
 
-                );
-                $this->db->insert('registrasikelas', $dataRegistrasi);
+                // );
+                // $this->db->insert('registrasikelas', $dataRegistrasi);
             }
 
 
             if ($status=='Ditolak') {
-                $this->db->query("delete from registrasikelas where idregistrasijadwal='$idregistrasi'");
+                // $this->db->query("delete from registrasikelas where idregistrasijadwal='$idregistrasi'");
             }
 
             if ($this->db->trans_status() === FALSE){

@@ -1,14 +1,14 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Aktapenyerahananak_model extends CI_Model {
+class Aktanikah_model extends CI_Model {
 
-	var $tabelview = 'v_aktapenyerahananak';
-    var $tabel     = 'aktapenyerahananak';
+	var $tabelview = 'v_aktanikah';
+    var $tabel     = 'aktanikah';
     var $idakta = 'idakta';
 
-    var $column_order = array(null,'idakta','namajemaatanak','dilakukanoleh', 'namaderahakta', null );
-    var $column_search = array('idakta','namajemaatanak','dilakukanoleh', 'namadaerahakta');
+    var $column_order = array(null,'idakta','namajemaatpria', 'namajemaatwanita','dilakukanoleh', 'namadaerahakta', null );
+    var $column_search = array('idakta','namajemaatpria', 'namajemaatwanita','dilakukanoleh', 'namadaerahakta');
     var $order = array('idakta' => 'desc'); // default order 
 
 
@@ -106,5 +106,5 @@ class Aktapenyerahananak_model extends CI_Model {
 
 
 
-/* End of file Aktapenyerahananak_model.php */
-/* Location: ./application/models/Aktapenyerahananak_model.php */
+/* End of file Aktanikah_model.php */
+/* Location: ./application/models/Aktanikah_model.php */
