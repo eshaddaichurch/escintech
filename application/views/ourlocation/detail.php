@@ -1,10 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php $this->load->view('template/festavalive/header'); ?> 
 
-<head>
-    <?php $this->load->view('template/bethany/header'); ?>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<body>
+
+  
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 
@@ -176,211 +177,223 @@
     }
   </style>
 
-</head>
-
-<body>
-    
-
-    <?php $this->load->view('template/bethany/topmenu'); ?>
-
-    <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex align-items-center">
-        <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
-            <h1>OUR LOCATION </h1>
-        </div>
-    </section><!-- End Hero -->
+    <main>
 
 
-    <main id="main">
 
-        <div class="row mt-5">
-            <div class="col-md-9 ps-5">
-                <div class="card">
-                    <div class="card-body" style="min-height: 800px;">
-                        <div class="row">
-                          <div class="col-12 text-center font-weight-bold mb-5">
-                            <h1><?php echo $rowCabang->namacabang ?></h1>
-                          </div>
-                          <div class="col-md-4">
+        <?php $this->load->view('template/festavalive/topmenu'); ?> 
+
+
+        <section class="about-section section-padding">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-12 mb-4 mb-lg-0">
+                      <h2 class="text-white text-center mb-4 mt-3">OUR LOCATION</h2>
+                      <h5 class="text-white text-center"><?php echo $rowCabang->namacabang ?></h5>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+
+        <section class="page-content section-padding">
+            <div class="container">
+                <div class="row justify-content-center">
+                <div class="col-md-9 ps-5">
+                  <div class="card">
+                      <div class="card-body" style="min-height: 800px;">
+                          <div class="row">
+                            <div class="col-12 text-center font-weight-bold mb-5">
+                              <h1><?php echo $rowCabang->namacabang ?></h1>
+                            </div>
+                            <div class="col-md-4">
+                              
+
+                              <div class="row">
+                                <div class="col-12">
+                                  
+                                  <?php
+                                    $gambarsampul = base_url('images/nofoto.png');  
+                                    if (!empty($rowCabang->gambarsampul)) {
+                                      $gambarsampul = base_url('admin/uploads/cabanggereja/'.$rowCabang->gambarsampul);
+                                    }
+                                  ?>
+                                  <!-- <img src="<?php echo $gambarsampul ?>" class="img-thumbnail" alt="" width="90%"> -->
+
+                                  <div id="sync1" class="owl-carousel owl-theme">
+                                      <div class="item">
+                                          <img src="<?php echo $gambarsampul ?>" class="img-thumbnail" alt="" width="100%">
+                                      </div>
+
+                                      <?php  
+                                        
+                                        if ($rsGallery->num_rows()>0) {
+                                          foreach ($rsGallery->result() as $rowGallery) {
+                                              $filegallery = base_url('images/nofoto.png');
+                                              if (!empty($rowGallery->filegallery)) {
+                                                $filegallery = base_url('admin/uploads/cabanggereja/gallery/'.$rowGallery->filegallery);
+                                                // echo $filegallery;
+
+                                      ?>
+
+                                        <div class="item">                        
+                                            <img src="<?php echo $filegallery ?>" class="img-thumbnail" alt="" width="100%">
+                                        </div>
+
+                                      <?php                              
+                                              }
+                                          }
+                                        }
+                                      ?>
+
+                                  </div>
+
+                                  <div id="sync2" class="owl-carousel owl-theme">
+                                      <div class="item">
+                                          <img src="<?php echo $gambarsampul ?>" class="img-thumbnail" alt="" width="100%">
+                                      </div>
+                                      <?php  
+                                        
+                                        if ($rsGallery->num_rows()>0) {
+                                          foreach ($rsGallery->result() as $rowGallery) {
+                                              $filegallery = base_url('images/nofoto.png');
+                                              if (!empty($rowGallery->filegallery)) {
+                                                $filegallery = base_url('admin/uploads/cabanggereja/gallery/'.$rowGallery->filegallery);
+
+                                      ?>
+
+                                        <div class="item">
+                                            <img src="<?php echo $filegallery ?>" class="img-thumbnail" alt="" width="100%">
+                                        </div>
+                                        
+
+                                      <?php                              
+                                              }
+                                          }
+                                        }
+                                      ?>
+
+                                  </div>
+
+                                </div>
+                                
+                              </div>
+
+
+                            </div>
+
+
+                            <div class="col-md-8">
+                              <div class="row">
+                                <div class="col-12">
+                                  <div class="form-group row detail-cabang">
+                                    <label for="" class="col-md-3 detail-label">Alamat Gereja</label>
+                                    <label for="" class="col-md-1 text-center">:</label>
+                                    <label for="" class="col-md-8 detail-value"><?php echo $rowCabang->alamatlengkap ?></label>
+                                  </div>
+                                  <div class="form-group row detail-cabang">
+                                    <label for="" class="col-md-3 detail-label">No Telepon</label>
+                                    <label for="" class="col-md-1 text-center">:</label>
+                                    <label for="" class="col-md-8 detail-value"><?php echo $rowCabang->notelp ?></label>
+                                  </div>
+                                  <div class="form-group row detail-cabang">
+                                    <label for="" class="col-md-3 detail-label">Nama Gembala</label>
+                                    <label for="" class="col-md-1 text-center">:</label>
+                                    <label for="" class="col-md-8 detail-value"><?php echo $rowCabang->namagembala ?></label>
+                                  </div>
+                                  <div class="form-group row detail-cabang">
+                                    <label for="" class="col-md-3 detail-label">Jadwal Ibadah</label>
+                                    <label for="" class="col-md-1 text-center">:</label>
+                                    <label for="" class="col-md-8 detail-value"><?php echo $rowCabang->jadwalibadah ?></label>
+                                  </div>
+
+                                  
+
+                                </div>
+
+                                <div class="col-12 text-center mt-5">
+                                  <?php  
+                                    $sosialmedia = '';
+                                      if (!empty($rowCabang->urlfacebook)) {
+                                        $sosialmedia .= '<a href="'.$rowCabang->urlfacebook.'" target="_blank" class="me-3"><i class="fab fa-facebook text-primary fa-3x"></i></a>';
+                                      }
+                                      if (!empty($rowCabang->urlinstagram)) {
+                                        $sosialmedia .= '<a href="'.$rowCabang->urlinstagram.'" target="_blank" class="me-3"><i class="fab fa-instagram text-danger fa-3x"></i></a>';
+                                      }
+                                      if (!empty($rowCabang->urlyoutube)) {
+                                        $sosialmedia .= '<a href="'.$rowCabang->urlyoutube.'" target="_blank" class="me-3"><i class="fab fa-youtube text-danger fa-3x"></i></a>';
+                                      }
+                                      if (!empty($rowCabang->urltwitter)) {
+                                        $sosialmedia .= '<a href="'.$rowCabang->urltwitter.'" target="_blank" class="me-3"><i class="fab fa-twitter text-dark fa-3x"></i></a>';
+                                      }
+                                      if (!empty($rowCabang->urllinkedin)) {
+                                        $sosialmedia .= '<a href="'.$rowCabang->urllinkedin.'" target="_blank" class="me-3"><i class="fab fa-linkedin text-primary fa-3x"></i></a>';
+                                      }
+
+                                      echo $sosialmedia;
+                                  ?>
+                                </div>
+                              </div>
+                            </div>
                             
 
-                            <div class="row">
-                              <div class="col-12">
-                                
-                                <?php
-                                  $gambarsampul = base_url('images/nofoto.png');  
-                                  if (!empty($rowCabang->gambarsampul)) {
-                                    $gambarsampul = base_url('admin/uploads/cabanggereja/'.$rowCabang->gambarsampul);
-                                  }
-                                ?>
-                                <!-- <img src="<?php echo $gambarsampul ?>" class="img-thumbnail" alt="" width="90%"> -->
-
-                                <div id="sync1" class="owl-carousel owl-theme">
-                                    <div class="item">
-                                        <img src="<?php echo $gambarsampul ?>" class="img-thumbnail" alt="" width="100%">
-                                    </div>
-
-                                    <?php  
-                                      
-                                      if ($rsGallery->num_rows()>0) {
-                                        foreach ($rsGallery->result() as $rowGallery) {
-                                            $filegallery = base_url('images/nofoto.png');
-                                            if (!empty($rowGallery->filegallery)) {
-                                              $filegallery = base_url('admin/uploads/cabanggereja/gallery/'.$rowGallery->filegallery);
-                                              // echo $filegallery;
-
-                                    ?>
-
-                                      <div class="item">                        
-                                          <img src="<?php echo $filegallery ?>" class="img-thumbnail" alt="" width="100%">
-                                      </div>
-
-                                    <?php                              
-                                            }
-                                        }
-                                      }
-                                    ?>
-
+                            <?php if (!empty($rowCabang->deskripsi)) { ?>
+                            <div class="col-12 mt-5">
+                              <div class="row">
+                                <div class="col-12 text-center">
+                                  <h3>Deskripsi Gereja</h3>
                                 </div>
-
-                                <div id="sync2" class="owl-carousel owl-theme">
-                                    <div class="item">
-                                        <img src="<?php echo $gambarsampul ?>" class="img-thumbnail" alt="" width="100%">
-                                    </div>
-                                    <?php  
-                                      
-                                      if ($rsGallery->num_rows()>0) {
-                                        foreach ($rsGallery->result() as $rowGallery) {
-                                            $filegallery = base_url('images/nofoto.png');
-                                            if (!empty($rowGallery->filegallery)) {
-                                              $filegallery = base_url('admin/uploads/cabanggereja/gallery/'.$rowGallery->filegallery);
-
-                                    ?>
-
-                                      <div class="item">
-                                          <img src="<?php echo $filegallery ?>" class="img-thumbnail" alt="" width="100%">
-                                      </div>
-                                      
-
-                                    <?php                              
-                                            }
-                                        }
-                                      }
-                                    ?>
-
+                                <div class="col-12"><hr></div>
+                                <div class="col-12">
+                                  <?php echo $rowCabang->deskripsi ?>
                                 </div>
-
-                              </div>
-                              
-                            </div>
-
-
-                          </div>
-
-
-                          <div class="col-md-8">
-                            <div class="row">
-                              <div class="col-12">
-                                <div class="form-group row detail-cabang">
-                                  <label for="" class="col-md-3 detail-label">Alamat Gereja</label>
-                                  <label for="" class="col-md-1 text-center">:</label>
-                                  <label for="" class="col-md-8 detail-value"><?php echo $rowCabang->alamatlengkap ?></label>
-                                </div>
-                                <div class="form-group row detail-cabang">
-                                  <label for="" class="col-md-3 detail-label">No Telepon</label>
-                                  <label for="" class="col-md-1 text-center">:</label>
-                                  <label for="" class="col-md-8 detail-value"><?php echo $rowCabang->notelp ?></label>
-                                </div>
-                                <div class="form-group row detail-cabang">
-                                  <label for="" class="col-md-3 detail-label">Nama Gembala</label>
-                                  <label for="" class="col-md-1 text-center">:</label>
-                                  <label for="" class="col-md-8 detail-value"><?php echo $rowCabang->namagembala ?></label>
-                                </div>
-                                <div class="form-group row detail-cabang">
-                                  <label for="" class="col-md-3 detail-label">Jadwal Ibadah</label>
-                                  <label for="" class="col-md-1 text-center">:</label>
-                                  <label for="" class="col-md-8 detail-value"><?php echo $rowCabang->jadwalibadah ?></label>
-                                </div>
-
-                                
-
-                              </div>
-
-                              <div class="col-12 text-center mt-5">
-                                <?php  
-                                   $sosialmedia = '';
-                                    if (!empty($rowCabang->urlfacebook)) {
-                                      $sosialmedia .= '<a href="'.$rowCabang->urlfacebook.'" target="_blank" class="me-3"><i class="fab fa-facebook text-primary fa-3x"></i></a>';
-                                    }
-                                    if (!empty($rowCabang->urlinstagram)) {
-                                      $sosialmedia .= '<a href="'.$rowCabang->urlinstagram.'" target="_blank" class="me-3"><i class="fab fa-instagram text-danger fa-3x"></i></a>';
-                                    }
-                                    if (!empty($rowCabang->urlyoutube)) {
-                                      $sosialmedia .= '<a href="'.$rowCabang->urlyoutube.'" target="_blank" class="me-3"><i class="fab fa-youtube text-danger fa-3x"></i></a>';
-                                    }
-                                    if (!empty($rowCabang->urltwitter)) {
-                                      $sosialmedia .= '<a href="'.$rowCabang->urltwitter.'" target="_blank" class="me-3"><i class="fab fa-twitter text-dark fa-3x"></i></a>';
-                                    }
-                                    if (!empty($rowCabang->urllinkedin)) {
-                                      $sosialmedia .= '<a href="'.$rowCabang->urllinkedin.'" target="_blank" class="me-3"><i class="fab fa-linkedin text-primary fa-3x"></i></a>';
-                                    }
-
-                                    echo $sosialmedia;
-                                ?>
                               </div>
                             </div>
-                          </div>
-                          
+                            <?php } ?>
 
-                          <?php if (!empty($rowCabang->deskripsi)) { ?>
-                          <div class="col-12 mt-5">
-                            <div class="row">
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-3 pe-5">
+                  <div class="card">
+                      <div class="card-body">
+                          <div class="row">
                               <div class="col-12 text-center">
-                                <h3>Deskripsi Gereja</h3>
+                                  <h5>CABANG GEREJA ELSHADDAI</h5>
                               </div>
                               <div class="col-12"><hr></div>
-                              <div class="col-12">
-                                <?php echo $rowCabang->deskripsi ?>
+                              <div class="col-12" id="divContentCabang">
+                                  <ul class="ulCabang" id="ulCabang">
+                                      <li><a href="<?php echo site_url('ourlocation/detail/') ?>">Cabang Siantan</a></li>
+                                  </ul>
                               </div>
-                            </div>
                           </div>
-                          <?php } ?>
+                      </div>
+                  </div>
+              </div>
 
-                        </div>
-                    </div>
+
                 </div>
             </div>
-            <div class="col-md-3 pe-5">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-12 text-center">
-                                <h5>CABANG GEREJA ELSHADDAI</h5>
-                            </div>
-                            <div class="col-12"><hr></div>
-                            <div class="col-12" id="divContentCabang">
-                                <ul class="ulCabang" id="ulCabang">
-                                    <li><a href="<?php echo site_url('ourlocation/detail/') ?>">Cabang Siantan</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        </section>
 
-        <div style='clear:both'></div>
+
+        
 
 
 
-    </main><!-- End #main -->
+    </main>
 
 
-    <?php $this->load->view('template/bethany/footer'); ?>
+    <?php $this->load->view('template/festavalive/footer'); ?> 
+    
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
         <!-- 
       Make sure you put this AFTER Leaflet's CSS 
       source: https://leafletjs.com/reference.html#map-example
@@ -391,10 +404,7 @@
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
 
-
-
-
-
+      
   <script>
     $(document).ready(function() {
 
@@ -542,11 +552,6 @@
 
 
 
-<script>
-  
-</script>
-
 </body>
-
 
 </html>

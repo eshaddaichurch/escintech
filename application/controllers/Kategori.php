@@ -17,6 +17,7 @@ class Kategori extends CI_Controller {
 		$rskategori = $this->Kategori_model->get_kategori_by_slug($slug);
 		$data['slug'] = $slug;
 		$data['menu'] = $idmenu;
+		$data["rowinfogereja"] = $this->Home_model->get_infogereja();	
 		if ($rskategori->num_rows()>0) {
 			$data['rowkategori'] = $rskategori->row();
 			$data['rspages'] = $this->Kategori_model->get_pages($rskategori->row()->idpageskategori);

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="index.html">
-                    Festava Live
+                <a class="navbar-brand" href="<?php echo site_url() ?>">
+                    Elshaddai Church
                 </a>
 
                 <a href="ticket.html" class="btn custom-btn d-lg-none ms-auto me-4">Buy Ticket</a>
@@ -28,10 +28,16 @@
 
                                     switch ($row1->jenismenu) {
                                         case 'Url Link':
-                                            if (substr($row1->linkmenu, 0,1)=='/') {
-                                                $urlmenu = site_url($row1->linkmenu.'/'.$this->encrypt->encode($row1->idmenu)); // http://localhost/escintech//ourlocation/index
+                                            if ($row1->linkmenu=='/') {
+
+                                                $urlmenu = site_url('home'); // 
                                             }else{
-                                                $urlmenu = $row1->linkmenu;
+
+                                                if (substr($row1->linkmenu, 0,1)=='/') {
+                                                    $urlmenu = site_url($row1->linkmenu.'/'.$this->encrypt->encode($row1->idmenu)); // http://localhost/escintech//ourlocation/index
+                                                }else{
+                                                    $urlmenu = $row1->linkmenu;
+                                                }
                                             }
                                             break;
                                         case 'Kategori Link':

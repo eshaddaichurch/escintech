@@ -14,6 +14,7 @@ class Ourlocation extends CI_Controller {
 	{
 		$idmenu = $this->encrypt->decode($idmenu);
 		$data['menu'] = $idmenu;
+		$data["rowinfogereja"] = $this->Home_model->get_infogereja();	
 		$this->load->view('ourlocation/index', $data);
 	}
 
@@ -39,6 +40,7 @@ class Ourlocation extends CI_Controller {
 		$data['rsGallery'] = $rsGallery;
 		$data['rowCabang'] = $rowCabang;
 		$data['menu'] = $idmenu;
+		$data["rowinfogereja"] = $this->Home_model->get_infogereja();	
 		$this->load->view('ourlocation/detail', $data);
 	}
 

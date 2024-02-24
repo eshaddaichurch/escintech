@@ -2,6 +2,204 @@
 
 <body>
 
+<style>
+    
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,200,300,600,700,900);
+
+
+
+body {
+  background: #ffffff;
+  color: #4f585e;
+  font-family: 'Source Sans Pro', sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+a.btn {
+  background: #0096a0;
+  border-radius: 4px;
+	box-shadow: 0 2px 0px 0 rgba(0,0,0,0.25);
+  color: #ffffff;
+  display: inline-block;
+  padding: 6px 30px 8px;
+  position: relative;
+  text-decoration: none;
+	transition: all 0.1s 0s ease-out;
+}
+
+.no-touch a.btn:hover {
+  background: lighten(#0096a0,2.5);
+  box-shadow: 0px 8px 2px 0 rgba(0, 0, 0, 0.075);
+  transform: translateY(-2px);
+  transition: all 0.25s 0s ease-out;
+}
+
+.no-touch a.btn:active,
+a.btn:active {
+  background: darken(#0096a0,2.5);
+  box-shadow: 0 1px 0px 0 rgba(255,255,255,0.25);
+  transform: translate3d(0,1px,0);
+  transition: all 0.025s 0s ease-out;
+}
+
+div.cards {
+  margin: 80px auto;
+  max-width: 960px;
+  text-align: center;
+}
+
+div.card {
+  background: #ffffff;
+  display: inline-block;
+  margin: 8px;
+  max-width: 300px;
+  perspective: 1000;
+  position: relative;
+  text-align: left;
+  transition: all 0.3s 0s ease-in;
+  width: 300px;
+  z-index: 1;
+
+  img {
+    max-width: 300px;
+  }
+  
+  .card__image-holder {
+    background: rgba(0,0,0,0.1);
+    height: 0;
+    padding-bottom: 75%;
+  }
+
+  div.card-title {
+    background: #ffffff;
+    padding: 6px 15px 10px;
+    position: relative;
+    z-index: 0;
+    
+    a.toggle-info {
+      border-radius: 32px;
+      height: 32px;
+      padding: 0;
+      position: absolute;
+      right: 15px;
+      top: 10px;
+      width: 32px;
+      
+      span {
+        background: #ffffff;
+        display: block;
+        height: 2px;
+        position: absolute;
+        top: 16px;
+        transition: all 0.15s 0s ease-out;
+        width: 12px;
+      }
+      
+      span.left {
+        right: 14px;
+        transform: rotate(45deg);
+      }
+      span.right {
+        left: 14px;
+        transform: rotate(-45deg);
+      }
+    }
+    
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.05em;
+      margin: 0;
+      padding: 0;
+      
+      small {
+        display: block;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: -0.025em;
+      }
+    }
+  }
+
+  div.card-description {
+    padding: 0 15px 10px;
+    position: relative;
+    font-size: 14px;
+  }
+
+  div.card-actions {
+  	box-shadow: 0 2px 0px 0 rgba(0,0,0,0.075);
+    padding: 10px 15px 20px;
+    text-align: center;
+  }
+  
+  div.card-flap {
+    background: darken(#ffffff,15);
+    position: absolute;
+    width: 100%;
+    transform-origin: top;
+    transform: rotateX(-90deg);
+  }
+  div.flap1 {
+    transition: all 0.3s 0.3s ease-out;
+    z-index: -1;
+  }
+  div.flap2 {
+    transition: all 0.3s 0s ease-out;
+    z-index: -2;
+  }
+  
+}
+
+div.cards.showing {
+  div.card {
+    cursor: pointer;
+    opacity: 0.6;
+    transform: scale(0.88);
+  }
+}
+
+.no-touch  div.cards.showing {
+  div.card:hover {
+    opacity: 0.94;
+    transform: scale(0.92);
+  }
+}
+
+div.card.show {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+
+  div.card-title {
+    a.toggle-info {
+      background: #ff6666 !important;
+      span {
+        top: 15px;
+      }
+      span.left {
+        right: 10px;
+      }
+      span.right {
+        left: 10px;
+      }
+    }
+  }
+  div.card-flap {
+    background: #ffffff;
+    transform: rotateX(0deg);
+  }
+  div.flap1 {
+    transition: all 0.3s 0s ease-out;
+  }
+  div.flap2 {
+    transition: all 0.3s 0.2s ease-out;
+  }
+}
+
+
+
+
+</style>
     <main>
 
 
@@ -16,30 +214,37 @@
                 <div class="row">
 
                     <div class="col-12 mt-auto mb-5 text-center">
-                        <small>Festava Live Presents</small>
+                        <small><?php echo $rowinfogereja->subjudulhomepage ?></small>
 
-                        <h1 class="text-white mb-5">Night Live 2023</h1>
+                        <h1 class="text-white mb-5"><?php echo $rowinfogereja->judulhomepage ?></h1>
+                        <?php
+                            if (!empty($rowinfogereja->urlbuttonhomepage)) {
+                                echo '
+                                    <a class="btn custom-btn smoothscroll" href="'.$rowinfogereja->urlbuttonhomepage.'"></a>
+                                ';
+                            }else{
 
-                        <a class="btn custom-btn smoothscroll" href="#section_2">Let's begin</a>
+                            }
+                        ?>
                     </div>
 
                     <div class="col-lg-12 col-12 mt-auto d-flex flex-column flex-lg-row text-center">
                         <div class="date-wrap">
-                            <h5 class="text-white">
+                            <!-- <h5 class="text-white">
                                 <i class="custom-icon bi-clock me-2"></i>
                                 10 - 12<sup>th</sup>, Dec 2023
-                            </h5>
+                            </h5> -->
                         </div>
 
                         <div class="location-wrap mx-auto py-3 py-lg-0">
-                            <h5 class="text-white">
+                            <!-- <h5 class="text-white">
                                 <i class="custom-icon bi-geo-alt me-2"></i>
                                 National Center, United States
-                            </h5>
+                            </h5> -->
                         </div>
 
                         <div class="social-share">
-                            <ul class="social-icon d-flex align-items-center justify-content-center">
+                            <!-- <ul class="social-icon d-flex align-items-center justify-content-center">
                                 <span class="text-white me-3">Share:</span>
 
                                 <li class="social-icon-item">
@@ -59,7 +264,7 @@
                                         <span class="bi-instagram"></span>
                                     </a>
                                 </li>
-                            </ul>
+                            </ul> -->
                         </div>
                     </div>
                 </div>
@@ -81,20 +286,14 @@
 
                     <div class="col-lg-6 col-12 mb-4 mb-lg-0 d-flex align-items-center">
                         <div class="services-info">
-                            <h2 class="text-white mb-4">About Festava 2022</h2>
+                            <h5 class="text-white">Senior Pastor</h5>
+                            <h2 class="text-white mb-4">Ps. Wilan</h2>
 
-                            <p class="text-white">Festava Live is free CSS template provided by TemplateMo website. This
-                                layout is built on Bootstrap v5.2.2 CSS library. You are free to use this template for
-                                your commercial website.</p>
+                            <p class="text-white">Pastor ... dilahirkan di Surabaya pada tanggal .... Dari kota kelahirannya, ia menempuh sekolah di ...., dan akhirnya bertobat saat SMA di Vancouver, Canada. Dua tahun setelah lulus sarjana sekolah Alkitab, saat kerusuhan terjadi di Indonesia pada bulan Mei 1998, ia memutuskan untuk pulang ke tanah airnya demi memberitakan Injil.</p>
 
-                            <h6 class="text-white mt-4">Once in Lifetime Experience</h6>
 
-                            <p class="text-white">You are not allowed to redistribute the template ZIP file on any other
-                                website without a permission.</p>
+                            <p class="text-white">Saat ini, ia menjabat sebagai gembala senior organisasi dan jaringan gereja ini. Visinya adalah untuk mendirikan 1.000 gereja lokal yang kuat dengan 1 juta murid Kristus. Kerinduan hatinya yang menyala adalah untuk melihat bangsa-bangsa mengalami kasih Yesus Kristus.</p>
 
-                            <h6 class="text-white mt-4">Whole Night Party</h6>
-
-                            <p class="text-white">Please tell your friends about our website. Thank you.</p>
                         </div>
                     </div>
 
@@ -122,292 +321,269 @@
         </section>
 
 
-        <section class="artists-section section-padding" id="section_3">
-            <div class="container">
-                <div class="row justify-content-center">
+        
 
-                    <div class="col-12 text-center">
-                        <h2 class="mb-4">Meet Artists</h1>
-                    </div>
-
-                    <div class="col-lg-5 col-12">
-                        <div class="artists-thumb">
-                            <div class="artists-image-wrap">
-                                <img src="<?php echo base_url('assets/FestavaLive/') ?>images/artists/joecalih-UmTZqmMvQcw-unsplash.jpg"
-                                    class="artists-image img-fluid">
-                            </div>
-
-                            <div class="artists-hover">
-                                <p>
-                                    <strong>Name:</strong>
-                                    Madona
-                                </p>
-
-                                <p>
-                                    <strong>Birthdate:</strong>
-                                    August 16, 1958
-                                </p>
-
-                                <p>
-                                    <strong>Music:</strong>
-                                    Pop, R&amp;B
-                                </p>
-
-                                <hr>
-
-                                <p class="mb-0">
-                                    <strong>Youtube Channel:</strong>
-                                    <a href="#">Madona Official</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-5 col-12">
-                        <div class="artists-thumb">
-                            <div class="artists-image-wrap">
-                                <img src="<?php echo base_url('assets/FestavaLive/') ?>images/artists/abstral-official-bdlMO9z5yco-unsplash.jpg"
-                                    class="artists-image img-fluid">
-                            </div>
-
-                            <div class="artists-hover">
-                                <p>
-                                    <strong>Name:</strong>
-                                    Rihana
-                                </p>
-
-                                <p>
-                                    <strong>Birthdate:</strong>
-                                    Feb 20, 1988
-                                </p>
-
-                                <p>
-                                    <strong>Music:</strong>
-                                    Country
-                                </p>
-
-                                <hr>
-
-                                <p class="mb-0">
-                                    <strong>Youtube Channel:</strong>
-                                    <a href="#">Rihana Official</a>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="artists-thumb">
-                            <img src="<?php echo base_url('assets/FestavaLive/') ?>images/artists/soundtrap-rAT6FJ6wltE-unsplash.jpg"
-                                class="artists-image img-fluid">
-
-                            <div class="artists-hover">
-                                <p>
-                                    <strong>Name:</strong>
-                                    Bruno Bros
-                                </p>
-
-                                <p>
-                                    <strong>Birthdate:</strong>
-                                    October 8, 1985
-                                </p>
-
-                                <p>
-                                    <strong>Music:</strong>
-                                    Pop
-                                </p>
-
-                                <hr>
-
-                                <p class="mb-0">
-                                    <strong>Youtube Channel:</strong>
-                                    <a href="#">Bruno Official</a>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-
-        <section class="schedule-section section-padding" id="section_4">
-            <div class="container">
+        <section class="ibadah-section">
                 <div class="row">
 
                     <div class="col-12 text-center">
-                        <h2 class="text-white mb-4">Event Schedule</h1>
+                        <h2 class="mb-4">Online Service</h1>
+                    </div>
 
-                            <div class="table-responsive">
-                                <table class="schedule-table table table-dark">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">Date</th>
+                    <div class="col-12">
+                        <div class="cards">
 
-                                            <th scope="col">Wednesday</th>
-
-                                            <th scope="col">Thursday</th>
-
-                                            <th scope="col">Friday</th>
-
-                                        </tr>
-                                    </thead>
-
-                                    <tbody>
-                                        <tr>
-                                            <th scope="row">Day 1</th>
-
-                                            <td class="table-background-image-wrap pop-background-image">
-                                                <h3>Pop Night</h3>
-
-                                                <p class="mb-2">5:00 - 7:00 PM</p>
-
-                                                <p>By Adele</p>
-
-                                                <div class="section-overlay"></div>
-                                            </td>
-
-                                            <td style="background-color: #F3DCD4"></td>
-
-                                            <td class="table-background-image-wrap rock-background-image">
-                                                <h3>Rock & Roll</h3>
-
-                                                <p class="mb-2">7:00 - 11:00 PM</p>
-
-                                                <p>By Rihana</p>
-
-                                                <div class="section-overlay"></div>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <th scope="row">Day 2</th>
-
-                                            <td style="background-color: #ECC9C7"></td>
-
-                                            <td>
-                                                <h3>DJ Night</h3>
-
-                                                <p class="mb-2">6:30 - 9:30 PM</p>
-
-                                                <p>By Rihana</p>
-                                            </td>
-
-                                            <td style="background-color: #D9E3DA"></td>
-                                        </tr>
-
-                                        <tr>
-                                            <th scope="row">Day 3</th>
-
-                                            <td class="table-background-image-wrap country-background-image">
-                                                <h3>Country Music</h3>
-
-                                                <p class="mb-2">4:30 - 7:30 PM</p>
-
-                                                <p>By Rihana</p>
-
-                                                <div class="section-overlay"></div>
-                                            </td>
-
-                                            <td style="background-color: #D1CFC0"></td>
-
-                                            <td>
-                                                <h3>Free Styles</h3>
-
-                                                <p class="mb-2">6:00 - 10:00 PM</p>
-
-                                                <p>By Members</p>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                            <div class="card">
+                            <div class="card__image-holder">
+                                <img class="card__image" src="https://source.unsplash.com/300x225/?wave" alt="wave" />
                             </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-        <section class="pricing-section section-padding section-bg" id="section_5">
-            <div class="container">
-                <div class="row">
-
-                    <div class="col-lg-8 col-12 mx-auto">
-                        <h2 class="text-center mb-4">Plans, you' love</h2>
-                    </div>
-
-                    <div class="col-lg-6 col-12">
-                        <div class="pricing-thumb">
-                            <div class="d-flex">
-                                <div>
-                                    <h3><small>Early Bird</small> $120</h3>
-
-                                    <p>Including good things:</p>
+                            <div class="card-title">
+                                <a href="#" class="toggle-info btn">
+                                <span class="left"></span>
+                                <span class="right"></span>
+                                </a>
+                                <h2>
+                                    Card title
+                                    <small>Image from unsplash.com</small>
+                                </h2>
+                            </div>
+                            <div class="card-flap flap1">
+                                <div class="card-description">
+                                This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.
                                 </div>
-
-                                <p class="pricing-tag ms-auto">Save up to <span>50%</span></h2>
-                            </div>
-
-                            <ul class="pricing-list mt-3">
-                                <li class="pricing-list-item">platform for potential customers</li>
-
-                                <li class="pricing-list-item">digital experience</li>
-
-                                <li class="pricing-list-item">high-quality sound</li>
-
-                                <li class="pricing-list-item">standard content</li>
-                            </ul>
-
-                            <a class="link-fx-1 color-contrast-higher mt-4" href="ticket.html">
-                                <span>Buy Ticket</span>
-                                <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
-                                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                        <circle cx="16" cy="16" r="15.5"></circle>
-                                        <line x1="10" y1="18" x2="16" y2="12"></line>
-                                        <line x1="16" y1="12" x2="22" y2="18"></line>
-                                    </g>
-                                </svg>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-6 col-12 mt-4 mt-lg-0">
-                        <div class="pricing-thumb">
-                            <div class="d-flex">
-                                <div>
-                                    <h3><small>Standard</small> $240</h3>
-
-                                    <p>What makes a premium festava?</p>
+                                <div class="card-flap flap2">
+                                <div class="card-actions">
+                                    <a href="#" class="btn">Read more</a>
+                                </div>
                                 </div>
                             </div>
+                            </div>
 
-                            <ul class="pricing-list mt-3">
-                                <li class="pricing-list-item">platform for potential customers</li>
+                            <div class="card">
+                            <div class="card__image-holder">
+                                <img class="card__image" src="https://source.unsplash.com/300x225/?beach" alt="beach" />
+                            </div>
+                            <div class="card-title">
+                                <a href="#" class="toggle-info btn">
+                                <span class="left"></span>
+                                <span class="right"></span>
+                                </a>
+                                <h2>
+                                    Card title
+                                    <small>Image from unsplash.com</small>
+                                </h2>
+                            </div>
+                            <div class="card-flap flap1">
+                                <div class="card-description">
+                                This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.
+                                </div>
+                                <div class="card-flap flap2">
+                                <div class="card-actions">
+                                    <a href="#" class="btn">Read more</a>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
 
-                                <li class="pricing-list-item">digital experience</li>
+                            <div class="card">
+                            <div class="card__image-holder">
+                                <img class="card__image" src="https://source.unsplash.com/300x225/?mountain" alt="mountain" />
+                            </div>
+                            <div class="card-title">
+                                <a href="#" class="toggle-info btn">
+                                <span class="left"></span>
+                                <span class="right"></span>
+                                </a>
+                                <h2>
+                                    Card title
+                                    <small>Image from unsplash.com</small>
+                                </h2>
+                            </div>
+                            <div class="card-flap flap1">
+                                <div class="card-description">
+                                This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.
+                                </div>
+                                <div class="card-flap flap2">
+                                <div class="card-actions">
+                                    <a href="#" class="btn">Read more</a>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
 
-                                <li class="pricing-list-item">high-quality sound</li>
+                            <div class="card">
+                            <div class="card__image-holder">
+                                <img class="card__image" src="https://source.unsplash.com/300x225/?field" alt="field" />
+                            </div>
+                            <div class="card-title">
+                                <a href="#" class="toggle-info btn">
+                                <span class="left"></span>
+                                <span class="right"></span>
+                                </a>
+                                <h2>
+                                    Card title
+                                    <small>Image from unsplash.com</small>
+                                </h2>
+                            </div>
+                            <div class="card-flap flap1">
+                                <div class="card-description">
+                                This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.
+                                </div>
+                                <div class="card-flap flap2">
+                                <div class="card-actions">
+                                    <a href="#" class="btn">Read more</a>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
 
-                                <li class="pricing-list-item">premium content</li>
+                            <div class="card">
+                            <div class="card__image-holder">
+                                <img class="card__image" src="https://source.unsplash.com/300x225/?water" alt="water" />
+                            </div>
+                            <div class="card-title">
+                                <a href="#" class="toggle-info btn">
+                                <span class="left"></span>
+                                <span class="right"></span>
+                                </a>
+                                <h2>
+                                    Card title
+                                    <small>Image from unsplash.com</small>
+                                </h2>
+                            </div>
+                            <div class="card-flap flap1">
+                                <div class="card-description">
+                                This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.
+                                </div>
+                                <div class="card-flap flap2">
+                                <div class="card-actions">
+                                    <a href="#" class="btn">Read more</a>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
 
-                                <li class="pricing-list-item">live chat support</li>
-                            </ul>
+                            <div class="card">
+                            <div class="card__image-holder">
+                                <img class="card__image" src="https://source.unsplash.com/300x225/?river" alt="river" />
+                            </div>
+                            <div class="card-title">
+                                <a href="#" class="toggle-info btn">
+                                <span class="left"></span>
+                                <span class="right"></span>
+                                </a>
+                                <h2>
+                                    Card title
+                                    <small>Image from unsplash.com</small>
+                                </h2>
+                            </div>
+                            <div class="card-flap flap1">
+                                <div class="card-description">
+                                This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.
+                                </div>
+                                <div class="card-flap flap2">
+                                <div class="card-actions">
+                                    <a href="#" class="btn">Read more</a>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
 
-                            <a class="link-fx-1 color-contrast-higher mt-4" href="ticket.html">
-                                <span>Buy Ticket</span>
-                                <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
-                                    <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
-                                        <circle cx="16" cy="16" r="15.5"></circle>
-                                        <line x1="10" y1="18" x2="16" y2="12"></line>
-                                        <line x1="16" y1="12" x2="22" y2="18"></line>
-                                    </g>
-                                </svg>
-                            </a>
-                        </div>
+                            <div class="card">
+                            <div class="card__image-holder">
+                                <img class="card__image" src="https://source.unsplash.com/300x225/?kite" alt="kite" />
+                            </div>
+                            <div class="card-title">
+                                <a href="#" class="toggle-info btn">
+                                <span class="left"></span>
+                                <span class="right"></span>
+                                </a>
+                                <h2>
+                                    Card title
+                                    <small>Image from unsplash.com</small>
+                                </h2>
+                            </div>
+                            <div class="card-flap flap1">
+                                <div class="card-description">
+                                This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.
+                                </div>
+                                <div class="card-flap flap2">
+                                <div class="card-actions">
+                                    <a href="#" class="btn">Read more</a>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="card">
+                            <div class="card__image-holder">
+                                <img class="card__image" src="https://source.unsplash.com/300x225/?underwater" alt="underwater" />
+                            </div>
+                            <div class="card-title">
+                                <a href="#" class="toggle-info btn">
+                                <span class="left"></span>
+                                <span class="right"></span>
+                                </a>
+                                <h2>
+                                    Card title
+                                    <small>Image from unsplash.com</small>
+                                </h2>
+                            </div>
+                            <div class="card-flap flap1">
+                                <div class="card-description">
+                                This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.
+                                </div>
+                                <div class="card-flap flap2">
+                                <div class="card-actions">
+                                    <a href="#" class="btn">Read more</a>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+
+                            <div class="card">
+                            <div class="card__image-holder">
+                                <img class="card__image" src="https://source.unsplash.com/300x225/?desert" alt="desert" />
+                            </div>
+                            <div class="card-title">
+                                <a href="#" class="toggle-info btn">
+                                <span class="left"></span>
+                                <span class="right"></span>
+                                </a>
+                                <h2>
+                                    Card title
+                                    <small>Image from unsplash.com</small>
+                                </h2>
+                            </div>
+                            <div class="card-flap flap1">
+                                <div class="card-description">
+                                This grid is an attempt to make something nice that works on touch devices. Ignoring hover states when they're not available etc.
+                                </div>
+                                <div class="card-flap flap2">
+                                <div class="card-actions">
+                                    <a href="#" class="btn">Read more</a>
+                                </div>
+                                </div>
+                            </div>
+                            </div>
+
+                            </div>
+
+
+
+
+
+
                     </div>
 
+                    
+
                 </div>
-            </div>
         </section>
+
+        
+
+        
 
 
         <section class="contact-section section-padding" id="section_6">
@@ -415,7 +591,7 @@
                 <div class="row">
 
                     <div class="col-lg-8 col-12 mx-auto">
-                        <h2 class="text-center mb-4">Interested? Let's talk</h2>
+                        <h2 class="text-center mb-4">Feedback</h2>
 
                         <nav class="d-flex justify-content-center">
                             <div class="nav nav-tabs align-items-baseline justify-content-center" id="nav-tab"
@@ -423,13 +599,7 @@
                                 <button class="nav-link active" id="nav-ContactForm-tab" data-bs-toggle="tab"
                                     data-bs-target="#nav-ContactForm" type="button" role="tab"
                                     aria-controls="nav-ContactForm" aria-selected="false">
-                                    <h5>Contact Form</h5>
-                                </button>
-
-                                <button class="nav-link" id="nav-ContactMap-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-ContactMap" type="button" role="tab"
-                                    aria-controls="nav-ContactMap" aria-selected="false">
-                                    <h5>Google Maps</h5>
+                                    <h5>Feedback Form</h5>
                                 </button>
                             </div>
                         </nav>
@@ -453,9 +623,6 @@
                                             </div>
                                         </div>
 
-                                        <input type="text" name="contact-company" id="contact-company"
-                                            class="form-control" placeholder="Company" required>
-
                                         <textarea name="contact-message" rows="3" class="form-control"
                                             id="contact-message" placeholder="Message"></textarea>
 
@@ -466,14 +633,6 @@
                                 </form>
                             </div>
 
-                            <div class="tab-pane fade" id="nav-ContactMap" role="tabpanel"
-                                aria-labelledby="nav-ContactMap-tab">
-                                <iframe class="google-map"
-                                    src="<?php echo base_url('assets/FestavaLive/') ?>https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29974.469402870927!2d120.94861466021855!3d14.106066818082482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd777b1ab54c8f%3A0x6ecc514451ce2be8!2sTagaytay%2C%20Cavite%2C%20Philippines!5e1!3m2!1sen!2smy!4v1670344209509!5m2!1sen!2smy"
-                                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                <!-- You can easily copy the embed code from Google Maps -> Share -> Embed a map // -->
-                            </div>
                         </div>
                     </div>
 
@@ -485,7 +644,55 @@
 
     <?php $this->load->view('template/festavalive/footer'); ?> 
     
+    <script>
 
+$(document).ready(function(){
+  var zindex = 10;
+  
+  $("div.card").click(function(e){
+    e.preventDefault();
+
+    var isShowing = false;
+
+    if ($(this).hasClass("show")) {
+      isShowing = true
+    }
+
+    if ($("div.cards").hasClass("showing")) {
+      // a card is already in view
+      $("div.card.show")
+        .removeClass("show");
+
+      if (isShowing) {
+        // this card was showing - reset the grid
+        $("div.cards")
+          .removeClass("showing");
+      } else {
+        // this card isn't showing - get in with it
+        $(this)
+          .css({zIndex: zindex})
+          .addClass("show");
+
+      }
+
+      zindex++;
+
+    } else {
+      // no cards in view
+      $("div.cards")
+        .addClass("showing");
+      $(this)
+        .css({zIndex:zindex})
+        .addClass("show");
+
+      zindex++;
+    }
+    
+  });
+});
+
+
+    </script>
 </body>
 
 </html>

@@ -15,6 +15,7 @@ class Pages extends CI_Controller {
 		$idmenu = $this->encrypt->decode($idmenu);
 		$rspages = $this->Pages_model->get_pages_by_slug($slug);
 		$data['slug'] = $slug;
+		$data["rowinfogereja"] = $this->Home_model->get_infogereja();	
 		$data['menu'] = $idmenu;
 		if ($rspages->num_rows()>0) {
 			$data['rowpages'] = $rspages->row();

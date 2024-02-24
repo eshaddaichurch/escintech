@@ -8,7 +8,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Festava Live - Bootstrap 5 CSS Template</title>
+    <link href="<?php echo base_url('images/icon.png') ?>" rel="icon">
+    <title>Elshaddai Church</title>
 
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -62,7 +63,9 @@
         }
     }
 
-
+    .page-content {
+        min-height: 500px;  
+    }
     </style>
     <!--
 

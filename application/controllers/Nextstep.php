@@ -32,6 +32,7 @@ class Nextstep extends MY_Controller {
 		$data['menu'] = $idmenu;
 		$data['rsJadwal'] = $rsJadwal;
 		$data['rowKelas'] = $rowKelas;
+		$data["rowinfogereja"] = $this->Home_model->get_infogereja();	
 		$this->load->view('nextstep/kelas', $data);
 
 	}

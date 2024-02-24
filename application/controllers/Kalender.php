@@ -13,6 +13,7 @@ class Kalender extends MY_Controller {
 	public function index($idmenu)
 	{
 		$idmenu = $this->encrypt->decode($idmenu);
+		$data["rowinfogereja"] = $this->Home_model->get_infogereja();	
 		$data['menu'] = $idmenu;
 		$this->load->view('kalender/index', $data);
 	}

@@ -1,190 +1,185 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <?php $this->load->view('template/bethany/header'); ?>
+<?php $this->load->view('template/festavalive/header'); ?> 
 
 
-    <style>
-        
-    /*--------------------------------------------------------------
-    # Hero Section
-    --------------------------------------------------------------*/
-    #hero {
-      width: 100%;
-      height: 40vh;
-      background: url("<?php echo base_url('images/banner2.jpg') ?>") center center;
-      background-size: cover;
-      position: relative;
-    }
-    #hero .container {
-      padding-top: 80px;
-    }
-    #hero:before {
-      content: "";
-      background: rgba(0, 0, 0, 0.6);
-      position: absolute;
-      bottom: 0;
-      top: 0;
-      left: 0;
-      right: 0;
-    }
-    #hero h1 {
-      margin: 0 0 10px 0;
-      font-size: 48px;
-      font-weight: 700;
-      line-height: 56px;
-      color: #fff;
-    }
-    #hero h2 {
-      color: #eee;
-      margin-bottom: 40px;
-      font-size: 15px;
-      font-weight: 500;
-      font-family: "Open Sans", sans-serif;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-    }
-    #hero .btn-get-started {
-      font-family: "Poppins", sans-serif;
-      text-transform: uppercase;
-      font-weight: 500;
-      font-size: 14px;
-      letter-spacing: 1px;
-      display: inline-block;
-      padding: 8px 28px;
-      border-radius: 50px;
-      transition: 0.5s;
-      margin: 10px;
-      border: 2px solid #fff;
-      color: #fff;
-    }
-    #hero .btn-get-started:hover {
-      background: #EE6F09;
-      border: 2px solid #EE6F09;
-    }
-    @media (min-width: 1024px) {
-      #hero {
-        background-attachment: fixed;
-      }
-    }
-    @media (max-width: 768px) {
-      #hero {
-        height: 100vh;
-      }
-      #hero .container {
-        padding-top: 60px;
-      }
-      #hero h1 {
-        font-size: 32px;
-        line-height: 36px;
-      }
-    }
-
-
-    </style>
-
-    <style>
-      #map { height: 700px; }
-
-      .link-popup {
-        font-size: 14px;
-        float: right;
-        margin-top: 20px;
-        margin-bottom: 20px;
-      }
-
-    </style>
-
-    <style>
-        .ulCabang li{
-            padding-top: 5px;
-            padding-bottom: 5px;
-        }
-
-        .ulCabang li a{
-            text-decoration: none;
-            color : #243EAE;
-            font-size: 16px;
-        }
-    </style>
-
-
-</head>
 
 <body>
+
+
+        <style>
+        
+        /*--------------------------------------------------------------
+        # Hero Section
+        --------------------------------------------------------------*/
+        #hero {
+          width: 100%;
+          height: 40vh;
+          background: url("<?php echo base_url('images/banner2.jpg') ?>") center center;
+          background-size: cover;
+          position: relative;
+        }
+        #hero .container {
+          padding-top: 80px;
+        }
+        #hero:before {
+          content: "";
+          background: rgba(0, 0, 0, 0.6);
+          position: absolute;
+          bottom: 0;
+          top: 0;
+          left: 0;
+          right: 0;
+        }
+        #hero h1 {
+          margin: 0 0 10px 0;
+          font-size: 48px;
+          font-weight: 700;
+          line-height: 56px;
+          color: #fff;
+        }
+        #hero h2 {
+          color: #eee;
+          margin-bottom: 40px;
+          font-size: 15px;
+          font-weight: 500;
+          font-family: "Open Sans", sans-serif;
+          letter-spacing: 0.5px;
+          text-transform: uppercase;
+        }
+        #hero .btn-get-started {
+          font-family: "Poppins", sans-serif;
+          text-transform: uppercase;
+          font-weight: 500;
+          font-size: 14px;
+          letter-spacing: 1px;
+          display: inline-block;
+          padding: 8px 28px;
+          border-radius: 50px;
+          transition: 0.5s;
+          margin: 10px;
+          border: 2px solid #fff;
+          color: #fff;
+        }
+        #hero .btn-get-started:hover {
+          background: #EE6F09;
+          border: 2px solid #EE6F09;
+        }
+        @media (min-width: 1024px) {
+          #hero {
+            background-attachment: fixed;
+          }
+        }
+        @media (max-width: 768px) {
+          #hero {
+            height: 100vh;
+          }
+          #hero .container {
+            padding-top: 60px;
+          }
+          #hero h1 {
+            font-size: 32px;
+            line-height: 36px;
+          }
+        }
     
+    
+        </style>
+    
+        <style>
+          #map { height: 700px; }
+    
+          .link-popup {
+            font-size: 14px;
+            float: right;
+            margin-top: 20px;
+            margin-bottom: 20px;
+          }
+    
+        </style>
+    
+        <style>
+            .ulCabang li{
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+    
+            .ulCabang li a{
+                text-decoration: none;
+                color : #243EAE;
+                font-size: 16px;
+            }
+        </style>
 
-    <?php $this->load->view('template/bethany/topmenu'); ?>
-
-    <!-- ======= Hero Section ======= -->
-    <section id="hero" class="d-flex align-items-center">
-        <div class="container text-center position-relative" data-aos="fade-in" data-aos-delay="200">
-            <h1>OUR LOCATION </h1>
-        </div>
-    </section><!-- End Hero -->
+    <main>
 
 
-    <main id="main">
 
-        <div class="row mt-5">
-            <div class="col-md-9 ps-5">
-                <div class="card">
-                    <div class="card-body">
-                      <div id="map"></div>
-                        
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-3 pe-5">
-                <div class="card">
-                    <div class="card-body">
-                        <div class="row">
-                            <div class="col-12 text-center">
-                                <h5>CABANG GEREJA ELSHADDAI</h5>
-                            </div>
-                            <div class="col-12"><hr></div>
-                            <div class="col-12">
-                                <ul class="ulCabang" id="ulCabang">
-                                    <li><a href="<?php echo site_url('ourlocation/detail/') ?>">Cabang Siantan</a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <?php $this->load->view('template/festavalive/topmenu'); ?> 
 
-          <div style='clear:both'></div>
 
-        <!-- ======= Clients Section ======= -->
-        <section id="pages" class="pages">
+        <section class="about-section section-padding">
             <div class="container">
-
                 <div class="row">
 
-                    <div class="col-12">
-                        <div id='wrap'>
-
-
-                            
-
-
-                        </div>
+                    <div class="col-12 mb-4 mb-lg-0">
+                      <h2 class="text-white text-center mb-4 mt-3">OUR LOCATION</h2>
                     </div>
 
                 </div>
-
             </div>
-        </section><!-- End Clients Section -->
+        </section>
 
 
 
-    </main><!-- End #main -->
+        <section class="page-content section-padding">
+            <div class="container">
+                <div class="row justify-content-center">
+                <div class="col-md-9 ps-5">
+                  <div class="card">
+                      <div class="card-body">
+                        <div id="map"></div>
+                          
+                      </div>
+                  </div>
+              </div>
+              <div class="col-md-3 pe-5">
+                  <div class="card">
+                      <div class="card-body">
+                          <div class="row">
+                              <div class="col-12 text-center">
+                                  <h5>CABANG GEREJA ELSHADDAI</h5>
+                              </div>
+                              <div class="col-12"><hr></div>
+                              <div class="col-12">
+                                  <ul class="ulCabang" id="ulCabang">
+                                      <li><a href="<?php echo site_url('ourlocation/detail/') ?>">Cabang Siantan</a></li>
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+
+              
+                  
+
+                    
+
+                </div>
+            </div>
+        </section>
 
 
-    <?php $this->load->view('template/bethany/footer'); ?>
+        
 
+
+
+    </main>
+
+
+    <?php $this->load->view('template/festavalive/footer'); ?> 
+    
+
+    
         <!-- 
       Make sure you put this AFTER Leaflet's CSS 
       source: https://leafletjs.com/reference.html#map-example
@@ -195,11 +190,7 @@
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
 
 
-
-
-
-
-
+      
     <script>
 
     var idmenu = "<?php echo $this->encrypt->encode($menu) ?>";
@@ -310,13 +301,6 @@
       // window.initMap = initMap;
     </script>
 
-
-
-<script>
-  
-</script>
-
 </body>
-
 
 </html>
