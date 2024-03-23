@@ -12,7 +12,7 @@
             <ul class="navbar-nav align-items-lg-center ms-auto me-lg-5">
 
                 <?php
-                $rsMenu1 = $this->db->query("SELECT * FROM V_frontmenus WHERE levels=1 ORDER BY nomorurut");
+                $rsMenu1 = $this->db->query("SELECT * FROM v_frontmenus WHERE levels=1 ORDER BY nomorurut");
                 if ($rsMenu1->num_rows() > 0) {
                     foreach ($rsMenu1->result() as $row1) {
 
