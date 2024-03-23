@@ -142,9 +142,57 @@ T e m p l a t e M o
 
 -->
 
+
     <!-- JAVASCRIPT FILES -->
     <script src="<?php echo base_url('assets/FestavaLive/') ?>js/jquery.min.js"></script>
     <script src="<?php echo base_url('assets/FestavaLive/') ?>js/bootstrap.min.js"></script>
     <script src="<?php echo base_url('assets/FestavaLive/') ?>js/jquery.sticky.js"></script>
     <script src="<?php echo base_url('assets/FestavaLive/') ?>js/click-scroll.js"></script>
     <script src="<?php echo base_url('assets/FestavaLive/') ?>js/custom.js"></script>
+
+    <!-- datatables -->
+    <script src="<?php echo (base_url()) ?>admin/assets/datatables2/js/jquery.dataTables.min.js"></script>
+
+
+    <script type="text/javascript" src="<?php echo base_url(); ?>admin/assets/bootbox/bootbox.js"></script>
+
+    <!-- jquery-confirm  -->
+    <script src="<?php echo (base_url("admin/assets/")) ?>jquery-confirm/js/jquery-confirm.min.js"></script>
+
+    <!-- jquery-mask -->
+    <script type="text/javascript" src="<?php echo base_url("admin/assets/") ?>jquery_mask/jquery.mask.js"></script>
+
+    <!-- Bootstrap validator -->
+    <script src="<?php echo (base_url("admin/assets/")) ?>bootstrap-validator/js/bootstrapValidator.js"></script>
+
+    <!-- jquery-ui -->
+    <script src="<?php echo (base_url("admin/assets/")) ?>jquery-ui/jquery-ui-2.js"></script>
+
+    <!-- select2 -->
+    <script src="<?php echo (base_url()) ?>admin/assets/select2/js/select2.min.js"></script>
+
+    <!-- CK Editor -->
+    <!-- <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script> -->
+    <script src="<?php echo base_url(); ?>admin/assets/ckeditor/ckeditor.js"></script>
+
+    <script src="<?php echo (base_url()) ?>admin/assets/sweetalert/sweetalert.min.js"></script>
+
+
+    <?php
+    $this->load->view('loginModal');
+    $this->load->view('registrasiModal');
+    ?>
+
+    <script>
+        $('.show-form-login').click(function(e) {
+            e.preventDefault();
+            $('#registrasiModal').modal('hide');
+            $('#loginModal').modal('show');
+        });
+
+        $('.show-form-registrasi').click(function(e) {
+            e.preventDefault();
+            $('#loginModal').modal('hide');
+            $('#registrasiModal').modal('show');
+        });
+    </script>

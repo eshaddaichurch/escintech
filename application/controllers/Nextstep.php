@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Nextstep extends MY_Controller {
+class Nextstep extends MY_Controller
+{
 
 	public function __construct()
 	{
@@ -10,13 +11,13 @@ class Nextstep extends MY_Controller {
 		$this->load->model('Nextstep_model');
 	}
 
-	public function kelas($kelas_slug, $idmenu)
+	public function kelas($kelas_slug, $idmenu = "")
 	{
 		$rowKelas = $this->db->query("select * from kelas where kelas_slug is not null and kelas_slug='$kelas_slug' LIMIT 1");
-		
-		if ($rowKelas->num_rows()>0) {
+
+		if ($rowKelas->num_rows() > 0) {
 			$rowKelas = $rowKelas->row();
-		}else{
+		} else {
 			$this->load->view('nextstep/notfound', $data);
 			exit();
 		}
@@ -26,15 +27,14 @@ class Nextstep extends MY_Controller {
 		$idkelas = $rowKelas->idkelas;
 		$rsJadwal = $this->db->query("select * from v_jadwalevent where jenisjadwal='Kelas Next Step' and idkelas='$idkelas' and tglmulai > '$tglsekarang' and statuskonfirmasi='Disetujui'");
 
-		
+
 		$idmenu = $this->encrypt->decode($idmenu);
 		$data['kelas_slug'] = $kelas_slug;
 		$data['menu'] = $idmenu;
 		$data['rsJadwal'] = $rsJadwal;
 		$data['rowKelas'] = $rowKelas;
-		$data["rowinfogereja"] = $this->Home_model->get_infogereja();	
+		$data["rowinfogereja"] = $this->Home_model->get_infogereja();
 		$this->load->view('nextstep/kelas', $data);
-
 	}
 
 	public function daftar()
@@ -52,25 +52,24 @@ class Nextstep extends MY_Controller {
 			exit();
 		}
 
-		$idregistrasi = $this->db->query("SELECT create_idregistrasievent('".date('Y-m-d')."') as idregistrasi")->row()->idregistrasi;
+		$idregistrasi = $this->db->query("SELECT create_idregistrasievent('" . date('Y-m-d') . "') as idregistrasi")->row()->idregistrasi;
 		$data = array(
-						'idregistrasi' => $idregistrasi, 
-						'idjadwalevent' => $idjadwalevent, 
-						'tglregistrasi' => date('Y-m-d H:i:s'), 
-						'idjemaat' => $idjemaat, 
-						'statuskonfirmasi' => 'Menunggu',	 
-					);
+			'idregistrasi' => $idregistrasi,
+			'idjadwalevent' => $idjadwalevent,
+			'tglregistrasi' => date('Y-m-d H:i:s'),
+			'idjemaat' => $idjemaat,
+			'statuskonfirmasi' => 'Menunggu',
+		);
 		// echo json_encode($data);
 		// exit();
 
 		$simpan = $this->Nextstep_model->daftar($data);
 		if ($simpan) {
 			echo json_encode(array('success' => true));
-		}else{
+		} else {
 			echo json_encode(array('msg' => "Gagal registrasi kelas"));
 		}
 	}
-
 }
 
 /* End of file Nextstep.php */
