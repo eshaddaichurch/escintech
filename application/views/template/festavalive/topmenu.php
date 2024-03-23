@@ -57,7 +57,7 @@
                         }
 
 
-                        $rsMenu2 = $this->db->query("SELECT * FROM V_frontmenus WHERE parentidmenu='" . $row1->idmenu . "' ORDER BY nomorurut");
+                        $rsMenu2 = $this->db->query("SELECT * FROM v_frontmenus WHERE parentidmenu='" . $row1->idmenu . "' ORDER BY nomorurut");
                         if ($rsMenu2->num_rows() > 0) {
 
 
