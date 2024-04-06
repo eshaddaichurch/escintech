@@ -155,7 +155,7 @@
 
                 <?php
                 if (empty($this->session->userdata('idjemaat'))) {
-                    echo '<a href="' . site_url('login') . '" class="btn custom-btn d-lg-block d-none show-form-login">Login</a>';
+                    echo '<a href="' . site_url('login') . '" class=" custom-btn d-lg-block d-none show-form-login">Login</a>';
                 } else {
 
                     if ($menu == 'Akun') {
