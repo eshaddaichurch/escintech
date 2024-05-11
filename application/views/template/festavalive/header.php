@@ -69,11 +69,11 @@
             min-height: 500px;
         }
     </style>
-    <!--
 
-TemplateMo 583 Festava Live
 
-https://templatemo.com/tm-583-festava-live
 
--->
+    <!-- TemplateMo 583 Festava Live
+
+    https://templatemo.com/tm-583-festava-live -->
+
 </head>

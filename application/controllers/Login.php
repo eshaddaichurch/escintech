@@ -1,29 +1,29 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Login extends CI_Controller {
+class Login extends CI_Controller
+{
 
-	public function __construct()
+    public function __construct()
     {
-        parent::__construct();      
-        $this->load->model('Login_model'); 
+        parent::__construct();
+        $this->load->model('Login_model');
     }
 
     public function keluar()
     {
-        $this->session->sess_destroy(); 
-        redirect( site_url() );
+        $this->session->sess_destroy();
+        redirect(site_url());
     }
 
     public function index()
-    { 
+    {
         $idjemaat = $this->session->userdata('idjemaat');
         if (!empty($idjemaat)) {
-            redirect( site_url() );
-        }else{
-            $this->load->view('login');     
+            redirect(site_url());
+        } else {
+            $this->load->view('login');
         }
-
     }
 
     public function cekLoginAjax()
@@ -31,23 +31,23 @@ class Login extends CI_Controller {
         $email = $this->input->post('email');
         $password = $this->input->post('password');
 
-        if (empty($email) AND empty($password)) {
+        if (empty($email) and empty($password)) {
             echo json_encode(array('msg' => "Email atau password tidak boleh kosong"));
-        }else{
+        } else {
 
             $kirim = $this->Login_model->cekLoginAjax($email, md5($password));
             if ($kirim->num_rows() > 0) {
                 $result = $kirim->row();
 
-                if ($result->statusverifikasiemail==0) {
+                if ($result->statusverifikasiemail == 0) {
                     echo json_encode(array('msg' => "Email anda belum diverifikasi."));
                     exit();
                 }
 
                 if (empty($result->foto)) {
                     $foto = base_url('admin/images/user-01.png');
-                }else{
-                    $foto = base_url('admin/uploads/jemaat/'.$result->foto);
+                } else {
+                    $foto = base_url('admin/uploads/jemaat/' . $result->foto);
                 }
 
                 $data = array(
@@ -57,11 +57,11 @@ class Login extends CI_Controller {
                     'foto' => $foto,
                 );
 
-                $this->session->set_userdata( $data );  
+                $this->session->set_userdata($data);
 
                 echo json_encode(array('success' => true));
-            }else{
-            	echo json_encode(array('msg' => "Email atau password anda salah"));
+            } else {
+                echo json_encode(array('msg' => "Email atau password anda salah"));
             }
         }
     }
@@ -77,95 +77,105 @@ class Login extends CI_Controller {
         $nohp = $this->input->post('namalengkap');
         $email = $this->input->post('email');
         $password = $this->input->post('password');
+        $alasanmembuatakun = $this->input->post('alasanmembuatakun');
+        $sudahpernahfondationclass = $this->input->post('sudahpernahfondationclass');
         $tanggalinsert = date('Y-m-d H:i:s');
 
         /*Periksa Email*/
         if ($this->Login_model->emailsudahada($email)) {
-            $pesan = "<script>
-                            swal('Informasi', 'Email ".$email." sudah pernah terdaftar.', 'warning')
-                                .then(function(){
-                                        $('#registrasiModal').modal('show');
-                                        $('#namalengkap').val('".$namalengkap."');
-                                        $('#jeniskelamin').val('".$jeniskelamin."');
-                                        $('#tempatlahir').val('".$tempatlahir."');
-                                        $('#tanggallahir').val('".$tanggallahir."');
-                                        $('#alamatrumah').val('".$alamatrumah."');
-                                        $('#nohp').val('".$nohp."');
-                                        $('#email').val('".$email."');
-                                    })
-                        </script>";
-            $this->session->set_flashdata('pesan', $pesan);
-            redirect(site_url());  
+            echo json_encode(array('msg' => "Email " . $email . " sudah pernah terdaftar!"));
+            exit();
         }
 
-        $sudahAdaNIK = $this->Login_model->sudahAdaNIK($nik);
+        if ($alasanmembuatakun == 'Bergabung') {
 
-        $sudahAdaNIKTgllahir = $this->Login_model->sudahAdaNIKTgllahir($nik, $tanggallahir);
-
-
-        if ($sudahAdaNIK && !$sudahAdaNIKTgllahir) {
-            $pesan = "<script>
-                            swal('Informasi', 'Nik tidak cocok dengan tanggal lahir anda.', 'warning');
-                        </script>";
-            $this->session->set_flashdata('pesan', $pesan);
-            redirect(site_url());  
-        }
+            $sudahAdaNIK = $this->Login_model->sudahAdaNIK($nik);
+            $sudahAdaNIKTgllahir = $this->Login_model->sudahAdaNIKTgllahir($nik, $tanggallahir);
 
 
-        if ($sudahAdaNIKTgllahir) {
-            
-            $idjemaat = $this->Login_model->getIdJemaatByNIK($nik)->idjemaat;
+            if ($sudahAdaNIK && !$sudahAdaNIKTgllahir) {
+                $pesan = "<script>
+                                swal('Informasi', 'Nik tidak cocok dengan tanggal lahir anda.', 'warning');
+                            </script>";
+                $this->session->set_flashdata('pesan', $pesan);
+                redirect(site_url());
+            }
+
+            if ($sudahAdaNIKTgllahir) {
+
+                $idjemaat = $this->Login_model->getIdJemaatByNIK($nik)->idjemaat;
+
+                $data = array(
+                    'namalengkap' => $namalengkap,
+                    'nik' => $nik,
+                    'jeniskelamin' => $jeniskelamin,
+                    'tempatlahir' => $tempatlahir,
+                    'nohp' => $nohp,
+                    'email' => $email,
+                    'password' => md5($password),
+                    'alasanmembuatakun' => $alasanmembuatakun,
+                    'sudahpernahfondationclass' => $sudahpernahfondationclass,
+                );
+
+                $simpan = $this->Login_model->updateregistrasi($data, $idjemaat);
+            } else {
+
+                $idjemaat = $this->db->query("select create_idjemaat('" . $tanggalinsert . "') as idjemaat")->row()->idjemaat;
+
+                $data = array(
+                    'idjemaat' => $idjemaat,
+                    'namalengkap' => $namalengkap,
+                    'nik' => $nik,
+                    'jeniskelamin' => $idjemaat,
+                    'tempatlahir' => $tempatlahir,
+                    'tanggallahir' => $tanggallahir,
+                    'alamatrumah' => $alamatrumah,
+                    'nohp' => $nohp,
+                    'email' => $email,
+                    'password' => md5($password),
+                    'tanggalinsert' => $tanggalinsert,
+                    'statusjemaat' => 'Umum',
+                    'alasanmembuatakun' => $alasanmembuatakun,
+                    'sudahpernahfondationclass' => $sudahpernahfondationclass,
+                );
+
+                $simpan = $this->Login_model->simpanregistrasi($data);
+            }
+        } else {
+            $sudahpernahfondationclass = 'NULL';
+
+            $idjemaat = $this->db->query("select create_idjemaat('" . $tanggalinsert . "') as idjemaat")->row()->idjemaat;
 
             $data = array(
-                            'namalengkap' => $namalengkap, 
-                            'nik' => $nik, 
-                            'jeniskelamin' => $idjemaat, 
-                            'tempatlahir' => $tempatlahir, 
-                            'nohp' => $nohp, 
-                            'email' => $email, 
-                            'password' => md5($password), 
-                        );
-
-            $simpan = $this->Login_model->updateregistrasi($data, $idjemaat);
-
-        }else{
-            $idjemaat = $this->db->query("select create_idjemaat('".$tanggalinsert."') as idjemaat")->row()->idjemaat;
-
-            $data = array(
-                            'idjemaat' => $idjemaat, 
-                            'namalengkap' => $namalengkap, 
-                            'nik' => $nik, 
-                            'jeniskelamin' => $idjemaat, 
-                            'tempatlahir' => $tempatlahir, 
-                            'tanggallahir' => $tanggallahir, 
-                            'alamatrumah' => $alamatrumah, 
-                            'nohp' => $nohp, 
-                            'email' => $email, 
-                            'password' => md5($password), 
-                            'tanggalinsert' => $tanggalinsert,
-                            'statusjemaat' => 'Umum',
-                        );
+                'idjemaat' => $idjemaat,
+                'namalengkap' => $namalengkap,
+                'nik' => $nik,
+                'jeniskelamin' => $idjemaat,
+                'tempatlahir' => $tempatlahir,
+                'tanggallahir' => $tanggallahir,
+                'alamatrumah' => $alamatrumah,
+                'nohp' => $nohp,
+                'email' => $email,
+                'password' => md5($password),
+                'tanggalinsert' => $tanggalinsert,
+                'statusjemaat' => 'Umum',
+                'alasanmembuatakun' => $alasanmembuatakun,
+                'sudahpernahfondationclass' => $sudahpernahfondationclass,
+            );
 
             $simpan = $this->Login_model->simpanregistrasi($data);
-
         }
 
         if ($simpan) {
-            $textemail = '<a href="'.site_url('login/verifikasiemail/'.$this->encrypt->encode($email)).'">Verifikasi Email</a>';
+            $textemail = '<a href="' . site_url('login/verifikasiemail/' . $this->encrypt->encode($email)) . '">Verifikasi Email</a>';
             $this->App->sendEmailDaftar($email, 'Konfirmasi Pendaftaran MyEsc', $textemail);
-
-            $pesan = "<script>
-                                swal('Informasi', 'Data berhasil disimpan! Silahkan buka email dan verifikasi email anda. Apabila tidak ada di dalam folder kotak masuk, coba periksa di dalam folder spam.', 'success').then(function(){
-                                        $('#loginModal').modal('show');
-                                    })
-                      </script>";
-        }else{
-            $eror = $this->db->error();         
-            $pesan = "<script>swal('Informasi', 'Data gagal disimpan! Pesan Error: ".$eror['code'].' '.$eror['message']."', 'error')</script>";
+            echo json_encode(array('success' => true));
+        } else {
+            $eror = $this->db->error();
+            echo json_encode(array('msg' => "Data gagal disimpan! Pesan Error: " . $eror['code'] . ' ' . $eror['message']));
         }
-        $this->session->set_flashdata('pesan', $pesan);
-        redirect(site_url());  
     }
+
 
     public function verifikasiemail($email)
     {
@@ -175,27 +185,24 @@ class Login extends CI_Controller {
         if ($this->Login_model->emailsudahada($email)) {
 
             $simpan = $this->db->query("update jemaat set statusverifikasiemail='1' where email='$email' ");
-             if ($simpan) {
+            if ($simpan) {
                 $pesan = "<script>
                                     swal('Informasi', 'Email berhasil di verifikasi.', 'success');
                           </script>";
-            }else{
+            } else {
                 $pesan = "<script>swal('Informasi', 'Email gagal diverifikasi!', 'error')</script>";
             }
             $this->session->set_flashdata('pesan', $pesan);
-            redirect(site_url());  
-
-        }else{
+            redirect(site_url());
+        } else {
 
             $pesan = "<script>
                             swal('Informasi', 'Email tidak ditemukan.', 'warning');
                         </script>";
             $this->session->set_flashdata('pesan', $pesan);
-            redirect(site_url());  
+            redirect(site_url());
         }
-
     }
-
 }
 
 /* End of file Login.php */

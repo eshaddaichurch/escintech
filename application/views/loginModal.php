@@ -3,9 +3,9 @@
       <div class="modal-content">
 
         <div class="modal-body">
-          
+
           <form action="<?php echo site_url('login/cek_login') ?>" method="post" id="formLogin">
-            
+
             <div class="container-fluid">
               <div class="row">
                 <div class="col-12">
@@ -16,12 +16,12 @@
                     <div class="col-8 col-md-10">
                       <h5>Elshaddai Church</h5>
                       <p>Jl. Kota Baru 1</p>
-                    </div>                  
+                    </div>
                   </div>
                 </div>
                 <div class="col-12">
-                  
-                  
+
+
 
                   <div class="form-group row mt-5 p-1">
                     <label for="" class="col-md-4 col-form-label">Email</label>
@@ -44,9 +44,9 @@
                 <div class="col-12 mb-3" style="font-size: 12px;">
                   <a href="#" class="show-form-registrasi">Belum punya akun? Daftar disini.</a>
                 </div>
-                
+
                 <div class="col-12" style="font-size: 12px;" id="divAlert">
-                  
+
                 </div>
 
                 <div class="col-md-12">
@@ -60,61 +60,62 @@
 
 
         </div>
-        
+
       </div>
     </div>
   </div>
 
 
-<script>
+  <script>
+    $("#formLogin").bootstrapValidator({
+      feedbackIcons: {
+        valid: 'glyphicon glyphicon-ok',
+        invalid: 'glyphicon glyphicon-remove',
+        validating: 'glyphicon glyphicon-refresh'
+      },
+      fields: {
+        emaillogin: {
+          validators: {
+            notEmpty: {
+              message: "email tidak boleh kosong"
+            },
+          }
+        },
+        passwordlogin: {
+          validators: {
+            notEmpty: {
+              message: "password tidak boleh kosong"
+            },
+          }
+        },
+      }
+    }).on('success.form.bv', function(e) {
+      e.preventDefault();
+      var email = $("#emaillogin").val();
+      var password = $("#passwordlogin").val();
 
+      // console.log(password);
 
-  $("#formLogin").bootstrapValidator({
-       feedbackIcons: {
-         valid: 'glyphicon glyphicon-ok',
-         invalid: 'glyphicon glyphicon-remove',
-         validating: 'glyphicon glyphicon-refresh'
-       },
-       fields: {
-         emaillogin: {
-           validators: {
-             notEmpty: {
-               message: "email tidak boleh kosong"
-             },
-           }
-         },
-         passwordlogin: {
-           validators: {
-             notEmpty: {
-               message: "password tidak boleh kosong"
-             },
-           }
-         },
-       }
-     }).on('success.form.bv', function(e){
-          e.preventDefault();
-          var email = $("#emaillogin").val();
-          var password = $("#passwordlogin").val();
-
-          // console.log(password);
-
-          $.ajax({
-            url: '<?php echo site_url('login/cekLoginAjax') ?>',
-            type: 'POST',
-            dataType: 'json',
-            data: {'email': email, 'password': password},
-          })
-          .done(function(cekLoginResult) {
-            console.log("success");
-            if (cekLoginResult.success) {
-              window.open("<?php echo site_url() ?>","_self");
-            }else{
-              swal('Informasi', cekLoginResult.msg, 'info');
-            }
-          })
-          .fail(function() {
-            $('#divAlert').empty();
-              var addText = `
+      $.ajax({
+          url: '<?php echo site_url('login/cekLoginAjax') ?>',
+          type: 'POST',
+          dataType: 'json',
+          data: {
+            'email': email,
+            'password': password
+          },
+        })
+        .done(function(cekLoginResult) {
+          console.log("success");
+          if (cekLoginResult.success) {
+            window.open("<?php echo site_url() ?>", "_self");
+          } else {
+            swal('Informasi', cekLoginResult.msg, 'info');
+          }
+        })
+        .fail(function() {
+          $('#divAlert').empty();
+          var addText = `
                         <div class="alert alert-danger d-flex align-items-center" role="alert">
                           <i class="fas fa-exclamation-triangle"></i> 
                           <div>
@@ -122,41 +123,41 @@
                           </div>
                         </div>
               `;
-            $('#divAlert').html(addText)
-          })
+          $('#divAlert').html(addText)
+        })
     });
 
 
-  // $('#btnLogin').click(function(event) {
-  //   e.preventDefault();
-  //   var email = $("#emaillogin").val();
-  //   var password = $("#password").val();
-  //   $.ajax({
-  //     url: '<?php echo site_url('login/cekLogin') ?>',
-  //     type: 'POST',
-  //     dataType: 'json',
-  //     data: {'email': email, 'password': password},
-  //   })
-  //   .done(function(cekLoginResult) {
-  //     console.log("success");
-  //     if (cekLoginResult.success) {
+    // $('#btnLogin').click(function(event) {
+    //   e.preventDefault();
+    //   var email = $("#emaillogin").val();
+    //   var password = $("#password").val();
+    //   $.ajax({
+    //     url: '<?php echo site_url('login/cekLogin') ?>',
+    //     type: 'POST',
+    //     dataType: 'json',
+    //     data: {'email': email, 'password': password},
+    //   })
+    //   .done(function(cekLoginResult) {
+    //     console.log("success");
+    //     if (cekLoginResult.success) {
 
-  //     }else{
-  //       $('#divAlert').empty();
-  //       var addText = `
-  //                 <div class="alert alert-danger d-flex align-items-center" role="alert">
-  //                   <i class="fas fa-exclamation-triangle"></i> 
-  //                   <div>
-  //                     `+cekLoginResult.msg+`
-  //                   </div>
-  //                 </div>
-  //       `;
-  //       $('#divAlert').html(addText)
-  //     }
-  //   })
-  //   .fail(function() {
-  //     console.log("error");
-  //   })
-    
-  // });
-</script>
+    //     }else{
+    //       $('#divAlert').empty();
+    //       var addText = `
+    //                 <div class="alert alert-danger d-flex align-items-center" role="alert">
+    //                   <i class="fas fa-exclamation-triangle"></i> 
+    //                   <div>
+    //                     `+cekLoginResult.msg+`
+    //                   </div>
+    //                 </div>
+    //       `;
+    //       $('#divAlert').html(addText)
+    //     }
+    //   })
+    //   .fail(function() {
+    //     console.log("error");
+    //   })
+
+    // });
+  </script>
