@@ -25,6 +25,13 @@
     <link href="<?php echo base_url('assets/FestavaLive/') ?>css/templatemo-festava-live.css" rel="stylesheet">
 
 
+  
+    
+
+    
+<!--
+
+
     <!-- Font Awesome Icons 5.1 -->
     <link rel="stylesheet" href="<?php echo (base_url()) ?>admin/assets/adminlte/plugins/fontawesome-free/css/all.min.css">
 

@@ -150,6 +150,8 @@ T e m p l a t e M o
     <script src="<?php echo base_url('assets/FestavaLive/') ?>js/click-scroll.js"></script>
     <script src="<?php echo base_url('assets/FestavaLive/') ?>js/custom.js"></script>
 
+  
+
     <!-- datatables -->
     <script src="<?php echo (base_url()) ?>admin/assets/datatables2/js/jquery.dataTables.min.js"></script>
 
@@ -176,6 +178,12 @@ T e m p l a t e M o
     <script src="<?php echo base_url(); ?>admin/assets/ckeditor/ckeditor.js"></script>
 
     <script src="<?php echo (base_url()) ?>admin/assets/sweetalert/sweetalert.min.js"></script>
+
+
+   
+
+    
+
 
 
     <?php
