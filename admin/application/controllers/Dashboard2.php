@@ -53,6 +53,7 @@ class Dashboard2 extends MY_controller
 		$datahadiribadah2 = array();
 		$datahadiribadah3 = array();
 		$datahadiribadah4 = array();
+		$datahadiribadah5 = array();
 
 		$jumlah = 0;
 		$i = 1;
@@ -63,8 +64,9 @@ class Dashboard2 extends MY_controller
 				$datahadiribadah2[] = $rowAbsen->jumlahibadah2;
 				$datahadiribadah3[] = $rowAbsen->jumlahibadah3;
 				$datahadiribadah4[] = $rowAbsen->jumlahibadah4;
+				$datahadiribadah5[] = $rowAbsen->jumlahibadah5;
 				$datatotalhadiribadah[] = $rowAbsen->jumlahibadah1 + $rowAbsen->jumlahibadah2 + $rowAbsen->jumlahibadah3 + $rowAbsen->jumlahibadah4;
-				$jumlah += $rowAbsen->jumlahibadah1 + $rowAbsen->jumlahibadah2 + $rowAbsen->jumlahibadah3 + $rowAbsen->jumlahibadah4;
+				$jumlah += $rowAbsen->jumlahibadah1 + $rowAbsen->jumlahibadah2 + $rowAbsen->jumlahibadah3 + $rowAbsen->jumlahibadah4 + $rowAbsen->jumlahibadah5;
 				$i++;
 			}
 		}
@@ -98,6 +100,7 @@ class Dashboard2 extends MY_controller
 			'datahadiribadah2' => $datahadiribadah2,
 			'datahadiribadah3' => $datahadiribadah3,
 			'datahadiribadah4' => $datahadiribadah4,
+			'datahadiribadah5' => $datahadiribadah5,
 			'datatotalhadiribadah' => $datatotalhadiribadah,
 			'jumlahPerMinggu' => $jumlahPerMinggu,
 			'jumlahPerbulan' => $jumlahPerbulan,
@@ -119,6 +122,7 @@ class Dashboard2 extends MY_controller
 		$datahadiribadah2 = array();
 		$datahadiribadah3 = array();
 		$datahadiribadah4 = array();
+		$datahadiribadah5 = array();
 
 		$jumlah = 0;
 		if ($rsAbsen->num_rows() > 0) {
@@ -160,7 +164,7 @@ class Dashboard2 extends MY_controller
 		if ($rsAbsen->num_rows() > 0) {
 			foreach ($rsAbsen->result() as $rowAbsen) {
 				$datatanggal[] = date('d-M', strtotime($rowAbsen->tglabsen));
-				$jumlah = $rowAbsen->jumlahibadah1 + $rowAbsen->jumlahibadah2 + $rowAbsen->jumlahibadah3 + $rowAbsen->jumlahibadah4;
+				$jumlah = $rowAbsen->jumlahibadah1 + $rowAbsen->jumlahibadah2 + $rowAbsen->jumlahibadah3 + $rowAbsen->jumlahibadah4 + $rowAbsen->jumlahibadah5;
 
 				if ($jumlah_old == 0 || $jumlah == 0) {
 					$persentase = 0;

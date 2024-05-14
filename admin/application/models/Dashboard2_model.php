@@ -71,7 +71,8 @@ class Dashboard2_model extends CI_Model
 					SUM(CASE WHEN idsesi='001' THEN jumlahhadir ELSE 0 END) AS jumlahibadah1, 
 					SUM(CASE WHEN idsesi='002' THEN jumlahhadir ELSE 0 END) AS jumlahibadah2,
 					SUM(CASE WHEN idsesi='003' THEN jumlahhadir ELSE 0 END) AS jumlahibadah3,
-					SUM(CASE WHEN idsesi='004' THEN jumlahhadir ELSE 0 END) AS jumlahibadah4	
+					SUM(CASE WHEN idsesi='004' THEN jumlahhadir ELSE 0 END) AS jumlahibadah4,	
+					SUM(CASE WHEN idsesi='005' THEN jumlahhadir ELSE 0 END) AS jumlahibadah5	
 				FROM absen
 				WHERE idabsenjenis='$idabsenjenis' AND convert(tglabsen, date) between '" . date('Y-m-d', strtotime($tglawal)) . "' and '" . date('Y-m-d', strtotime($tglakhir)) . "'
 				GROUP BY tglabsen, idabsenjenis

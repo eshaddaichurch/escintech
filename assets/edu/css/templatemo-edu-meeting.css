@@ -227,18 +227,7 @@ header
   color: #fb5849!important;
 }
 
-.header-area {
-  background-color: rgba(250,250,250,0.15);
-  position: absolute;
-  top: 40px;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  -webkit-transition: all .5s ease 0s;
-  -moz-transition: all .5s ease 0s;
-  -o-transition: all .5s ease 0s;
-  transition: all .5s ease 0s;
-}
+
 
 .header-area .main-nav {
   min-height: 80px;

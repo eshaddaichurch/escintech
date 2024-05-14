@@ -2,7 +2,8 @@
 SQLyog Enterprise v10.42 
 MySQL - 5.5.5-10.4.32-MariaDB : Database - u1804486_escindonesia
 *********************************************************************
-*/
+*/
+
 
 /*!40101 SET NAMES utf8 */;
 
@@ -1448,7 +1449,7 @@ CREATE TABLE `sesiibadahminggu` (
 
 /*Data for the table `sesiibadahminggu` */
 
-insert  into `sesiibadahminggu`(`idsesi`,`namasesi`,`jammulai`,`jamselesai`,`statusaktif`) values ('001','IBADAH I','08:00:00','09:30:00','Aktif'),('002','IBADAH 2','10:30:00','12:00:00','Aktif'),('003','IBADAH 3','16:00:00','17:30:00','Aktif'),('004','IBADAH 4','00:00:19','00:00:20','Aktif');
+insert  into `sesiibadahminggu`(`idsesi`,`namasesi`,`jammulai`,`jamselesai`,`statusaktif`) values ('001','IBADAH I','07:30:00','09:00:00','Aktif'),('002','IBADAH 2','10:30:00','12:00:00','Aktif'),('003','IBADAH 3','16:00:00','17:00:00','Aktif'),('004','IBADAH 4','00:18:00','00:19:00','Aktif'),('005','IBADAH 5','00:00:19','00:00:20','Aktif');
 
 /*Table structure for table `sidemenus` */
 

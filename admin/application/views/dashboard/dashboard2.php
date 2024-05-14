@@ -180,6 +180,9 @@ $this->load->view("template/sidemenu");
                           <span class="mr-2">
                             <i class="fas fa-square" style="color: #D31D48;"></i> Ibadah IV
                           </span>
+                          <span class="mr-2">
+                            <i class="fas fa-square" style="color: #FF5F00;"></i> Ibadah V
+                          </span>
                         </div>
                       </div>
                     </div>
@@ -619,6 +622,17 @@ $this->load->view("template/sidemenu");
                 borderColor: '#D31D48',
                 pointBorderColor: '#D31D48',
                 pointBackgroundColor: '#D31D48',
+                fill: false
+                // pointHoverBackgroundColor: '#D31D48',
+                // pointHoverBorderColor    : '#D31D48'
+              },
+              {
+                type: 'line',
+                data: getgrafikabsenResult.datahadiribadah5,
+                backgroundColor: 'tansparent',
+                borderColor: '#FF5F00',
+                pointBorderColor: '#FF5F00',
+                pointBackgroundColor: '#FF5F00',
                 fill: false
                 // pointHoverBackgroundColor: '#D31D48',
                 // pointHoverBorderColor    : '#D31D48'

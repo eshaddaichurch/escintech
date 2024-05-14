@@ -3,6 +3,8 @@
 
 
 
+
+
   <!-- scholar CSS Files -->
   <!-- <link href="<?php echo base_url('assets/scholar/') ?>assets/css/bootstrap.min.css" rel="stylesheet"> -->
     <link href="<?php echo base_url('assets/scholar/') ?>assets/css/fontawesome.css" rel="stylesheet">
@@ -482,73 +484,73 @@
 
         <!-- scholar template  -->
         <div class="section about-us">
-                    <div class="container ">
-                    <div class="row">
-                        <div class="col-lg-6 offset-lg-1">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 offset-lg-1">
                         <div class="accordion mb-4" id="accordionExample">
                             <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                Where shall we begin?
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-                                <div class="accordion-body mb-4">
-                                Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesn't eiusmod tempor incididunt ut labore consectetur <code>adipiscing</code> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
+                                <h2 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                        Where shall we begin?
+                                    </button>
+                                </h2>
+                                <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body mb-4">
+                                        Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesn't eiusmod tempor incididunt ut labore consectetur <code>adipiscing</code> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
+                                    </div>
                                 </div>
-                            </div>
                             </div>
                             <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                How do we work together?
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesn't eiusmod tempor incididunt ut labore consectetur <code>adipiscing</code> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
+                                <h2 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                        How do we work together?
+                                    </button>
+                                </h2>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        Dolor <strong>almesit amet</strong>, consectetur adipiscing elit, sed doesn't eiusmod tempor incididunt ut labore consectetur <code>adipiscing</code> elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida.
+                                    </div>
                                 </div>
-                            </div>
                             </div>
                             <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Why SCHOLAR is the best?
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                There are more than one hundred responsive HTML templates to choose from <strong>Template</strong>Mo website. You can browse by different tags or categories.
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        Why SCHOLAR is the best?
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        There are more than one hundred responsive HTML templates to choose from <strong>Template</strong>Mo website. You can browse by different tags or categories.
+                                    </div>
                                 </div>
-                            </div>
                             </div>
                             <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingFour">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                Do we get the best support?
-                                </button>
-                            </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
-                                <div class="accordion-body">
-                                You can also search on Google with specific keywords such as <code>templatemo business templates, templatemo gallery templates, admin dashboard templatemo, 3-column templatemo, etc.</code>
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        Do we get the best support?
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                                    <div class="accordion-body">
+                                        You can also search on Google with specific keywords such as <code>templatemo business templates, templatemo gallery templates, admin dashboard templatemo, 3-column templatemo, etc.</code>
+                                    </div>
                                 </div>
-                            </div>
                             </div>
                         </div>
-                        </div>
-                        <div class="col-lg-5 align-self-center">
+                    </div>
+                    <div class="col-lg-5 align-self-center">
                         <div class="section-heading">
                             <h6>About Us</h6>
                             <h2>What make us the best academy online?</h2>
                             <div>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravid risus commodo.</div>
                             <div class="main-button">
-                            <a href="#">Discover More</a>
+                                <a href="#">Discover More</a>
                             </div>
                         </div>
-                        </div>
-                    </div>
                     </div>
                 </div>
+            </div>
+        </div>
 
 
 <!-- edu teemplate -->
@@ -820,7 +822,7 @@
                 <h3>APPLY FOR BACHELOR DEGREE</h3>
                 <p>You are allowed to use this edu meeting CSS template for your school or university or business. You can feel free to modify or edit this layout.</p>
                 <div class="main-button-red">
-                  <div class="scroll-to-section"><a href="#contact">Join Us Now!</a></div>
+                  <div class="scroll-to-section"><a href="https://www.google.com/maps/place/GBI+El+Shaddai/@-0.0485579,109.3158861,17z/data=!3m1!4b1!4m6!3m5!1s0x2e1d591202901daf:0x7138b14058c20347!8m2!3d-0.0485579!4d109.318461!16s%2Fg%2F1tf8jdpk?entry=ttu">Join Us Now!</a></div>
               </div>
               </div>
             </div>
@@ -829,7 +831,7 @@
                 <h3>APPLY FOR BACHELOR DEGREE</h3>
                 <p>You are not allowed to redistribute the template ZIP file on any other template website. Please contact us for more information.</p>
                 <div class="main-button-yellow">
-                  <div class="scroll-to-section"><a href="#contact">Join Us Now!</a></div>
+                  <div class="scroll-to-section"><a href="#section_1">Join Us Now!</a></div>
               </div>
               </div>
             </div>
@@ -1253,7 +1255,7 @@
           <div class="col-lg-6 venue-info">
             <div class="row justify-content-center">
               <div class="col-11 col-lg-8 position-relative">
-                <h3>Downtown Conference Center, New York</h3>
+                <h3>Main Hall Elshaddai Church Pontianak</h3>
                 <p>Iste nobis eum sapiente sunt enim dolores labore accusantium autem. Cumque beatae ipsam. Est quae sit qui voluptatem corporis velit. Qui maxime accusamus possimus. Consequatur sequi et ea suscipit enim nesciunt quia velit.</p>
               </div>
             </div>
@@ -1513,7 +1515,7 @@
     <script src="<?php echo base_url('assets/TheEvent/') ?>vendor/php-email-form/validate.js"></script>
 
   <!-- Template Main JS File -->
-    <script src="<?php echo base_url('assets/TheEvent/') ?>js/main.jss"></script>
+    <!-- <script src="<?php echo base_url('assets/TheEvent/') ?>js/main.jss"></script> -->
   
   <script src="assets/js/main.js"></script>
  
