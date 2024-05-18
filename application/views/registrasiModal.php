@@ -234,7 +234,7 @@
                             <td style="width: 5%;">:</td>
                             <td style="width: 70%;" id="tdDaftarNamaLengkap"></td>
                           </tr>
-                          <tr class="">
+                          <tr class="divnik">
                             <td style="width: 25%;">NIK</td>
                             <td style="width: 5%;">:</td>
                             <td style="width: 70%;" id="tdDaftarNIK"></td>
@@ -244,17 +244,17 @@
                             <td style="width: 5%;">:</td>
                             <td style="width: 70%;" id="tdDaftarJenisKelamin"></td>
                           </tr>
-                          <tr>
+                          <tr class="divtempatlahir">
                             <td style="width: 25%;">Tempat Lahir</td>
                             <td style="width: 5%;">:</td>
                             <td style="width: 70%;" id="tdDaftarTempatLahir"></td>
                           </tr>
-                          <tr>
+                          <tr class="divtgllahir">
                             <td style="width: 25%;">Tanggal Lahir</td>
                             <td style="width: 5%;">:</td>
                             <td style="width: 70%;" id="tdDaftarTanggalLahir"></td>
                           </tr>
-                          <tr>
+                          <tr class="divalamatrumah">
                             <td style="width: 25%;">Alamat Rumah</td>
                             <td style="width: 5%;">:</td>
                             <td style="width: 70%;" id="tdDaftarAlamatRumah"></td>
@@ -347,7 +347,7 @@
         data: formData,
       })
       .done(function(response) {
-        console.log('success');
+        console.log(response);
         if (response.success) {
           swal("Berhasil", "Data berhasil disimpan! Silahkan buka email dan verifikasi email anda. Apabila tidak ada di dalam folder kotak masuk, coba periksa di dalam folder spam.", "success")
             .then(function() {
@@ -763,14 +763,14 @@
         $('.divnik').show();
         $('.divtempatlahir').show();
         $('.divtgllahir').show();
-        $('.divnohp').show();
+        // $('.divnohp').show();
         $('.divalamatrumah').show();
 
       } else {
         $('.divnik').hide();
         $('.divtempatlahir').hide();
         $('.divtgllahir').hide();
-        $('.divnohp').hide();
+        // $('.divnohp').hide();  
         $('.divalamatrumah').hide();
 
       }
@@ -783,7 +783,7 @@
 <script>
   $(document).ready(function() {
 
-
+    $('#sudahpernahfondationclass2').change();
 
     $('.radio-group .radio').click(function() {
       $(this).parent().find('.radio').removeClass('selected');
