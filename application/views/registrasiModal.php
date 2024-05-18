@@ -710,6 +710,7 @@
 
     },
     onSuccess: function(e, data) {
+      e.preventDefault();
 
       // console.log("1");
 

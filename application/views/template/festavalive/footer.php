@@ -140,7 +140,20 @@
 
 T e m p l a t e M o
 
+
 -->
+    <style>
+        .loader {
+            position: fixed;
+            left: 0px;
+            top: 0px;
+            width: 50%;
+            height: 50%;
+            z-index: 9999;
+            background: url('<?php echo base_url("images/Spinner-3.gif") ?>') 100% 100% no-repeat;
+        }
+    </style>
+    <div class="loader"></div>
 
 
     <!-- JAVASCRIPT FILES -->
@@ -150,7 +163,7 @@ T e m p l a t e M o
     <script src="<?php echo base_url('assets/FestavaLive/') ?>js/click-scroll.js"></script>
     <script src="<?php echo base_url('assets/FestavaLive/') ?>js/custom.js"></script>
 
-  
+
 
     <!-- datatables -->
     <script src="<?php echo (base_url()) ?>admin/assets/datatables2/js/jquery.dataTables.min.js"></script>
@@ -180,9 +193,21 @@ T e m p l a t e M o
     <script src="<?php echo (base_url()) ?>admin/assets/sweetalert/sweetalert.min.js"></script>
 
 
-   
+    <script>
+        var $loading = $('.loader').hide();
 
-    
+        $(document)
+            .ajaxStart(function() {
+                //ajax request went so show the loading image
+                $loading.show();
+            })
+            .ajaxStop(function() {
+                //got response so hide the loading image
+                $loading.hide();
+            });
+    </script>
+
+
 
 
 
