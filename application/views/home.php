@@ -34,10 +34,9 @@
   <!-- <link href="<?php echo base_url('assets/TheEvent/') ?>vendor/aos/aos.css" rel="stylesheet"> -->
   <!-- <link href="<?php echo base_url('assets/TheEvent/') ?>vendor/glightbox/css/glightbox.min.css" rel="stylesheet"> -->
   <!-- <link href="<?php echo base_url('assets/TheEvent/') ?>vendor/swiper/swiper-bundle.min.css" rel="stylesheet"> -->
-
-
-  <!-- Template Main CSS File -->
   <link href="<?php echo base_url('assets/TheEvent/') ?>css/style.css" rel="stylesheet">
+
+
 
   
 
@@ -1450,8 +1449,9 @@
                         </div>
                     </div>
 
+   
 
-        <section class="contact-section section-padding" id="section_6">
+      <section class="contact-section section-padding" id="section_6">
             <div class="container">
                 <div class="row">
 
@@ -1495,7 +1495,9 @@
                 </div>
             </div>
         </section>
-    </main>
+
+
+        
 
 
     <?php $this->load->view('template/festavalive/footer'); ?>
