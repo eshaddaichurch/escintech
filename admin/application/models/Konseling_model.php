@@ -1,16 +1,16 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Jemaatbaru_model extends CI_Model
+class Konseling_model extends CI_Model
 {
 
-    var $tabelview = 'v_carejemaatbaru';
-    var $tabel     = 'carejemaatbaru';
-    var $idcarejemaatbaru = 'idcarejemaatbaru';
+    var $tabelview = 'v_carekonseling';
+    var $tabel     = 'carekonseling';
+    var $idcarekonseling = 'idcarekonseling';
 
-    var $column_order = array(null, 'namajemaat', 'tglinsert', 'email', 'nohp', 'status', null);
-    var $column_search = array('namajemaat', 'tglinsert', 'email', 'nohp', 'status');
-    var $order = array('idcarejemaatbaru' => 'desc'); // default order 
+    var $column_order = array(null, 'namalengkap', 'tglpermohonan', 'email', 'nohp', 'status', null);
+    var $column_search = array('namalengkap', 'tglpermohonan', 'email', 'nohp', 'status');
+    var $order = array('idcarekonseling' => 'desc'); // default order 
 
 
     function get_datatables()
@@ -67,20 +67,20 @@ class Jemaatbaru_model extends CI_Model
         return $this->db->get($this->tabelview);
     }
 
-    public function get_by_id($idcarejemaatbaru)
+    public function get_by_id($idcarekonseling)
     {
-        $this->db->where('idcarejemaatbaru', $idcarejemaatbaru);
+        $this->db->where('idcarekonseling', $idcarekonseling);
         return $this->db->get($this->tabelview);
     }
 
-    public function update($data, $idcarejemaatbaru)
+    public function update($data, $idcarekonseling)
     {
-        $this->db->where('idcarejemaatbaru', $idcarejemaatbaru);
+        $this->db->where('idcarekonseling', $idcarekonseling);
         return $this->db->update($this->tabel, $data);
     }
 }
 
 
 
-/* End of file Jemaatbaru_model.php */
-/* Location: ./application/models/Jemaatbaru_model.php */
+/* End of file Konseling_model.php */
+/* Location: ./application/models/Konseling_model.php */

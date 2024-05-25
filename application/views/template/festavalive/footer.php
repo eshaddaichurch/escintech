@@ -210,6 +210,14 @@ T e m p l a t e M o
 
 
 
+    <?php
+    $pesan = $this->session->flashdata('pesan');
+    if (!empty($pesan)) {
+        echo $pesan;
+    }
+    ?>
+
+
 
     <?php
     $this->load->view('loginModal');

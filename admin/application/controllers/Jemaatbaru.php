@@ -27,11 +27,12 @@ class Jemaatbaru extends MY_Controller
         $this->load->view('jemaatbaru/form', $data);
     }
 
-    public function edit($idcarejemaatbaru)
+    public function proses($idcarejemaatbaru)
     {
         $idcarejemaatbaru = $this->encrypt->decode($idcarejemaatbaru);
+        $rsJemaatBaru = $this->Jemaatbaru_model->get_by_id($idcarejemaatbaru);
 
-        if ($this->Jemaatbaru_model->get_by_id($idcarejemaatbaru)->num_rows() < 1) {
+        if ($rsJemaatBaru->num_rows() < 1) {
             $pesan = '<div>
                         <div class="alert alert-danger alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -42,6 +43,7 @@ class Jemaatbaru extends MY_Controller
             redirect('jemaatbaru');
             exit();
         };
+        $data['rowJemaatBaru'] = $rsJemaatBaru->row();
         $data['idcarejemaatbaru'] = $idcarejemaatbaru;
         $data['menu'] = 'jemaatbaru';
         $this->load->view('jemaatbaru/form', $data);
@@ -69,7 +71,7 @@ class Jemaatbaru extends MY_Controller
                 $row[] = $rowdata->email;
                 $row[] = $rowdata->nohp;
                 $row[] = $status;
-                $row[] = '<a href="' . site_url('jemaatbaru/edit/' . $this->encrypt->encode($rowdata->idcarejemaatbaru)) . '" class="btn btn-sm btn-primary btn-circle"><i class="fas fa-check-double"></i></a>';
+                $row[] = '<a href="' . site_url('jemaatbaru/proses/' . $this->encrypt->encode($rowdata->idcarejemaatbaru)) . '" class="btn btn-sm btn-primary btn-circle"><i class="fas fa-check-double"></i></a>';
                 $data[] = $row;
             }
         }
@@ -124,48 +126,18 @@ class Jemaatbaru extends MY_Controller
     public function simpan()
     {
         $idcarejemaatbaru             = $this->input->post('idcarejemaatbaru');
-        $noakta        = $this->input->post('noakta');
-        $tglakta        = $this->input->post('tglakta');
-        $dilakukanoleh        = $this->input->post('dilakukanoleh');
-        $namaayah        = $this->input->post('namaayah');
-        $namaibu        = $this->input->post('namaibu');
-        $idjemaat        = $this->input->post('idjemaat');
-        $iddaerahakta        = $this->input->post('iddaerahakta');
-        $idcabangakta        = $this->input->post('idcabangakta');
+        $keterangan             = $this->input->post('keterangan');
 
-        $statusaktif        = $this->input->post('statusaktif');
-
-        if ($idcarejemaatbaru == '') {
-
-            $idcarejemaatbaru = $this->db->query("select create_idJemaatbaru('" . date('Y-m-d') . "') as idcarejemaatbaru")->row()->idcarejemaatbaru;
-
-            $data = array(
-                'idcarejemaatbaru'   => $idcarejemaatbaru,
-                'noakta'   => $noakta,
-                'tglakta'   => $tglakta,
-                'dilakukanoleh'   => $dilakukanoleh,
-                'idjemaat'   => $idjemaat,
-                'namaayah'   => $namaayah,
-                'namaibu'   => $namaibu,
-                'iddaerahakta'   => $iddaerahakta,
-                'idcabangakta'   => $idcabangakta,
-            );
-            $simpan = $this->Jemaatbaru_model->simpan($data);
-        } else {
-
-            $data = array(
-                'idcarejemaatbaru'   => $idcarejemaatbaru,
-                'noakta'   => $noakta,
-                'tglakta'   => $tglakta,
-                'dilakukanoleh'   => $dilakukanoleh,
-                'idjemaat'   => $idjemaat,
-                'namaayah'   => $namaayah,
-                'namaibu'   => $namaibu,
-                'iddaerahakta'   => $iddaerahakta,
-                'idcabangakta'   => $idcabangakta,
-            );
-            $simpan = $this->Jemaatbaru_model->update($data, $idcarejemaatbaru);
-        }
+        $data = array(
+            'idcarejemaatbaru'   => $idcarejemaatbaru,
+            'status'   => "Confirmed",
+            'tglstatus'   => date('Y-m-d H:i:s'),
+            'idadmin'   => $this->session->userdata('idjemaat'),
+            'keterangan'   => $keterangan,
+        );
+        // var_dump($data);
+        // exit();
+        $simpan = $this->Jemaatbaru_model->update($data, $idcarejemaatbaru);
 
         if ($simpan) {
             $pesan = '<div>

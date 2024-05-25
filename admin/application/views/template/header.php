@@ -8,7 +8,7 @@
 
   <title>ESC | admin</title>
   <link href="<?php echo base_url('images/icon.png') ?>" rel="icon">
-  
+
 
   <!-- overlayScrollbars -->
   <link rel="stylesheet" href="<?php echo (base_url()) ?>assets/adminlte/plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
@@ -48,6 +48,14 @@
 
     #table td {
       vertical-align: middle;
+    }
+
+    .table-infojemaat {
+      font-size: 14px;
+    }
+
+    .table-infojemaat td {
+      padding: 0px;
     }
   </style>
 </head>
