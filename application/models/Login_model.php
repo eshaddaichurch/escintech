@@ -1,55 +1,56 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Login_model extends CI_Model {
+class Login_model extends CI_Model
+{
 
     public function cekLoginAjax($email, $password)
     {
-        $query = "select * from jemaat where email='".$email."' and password='".$password."'";
+        $query = "select * from jemaat where email='" . $email . "' and password='" . $password . "'";
         return $this->db->query($query);
     }
 
     public function simpanregistrasi($data)
     {
-    	return $this->db->insert('jemaat', $data);
+        return $this->db->insert('jemaat', $data);
     }
 
     public function emailsudahada($email)
     {
-    	$this->db->where('email', $email);
-    	$rsCekEmail = $this->db->get('jemaat');
-    	if ($rsCekEmail->num_rows()>0) {
-    		return true;
-    	}else{
-    		return false;
-    	}
+        $this->db->where('email', $email);
+        $rsCekEmail = $this->db->get('jemaat');
+        if ($rsCekEmail->num_rows() > 0) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     public function sudahAdaNIK($nik)
     {
-        $query = "select * from jemaat where nik='".$nik."'";
+        $query = "select * from jemaat where nik='" . $nik . "'";
         $rsTest = $this->db->query($query);
-        if ($rsTest->num_rows()>0) {
+        if ($rsTest->num_rows() > 0) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
     public function sudahAdaNIKTgllahir($nik, $tanggallahir)
     {
-        $query = "select * from jemaat where nik='".$nik."' and tanggallahir='".date('Y-m-d', strtotime($tanggallahir))."'";
+        $query = "select * from jemaat where nik='" . $nik . "' and tanggallahir='" . date('Y-m-d', strtotime($tanggallahir)) . "'";
         $rsTest = $this->db->query($query);
-        if ($rsTest->num_rows()>0) {
+        if ($rsTest->num_rows() > 0) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
 
     public function getIdJemaatByNIK($nik)
     {
-        $query = "select * from jemaat where nik='".$nik."'";
+        $query = "select * from jemaat where nik='" . $nik . "'";
         return $this->db->query($query)->row();
     }
 
@@ -59,6 +60,11 @@ class Login_model extends CI_Model {
         return $this->db->update('jemaat', $data);
     }
 
+
+    public function kirimKeCare($dataCareJemaatBaru)
+    {
+        return $this->db->insert('carejemaatbaru', $dataCareJemaatBaru);
+    }
 }
 
 /* End of file Login_model.php */
