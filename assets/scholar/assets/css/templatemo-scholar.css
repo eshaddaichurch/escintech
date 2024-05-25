@@ -148,7 +148,7 @@ About Us Style
   background-color: #fff;
 }
 
-h2.accordion-header button {
+/* h2.accordion-header button {
   padding: 15px 25px;
   font-family: 'Poppins';
   font-size: 16px;
@@ -168,7 +168,7 @@ h2.accordion-header button {
   border-radius: 50%;
   background-color: #d8986a;
   color: #fff;
-}
+} */
 
 .accordion-button:not(.collapsed)::after {
   background-image: none;
@@ -176,12 +176,12 @@ h2.accordion-header button {
   content: '-';
 }
 
-.accordion-body {
+/* .accordion-body {
   padding: 0px 25px 30px 25px;
   font-size: 18px;
   line-height: 28px;
   color: #000000;
-}
+} */
 
 .about-us .section-heading {
   margin-left: 60px;
@@ -221,12 +221,12 @@ Courses Style
   margin: 0px 20px;
 }
 
-.event_filter li a {
+/* .event_filter li a {
   font-size: 14px;
   font-weight: 500;
   color: #1e1e1e;
   transition: all .3s;
-}
+} */
 
 .event_filter li
 

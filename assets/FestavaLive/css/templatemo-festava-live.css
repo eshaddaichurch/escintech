@@ -22,7 +22,7 @@ https://templatemo.com/tm-583-festava-live
   --border-color:                 #7fffd4;
   --link-hover-color:             #B22727;
 
-  --body-font-family:             'Outfit', sans-serif;
+  /* --body-font-family:             'Outfit', sans-serif; */
 
   --h1-font-size:                 74px;
   --h2-font-size:                 46px;
@@ -45,7 +45,7 @@ https://templatemo.com/tm-583-festava-live
 
 body {
   background-color: var(--white-color);
-  font-family: var(--body-font-family); 
+  /* font-family: var(--body-font-family);  */
 }
 
 

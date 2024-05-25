@@ -1,6 +1,5 @@
 
 
-
 /*** Button Start ***/
 .btn {
     font-weight: 600;
@@ -86,7 +85,9 @@
 }
 /*** Topbar End ***/
 
-
+a.btn-primary1{
+    background:#ff5a36;
+}
 
 
 @media (min-width: 1200px) {
