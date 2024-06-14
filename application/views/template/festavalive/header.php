@@ -24,19 +24,15 @@
 
     <link href="<?php echo base_url('assets/FestavaLive/') ?>css/templatemo-festava-live.css" rel="stylesheet">
 
-
-  
-    
-
-    
-<!--
-
-
     <!-- Font Awesome Icons 5.1 -->
     <link rel="stylesheet" href="<?php echo (base_url()) ?>admin/assets/adminlte/plugins/fontawesome-free/css/all.min.css">
 
     <!-- custom -->
     <link href="<?php echo (base_url()) ?>admin/assets/custom/custom.css" rel="stylesheet" />
+
+
+    <!-- select2 -->
+    <link href="<?php echo (base_url()) ?>admin/assets/select2/css/select2.min.css" rel="stylesheet" />
     <style>
         /*** Navbar ***/
 
@@ -74,6 +70,34 @@
 
         .page-content {
             min-height: 500px;
+        }
+
+
+        .select2,
+        .select2-search__field,
+        .select2-results__option {
+            font-size: 1.0em !important;
+        }
+
+        .select2-selection__rendered {
+            /*line-height: 2em !important;*/
+        }
+
+        .select2-container .select2-selection--single {
+            height: 2em !important;
+            /* height: 40px; */
+        }
+
+        .select2-selection__arrow {
+            height: 2em !important;
+        }
+
+        .form-group>.select2-container {
+            width: 100% !important;
+        }
+
+        .select2-container {
+            width: 100% !important;
         }
     </style>
 
