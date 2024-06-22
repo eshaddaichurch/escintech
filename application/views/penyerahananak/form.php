@@ -14,7 +14,7 @@
                 <div class="row">
 
                     <div class="col-12 mb-4 mb-lg-0">
-                        <h2 class="text-white text-center mb-4 mt-3">PERMOHONAN KONSELING</h2>
+                        <h2 class="text-white text-center mb-4 mt-3">PERMOHONAN PENYERAHAN ANAK</h2>
                     </div>
 
                 </div>
@@ -28,19 +28,47 @@
                 <div class="row justify-content-center">
 
                     <div class="col-12 p-5">
-                        <form action="<?php echo site_url('konseling/simpan') ?>" method="POST" id="form">
-                            <input type="hidden" name="idcarekonseling" id="idcarekonseling">
+                        <form action="<?php echo site_url('penyerahananak/simpan') ?>" method="POST" id="form">
+                            <input type="hidden" name="idpenyerahananak" id="idpenyerahananak">
                             <div class="row">
                                 <div class="col-md-12 mb-5">
-                                    <h5 id="lbljudul">Tambah Permohonan Konseling</h5>
+                                    <h5 id="lbljudul">Form Permohonan Penyerahan Anak</h5>
                                 </div>
                                 <div class="col-12">
+
                                     <div class="form-group row mb-3">
-                                        <label for="" class="col-md-4">Tgl & Jam Permohonan</label>
+                                        <label for="" class="col-md-4">Nama Lengkap Anak</label>
                                         <div class="col-md-8">
-                                            <input type="datetime-local" name="tglpermohonan" id="tglpermohonan" class="form-control">
+                                            <input type="text" name="namaanak" id="namaanak" class="form-control" placeholder="Nama lengkap anak" autofocus="">
                                         </div>
                                     </div>
+                                    <div class="form-group row mb-3">
+                                        <label for="" class="col-md-4">Tempat/ Tanggal Lahir</label>
+                                        <div class="col-md-8">
+                                            <div class="row">
+                                                <div class="col-md-7">
+                                                    <input type="text" name="tempatlahir" id="tempatlahir" class="form-control" placeholder="Tempat lahir">
+                                                </div>
+                                                <label for="" class="col-md-1">/</label>
+                                                <div class="col-md-4">
+                                                    <input type="date" name="tgllahir" id="tgllahir" class="form-control">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label for="" class="col-md-4">Nama Lengkap Ayah</label>
+                                        <div class="col-md-8">
+                                            <input type="text" name="namaayah" id="namaayah" class="form-control" placeholder="Nama lengkap ayah">
+                                        </div>
+                                    </div>
+                                    <div class="form-group row mb-3">
+                                        <label for="" class="col-md-4">Nama Lengkap Ibu</label>
+                                        <div class="col-md-8">
+                                            <input type="text" name="namaibu" id="namaibu" class="form-control" placeholder="Nama lengkap ibu">
+                                        </div>
+                                    </div>
+
                                     <div class="form-group row mb-3">
                                         <label for="" class="col-md-4">No HP Yang Bisa Dihubungi</label>
                                         <div class="col-md-8">
@@ -55,12 +83,12 @@
                                     </div>
                                 </div>
                                 <div class="col-12 text-center mt-5 d-none d-md-block">
-                                    <a href="<?php echo site_url('konseling') ?>" class="btn btn-default mr-1">Kembali</a>
+                                    <a href="<?php echo site_url('penyerahananak') ?>" class="btn btn-default mr-1">Kembali</a>
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Ajukan Permohonan</button>
                                 </div>
                                 <div class="col-12 text-center mt-5 d-md-none d-sm-block">
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Ajukan Permohonan</button>
-                                    <a href="<?php echo site_url('konseling') ?>" class="btn btn-default mr-1">Kembali</a>
+                                    <a href="<?php echo site_url('penyerahananak') ?>" class="btn btn-default mr-1">Kembali</a>
                                 </div>
 
 
@@ -87,40 +115,42 @@
     <?php $this->load->view('template/festavalive/footer'); ?>
 
     <script>
-        var idcarekonseling = "<?php echo $idcarekonseling; ?>";
-        // console.log(idcarekonseling);
+        var idpenyerahananak = "<?php echo $idpenyerahananak; ?>";
+        // console.log(idpenyerahananak);
 
         $(document).ready(function() {
 
             //---------------------------------------------------------> JIKA EDIT DATA
-            if (idcarekonseling != "") {
+            if (idpenyerahananak != "") {
 
 
                 $.ajax({
                         type: 'GET',
-                        url: '<?php echo site_url("konseling/get_edit_data") ?>',
+                        url: '<?php echo site_url("penyerahananak/get_edit_data") ?>',
                         data: {
-                            idcarekonseling: idcarekonseling
+                            idpenyerahananak: idpenyerahananak
                         },
                         dataType: 'json',
                         encode: true
                     })
                     .done(function(result) {
                         // console.log(result);
-                        $("#idcarekonseling").val(result.idcarekonseling);
-                        $("#tglpermohonan").val(result.tglpermohonan);
+                        $("#idpenyerahananak").val(result.idpenyerahananak);
+                        $("#namaanak").val(result.namaanak);
+                        $("#tempatlahir").val(result.tempatlahir);
+                        $("#tgllahir").val(result.tgllahir);
+                        $("#namaayah").val(result.namaayah);
+                        $("#namaibu").val(result.namaibu);
+
                         $("#nohpyangbisadihubungi").val(result.nohpyangbisadihubungi);
                         $("#keteranganpermohonan").val(result.keteranganpermohonan);
 
-                        if (result.namajemaat == 'toni') {
-                            return;
-                        }
                     });
                 // command2
 
-                $("#lbljudul").html("Ubah Permohonan Konseling");
+                $("#lbljudul").html("Ubah Form Permohonan Penyerahan Anak");
             } else {
-                $("#lbljudul").html("Tambah Permohonan Konseling");
+                $("#lbljudul").html("Tambah Form Permohonan Penyerahan Anak");
             }
 
 
@@ -131,10 +161,38 @@
                     validating: 'glyphicon glyphicon-refresh'
                 },
                 fields: {
-                    tglpermohonan: {
+                    namaanak: {
                         validators: {
                             notEmpty: {
-                                message: "tanggal permohonan tidak boleh kosong"
+                                message: "Nama anak tidak boleh kosong"
+                            },
+                        }
+                    },
+                    tempatlahir: {
+                        validators: {
+                            notEmpty: {
+                                message: "Tempat lahir tidak boleh kosong"
+                            },
+                        }
+                    },
+                    tgllahir: {
+                        validators: {
+                            notEmpty: {
+                                message: "tanggal lahir tidak boleh kosong"
+                            },
+                        }
+                    },
+                    namaayah: {
+                        validators: {
+                            notEmpty: {
+                                message: "nama ayah tidak boleh kosong"
+                            },
+                        }
+                    },
+                    namaibu: {
+                        validators: {
+                            notEmpty: {
+                                message: "nama ibu tidak boleh kosong"
                             },
                         }
                     },

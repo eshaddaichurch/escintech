@@ -101,6 +101,10 @@ INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, no
 	VALUES('C101', 'Jemaat Baru', 'C000', 'jemaatbaru', 'Aktif', 302, 1, NULL);
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
 	VALUES('C102', 'Konseling', 'C000', 'konseling', 'Aktif', 303, 1, NULL);
+INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
+	VALUES('C103', 'Permohonan Doa', 'C000', 'permohonandoa', 'Aktif', 304, 1, NULL);
+INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
+	VALUES('C104', 'Penyerahan Anak', 'C000', 'penyerahananak', 'Aktif', 305, 1, NULL);
 
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
 	VALUES('T000', 'Akta', NULL, NULL, 'Aktif', 400, 0, 'fas fa-paperclip');

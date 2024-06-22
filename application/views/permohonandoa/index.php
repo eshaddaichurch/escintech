@@ -42,7 +42,7 @@
                                     </div>
                                     <hr>
                                 </div>
-                                <div class="col-12 mt-3">
+                                <div class="col-12 mt-3 d-none d-md-block">
                                     <table class="table table-condesed text-sm table-jadwal">
                                         <thead>
                                             <tr>
@@ -124,6 +124,75 @@
                                         </tbody>
                                     </table>
                                 </div>
+
+
+                                <div class="col-12 mt-3 d-md-none d-sm-block">
+                                    <div class="row">
+
+                                        <?php
+                                        if ($rsPermohonanDoa->num_rows() > 0) {
+                                            $no = 1;
+                                            foreach ($rsPermohonanDoa->result() as $row) {
+
+                                                switch ($row->status) {
+                                                    case 'Disetujui':
+                                                        $status = '<span class="badge bg-success">' . $row->status . '</span>';
+                                                        break;
+                                                    case 'Ditolak':
+                                                        $status = '<span class="badge bg-danger">' . $row->status . '</span>';
+                                                        break;
+                                                    default:
+                                                        $status = '<span class="badge bg-warning">' . $row->status . '</span>';
+                                                        break;
+                                                }
+
+                                                if ($row->status == 'Permohonan') {
+                                                    $tombol = '
+                                                    <a href="' . site_url('permohonandoa/edit/' . $this->encrypt->encode($row->idpermohonan)) . '" class="btn btn-sm btn-warning float-end ms-1"><i class="fa fa-edit"></i> Ubah</a>
+                                                    <a href="' . site_url('permohonandoa/hapus/' . $this->encrypt->encode($row->idpermohonan)) . '" class="btn btn-sm btn-danger btn-hapus float-end"><i class="fa fa-trash"></i></a>
+                                                    ';
+                                                } else {
+                                                    $tombol = '';
+                                                }
+
+
+                                                echo '
+                                                        <div class="col-12 mb-3">
+                                                            <div class="card">
+                                                                <div class="card-body card-mobile">
+                                                                    <div class="form-group row">
+                                                                        <div class="col-12" class="judul">
+                                                                            <h5>' . $row->namajenispermohonandoa . 'n</h5>
+                                                                        </div>
+                                                                        <div class="col-12 sub-judul">' . tglindonesia($row->tglinsert) . '</div>
+                                                                        <div class="col-12 judul-content">
+                                                                            Perihal
+                                                                        </div>
+                                                                        <div class="col-12 isi-content">
+                                                                            ' . $row->perihaldoa . '
+                                                                        </div>
+                
+                                                                        <div class="col-12">
+                                                                            <span>Status: ' . $status . '</span>
+                                                                        </div>
+                                                                        <div class="col-12 mt-1 text-right">
+                                                                            ' . $tombol . '  
+                                                                        </div>
+                
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                ';
+                                            }
+                                        }
+                                        ?>
+
+                                    </div>
+
+                                </div>
+
+
 
 
                             </div>

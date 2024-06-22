@@ -1,29 +1,29 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Konseling extends MY_Controller
+class Permohonandoa extends MY_Controller
 {
 
     public function __construct()
     {
         parent::__construct();
         $this->islogin();
-        $this->load->model('Konseling_model');
+        $this->load->model('Permohonandoa_model');
         $this->load->model('Jemaat_model');
-        $this->session->set_userdata('IDMENUSELECTED', 'C102');
+        $this->session->set_userdata('IDMENUSELECTED', 'C103');
         $this->cekOtorisasi();
     }
 
     public function index()
     {
-        $data['menu'] = 'konseling';
-        $this->load->view('konseling/listdata', $data);
+        $data['menu'] = 'permohonandoa';
+        $this->load->view('permohonandoa/listdata', $data);
     }
 
-    public function proses($idcarekonseling)
+    public function proses($idpermohonan)
     {
-        $idcarekonseling = $this->encrypt->decode($idcarekonseling);
-        $rsKonseling = $this->Konseling_model->get_by_id($idcarekonseling);
+        $idpermohonan = $this->encrypt->decode($idpermohonan);
+        $rsKonseling = $this->Permohonandoa_model->get_by_id($idpermohonan);
 
         if ($rsKonseling->num_rows() < 1) {
             $pesan = '<div>
@@ -33,18 +33,18 @@ class Konseling extends MY_Controller
                         </div>
                     </div>';
             $this->session->set_flashdata('pesan', $pesan);
-            redirect('konseling');
+            redirect('permohonandoa');
             exit();
         };
         $data['rowKonseling'] = $rsKonseling->row();
-        $data['idcarekonseling'] = $idcarekonseling;
-        $data['menu'] = 'konseling';
-        $this->load->view('konseling/form', $data);
+        $data['idpermohonan'] = $idpermohonan;
+        $data['menu'] = 'permohonandoa';
+        $this->load->view('permohonandoa/form', $data);
     }
 
     public function datatablesource()
     {
-        $RsData = $this->Konseling_model->get_datatables();
+        $RsData = $this->Permohonandoa_model->get_datatables();
         $no = $_POST['start'];
         $data = array();
 
@@ -65,19 +65,20 @@ class Konseling extends MY_Controller
                 $row = array();
                 $row[] = $no;
                 $row[] = $rowdata->namalengkap . '<br>' . $rowdata->jeniskelamin;
-                $row[] = ($rowdata->tglpermohonan == null) ? '' : formatHariTanggalJam($rowdata->tglpermohonan);
+                $row[] = $rowdata->namajenispermohonandoa;
+                $row[] = ($rowdata->tglinsert == null) ? '' : formatHariTanggalJam($rowdata->tglinsert);
                 $row[] = $rowdata->email;
                 $row[] = $rowdata->nohp;
                 $row[] = $status;
-                $row[] = '<a href="' . site_url('konseling/proses/' . $this->encrypt->encode($rowdata->idcarekonseling)) . '" class="btn btn-sm btn-primary btn-circle"><i class="fas fa-check-double"></i></a>';
+                $row[] = '<a href="' . site_url('permohonandoa/proses/' . $this->encrypt->encode($rowdata->idpermohonan)) . '" class="btn btn-sm btn-primary btn-circle"><i class="fas fa-check-double"></i></a>';
                 $data[] = $row;
             }
         }
 
         $output = array(
             "draw" => $_POST['draw'],
-            "recordsTotal" => $this->Konseling_model->count_all(),
-            "recordsFiltered" => $this->Konseling_model->count_filtered(),
+            "recordsTotal" => $this->Permohonandoa_model->count_all(),
+            "recordsFiltered" => $this->Permohonandoa_model->count_filtered(),
             "data" => $data,
         );
         echo json_encode($output);
@@ -85,28 +86,22 @@ class Konseling extends MY_Controller
 
     public function simpan()
     {
-        $idcarekonseling             = $this->input->post('idcarekonseling');
+        $idpermohonan             = $this->input->post('idpermohonan');
         $idpenanggungjawab             = $this->input->post('idpenanggungjawab');
-        $tempatkonseling             = $this->input->post('tempatkonseling');
-        $tglkonseling             = $this->input->post('tglkonseling');
         $keteranganadmin             = $this->input->post('keteranganadmin');
         $status             = $this->input->post('status');
-        $tglinsert = date('Y-m-d H:i:s');
+        if (empty($idpenanggungjawab)) {
+            $idpenanggungjawab = null;
+        }
 
         $data = array(
-            'idcarekonseling'   => $idcarekonseling,
-            'tglinsert'   => $tglinsert,
             'status'   => $status,
             'tglstatus'   => date('Y-m-d H:i:s'),
             'idadmin'   => $this->session->userdata('idjemaat'),
-            'keteranganadmin'   => $keteranganadmin,
             'idpenanggungjawab'   => $idpenanggungjawab,
-            'tglkonseling'   => $tglkonseling,
-            'tempatkonseling'   => $tempatkonseling,
+            'keteranganadmin'   => $keteranganadmin,
         );
-        // var_dump($data);
-        // exit();
-        $simpan = $this->Konseling_model->update($data, $idcarekonseling);
+        $simpan = $this->Permohonandoa_model->update($data, $idpermohonan);
 
         if ($simpan) {
             $pesan = '<div>
@@ -127,15 +122,15 @@ class Konseling extends MY_Controller
         }
 
         $this->session->set_flashdata('pesan', $pesan);
-        redirect('konseling');
+        redirect('permohonandoa');
     }
 
     public function get_edit_data()
     {
-        $idcarekonseling = $this->input->post('idcarekonseling');
-        $RsData = $this->Konseling_model->get_by_id($idcarekonseling)->row();
+        $idpermohonan = $this->input->post('idpermohonan');
+        $RsData = $this->Permohonandoa_model->get_by_id($idpermohonan)->row();
         $data = array(
-            'idcarekonseling'     =>  $RsData->idcarekonseling,
+            'idpermohonan'     =>  $RsData->idpermohonan,
             'status'     =>  $RsData->status,
             'keteranganadmin'     =>  $RsData->keteranganadmin,
             'idpenanggungjawab'     =>  $RsData->idpenanggungjawab,
@@ -147,6 +142,3 @@ class Konseling extends MY_Controller
         echo (json_encode($data));
     }
 }
-
-/* End of file Konseling.php */
-/* Location: ./application/controllers/Konseling.php */

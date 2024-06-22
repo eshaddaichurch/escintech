@@ -27,17 +27,17 @@
             <div class="container">
                 <div class="row justify-content-center">
 
-                    <?php if ($rsKonseling->num_rows() > 0) { ?>
+                    <?php if ($rsPenyerahanAnak->num_rows() > 0) { ?>
 
                         <div class="col-12 p-5">
                             <div class="row">
                                 <div class="col-12">
                                     <div class="row">
                                         <div class="col-md-8">
-                                            <h5>Status Permohonan Konseling</h5>
+                                            <h5>Status Permohonan Penyerahan Anak</h5>
                                         </div>
                                         <div class="col-md-4">
-                                            <a href="<?php echo site_url('konseling/tambah') ?>" class="btn btn-primary float-end"><i class="fa fa-plus"></i> Tambah Permohonan Konseling</a>
+                                            <a href="<?php echo site_url('penyerahananak/tambah') ?>" class="btn btn-primary float-end"><i class="fa fa-plus"></i> Tambah Permohonan Penyerahan Anak</a>
                                         </div>
                                     </div>
                                     <hr>
@@ -48,17 +48,18 @@
                                             <tr>
                                                 <th style="width: 5%; text-align: center;">No</th>
                                                 <th style="width: 15%; text-align: center;">Tanggal Permohonan</th>
-                                                <th style="text-align: left;">Keterangan</th>
-                                                <th style="width: 15%; text-align: center;">No HP</th>
+                                                <th style="text-align: center;">Nama Anak</th>
+                                                <th style="text-align: center;">Nama Ayah/ Nama Ibu</th>
+                                                <th style="width: 15%; text-align: center;">Nomor HP</th>
                                                 <th style="width: 15%; text-align: center;">Status Permohonan</th>
                                                 <th style="width: 15%; text-align: center;">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             <?php
-                                            if ($rsKonseling->num_rows() > 0) {
+                                            if ($rsPenyerahanAnak->num_rows() > 0) {
                                                 $no = 1;
-                                                foreach ($rsKonseling->result() as $row) {
+                                                foreach ($rsPenyerahanAnak->result() as $row) {
 
                                                     switch ($row->status) {
                                                         case 'Disetujui':
@@ -73,8 +74,8 @@
                                                     }
 
                                                     if ($row->status == 'Permohonan') {
-                                                        $tombol = '<a href="' . site_url('konseling/hapus/' . $this->encrypt->encode($row->idcarekonseling)) . '" class="btn btn-danger btn-hapus"><i class="fa fa-trash"></i></a>
-                                                        <a href="' . site_url('konseling/edit/' . $this->encrypt->encode($row->idcarekonseling)) . '" class="btn btn-warning"><i class="fa fa-edit"></i> Ubah</a>';
+                                                        $tombol = '<a href="' . site_url('penyerahananak/hapus/' . $this->encrypt->encode($row->idpenyerahananak)) . '" class="btn btn-sm btn-danger btn-hapus"><i class="fa fa-trash"></i></a>
+                                                        <a href="' . site_url('penyerahananak/edit/' . $this->encrypt->encode($row->idpenyerahananak)) . '" class="btn btn-sm btn-warning"><i class="fa fa-edit"></i> Ubah</a>';
                                                     } else {
                                                         $tombol = '';
                                                     }
@@ -83,8 +84,9 @@
                                                     echo '
                                                 <tr>
                                                     <td style="text-align: center;">' . $no++ . '</td>
-                                                    <td style="text-align: center;">' . tglindonesia($row->tglpermohonan) . '</td>
-                                                    <td style="text-align: left;">' . $row->keteranganpermohonan . '</td>
+                                                    <td style="text-align: center;">' . tglindonesia($row->tglinsert) . '</td>
+                                                    <td style="text-align: center;">' . $row->namaanak . '<br>' . $row->tempatlahir . ', ' . tglindonesia($row->tgllahir) . '</td>
+                                                    <td style="text-align: center;">' . $row->namaayah . '<br>' . $row->namaibu . '</td>
                                                     <td style="text-align: center;">' . $row->nohpyangbisadihubungi . '</td>
                                                     <td style="text-align: center;">' . $status . '</td>
                                                     <td style="text-align: center;">
@@ -130,9 +132,9 @@
                                     <div class="row">
 
                                         <?php
-                                        if ($rsKonseling->num_rows() > 0) {
+                                        if ($rsPenyerahanAnak->num_rows() > 0) {
                                             $no = 1;
-                                            foreach ($rsKonseling->result() as $row) {
+                                            foreach ($rsPenyerahanAnak->result() as $row) {
 
                                                 switch ($row->status) {
                                                     case 'Disetujui':
@@ -148,8 +150,8 @@
 
                                                 if ($row->status == 'Permohonan') {
                                                     $tombol = '
-                                                    <a href="' . site_url('konseling/edit/' . $this->encrypt->encode($row->idcarekonseling)) . '" class="btn btn-sm btn-warning float-end ms-1"><i class="fa fa-edit"></i> Ubah</a>
-                                                    <a href="' . site_url('konseling/hapus/' . $this->encrypt->encode($row->idcarekonseling)) . '" class="btn btn-sm btn-danger btn-hapus float-end"><i class="fa fa-trash"></i></a>
+                                                    <a href="' . site_url('penyerahananak/edit/' . $this->encrypt->encode($row->idpenyerahananak)) . '" class="btn btn-sm btn-warning float-end ms-1"><i class="fa fa-edit"></i> Ubah</a>
+                                                    <a href="' . site_url('penyerahananak/hapus/' . $this->encrypt->encode($row->idpenyerahananak)) . '" class="btn btn-sm btn-danger btn-hapus float-end"><i class="fa fa-trash"></i></a>
                                                     
                                                     ';
                                                 } else {
@@ -163,7 +165,7 @@
                                                                 <div class="card-body card-mobile">
                                                                     <div class="form-group row">
                                                                         <div class="col-12" class="judul">
-                                                                            <h5>' . tglindonesia($row->tglpermohonan) . '</h5>
+                                                                            <h5>' . tglindonesia($row->tglinsert) . '</h5>
                                                                         </div>
                                                                         <div class="col-12 sub-judul"></div>
                                                                         <div class="col-12 judul-content">
@@ -208,7 +210,7 @@
                                             <h5>Anda belum memiliki riwayat konseling. Ingin menambahkan nya sekarang?</h5>
                                         </div>
                                         <div class="col-md-12 mt-3">
-                                            <a href="<?php echo site_url('konseling/tambah') ?>" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Permohonan Konseling</a>
+                                            <a href="<?php echo site_url('penyerahananak/tambah') ?>" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Permohonan Konseling</a>
                                         </div>
                                     </div>
                                 </div>

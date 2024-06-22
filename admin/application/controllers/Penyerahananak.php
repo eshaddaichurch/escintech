@@ -1,31 +1,31 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Konseling extends MY_Controller
+class Penyerahananak extends MY_Controller
 {
 
     public function __construct()
     {
         parent::__construct();
         $this->islogin();
-        $this->load->model('Konseling_model');
+        $this->load->model('Penyerahananak_model');
         $this->load->model('Jemaat_model');
-        $this->session->set_userdata('IDMENUSELECTED', 'C102');
+        $this->session->set_userdata('IDMENUSELECTED', 'C104');
         $this->cekOtorisasi();
     }
 
     public function index()
     {
-        $data['menu'] = 'konseling';
-        $this->load->view('konseling/listdata', $data);
+        $data['menu'] = 'penyerahananak';
+        $this->load->view('penyerahananak/listdata', $data);
     }
 
-    public function proses($idcarekonseling)
+    public function proses($idpenyerahananak)
     {
-        $idcarekonseling = $this->encrypt->decode($idcarekonseling);
-        $rsKonseling = $this->Konseling_model->get_by_id($idcarekonseling);
+        $idpenyerahananak = $this->encrypt->decode($idpenyerahananak);
+        $rsPenyerahanAnak = $this->Penyerahananak_model->get_by_id($idpenyerahananak);
 
-        if ($rsKonseling->num_rows() < 1) {
+        if ($rsPenyerahanAnak->num_rows() < 1) {
             $pesan = '<div>
                         <div class="alert alert-danger alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -33,18 +33,18 @@ class Konseling extends MY_Controller
                         </div>
                     </div>';
             $this->session->set_flashdata('pesan', $pesan);
-            redirect('konseling');
+            redirect('penyerahananak');
             exit();
         };
-        $data['rowKonseling'] = $rsKonseling->row();
-        $data['idcarekonseling'] = $idcarekonseling;
-        $data['menu'] = 'konseling';
-        $this->load->view('konseling/form', $data);
+        $data['rowPenyerahanAnak'] = $rsPenyerahanAnak->row();
+        $data['idpenyerahananak'] = $idpenyerahananak;
+        $data['menu'] = 'penyerahananak';
+        $this->load->view('penyerahananak/form', $data);
     }
 
     public function datatablesource()
     {
-        $RsData = $this->Konseling_model->get_datatables();
+        $RsData = $this->Penyerahananak_model->get_datatables();
         $no = $_POST['start'];
         $data = array();
 
@@ -64,20 +64,20 @@ class Konseling extends MY_Controller
                 $no++;
                 $row = array();
                 $row[] = $no;
-                $row[] = $rowdata->namalengkap . '<br>' . $rowdata->jeniskelamin;
-                $row[] = ($rowdata->tglpermohonan == null) ? '' : formatHariTanggalJam($rowdata->tglpermohonan);
-                $row[] = $rowdata->email;
-                $row[] = $rowdata->nohp;
+                $row[] = $rowdata->namalengkap;
+                $row[] = $rowdata->namaanak;
+                $row[] = $rowdata->namaayah . '<br>' . $rowdata->namaibu;
+                $row[] = $rowdata->nohpyangbisadihubungi;
                 $row[] = $status;
-                $row[] = '<a href="' . site_url('konseling/proses/' . $this->encrypt->encode($rowdata->idcarekonseling)) . '" class="btn btn-sm btn-primary btn-circle"><i class="fas fa-check-double"></i></a>';
+                $row[] = '<a href="' . site_url('penyerahananak/proses/' . $this->encrypt->encode($rowdata->idpenyerahananak)) . '" class="btn btn-sm btn-primary btn-circle"><i class="fas fa-check-double"></i></a>';
                 $data[] = $row;
             }
         }
 
         $output = array(
             "draw" => $_POST['draw'],
-            "recordsTotal" => $this->Konseling_model->count_all(),
-            "recordsFiltered" => $this->Konseling_model->count_filtered(),
+            "recordsTotal" => $this->Penyerahananak_model->count_all(),
+            "recordsFiltered" => $this->Penyerahananak_model->count_filtered(),
             "data" => $data,
         );
         echo json_encode($output);
@@ -85,28 +85,22 @@ class Konseling extends MY_Controller
 
     public function simpan()
     {
-        $idcarekonseling             = $this->input->post('idcarekonseling');
+        $idpenyerahananak             = $this->input->post('idpenyerahananak');
         $idpenanggungjawab             = $this->input->post('idpenanggungjawab');
-        $tempatkonseling             = $this->input->post('tempatkonseling');
-        $tglkonseling             = $this->input->post('tglkonseling');
         $keteranganadmin             = $this->input->post('keteranganadmin');
         $status             = $this->input->post('status');
-        $tglinsert = date('Y-m-d H:i:s');
+        if (empty($idpenanggungjawab)) {
+            $idpenanggungjawab = null;
+        }
 
         $data = array(
-            'idcarekonseling'   => $idcarekonseling,
-            'tglinsert'   => $tglinsert,
             'status'   => $status,
             'tglstatus'   => date('Y-m-d H:i:s'),
             'idadmin'   => $this->session->userdata('idjemaat'),
-            'keteranganadmin'   => $keteranganadmin,
             'idpenanggungjawab'   => $idpenanggungjawab,
-            'tglkonseling'   => $tglkonseling,
-            'tempatkonseling'   => $tempatkonseling,
+            'keteranganadmin'   => $keteranganadmin,
         );
-        // var_dump($data);
-        // exit();
-        $simpan = $this->Konseling_model->update($data, $idcarekonseling);
+        $simpan = $this->Penyerahananak_model->update($data, $idpenyerahananak);
 
         if ($simpan) {
             $pesan = '<div>
@@ -127,15 +121,15 @@ class Konseling extends MY_Controller
         }
 
         $this->session->set_flashdata('pesan', $pesan);
-        redirect('konseling');
+        redirect('penyerahananak');
     }
 
     public function get_edit_data()
     {
-        $idcarekonseling = $this->input->post('idcarekonseling');
-        $RsData = $this->Konseling_model->get_by_id($idcarekonseling)->row();
+        $idpenyerahananak = $this->input->post('idpenyerahananak');
+        $RsData = $this->Penyerahananak_model->get_by_id($idpenyerahananak)->row();
         $data = array(
-            'idcarekonseling'     =>  $RsData->idcarekonseling,
+            'idpenyerahananak'     =>  $RsData->idpenyerahananak,
             'status'     =>  $RsData->status,
             'keteranganadmin'     =>  $RsData->keteranganadmin,
             'idpenanggungjawab'     =>  $RsData->idpenanggungjawab,
@@ -147,6 +141,3 @@ class Konseling extends MY_Controller
         echo (json_encode($data));
     }
 }
-
-/* End of file Konseling.php */
-/* Location: ./application/controllers/Konseling.php */

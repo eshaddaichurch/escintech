@@ -99,6 +99,26 @@
         .select2-container {
             width: 100% !important;
         }
+
+        .card-mobile .judul {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .card-mobile .sub-judul {
+            font-size: 12px;
+            margin-top: -5px;
+            margin-bottom: 20px;
+        }
+
+        .card-mobile .judul-content {
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .card-mobile .isi-content {
+            font-size: 12px;
+        }
     </style>
 
 

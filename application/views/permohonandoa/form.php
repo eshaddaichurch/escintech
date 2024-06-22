@@ -27,7 +27,7 @@
             <div class="container">
                 <div class="row justify-content-center">
 
-                    <div class="col-12">
+                    <div class="col-12 p-5">
                         <form action="<?php echo site_url('permohonandoa/simpan') ?>" method="POST" id="form">
                             <input type="hidden" name="idpermohonan" id="idpermohonan">
                             <div class="row">
@@ -66,14 +66,21 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-12 text-center mt-5">
+
+                                <div class="col-12 text-center mt-5 d-none d-md-block">
                                     <a href="<?php echo site_url('permohonandoa') ?>" class="btn btn-default mr-1">Kembali</a>
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Ajukan Permohonan</button>
+                                </div>
+
+                                <div class="col-12 text-center mt-5 d-md-none d-sm-block">
+                                    <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Ajukan Permohonan</button>
+                                    <a href="<?php echo site_url('permohonandoa') ?>" class="btn btn-default mr-1">Kembali</a>
                                 </div>
 
 
 
                             </div>
+
                         </form>
                     </div>
 
