@@ -54,7 +54,16 @@ class Login extends CI_Controller
                     'idjemaat' => $result->idjemaat,
                     'namalengkap' => $result->namalengkap,
                     'namapanggilan' => $result->namapanggilan,
+                    'alamatrumah' => $result->alamatrumah,
+                    'rtrw' => $result->rtrw,
+                    'kelurahan' => $result->alamatrumah,
+                    'kecamatan' => $result->kecamatan,
+                    'kotakabupaten' => $result->kotakabupaten,
+                    'propinsi' => $result->propinsi,
                     'foto' => $foto,
+                    'notelp' => $result->notelp,
+                    'nohp' => $result->nohp,
+                    'email' => $result->email,
                 );
 
                 $this->session->set_userdata($data);

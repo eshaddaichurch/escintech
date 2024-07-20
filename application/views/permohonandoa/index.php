@@ -98,9 +98,7 @@
                                                         <tr>
                                                             <td style="text-align: center;" colspan="6">
                                                                     STATUS : ' . $status . '<br>
-                                                                    Tempat Konseling : ' . $row->tempatkonseling . '<br>
-                                                                    Tgl Konseling : ' . formatHariTanggal($row->tglkonseling) . '<br>
-                                                                    Keterangan : ' . $row->keteranganadmin . '<br>
+                                                                    Nama Pelayan : ' . $row->namapenanggungjawab . '
                                                             </td>
                                                         </tr>
 

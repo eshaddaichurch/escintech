@@ -1,31 +1,31 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Penyerahananak extends MY_Controller
+class Pernikahan extends MY_Controller
 {
 
     public function __construct()
     {
         parent::__construct();
         $this->islogin();
-        $this->load->model('Penyerahananak_model');
+        $this->load->model('Pernikahan_model');
         $this->load->model('Jemaat_model');
-        $this->session->set_userdata('IDMENUSELECTED', 'C104');
+        $this->session->set_userdata('IDMENUSELECTED', 'C102');
         $this->cekOtorisasi();
     }
 
     public function index()
     {
-        $data['menu'] = 'penyerahananak';
-        $this->load->view('penyerahananak/listdata', $data);
+        $data['menu'] = 'pernikahan';
+        $this->load->view('pernikahan/listdata', $data);
     }
 
-    public function proses($idpenyerahananak)
+    public function proses($idpernikahan)
     {
-        $idpenyerahananak = $this->encrypt->decode($idpenyerahananak);
-        $rsPenyerahanAnak = $this->Penyerahananak_model->get_by_id($idpenyerahananak);
+        $idpernikahan = $this->encrypt->decode($idpernikahan);
+        $rsPernikahan = $this->Pernikahan_model->get_by_id($idpernikahan);
 
-        if ($rsPenyerahanAnak->num_rows() < 1) {
+        if ($rsPernikahan->num_rows() < 1) {
             $pesan = '<div>
                         <div class="alert alert-danger alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -33,18 +33,18 @@ class Penyerahananak extends MY_Controller
                         </div>
                     </div>';
             $this->session->set_flashdata('pesan', $pesan);
-            redirect('penyerahananak');
+            redirect('pernikahan');
             exit();
         };
-        $data['rowPenyerahanAnak'] = $rsPenyerahanAnak->row();
-        $data['idpenyerahananak'] = $idpenyerahananak;
-        $data['menu'] = 'penyerahananak';
-        $this->load->view('penyerahananak/form', $data);
+        $data['rowPernikahan'] = $rsPernikahan->row();
+        $data['idpernikahan'] = $idpernikahan;
+        $data['menu'] = 'pernikahan';
+        $this->load->view('pernikahan/form', $data);
     }
 
     public function datatablesource()
     {
-        $RsData = $this->Penyerahananak_model->get_datatables();
+        $RsData = $this->Pernikahan_model->get_datatables();
         $no = $_POST['start'];
         $data = array();
 
@@ -64,20 +64,19 @@ class Penyerahananak extends MY_Controller
                 $no++;
                 $row = array();
                 $row[] = $no;
-                $row[] = $rowdata->namalengkap;
-                $row[] = $rowdata->namaanak;
-                $row[] = $rowdata->namaayah . '<br>' . $rowdata->namaibu;
-                $row[] = $rowdata->nohpyangbisadihubungi;
+                $row[] = ($rowdata->tglinsert == null) ? '' : formatHariTanggalJam($rowdata->tglinsert);
+                $row[] = $rowdata->namamempelaipria;
+                $row[] = $rowdata->namamempelaiwanita;
                 $row[] = $status;
-                $row[] = '<a href="' . site_url('penyerahananak/proses/' . $this->encrypt->encode($rowdata->idpenyerahananak)) . '" class="btn btn-sm btn-primary btn-circle"><i class="fas fa-check-double"></i></a>';
+                $row[] = '<a href="' . site_url('pernikahan/proses/' . $this->encrypt->encode($rowdata->idpernikahan)) . '" class="btn btn-sm btn-primary btn-circle"><i class="fas fa-check-double"></i></a>';
                 $data[] = $row;
             }
         }
 
         $output = array(
             "draw" => $_POST['draw'],
-            "recordsTotal" => $this->Penyerahananak_model->count_all(),
-            "recordsFiltered" => $this->Penyerahananak_model->count_filtered(),
+            "recordsTotal" => $this->Pernikahan_model->count_all(),
+            "recordsFiltered" => $this->Pernikahan_model->count_filtered(),
             "data" => $data,
         );
         echo json_encode($output);
@@ -85,29 +84,23 @@ class Penyerahananak extends MY_Controller
 
     public function simpan()
     {
-        $idpenyerahananak             = $this->input->post('idpenyerahananak');
+        $idpernikahan             = $this->input->post('idpernikahan');
+        $tglpernikahan             = $this->input->post('tglpernikahan');
         $keteranganadmin             = $this->input->post('keteranganadmin');
         $status             = $this->input->post('status');
-
-
-        if ($status == 'Ditolak' && empty($keteranganadmin)) {
-            $pesan = '<div>
-                        <div class="alert alert-danger alert-dismissable">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-                            <strong>Gagal!</strong> Alasan penolakan harus diisi!
-                        </div>
-                    </div>';
-            $this->session->set_flashdata('pesan', $pesan);
-            redirect('penyerahananak/proses/' . $this->encrypt->encode($idpenyerahananak));
-        }
+        $tglinsert = date('Y-m-d H:i:s');
 
         $data = array(
+            'idpernikahan'   => $idpernikahan,
             'status'   => $status,
             'tglstatus'   => date('Y-m-d H:i:s'),
             'idadmin'   => $this->session->userdata('idjemaat'),
             'keteranganadmin'   => $keteranganadmin,
+            'tglpernikahan'   => $tglpernikahan,
         );
-        $simpan = $this->Penyerahananak_model->update($data, $idpenyerahananak);
+        // var_dump($data);
+        // exit();
+        $simpan = $this->Pernikahan_model->update($data, $idpernikahan);
 
         if ($simpan) {
             $pesan = '<div>
@@ -128,23 +121,23 @@ class Penyerahananak extends MY_Controller
         }
 
         $this->session->set_flashdata('pesan', $pesan);
-        redirect('penyerahananak');
+        redirect('pernikahan');
     }
 
     public function get_edit_data()
     {
-        $idpenyerahananak = $this->input->post('idpenyerahananak');
-        $RsData = $this->Penyerahananak_model->get_by_id($idpenyerahananak)->row();
+        $idpernikahan = $this->input->post('idpernikahan');
+        $RsData = $this->Pernikahan_model->get_by_id($idpernikahan)->row();
         $data = array(
-            'idpenyerahananak'     =>  $RsData->idpenyerahananak,
+            'idpernikahan'     =>  $RsData->idpernikahan,
             'status'     =>  $RsData->status,
             'keteranganadmin'     =>  $RsData->keteranganadmin,
-            'idpenanggungjawab'     =>  $RsData->idpenanggungjawab,
-            'namapenanggungjawab'     =>  $RsData->namapenanggungjawab,
-            'tglkonseling'     =>  $RsData->tglkonseling,
-            'tempatkonseling'     =>  $RsData->tempatkonseling,
+            'tglpernikahan'     =>  $RsData->tglpernikahan,
         );
 
         echo (json_encode($data));
     }
 }
+
+/* End of file Pernikahan.php */
+/* Location: ./application/controllers/Pernikahan.php */

@@ -1,31 +1,31 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Penyerahananak extends MY_Controller
+class Kunjunganjemaat extends MY_Controller
 {
 
     public function __construct()
     {
         parent::__construct();
         $this->islogin();
-        $this->load->model('Penyerahananak_model');
+        $this->load->model('Kunjunganjemaat_model');
         $this->load->model('Jemaat_model');
-        $this->session->set_userdata('IDMENUSELECTED', 'C104');
+        $this->session->set_userdata('IDMENUSELECTED', 'C105');
         $this->cekOtorisasi();
     }
 
     public function index()
     {
-        $data['menu'] = 'penyerahananak';
-        $this->load->view('penyerahananak/listdata', $data);
+        $data['menu'] = 'kunjunganjemaat';
+        $this->load->view('kunjunganjemaat/listdata', $data);
     }
 
-    public function proses($idpenyerahananak)
+    public function proses($idkunjunganjemaat)
     {
-        $idpenyerahananak = $this->encrypt->decode($idpenyerahananak);
-        $rsPenyerahanAnak = $this->Penyerahananak_model->get_by_id($idpenyerahananak);
+        $idkunjunganjemaat = $this->encrypt->decode($idkunjunganjemaat);
+        $rsKunjunganJemaat = $this->Kunjunganjemaat_model->get_by_id($idkunjunganjemaat);
 
-        if ($rsPenyerahanAnak->num_rows() < 1) {
+        if ($rsKunjunganJemaat->num_rows() < 1) {
             $pesan = '<div>
                         <div class="alert alert-danger alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -33,18 +33,18 @@ class Penyerahananak extends MY_Controller
                         </div>
                     </div>';
             $this->session->set_flashdata('pesan', $pesan);
-            redirect('penyerahananak');
+            redirect('kunjunganjemaat');
             exit();
         };
-        $data['rowPenyerahanAnak'] = $rsPenyerahanAnak->row();
-        $data['idpenyerahananak'] = $idpenyerahananak;
-        $data['menu'] = 'penyerahananak';
-        $this->load->view('penyerahananak/form', $data);
+        $data['rowKunjunganJemaat'] = $rsKunjunganJemaat->row();
+        $data['idkunjunganjemaat'] = $idkunjunganjemaat;
+        $data['menu'] = 'kunjunganjemaat';
+        $this->load->view('kunjunganjemaat/form', $data);
     }
 
     public function datatablesource()
     {
-        $RsData = $this->Penyerahananak_model->get_datatables();
+        $RsData = $this->Kunjunganjemaat_model->get_datatables();
         $no = $_POST['start'];
         $data = array();
 
@@ -64,20 +64,21 @@ class Penyerahananak extends MY_Controller
                 $no++;
                 $row = array();
                 $row[] = $no;
-                $row[] = $rowdata->namalengkap;
-                $row[] = $rowdata->namaanak;
-                $row[] = $rowdata->namaayah . '<br>' . $rowdata->namaibu;
+                $row[] = ($rowdata->tglinsert == null) ? '' : formatHariTanggalJam($rowdata->tglinsert);
+                $row[] = $rowdata->namalengkap . '<br>' . $rowdata->jeniskelamin;
+                $row[] = $rowdata->alamatjemaat;
+                $row[] = $rowdata->email;
                 $row[] = $rowdata->nohpyangbisadihubungi;
                 $row[] = $status;
-                $row[] = '<a href="' . site_url('penyerahananak/proses/' . $this->encrypt->encode($rowdata->idpenyerahananak)) . '" class="btn btn-sm btn-primary btn-circle"><i class="fas fa-check-double"></i></a>';
+                $row[] = '<a href="' . site_url('kunjunganjemaat/proses/' . $this->encrypt->encode($rowdata->idkunjunganjemaat)) . '" class="btn btn-sm btn-primary btn-circle"><i class="fas fa-check-double"></i></a>';
                 $data[] = $row;
             }
         }
 
         $output = array(
             "draw" => $_POST['draw'],
-            "recordsTotal" => $this->Penyerahananak_model->count_all(),
-            "recordsFiltered" => $this->Penyerahananak_model->count_filtered(),
+            "recordsTotal" => $this->Kunjunganjemaat_model->count_all(),
+            "recordsFiltered" => $this->Kunjunganjemaat_model->count_filtered(),
             "data" => $data,
         );
         echo json_encode($output);
@@ -85,29 +86,26 @@ class Penyerahananak extends MY_Controller
 
     public function simpan()
     {
-        $idpenyerahananak             = $this->input->post('idpenyerahananak');
+        $idkunjunganjemaat             = $this->input->post('idkunjunganjemaat');
+        $idpenanggungjawab             = $this->input->post('idpenanggungjawab');
+        $tglkunjungan             = $this->input->post('tglkunjungan');
         $keteranganadmin             = $this->input->post('keteranganadmin');
         $status             = $this->input->post('status');
-
-
-        if ($status == 'Ditolak' && empty($keteranganadmin)) {
-            $pesan = '<div>
-                        <div class="alert alert-danger alert-dismissable">
-                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-                            <strong>Gagal!</strong> Alasan penolakan harus diisi!
-                        </div>
-                    </div>';
-            $this->session->set_flashdata('pesan', $pesan);
-            redirect('penyerahananak/proses/' . $this->encrypt->encode($idpenyerahananak));
-        }
+        $tglinsert = date('Y-m-d H:i:s');
 
         $data = array(
+            'idkunjunganjemaat'   => $idkunjunganjemaat,
             'status'   => $status,
             'tglstatus'   => date('Y-m-d H:i:s'),
             'idadmin'   => $this->session->userdata('idjemaat'),
             'keteranganadmin'   => $keteranganadmin,
+            'idpenanggungjawab'   => $idpenanggungjawab,
+            'tglkunjungan'   => $tglkunjungan,
         );
-        $simpan = $this->Penyerahananak_model->update($data, $idpenyerahananak);
+
+        // var_dump($data);
+        // exit();
+        $simpan = $this->Kunjunganjemaat_model->update($data, $idkunjunganjemaat);
 
         if ($simpan) {
             $pesan = '<div>
@@ -128,23 +126,26 @@ class Penyerahananak extends MY_Controller
         }
 
         $this->session->set_flashdata('pesan', $pesan);
-        redirect('penyerahananak');
+        redirect('kunjunganjemaat');
     }
 
     public function get_edit_data()
     {
-        $idpenyerahananak = $this->input->post('idpenyerahananak');
-        $RsData = $this->Penyerahananak_model->get_by_id($idpenyerahananak)->row();
+        $idkunjunganjemaat = $this->input->post('idkunjunganjemaat');
+        $RsData = $this->Kunjunganjemaat_model->get_by_id($idkunjunganjemaat)->row();
         $data = array(
-            'idpenyerahananak'     =>  $RsData->idpenyerahananak,
+            'idkunjunganjemaat'     =>  $RsData->idkunjunganjemaat,
             'status'     =>  $RsData->status,
             'keteranganadmin'     =>  $RsData->keteranganadmin,
             'idpenanggungjawab'     =>  $RsData->idpenanggungjawab,
             'namapenanggungjawab'     =>  $RsData->namapenanggungjawab,
-            'tglkonseling'     =>  $RsData->tglkonseling,
-            'tempatkonseling'     =>  $RsData->tempatkonseling,
+            'tglkunjungan'     =>  $RsData->tglkunjungan,
+            'alamatjemaat'     =>  $RsData->alamatjemaat,
         );
 
         echo (json_encode($data));
     }
 }
+
+/* End of file Kunjunganjemaat.php */
+/* Location: ./application/controllers/Kunjunganjemaat.php */

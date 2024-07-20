@@ -42,42 +42,38 @@ $this->load->view("template/sidemenu");
                             <h3 class="text-gray">Permohonan Konseling</h3>
                             <hr>
 
-                            <input type="hidden" name="idpenyerahananak" id="idpenyerahananak" value="<?php echo $rowKonseling->idpenyerahananak ?>">
+                            <input type="hidden" name="idpenyerahananak" id="idpenyerahananak" value="<?php echo $rowPenyerahanAnak->idpenyerahananak ?>">
 
                             <div class="form-group row">
                                 <div class="col-12 mb-3">
+                                    <h4>Detail Pemohon</h4>
                                     <div class="table-responsive">
                                         <table class="table table-infojemaat">
                                             <tbody>
                                                 <tr>
                                                     <td style="width: 20%;">Nama Pemohon</td>
                                                     <td style="width: 5%;">:</td>
-                                                    <td style="width: 75%;"><?php echo $rowKonseling->namalengkap; ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="width: 20%;">Jenis Kelamin</td>
-                                                    <td style="width: 5%;">:</td>
-                                                    <td style="width: 75%;"><?php echo $rowKonseling->jeniskelamin; ?></td>
+                                                    <td style="width: 75%;"><?php echo $rowPenyerahanAnak->namalengkap; ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td style="width: 20%;">Tanggal Permohonan</td>
                                                     <td style="width: 5%;">:</td>
-                                                    <td style="width: 75%;"><?php echo formatHariTanggal($rowKonseling->tglinsert); ?></td>
+                                                    <td style="width: 75%;"><?php echo formatHariTanggal($rowPenyerahanAnak->tglinsert); ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 20%;">No Hp Yang Bisa Dihubungi</td>
+                                                    <td style="width: 5%;">:</td>
+                                                    <td style="width: 75%;"><?php echo $rowPenyerahanAnak->nohpyangbisadihubungi; ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td style="width: 20%;">Email</td>
                                                     <td style="width: 5%;">:</td>
-                                                    <td style="width: 75%;"><?php echo $rowKonseling->email; ?></td>
-                                                </tr>
-                                                <tr>
-                                                    <td style="width: 20%;">No HP</td>
-                                                    <td style="width: 5%;">:</td>
-                                                    <td style="width: 75%;"><?php echo $rowKonseling->nohp; ?></td>
+                                                    <td style="width: 75%;"><?php echo $rowPenyerahanAnak->email; ?></td>
                                                 </tr>
                                                 <tr>
                                                     <td style="width: 20%;">Keterangan Permohonan</td>
                                                     <td style="width: 5%;">:</td>
-                                                    <td style="width: 75%;"><?php echo $rowKonseling->perihaldoa; ?></td>
+                                                    <td style="width: 75%;"><?php echo $rowPenyerahanAnak->keteranganpermohonan; ?></td>
                                                 </tr>
                                             </tbody>
 
@@ -85,15 +81,37 @@ $this->load->view("template/sidemenu");
                                     </div>
                                 </div>
 
-                                <div class="col-12">
-                                    <div class="form-group row">
-                                        <label for="" class="col-md-4">Penanggung Jawab</label>
-                                        <div class="col-md-8">
-                                            <input type="text" name="namapenanggungjawab" id="namapenanggungjawab" class="form-control" placeholder="Cari nama penanggung jawab">
-                                            <input type="hidden" name="idpenanggungjawab" id="idpenanggungjawab">
-                                        </div>
+                                <div class="col-12 mb-3">
+                                    <h4>Informasi Anak</h4>
+                                    <div class="table-responsive">
+                                        <table class="table table-infojemaat">
+                                            <tbody>
+                                                <tr>
+                                                    <td style="width: 20%;">Nama Anak</td>
+                                                    <td style="width: 5%;">:</td>
+                                                    <td style="width: 75%;"><?php echo $rowPenyerahanAnak->namaanak; ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 20%;">Tempat/ Tgl Lahir</td>
+                                                    <td style="width: 5%;">:</td>
+                                                    <td style="width: 75%;"><?php echo $rowPenyerahanAnak->tempatlahir . ' / ' . tglindonesia($rowPenyerahanAnak->tgllahir); ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 20%;">Nama Ayah</td>
+                                                    <td style="width: 5%;">:</td>
+                                                    <td style="width: 75%;"><?php echo $rowPenyerahanAnak->namaayah; ?></td>
+                                                </tr>
+                                                <tr>
+                                                    <td style="width: 20%;">Nama Ibu</td>
+                                                    <td style="width: 5%;">:</td>
+                                                    <td style="width: 75%;"><?php echo $rowPenyerahanAnak->namaibu; ?></td>
+                                                </tr>
+                                            </tbody>
+
+                                        </table>
                                     </div>
                                 </div>
+
 
                                 <div class="col-12">
                                     <div class="form-group row">
@@ -170,32 +188,32 @@ $this->load->view("template/sidemenu");
 
 
         //----------------------------------------------------------------- > validasi
-        // $("#form").bootstrapValidator({
-        //     feedbackIcons: {
-        //         valid: 'glyphicon glyphicon-ok',
-        //         invalid: 'glyphicon glyphicon-remove',
-        //         validating: 'glyphicon glyphicon-refresh'
-        //     },
-        //     fields: {
-        //         keteranganadmin: {
-        //             validators: {
-        //                 callback: {
-        //                     message: 'Berikan keterangan alasan penolakan',
-        //                     callback: function(value, validator, keteranganadmin) {
+        $("#form").bootstrapValidator({
+            feedbackIcons: {
+                valid: 'glyphicon glyphicon-ok',
+                invalid: 'glyphicon glyphicon-remove',
+                validating: 'glyphicon glyphicon-refresh'
+            },
+            fields: {
+                keteranganadmin: {
+                    validators: {
+                        callback: {
+                            message: 'Berikan keterangan alasan penolakan',
+                            callback: function(value, validator, keteranganadmin) {
 
-        //                         if ($('.status').val() == 'Ditolak') {
-        //                             return {
-        //                                 valid: false,
-        //                                 message: 'Ulangi Berikan keterangan alasan penolakan'
-        //                             }
-        //                         }
-        //                         return true
-        //                     }
-        //                 }
-        //             }
-        //         }
-        //     }
-        // });
+                                if ($('.status').val() == 'Ditolak') {
+                                    return {
+                                        valid: false,
+                                        message: 'Berikan keterangan alasan penolakan'
+                                    }
+                                }
+                                return true
+                            }
+                        }
+                    }
+                }
+            }
+        });
 
 
         $("form").attr('autocomplete', 'off');
@@ -203,40 +221,6 @@ $this->load->view("template/sidemenu");
             placeholder: "000/000"
         });
     }); //end (document).ready
-
-
-
-    $("#namapenanggungjawab").autocomplete({
-            minLength: 1,
-            source: function(request, response) {
-                $.ajax({
-                    type: "POST",
-                    url: "<?php echo site_url('Ajax/autocomplateJemaat'); ?>",
-                    dataType: "json",
-                    data: {
-                        'cari': request.term
-                    },
-                    success: function(data) {
-                        response(data);
-                    }
-                });
-            },
-            focus: function(event, ui) {
-                $('#idpenanggungjawab').val(ui.item.idjemaat);
-                return false;
-            },
-            select: function(event, ui) {
-                $('#namapenanggungjawab').val(ui.item.namalengkap);
-                $('#idpenanggungjawab').val(ui.item.idjemaat);
-                return false;
-            }
-        })
-        .autocomplete("instance")._renderItem = function(ul, item) {
-
-            return $("<li>")
-                .append("<div class='row'><div class='col-12'><strong>" + item.namalengkap + "</strong></div><div class='col-12'><small>Nomor AJ: " + item.noaj + "</small></div></div>")
-                .appendTo(ul);
-        };
 </script>
 
 </body>
