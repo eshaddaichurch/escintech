@@ -42,7 +42,7 @@
             <div class="row">
 
                 <div class="col-lg-6 col-12 mb-4 pb-2">
-                    <h5 class="site-footer-title mb-3">Links</h5>
+                    <h5 class="site-footer-title mb-3">Our Links</h5>
 
                     <ul class="site-footer-links">
                         <li class="site-footer-link-item">
@@ -50,24 +50,17 @@
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">About</a>
+                            <a href="<?php echo site_url() ?>/pages/read/WE9USVFmA2EIYg~~/jesus" class="site-footer-link">About Jesus</a>
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Artists</a>
+                            <a href="#" class="site-footer-link">Class Registration</a>
                         </li>
 
                         <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Schedule</a>
+                            <a href="#" class="site-footer-link">Our Service</a>
                         </li>
 
-                        <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Pricing</a>
-                        </li>
-
-                        <li class="site-footer-link-item">
-                            <a href="#" class="site-footer-link">Contact</a>
-                        </li>
                     </ul>
                 </div>
 
@@ -76,13 +69,13 @@
 
                     <p class="text-white d-flex mb-1">
                         <a href="tel: 090-080-0760" class="site-footer-link">
-                            090-080-0760
+                            +62 855 5000 1187
                         </a>
                     </p>
 
                     <p class="text-white d-flex">
                         <a href="mailto:hello@company.com" class="site-footer-link">
-                            hello@company.com
+                            elshaddaichurch@gmail.com
                         </a>
                     </p>
                 </div>
@@ -91,9 +84,9 @@
                     <h5 class="site-footer-title mb-3">Location</h5>
 
                     <p class="text-white d-flex mt-3 mb-2">
-                        Silang Junction South, Tagaytay, Cavite, Philippines</p>
+                        Jl. Prof. M. Yamin No.1 A Pontianak Kalimantan Barat</p>
 
-                    <a class="link-fx-1 color-contrast-higher mt-3" href="#">
+                    <a class="link-fx-1 color-contrast-higher mt-3" href="<?php echo site_url('') ?>/ourlocation/index/V05TSFJlBWcLYQ~~">
                         <span>Our Maps</span>
                         <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
                             <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
@@ -112,23 +105,23 @@
                 <div class="row">
 
                     <div class="col-lg-3 col-12 mt-5">
-                        <p class="copyright-text">Copyright © 2036 Festava Live Company</p>
+                        <p class="copyright-text">Copyright © 2023 - <?php echo date('Y') ?> Elshaddai Church</p>
                         <p class="copyright-text">Distributed by: <a href="https://themewagon.com">ThemeWagon</a></p>
                     </div>
 
                     <div class="col-lg-8 col-12 mt-lg-5">
                         <ul class="site-footer-links">
-                            <li class="site-footer-link-item">
+                            <!-- <li class="site-footer-link-item">
                                 <a href="#" class="site-footer-link">Terms &amp; Conditions</a>
-                            </li>
+                            </li> -->
 
-                            <li class="site-footer-link-item">
+                            <!-- <li class="site-footer-link-item">
                                 <a href="#" class="site-footer-link">Privacy Policy</a>
                             </li>
 
                             <li class="site-footer-link-item">
                                 <a href="#" class="site-footer-link">Your Feedback</a>
-                            </li>
+                            </li> -->
                         </ul>
                     </div>
                 </div>
@@ -158,7 +151,8 @@ T e m p l a t e M o
 
     <!-- JAVASCRIPT FILES -->
     <script src="<?php echo base_url('assets/FestavaLive/') ?>js/jquery.min.js"></script>
-    <script src="<?php echo base_url('assets/FestavaLive/') ?>js/bootstrap.min.js"></script>
+    <!-- <script src="<?php echo base_url('assets/FestavaLive/') ?>js/bootstrap.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="<?php echo base_url('assets/FestavaLive/') ?>js/jquery.sticky.js"></script>
     <script src="<?php echo base_url('assets/FestavaLive/') ?>js/click-scroll.js"></script>
     <script src="<?php echo base_url('assets/FestavaLive/') ?>js/custom.js"></script>
@@ -191,6 +185,7 @@ T e m p l a t e M o
     <script src="<?php echo base_url(); ?>admin/assets/ckeditor/ckeditor.js"></script>
 
     <script src="<?php echo (base_url()) ?>admin/assets/sweetalert/sweetalert.min.js"></script>
+
 
 
     <script>
@@ -235,5 +230,10 @@ T e m p l a t e M o
             e.preventDefault();
             $('#loginModal').modal('hide');
             $('#registrasiModal').modal('show');
+        });
+
+        $(document).on('click', '.dropdown-item', function(e) {
+            e.stopPropagation();
+            window.location = $(this).attr('href');
         });
     </script>
