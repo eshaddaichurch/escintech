@@ -362,11 +362,11 @@ $this->load->view("template/sidemenu");
                         datasets: [{
                             type: 'bar',
                             data: resultgrafikhit.jumlahmurid,
-                            backgroundColor: 'tansparent',
-                            borderColor: '#ced4da',
-                            pointBorderColor: '#ced4da',
-                            pointBackgroundColor: '#ced4da',
-                            fill: false
+                            backgroundColor: '#557ae0',
+                            borderColor: '#557ae0',
+                            pointBorderColor: '#557ae0',
+                            pointBackgroundColor: '#557ae0',
+                            fill: true
                         }]
                     },
                     options: {
@@ -430,7 +430,7 @@ $this->load->view("template/sidemenu");
                         datasets: [{
                             type: 'bar',
                             data: resultgrafikhit.jumlahmurid,
-                            backgroundColor: 'tansparent',
+                            backgroundColor: '#e055c7',
                             borderColor: '#0d17e8',
                             pointBorderColor: '#0d17e8',
                             pointBackgroundColor: '#0d17e8',
@@ -497,7 +497,7 @@ $this->load->view("template/sidemenu");
                         datasets: [{
                             type: 'bar',
                             data: resultgrafikhit.jumlahmurid,
-                            backgroundColor: 'tansparent',
+                            backgroundColor: '#7ae055',
                             borderColor: '#ced4da',
                             pointBorderColor: '#ced4da',
                             pointBackgroundColor: '#ced4da',
@@ -566,7 +566,7 @@ $this->load->view("template/sidemenu");
                         datasets: [{
                             type: 'bar',
                             data: resultgrafikhit.jumlahmurid,
-                            backgroundColor: 'tansparent',
+                            backgroundColor: '#e08655',
                             borderColor: '#ced4da',
                             pointBorderColor: '#ced4da',
                             pointBackgroundColor: '#ced4da',
