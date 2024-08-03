@@ -1,19 +1,33 @@
 DELETE FROM backmenus;
 
+
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
-	VALUES('0001', 'Management Front End', NULL, NULL, 'Aktif', 1, 0, 'fas fa-newspaper');
+	VALUES('D001', 'Dasboard Kehadiran', NULL, 'dashboardkehadiran', 'Aktif', 0, 0, 'fas fa-home');
+
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
-	VALUES('0002', 'Informasi Gereja', '0001', 'infogereja', 'Aktif', 2, 1, NULL);
+	VALUES('D002', 'Dasboard Visitor', NULL, 'dashboardvisitor', 'Aktif', 1, 0, 'fas fa-home');
+		
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
-	VALUES('0003', 'Kategori Page/Halaman', '0001', 'pageskategori', 'Aktif', 3, 1, NULL);
+	VALUES('D003', 'Dasboard Next Step', NULL, 'dashboardnextstep', 'Aktif', 2, 0, 'fas fa-home');
+
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
-	VALUES('0004', 'Pages/ Halaman', '0001', 'pages', 'Aktif', 4, 1, NULL);
+	VALUES('D004', 'Dasboard Care', NULL, 'dashboardcare', 'Aktif', 3, 0, 'fas fa-home');
+	
+	
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
-	VALUES('0005', 'Kelola Menu', '0001', 'frontmenus', 'Aktif', 5, 1, NULL);
+	VALUES('0001', 'Management Front End', NULL, NULL, 'Aktif', 11, 0, 'fas fa-newspaper');
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
-	VALUES('0006', 'Cabang Gereja', '0001', 'cabanggereja', 'Aktif', 6, 1, NULL);
+	VALUES('0002', 'Informasi Gereja', '0001', 'infogereja', 'Aktif', 12, 1, NULL);
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
-	VALUES('0007', 'Our Service', '0001', 'ourservice', 'Aktif', 7, 1, NULL);
+	VALUES('0003', 'Kategori Page/Halaman', '0001', 'pageskategori', 'Aktif', 13, 1, NULL);
+INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
+	VALUES('0004', 'Pages/ Halaman', '0001', 'pages', 'Aktif', 14, 1, NULL);
+INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
+	VALUES('0005', 'Kelola Menu', '0001', 'frontmenus', 'Aktif', 15, 1, NULL);
+INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
+	VALUES('0006', 'Cabang Gereja', '0001', 'cabanggereja', 'Aktif', 16, 1, NULL);
+INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
+	VALUES('0007', 'Our Service', '0001', 'ourservice', 'Aktif', 17, 1, NULL);
 		
 
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)

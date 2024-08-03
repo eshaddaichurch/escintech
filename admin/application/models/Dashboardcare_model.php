@@ -1,16 +1,18 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Home_model extends CI_Model {
+class Dashboardcare_model extends CI_Model
+{
 
-	private $site_log = 'site_log';   //site log
+    private $site_log = 'site_log';   //site log
     private $site_online = 'site_online';   //site log
 
-    function __construct() {
-        
+    function __construct()
+    {
     }
 
-    function get_site_data_for_today() {
+    function get_site_data_for_today()
+    {
         $results = 0;
         $query = $this->db->query('SELECT SUM(no_of_visits) as visits 
             FROM ' . $this->site_log . ' 
@@ -24,23 +26,25 @@ class Home_model extends CI_Model {
         return $results;
     }
 
-    function get_site_data_for_last_week() {
+    function get_site_data_for_last_week()
+    {
         $results = 0;
         $query = $this->db->query('SELECT SUM(no_of_visits) AS visits
-            FROM '.$this->site_log.'
+            FROM ' . $this->site_log . '
             WHERE DATE(access_date) >= DATE_SUB(NOW(), INTERVAL 7 DAY)
             AND DATE(access_date) <= DATE_SUB(NOW(), INTERVAL 1 DAY)
             LIMIT 1');
         if ($query->num_rows() == 1) {
             $row = $query->row();
             $results = $row->visits;
-        }else{
+        } else {
             $results = 0;
         }
         return $results;
     }
 
-    function get_site_data_for_last_month() {
+    function get_site_data_for_last_month()
+    {
         $results = 0;
         $query = $this->db->query('SELECT SUM(no_of_visits) as visits
             FROM ' . $this->site_log . '
@@ -55,7 +59,8 @@ class Home_model extends CI_Model {
     }
 
 
-    function get_new_visitor_last_month() {
+    function get_new_visitor_last_month()
+    {
         $results = 0;
         $query = $this->db->query('SELECT count(*) as visits
             FROM ' . $this->site_log . '
@@ -69,9 +74,10 @@ class Home_model extends CI_Model {
     }
 
 
-    function get_online_visitor() {
+    function get_online_visitor()
+    {
         $results = 0;
-        $query = $this->db->query('SELECT COUNT(*) AS countonline FROM '.$this->site_online.' 
+        $query = $this->db->query('SELECT COUNT(*) AS countonline FROM ' . $this->site_online . ' 
             WHERE lastseen > DATE_SUB(NOW(), INTERVAL 10 MINUTE)
             LIMIT 1');
         if ($query->num_rows() == 1) {
@@ -81,7 +87,8 @@ class Home_model extends CI_Model {
         return $results;
     }
 
-    function get_chart_data_for_today() {
+    function get_chart_data_for_today()
+    {
         $query = $this->db->query('SELECT SUM(no_of_visits) as visits,
                 DATE_FORMAT(access_date,"%h %p") AS hour
                 FROM ' . $this->site_log . '
@@ -93,7 +100,8 @@ class Home_model extends CI_Model {
         return NULL;
     }
 
-    function get_chart_data_for_month_year($month = 0, $year = 0) {
+    function get_chart_data_for_month_year($month = 0, $year = 0)
+    {
         if ($month == 0 && $year == 0) {
             $month = date('m');
             $year = date('Y');
@@ -144,7 +152,8 @@ class Home_model extends CI_Model {
     }
 
 
-    function get_chart_data_for_month_year_new_visitor($month = 0, $year = 0) {
+    function get_chart_data_for_month_year_new_visitor($month = 0, $year = 0)
+    {
         if ($month == 0 && $year == 0) {
             $month = date('m');
             $year = date('Y');
@@ -187,8 +196,7 @@ class Home_model extends CI_Model {
 
         return NULL;
     }
-
 }
 
-/* End of file Home_model.php */
-/* Location: ./application/models/Home_model.php */
+/* End of file Dashboardcare_model.php */
+/* Location: ./application/models/Dashboardcare_model.php */
