@@ -190,7 +190,7 @@ $this->load->view("template/sidemenu");
     $(document).ready(function() {
 
         $.ajax({
-                url: '<?php echo site_url("home/getinfobox") ?>',
+                url: '<?php echo site_url("dashboardvisitor/getinfobox") ?>',
                 type: 'GET',
                 dataType: 'json',
             })
@@ -222,7 +222,7 @@ $this->load->view("template/sidemenu");
 
         //  ============================================== grafik hit ==================================
         $.ajax({
-                url: '<?php echo site_url("home/getgrafikhit") ?>',
+                url: '<?php echo site_url("dashboardvisitor/getgrafikhit") ?>',
                 type: 'GET',
                 dataType: 'json',
             })
@@ -305,7 +305,7 @@ $this->load->view("template/sidemenu");
         //  ============================================== grafik new visitor ==================================
 
         $.ajax({
-                url: '<?php echo site_url("home/getgraviknewvisitor") ?>',
+                url: '<?php echo site_url("dashboardvisitor/getgraviknewvisitor") ?>',
                 type: 'GET',
                 dataType: 'json',
             })

@@ -20,66 +20,53 @@ class Dashboardcare extends MY_controller
 
     public function getinfobox()
     {
-        $hitcounterlastweek = $this->Dashboardcare_model->get_site_data_for_last_week();
-        $hitcountertoday = $this->Dashboardcare_model->get_site_data_for_today();
-        $newvisitorthismonth = $this->Dashboardcare_model->get_new_visitor_last_month();
-        $onlinevisitor = $this->Dashboardcare_model->get_online_visitor();
 
         $data = array(
-            'hitcountertoday' => $hitcountertoday,
-            'hitcounterlastweek' => $hitcounterlastweek,
-            'newvisitorthismonth' => $newvisitorthismonth,
-            'onlinevisitor' => $onlinevisitor,
+            'jumlahjemaatbaru' => $this->Dashboardcare_model->getJemaatBaru(),
+            'jumlahjemaatsemua' => $this->Dashboardcare_model->getTotalJemaat(),
+            'jumlahjemaatsimpatisan' => $this->Dashboardcare_model->getTotalSimpatisan(),
+            'jumlahjemaatumum' => $this->Dashboardcare_model->getTotalUmum(),
         );
         echo json_encode($data);
     }
 
-    public function getgrafikhit()
+    public function getgrafikjemaatbaru()
     {
-        $rshit = $this->Dashboardcare_model->get_chart_data_for_month_year();
+        $rskelas = $this->Dashboardcare_model->getgrafikjemaatbaru()->row();
+        // echo json_encode($rskelas);
+        // exit();
         $datatanggal = array();
-        $datahit = array();
-        $dataaverage = array();
-        $jumlah = 0;
-        if ($rshit->num_rows() > 0) {
-            $i = 1;
-            foreach ($rshit->result() as $rowhit) {
-                $datatanggal[] = 'Tgl-' . date('d', strtotime($rowhit->day));
-                $datahit[] = $rowhit->visits;
-                $dataaverage[] = ($jumlah + $rowhit->visits) / $i;
 
-                $jumlah += $rowhit->visits;
-                $i++;
-            }
-        }
+        $datatanggal = array('Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Ags', 'Sep', 'Okt', 'Nov', 'Des');
+
+
+        $jumlahjemaat = array($rskelas->Jan, $rskelas->Feb, $rskelas->Mar, $rskelas->Apr, $rskelas->Mei, $rskelas->Jun, $rskelas->Jul, $rskelas->Ags, $rskelas->Sep, $rskelas->Okt, $rskelas->Nov, $rskelas->Des);
 
         $data = array(
             'datatanggal' => $datatanggal,
-            'datahit' => $datahit,
-            'dataaverage' => $dataaverage,
-            'totalhit' => $jumlah,
+            'jumlahjemaat' => $jumlahjemaat,
+            'totaljemaat' => $rskelas->Jan + $rskelas->Feb + $rskelas->Mar + $rskelas->Apr + $rskelas->Mei + $rskelas->Jun + $rskelas->Jul + $rskelas->Ags + $rskelas->Sep + $rskelas->Okt + $rskelas->Nov + $rskelas->Des
         );
         echo json_encode($data);
     }
 
 
-    public function getgraviknewvisitor()
+    public function getgrafikmarriage()
     {
-        $rsvisitor = $this->Dashboardcare_model->get_chart_data_for_month_year_new_visitor();
+        $rskelas = $this->Dashboardcare_model->getgrafikmarriage()->row();
+        // echo json_encode($rskelas);
+        // exit();
         $datatanggal = array();
-        $datavisitor = array();
-        $totalnewvisitor = 0;
-        if ($rsvisitor->num_rows() > 0) {
-            foreach ($rsvisitor->result() as $rowvisitor) {
-                $datatanggal[] = 'Tgl-' . date('d', strtotime($rowvisitor->day));
-                $datavisitor[] = $rowvisitor->visitor;
-                $totalnewvisitor += $rowvisitor->visitor;
-            }
-        }
+
+        $datatanggal = array('Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Ags', 'Sep', 'Okt', 'Nov', 'Des');
+
+
+        $jumlahjemaat = array($rskelas->Jan, $rskelas->Feb, $rskelas->Mar, $rskelas->Apr, $rskelas->Mei, $rskelas->Jun, $rskelas->Jul, $rskelas->Ags, $rskelas->Sep, $rskelas->Okt, $rskelas->Nov, $rskelas->Des);
+
         $data = array(
             'datatanggal' => $datatanggal,
-            'datavisitor' => $datavisitor,
-            'totalnewvisitor' => $totalnewvisitor,
+            'jumlahjemaat' => $jumlahjemaat,
+            'totaljemaat' => $rskelas->Jan + $rskelas->Feb + $rskelas->Mar + $rskelas->Apr + $rskelas->Mei + $rskelas->Jun + $rskelas->Jul + $rskelas->Ags + $rskelas->Sep + $rskelas->Okt + $rskelas->Nov + $rskelas->Des
         );
         echo json_encode($data);
     }

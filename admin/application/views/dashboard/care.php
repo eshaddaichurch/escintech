@@ -34,98 +34,110 @@ $this->load->view("template/sidemenu");
                         ?>
                     </div>
 
-                    <div class="col-12 col-sm-6 col-md-3">
-                        <div class="info-box">
-                            <span class="info-box-icon bg-info elevation-1"><i class="fas fa-eye"></i></span>
-                            <div class="info-box-content">
-                                <span class="info-box-text">Hit Counter Minggu Lalu</span>
-                                <span class="info-box-number">
-                                    <span id="hitcounterlastweek">0</span>
-                                    <small>Hit</small>
-                                </span>
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-info">
+                            <div class="inner">
+                                <h3 class="jumlahjemaatbaru">0</h3>
+
+                                <p>Jemaat Baru</p>
                             </div>
+                            <div class="icon">
+                                <i class="ion ion-bag"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-success">
+                            <div class="inner">
+                                <h3 class="jumlahjemaatsemua">0</h3>
+
+                                <p>Jumlah Jemaat</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-stats-bars"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-warning">
+                            <div class="inner">
+                                <h3 class="jumlahjemaatsimpatisan">0</h3>
+
+                                <p>Jumlah Simpatisan</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-person-add"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
+                        </div>
+                    </div>
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-danger">
+                            <div class="inner">
+                                <h3 class="jumlahjemaatumum">0</h3>
+
+                                <p>Jumlah Pengunjung Umum</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-pie-graph"></i>
+                            </div>
+                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
 
-                    <div class="col-12 col-sm-6 col-md-3">
-                        <div class="info-box mb-3">
-                            <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-eye"></i></span>
 
-                            <div class="info-box-content">
-                                <span class="info-box-text">Hit Counter Hari Ini</span>
-                                <span class="info-box-number">
-                                    <span id="hitcountertoday">0</span>
-                                    <small>Hit</small>
-                                </span>
+                    <div class="col-12">
+                        <div class="card card-success">
+                            <div class="card-header">
+                                <h3 class="card-title text-light">Grafik Jemaat Baru</h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse">
+                                        <i class="fas fa-minus"></i>
+                                    </button>
+                                    <button type="button" class="btn btn-tool" data-card-widget="remove">
+                                        <i class="fas fa-times"></i>
+                                    </button>
+                                </div>
                             </div>
+                            <div class="card-body">
+                                <canvas id="pieChart" style="min-height: 250px; height: 350px; max-width: 100%;"></canvas>
+                            </div>
+                            <!-- /.card-body -->
                         </div>
                     </div>
-
-                    <div class="clearfix hidden-md-up"></div>
-
-                    <div class="col-12 col-sm-6 col-md-3">
-                        <div class="info-box mb-3">
-                            <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
-
-                            <div class="info-box-content">
-                                <span class="info-box-text">New Visitor Bulan Ini</span>
-                                <span class="info-box-number">
-                                    <span id="newvisitorthismonth">0</span>
-                                    <small>Visitor</small>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-6 col-md-3">
-                        <div class="info-box mb-3">
-                            <span class="info-box-icon bg-success elevation-1"><i class="fas fa-user"></i></span>
-                            <div class="info-box-content">
-                                <span class="info-box-text">Online Visitor</span>
-                                <span class="info-box-number">
-                                    <span id="onlinevisitor">0</span>
-                                    <small>Visitor</small>
-                                </span>
-                            </div>
-                            <!-- /.info-box-content -->
-                        </div>
-                        <!-- /.info-box -->
-                    </div>
-
-
 
                     <div class="col-lg-6">
                         <div class="card">
                             <div class="card-header border-0">
                                 <div class="d-flex justify-content-between">
-                                    <h3 class="card-title">Hit Counter</h3>
-                                    <!-- <a href="javascript:void(0);">View Report</a> -->
+                                    <h3 class="card-title">Jemaat Baru</h3>
                                 </div>
                             </div>
                             <div class="card-body">
                                 <div class="d-flex">
                                     <p class="d-flex flex-column">
-                                        <span class="text-bold text-lg">Jumlah HIT: <span id="totalhit">0</span></span>
-                                        <span>1 Bulan Terakhir</span>
+                                        <span class="text-bold text-lg">Jumlah: <span id="lbljemaatbaru">0</span></span>
+                                        <span>Tahun <?php echo date('Y') ?></span>
                                     </p>
-                                    <!-- <p class="ml-auto d-flex flex-column text-right">
-                        <span class="text-success">
-                          <i class="fas fa-arrow-up"></i> 12.5%
-                        </span>
-                        <span class="text-muted">Since last week</span>
-                      </p> -->
                                 </div>
 
                                 <div class="position-relative mb-4">
-                                    <canvas id="visitors-chart" height="200"></canvas>
+                                    <canvas id="grafikjemaatbaru" height="200"></canvas>
                                 </div>
 
                                 <div class="d-flex flex-row justify-content-end">
                                     <span class="mr-2">
-                                        <i class="fas fa-square text-primary"></i> Hit
-                                    </span>
-
-                                    <span>
-                                        <i class="fas fa-square text-gray"></i> Average Hit
+                                        <i class="fas fa-square text-primary"></i> Jemaat
                                     </span>
                                 </div>
                             </div>
@@ -137,19 +149,19 @@ $this->load->view("template/sidemenu");
                         <div class="card">
                             <div class="card-header border-0">
                                 <div class="d-flex justify-content-between">
-                                    <h3 class="card-title">New Visitor</h3>
+                                    <h3 class="card-title">Marriage Class</h3>
                                 </div>
                             </div>
                             <div class="card-body">
                                 <div class="d-flex">
                                     <p class="d-flex flex-column">
-                                        <span class="text-bold text-lg">New Visitor: <span id="totalnewvisitor">0</span></span>
+                                        <span class="text-bold text-lg">Jumlah: <span id="lblmarriage">0</span></span>
                                         <span>Bulan <?php echo bulan(date('m')) ?></span>
                                     </p>
                                 </div>
 
                                 <div class="position-relative mb-4">
-                                    <canvas id="sales-chart" height="200"></canvas>
+                                    <canvas id="grafikmarriage" height="200"></canvas>
                                 </div>
 
                                 <div class="d-flex flex-row justify-content-end">
@@ -184,25 +196,26 @@ $this->load->view("template/sidemenu");
 
 <!-- ChartJS -->
 <script src="<?php echo (base_url()) ?>assets/adminlte/plugins/chart.js/Chart.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/emn178/chartjs-plugin-labels/src/chartjs-plugin-labels.js"></script>
 
 
 <script>
     $(document).ready(function() {
 
         $.ajax({
-                url: '<?php echo site_url("home/getinfobox") ?>',
+                url: '<?php echo site_url("dashboardcare/getinfobox") ?>',
                 type: 'GET',
                 dataType: 'json',
             })
             .done(function(resultinfo) {
                 console.log(resultinfo);
-                $('#hitcountertoday').html(resultinfo.hitcountertoday);
-                $('#hitcounterlastweek').html(resultinfo.hitcounterlastweek);
-                $('#newvisitorthismonth').html(resultinfo.newvisitorthismonth);
-                $('#onlinevisitor').html(resultinfo.onlinevisitor);
+                $('.jumlahjemaatbaru').html(resultinfo.jumlahjemaatbaru);
+                $('.jumlahjemaatsemua').html(resultinfo.jumlahjemaatsemua);
+                $('.jumlahjemaatsimpatisan').html(resultinfo.jumlahjemaatsimpatisan);
+                $('.jumlahjemaatumum').html(resultinfo.jumlahjemaatumum);
             })
             .fail(function() {
-                console.log("error");
+                console.log("error getinfobox");
             });
 
     });
@@ -220,42 +233,75 @@ $this->load->view("template/sidemenu");
 
 
 
-        //  ============================================== grafik hit ==================================
+
         $.ajax({
-                url: '<?php echo site_url("home/getgrafikhit") ?>',
+                url: '<?php echo site_url("dashboardcare/getgrafikjemaatbaru") ?>',
                 type: 'GET',
                 dataType: 'json',
             })
             .done(function(resultgrafikhit) {
-                // console.log(resultgrafikhit);
-                $('#totalhit').html(resultgrafikhit.totalhit);
-                var $visitorsChart = $('#visitors-chart')
-                var visitorsChart = new Chart($visitorsChart, {
+                console.log(resultgrafikhit);
+
+                var donutData = {
+                    labels: resultgrafikhit.datatanggal,
+                    datasets: [{
+                        data: resultgrafikhit.jumlahjemaat,
+                        backgroundColor: ['#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de', '#f56954', '#00a65a', '#f39c12', '#00c0ef', '#3c8dbc', '#d2d6de'],
+                    }]
+                }
+
+                var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
+                var pieData = donutData;
+                var pieOptions = {
+                    maintainAspectRatio: false,
+                    responsive: true,
+                    plugins: {
+                        labels: [{
+                            render: 'label',
+                            position: 'outside'
+                        }, {
+                            render: 'value'
+                        }]
+                    }
+
+                }
+
+                new Chart(pieChartCanvas, {
+                    type: 'pie',
+                    data: pieData,
+                    options: pieOptions
+                })
+
+
+            })
+            .fail(function() {
+                console.log("error grafik hit");
+            });
+
+
+
+
+        $.ajax({
+                url: '<?php echo site_url("dashboardcare/getgrafikjemaatbaru") ?>',
+                type: 'GET',
+                dataType: 'json',
+            })
+            .done(function(resultgrafikhit) {
+                console.log(resultgrafikhit);
+                $('#lbljemaatbaru').html(resultgrafikhit.totaljemaat);
+                var $grafikjemaatbaru = $('#grafikjemaatbaru')
+                var visitorsChart = new Chart($grafikjemaatbaru, {
                     data: {
                         labels: resultgrafikhit.datatanggal,
                         datasets: [{
-                                type: 'line',
-                                data: resultgrafikhit.datahit,
-                                backgroundColor: 'transparent',
-                                borderColor: '#007bff',
-                                pointBorderColor: '#007bff',
-                                pointBackgroundColor: '#007bff',
-                                fill: false
-                                // pointHoverBackgroundColor: '#007bff',
-                                // pointHoverBorderColor    : '#007bff'
-                            },
-                            {
-                                type: 'line',
-                                data: resultgrafikhit.dataaverage,
-                                backgroundColor: 'tansparent',
-                                borderColor: '#ced4da',
-                                pointBorderColor: '#ced4da',
-                                pointBackgroundColor: '#ced4da',
-                                fill: false
-                                // pointHoverBackgroundColor: '#ced4da',
-                                // pointHoverBorderColor    : '#ced4da'
-                            }
-                        ]
+                            type: 'bar',
+                            data: resultgrafikhit.jumlahjemaat,
+                            backgroundColor: '#557ae0',
+                            borderColor: '#557ae0',
+                            pointBorderColor: '#557ae0',
+                            pointBackgroundColor: '#557ae0',
+                            fill: true
+                        }]
                     },
                     options: {
                         maintainAspectRatio: false,
@@ -281,7 +327,7 @@ $this->load->view("template/sidemenu");
                                 },
                                 ticks: $.extend({
                                     beginAtZero: true,
-                                    suggestedMax: 200
+                                    suggestedMax: 10
                                 }, ticksStyle)
                             }],
                             xAxes: [{
@@ -302,28 +348,26 @@ $this->load->view("template/sidemenu");
 
 
 
-        //  ============================================== grafik new visitor ==================================
-
         $.ajax({
-                url: '<?php echo site_url("home/getgraviknewvisitor") ?>',
+                url: '<?php echo site_url("dashboardcare/getgrafikmarriage") ?>',
                 type: 'GET',
                 dataType: 'json',
             })
-            .done(function(resultgrafiknewvisitor) {
-                console.log(resultgrafiknewvisitor);
-
-                $('#totalnewvisitor').html(resultgrafiknewvisitor.totalnewvisitor);
-
-                var $salesChart = $('#sales-chart')
-                // eslint-disable-next-line no-unused-vars
-                var salesChart = new Chart($salesChart, {
-                    type: 'bar',
+            .done(function(resultgrafikhit) {
+                console.log(resultgrafikhit);
+                $('#lblmarriage').html(resultgrafikhit.totaljemaat);
+                var $grafikmarriage = $('#grafikmarriage')
+                var visitorsChart = new Chart($grafikmarriage, {
                     data: {
-                        labels: resultgrafiknewvisitor.datatanggal,
+                        labels: resultgrafikhit.datatanggal,
                         datasets: [{
-                            backgroundColor: '#007bff',
-                            borderColor: '#007bff',
-                            data: resultgrafiknewvisitor.datavisitor
+                            type: 'bar',
+                            data: resultgrafikhit.jumlahjemaat,
+                            backgroundColor: '#557ae0',
+                            borderColor: '#557ae0',
+                            pointBorderColor: '#557ae0',
+                            pointBackgroundColor: '#557ae0',
+                            fill: true
                         }]
                     },
                     options: {
@@ -348,7 +392,10 @@ $this->load->view("template/sidemenu");
                                     color: 'rgba(0, 0, 0, .2)',
                                     zeroLineColor: 'transparent'
                                 },
-                                ticks: ticksStyle
+                                ticks: $.extend({
+                                    beginAtZero: true,
+                                    suggestedMax: 10
+                                }, ticksStyle)
                             }],
                             xAxes: [{
                                 display: true,
@@ -361,11 +408,11 @@ $this->load->view("template/sidemenu");
                     }
                 })
 
-
             })
             .fail(function() {
-                console.log("error grafik new visitor");
+                console.log("error grafik hit");
             });
+
 
 
 

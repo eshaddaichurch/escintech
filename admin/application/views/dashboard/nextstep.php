@@ -172,7 +172,7 @@ $this->load->view("template/sidemenu");
                                         </div>
                                     </div>
                                     <div class="card-footer">
-                                        <a href="">Lihat grafik kelas selengkapnya...</a>
+                                        <a href="<?php echo site_url('dashboardnextstep/detail') ?>">Lihat grafik kelas selengkapnya...</a>
                                     </div>
                                 </div>
                             </div>
