@@ -182,106 +182,125 @@ $this->load->view("template/sidemenu");
                     <div class="col-md-3">
 
                         <div class="col-12">
-                            <div class="info-box">
-                                <span class="info-box-icon bg-info elevation-1"><i class="fas fa-eye"></i></span>
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Membership Class</span>
-                                    <span class="info-box-number">
-                                        <span id="MembershipClass">0</span>
-                                        <small></small>
-                                    </span>
+                            <a href="<?php echo site_url('registrasikelas/index/KL001') ?>">
+                                <div class="info-box">
+                                    <span class="info-box-icon bg-info elevation-1"><i class="fas fa-eye"></i></span>
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Membership Class</span>
+                                        <span class="info-box-number">
+                                            <span id="MembershipClass">0</span>
+                                            <small></small>
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
 
                         <div class="col-12">
-                            <div class="info-box mb-3">
-                                <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-eye"></i></span>
+                            <a href="<?php site_url('registrasikelas/index/KL002') ?>">
+                                <div class="info-box mb-3">
+                                    <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-eye"></i></span>
 
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Fondation Class 1</span>
-                                    <span class="info-box-number">
-                                        <span id="FondationClass1">0</span>
-                                        <small></small>
-                                    </span>
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Fondation Class 1</span>
+                                        <span class="info-box-number">
+                                            <span id="FondationClass1">0</span>
+                                            <small></small>
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
+
+                            </a>
                         </div>
 
                         <div class="clearfix hidden-md-up"></div>
 
                         <div class="col-12">
-                            <div class="info-box mb-3">
-                                <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
+                            <a href="<?php echo site_url('registrasikelas/index/KL003') ?>">
+                                <div class="info-box mb-3">
+                                    <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
 
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Fondation Class 2</span>
-                                    <span class="info-box-number">
-                                        <span id="FondationClass2">0</span>
-                                        <small>Visitor</small>
-                                    </span>
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Fondation Class 2</span>
+                                        <span class="info-box-number">
+                                            <span id="FondationClass2">0</span>
+                                            <small>Visitor</small>
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-12">
-                            <div class="info-box mb-3">
-                                <span class="info-box-icon bg-success elevation-1"><i class="fas fa-user"></i></span>
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Fondation Class 3</span>
-                                    <span class="info-box-number">
-                                        <span id="FondationClass3">0</span>
-                                        <small>Visitor</small>
-                                    </span>
+                            <a href="<?php echo site_url('registrasikelas/index/KL004') ?>">
+                                <div class="info-box mb-3">
+                                    <span class="info-box-icon bg-success elevation-1"><i class="fas fa-user"></i></span>
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Fondation Class 3</span>
+                                        <span class="info-box-number">
+                                            <span id="FondationClass3">0</span>
+                                            <small>Visitor</small>
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-12">
-                            <div class="info-box mb-3">
-                                <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-user"></i></span>
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Grade 1</span>
-                                    <span class="info-box-number">
-                                        <span id="Grade1">0</span>
-                                        <small></small>
-                                    </span>
+                            <a href="<?php echo site_url('registrasikelas/index/KL005') ?>">
+                                <div class="info-box mb-3">
+                                    <span class="info-box-icon bg-danger elevation-1"><i class="fas fa-user"></i></span>
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Grade 1</span>
+                                        <span class="info-box-number">
+                                            <span id="Grade1">0</span>
+                                            <small></small>
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
+
+                            </a>
                         </div>
                         <div class="col-12">
-                            <div class="info-box mb-3">
-                                <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-user"></i></span>
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Grade 2</span>
-                                    <span class="info-box-number">
-                                        <span id="Grade2">0</span>
-                                        <small></small>
-                                    </span>
+                            <a href="<?php echo site_url('registrasikelas/index/KL006') ?>">
+                                <div class="info-box mb-3">
+                                    <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-user"></i></span>
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Grade 2</span>
+                                        <span class="info-box-number">
+                                            <span id="Grade2">0</span>
+                                            <small></small>
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                         <div class="col-12">
-                            <div class="info-box mb-3">
-                                <span class="info-box-icon bg-info elevation-1"><i class="fas fa-user"></i></span>
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Grade 3</span>
-                                    <span class="info-box-number">
-                                        <span id="Grade3">0</span>
-                                        <small></small>
-                                    </span>
+                            <a href="<?php echo site_url('registrasikelas/index/KL007') ?>">
+                                <div class="info-box mb-3">
+                                    <span class="info-box-icon bg-info elevation-1"><i class="fas fa-user"></i></span>
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Grade 3</span>
+                                        <span class="info-box-number">
+                                            <span id="Grade3">0</span>
+                                            <small></small>
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
+
                         <div class="col-12">
-                            <div class="info-box mb-3">
-                                <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-user"></i></span>
-                                <div class="info-box-content">
-                                    <span class="info-box-text">Folunteer Class</span>
-                                    <span class="info-box-number">
-                                        <span id="FolunteerClass">0</span>
-                                        <small></small>
-                                    </span>
+                            <a href="<?php echo site_url('registrasikelas/index/KL008') ?>">
+                                <div class="info-box mb-3">
+                                    <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-user"></i></span>
+                                    <div class="info-box-content">
+                                        <span class="info-box-text">Folunteer Class</span>
+                                        <span class="info-box-number">
+                                            <span id="FolunteerClass">0</span>
+                                            <small></small>
+                                        </span>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
 
                     </div>
