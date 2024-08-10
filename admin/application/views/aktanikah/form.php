@@ -262,7 +262,7 @@
             <div class="form-group">
               <div class="row">
                 <div class="col-12">
-                  <label>Format Nomor</label>
+                  <label>Format Nomor!</label>
                 </div>
                 <div class="col-12">
                   <input type="text" name="formatnomorakta" id="formatnomorakta" class="form-control" placeholder="format nomor">
