@@ -126,7 +126,7 @@
     
 
     .box .time span:last-child {
-      top: 5%
+      top: 1%
     }
 
 
