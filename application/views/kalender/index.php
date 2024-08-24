@@ -46,7 +46,7 @@
     .box ul li {
       margin: 20px 60px 60px;
       position: relative;
-      padding: 10px 20px;
+      padding: 10px 10px;
       background: rgba(227, 225, 217, 1);
       color: #000000;
       border-radius: 10px;
