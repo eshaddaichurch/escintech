@@ -44,7 +44,8 @@
 
                <div class="row">
                  <div class="col-12">
-                   <h5 class="text-muted">DATA SOSIAL MEDIA</h5><hr>
+                   <h5 class="text-muted">DATA SOSIAL MEDIA</h5>
+                   <hr>
                  </div>
 
                  <div class="col-md-3">
@@ -97,7 +98,7 @@
                    <div class="form-group required">
                      <label for="" class="">Tgl Lahir</label>
                      <input type="date" name="tanggallahir" id="tanggallahir" class="form-control">
-                     
+
                    </div>
                  </div>
 
@@ -110,7 +111,7 @@
                        <option value="Laki-laki">Laki-laki</option>
                        <option value="Perempuan">Perempuan</option>
                      </select>
-                     
+
                    </div>
                  </div>
 
@@ -150,7 +151,7 @@
                        <option value="Simpatisan">Simpatisan</option>
                      </select>
                    </div>
-                   
+
                  </div>
                </div>
 
@@ -161,7 +162,8 @@
 
                <div class="row">
                  <div class="col-12">
-                   <h5 class="text-muted">DATA SOSIAL MEDIA</h5><hr>
+                   <h5 class="text-muted">DATA SOSIAL MEDIA</h5>
+                   <hr>
                  </div>
                  <div class="col-md-4">
                    <div class="form-group">
@@ -169,7 +171,7 @@
                      <input type="text" name="notelp" id="notelp" class="form-control" placeholder="Masukkan nomor telepon">
                    </div>
                  </div>
-                 
+
                  <div class="col-md-4">
                    <div class="form-group">
                      <label for="" class=" text-right">No HP.</label>
@@ -202,12 +204,13 @@
 
                </div>
 
-              
+
 
 
                <div class="row">
                  <div class="col-12 mt-3">
-                   <h5 class="text-muted">DATA ALAMAT JEMAAT</h5><hr>
+                   <h5 class="text-muted">DATA ALAMAT JEMAAT</h5>
+                   <hr>
                  </div>
                  <div class="col-md-3">
                    <div class="form-group">
@@ -231,14 +234,14 @@
                        <select name="propinsi" id="propinsi" class="form-control select2">
                          <option value="">Pilih nama propinsi ...</option>
                          <?php
-                              $rsProvinsi = $this->db->query("select * from provinsi order by namaprovinsi");
-                              if ($rsProvinsi->num_rows()>0) {
-                                  foreach ($rsProvinsi->result() as $row) {
-                                      echo '
-                                          <option value="'.$row->idprovinsi.'">'.$row->namaprovinsi.'</option>
+                          $rsProvinsi = $this->db->query("select * from provinsi order by namaprovinsi");
+                          if ($rsProvinsi->num_rows() > 0) {
+                            foreach ($rsProvinsi->result() as $row) {
+                              echo '
+                                          <option value="' . $row->idprovinsi . '">' . $row->namaprovinsi . '</option>
                                       ';
-                                  }
-                              }
+                            }
+                          }
                           ?>
 
                        </select>
@@ -251,15 +254,15 @@
                      </div>
                      <div class="col-md-3">
                        <label for="" class="">Kecamatan</label>
-                        <select name="kecamatan" id="kecamatan" class="form-control select2">
-                           <option value="">Pilih nama kecamatan ...</option>
-                         </select>
+                       <select name="kecamatan" id="kecamatan" class="form-control select2">
+                         <option value="">Pilih nama kecamatan ...</option>
+                       </select>
                      </div>
                      <div class="col-md-3">
                        <label for="" class="">Kelurahan</label>
                        <select name="kelurahan" id="kelurahan" class="form-control select2">
-                           <option value="">Pilih nama kelurahan ...</option>
-                         </select>
+                         <option value="">Pilih nama kelurahan ...</option>
+                       </select>
                      </div>
                    </div>
                  </div>
@@ -267,32 +270,34 @@
 
                </div>
 
-               
+
 
 
                <div class="row">
-                  <div class="col-12 mt-3">
-                     <h5 class="text-muted">INFORMASI LOGIN</h5><hr>
-                   </div>
+                 <div class="col-12 mt-3">
+                   <h5 class="text-muted">INFORMASI LOGIN</h5>
+                   <hr>
+                 </div>
 
                  <div class="col-md-4">
                    <div class="form-group">
                      <label for="" class="">Username</label>
-                     <input type="text" name="username" id="username" class="form-control" placeholder="Masukkan username">
+                     <input type="text" name="username" id="username" class="form-control" placeholder="Masukkan username" autocomplete="new-password">
+                     <small class="text-danger" id="alertUsername" style="display: none;">Username sudah ada!</small>
                    </div>
                  </div>
 
                  <div class="col-md-4">
                    <div class="form-group">
                      <label for="" class="">password</label>
-                     <input type="password" name="password" id="password" class="form-control" placeholder="*************">
+                     <input type="password" name="password" id="password" class="form-control" placeholder="*************" autocomplete="new-password">
                    </div>
                  </div>
 
                  <div class="col-md-4">
                    <div class="form-group">
                      <label for="" class="">Ulangi password</label>
-                     <input type="password" name="password2" id="password2" class="form-control" placeholder="*************">
+                     <input type="password" name="password2" id="password2" class="form-control" placeholder="*************" autocomplete="new-password">
                    </div>
                  </div>
 
@@ -301,13 +306,14 @@
 
                <div class="row">
                  <div class="col-12 mt-3">
-                     <h5 class="text-muted">KONTAK DARURAT YANG BISA DIHUBUNGI</h5><hr>
+                   <h5 class="text-muted">KONTAK DARURAT YANG BISA DIHUBUNGI</h5>
+                   <hr>
                  </div>
                  <div class="col-md-4">
                    <div class="form-group">
                      <label for="" class="">Nama</label>
                      <input type="text" name="namadarurat" id="namadarurat" class="form-control" placeholder="Masukkan namadarurat">
-                     
+
                    </div>
                  </div>
 
@@ -338,15 +344,16 @@
 
                <div class="row">
                  <div class="col-12 mt-3">
-                     <h5 class="text-muted">PENDIDIKAN DAN PEKERJAAN</h5><hr>
+                   <h5 class="text-muted">PENDIDIKAN DAN PEKERJAAN</h5>
+                   <hr>
                  </div>
 
 
 
                  <div class="col-md-3">
                    <div class="form-group">
-                      <label for="" class="">Pendidikan Terakhir</label>
-                      <select name="pendidikanterakhir" id="pendidikanterakhir" class="form-control">
+                     <label for="" class="">Pendidikan Terakhir</label>
+                     <select name="pendidikanterakhir" id="pendidikanterakhir" class="form-control">
                        <option value="">Pilih pendidikan terakhir</option>
                        <option value="SD">SD</option>
                        <option value="SMP">SMP</option>
@@ -415,7 +422,7 @@
 
 
                </div>
-                
+
 
 
 
@@ -445,9 +452,9 @@
  <?php $this->load->view("template/footer") ?>
 
 
-
  <script type="text/javascript">
    var idjemaat = "<?php echo ($idjemaat) ?>";
+   var usernameSudahAda = true;
 
    $(document).ready(function() {
 
@@ -507,13 +514,16 @@
            $("#statusjemaat").val(result.statusjemaat);
            $("#tanggalinsert").val(result.tanggalinsert);
 
+           $('#password').attr("placeholder", "Kosongkan jika tidak ubah password");
+           $('#password2').attr("placeholder", "Kosongkan jika tidak ubah password");
+
            getKabupaten(result.propinsi, result.kotakabupaten);
            getKecamatan(result.kotakabupaten, result.kecamatan);
-           
+
            if (result.statusjemaat == 'Jemaat') {
              $('#statusjemaat').attr('disabled', true);
            }
-
+           usernameSudahAda = false;
          });
 
        $("#lbljudul").html("Edit Data Jemaat");
@@ -526,239 +536,302 @@
 
      //----------------------------------------------------------------- > validasi
      $("#form").bootstrapValidator({
-       feedbackIcons: {
-         valid: 'glyphicon glyphicon-ok',
-         invalid: 'glyphicon glyphicon-remove',
-         validating: 'glyphicon glyphicon-refresh'
-       },
-       fields: {
-         nik: {
-           validators: {
-             notEmpty: {
-               message: "nik tidak boleh kosong"
-             },
-           }
+         feedbackIcons: {
+           valid: 'glyphicon glyphicon-ok',
+           invalid: 'glyphicon glyphicon-remove',
+           validating: 'glyphicon glyphicon-refresh'
          },
-         kewarganegaraan: {
-           validators: {
-             notEmpty: {
-               message: "kewarganegaraan tidak boleh kosong"
-             },
-           }
-         },
-         namalengkap: {
-           validators: {
-             notEmpty: {
-               message: "nama lengkap tidak boleh kosong"
-             },
-           }
-         },
-         namapanggilan: {
-           validators: {
-             notEmpty: {
-               message: "nama panggilan tidak boleh kosong"
-             },
-           }
-         },
-         tempatlahir: {
-           validators: {
-             notEmpty: {
-               message: "tempat lahir tidak boleh kosong"
-             },
-           }
-         },
-         tanggallahir: {
-           validators: {
-             notEmpty: {
-               message: "tanggal lahir tidak boleh kosong"
-             },
-           }
-         },
-         jeniskelamin: {
-           validators: {
-             notEmpty: {
-               message: "jenis kelamin tidak boleh kosong"
-             },
-           }
-         },
-         statuspernikahan: {
-           validators: {
-             notEmpty: {
-               message: "status pernikahan tidak boleh kosong"
-             },
-           }
-         },
-         email: {
-           validators: {
-             notEmpty: {
-               message: "email tidak boleh kosong"
-             },
-           }
-         },
-         username: {
-           validators: {
-             notEmpty: {
-               message: "username tidak boleh kosong"
-             },
-           }
-         },
-         password: {
-           validators: {
-             notEmpty: {
-               message: "password tidak boleh kosong"
-             },
-           }
-         },
-         password2: {
-           validators: {
-             notEmpty: {
-               message: "ulangi password tidak boleh kosong"
-             },
-           }
-         },
-         statusjemaat: {
-           validators: {
-             notEmpty: {
-               message: "status jemaat tidak boleh kosong"
-             },
-           }
-         },
-         rtrw: {
-           validators: {
-             notEmpty: {
-               message: "rtrw tidak boleh kosong ya mas bro"
-             },
-           }
-         },
-       }
-     });
+         fields: {
+           nik: {
+             validators: {
+               notEmpty: {
+                 message: "nik tidak boleh kosong"
+               },
+             }
+           },
+           kewarganegaraan: {
+             validators: {
+               notEmpty: {
+                 message: "kewarganegaraan tidak boleh kosong"
+               },
+             }
+           },
+           namalengkap: {
+             validators: {
+               notEmpty: {
+                 message: "nama lengkap tidak boleh kosong"
+               },
+             }
+           },
+           namapanggilan: {
+             validators: {
+               notEmpty: {
+                 message: "nama panggilan tidak boleh kosong"
+               },
+             }
+           },
+           tempatlahir: {
+             validators: {
+               notEmpty: {
+                 message: "tempat lahir tidak boleh kosong"
+               },
+             }
+           },
+           tanggallahir: {
+             validators: {
+               notEmpty: {
+                 message: "tanggal lahir tidak boleh kosong"
+               },
+             }
+           },
+           jeniskelamin: {
+             validators: {
+               notEmpty: {
+                 message: "jenis kelamin tidak boleh kosong"
+               },
+             }
+           },
+           statuspernikahan: {
+             validators: {
+               notEmpty: {
+                 message: "status pernikahan tidak boleh kosong"
+               },
+             }
+           },
+           email: {
+             validators: {
+               notEmpty: {
+                 message: "email tidak boleh kosong"
+               },
+             }
+           },
+           username: {
+             validators: {
+               notEmpty: {
+                 message: "username tidak boleh kosong"
+               },
+             }
+           },
+           password: {
+             validators: {
+               stringLength: {
+                 min: 6,
+                 max: 25,
+                 message: 'minimal 6 sampai dengan 25 karakter'
+               },
+               callback: {
+                 message: "Password tidak boleh kosong",
+                 callback: function(value, validator, password) {
+
+                   if (idjemaat == "" && $('#password').val() == '') {
+                     return {
+                       valid: false,
+                       message: "Password tidak boleh kosong"
+                     }
+                   }
+                   return true
+                 }
+               }
+             }
+           },
+           password2: {
+             validators: {
+               stringLength: {
+                 min: 6,
+                 max: 25,
+                 message: 'minimal 6 sampai dengan 25 karakter'
+               },
+               callback: {
+                 message: "Password tidak boleh kosong",
+                 callback: function(value, validator, password2) {
+
+                   if (idjemaat == "" && $('#password2').val() == '') {
+                     return {
+                       valid: false,
+                       message: "Ulangi password tidak boleh kosong"
+                     }
+                   }
+                   return true
+                 }
+               }
+             }
+           },
+           statusjemaat: {
+             validators: {
+               notEmpty: {
+                 message: "status jemaat tidak boleh kosong"
+               },
+             }
+           },
+           rtrw: {
+             validators: {
+               notEmpty: {
+                 message: "rtrw tidak boleh kosong ya mas bro"
+               },
+             }
+           },
+         }
+       })
+       .on('success.form.bv', function(e) {
+         if (usernameSudahAda) {
+           swal("Username", "Username sudah ada.", 'info')
+             .then(function() {
+               $('#username').focus();
+             });
+           e.preventDefault();
+         }
+       });
      //------------------------------------------------------------------------> END VALIDASI DAN SIMPAN
 
 
-     $("form").attr('autocomplete', 'off');
+     $("#form").attr('autocomplete', 'off');
      $("#rtrw").mask("000/000", {
        placeholder: "000/000"
      });
    }); //end (document).ready
 
 
+   function getKabupaten(idprovinsi, idkabupatendefault = "") {
 
+     $('#kotakabupaten').empty();
+     $('#idkecamatan').empty();
 
+     addSelectOption('kotakabupaten', '', 'Pilih kabupaten/ kota ...')
+     addSelectOption('kecamatan', '', 'Pilih kecamatan ...')
 
-    function getKabupaten(idprovinsi, idkabupatendefault="")
-    {
+     $.ajax({
+         url: '<?= site_url('jemaat/getKabupaten') ?>',
+         type: 'GET',
+         dataType: 'json',
+         data: {
+           'idprovinsi': idprovinsi
+         },
+       })
+       .done(function(response) {
+         console.log(response);
+         if (response.length > 0) {
+           for (var i = 0; i < response.length; i++) {
+             // console.log(response[i]);
+             addSelectOption('kotakabupaten', response[i]['idkabupaten'], response[i]['namakabupaten']);
+             if (idkabupatendefault != "" && idkabupatendefault == response[i]['idkabupaten']) {
+               $('#kotakabupaten').val(response[i]['idkabupaten']).trigger('change');
+             }
+           }
+         }
+       })
+       .fail(function() {
+         console.log('error getKabupaten');
+       });
 
-        $('#kotakabupaten').empty();
-        $('#idkecamatan').empty();
+   }
 
-        addSelectOption('kotakabupaten', '', 'Pilih kabupaten/ kota ...')
-        addSelectOption('kecamatan', '', 'Pilih kecamatan ...')
-        
-        $.ajax({
-            url: '<?= site_url('jemaat/getKabupaten') ?>',
-            type: 'GET',
-            dataType: 'json',
-            data: {'idprovinsi': idprovinsi},
-        })
-        .done(function(response) {
-            console.log(response);
-            if (response.length>0) {
-                for (var i = 0; i < response.length; i++) {
-                    // console.log(response[i]);
-                    addSelectOption('kotakabupaten', response[i]['idkabupaten'], response[i]['namakabupaten']);
-                    if (idkabupatendefault!="" && idkabupatendefault==response[i]['idkabupaten']) {
-                        $('#kotakabupaten').val(response[i]['idkabupaten']).trigger('change');
-                    }
-                }
-            }
-        })
-        .fail(function() {
-            console.log('error getKabupaten');
-        });
+   $('#propinsi').change(function(e) {
+     var idprovinsi = $(this).val();
+     getKabupaten(idprovinsi);
+   });
 
-    }
+   $('#kotakabupaten').change(function(e) {
+     var idkabupaten = $(this).val();
+     getKecamatan(idkabupaten);
+   });
 
-    $('#propinsi').change(function(e){
-        var idprovinsi = $(this).val();
-        getKabupaten(idprovinsi);
-    });
+   $('#kecamatan').change(function(e) {
+     var idkecamatan = $(this).val();
+     getdesa(idkecamatan);
+   });
 
-    $('#kotakabupaten').change(function(e){
-        var idkabupaten = $(this).val();
-        getKecamatan(idkabupaten);
-    });
+   function getKecamatan(idkabupaten, idkecamatandefault = "") {
 
-    $('#kecamatan').change(function(e){
-        var idkecamatan = $(this).val();
-        getdesa(idkecamatan);
-    });
+     $('#kecamatan').empty();
+     // console.log(idkabupaten);
 
-    function getKecamatan(idkabupaten, idkecamatandefault="")
-    {
+     addSelectOption('kecamatan', '', 'Pilih kecamatan ...')
 
-        $('#kecamatan').empty();
-        // console.log(idkabupaten);
+     $.ajax({
+         url: '<?= site_url('jemaat/getKecamatan') ?>',
+         type: 'GET',
+         dataType: 'json',
+         data: {
+           'idkabupaten': idkabupaten
+         },
+       })
+       .done(function(response) {
+         // console.log(response);
+         if (response.length > 0) {
+           for (var i = 0; i < response.length; i++) {
+             console.log(response[i]);
+             addSelectOption('kecamatan', response[i]['idkecamatan'], response[i]['namakecamatan']);
+             if (idkecamatandefault != "" && idkecamatandefault == response[i]['idkecamatan']) {
+               $('#kecamatan').val(response[i]['idkecamatan']).trigger('change');
+             }
+           }
+         }
+       })
+       .fail(function() {
+         console.log('error getKecamatan');
+       });
 
-        addSelectOption('kecamatan', '', 'Pilih kecamatan ...')
-        
-        $.ajax({
-            url: '<?= site_url('jemaat/getKecamatan') ?>',
-            type: 'GET',
-            dataType: 'json',
-            data: {'idkabupaten': idkabupaten},
-        })
-        .done(function(response) {
-            // console.log(response);
-            if (response.length>0) {
-                for (var i = 0; i < response.length; i++) {
-                    console.log(response[i]);
-                    addSelectOption('kecamatan', response[i]['idkecamatan'], response[i]['namakecamatan']);
-                    if (idkecamatandefault!="" && idkecamatandefault==response[i]['idkecamatan']) {
-                        $('#kecamatan').val(response[i]['idkecamatan']).trigger('change');
-                    }
-                }
-            }
-        })
-        .fail(function() {
-            console.log('error getKecamatan');
-        });
+   }
 
-    }
+   function getdesa(idkecamatan, iddesadefault = "") {
 
-    function getdesa(idkecamatan, iddesadefault="")
-    {
+     $('#kelurahan').empty();
 
-        $('#kelurahan').empty();
+     addSelectOption('kelurahan', '', 'Pilih kelurahan ...')
 
-        addSelectOption('kelurahan', '', 'Pilih kelurahan ...')
-        
-        $.ajax({
-            url: '<?= site_url('jemaat/getKelurahan') ?>',
-            type: 'GET',
-            dataType: 'json',
-            data: {'idkecamatan': idkecamatan},
-        })
-        .done(function(response) {
-            console.log(response);
-            if (response.length>0) {
-                for (var i = 0; i < response.length; i++) {
-                    console.log(response[i]);
-                    addSelectOption('kelurahan', response[i]['iddesa'], response[i]['namadesa']);
-                    if (iddesadefault!="" && iddesadefault==response[i]['iddesa']) {
-                        $('#kelurahan').val(response[i]['iddesa']).trigger('change');
-                    }
-                }
-            }
-        })
-        .fail(function() {
-            console.log('error getKecamatan');
-        });
+     $.ajax({
+         url: '<?= site_url('jemaat/getKelurahan') ?>',
+         type: 'GET',
+         dataType: 'json',
+         data: {
+           'idkecamatan': idkecamatan
+         },
+       })
+       .done(function(response) {
+         console.log(response);
+         if (response.length > 0) {
+           for (var i = 0; i < response.length; i++) {
+             console.log(response[i]);
+             addSelectOption('kelurahan', response[i]['iddesa'], response[i]['namadesa']);
+             if (iddesadefault != "" && iddesadefault == response[i]['iddesa']) {
+               $('#kelurahan').val(response[i]['iddesa']).trigger('change');
+             }
+           }
+         }
+       })
+       .fail(function() {
+         console.log('error getKecamatan');
+       });
 
-    }
+     $('#username').blur(function() {
+       var username = $(this).val();
+       var idjemaat = $('#idjemaat').val();
+       console.log("1");
 
-
-
-
+       $.ajax({
+           url: '<?= site_url('jemaat/ajaxUsernameSudahAda') ?>',
+           type: 'GET',
+           dataType: 'json',
+           data: {
+             'username': username,
+             'idjemaat': idjemaat,
+           },
+         })
+         .done(function(result) {
+           console.log(result);
+           if (result.sudahAda) {
+             usernameSudahAda = true;
+             $('#alertUsername').show();
+           } else {
+             usernameSudahAda = false;
+             $('#alertUsername').hide();
+           }
+         })
+         .fail(function() {
+           console.log('error usernameSudahAda');
+         });
+     });
+   }
  </script>
 
  </body>
