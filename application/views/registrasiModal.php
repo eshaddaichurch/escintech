@@ -1,5 +1,5 @@
 <!-- Animate CSS for the css animation support if needed -->
-<link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" rel="stylesheet" />
+<link href="<?php echo base_url('assets/animate/animate.min.css') ?>" rel="stylesheet" />
 
 <!-- Include SmartWizard CSS -->
 <!-- <link href="<?php echo base_url('assets/jquery-smartwizard-master/dist') ?>/css/demo.css" rel="stylesheet" type="text/css" /> -->
