@@ -35,7 +35,9 @@
       display: block;
       width: 0;
       height: 100%;
-      border: 1px dashed;
+      border: 0.3px dashed;
+      color: #D0B8A8;
+
       position: absolute;
       top: 0;
       left: 30px
@@ -45,8 +47,8 @@
       margin: 20px 60px 60px;
       position: relative;
       padding: 10px 20px;
-      background: rgba(255, 255, 255, 0.3);
-      /* color: #fff; */
+      background: rgba(227, 225, 217, 1);
+      color: #000000;
       border-radius: 10px;
       line-height: 20px;
       width: 75%
@@ -71,7 +73,7 @@
       width: 10px;
       height: 10px;
       border-radius: 50%;
-      background: #ff6d6d;
+      background: #000000;
       border: 2px solid;
       position: absolute;
       left: -7.5px
@@ -103,6 +105,11 @@
       text-align: right;
       margin-right: 20px
     }
+    .jam{
+      /* color:white; */
+      font-style: italic;
+
+    }
 
 
     .box .time span {
@@ -116,9 +123,10 @@
     .box .time span:first-child {
       top: -16px
     }
+    
 
     .box .time span:last-child {
-      top: 94%
+      top: 5%
     }
 
 
@@ -234,12 +242,17 @@
                   foreach ($rsEvent->result() as $row) {
                     echo '
                       <li>
+                        
                         <span></span>
+                       
                         <div class="title">' . $row->namaevent . '</div>
                         <div class="info">' . $row->jenisjadwal . '</div>
+                         <div class="jam"><sub>Pukul ' . date('H,m', strtotime($row->tgljadwal)) . '</sub></div>
                         <div class="time">
-                          <span>' . date('d', strtotime($row->tgljadwal)) . '<sup>th</sup></span>
-                          <span></span>
+                          <span>' . date('M', strtotime($row->tgljadwal)) . '</span>
+                          <span>' . date('D,d', strtotime($row->tgljadwal)) . '</span>
+                        
+                          
                         </div>
                       </li>
                       ';
