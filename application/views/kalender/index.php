@@ -90,7 +90,7 @@
     .box .title {
       text-transform: uppercase;
       font-weight: 700;
-      font-size: 12;
+      font-size: 12px;
       margin-bottom: 5px
     }
 
