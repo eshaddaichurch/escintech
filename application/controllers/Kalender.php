@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Kalender extends MY_Controller {
+class Kalender extends MY_Controller
+{
 
 	public function __construct()
 	{
@@ -13,7 +14,12 @@ class Kalender extends MY_Controller {
 	public function index($idmenu)
 	{
 		$idmenu = $this->encrypt->decode($idmenu);
-		$data["rowinfogereja"] = $this->Home_model->get_infogereja();	
+		$rsEvent = $this->db->query("
+			select * from v_jadwaleventdetailtanggal_2 order by tgljadwal, jammulai
+			");
+
+		$data["rowinfogereja"] = $this->Home_model->get_infogereja();
+		$data['rsEvent'] = $rsEvent;
 		$data['menu'] = $idmenu;
 		$this->load->view('kalender/index', $data);
 	}
@@ -25,7 +31,6 @@ class Kalender extends MY_Controller {
 			");
 		echo json_encode($rsEvent->result());
 	}
-
 }
 
 /* End of file Kalender.php */

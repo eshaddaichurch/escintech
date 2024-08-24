@@ -228,23 +228,33 @@
             <h5>Januari 2024</h5>
             <div class="box">
               <ul id="first-list">
-                <li>
-                  <span></span>
-                  <div class="title">comment #01</div>
-                  <div class="info">the best animation , the best toturials you would ever see .</div>
-                  <div class="name">- dr. mohamed -</div>
-                  <div class="time">
-                    <span>JUN, 17<sup>th</sup></span>
-                    <span>12:00 AM</span>
-                  </div>
-                </li>
+
+                <?php
+                if ($rsEvent->num_rows() > 0) {
+                  foreach ($rsEvent->result() as $row) {
+                    echo '
+                      <li>
+                        <span></span>
+                        <div class="title">' . $row->namaevent . '</div>
+                        <div class="info">' . $row->jenisjadwal . '</div>
+                        <div class="time">
+                          <span>' . date('d', strtotime($row->tgljadwal)) . '<sup>th</sup></span>
+                          <span></span>
+                        </div>
+                      </li>
+                      ';
+                  }
+                }
+                ?>
+
+
                 <li>
                   <span></span>
                   <div class="title">summery #01</div>
                   <div class="info">the best animation , the best toturials you would ever see here only . you can learn how to animate and how to use SVG . even else you can add your own animations .</div>
                   <div class="name">- eng. amr -</div>
                   <div class="time">
-                    <span>JUN, 29<sup>th</sup></span>
+                    <span>29<sup>th</sup></span>
                     <span>11:36 AM</span>
                   </div>
                 </li>
