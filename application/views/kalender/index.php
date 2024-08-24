@@ -245,8 +245,8 @@
                         
                         <span></span>
                        
-                        <div class="info">' . $row->jenisjadwal . '</div>
-                        <div class="title">' . $row->namaevent . '</div>
+                        <div class="title">' . $row->jenisjadwal . '</div>
+                        <div class="info">' . $row->namaevent . '</div>
                          <div class="jam"><sub>Pukul ' . date('H:m', strtotime($row->tgljadwal)) . '</sub></div>
                         <div class="time">
                           <span>' . date('M', strtotime($row->tgljadwal)) . '</span>
