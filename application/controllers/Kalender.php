@@ -9,17 +9,78 @@ class Kalender extends MY_Controller
 		parent::__construct();
 		$this->load->model('Home_model');
 		$this->load->model('Kalender_model');
+		$this->load->model('Nextstep_model');
 	}
 
 	public function index($idmenu)
 	{
+		$bulanEvent = date('m');
+		$tahunEvent = date('Y');
+
 		$idmenu = $this->encrypt->decode($idmenu);
 		$rsEvent = $this->db->query("
-			select * from v_jadwaleventdetailtanggal_2 order by tgljadwal, jammulai
+			select * from v_jadwaleventdetailtanggal_2 
+			where month(tgljadwal)=$bulanEvent and year(tgljadwal)=$tahunEvent 
+				and statuskonfirmasi = 'Disetujui'
+				order by tgljadwal, jammulai
 			");
+		$bulanSebelum = $bulanEvent - 1;
+		$tahunSebelum = $tahunEvent;
+		$bulanBerikut = $bulanEvent + 1;
+		$tahunBerikut = $tahunEvent;
+
+		if ($bulanEvent == 1) {
+			$bulanSebelum = 12;
+			$tahunSebelum = $tahunEvent - 1;
+		}
+
+		if ($bulanEvent == 12) {
+			$bulanBerikut = 1;
+			$tahunBerikut = $tahunEvent + 1;
+		}
 
 		$data["rowinfogereja"] = $this->Home_model->get_infogereja();
 		$data['rsEvent'] = $rsEvent;
+		$data['bulanEvent'] = $bulanEvent;
+		$data['tahunEvent'] = $tahunEvent;
+		$data['bulanSebelum'] = $bulanSebelum;
+		$data['tahunSebelum'] = $tahunSebelum;
+		$data['bulanBerikut'] = $bulanBerikut;
+		$data['tahunBerikut'] = $tahunBerikut;
+		$data['menu'] = $idmenu;
+		$this->load->view('kalender/index', $data);
+	}
+
+	public function lihatbulan($bulanEvent, $tahunEvent, $idmenu)
+	{
+		$idmenu = $this->encrypt->decode($idmenu);
+		$rsEvent = $this->db->query("
+			select * from v_jadwaleventdetailtanggal_2 where month(tgljadwal)=$bulanEvent and year(tgljadwal)=$tahunEvent order by tgljadwal, jammulai
+			");
+
+		$bulanSebelum = $bulanEvent - 1;
+		$tahunSebelum = $tahunEvent;
+		$bulanBerikut = $bulanEvent + 1;
+		$tahunBerikut = $tahunEvent;
+
+		if ($bulanEvent == 1) {
+			$bulanSebelum = 12;
+			$tahunSebelum = $tahunEvent - 1;
+		}
+
+		if ($bulanEvent == 12) {
+			$bulanBerikut = 1;
+			$tahunBerikut = $tahunEvent + 1;
+		}
+
+		$data["rowinfogereja"] = $this->Home_model->get_infogereja();
+		$data['rsEvent'] = $rsEvent;
+		$data['bulanEvent'] = $bulanEvent;
+		$data['tahunEvent'] = $tahunEvent;
+		$data['bulanSebelum'] = $bulanSebelum;
+		$data['tahunSebelum'] = $tahunSebelum;
+		$data['bulanBerikut'] = $bulanBerikut;
+		$data['tahunBerikut'] = $tahunBerikut;
 		$data['menu'] = $idmenu;
 		$this->load->view('kalender/index', $data);
 	}

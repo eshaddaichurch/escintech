@@ -65,7 +65,17 @@ class Nextstep extends MY_Controller
 
 		$simpan = $this->Nextstep_model->daftar($data);
 		if ($simpan) {
-			echo json_encode(array('success' => true));
+			$idkelas = '';
+			$kelas_slug = '';
+			$rsNextStep = $this->db->query("SELECT jadwalevent.idkelas, kelas.namakelas, kelas.kelas_slug 
+													FROM jadwalevent JOIN kelas ON kelas.idkelas=jadwalevent.idkelas 
+													where idjadwalevent='$idjadwalevent'");
+			if ($rsNextStep->num_rows() > 0) {
+				$idkelas = $rsNextStep->row()->idkelas;
+				$kelas_slug = $rsNextStep->row()->kelas_slug;
+			}
+
+			echo json_encode(array('success' => true, 'kelas_slug' => $kelas_slug, 'menu' => '-'));
 		} else {
 			echo json_encode(array('msg' => "Gagal registrasi kelas"));
 		}
