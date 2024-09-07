@@ -4,7 +4,7 @@ defined('BASEPATH') or exit('No direct script access allowed');
 class Jemaat_model extends CI_Model
 {
 
-    var $tabelview = 'jemaat';
+    var $tabelview = 'v_jemaat';
     var $tabel     = 'jemaat';
     var $idjemaat = 'idjemaat';
 

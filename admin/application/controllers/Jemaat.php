@@ -57,7 +57,7 @@ class Jemaat extends MY_Controller
                 $no++;
                 $row = array();
                 $row[] = $no;
-                $row[] = $rowdata->noaj . '<br><small class="text-gray">' . $rowdata->idjemaat . '</small>';
+                $row[] = $rowdata->noaj_lengkap . '<br><small class="text-gray">' . $rowdata->idjemaat . '</small>';
                 $row[] = '<a href="" id="tampilinfojemaat" data-idjemaat="' . $rowdata->idjemaat . '">' . $rowdata->namalengkap . '</a><br>' . $rowdata->nik;
                 $row[] = $rowdata->tempatlahir . '<br>' . $rowdata->tanggallahir;
                 $row[] = $rowdata->jeniskelamin;
