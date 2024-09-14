@@ -607,7 +607,33 @@ class Jemaat extends MY_Controller
                     registrasikelas.`statuslulus`, tglsertifikat, idregistrasikelas
             ");
 
-        echo json_encode(array('success' => true, 'rsJemaat' => $rsJemaat->row(), 'idencrypt' => $this->encrypt->encode($idjemaat), 'arrKepalaKeluarga' => $arrKepalaKeluarga, 'arrIstriAnak' => $arrIstriAnak, 'arrLainnya' => $arrLainnya, 'rskelas' => $rskelas->result()));
+
+        //Baptis
+
+        $rsBaptisan = $this->db->query("
+                    SELECT * FROM v_aktabaptisan WHERE idjemaat = '$idjemaat' ORDER BY tglakta DESC LIMIT 1
+            ");
+        $arrBaptisan = array();
+        if ($rsBaptisan->num_rows() > 0) {
+            foreach ($rsBaptisan->result() as $rowBaptisan) {
+                array_push($arrBaptisan, array(
+                    'idakta' => $rowBaptisan->idakta,
+                    'noakta' => $rowBaptisan->noakta,
+                    'tglakta' => tglindonesia($rowBaptisan->tglakta),
+                    'dilakukanoleh' => $rowBaptisan->dilakukanoleh,
+                    'namaayah' => $rowBaptisan->namaayah,
+                    'namaibu' => $rowBaptisan->namaibu,
+                    'tglbaptis' => tglindonesia($rowBaptisan->tglbaptis),
+                    'namagereja' => $rowBaptisan->namagereja,
+                    'namagembala' => $rowBaptisan->namagembala,
+                    'tempatbaptis' => $rowBaptisan->tempatbaptis,
+                    'fileakta' => $rowBaptisan->fileakta,
+                    'fileaktalokasi' => base_url('uploads/akta/baptis/' . $rowBaptisan->fileakta),
+                ));
+            }
+        }
+
+        echo json_encode(array('success' => true, 'rsJemaat' => $rsJemaat->row(), 'idencrypt' => $this->encrypt->encode($idjemaat), 'arrKepalaKeluarga' => $arrKepalaKeluarga, 'arrIstriAnak' => $arrIstriAnak, 'arrLainnya' => $arrLainnya, 'rskelas' => $rskelas->result(), 'arrBaptisan' => $arrBaptisan));
     }
 
 

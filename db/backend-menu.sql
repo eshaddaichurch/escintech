@@ -57,8 +57,6 @@ INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, no
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
 	VALUES('S103', 'Good Friday Service', 'S000', 'absen/index/A04', 'Aktif', 44, 1, NULL);
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
-	VALUES('S104', 'Sunday Service', 'S000', 'absen/index/A05', 'Aktif', 45, 1, NULL);
-INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
 	VALUES('S105', 'Esc Women', 'S000', 'absen/index/A06', 'Aktif', 46, 1, NULL);
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
 	VALUES('S106', 'Esc Young Adult', 'S000', 'absen/index/A07', 'Aktif', 47, 1, NULL);
@@ -125,6 +123,9 @@ INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, no
 	VALUES('C106', 'Permohonan Pernikahan', 'C000', 'pernikahan', 'Aktif', 307, 1, NULL);
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
 	VALUES('C107', 'Pelayanan Kematian', 'C000', 'kematian', 'Aktif', 308, 1, NULL);
+INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
+	VALUES('C108', 'Permohonan Baptisan', 'C000', 'baptisan', 'Aktif', 309, 1, NULL);
+
 
 INSERT INTO backmenus (idmenu, namamenu, parentidmenu, linkmenu, statusaktif, nomorurut, nlevels, fontawesomeicon)
 	VALUES('T000', 'Akta', NULL, NULL, 'Aktif', 400, 0, 'fas fa-paperclip');

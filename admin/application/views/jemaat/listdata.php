@@ -102,17 +102,19 @@ $this->load->view("template/sidemenu");
             <nav class="nav-justified ">
               <div class="nav nav-tabs " id="nav-tab" role="tablist">
                 <a class="nav-item nav-link active" id="pop1-tab" data-toggle="tab" href="#pop1" role="tab" aria-controls="pop1" aria-selected="true">Data Jemaat</a>
-                <a class="nav-item nav-link" id="pop2-tab" data-toggle="tab" href="#pop2" role="tab" aria-controls="pop2" aria-selected="false">Kontak Darurat</a>
-                <a class="nav-item nav-link" id="pop3-tab" data-toggle="tab" href="#pop3" role="tab" aria-controls="pop3" aria-selected="false">Pendidikan Dan Pekerjaan</a>
                 <a class="nav-item nav-link" id="pop4-tab" data-toggle="tab" href="#pop4" role="tab" aria-controls="pop4" aria-selected="false">Keluarga</a>
                 <a class="nav-item nav-link" id="pop5-tab" data-toggle="tab" href="#pop5" role="tab" aria-controls="pop5" aria-selected="false">Kelas</a>
-                <a class="nav-item nav-link" id="pop6-tab" data-toggle="tab" href="#pop6" role="tab" aria-controls="pop6" aria-selected="false">Event</a>
+                <a class="nav-item nav-link" id="pop6-tab" data-toggle="tab" href="#pop6" role="tab" aria-controls="pop6" aria-selected="false">Baptis</a>
 
               </div>
             </nav>
             <div class="tab-content" id="nav-tabContent">
               <div class="tab-pane fade show active" id="pop1" role="tabpanel" aria-labelledby="pop1-tab">
-                <div class="pt-3"></div>
+                <div class="pt-3">
+                  <h5 class="text-gray">Data Pribadi</h5>
+                </div>
+
+
                 <table class="table">
                   <tbody>
                     <tr class="text-left">
@@ -229,10 +231,11 @@ $this->load->view("template/sidemenu");
 
                   </tbody>
                 </table>
-              </div>
 
-              <div class="tab-pane fade" id="pop2" role="tabpanel" aria-labelledby="pop2-tab">
-                <div class="pt-3"></div>
+                <div class="pt-3">
+                  <h5 class="text-gray">Kontak Darurat</h5>
+                </div>
+
                 <table class="table">
                   <tbody>
                     <tr class="text-left">
@@ -253,50 +256,53 @@ $this->load->view("template/sidemenu");
                   </tbody>
                 </table>
 
-              </div>
-              <div class="tab-pane fade" id="pop3" role="tabpanel" aria-labelledby="pop3-tab">
-                <div class="pt-3"></div>
-                <table class="table">
-                  <tbody>
-                    <tr class="text-left">
-                      <td style="width: 25%;">Pendidikan Terakhir</td>
-                      <td style="width: 5%;">:</td>
-                      <td id="tdpendidikanterakhir"></td>
-                    </tr>
-                    <tr class="text-left">
-                      <td>Nama Sekolah</td>
-                      <td>:</td>
-                      <td id="tdnamasekolah"></td>
-                    </tr>
-                    <tr class="text-left">
-                      <td>Pekerjaan</td>
-                      <td>:</td>
-                      <td id="tdpekerjaan"></td>
-                    </tr>
-                    <tr class="text-left">
-                      <td>Nama Perusahaan</td>
-                      <td>:</td>
-                      <td id="tdnamaperusahaan"></td>
-                    </tr>
-                    <tr class="text-left">
-                      <td>Sektor Industri</td>
-                      <td>:</td>
-                      <td id="tdsektorindustri"></td>
-                    </tr>
-                    <tr class="text-left">
-                      <td>Alamat Kantor</td>
-                      <td>:</td>
-                      <td id="tdalamatkantor"></td>
-                    </tr>
-                    <tr class="text-left">
-                      <td>No. Telp Kantor</td>
-                      <td>:</td>
-                      <td id="tdnotelpkantor"></td>
-                    </tr>
-                  </tbody>
-                </table>
+
+                <div class="pt-3">
+                  <h5 class="text-gray">Pendidikan Dan Pekerjaan</h5>
+                  <table class="table">
+                    <tbody>
+                      <tr class="text-left">
+                        <td style="width: 25%;">Pendidikan Terakhir</td>
+                        <td style="width: 5%;">:</td>
+                        <td id="tdpendidikanterakhir"></td>
+                      </tr>
+                      <tr class="text-left">
+                        <td>Nama Sekolah</td>
+                        <td>:</td>
+                        <td id="tdnamasekolah"></td>
+                      </tr>
+                      <tr class="text-left">
+                        <td>Pekerjaan</td>
+                        <td>:</td>
+                        <td id="tdpekerjaan"></td>
+                      </tr>
+                      <tr class="text-left">
+                        <td>Nama Perusahaan</td>
+                        <td>:</td>
+                        <td id="tdnamaperusahaan"></td>
+                      </tr>
+                      <tr class="text-left">
+                        <td>Sektor Industri</td>
+                        <td>:</td>
+                        <td id="tdsektorindustri"></td>
+                      </tr>
+                      <tr class="text-left">
+                        <td>Alamat Kantor</td>
+                        <td>:</td>
+                        <td id="tdalamatkantor"></td>
+                      </tr>
+                      <tr class="text-left">
+                        <td>No. Telp Kantor</td>
+                        <td>:</td>
+                        <td id="tdnotelpkantor"></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
 
               </div>
+
+
 
               <div class="tab-pane fade" id="pop4" role="tabpanel" aria-labelledby="pop4-tab">
                 <div class="pt-3"></div>
@@ -418,6 +424,35 @@ $this->load->view("template/sidemenu");
 
               <div class="tab-pane fade" id="pop6" role="tabpanel" aria-labelledby="pop6-tab">
                 <div class="pt-3"></div>
+                <table class="table">
+                  <tbody>
+                    <tr class="text-left">
+                      <td style="width: 25%;">Nomor/ Tanggal Akta</td>
+                      <td style="width: 5%;">:</td>
+                      <td id="tdbaptisantanggalakta"></td>
+                    </tr>
+                    <tr class="text-left">
+                      <td style="width: 25%;">Tanggal Baptis</td>
+                      <td style="width: 5%;">:</td>
+                      <td id="tdbaptisantanggalbaptis"></td>
+                    </tr>
+                    <tr class="text-left">
+                      <td style="width: 25%;">Nama Gereja</td>
+                      <td style="width: 5%;">:</td>
+                      <td id="tdbaptisannamagereja"></td>
+                    </tr>
+                    <tr class="text-left">
+                      <td style="width: 25%;">Nama Gembala</td>
+                      <td style="width: 5%;">:</td>
+                      <td id="tdbaptisannamagembala"></td>
+                    </tr>
+                    <tr class="text-left" id="trFileAkta">
+                      <td style="width: 25%;">File Akta Baptis</td>
+                      <td style="width: 5%;">:</td>
+                      <td id=""><a href="" target="_blank" id="linkFileAktaBaptis"><i class="fas fa-file-alt mr-2"></i>File Akta Baptis</a></td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
 
             </div>
@@ -578,6 +613,30 @@ $this->load->view("template/sidemenu");
         $('.tdnoaj').html(jemaat['noaj']);
         $('.tdnik').html(jemaat['nik']);
         $('.tdnohp').html(jemaat['nohp']);
+
+
+        var arrBaptisan = get_info_detailResult.arrBaptisan;
+
+        if (arrBaptisan.length > 0) {
+          $('#tdbaptisantanggalakta').html(arrBaptisan[0]['noakta'] + " / " + arrBaptisan[0]['tglakta']);
+          $('#tdbaptisantanggalbaptis').html(arrBaptisan[0]['tglbaptis']);
+          $('#tdbaptisannamagereja').html(arrBaptisan[0]['namagereja']);
+          $('#tdbaptisannamagembala').html(arrBaptisan[0]['namagembala']);
+
+          if (arrBaptisan[0]['tempatbaptis'] == 'Elshaddai') {
+            $('#trFileAkta').hide();
+          } else {
+            $('#trFileAkta').show();
+            $('#linkFileAktaBaptis').attr("href", arrBaptisan[0]['fileaktalokasi']);
+          }
+        } else {
+          $('#tdbaptisantanggalakta').html('');
+          $('#tdbaptisantanggalbaptis').html('');
+          $('#tdbaptisannamagereja').html('');
+          $('#tdbaptisannamagembala').html('');
+          $('#trFileAkta').hide();
+
+        }
 
 
         var arrKepala = get_info_detailResult.arrKepalaKeluarga;
