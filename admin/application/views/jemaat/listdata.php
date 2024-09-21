@@ -513,7 +513,7 @@ $this->load->view("template/sidemenu");
           "targets": [6],
           "orderable": false,
           "className": "dt-body-center",
-          "visible": (idotorisasi == '0000') ? true : false
+          "visible": (idotorisasi == '0000' || idotorisasi == '0001') ? true : false
         },
       ],
 

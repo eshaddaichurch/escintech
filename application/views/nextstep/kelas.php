@@ -111,6 +111,8 @@
                                     ';
 
                         if ($sudahPernahDaftar) {
+
+
                           $rsDaftar = $this->db->query("select * from v_jadwaleventregistrasi where idjadwalevent='" . $rowJadwal->idjadwalevent . "' and idjemaat='" . $this->session->userdata('idjemaat') . "'");
                           if ($rsDaftar->num_rows() > 0) {
                             foreach ($rsDaftar->result() as $rowDaftar) {
@@ -148,7 +150,7 @@
                               }
 
 
-                              if ($rowDaftar->statuskonfirmasi == 'Disetujui') {
+                              if ($rowDaftar->statuskonfirmasi == 'Ditolak') {
                                 echo '
                                               <tr>
                                                 <td style="width: 100%; text-align: center;" colspan="6">

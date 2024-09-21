@@ -64,19 +64,35 @@ class Aktabaptisan extends MY_Controller
                 $row[] = $rowdata->namalengkap;
                 $row[] = $rowdata->dilakukanoleh;
                 $row[] = $rowdata->namagereja;
-                $row[] = '
-                    <div class="btn-group dropleft">
-                        <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <span class="sr-only">Toggle Dropdown</span>
-                        </button>
-                        <div class="dropdown-menu">
-                        <a class="dropdown-item" href="' . site_url('aktabaptisan/cetak/' . $this->encrypt->encode($rowdata->idakta)) . '" target="_blank">Cetak Akta</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="' . site_url('aktabaptisan/delete/' . $this->encrypt->encode($rowdata->idakta)) . '" id="hapus">Hapus</a>
+
+                if ($rowdata->tempatbaptis == 'Elshaddai') {
+                    $row[] = '
+                        <div class="btn-group dropleft">
+                            <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <div class="dropdown-menu">
+                            <a class="dropdown-item" href="#" target="_blank" data-idakta="' . $rowdata->idakta . '" id="btnCetakAkta">Cetak Akta</a>
+                            <a class="dropdown-item" href="#" data-idakta="' . $rowdata->idakta . '" id="btnRiwayatCetakAkta">Riwayat Cetak Akta</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="' . site_url('aktabaptisan/delete/' . $this->encrypt->encode($rowdata->idakta)) . '" id="hapus">Hapus</a>
+                            </div>
+                            <a href="' . site_url('aktabaptisan/edit/' . $this->encrypt->encode($rowdata->idakta)) . '" class="btn btn-warning">Edit</a>
                         </div>
-                        <a href="' . site_url('aktabaptisan/edit/' . $this->encrypt->encode($rowdata->idakta)) . '" class="btn btn-warning">Edit</a>
-                    </div>
-                ';
+                    ';
+                } else {
+                    $row[] = '
+                        <div class="btn-group dropleft">
+                            <button type="button" class="btn btn-dark dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <span class="sr-only">Toggle Dropdown</span>
+                            </button>
+                            <div class="dropdown-menu">
+                            <a class="dropdown-item" href="' . site_url('aktabaptisan/delete/' . $this->encrypt->encode($rowdata->idakta)) . '" id="hapus">Hapus</a>
+                            </div>
+                            <a href="' . site_url('aktabaptisan/edit/' . $this->encrypt->encode($rowdata->idakta)) . '" class="btn btn-warning">Edit</a>
+                        </div>
+                    ';
+                }
                 $data[] = $row;
             }
         }
@@ -303,10 +319,20 @@ class Aktabaptisan extends MY_Controller
         }
     }
 
-    public function cetak($idakta)
+    public function cetak($idriwayat)
     {
         // error_reporting(0);
-        $idakta = $this->encrypt->decode($idakta);
+        $idriwayat = $this->encrypt->decode($idriwayat);
+
+        $rsRiwayat = $this->db->query("
+            select * from riw_cetakaktabaptis where idriwayat = $idriwayat
+        ");
+        if ($rsRiwayat->num_rows() == 0) {
+            echo "Permintaan cetak akta tidak diizinkan!";
+            exit();
+        }
+
+        $idakta = $rsRiwayat->row()->idakta;
 
         $this->load->library('Pdf');
 
@@ -318,6 +344,62 @@ class Aktabaptisan extends MY_Controller
         $data['rsakta'] = $rsakta;
         $data['idakta'] = $idakta;
         $this->load->view('aktabaptisan/cetak', $data);
+    }
+
+    public function getJumlahCetak()
+    {
+        $idakta = $this->input->get('idakta');
+        $rsRiwayat = $this->db->query("
+            select * from riw_cetakaktabaptis where idakta = '$idakta' order by idriwayat desc limit 1
+        ");
+        if ($rsRiwayat->num_rows() == 0) {
+            echo json_encode("1");
+        } else {
+            $cetakanke = $rsRiwayat->row()->cetakanke;
+            echo json_encode($cetakanke + 1);
+        }
+    }
+
+    public function addriwayatcetak()
+    {
+        $idakta = $this->input->get('idakta');
+        $tglcetak = $this->input->get('tglcetak');
+        $cetakanke = $this->input->get('cetakanke');
+        $keterangancetak = $this->input->get('keterangancetak');
+        $tglriwayat = date('Y-m-d H:i:s');
+        $idjemaat = $this->session->userdata('idjemaat');
+
+        $dataRiwayat = array(
+            'tglriwayat' => $tglriwayat,
+            'idakta' => $idakta,
+            'tglcetak' => $tglcetak,
+            'cetakanke' => $cetakanke,
+            'alasancetak' => $keterangancetak,
+            'idjemaatadmin' => $idjemaat,
+        );
+
+        $idriwayat = $this->Aktabaptisan_model->addriwayatcetak($dataRiwayat);
+        if ($idriwayat) {
+            $urlCetak = site_url('aktabaptisan/cetak/' . $this->encrypt->encode($idriwayat));
+            echo json_encode(array('success' => true, 'urlCetak' => $urlCetak));
+        } else {
+            echo json_encode(array('msg' => 'riwayat cetak gagal disimpan!'));
+        }
+    }
+
+    public function getRiwayatCetak()
+    {
+        $idakta = $this->input->get('idakta');
+        $rsRiwayat = $this->db->query("
+            select * from riw_cetakaktabaptis where idakta = '$idakta' order by idriwayat asc ");
+        echo json_encode($rsRiwayat->result());
+    }
+
+    public function getAktaID()
+    {
+        $idakta = $this->input->get('idakta');
+        $rsAkta = $this->Aktabaptisan_model->get_by_id($idakta);
+        echo json_encode($rsAkta->row());
     }
 }
 

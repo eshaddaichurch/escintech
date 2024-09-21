@@ -5,6 +5,9 @@ $this->load->view("template/sidemenu");
 
 ?>
 
+
+
+
 <div class="row" id="toni-breadcrumb">
   <div class="col-6">
     <h4 class="text-dark mt-2">Akta Baptisan</h4>
@@ -70,8 +73,12 @@ $this->load->view("template/sidemenu");
 
 
 
+
+
 <?php $this->load->view("template/footer") ?>
 
+<?php $this->load->view('aktabaptisan/modalCetakAktaBaptis') ?>
+<?php $this->load->view('aktabaptisan/modalRiwayatCetak') ?>
 
 
 <script type="text/javascript">
@@ -130,6 +137,18 @@ $this->load->view("template/sidemenu");
         document.location.href = link;
       }
     });
+  });
+
+  $(document).on('click', '#btnCetakAkta', function(e) {
+    e.preventDefault();
+    var idakta = $(this).attr('data-idakta');
+    loadModalCetakAktaBaptis(idakta);
+  });
+
+  $(document).on('click', '#btnRiwayatCetakAkta', function(e) {
+    e.preventDefault();
+    var idakta = $(this).attr('data-idakta');
+    loadmodalRiwayatCetak(idakta);
   });
 </script>
 

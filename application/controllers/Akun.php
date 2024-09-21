@@ -6,6 +6,7 @@ class Akun extends MY_Controller
     public function __construct()
     {
         parent::__construct();
+        $this->wajibLogin();
         $this->load->model('Home_model');
         $this->load->model('Akun_model');
     }

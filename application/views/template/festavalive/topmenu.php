@@ -169,7 +169,7 @@
                             <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle ' . $active . '" data-bs-toggle="dropdown">' . $this->session->userdata('namalengkap') . '</a>
                                 <div class="dropdown-menu m-0">
-                                    <a href="team.html" class="dropdown-item">Profil Saya</a>
+                                    <a href="' . site_url('Akun/profil') . '" class="dropdown-item">Profil Saya</a>
                                     <a href="' . site_url('Akun/kelas') . '" class="dropdown-item">Kelas Saya</a>
                                     <a href="' . site_url('login/keluar') . '" class="dropdown-item">Logout</a>
                                 </div>
@@ -356,7 +356,7 @@
                             <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle ' . $active . '" data-bs-toggle="dropdown">' . $this->session->userdata('namalengkap') . '</a>
                                 <div class="dropdown-menu m-0">
-                                    <a href="team.html" class="dropdown-item">Profil Saya</a>
+                                    <a href="' . site_url('Akun/profil') . '" class="dropdown-item">Profil Saya</a>
                                     <a href="' . site_url('Akun/kelas') . '" class="dropdown-item">Kelas Saya</a>
                                     <a href="' . site_url('login/keluar') . '" class="dropdown-item">Logout</a>
                                 </div>

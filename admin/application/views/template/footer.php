@@ -59,6 +59,8 @@
 <!-- CK Editor -->
 <!-- <script src="https://cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script> -->
 <script src="<?php echo base_url(); ?>assets/ckeditor/ckeditor.js"></script>
+<!-- <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/43.1.0/ckeditor5.css">
+<script src="https://cdn.ckeditor.com/ckeditor5/43.1.0/ckeditor5.js"></script> -->
 
 <script src="<?php echo (base_url()) ?>assets/sweetalert/sweetalert.min.js"></script>
 

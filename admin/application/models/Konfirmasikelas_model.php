@@ -1,9 +1,10 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Konfirmasikelas_model extends CI_Model {
+class Konfirmasikelas_model extends CI_Model
+{
 
-	var $tabelview = 'v_pendaftarankelas';
+    var $tabelview = 'v_pendaftarankelas';
     var $tabel     = 'jadwaleventregistrasi';
     var $idregistrasi = 'idregistrasi';
 
@@ -15,43 +16,40 @@ class Konfirmasikelas_model extends CI_Model {
     function get_datatables()
     {
         $this->_get_datatables_query();
-        if($_POST['length'] != -1)
-        $this->db->limit($_POST['length'], $_POST['start']);
-        return $this->db->get();        
+        if ($_POST['length'] != -1)
+            $this->db->limit($_POST['length'], $_POST['start']);
+        return $this->db->get();
     }
 
     private function _get_datatables_query()
-    {   
+    {
         $idkelas = $_POST['idkelas'];
         if (!empty($idkelas)) {
             $this->db->where('idkelas', $idkelas);
         }
-        $this->db->from($this->tabelview);  
+        $this->db->from($this->tabelview);
         $i = 0;
-        foreach ($this->column_search as $item) 
-        {
-            if($_POST['search']['value']) 
-            {
-                if($i===0) {
-                    $this->db->group_start(); 
+        foreach ($this->column_search as $item) {
+            if ($_POST['search']['value']) {
+                if ($i === 0) {
+                    $this->db->group_start();
                     $this->db->like($item, $_POST['search']['value']);
-                }else{
+                } else {
                     $this->db->or_like($item, $_POST['search']['value']);
                 }
-                if(count($this->column_search) - 1 == $i) //last loop
-                    $this->db->group_end(); 
+                if (count($this->column_search) - 1 == $i) //last loop
+                    $this->db->group_end();
             }
             $i++;
         }
-        
+
         // -------------------------> Proses Order by        
-        if(isset($_POST['order'])){
+        if (isset($_POST['order'])) {
             $this->db->order_by($this->column_order[$_POST['order']['0']['column']], $_POST['order']['0']['dir']);
-        }else if(isset($this->order)){
+        } else if (isset($this->order)) {
             $order = $this->order;
             $this->db->order_by(key($order), $order[key($order)]);
         }
-
     }
 
     function count_filtered()
@@ -61,7 +59,7 @@ class Konfirmasikelas_model extends CI_Model {
         $query = $this->db->get();
         return $query->row()->jlh;
     }
- 
+
     public function count_all()
     {
         $this->db->select('count(*) as jlh');
@@ -89,25 +87,25 @@ class Konfirmasikelas_model extends CI_Model {
     public function getSertifikat($idjemaat, $idkelas)
     {
         return $this->db->query("
-                SELECT * FROM registrasikelas where idjemaat='$idjemaat' and idkelas='$idkelas' and statuslulus='1' limit 1
+                SELECT * FROM registrasikelas where idjemaat='$idjemaat' and idkelas='$idkelas' and statuslulus='1' order by idregistrasikelas desc limit 1
                 ");
     }
 
     public function update($data, $idregistrasi, $status)
     {
         try {
-            
+
             $this->db->trans_begin();
 
             $this->db->where('idregistrasi', $idregistrasi);
             $this->db->update('jadwaleventregistrasi', $data);
 
-            if ($status=='Disetujui') {
+            if ($status == 'Disetujui') {
                 $rsRegistrasi = $this->db->query("select * from v_pendaftarankelas where idregistrasi='$idregistrasi'")->row();
 
                 $idkelas = $rsRegistrasi->idkelas;
                 $idjemaat = $rsRegistrasi->idjemaat;
-                
+
 
                 // $idregistrasikelas = $this->db->query("select create_idregistrasikelas('".date('Y-m-d')."', '".$idkelas."') as idregistrasikelas")->row()->idregistrasikelas;
 
@@ -125,24 +123,22 @@ class Konfirmasikelas_model extends CI_Model {
             }
 
 
-            if ($status=='Ditolak') {
+            if ($status == 'Ditolak') {
                 // $this->db->query("delete from registrasikelas where idregistrasijadwal='$idregistrasi'");
             }
 
-            if ($this->db->trans_status() === FALSE){
-                    $this->db->trans_rollback();
-                    return false;
-            }else{
-                    $this->db->trans_commit();
-                    return true;
+            if ($this->db->trans_status() === FALSE) {
+                $this->db->trans_rollback();
+                return false;
+            } else {
+                $this->db->trans_commit();
+                return true;
             }
-
         } catch (Exception $e) {
             $this->db->trans_rollback();
-                return false;
+            return false;
         }
     }
-
 }
 
 /* End of file Konfirmasikelas_model.php */

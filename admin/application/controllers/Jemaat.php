@@ -62,8 +62,22 @@ class Jemaat extends MY_Controller
                 $row[] = $rowdata->tempatlahir . '<br>' . $rowdata->tanggallahir;
                 $row[] = $rowdata->jeniskelamin;
                 $row[] = $rowdata->statusjemaat;
-                $row[] = '<a href="' . site_url('jemaat/edit/' . $this->encrypt->encode($rowdata->idjemaat)) . '" class="btn btn-sm btn-warning btn-circle"><i class="fa fa-edit"></i></a> | 
+
+                switch ($this->session->userdata('idotorisasi')) {
+                    case '0000':
+                        $row[] = '<a href="' . site_url('jemaat/edit/' . $this->encrypt->encode($rowdata->idjemaat)) . '" class="btn btn-sm btn-warning btn-circle"><i class="fa fa-edit"></i></a> | 
                         <a href="' . site_url('jemaat/delete/' . $this->encrypt->encode($rowdata->idjemaat)) . '" class="btn btn-sm btn-danger btn-circle" id="hapus"><i class="fa fa-trash"></i></a>';
+                        break;
+                    case '0001':
+                        $row[] = '<a href="' . site_url('jemaat/edit/' . $this->encrypt->encode($rowdata->idjemaat)) . '" class="btn btn-sm btn-warning btn-circle"><i class="fa fa-edit"></i></a>';
+                        break;
+
+                    default:
+                        $row[] = '';
+                        break;
+                }
+
+
                 $data[] = $row;
             }
         }
