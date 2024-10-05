@@ -34,7 +34,7 @@ $this->load->view("template/sidemenu");
                         ?>
                     </div>
 
-                    <div class="col-lg-3 col-6">
+                    <div class="col-lg-4 col-6">
                         <!-- small box -->
                         <div class="small-box bg-info">
                             <div class="inner">
@@ -49,7 +49,7 @@ $this->load->view("template/sidemenu");
                         </div>
                     </div>
                     <!-- ./col -->
-                    <div class="col-lg-3 col-6">
+                    <div class="col-lg-4 col-6">
                         <!-- small box -->
                         <div class="small-box bg-success">
                             <div class="inner">
@@ -64,7 +64,7 @@ $this->load->view("template/sidemenu");
                         </div>
                     </div>
                     <!-- ./col -->
-                    <div class="col-lg-3 col-6">
+                    <div class="col-lg-4 col-6">
                         <!-- small box -->
                         <div class="small-box bg-warning">
                             <div class="inner">
@@ -79,7 +79,7 @@ $this->load->view("template/sidemenu");
                         </div>
                     </div>
                     <!-- ./col -->
-                    <div class="col-lg-3 col-6">
+                    <div class="col-lg-3 col-6" style="display: none;">
                         <!-- small box -->
                         <div class="small-box bg-danger">
                             <div class="inner">
