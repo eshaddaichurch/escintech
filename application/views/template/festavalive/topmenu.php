@@ -169,8 +169,9 @@
                             <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle ' . $active . '" data-bs-toggle="dropdown">' . $this->session->userdata('namalengkap') . '</a>
                                 <div class="dropdown-menu m-0">
-                                    <a href="' . site_url('Akun/profil') . '" class="dropdown-item">Profil Saya</a>
-                                    <a href="' . site_url('Akun/kelas') . '" class="dropdown-item">Kelas Saya</a>
+                                    <a href="' . site_url('akun/profil') . '" class="dropdown-item">Profil Saya</a>
+                                    <a href="' . site_url('akun/kelas') . '" class="dropdown-item">Kelas Saya</a>
+                                    <a href="' . site_url('permohonansaya') . '" class="dropdown-item">Pemohonan Saya</a>
                                     <a href="' . site_url('login/keluar') . '" class="dropdown-item">Logout</a>
                                 </div>
                             </li>
@@ -341,9 +342,11 @@
                             <a class="nav-link click-scroll" href="#section_6">Contact</a>
                         </li> -->
 
+
+
                 <?php
                 if (empty($this->session->userdata('idjemaat'))) {
-                    echo '<a href="' . site_url('login') . '" class=" custom-btn d-lg-block d-none show-form-login">Login</a>';
+                    echo '<a href="' . site_url('login') . '" class=" custom-btn show-form-login">Login</a>';
                 } else {
 
                     if ($menu == 'Akun') {
@@ -358,6 +361,7 @@
                                 <div class="dropdown-menu m-0">
                                     <a href="' . site_url('Akun/profil') . '" class="dropdown-item">Profil Saya</a>
                                     <a href="' . site_url('Akun/kelas') . '" class="dropdown-item">Kelas Saya</a>
+                                    <a href="' . site_url('Permohonan') . '" class="dropdown-item">Pemohonan Saya</a>
                                     <a href="' . site_url('login/keluar') . '" class="dropdown-item">Logout</a>
                                 </div>
                             </li>

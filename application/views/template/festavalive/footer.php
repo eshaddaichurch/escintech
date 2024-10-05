@@ -190,6 +190,7 @@ T e m p l a t e M o
 
     <script>
         var $loading = $('.loader').hide();
+        $('.select2').select2();
 
         $(document)
             .ajaxStart(function() {
