@@ -26,6 +26,7 @@ class Dashboardcare extends MY_controller
             'jumlahjemaatsemua' => $this->Dashboardcare_model->getTotalJemaat(),
             'jumlahjemaatsimpatisan' => $this->Dashboardcare_model->getTotalSimpatisan(),
             'jumlahjemaatumum' => $this->Dashboardcare_model->getTotalUmum(),
+            'jumlahjemaatbaptis' => $this->Dashboardcare_model->getTotalBaptis(),
         );
         echo json_encode($data);
     }
@@ -67,6 +68,27 @@ class Dashboardcare extends MY_controller
             'datatanggal' => $datatanggal,
             'jumlahjemaat' => $jumlahjemaat,
             'totaljemaat' => $rskelas->Jan + $rskelas->Feb + $rskelas->Mar + $rskelas->Apr + $rskelas->Mei + $rskelas->Jun + $rskelas->Jul + $rskelas->Ags + $rskelas->Sep + $rskelas->Okt + $rskelas->Nov + $rskelas->Des
+        );
+        echo json_encode($data);
+    }
+
+
+    public function getgrafikbaptis()
+    {
+        $rsAkta = $this->Dashboardcare_model->getgrafikbaptis()->row();
+        // echo json_encode($rsAkta);
+        // exit();
+        $datatanggal = array();
+
+        $datatanggal = array('Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Ags', 'Sep', 'Okt', 'Nov', 'Des');
+
+
+        $jumlahjemaat = array($rsAkta->Jan, $rsAkta->Feb, $rsAkta->Mar, $rsAkta->Apr, $rsAkta->Mei, $rsAkta->Jun, $rsAkta->Jul, $rsAkta->Ags, $rsAkta->Sep, $rsAkta->Okt, $rsAkta->Nov, $rsAkta->Des);
+
+        $data = array(
+            'datatanggal' => $datatanggal,
+            'jumlahjemaat' => $jumlahjemaat,
+            'totaljemaat' => $rsAkta->Jan + $rsAkta->Feb + $rsAkta->Mar + $rsAkta->Apr + $rsAkta->Mei + $rsAkta->Jun + $rsAkta->Jul + $rsAkta->Ags + $rsAkta->Sep + $rsAkta->Okt + $rsAkta->Nov + $rsAkta->Des
         );
         echo json_encode($data);
     }

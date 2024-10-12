@@ -122,6 +122,27 @@
                                     </div>
                                 </div>
 
+                                <div class="col-12 mt-3">
+                                    <div class="card">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <h5>Form Permohonan</h5>
+                                                    <small>Silahkan download form dokumen berikut. dan serahkan kembali ke Resepsionis Elshaddai, pada jam kerja selasa s.d jumat.</small>
+                                                </div>
+                                                <div class="col-12 mt-1">
+                                                    <a href="" class="text-primary" download=""><i class="far fa-file-archive mr-1"></i> Form Pemberkatan Nikah</a>
+                                                </div>
+
+                                                <div class="col-12 mt-1">
+                                                    <a href="" class="text-primary" download=""><i class="far fa-file-archive mr-1"></i> Form Peneguhan Nikah</a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
 
                                 <div class="col-12 text-center mt-5 d-none d-md-block">
                                     <a href="<?php echo site_url('pernikahan') ?>" class="btn btn-default mr-1">Kembali</a>

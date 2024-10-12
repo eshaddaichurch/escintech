@@ -34,7 +34,7 @@ $this->load->view("template/sidemenu");
                         ?>
                     </div>
 
-                    <div class="col-lg-4 col-6">
+                    <div class="col-lg-3 col-6">
                         <!-- small box -->
                         <div class="small-box bg-info">
                             <div class="inner">
@@ -45,11 +45,10 @@ $this->load->view("template/sidemenu");
                             <div class="icon">
                                 <i class="ion ion-bag"></i>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                     <!-- ./col -->
-                    <div class="col-lg-4 col-6">
+                    <div class="col-lg-3 col-6">
                         <!-- small box -->
                         <div class="small-box bg-success">
                             <div class="inner">
@@ -60,13 +59,13 @@ $this->load->view("template/sidemenu");
                             <div class="icon">
                                 <i class="ion ion-stats-bars"></i>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
+
                     <!-- ./col -->
-                    <div class="col-lg-4 col-6">
+                    <div class="col-lg-3 col-6">
                         <!-- small box -->
-                        <div class="small-box bg-warning">
+                        <div class="small-box bg-danger">
                             <div class="inner">
                                 <h3 class="jumlahjemaatsimpatisan">0</h3>
 
@@ -75,9 +74,26 @@ $this->load->view("template/sidemenu");
                             <div class="icon">
                                 <i class="ion ion-person-add"></i>
                             </div>
-                            <a href="#" class="small-box-footer">More info <i class="fas fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
+
+                    <!-- ./col -->
+                    <div class="col-lg-3 col-6">
+                        <!-- small box -->
+                        <div class="small-box bg-warning">
+                            <div class="inner">
+                                <h3 class="jumlahjemaatsudahdibaptis">0</h3>
+
+                                <p>Sudah Di Baptis</p>
+                            </div>
+                            <div class="icon">
+                                <i class="ion ion-person-add"></i>
+                            </div>
+                        </div>
+                    </div>
+
+
+
                     <!-- ./col -->
                     <div class="col-lg-3 col-6" style="display: none;">
                         <!-- small box -->
@@ -137,7 +153,7 @@ $this->load->view("template/sidemenu");
 
                                 <div class="d-flex flex-row justify-content-end">
                                     <span class="mr-2">
-                                        <i class="fas fa-square text-primary"></i> Jemaat
+                                        <i class="fas fa-square text-primary"></i> Jumlah Jemaat
                                     </span>
                                 </div>
                             </div>
@@ -145,7 +161,7 @@ $this->load->view("template/sidemenu");
                     </div>
 
 
-                    <div class="col-6">
+                    <div class="col-lg-6">
                         <div class="card">
                             <div class="card-header border-0">
                                 <div class="d-flex justify-content-between">
@@ -166,7 +182,36 @@ $this->load->view("template/sidemenu");
 
                                 <div class="d-flex flex-row justify-content-end">
                                     <span class="mr-2">
-                                        <i class="fas fa-square text-primary"></i> New Visitor
+                                        <i class="fas fa-square text-primary"></i> Jumlah Jemaat
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header border-0">
+                                <div class="d-flex justify-content-between">
+                                    <h3 class="card-title">Jemaat Di Baptis <?php date('Y') ?></h3>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <div class="d-flex">
+                                    <p class="d-flex flex-column">
+                                        <span class="text-bold text-lg">Jumlah: <span id="lblbaptis">0</span></span>
+                                        <span>Tahun <?php echo date('Y') ?></span>
+                                    </p>
+                                </div>
+
+                                <div class="position-relative mb-4">
+                                    <canvas id="grafikbaptis" height="200"></canvas>
+                                </div>
+
+                                <div class="d-flex flex-row justify-content-end">
+                                    <span class="mr-2">
+                                        <i class="fas fa-square text-primary"></i> Jumlah Jemaat
                                     </span>
                                 </div>
                             </div>
@@ -208,11 +253,12 @@ $this->load->view("template/sidemenu");
                 dataType: 'json',
             })
             .done(function(resultinfo) {
-                console.log(resultinfo);
+                // console.log(resultinfo);
                 $('.jumlahjemaatbaru').html(resultinfo.jumlahjemaatbaru);
                 $('.jumlahjemaatsemua').html(resultinfo.jumlahjemaatsemua);
                 $('.jumlahjemaatsimpatisan').html(resultinfo.jumlahjemaatsimpatisan);
                 $('.jumlahjemaatumum').html(resultinfo.jumlahjemaatumum);
+                $('.jumlahjemaatsudahdibaptis').html(resultinfo.jumlahjemaatbaptis);
             })
             .fail(function() {
                 console.log("error getinfobox");
@@ -240,7 +286,7 @@ $this->load->view("template/sidemenu");
                 dataType: 'json',
             })
             .done(function(resultgrafikhit) {
-                console.log(resultgrafikhit);
+                // console.log(resultgrafikhit);
 
                 var donutData = {
                     labels: resultgrafikhit.datatanggal,
@@ -287,7 +333,7 @@ $this->load->view("template/sidemenu");
                 dataType: 'json',
             })
             .done(function(resultgrafikhit) {
-                console.log(resultgrafikhit);
+                // console.log(resultgrafikhit);
                 $('#lbljemaatbaru').html(resultgrafikhit.totaljemaat);
                 var $grafikjemaatbaru = $('#grafikjemaatbaru')
                 var visitorsChart = new Chart($grafikjemaatbaru, {
@@ -354,7 +400,7 @@ $this->load->view("template/sidemenu");
                 dataType: 'json',
             })
             .done(function(resultgrafikhit) {
-                console.log(resultgrafikhit);
+                // console.log(resultgrafikhit);
                 $('#lblmarriage').html(resultgrafikhit.totaljemaat);
                 var $grafikmarriage = $('#grafikmarriage')
                 var visitorsChart = new Chart($grafikmarriage, {
@@ -363,6 +409,72 @@ $this->load->view("template/sidemenu");
                         datasets: [{
                             type: 'bar',
                             data: resultgrafikhit.jumlahjemaat,
+                            backgroundColor: '#557ae0',
+                            borderColor: '#557ae0',
+                            pointBorderColor: '#557ae0',
+                            pointBackgroundColor: '#557ae0',
+                            fill: true
+                        }]
+                    },
+                    options: {
+                        maintainAspectRatio: false,
+                        tooltips: {
+                            mode: mode,
+                            intersect: intersect
+                        },
+                        hover: {
+                            mode: mode,
+                            intersect: intersect
+                        },
+                        legend: {
+                            display: false
+                        },
+                        scales: {
+                            yAxes: [{
+                                // display: false,
+                                gridLines: {
+                                    display: true,
+                                    lineWidth: '4px',
+                                    color: 'rgba(0, 0, 0, .2)',
+                                    zeroLineColor: 'transparent'
+                                },
+                                ticks: $.extend({
+                                    beginAtZero: true,
+                                    suggestedMax: 10
+                                }, ticksStyle)
+                            }],
+                            xAxes: [{
+                                display: true,
+                                gridLines: {
+                                    display: false
+                                },
+                                ticks: ticksStyle
+                            }]
+                        }
+                    }
+                })
+
+            })
+            .fail(function() {
+                console.log("error grafik hit");
+            });
+
+
+        $.ajax({
+                url: '<?php echo site_url("dashboardcare/getgrafikbaptis") ?>',
+                type: 'GET',
+                dataType: 'json',
+            })
+            .done(function(resultgrafikbaptis) {
+                console.log(resultgrafikbaptis);
+                $('#lblbaptis').html(resultgrafikbaptis.totaljemaat);
+                var $grafikbaptis = $('#grafikbaptis')
+                var visitorsChart = new Chart($grafikbaptis, {
+                    data: {
+                        labels: resultgrafikbaptis.datatanggal,
+                        datasets: [{
+                            type: 'bar',
+                            data: resultgrafikbaptis.jumlahjemaat,
                             backgroundColor: '#557ae0',
                             borderColor: '#557ae0',
                             pointBorderColor: '#557ae0',

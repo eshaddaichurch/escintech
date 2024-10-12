@@ -274,6 +274,9 @@ class Registrasikelas extends MY_Controller
         $tglsertifikat                 = $this->input->post('tglsertifikat');
         $idjemaat                 = $this->input->post('idjemaat');
         $idkelas                 = $this->input->post('idkelas');
+        $idregistrasijadwal                 = $this->input->post('idregistrasijadwal');
+        $idjadwalevent                 = $this->input->post('idjadwalevent');
+
         $tanggalinsert = date('Y-m-d H:i:s');
 
 
@@ -290,7 +293,9 @@ class Registrasikelas extends MY_Controller
                 'tanggalupdate'   => $tanggalinsert,
                 'idpengguna'   => $this->session->userdata('idjemaat'),
                 'statuslulus'   => '1',
-                'nomorsertifikat'   => $nomorsertifikat
+                'nomorsertifikat'   => $nomorsertifikat,
+                'idregistrasijadwal'   => $idregistrasijadwal,
+                'idjadwalevent'   => $idjadwalevent,
             );
             $simpan = $this->Registrasikelas_model->simpan($data);
         } else {
@@ -301,7 +306,9 @@ class Registrasikelas extends MY_Controller
                 'idkelas'   => $idkelas,
                 'tanggalupdate'   => $tanggalinsert,
                 'idpengguna'   => $this->session->userdata('idjemaat'),
-                'nomorsertifikat'   => $nomorsertifikat
+                'nomorsertifikat'   => $nomorsertifikat,
+                'idregistrasijadwal'   => $idregistrasijadwal,
+                'idjadwalevent'   => $idjadwalevent,
             );
             $simpan = $this->Registrasikelas_model->update($data, $idregistrasikelas);
         }
@@ -341,6 +348,8 @@ class Registrasikelas extends MY_Controller
             'idkelas'     =>  $RsData->idkelas,
             'nomorsertifikat'     =>  $RsData->nomorsertifikat,
             'linkurlsertifikat'     =>  $RsData->linkurlsertifikat,
+            'idjadwalevent'     =>  $RsData->idjadwalevent,
+            'idregistrasijadwal'     =>  $RsData->idregistrasijadwal,
         );
 
         echo (json_encode($data));
@@ -463,6 +472,16 @@ class Registrasikelas extends MY_Controller
         $data['rsregistrasi'] = $rsregistrasi;
         $data['idregistrasikelas'] = $idregistrasikelas;
         $this->load->view('registrasikelas/' . $report, $data);
+    }
+
+
+    public function getJadwalEvent()
+    {
+        $idregistrasijadwal = $this->input->get('idregistrasijadwal');
+        $rsJadwalEvent = $this->db->query("
+            select * from v_pendaftaran_kelas where idregistrasi = '$idregistrasijadwal'
+        ");
+        echo json_encode($rsJadwalEvent->result());
     }
 }
 
