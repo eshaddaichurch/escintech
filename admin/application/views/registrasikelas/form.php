@@ -60,20 +60,23 @@
                <div class="form-group row">
                  <label for="" class="col-md-3 col-form-label">Nama Peserta</label>
                  <div class="col-md-9">
-                   <select name="idregistrasijadwal" id="idregistrasijadwal" class="form-control select2">
+
+                   <select name="idjemaat" id="idjemaat" class="form-control select2">
                      <option value="">Pilih nama peserta...</option>
                      <?php
-                      $rsjemaat = $this->db->query("select * from v_pendaftaran_kelas 
-                            where idkelas='$idkelas' and idregistrasikelas is null order by namalengkap");
+
+                      $rsjemaat = $this->db->query("select * from v_jemaat order by namalengkap");
                       if ($rsjemaat->num_rows() > 0) {
                         foreach ($rsjemaat->result() as $row) {
-                          echo '<option value="' . $row->idregistrasi . '">' . $row->idregistrasi . ' - ' . $row->namalengkap . '</option>';
+                          echo '<option value="' . $row->idjemaat . '">' . $row->namalengkap . '</option>';
                         }
                       }
                       ?>
                    </select>
-                   <input type="hidden" name="idjemaat" id="idjemaat">
+                   <input type="hidden" name="idregistrasijadwal" id="idregistrasijadwal">
                    <input type="hidden" name="idjadwalevent" id="idjadwalevent">
+
+
                  </div>
                </div>
 

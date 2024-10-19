@@ -285,24 +285,45 @@
                           }
                         }
 
-                        echo '
-                              <li>
-                                
-                                <span></span>
-                               
-                                <div class="title">' . $row->jenisjadwal . '</div>
-                                <div class="info">' . $row->namaevent . '</div>
-                                 <div class="jam">
-                                  <sub>Pukul ' . date('H:i', strtotime($row->jammulai)) . ' WIB</sub>
+                        if ($row->jenisjadwal == 'Kelas Next Step') {
+                          echo '
+                                <li>
+                                  
+                                  <span></span>
+                                 
+                                  <div class="title" style="font-size:18px;">' . $row->namaevent . '</div>
+                                  <div class="" style="font-size:12px;">' . $row->namakelas . '</div>
+                                   <div class="jam">
+                                    <sub>Pukul ' . date('H:i', strtotime($row->jammulai)) . ' WIB</sub>
+                                    </div>
+                                  <div class="btn-daftar-kelas">
+                                    ' . $button . '
                                   </div>
-                                <div class="btn-daftar-kelas">
-                                  ' . $button . '
-                                </div>
-                                <div class="time">
-                                <span>' . hari($row->tgljadwal) . ', ' . date('d', strtotime($row->tgljadwal)) . '</span>                                                                  
-                                </div>
-                              </li>
-                              ';
+                                  <div class="time">
+                                  <span>' . hari($row->tgljadwal) . ', ' . date('d', strtotime($row->tgljadwal)) . '</span>                                                                  
+                                  </div>
+                                </li>
+                                ';
+                        } else {
+
+                          echo '
+                                <li>
+                                  
+                                  <span></span>
+                                 
+                                  <div class="title">' . $row->namaevent . '</div>
+                                   <div class="jam">
+                                    <sub>Pukul ' . date('H:i', strtotime($row->jammulai)) . ' WIB</sub>
+                                    </div>
+                                  <div class="btn-daftar-kelas">
+                                    ' . $button . '
+                                  </div>
+                                  <div class="time">
+                                  <span>' . hari($row->tgljadwal) . ', ' . date('d', strtotime($row->tgljadwal)) . '</span>                                                                  
+                                  </div>
+                                </li>
+                                ';
+                        }
                         $idjadwalevent_old = $row->idjadwalevent;
                       }
 

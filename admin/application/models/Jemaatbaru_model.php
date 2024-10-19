@@ -73,10 +73,29 @@ class Jemaatbaru_model extends CI_Model
         return $this->db->get($this->tabelview);
     }
 
-    public function update($data, $idcarejemaatbaru)
+    public function update($dataCare, $idcarejemaatbaru)
     {
-        $this->db->where('idcarejemaatbaru', $idcarejemaatbaru);
-        return $this->db->update($this->tabel, $data);
+        $this->db->trans_begin();
+        try {
+
+            $idjemaatbaru = $this->db->query("select idjemaat from carejemaatbaru where idcarejemaatbaru=$idcarejemaatbaru ")->row()->idjemaat;
+
+            $this->db->query("update jemaat set statusjemaat = 'Simpatisan' where idjemaat = '$idjemaatbaru' ");
+
+            $this->db->where('idcarejemaatbaru', $idcarejemaatbaru);
+            $this->db->update($this->tabel, $dataCare);
+
+            if ($this->db->trans_status() === FALSE) {
+                $this->db->trans_rollback();
+                return false;
+            } else {
+                $this->db->trans_commit();
+                return true;
+            }
+        } catch (\Throwable $th) {
+            $this->db->trans_rollback();
+            return false;
+        }
     }
 }
 

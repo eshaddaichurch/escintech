@@ -60,7 +60,7 @@
                    <table class="table">
                      <tbody>
                        <tr>
-                         <td style="width: 15%;">Nomor KAJ</td>
+                         <td style="width: 15%;">Nama Jemaat</td>
                          <td style="width: 5%; text-align: center;">:</td>
                          <td style="width: 30%;"><?php echo $rowJemaat->namalengkap ?></td>
                          <td style="width: 15%;">Jenis Kelamin</td>

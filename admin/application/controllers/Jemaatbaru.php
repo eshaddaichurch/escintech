@@ -128,16 +128,20 @@ class Jemaatbaru extends MY_Controller
         $idcarejemaatbaru             = $this->input->post('idcarejemaatbaru');
         $keterangan             = $this->input->post('keterangan');
 
-        $data = array(
+        $dataCare = array(
             'idcarejemaatbaru'   => $idcarejemaatbaru,
             'status'   => "Confirmed",
             'tglstatus'   => date('Y-m-d H:i:s'),
             'idadmin'   => $this->session->userdata('idjemaat'),
             'keterangan'   => $keterangan,
         );
+
+
+
         // var_dump($data);
         // exit();
-        $simpan = $this->Jemaatbaru_model->update($data, $idcarejemaatbaru);
+
+        $simpan = $this->Jemaatbaru_model->update($dataCare, $idcarejemaatbaru);
 
         if ($simpan) {
             $pesan = '<div>

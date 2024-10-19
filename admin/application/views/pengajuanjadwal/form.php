@@ -77,7 +77,7 @@
 
                      <li>
                        <a class="nav-link" href="#step-5">
-                         Pengaturan Lainnya
+                         Selesai
                        </a>
                      </li>
                    </ul>
@@ -572,7 +572,15 @@
                          <div class="col-12">
                            <div class="card">
                              <div class="card-body">
+
                                <div class="row">
+                                 <div class="col-12">
+                                   <h5>Apakah Anda sudah selesai mengisi form dan yakin ingin menyimpan data ini?</h5>
+                                 </div>
+                               </div>
+
+
+                               <div class="row" style="display: none;">
                                  <div class="col-12">
 
                                    <div class="form-group row">

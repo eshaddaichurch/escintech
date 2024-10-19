@@ -40,6 +40,33 @@ class Ajax extends CI_Controller
 		}
 		echo json_encode($result);
 	}
+
+	public function getjadwalevent()
+	{
+		$idjadwalevent = $this->input->get('idjadwalevent');
+
+		$jadwalEvent = $this->db->query("
+			select * from v_jadwalevent where idjadwalevent = '$idjadwalevent'
+		")->row();
+
+		$detailRuangan = $this->db->query("
+			select * from v_jadwaleventdetailruangan where idjadwalevent = '$idjadwalevent'
+		")->result();
+
+		$detailInventaris = $this->db->query("
+			select * from v_jadwaleventdetailinventaris where idjadwalevent = '$idjadwalevent'
+		")->result();
+
+		$detailParkiran = $this->db->query("
+			select * from v_jadwaleventdetailparkiran where idjadwalevent = '$idjadwalevent'
+		")->result();
+
+		$detailPelayanan = $this->db->query("
+			select * from v_jadwaleventdetailpelayanan where idjadwalevent = '$idjadwalevent'
+		")->result();
+
+		echo json_encode(array('jadwalEvent' => $jadwalEvent, 'detailRuangan' => $detailRuangan, 'detailInventaris' => $detailInventaris, 'detailParkiran' => $detailParkiran, 'detailPelayanan' => $detailPelayanan));
+	}
 }
 
 /* End of file Ajax.php */

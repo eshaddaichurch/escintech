@@ -72,6 +72,7 @@
 
 
 
+
 <script>
   const numberWithCommas = (x) => {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -271,4 +272,15 @@
       return;
     }
   }
+</script>
+
+
+<?php $this->load->view('modal/modallihatjadwal') ?>
+<script>
+  $(document).on('click', '#linklihatjadwal', function(e) {
+    e.preventDefault();
+    var vidjadwalevent = $(this).attr('data-idjadwalevent');
+
+    loadmodallihatjadwal(vidjadwalevent);
+  });
 </script>

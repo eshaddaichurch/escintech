@@ -54,17 +54,32 @@ class Pengajuanjadwal extends MY_Controller
         };
 
         $statuskonfirmasi = $rsPengajuan->row()->statuskonfirmasi;
-        if ($statuskonfirmasi == 'Disetujui' || $statuskonfirmasi == 'Ditolak') {
+        $tglmulai = date('Y-m-d', strtotime($rsPengajuan->row()->tglmulai));
+        $tglsekarang = date('Y-m-d');
+
+        if ($tglsekarang > $tglmulai) {
             $pesan = '<div>
                         <div class="alert alert-danger alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-                            <strong>Upss!</strong> Data ini sudah "' . $statuskonfirmasi . '" tidak bisa diedit lagi! 
+                            <strong>Upss!</strong> Data ini tidak bisa diedit lagi, karena sudah berlalu! 
                         </div>
                     </div>';
             $this->session->set_flashdata('pesan', $pesan);
             redirect('pengajuanjadwal');
             exit();
         }
+
+        // if ($statuskonfirmasi == 'Disetujui' || $statuskonfirmasi == 'Ditolak') {
+        //     $pesan = '<div>
+        //                 <div class="alert alert-danger alert-dismissable">
+        //                     <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+        //                     <strong>Upss!</strong> Data ini sudah "' . $statuskonfirmasi . '" tidak bisa diedit lagi! 
+        //                 </div>
+        //             </div>';
+        //     $this->session->set_flashdata('pesan', $pesan);
+        //     redirect('pengajuanjadwal');
+        //     exit();
+        // }
 
         $data['idjadwalevent'] = $idjadwalevent;
         $data['menu'] = 'pengajuanjadwal';
@@ -89,11 +104,18 @@ class Pengajuanjadwal extends MY_Controller
                     $tglselesai = date('Y-m-d', strtotime($rowdata->tglselesai));
                 }
 
+                $tglsekarang = date('Y-m-d');
+
+                if ($tglsekarang > $tglmulai) {
+                    $statusTanggal = '<br><span class="badge badge-secondary">Sudah Berlalu</span>';
+                } else {
+                    $statusTanggal = '<br><span class="badge badge-info">Sedang Berjalan</span>';
+                }
                 $tglevent = '';
                 if ($tglmulai == $tglselesai) {
-                    $tglevent = $tglmulai;
+                    $tglevent = $tglmulai . $statusTanggal;
                 } else {
-                    $tglevent = $tglmulai . '<br>Sd. ' . $tglselesai;
+                    $tglevent = $tglmulai . '<br>Sd. ' . $tglselesai . $statusTanggal;
                 }
 
                 switch ($rowdata->statuskonfirmasi) {
@@ -116,7 +138,7 @@ class Pengajuanjadwal extends MY_Controller
                 $row = array();
                 $row[] = $no;
                 $row[] = $tglevent;
-                $row[] = '<strong>' . $rowdata->namaevent . '</strong>' . '<br>' . $rowdata->namadepartement;
+                $row[] = '<strong><a href="#" id="linklihatjadwal" data-idjadwalevent="' . $rowdata->idjadwalevent . '">' . $rowdata->namaevent . '</a></strong>' . '<br>' . $rowdata->namadepartement;
                 $row[] = $rowdata->jenisjadwal;
                 $row[] = $statuskonfirmasi;
                 $row[] = '<a href="' . site_url('pengajuanjadwal/edit/' . $this->encrypt->encode($rowdata->idjadwalevent)) . '" class="btn btn-sm btn-warning btn-circle"><i class="fa fa-edit"></i></a> | 
