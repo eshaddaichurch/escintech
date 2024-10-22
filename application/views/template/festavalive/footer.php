@@ -105,8 +105,8 @@
                 <div class="row">
 
                     <div class="col-lg-3 col-12 mt-5">
-                        <p class="copyright-text">Copyright © 2023 - <?php echo date('Y') ?> Elshaddai Church</p>
-                        <p class="copyright-text">Distributed by: <a href="https://themewagon.com">ThemeWagon</a></p>
+                        <p class="copyright-text">Copyright © 2023 - <?php echo date('Y') ?> El Shaddai Church</p>
+                        <!-- <p class="copyright-text">Distributed by: <a href="https://themewagon.com">ThemeWagon</a></p> -->
                     </div>
 
                     <div class="col-lg-8 col-12 mt-lg-5">

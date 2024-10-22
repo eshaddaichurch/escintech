@@ -197,7 +197,7 @@
                                      <label for="" class="col-md-3 col-form-label">Nama Kelas</label>
                                      <div class="col-md-9">
                                        <select name="idkelas" id="idkelas" class="form-control select2">
-                                         <option value="">Pilih nama kelas next step...</option>
+                                         <option value="">Pilih nama kelas...</option>
                                          <?php
                                           $rskelas = $this->db->query("
                                                       select * from kelas where statusaktif='Aktif' order by idkelas
@@ -294,7 +294,7 @@
                                    </div>
 
                                    <div class="form-group row">
-                                     <label for="" class="col-md-3 col-form-label">Jumlah Jemaat/ Anggot</label>
+                                     <label for="" class="col-md-3 col-form-label">Jumlah Jemaat/ Anggota</label>
                                      <div class="col-md-9">
                                        <input type="number" name="jumlahjemaat" id="jumlahjemaat" class="form-control" min="0" placeholder="0">
                                      </div>
@@ -461,7 +461,7 @@
                                                </table>
                                              </div>
                                              <div class="col-12">
-                                               <small class="text-danger"><i>* Kosongkan jika Event di Luar Elshaddai</i></small>
+                                               <small class="text-danger"><i>* Kosongkan jika Event di Luar El Shaddai</i></small>
                                              </div>
                                            </div>
                                          </div>
@@ -526,7 +526,7 @@
                                          <div class="card-body shadow-sm">
                                            <div class="row">
                                              <div class="col-12">
-                                               <h5><i class="fas fa-chevron-right"></i> Apakah Ada Kebutuhan Inventaris? <a href="#" class="ml-3" id="btnInventarisYangDiperlukan"><i class="fa fa-plus-circle"></i></a></h5>
+                                               <h5><i class="fas fa-chevron-right"></i> Apakah Ada Kebutuhan Logistik? <a href="#" class="ml-3" id="btnInventarisYangDiperlukan"><i class="fa fa-plus-circle"></i></a></h5>
                                              </div>
                                              <div class="col-12">
                                                <table class="table table-jadwal-detail" id="tableInventaris">
