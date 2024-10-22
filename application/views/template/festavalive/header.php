@@ -9,7 +9,7 @@
     <meta name="author" content="">
 
     <link href="<?php echo base_url('images/icon.png') ?>" rel="icon">
-    <title>Elshaddai Church</title>
+    <title>El Shaddai Church</title>
 
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
