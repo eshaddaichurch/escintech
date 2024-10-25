@@ -205,7 +205,13 @@ class Login extends CI_Controller
             <p>Untuk menyelesaikan proses pendaftaran dan mengaktifkan akun Anda, silakan klik tautan verifikasi berikut:</p>
             <br>
             <p> <a href="' . site_url('login/verifikasiemail/' . $this->encrypt->encode($email)) 
-            . '">Verifikasi Email</a> </p>';
+            . '">Verifikasi Email</a> </p>
+            <p>Pastikan untuk mengonfirmasi pendaftaran Anda dalam waktu 24 jam sejak email ini diterima. Setelah tautan di atas diklik, akun Anda akan segera aktif, dan Anda akan dapat mengakses semua fitur serta layanan yang tersedia.</p>
+            <p>Kami sangat menghargai kesempatan untuk melayani Anda dan berharap dapat memberikan pengalaman yang memuaskan di MyEsc.</p>
+            <p>Salam hormat,</p>
+            <p>Tim MyEsc</p>
+            <p>myesc.id</p>
+            ';
             $this->App->sendEmailDaftar($email, 'Konfirmasi Pendaftaran MyEsc', $textemail);
             echo json_encode(array('success' => true));
         } else {
