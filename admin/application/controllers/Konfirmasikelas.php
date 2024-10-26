@@ -128,21 +128,32 @@ class Konfirmasikelas extends MY_Controller
 
             if ($status == 'Disetujui') {
                 $textemail = '
-                    <h5>Selamat!!! Pendaftaran Kelas Next Step Anda Telah Disetujui</h5>
+                    <h5>Pengajuan Kelas '. $namakelas.' Saudara Disetujui!</h5>
                       <p>Shalom ' . $namalengkap . ',</p>
-                      <p>Kelas ' . $namakelas . ' akan dimulai pada tanggal ' . tglindonesialengkap($rsJadwal->tglmulai) . ' sampai dengan tanggal ' . tglindonesialengkap($rsJadwal->tglselesai) . ' pada jam ' . date('H:i', strtotime($rsJadwal->tglmulai)) . ' WIB. Datanglah tepat waktu untuk mengikuti kelas ini. Apabila ada yang kurang jelas, anda dapat menghubungi staf admin di Gereja Elshaddai, Terimakasih</p>
+					 <P> Selamat! Pengajuan Saudara untuk mengikuti kelas ' . $namakelas . ' telah disetujui. Kami sangat senang Saudara dapat bergabung dalam perjalanan pertumbuhan rohani ini.</P>
+
+					 <p>Detail Kelas:</p>
+						<p> - Nama Kelas : ' . $namakelas . '</p>	
+						<p> - Tanggal & Waktu : ' . tglindonesialengkap($rsJadwal->tglmulai) .',' . date('H:i', strtotime($rsJadwal->tglmulai)) . '<p>
+						<p> - Tempat : ' . $rsJadwal->tempat . '</
+                     <p> Jika ada pertanyaan, Saudara dapat menghubungi admin esc next step di nomor: +62 851-8302-3883.</p>
                       <p>Tuhan Yesus Memberkati. </p>
-                      <p><a href="https://myesc.id" target="_blank">myesc.id</a></p>
+                      <p></p>
+
+					  <p>Salam Kasih Kristus,</p>
+						<p>ESC Next Step</p>
                 ';
             } else {
                 $textemail = '
-                    <h5>Mohon Maaf!!! Pendaftaran Kelas Next Step Anda Ditolak</h5>
+                    <h5>Pengajuan Kelas  '. $namakelas.' Saudara Ditolak!</h5>
                       <p>Shalom ' . $namalengkap . ',</p>
                       <p>Pendaftaran Kelas ' . $namakelas . ' anda ditolak, adapun alasan penolakan anda sbb:</p>
                       <p>' . $rsRegistrasi->keterangankonfirmasi . ' </p>
                       <p>Apabila ada yang kurang jelas, anda dapat menghubungi staf admin di Gereja Elshaddai, Terimakasih</p>
                       <p>Tuhan Yesus Memberkati. </p>
-                      <p><a href="https://myesc.id">myesc.id</a></p>
+
+                      <p>Salam Kasih Kristus,</p>
+						<p>ESC Next Step</p>
                 ';
             }
             $this->App->sendEmailNextStep($rsRegistrasi->email, $judul, $textemail);

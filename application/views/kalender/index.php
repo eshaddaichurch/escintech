@@ -240,7 +240,7 @@
         <div class="row">
 
           <div class="col-12 mb-4 mb-lg-0">
-            <h2 class="text-white text-center mb-4 mt-3">JADWAL ELSHADDAI EVENT </h2>
+            <h2 class="text-white text-center mb-4 mt-3">JADWAL EL SHADDAI EVENT </h2>
           </div>
 
         </div>
