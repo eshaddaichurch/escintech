@@ -248,7 +248,7 @@ class Login extends CI_Controller
         } else {
 
             $pesan = "<script>
-                            swal('Informasi', 'Email tidak ditemukan.', 'warning');
+                            swal('Sorry', 'Email not found.', 'warning');
                         </script>";
             $this->session->set_flashdata('pesan', $pesan);
             redirect(site_url());
