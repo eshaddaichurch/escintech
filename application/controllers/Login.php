@@ -199,20 +199,27 @@ class Login extends CI_Controller
                 $simpan = $this->Login_model->kirimKeCare($dataCareJemaatBaru);
             }
             $textemail = 
-           '<h5>Selangkah Lagi untuk Bergabung dengan El Shaddai church! Verifikasi Akun Anda Sekarang</h5>
-            <p>Halo ' . $namalengkap . '</p>
-            <p>Terima kasih telah mendaftar di [Nama Platform]! Kami sangat senang menyambut Anda sebagai bagian dari komunitas kami. Untuk melindungi keamanan dan memastikan bahwa alamat email ini benar-benar milik Anda, kami memerlukan konfirmasi.</p>
-            <p>Untuk menyelesaikan proses pendaftaran dan mengaktifkan akun Anda, silakan klik tautan verifikasi berikut:</p>
-            <br>
-            <p> <a href="' . site_url('login/verifikasiemail/' . $this->encrypt->encode($email)) 
-            . '">Verifikasi Email</a> </p>
-            <p>Pastikan untuk mengonfirmasi pendaftaran Anda dalam waktu 24 jam sejak email ini diterima. Setelah tautan di atas diklik, akun Anda akan segera aktif.</p>
-            <p>Kami sangat menghargai kesempatan untuk melayani Anda dan berharap dapat memberikan pengalaman yang memuaskan di MyEsc.</p>
-            <p>Salam hormat,</p>
-            <p>Tim MyEsc</p>
-            <p>myesc.id</p>
+            '<h4>Shalom! ' . $namalengkap . 'Welcome to myesc! </h4>
+            <p>We’re thrilled to have you with us! Before you can start your journey with us, please verify your email with a quick click below!</p>
+                <p> <a href="' . site_url('login/verifikasiemail/' . $this->encrypt->encode($email)) 
+            . '">
+            <div class= "btn btn-primary">
+            Verify Email
+            </div></a> </p>
+            <p>Thank You,</p>
+            <p>EL SHADDAI CHURCH</p>
+            <hr>
+            <h4>Shalom! ' . $namalengkap . 'Selamat datang di MyEsc! </h4>
+            <p>Kami senang kamu sudah bergabung. Sebelum kamu bisa memulai perjalananmu bersama kami, yuk, verifikasi email ini dengan satu klik cepat di bawah ini!</p>
+                <p> <a href="' . site_url('login/verifikasiemail/' . $this->encrypt->encode($email)) 
+            . '">
+            <div class= "btn btn-primary">
+            Verifikasi Email
+            </div></a> </p>
+            <p>Terima Kasih,</p>
+            <p>GBI EL SHADDAI</p>
             ';
-            $this->App->sendEmailDaftar($email, 'Konfirmasi Pendaftaran MyEsc', $textemail);
+            $this->App->sendEmailDaftar($email, 'Email Verification', $textemail);
             echo json_encode(array('success' => true));
         } else {
             $eror = $this->db->error();
@@ -231,10 +238,10 @@ class Login extends CI_Controller
             $simpan = $this->db->query("update jemaat set statusverifikasiemail='1' where email='$email' ");
             if ($simpan) {
                 $pesan = "<script>
-                                    swal('Informasi', 'Email berhasil di verifikasi.', 'success');
+                                    swal('Congrats', 'Your email has been successfully verified.', 'success');
                           </script>";
             } else {
-                $pesan = "<script>swal('Informasi', 'Email gagal diverifikasi!', 'error')</script>";
+                $pesan = "<script>swal('Sorry', 'Email verification faild. Please try again', 'error')</script>";
             }
             $this->session->set_flashdata('pesan', $pesan);
             redirect(site_url());
