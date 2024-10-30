@@ -40,7 +40,7 @@ class Login extends CI_Controller
                 $result = $kirim->row();
 
                 if ($result->statusverifikasiemail == 0) {
-                    echo json_encode(array('msg' => "Email anda belum diverifikasi."));
+                    echo json_encode(array('msg' => "Your email has not been verified"));
                     exit();
                 }
 
@@ -70,7 +70,7 @@ class Login extends CI_Controller
 
                 echo json_encode(array('success' => true));
             } else {
-                echo json_encode(array('msg' => "Email atau password anda salah"));
+                echo json_encode(array('msg' => "Either your email or password is wrong. Please try again "));
             }
         }
     }

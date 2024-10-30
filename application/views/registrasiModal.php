@@ -25,7 +25,7 @@
 
         <div class="row">
           <div class="col-12">
-            <h3 class="text-center">BUAT AKUN ELSHADDAI CHURCH</h3>
+            <h3 class="text-center">CREATE YOUR MYESC ACCOUNT</h3>
           </div>
           <div class="col-12 p-3">
 
@@ -57,7 +57,7 @@
                 <div id="step-1" class="tab-pane" role="tabpanel" aria-labelledby="step-1" style="padding-bottom: 90px;">
                   <div class="row">
                     <div class="col-12">
-                      <h5>Alasan anda membuat akun baru?</h5>
+                      <!-- <h5>Alasan anda membuat akun baru?</h5> -->
                     </div>
                     <div class="col-12">
                       <div class="row">
@@ -65,7 +65,7 @@
                           <div class="form-check">
                             <input class="form-check-input" type="radio" name="alasanmembuatakun" id="alasanmembuatakun1" value="1">
                             <label class="form-check-label" for="alasanmembuatakun1">
-                              Saya Hanya Berkunjung
+                              I'm just here to visit
                             </label>
                           </div>
                         </div>
@@ -73,7 +73,7 @@
                           <div class="form-check">
                             <input class="form-check-input" type="radio" name="alasanmembuatakun" id="alasanmembuatakun2" checked value="2">
                             <label class="form-check-label" for="alasanmembuatakun2">
-                              Saya ingin bergabung di El Shaddai Church
+                              I would like to join El Shaddai Church
                             </label>
                           </div>
 
@@ -86,13 +86,14 @@
                     <div class="col-12 mt-5 divsudahpernahfondationclass">
                       <div class="row">
                         <div class="col-12">
-                          <h5 class="">Sudah Pernah mengikuti Foundation Class 1/ Konseling Baptisan di Elshaddai Church?</h5>
+                          <h5 class="">Already have an ESC Membership Card?</h5>
+                         
                         </div>
                         <div class="col-12">
                           <div class="form-check">
                             <input class="form-check-input" type="radio" name="sudahpernahfondationclass" id="sudahpernahfondationclass1" value="1">
                             <label class="form-check-label" for="sudahpernahfondationclass1">
-                              Sudah
+                            Already
                             </label>
                           </div>
                         </div>
@@ -100,7 +101,7 @@
                           <div class="form-check">
                             <input class="form-check-input" type="radio" name="sudahpernahfondationclass" id="sudahpernahfondationclass2" checked value="2">
                             <label class="form-check-label" for="sudahpernahfondationclass2">
-                              Belum
+                            Not Yet
                             </label>
                           </div>
 
@@ -118,13 +119,13 @@
 
                     <div class="row">
                       <div class="col-12">
-                        <h3>Informasi Pembuatan Akun</h3>
+                        <h3>Please enter your information below:</h3>
                       </div>
                       <div class="col-md-6">
                         <div class="form-row">
                           <div class="form-holder form-holder-2">
-                            <label for="account_name">Nama Lengkap:</label>
-                            <input type="text" placeholder="Nama Lengkap" class="form-control input-step-2-1" id="namalengkap" name="namalengkap">
+                            <label for="account_name">Fullname:</label>
+                            <input type="text" placeholder="Masukan Nama Lengkap" class="form-control input-step-2-1" id="namalengkap" name="namalengkap">
                           </div>
                         </div>
                       </div>
@@ -132,8 +133,8 @@
                       <div class="col-md-6 divnik">
                         <div class="form-row">
                           <div class="form-holder form-holder-2">
-                            <label for="account_name">NIK:</label>
-                            <input type="text" placeholder="NIK" class="form-control input-step-2-1" id="nik" name="nik">
+                            <label for="account_name">ID Card Number(KTP):</label>
+                            <input type="text" placeholder="masukkan nomor induk kependudukan Anda" class="form-control input-step-2-1" id="nik" name="nik">
                           </div>
                         </div>
                       </div>
@@ -141,11 +142,11 @@
                       <div class="col-md-6">
                         <div class="form-row">
                           <div class="form-holder form-holder-2">
-                            <label for="account_name">Jenis Kelamin:</label>
+                            <label for="account_name">Gender:</label>
                             <select name="jeniskelamin" id="jeniskelamin" class="form-control">
                               <option value="">Pilih jenis kelamin...</option>
-                              <option value="Laki-laki">Laki-laki</option>
-                              <option value="Perempuan">Perempuan</option>
+                              <option value="Laki-laki">Male</option>
+                              <option value="Perempuan">Female</option>
                             </select>
                           </div>
                         </div>
@@ -154,7 +155,7 @@
                       <div class="col-md-6 divtempatlahir">
                         <div class="form-row">
                           <div class="form-holder form-holder-2">
-                            <label for="account_name">Tempat Lahir:</label>
+                            <label for="account_name">Place of birth:</label>
                             <input type="text" placeholder="Tempat lahir" class="form-control input-step-2-1" id="tempatlahir" name="tempatlahir">
                           </div>
                         </div>
@@ -163,7 +164,7 @@
                       <div class="col-md-6 divtgllahir">
                         <div class="form-row">
                           <div class="form-holder form-holder-2">
-                            <label for="account_name">Tgl Lahir:</label>
+                            <label for="account_name">date of birth:</label>
                             <input type="date" class="form-control input-step-2-1" id="tanggallahir" name="tanggallahir">
                           </div>
                         </div>
@@ -174,7 +175,7 @@
                       <div class="col-md-6 divalamatrumah">
                         <div class="form-row">
                           <div class="form-holder form-holder-2">
-                            <label for="account_name">Alamat Rumah:</label>
+                            <label for="account_name">Address:</label>
                             <input type="text" placeholder="Alamat rumah" class="form-control input-step-2-1" id="alamatrumah" name="alamatrumah">
                           </div>
                         </div>
@@ -184,8 +185,8 @@
                       <div class="col-md-6 divnohp">
                         <div class="form-row">
                           <div class="form-holder form-holder-2">
-                            <label for="account_name">Nomor HP:</label>
-                            <input type="text" placeholder="No HP" class="form-control input-step-2-1" id="nohp" name="nohp">
+                            <label for="account_name">WhatsApp number:</label>
+                            <input type="text" placeholder="Nomor WhatsApp" class="form-control input-step-2-1" id="nohp" name="nohp">
                           </div>
                         </div>
                       </div>
@@ -211,7 +212,7 @@
                       <div class="col-md-6">
                         <div class="form-row">
                           <div class="form-holder form-holder-2">
-                            <label for="account_name">Ulangi Password:</label>
+                            <label for="account_name">Confirm Password:</label>
                             <input type="password" placeholder="Ulangi Password" class="form-control input-step-2-1" id="password2" name="password2">
                           </div>
                         </div>
@@ -224,7 +225,7 @@
                 <div id="step-3" class="tab-pane" role="tabpanel" aria-labelledby="step-3" style="padding-bottom: 90px;">
                   <div class="row">
                     <div class="col-12">
-                      <h3>Konfirmasi Pembuatan Akun</h3>
+                      <h3>Please enter your information below</h3>
                     </div>
                     <div class="col-12">
                       <table class="table">
@@ -503,8 +504,8 @@
         showNextButton: true, // show/hide a Next button
         showPreviousButton: true, // show/hide a Previous button
         position: 'bottom', // none/ top/ both bottom
-        extraHtml: `<button class="btn btn-success btnSelesai" onclick="onFinish()">Selesai</button>
-                              <button class="btn btn-secondary" onclick="onCancel()">Batal</button>`
+        extraHtml: `<button class="btn btn-success btnSelesai" onclick="onFinish()">Submit</button>
+                              <button class="btn btn-secondary" onclick="onCancel()">Cancel</button>`
       },
       anchor: {
         enableNavigation: true, // Enable/Disable anchor navigation 
@@ -515,8 +516,8 @@
         enableDoneStateNavigation: true // Enable/Disable the done state navigation
       },
       lang: { // Language variables for button
-        next: 'Berikutnya',
-        previous: 'Sebelumnya'
+        next: 'Next',
+        previous: 'Back'
       },
       disabledSteps: [], // Array Steps disabled
       errorSteps: [], // Highlight step with errors
