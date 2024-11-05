@@ -11,6 +11,10 @@
     <link href="<?php echo base_url('images/icon.png') ?>" rel="icon">
     <title>El Shaddai Church</title>
 
+
+  
+
+
     <!-- CSS FILES -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 
