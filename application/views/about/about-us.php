@@ -1,5 +1,4 @@
 
-
 <?php $this->load->view('template/festavalive/header'); ?> 
 <?php $this->load->view('template/festavalive/topmenu'); ?> 
 <main id="main">
