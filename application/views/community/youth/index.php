@@ -778,42 +778,55 @@ button:hover::before {
       <div class="container">
         
         <div>
-            <p>KIDS adalah komunitas anak-anak di GBI Elshaddai yang dirancang khusus untuk bayi hingga usia 11 tahun. Di komunitas ini, anak-anak memiliki kesempatan untuk belajar dan bertumbuh dalam nilai-nilai kekristenan melalui pengalaman yang menyenangkan dan penuh kasih. Dalam setiap kegiatan, KIDS mengedepankan prinsip bahwa anak-anak adalah anugerah Tuhan yang perlu dibimbing dengan baik agar mereka dapat tumbuh menjadi pribadi yang penuh kasih, berkarakter, dan beriman kuat.</p>
-            <h5>Misi KIDS: Membentuk Generasi yang Beriman dan Berkarakter</h5> 
-            <p>Misi utama dari komunitas KIDS adalah menanamkan nilai-nilai kekristenan yang kuat dan membentuk karakter positif sejak dini. Setiap aktivitas, baik itu permainan, lagu, hingga pelajaran, dirancang agar anak-anak dapat mengenal Tuhan, memahami kasih-Nya, serta belajar hidup dengan nilai-nilai positif seperti kejujuran, kerendahan hati, dan tanggung jawab.</p>
-            <h5>Kegiatan di KIDS</h5>
-            <p>Di KIDS, setiap kegiatan disesuaikan dengan tahapan perkembangan anak. Berikut adalah beberapa kegiatan utama yang menjadi fokus di komunitas ini:</p>
+            <p>Di tengah dunia yang terus berubah dan penuh tantangan, generasi muda memerlukan ruang yang mendukung pertumbuhan iman, pengembangan karakter, dan pergaulan yang sehat. Gereja Bethel Indonesia (GBI) El Shaddai menjawab kebutuhan ini dengan membentuk sebuah komunitas yang dikenal sebagai Youth. Komunitas ini menjadi tempat berkumpulnya anak-anak muda yang ingin belajar, bertumbuh, dan melayani bersama dalam lingkungan rohani yang positif.</p>
+            <h5>Apa itu Youth?</h5> 
+            <p>Youth adalah komunitas anak muda di bawah naungan GBI El Shaddai. Komunitas ini menjadi wadah bagi para remaja dan pemuda untuk saling mendukung dalam iman dan kehidupan sehari-hari. Tidak hanya fokus pada kegiatan kerohanian, Youth juga mengadakan berbagai aktivitas yang mendukung perkembangan bakat dan minat para anggotanya. Dengan semangat yang inklusif dan ramah, Youth menyambut siapa saja yang ingin bertumbuh bersama, baik dalam iman Kristen maupun dalam hubungan sosial yang sehat.</p>
+            <h5>Visi dan Misi Youth</h5>
+            <p>Visi utama Youth adalah untuk membentuk generasi muda yang memiliki iman yang kuat, karakter yang baik, dan semangat melayani. Dengan adanya komunitas ini, diharapkan para anggotanya dapat menjadi terang dan garam bagi dunia, sesuai dengan ajaran Yesus Kristus. Misi Youth di GBI El Shaddai mencakup beberapa hal penting, antara lain:</p>
 
+                <ol>
+                    <li>
+                    Memperdalam Iman dan Hubungan dengan Tuhan: Melalui pengajaran Alkitab, ibadah, dan pembinaan rohani, Youth membantu para anggotanya untuk memahami firman Tuhan dan hidup sesuai dengan nilai-nilai Kristiani. 
+                    </li>
+                    <li>
+                    Mengembangkan Karakter dan Kepemimpinan: Youth mengadakan berbagai pelatihan yang bertujuan untuk membangun karakter yang kuat dan keterampilan kepemimpinan. Hal ini penting agar setiap anggota dapat menjadi teladan baik di lingkungan gereja maupun masyarakat.
+                    </li>
+                    <li>
+                    Membangun Komunitas yang Hangat dan Mendukung: Youth berusaha menciptakan lingkungan yang aman dan mendukung bagi anggotanya. Di sini, anak-anak muda dapat saling berbagi cerita, menghadapi tantangan bersama, dan membangun persahabatan yang bermakna.
+                    </li>
+                </ol>
+            <h5> Kegiatan dan Program Youth</h5>
+            <p>Komunitas Youth memiliki berbagai program yang dirancang khusus untuk mendukung kebutuhan rohani dan sosial anak muda, di antaranya:</p>
                 <ul>
                     <li>
-                        Cerita Alkitab: Anak-anak diajak untuk mendengarkan cerita Alkitab dengan cara yang menarik dan mudah dipahami sesuai usia mereka. Melalui cerita ini, mereka dapat belajar tentang kasih Tuhan dan berbagai nilai moral penting.
+                    Ibadah dan Pujian: Setiap minggunya, Youth mengadakan ibadah khusus yang diisi dengan pujian, penyembahan, dan firman Tuhan yang relevan bagi kehidupan sehari-hari anak muda.
                     </li>
-                    <li>Aktivitas Kreatif: Kegiatan seperti menggambar, mewarnai, dan membuat kerajinan tangan menjadi media bagi anak-anak untuk mengekspresikan kreativitas mereka. Aktivitas ini juga sering kali dikaitkan dengan tema Alkitab, seperti membuat simbol kasih atau doa.</li>
-                    <li>Permainan Edukatif: Berbagai permainan yang melibatkan kerja sama, kecerdasan, dan ketangkasan membantu anak-anak mengembangkan keterampilan sosial dan motorik. Di samping itu, permainan ini juga mengajarkan pentingnya kerja sama dan saling membantu.</li>
-                    <li>Worship dan Doa: Setiap pertemuan KIDS juga melibatkan waktu untuk worship dan doa singkat. Dengan cara ini, anak-anak belajar mengucapkan syukur dan mendoakan teman-temannya, membentuk pola pikir yang penuh dengan rasa syukur dan ketergantungan pada Tuhan.</li>
+                    <li>
+                    Kelompok Kecil (Small Group): Youth membentuk kelompok-kelompok kecil yang memungkinkan anggotanya untuk lebih dalam mengenal satu sama lain, berdiskusi tentang Alkitab, serta membangun keintiman dan saling dukung dalam doa.
+                    </li>
+                    <li>
+                    Retreat dan Perkemahan Rohani: Setiap tahun, Youth mengadakan retreat atau perkemahan rohani yang berfungsi sebagai momen untuk mendalami iman, refleksi diri, dan mempererat tali persaudaraan.  
+                    </li>
+                    <li>
+                    Pelayanan Sosial: Dalam rangka mewujudkan iman yang aktif, Youth juga terlibat dalam kegiatan sosial seperti bakti sosial, penggalangan dana untuk mereka yang membutuhkan, serta pelayanan di masyarakat.
+                    </li>
+                    <li>
+                    Pengembangan Bakat: Youth memberikan ruang bagi anggotanya untuk mengembangkan bakat dan minat mereka, baik di bidang seni, musik, olahraga, hingga teknologi. Dengan cara ini, anak-anak muda dapat berkontribusi dan melayani dengan cara-cara yang sesuai dengan talenta yang mereka miliki.
+                    </li>
                 </ul>
-
-            <h5> Lingkungan yang Aman dan Peduli</h5>
-            <p>KIDS menyediakan lingkungan yang aman dan penuh perhatian, di mana anak-anak merasa nyaman untuk bereksplorasi dan belajar. Para guru dan mentor di KIDS adalah orang-orang yang peduli dan memiliki pengalaman dalam menangani anak-anak. Mereka membimbing setiap anak dengan sabar dan memberikan perhatian khusus agar setiap anak merasa diterima dan dihargai.</p>
           
-            <h5>Menggali Potensi Anak Sejak Dini</h5>
-            <p>Komunitas KIDS juga berfokus pada penggalian potensi yang dimiliki oleh setiap anak. Dengan metode pembelajaran yang interaktif dan penuh dorongan positif, setiap anak diharapkan dapat menemukan minat serta bakat mereka. Di KIDS, anak-anak belajar untuk menjadi diri sendiri dan menghargai apa yang Tuhan berikan pada mereka.</p>
-            <h5>Bergabung dengan KIDS</h5>
-
-
-            <p>Bagi para orang tua yang ingin anak-anak mereka tumbuh dalam lingkungan yang mendukung perkembangan iman dan karakter, KIDS adalah tempat yang tepat. Komunitas ini bukan hanya tempat bermain, tetapi juga arena bagi anak-anak untuk mengenal Tuhan dan hidup dalam nilai-nilai kekristenan.</p>
-            <p>Komunitas KIDS di GBI Elshaddai adalah tempat bagi anak-anak untuk belajar, bertumbuh, dan menjadi generasi yang beriman dan berkarakter positif. Di sinilah mereka diajarkan nilai-nilai kekristenan yang kuat dan dikelilingi oleh lingkungan yang penuh kasih, aman, dan mendukung. Mari bersama-sama membentuk generasi masa depan yang mencintai Tuhan dan siap menjadi terang bagi sekitarnya!</p>
+            <p>Youth di GBI El Shaddai adalah sebuah komunitas yang memfasilitasi anak-anak muda untuk bertumbuh dalam iman dan menjadi pribadi yang lebih baik. Melalui berbagai kegiatan dan program yang disediakan, Youth memberikan dukungan yang penuh kasih bagi para anggotanya, membantu mereka mengatasi tantangan hidup, serta menjadi generasi yang kuat dan berdampak positif. Dengan semangat persaudaraan dan pelayanan, Youth berkomitmen untuk terus memajukan visi dan misi gereja demi kemuliaan nama Tuhan.</p>
       </div>
 </section>
 <div class="container mt-5">
           <div class="row justify-content-center">
                 <div class="col-6 mb-3">
                       <div class="card bg-dark text-white" style="height: 200px;">
-                          <img src="<?php echo base_url('assets/assetku/img/blog/dc.png');?>" class="card-img" style="height:100%; object-fit:cover" alt="...">
+                          <img src="<?php echo base_url('assets/assetku/img/blog/kids.png');?>" class="card-img" style="height:100%; object-fit:cover" alt="...">
                           <div class="card-img-overlay">
-                            <h5 class="card-title text-white m-3">YOUNG ADULT</h5>
+                            <h5 class="card-title text-white m-3">KIDS</h5>
                             <p class="card-text text-white"> This is a wider card with supporting text below as a natural</p>
-                            <p class="card-text text-white"><a href="<?php echo base_url('youngadult');?>"><b>JOIN YOUNG ADULT</b></a></p>
+                            <p class="card-text text-white"><a href="<?php echo base_url('KIDS');?>"><b>JOIN KIDS</b></a></p>
                           </div>
                       </div>
                 </div>
@@ -821,9 +834,9 @@ button:hover::before {
                       <div class="card bg-dark text-white" style="height: 200px;">
                           <img src="<?php echo base_url('assets/gambar/back.jpg');?>" class="card-img" style="height:100%; object-fit:cover" alt="...">
                           <div class="card-img-overlay">
-                            <h5 class="card-title text-white m-3">YOUTH</h5>
+                            <h5 class="card-title text-white m-3">GOLD</h5>
                             <p class="card-text text-white"> This is a wider card with supporting text below as a natural</p>
-                            <p class="card-text text-white"><a href="<?php echo base_url('youth');?>"><b>JOIN YOUTH</b></a></p>
+                            <p class="card-text text-white"><a href="<?php echo base_url('gold');?>"><b>JOIN GOLD</b></a></p>
                           </div>
                       </div>
                 </div>
