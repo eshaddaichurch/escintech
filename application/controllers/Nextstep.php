@@ -80,6 +80,18 @@ class Nextstep extends MY_Controller
 			echo json_encode(array('msg' => "Gagal registrasi kelas"));
 		}
 	}
+	public function index($idmenu =null){
+		$data['title']= 'NEXTSTEP';
+		if($idmenu !==null){
+			$idmenu-->$this->encrypt->decode($idmenu);
+			$data['menu'] = $idmenu;
+		
+	} else {
+		$data['menu'] = 'NEXTSTEP';
+	}
+	$data["rowinfogereja"] = $this->Home_model->get_infogereja();	
+		$this->load->view('nextstep/index',$data);
+	}
 }
 
 /* End of file Nextstep.php */
