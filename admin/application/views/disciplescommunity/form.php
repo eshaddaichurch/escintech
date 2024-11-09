@@ -159,7 +159,6 @@ $this->load->view("template/sidemenu");
                         <label for="" class="col-md-3 col-form-label">Status Aktif</label>
                         <div class="col-md-3">
                           <select name="statusaktif" id="statusaktif" class="form-control">
-                            <option value="">status</option>
                             <option value="Aktif">Aktif</option>
                             <option value="Tidak Aktif">Tidak Aktif</option>
                           </select>
@@ -171,24 +170,31 @@ $this->load->view("template/sidemenu");
                       </div>
 
                       <div class="row">
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                           <label for="" class="">Kabupaten/Kota</label>
-                          <select name="kotakabupaten" id="kotakabupaten" class="form-control select2">
-                            <option value="">Pilih nama kabupaten ...</option>
+                          <select name="idkabupaten" id="idkabupaten" class="form-control select2">
+                            <option value="">Pilih kabupaten ...</option>
+                            <?php
+                            $rsKabupaten = $this->db->query("
+                                                  select * from kabupaten where idprovinsi='001' and deleted_at is null order by namakabupaten
+                                              ");
+                            if ($rsKabupaten->num_rows() > 0) {
+                              foreach ($rsKabupaten->result() as $row) {
+                                echo '
+                                        <option value="' . $row->idkabupaten . '">' . $row->namakabupaten . '</option>
+                                  ';
+                              }
+                            }
+                            ?>
                           </select>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-6">
                           <label for="" class="">Kecamatan</label>
-                          <select name="kecamatan" id="kecamatan" class="form-control select2">
-                            <option value="">Pilih nama kecamatan ...</option>
+                          <select name="idkecamatan" id="idkecamatan" class="form-control select2">
+                            <option value="">Pilih kecamatan ...</option>
                           </select>
                         </div>
-                        <div class="col-md-4">
-                          <label for="" class="">Kelurahan</label>
-                          <select name="kelurahan" id="kelurahan" class="form-control select2">
-                            <option value="">Pilih nama kelurahan ...</option>
-                          </select>
-                        </div>
+
                         <div class="col-12 mt-2">
                           <div class="form-group">
                             <label for="" class="">Alamat</label>
@@ -266,6 +272,9 @@ $this->load->view("template/sidemenu");
           $("#fotodc").val(result.fotodc);
           $("#fotodc_lama").val(result.fotodc);
           $("#statusaktif").val(result.statusaktif);
+          $("#idkabupaten").val(result.idkabupaten).trigger('change');
+          getKecamatan(result.idkabupaten, result.idkecamatan);
+          // getdesa(result.idkecamatan, result.iddesa);
           $('#fotodclink').html(result.fotodc);
           $('#fotodclink').prop('href', '<?= base_url("uploads/dc/") ?>' + result.fotodc);
           console.log('<?= base_url("uploads/dc/") ?>' + result.fotodc);
@@ -313,6 +322,84 @@ $this->load->view("template/sidemenu");
       placeholder: "000/000"
     });
   }); //end (document).ready
+
+
+  $('#idkabupaten').change(function(e) {
+    var idkabupaten = $(this).val();
+    getKecamatan(idkabupaten);
+  });
+
+  // $('#idkecamatan').change(function(e) {
+  //   var idkecamatan = $(this).val();
+  //   getdesa(idkecamatan);
+  // });
+
+  function getKecamatan(idkabupaten, idkecamatandefault = "") {
+
+    $('#idkecamatan').empty();
+    // console.log(idkabupaten);
+
+    addSelectOption('idkecamatan', '', 'Pilih kecamatan ...')
+
+    $.ajax({
+        url: '<?= site_url('disciplescommunity/getKecamatan') ?>',
+        type: 'GET',
+        dataType: 'json',
+        data: {
+          'idkabupaten': idkabupaten
+        },
+      })
+      .done(function(response) {
+        // console.log(response);
+        if (response.length > 0) {
+          for (var i = 0; i < response.length; i++) {
+            // console.log(response[i]);
+            addSelectOption('idkecamatan', response[i]['idkecamatan'], response[i]['namakecamatan']);
+            if (idkecamatandefault != "" && idkecamatandefault == response[i]['idkecamatan']) {
+              $('#idkecamatan').val(response[i]['idkecamatan']).trigger('change');
+            }
+          }
+        }
+      })
+      .fail(function() {
+        console.log('error getKecamatan');
+      });
+
+  }
+
+  // function getdesa(idkecamatan, iddesadefault = "") {
+
+  //   $('#idkelurahan').empty();
+
+  //   addSelectOption('idkelurahan', '', 'Pilih kelurahan ...')
+  //   console.log(idkecamatan);
+  //   $.ajax({
+  //       url: '<?= site_url('disciplescommunity/getKelurahan') ?>',
+  //       type: 'GET',
+  //       dataType: 'json',
+  //       data: {
+  //         'idkecamatan': idkecamatan
+  //       },
+  //     })
+  //     .done(function(response) {
+  //       console.log(2);
+
+  //       console.log(response);
+  //       if (response.length > 0) {
+  //         for (var i = 0; i < response.length; i++) {
+  //           // console.log(response[i]);
+  //           addSelectOption('idkelurahan', response[i]['iddesa'], response[i]['namadesa']);
+  //           if (iddesadefault != "" && iddesadefault == response[i]['iddesa']) {
+  //             $('#idkelurahan').val(response[i]['iddesa']).trigger('change');
+  //           }
+  //         }
+  //       }
+  //     })
+  //     .fail(function() {
+  //       console.log('error getKecamatan');
+  //     });
+
+  // }
 </script>
 
 </body>

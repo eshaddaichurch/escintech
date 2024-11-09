@@ -104,7 +104,7 @@
                                    <div class="form-check mt-3">
                                      <input class="form-check-input" type="radio" name="jenisjadwal" id="exampleRadios1" value="Disciple Community" checked>
                                      <label class="form-check-label" for="exampleRadios1">
-                                       Disciple Community
+                                       Community
                                      </label>
                                    </div>
                                    <div class="form-check mt-3">

@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Esccommunity extends CI_Controller {
+class Esccommunity extends CI_Controller
+{
 
 	public function __construct()
 	{
@@ -11,19 +12,13 @@ class Esccommunity extends CI_Controller {
 	}
 
 	public function index($idmenu = null)
-{
-	$data['title']= 'COMMUNITY';
-	if ($idmenu !== null) {
+	{
+		$data['title'] = 'COMMUNITY';
 		$idmenu = $this->encrypt->decode($idmenu);
 		$data['menu'] = $idmenu;
-	} else {
-		$data['menu'] = 'Community';
+		$data["rowinfogereja"] = $this->Home_model->get_infogereja();
+		$this->load->view('community/index', $data);
 	}
-	$data["rowinfogereja"] = $this->Home_model->get_infogereja();	
-	$this->load->view('community/index',$data);
-}
-	
-
 }
 
 /* End of file Ourlocation.php */

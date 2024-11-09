@@ -1,7 +1,8 @@
 <?php
-defined('BASEPATH') OR exit('No direct script access allowed');
+defined('BASEPATH') or exit('No direct script access allowed');
 
-class Dc extends CI_Controller {
+class Dc extends CI_Controller
+{
 
 	public function __construct()
 	{
@@ -11,20 +12,29 @@ class Dc extends CI_Controller {
 	}
 
 	public function index($idmenu = null)
-{	
-	$data['title']= 'DISCIPLES COMMUNITY';
-	if ($idmenu !== null) {
+	{
+
+
+		$data['title'] = 'DISCIPLES COMMUNITY';
 		$idmenu = $this->encrypt->decode($idmenu);
 		$data['menu'] = $idmenu;
-		
-	} else {
-		$data['menu'] = 'Community';
+		$data["rowinfogereja"] = $this->Home_model->get_infogereja();
+		$this->load->view('community/dc/index', $data);
 	}
-	$data["rowinfogereja"] = $this->Home_model->get_infogereja();	
-	$this->load->view('community/dc/index',$data);
-}
-	
 
+	public function list($idmenu = "")
+	{
+		$rsDC = $this->db->query("
+			select * from v_disciplescommunity where statusaktif = 'Aktif'
+		");
+
+		$data['title'] = 'LIST DATA DISCIPLES COMMUNITU';
+		$idmenu = $this->encrypt->decode($idmenu);
+		$data['menu'] = $idmenu;
+		$data['rsDC'] = $rsDC;
+		$data["rowinfogereja"] = $this->Home_model->get_infogereja();
+		$this->load->view('community/dc/listdata', $data);
+	}
 }
 
 /* End of file Ourlocation.php */

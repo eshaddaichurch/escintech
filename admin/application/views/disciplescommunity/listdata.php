@@ -40,20 +40,15 @@ $this->load->view("template/sidemenu");
               <table class="table table-bordered table-striped table-condesed" id="table">
                 <thead>
                   <tr class="bg-success" style="">
-                      <th style="width: 5%; text-align: center;">No</th>
-                      <th style="text-align: center;">ID DC</th>
-                      <th style="text-align: center;">Nama DC</th>
-                      <th style="text-align: center;">Nama DM</th>
-                      <th style="text-align: center;">Kategori DC</th>
-                      <th style="text-align: center;">Hari</th>
-                      <th style="text-align: center;">Jam</th>
-                      <th style="text-align: center;">Alamat DC</th>
-                      <th style="text-align: center; width: 10%;">Foto</th>
-                      <th style="text-align: center;">Tanggal <br>Insert</br></th>
-                      <th style="text-align: center;">Tanggal <br>Update</br></th>
-                      <th style="text-align: center;">status<br>aktif</br></th>
-                      <th style="text-align: center; width: 10%;;">Aksi</th>
-                    </tr>
+                    <th style="width: 5%; text-align: center;">No</th>
+                    <th style="text-align: center; width: 10%;">Foto</th>
+                    <th style="text-align: center;">Nama DC</th>
+                    <th style="text-align: center;">Lokasi DC</th>
+                    <th style="text-align: center;">Nama DM</th>
+                    <th style="text-align: center;">Jadwal</th>
+                    <th style="text-align: center;">Status</th>
+                    <th style="text-align: center; width: 10%;;">Aksi</th>
+                  </tr>
                 </thead>
                 <tbody>
 
@@ -96,21 +91,41 @@ $this->load->view("template/sidemenu");
       },
 
 
-                                          "columnDefs": [
-                        { "targets": [ 0 ], "orderable": false, "className": "dt-body-center" },
-                        { "targets": [ 1 ], "className": "dt-body-center"  },
-                        { "targets": [ 2 ], "className": "dt-body-center" },
-                        { "targets": [ 3 ], "className": "dt-body-center" },
-                        { "targets": [ 4 ], "className": "dt-body-center" },
-                        { "targets": [ 5 ], "className": "dt-body-center" },
-                        { "targets": [ 6], "className": "dt-body-center" },
-                        { "targets": [ 7 ], "className": "dt-body-center" },
-                        { "targets": [ 8 ], "className": "dt-body-center" },
-                        { "targets": [ 9 ], "className": "dt-body-center", "visible": false },
-                        { "targets": [ 10 ], "className": "dt-body-center", "visible": false  },
-                        { "targets": [ 11 ], "className": "dt-body-center" },
-                        { "targets": [ 12 ], "orderable": false, "className": "dt-body-center" },
-        ],
+      "columnDefs": [{
+          "targets": [0],
+          "orderable": false,
+          "className": "dt-body-center"
+        },
+        {
+          "targets": [1],
+          "className": "dt-body-center"
+        },
+        {
+          "targets": [2],
+          "className": "dt-body-left"
+        },
+        {
+          "targets": [3],
+          "className": "dt-body-left"
+        },
+        {
+          "targets": [4],
+          "className": "dt-body-left"
+        },
+        {
+          "targets": [5],
+          "className": "dt-body-center"
+        },
+        {
+          "targets": [6],
+          "className": "dt-body-center"
+        },
+        {
+          "targets": [7],
+          "orderable": false,
+          "className": "dt-body-center"
+        },
+      ],
 
 
 

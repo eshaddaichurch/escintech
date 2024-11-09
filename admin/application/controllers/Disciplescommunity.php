@@ -55,21 +55,22 @@ class Disciplescommunity extends MY_Controller
 
         if ($RsData->num_rows() > 0) {
             foreach ($RsData->result() as $rowdata) {
+
+                $fotodc = '';
+                if (!empty($rowdata->fotodc)) {
+                    $fotodc = base_url('uploads/dc/' . $rowdata->fotodc);
+                } else {
+                    $fotodc = base_url('images/nofoto.png');
+                }
+
                 $no++;
                 $row = array();
                 $row[] = $no;
-                $row[] = $rowdata->iddc;
-                $row[] = $rowdata->namadc;
-                $row[] = $rowdata->namadm;
-                $row[] = $rowdata->kategoridc;
-                $row[] = $rowdata->haridc;
-                $row[] = $rowdata->jamdc;
+                $row[] = '<img src="' . $fotodc . '" alt="" style=" width: 80%;">';
+                $row[] = $rowdata->namadc . '<br><small>Kategori: ' . $rowdata->kategoridc . '</small>';
                 $row[] = $rowdata->alamatdc;
-                $row[] = '<img src="' . base_url('uploads/dc/' . $rowdata->fotodc) . '" alt="" style=" width: 80%;">';
-                // $row[] = $rowdata->fotodc;    
-
-                $row[] = date('d-m-Y', strtotime($rowdata->tanggalinsert));
-                $row[] = date('d-m-Y', strtotime($rowdata->tanggalupdate));
+                $row[] = $rowdata->namadm;
+                $row[] = $rowdata->haridc . ', Jam: ' . $rowdata->jamdc;
                 $row[] = $rowdata->statusaktif;
                 $row[] = '<a href="' . site_url('disciplescommunity/edit/' . $this->encrypt->encode($rowdata->iddc)) . '" class="btn btn-sm btn-warning btn-circle"><i class="fa fa-edit"></i></a> | 
                         <a href="' . site_url('disciplescommunity/delete/' . $this->encrypt->encode($rowdata->iddc)) . '" class="btn btn-sm btn-danger btn-circle" id="hapus"><i class="fa fa-trash"></i></a>';
@@ -135,6 +136,9 @@ class Disciplescommunity extends MY_Controller
         $fotodc             = $this->input->post('fotodc');
         $statusaktif             = $this->input->post('statusaktif');
         $idjemaatdm        = $this->input->post('idjemaatdm');
+        $idkabupaten        = $this->input->post('idkabupaten');
+        $idkecamatan        = $this->input->post('idkecamatan');
+        $idkelurahan        = $this->input->post('idkelurahan');
 
 
 
@@ -156,6 +160,9 @@ class Disciplescommunity extends MY_Controller
                 'idjemaatdm' => $idjemaatdm,
                 'tanggalinsert'   => date('Y-m-d H:i:s'),
                 'tanggalupdate'   => date('Y-m-d H:i:s'),
+                'idkabupaten' => $idkabupaten,
+                'idkecamatan' => $idkecamatan,
+                'iddesa' => $idkelurahan,
 
             );
             $simpan = $this->Disciplescommunity_model->simpan($data);
@@ -174,8 +181,10 @@ class Disciplescommunity extends MY_Controller
                 'fotodc'   => $fotodc,
                 'statusaktif'   => $statusaktif,
                 'idjemaatdm' => $idjemaatdm,
-
                 'tanggalupdate'   => date('Y-m-d H:i:s'),
+                'idkabupaten' => $idkabupaten,
+                'idkecamatan' => $idkecamatan,
+                'iddesa' => $idkelurahan,
             );
             $simpan = $this->Disciplescommunity_model->update($data, $iddc);
         }
@@ -219,6 +228,9 @@ class Disciplescommunity extends MY_Controller
             'fotodc'   => $RsData->fotodc,
             'statusaktif'   => $RsData->statusaktif,
             'idjemaatdm' => $RsData->idjemaatdm,
+            'idkabupaten' => $RsData->idkabupaten,
+            'idkecamatan' => $RsData->idkecamatan,
+            'iddesa' => $RsData->iddesa,
             'tanggalupdate'   => date('Y-m-d H:i:s'),
         );
 
@@ -271,5 +283,24 @@ class Disciplescommunity extends MY_Controller
         }
 
         return $foto;
+    }
+
+
+    public function getKecamatan()
+    {
+        $idkabupaten = $this->input->get('idkabupaten');
+        $query = $this->db->query("
+            select * from kecamatan where idkabupaten='$idkabupaten' order by namakecamatan
+        ");
+        echo json_encode($query->result());
+    }
+
+    public function getKelurahan()
+    {
+        $idkecamatan = $this->input->get('idkecamatan');
+        $query = $this->db->query("
+            select * from desa where idkecamatan='$idkecamatan' order by namadesa
+        ");
+        echo json_encode($query->result());
     }
 }
