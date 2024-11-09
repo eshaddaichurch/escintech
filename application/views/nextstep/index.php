@@ -1,4 +1,8 @@
-<?php $this->load->view('template/festavalive/header'); ?>
+<?php
+
+use PhpParser\Node\Stmt\Echo_;
+
+ $this->load->view('template/festavalive/header'); ?>
 
 <body>
 
@@ -338,10 +342,8 @@
                                 <h1 class="postcard__title blue "><a href="#">Foundation Class 1</a></h1>
 
                                 <div class="postcard__bar"></div>
-                                <div class="postcard__preview-txt"></div>
-                                <ul class="postcard__tagbox">
-                                    
-                                </ul>
+                               
+                                <a href="">Daftar Sekarang <img src="<?php echo base_url('assets/icon/right-arrow.svg');?>" alt="" style="vertical-align: middle; height: 1.5em;">  </a>
                             </div>
                         </article>
                     </div>
@@ -355,7 +357,7 @@
                                 <h1 class="postcard__title red"><a href="#">Membership Class</a></h1>
 
                                 <div class="postcard__bar"></div>
-                                <a href="">Daftar Sekarang   <i class="fa-1x fas fa-arrow-right"></i> </a>
+                                <a href="">Daftar Sekarang <img src="<?php echo base_url('assets/icon/right-arrow.svg');?>" alt="" style="vertical-align: middle; height: 1.5em;">  </a>
                                 
                             </div>
 
@@ -373,7 +375,7 @@
                                 <h1 class="postcard__title green"><a href="#">Foundation Class 2</a></h1>
 
                                 <div class="postcard__bar"></div>
-                                <a href="">Daftar Sekarang   <i class="fa-1x fas fa-arrow-right"></i> </a>
+                                <a href="">Daftar Sekarang <img src="<?php echo base_url('assets/icon/right-arrow.svg');?>" alt="" style="vertical-align: middle; height: 1.5em;">  </a>
                                 >
                             </div>
                         </article>
@@ -387,8 +389,7 @@
                                 <h1 class="postcard__title yellow"><a href="#">Foundation Class 3</a></h1>
 
                                 <div class="postcard__bar"></div>
-                                <a href="">Daftar Sekarang   <i class="fa-1x fas fa-arrow-right"></i> </a>
-                               
+                                <a href="">Daftar Sekarang <img src="<?php echo base_url('assets/icon/right-arrow.svg');?>" alt="" style="vertical-align: middle; height: 1.5em;">  </a>
                             </div>
                         </article>
                     </div>
@@ -403,7 +404,7 @@
                                 <h1 class="postcard__title green"><a href="#">Grade 1</a></h1>
 
                                 <div class="postcard__bar"></div>
-                                <a href="">Daftar Sekarang   <i class="fa-1x fas fa-arrow-right"></i> </a>
+                                <a href="">Daftar Sekarang <img src="<?php echo base_url('assets/icon/right-arrow.svg');?>" alt="" style="vertical-align: middle; height: 1.5em;">  </a>
                                
                             </div>
                         </article>
@@ -417,7 +418,7 @@
                                 <h1 class="postcard__title yellow"><a href="#">Grade 2</a></h1>
 
                                 <div class="postcard__bar"></div>
-                                <a href="">Daftar Sekarang   <i class="fa-1x fas fa-arrow-right"></i> </a>
+                                <a href="">Daftar Sekarang <img src="<?php echo base_url('assets/icon/right-arrow.svg');?>" alt="" style="vertical-align: middle; height: 1.5em;">  </a>
                                
                             </div>
                         </article>
@@ -432,7 +433,7 @@
                                     <h1 class="postcard__title green"><a href="#">Grade 3</a></h1>
 
                                     <div class="postcard__bar"></div>
-                                    <a href="">Daftar Sekarang   <i class="fa-1x fas fa-arrow-right"></i> </a>
+                                    <a href="">Daftar Sekarang <img src="<?php echo base_url('assets/icon/right-arrow.svg');?>" alt="" style="vertical-align: middle; height: 1.5em;">  </a>
                                     
                                 </div>
                             </article>
@@ -446,7 +447,7 @@
                                     <h1 class="postcard__title yellow"><a href="#">Volunteer Class</a></h1>
 
                                     <div class="postcard__bar"></div>
-                                    <a href="">Daftar Sekarang   <i class="fa-1x fas fa-arrow-right"></i> </a>
+                                    <a href="">Daftar Sekarang <img src="<?php echo base_url('assets/icon/right-arrow.svg');?>" alt="" style="vertical-align: middle; height: 1.5em;">  </a>
 
                                 </div>
                             </article>
