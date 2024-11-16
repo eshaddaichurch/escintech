@@ -68,7 +68,8 @@ class Disciplescommunity extends MY_Controller
                 $row[] = $no;
                 $row[] = '<img src="' . $fotodc . '" alt="" style=" width: 80%;">';
                 $row[] = $rowdata->namadc . '<br><small>Kategori: ' . $rowdata->kategoridc . '</small>';
-                $row[] = $rowdata->alamatdc;
+                $row[] = $rowdata->alamatdc . '<br><small style="color: #6EACDA">' . $rowdata->namakabupaten . '<br>' . $rowdata->namakecamatan . '</small>';
+
                 $row[] = $rowdata->namadm;
                 $row[] = $rowdata->haridc . ', Jam: ' . $rowdata->jamdc;
                 $row[] = $rowdata->statusaktif;

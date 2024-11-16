@@ -736,7 +736,7 @@
 
               <hr>
 
-              <a href="<?php echo base_url('Dc/index/' . $this->encrypt->encode($menu)); ?>" class="readmore stretched-link"><span>Read More</span><i
+              <a href="<?php echo base_url('disciples_community/index/' . $this->encrypt->encode($menu)); ?>" class="readmore stretched-link"><span>Read More</span><i
                   class="bi bi-arrow-right"></i></a>
 
             </div>

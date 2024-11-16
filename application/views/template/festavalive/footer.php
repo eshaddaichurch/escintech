@@ -238,3 +238,14 @@ T e m p l a t e M o
             window.location = $(this).attr('href');
         });
     </script>
+
+
+    <script>
+        function addSelectOption(selectId, optValue, optText) {
+            var select = document.getElementById(selectId);
+            var option = document.createElement("option");
+            option.value = optValue;
+            option.innerHTML = optText;
+            select.appendChild(option);
+        }
+    </script>

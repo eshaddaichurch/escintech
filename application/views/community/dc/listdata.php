@@ -839,30 +839,93 @@
                 <div class="row justify-content-center">
 
                     <div class="row">
+                        <div class="col-12">
+                            <div class="row">
+                                <div class="col-12 mb-2">
+                                    <h5 class="text-muted">Filter Nama Disciples Community</h5>
+                                </div>
+                                <div class="col-md-3">
+                                    <label for="" class="">Kategori DC</label>
+                                    <select name="idkategoridc" id="idkategoridc" class="form-control select2">
+                                        <option value="">Semua</option>
+                                        <option value="Umum">Umum</option>
+                                        <option value="Youth">Youth</option>
+                                        <option value="Young">Young</option>
+                                        <option value="Adult">Adult</option>
+                                        <option value="Kids">Kids</option>
+                                        <option value="Family">Family</option>
+                                    </select>
+                                </div>
 
-                        <?php
-                        if ($rsDC->num_rows() > 0) {
-                            foreach ($rsDC->result() as $row) {
-
-                                if (!empty($row->fotodm)) {
-                                    $fotodm = base_url('admin/uploads/jemaat/' . $row->fotodm);
-                                } else {
-                                    $fotodm = base_url('images/bg-dc.png');
-                                }
-
-                                echo '
-                                <div class="col-md-4">
-                                    <div class="profile-card-2 d-flex justify-content-center"><img src="' . $fotodm . '" class="img img-responsive">
-                                        <div class="profile-name">' . $row->namadc . '</div>
-                                        <div class="profile-username">' . $row->namadm . '</div>
-                                        <div class="profile-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
-                                        <a href="' . site_url('dc/bergabungsekarang') . '" class="btn btn-primary profile-buttons">Bergabung Sekarang</a>
+                                <div class="col-md-3">
+                                    <div class="form-group">
+                                        <label for="">Kabupaten/ Kota</label>
+                                        <select name="idkabupaten" id="idkabupaten" class="form-control select2">
+                                            <option value="">Pilih kabupaten</option>
+                                            <?php
+                                            $rsKabupaten = $this->db->query("
+                                                                    select * from kabupaten where idprovinsi='001' and deleted_at is null order by namakabupaten
+                                                                ");
+                                            if ($rsKabupaten->num_rows() > 0) {
+                                                foreach ($rsKabupaten->result() as $row) {
+                                                    echo '
+                                                            <option value="' . $row->idkabupaten . '">' . $row->namakabupaten . '</option>
+                                                    ';
+                                                }
+                                            }
+                                            ?>
+                                        </select>
                                     </div>
                                 </div>
-                                ';
-                            }
-                        }
-                        ?>
+
+                                <div class="col-md-3">
+                                    <label for="" class="">Kecamatan</label>
+                                    <select name="idkecamatan" id="idkecamatan" class="form-control select2">
+                                        <option value="">Pilih kecamatan ...</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-3">
+                                    <label for="" class="">Cari Nama DC</label>
+                                    <input type="text" name="carinamadc" id="carinamadc" class="form-control" placeholder="Cari berdasarkan nama dc">
+                                </div>
+                                <div class="col-md text-center mt-3">
+                                    <button class="btn btn-primary" id="btnCari"><i class="fa fa-search me-2"></i>Cari</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <hr>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="row" id="divListDC">
+                                <?php
+                                if ($rsDC->num_rows() > 0) {
+                                    foreach ($rsDC->result() as $row) {
+
+                                        if (!empty($row->fotodm)) {
+                                            $fotodm = base_url('admin/uploads/jemaat/' . $row->fotodm);
+                                        } else {
+                                            $fotodm = base_url('images/bg-dc.png');
+                                        }
+
+                                        echo '
+                                                <div class="col-md-4">
+                                                    <div class="profile-card-2 d-flex justify-content-center"><img src="' . $fotodm . '" class="img img-responsive">
+                                                        <div class="profile-name">' . $row->namadc . '</div>
+                                                        <div class="profile-username">' . $row->namadm . '</div>
+                                                        <div class="profile-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a></div>
+                                                        <a href="' . site_url('disciples_community/bergabung/' . $this->encrypt->encode($row->iddc)) . '" class="btn btn-primary profile-buttons">Bergabung Sekarang</a>
+                                                    </div>
+                                                </div>
+                                                ';
+                                    }
+                                }
+                                ?>
+
+                            </div>
+                        </div>
 
 
 
@@ -879,7 +942,113 @@
 
     <?php $this->load->view('template/festavalive/footer'); ?>
 
+    <script>
+        $('#idkabupaten').change(function(e) {
+            var idkabupaten = $(this).val();
+            getKecamatan(idkabupaten);
+        });
 
+        // $('#idkecamatan').change(function(e) {
+        //   var idkecamatan = $(this).val();
+        //   getdesa(idkecamatan);
+        // });
+
+        function getKecamatan(idkabupaten, idkecamatandefault = "") {
+
+            $('#idkecamatan').empty();
+            // console.log(idkabupaten);
+
+            addSelectOption('idkecamatan', '', 'Pilih kecamatan ...')
+
+            $.ajax({
+                    url: '<?= site_url('disciples_community/getKecamatan') ?>',
+                    type: 'GET',
+                    dataType: 'json',
+                    data: {
+                        'idkabupaten': idkabupaten
+                    },
+                })
+                .done(function(response) {
+                    // console.log(response);
+                    if (response.length > 0) {
+                        for (var i = 0; i < response.length; i++) {
+                            // console.log(response[i]);
+                            addSelectOption('idkecamatan', response[i]['idkecamatan'], response[i]['namakecamatan']);
+                            if (idkecamatandefault != "" && idkecamatandefault == response[i]['idkecamatan']) {
+                                $('#idkecamatan').val(response[i]['idkecamatan']).trigger('change');
+                            }
+                        }
+                    }
+                })
+                .fail(function() {
+                    console.log('error getKecamatan');
+                });
+
+        }
+
+        $(document).on('click', '#btnCari', function() {
+            console.log("1");
+            cari();
+        });
+
+        function cari() {
+            var idkategoridc = $('#idkategoridc').val();
+            var idkabupaten = $('#idkabupaten').val();
+            var idkecamatan = $('#idkecamatan').val();
+            var cari = $('#carinamadc').val();
+
+            $('#divListDC').empty();
+
+            var baseURL = "<?php echo base_url() ?>";
+            $.ajax({
+                    url: '<?php echo site_url('disciples_community/getListDC') ?>',
+                    type: 'GET',
+                    dataType: 'json',
+                    data: {
+                        'idkategoridc': idkategoridc,
+                        'idkabupaten': idkabupaten,
+                        'idkecamatan': idkecamatan,
+                        'cari': cari,
+                    },
+                })
+                .done(function(response) {
+                    if (response.success && response.data.length > 0) {
+                        for (var i = 0; i < response.data.length; i++) {
+                            var fotodm;
+                            if (response.data[i]['fotodm'] && response.data[i]['fotodm'] !== "") {
+                                fotodm = baseURL + "admin/uploads/jemaat/" + response.data[i]['fotodm'];
+                            } else {
+                                fotodm = baseURL + "images/bg-dc.png";
+                            }
+
+                            var addText = `
+                    <div class="col-md-4">
+                        <div class="profile-card-2 d-flex justify-content-center">
+                            <img src="${fotodm}" class="img img-responsive">
+                            <div class="profile-name">${response.data[i]['namadc']}</div>
+                            <div class="profile-username">${response.data[i]['namadm']}</div>
+                            <div class="profile-icons">
+                                <a href="#"><i class="fa fa-facebook"></i></a>
+                                <a href="#"><i class="fa fa-twitter"></i></a>
+                                <a href="#"><i class="fa fa-linkedin"></i></a>
+                            </div>
+                            <a href="${baseURL}dc/bergabungsekarang" class="btn btn-primary profile-buttons">Bergabung Sekarang</a>
+                        </div>
+                    </div>
+                `;
+
+                            $('#divListDC').append(addText);
+                        }
+                    } else {
+                        $('#divListDC').html('<p>Tidak ada data ditemukan</p>');
+                    }
+                })
+                .fail(function(xhr, status, error) {
+                    console.error('Error:', error);
+                    $('#divListDC').html('<p>Terjadi kesalahan saat memuat data</p>');
+                });
+        }
+    </script>
 
 </body>
 

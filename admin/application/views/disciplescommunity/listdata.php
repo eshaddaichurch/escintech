@@ -106,7 +106,7 @@ $this->load->view("template/sidemenu");
         },
         {
           "targets": [3],
-          "className": "dt-body-left"
+          "className": "dt-body-center"
         },
         {
           "targets": [4],

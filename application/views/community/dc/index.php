@@ -752,7 +752,7 @@
       <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
         <h2><?php echo $title ?></h2>
-        <a href="<?php echo site_url('dc/list') ?>" class="btn btn-daftar">Daftar</a>
+        <a href="<?php echo site_url('disciples_community/list') ?>" class="btn btn-daftar">Daftar</a>
       </div>
     </div><!-- End Breadcrumbs -->
   </section>

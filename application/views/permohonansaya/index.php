@@ -40,7 +40,7 @@
                                     <th style="width: 25%; text-align: center;">Jenis Permohonan</th>
                                     <th style="width: 15%; text-align: center;">Tanggal Permohonan</th>
                                     <th style="text-align: center;">Status</th>
-                                    <th style="width: 10%; text-align: center;">#</th>
+                                    <th style="width: 10%; text-align: center; display: none;">#</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -54,7 +54,7 @@
                                             <td style="text-align: center;">' . $row->jenispermohonan . '</td>
                                             <td style="text-align: center;">' . $row->tglpermohonan . '</td>
                                             <td style="text-align: center;">' . $row->statuspermohonan . '</td>
-                                            <td style="text-align: center;"><button class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button></td>
+                                            <td style="text-align: center; display: none;"><button class="btn btn-sm btn-primary"><i class="fa fa-search"></i></button></td>
                                         </tr>
                                         ';
                                     }
