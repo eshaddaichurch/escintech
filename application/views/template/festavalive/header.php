@@ -49,7 +49,7 @@
             }
 
             .navbar .navbar-nav .nav-link {
-                padding: 10px 0;
+                padding: 5px 0;
             }
         }
 
