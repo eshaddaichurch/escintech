@@ -80,6 +80,31 @@ class App extends CI_Model
 
 		return $this->email->send();
 	}
+
+	public function getKelasJemaat($idjemaat)
+	{
+		$this->db->where("idjemaat", $idjemaat);
+		return $this->db->get('v_registrasikelas_sudahlulus');
+	}
+
+	public function getJemaatFamily($idjemaat)
+	{
+		$arrFamily = array();
+		$rsJemaat = $this->db->query("select * from v_jemaatfamily where idjemaat = '$idjemaat' limit 1");
+		if ($rsJemaat->num_rows() > 0) {
+			$nokaj = $rsJemaat->row()->nokaj;
+			$rsFamily = $this->db->query("select * from v_jemaatfamily where nokaj = '$nokaj'");
+			foreach ($rsFamily->result() as $row) {
+				array_push($arrFamily, array(
+					'idjemaat' => $row->idjemaat,
+					'namalengkap' => $row->namalengkap,
+					'namahubungan' => $row->namahubungan,
+				));
+			}
+		}
+
+		return $arrFamily;
+	}
 }
 
 /* End of file App.php */
