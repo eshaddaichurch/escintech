@@ -54,8 +54,7 @@ $this->load->view('template/festavalive/header'); ?>
              <div class="card">
                 <img class="gambar" src="https://plus.unsplash.com/premium_photo-1661695729294-fa0dc94f2a09?q=80&w=3291&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" class="card-img" alt="...">
                     <div class="card-img-overlay">
-                    <a href="<?= base_url('resources/kids')?>"> 
-                        <h5 class="card-title text-white">ESC KIDS</h5></a>
+                        <h5 class="card-title text-white">ESC KIDS</h5>
                             <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
                             <p class="card-text">Last updated 3 mins ago</p>
                     </div>

@@ -2269,7 +2269,7 @@ $this->load->view('template/festavalive/header'); ?>
     <!-- Features Section -->
     <section id="features" class="features section">
 
-      <div class="container">
+      <div class="container ">
 
         <ul class="nav nav-tabs1 row  d-flex" style="display: flex; align-items: center; justify-content: space-between;"  data-aos="fade-up" data-aos-delay="100">
           <li class="nav-item col-2">
