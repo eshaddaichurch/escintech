@@ -1,36 +1,37 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Dcmember extends MY_Controller
+class Absensidc extends MY_Controller
 {
 
     public function __construct()
     {
         parent::__construct();
         $this->islogin();
-        $this->load->model('DcmemberModel');
+        $this->load->model('Absensidc_model');
         $this->load->library('image_lib');
+        $this->session->set_userdata('IDMENUSELECTED', 'M503');
+        $this->cekOtorisasi();
     }
 
     public function index()
     {
-        $data['rsDcmember'] = $this->DcmemberModel->get_all();
-        $data['menu'] = 'dcmember';
-        $this->load->view('dcmember/index', $data);
+        $data['menu'] = 'absensidc';
+        $this->load->view('absensidc/listdata', $data);
     }
 
     public function tambah()
     {
         $data['iddc'] = '';
-        $data['menu'] = 'ddcmember';
-        $this->load->view('dcmember/form', $data);
+        $data['menu'] = 'absensidc';
+        $this->load->view('absensidc/form', $data);
     }
 
     public function edit($iddcmember)
     {
         $iddcmember = $this->encrypt->decode($iddcmember);
 
-        if ($this->DcmemberModel->get_by_id($iddcmember)->num_rows() < 1) {
+        if ($this->Absensidc_model->get_by_id($iddcmember)->num_rows() < 1) {
             $pesan = '<div>
                         <div class="alert alert-danger alert-dismissable">
                             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
@@ -38,85 +39,51 @@ class Dcmember extends MY_Controller
                         </div>
                     </div>';
             $this->session->set_flashdata('pesan', $pesan);
-            redirect('dcmember');
+            redirect('absensidc');
             exit();
         };
         $data['iddcmember'] = $iddcmember;
-        $data['menu'] = 'dcmember';
-        $this->load->view('dcmember/form', $data);
+        $data['menu'] = 'absensidc';
+        $this->load->view('absensidc/form', $data);
     }
 
     public function datatablesource()
     {
-        $this->db->reset_query();
-        $Datatables = new $this->Datatables;
-        $Datatables->tabelview = 'v_dcmember';
-        $Datatables->column_order = array(null, null, 'iddcmember', 'iddc', 'namadc', 'namalengkap', 'statuskeanggotaan', 'keterangan', 'statusaktif', null);
-        $Datatables->column_search = array('iddcmember', 'iddc', 'namadc', 'namalengkap', 'statuskeanggotaan', 'keterangan');
-        $Datatables->order_array = array('iddcmember' => 'desc');
-        $where = '';
-        $where .= " iddc = '" . $this->session->userdata('iddc') . "'";
-
-        $Datatables->where_condition = $where;
-
-        // static value
-        $Datatables->search_value = $this->input->post('search')['value'];
-        $Datatables->length_row = $this->input->post('length');
-        $Datatables->start_row = $this->input->post('start');
-        $urutkan = $this->input->post('order');
-        if (isset($urutkan)) {
-            $Datatables->num_order_colomn = $urutkan['0']['column'];
-            $Datatables->num_order_dir = $urutkan['0']['dir'];
-        } else {
-            $Datatables->num_order_colomn = NULL;
-            $Datatables->num_order_colomn = NULL;
-        }
-        //-- 
-
-        $RsData = $Datatables->get_datatables();
-        $no = $this->input->post('start');
+        $RsData = $this->Absensidc_model->get_datatables();
+        $no = $_POST['start'];
         $data = array();
 
         if ($RsData->num_rows() > 0) {
             foreach ($RsData->result() as $rowdata) {
-
-                if (!empty($rowdata->foto)) {
-                    $foto = '<img src="' . base_url("../admin/uploads/jemaat/" . $rowdata->foto) . '" alt=""  
-                    >';
-                } else {
-                    $foto = '<img src="' . base_url('images/user-01.png') . '" alt="" style="width:100%;">';
-                }
-
                 $no++;
                 $row = array();
                 $row[] = $no;
-                $row[] = $foto;
-                $row[] = $rowdata->namalengkap . ' / ' . $rowdata->iddcmember;
+                $row[] = $rowdata->iddcmember;
+                $row[] = $rowdata->iddc;
                 $row[] = $rowdata->namadc . '<br><small>' . $rowdata->namadm . '</small>';
+                $row[] = $rowdata->namalengkap;
                 $row[] = $rowdata->statuskeanggotaan;
                 $row[] = $rowdata->keterangan;
                 $row[] = $rowdata->statusaktif;
-                $row[] = '<a href="' . site_url('dcmember/edit/' . $this->encrypt->encode($rowdata->iddcmember)) . '" class="btn btn-sm btn-warning btn-circle"><i class="fa fa-edit"></i></a> | 
-                                <a href="' . site_url('dcmember/delete/' . $this->encrypt->encode($rowdata->iddcmember)) . '" class="btn btn-sm btn-danger btn-circle" id="hapus"><i class="fa fa-trash"></i></a>';
+                $row[] = '<a href="' . site_url('absensidc/edit/' . $this->encrypt->encode($rowdata->iddcmember)) . '" class="btn btn-sm btn-warning btn-circle"><i class="fa fa-edit"></i></a> | 
+                                <a href="' . site_url('absensidc/delete/' . $this->encrypt->encode($rowdata->iddcmember)) . '" class="btn btn-sm btn-danger btn-circle" id="hapus"><i class="fa fa-trash"></i></a>';
                 $data[] = $row;
             }
         }
 
         $output = array(
-            "draw" => $this->input->post('draw'),
-            "recordsTotal" => $Datatables->count_all(),
-            "recordsFiltered" => $Datatables->count_filtered(),
+            "draw" => $_POST['draw'],
+            "recordsTotal" => $this->Absensidc_model->count_all(),
+            "recordsFiltered" => $this->Absensidc_model->count_filtered(),
             "data" => $data,
         );
-
-        //output to json format
         echo json_encode($output);
     }
 
     public function delete($iddcmember)
     {
         $iddcmember = $this->encrypt->decode($iddcmember);
-        $rsdata = $this->DcmemberModel->get_by_id($iddcmember);
+        $rsdata = $this->Absensidc_model->get_by_id($iddcmember);
         if ($rsdata->num_rows() < 1) {
             $pesan = '<div>
                                                 <div class="alert alert-danger alert-dismissable">
@@ -125,11 +92,11 @@ class Dcmember extends MY_Controller
                                                 </div>
                                             </div>';
             $this->session->set_flashdata('pesan', $pesan);
-            redirect('dcmember ');
+            redirect('absensidc ');
             exit();
         };
 
-        $hapus = $this->DcmemberModel->hapus($iddcmember);
+        $hapus = $this->Absensidc_model->hapus($iddcmember);
         if ($hapus) {
             $pesan = '<div>
                         <div class="alert alert-success alert-dismissable">
@@ -148,7 +115,7 @@ class Dcmember extends MY_Controller
         }
 
         $this->session->set_flashdata('pesan', $pesan);
-        redirect('dcmember');
+        redirect('absensidc');
     }
 
 
@@ -181,7 +148,7 @@ class Dcmember extends MY_Controller
                 'statusaktif'   => $statusaktif,
             );
 
-            $simpan = $this->DcmemberModel->simpan($data);
+            $simpan = $this->Absensidc_model->simpan($data);
         } else {
 
             $data = array(
@@ -194,7 +161,7 @@ class Dcmember extends MY_Controller
                 'tanggalupdate'   => $tanggalupdate,
                 'statusaktif'   => $statusaktif,
             );
-            $simpan = $this->DcmemberModel->update($data, $iddcmember);
+            $simpan = $this->Absensidc_model->update($data, $iddcmember);
         }
 
         if ($simpan) {
@@ -216,7 +183,7 @@ class Dcmember extends MY_Controller
         }
 
         $this->session->set_flashdata('pesan', $pesan);
-        redirect('dcmember');
+        redirect('absensidc');
     }
 
 
@@ -224,7 +191,7 @@ class Dcmember extends MY_Controller
     {
 
         $iddcmember = $this->input->post('iddcmember');
-        $RsData = $this->DcmemberModel->get_by_id($iddcmember)->row();
+        $RsData = $this->Absensidc_model->get_by_id($iddcmember)->row();
 
         $data = array(
             'iddcmember'   => $RsData->iddcmember,
@@ -235,5 +202,53 @@ class Dcmember extends MY_Controller
             'statusaktif'   => $RsData->statusaktif,
         );
         echo json_encode($data);
+    }
+
+    public function upload_foto($file, $nama)
+    {
+
+        if (!empty($file[$nama]['name'])) {
+            $config['upload_path']          = 'uploads/dc/';
+            $config['allowed_types']        = 'gif|jpg|png|jpeg';
+            $config['remove_space']         = TRUE;
+            $config['max_size']             = '2000KB';
+
+            $this->load->library('upload', $config);
+
+            if ($this->upload->do_upload($nama)) {
+                $foto = $this->upload->data('file_name');
+                $size = $this->upload->data('file_size');
+                $ext  = $this->upload->data('file_ext');
+            } else {
+                $foto = "";
+            }
+        } else {
+            $foto = "";
+        }
+        return $foto;
+    }
+
+    public function update_upload_foto($file, $nama, $file_lama)
+    {
+        if (!empty($file[$nama]['name'])) {
+            $config['upload_path']          = 'uploads/dc/';
+            $config['allowed_types']        = 'gif|jpg|png|jpeg';
+            $config['remove_space']         = TRUE;
+            $config['max_size']            = '2000KB';
+
+
+            $this->load->library('upload', $config);
+            if ($this->upload->do_upload($nama)) {
+                $foto = $this->upload->data('file_name');
+                $size = $this->upload->data('file_size');
+                $ext  = $this->upload->data('file_ext');
+            } else {
+                $foto = $file_lama;
+            }
+        } else {
+            $foto = $file_lama;
+        }
+
+        return $foto;
     }
 }

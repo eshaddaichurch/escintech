@@ -6,6 +6,7 @@ class DcmemberModel extends CI_Model
 
     public function get_all()
     {
+        $this->db->where('iddc', $this->session->userdata('iddc'));
         return $this->db->get('v_dcmember');
     }
 

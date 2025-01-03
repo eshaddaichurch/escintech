@@ -38,56 +38,32 @@
         </li>
 
 
-        <?php
-        $menudropdown = array("disciplescommunity", "dcmember", "konfirmasidc");
-
-
-
-        if (in_array($menu, $menudropdown)) {
-          $dropdownselected = true;
-        } else {
-          $dropdownselected = false;
-        }
-        ?>
-
-
-        <li class="nav-item has-treeview <?php echo ($dropdownselected) ? 'menu-open' : '' ?>">
-          <a href="#" class="nav-link <?php echo ($dropdownselected) ? 'active' : '' ?>">
-            <i class="nav-icon fas fa-database"></i>
+        <li class="nav-item">
+          <a href="<?php echo (site_url('konfirmasidc')) ?>" class="nav-link <?php echo ($menu == 'konfirmasidc') ? 'active' : '' ?>">
+            <i class="nav-icon fas fa-check-double"></i>
             <p>
-              Disciples Community
-              <i class="right fas fa-angle-left"></i>
+              Konfirmasi Permohonan
             </p>
           </a>
-
-
-          <ul class="nav nav-treeview">
-
-            <li class="nav-item">
-              <a href="<?php echo (site_url("disciplescommunity")) ?>" class="nav-link <?php echo ($menu == 'disciplescommunity') ? 'active' : '' ?>">
-                <i class="far fa-circle nav-icon"></i>
-                <p>DC Info</p>
-              </a>
-            </li>
-
-            <li class="nav-item">
-              <a href="<?php echo (site_url("konfirmasidc")) ?>" class="nav-link <?php echo ($menu == 'konfirmasidc') ? 'active' : '' ?>">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Konfirmasi Pengajuan</p>
-              </a>
-            </li>
-
-
-            <li class="nav-item">
-              <a href="<?php echo (site_url("dcmember")) ?>" class="nav-link <?php echo ($menu == 'dcmember') ? 'active' : '' ?>">
-                <i class="far fa-circle nav-icon"></i>
-                <p>Member</p>
-              </a>
-            </li>
-
-          </ul>
         </li>
 
+        <li class="nav-item">
+          <a href="<?php echo (site_url('dcmember')) ?>" class="nav-link <?php echo ($menu == 'dcmember') ? 'active' : '' ?>">
+            <i class="nav-icon fas fa-users"></i>
+            <p>
+              Member DC
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="<?php echo (site_url('absendc')) ?>" class="nav-link <?php echo ($menu == 'absendc') ? 'active' : '' ?>">
+            <i class="nav-icon fas fa-check-double"></i>
+            <p>
+              Absen DC
+            </p>
+          </a>
+        </li>
 
 
         <li class="nav-item">

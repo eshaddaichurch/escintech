@@ -11,8 +11,18 @@ function kekata($x)
 {
 	$x = abs($x);
 	$angka = array(
-		"", "satu", "dua", "tiga", "empat", "lima",
-		"enam", "tujuh", "delapan", "sembilan", "sepuluh", "sebelas"
+		"",
+		"satu",
+		"dua",
+		"tiga",
+		"empat",
+		"lima",
+		"enam",
+		"tujuh",
+		"delapan",
+		"sembilan",
+		"sepuluh",
+		"sebelas"
 	);
 	$temp = "";
 	if ($x < 12) {

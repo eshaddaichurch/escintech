@@ -68,8 +68,17 @@
 <!-- -------------------------------------------------------------------------------------------PAGE SCRIPTS / buang aja -->
 <!-- <script src="<?php echo (base_url()) ?>assets/adminlte/dist/js/pages/dashboard2.js"></script> -->
 
+<?php $this->load->view('template/modalInfoJemaat'); ?>
 
 
+
+<?php
+$pesan = $this->session->flashdata('pesan');
+if (!empty($pesan)) {
+  echo $pesan;
+  $this->session->set_flashdata('pesan', NULL);
+}
+?>
 
 
 
@@ -106,9 +115,15 @@
       $('.hanya-admin').show();
     }
 
-
-
   });
+
+
+  $('.btnProfil').click(function(e) {
+    e.preventDefault();
+    var idjemaatmodal = $(this).attr("data-idjemaat");
+    var idjemaatencrypt = $(this).attr("data-idjemaatencrypt");
+    loadModalInfoJemaat(idjemaatmodal, idjemaatencrypt);
+  })
 
   function format_decimal(number, decPlaces, decSep, thouSep) {
     decPlaces = isNaN(decPlaces = Math.abs(decPlaces)) ? 2 : decPlaces,
