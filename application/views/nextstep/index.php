@@ -343,7 +343,7 @@ use PhpParser\Node\Stmt\Echo_;
 
                                 <div class="postcard__bar"></div>
                                
-                                <a href="">Daftar Sekarang <img src="<?php echo base_url('assets/icon/right-arrow.svg');?>" alt="" style="vertical-align: middle; height: 1.5em;">  </a>
+                                <a href="<?= site_url('nextstep/kelas/foundation_class_1')?>">Daftar Sekarang <img src="<?php echo base_url('assets/icon/right-arrow.svg');?>" alt="" style="vertical-align: middle; height: 1.5em;">  </a>
                             </div>
                         </article>
                     </div>
@@ -354,10 +354,10 @@ use PhpParser\Node\Stmt\Echo_;
 
                             </a>
                             <div class="postcard__text t-dark">
-                                <h1 class="postcard__title red"><a href="#">Membership Class</a></h1>
+                                <h1 class="postcard__title red"><a href="<?= site_url('nextstep/kelas/membership_class')?>">Membership Class</a></h1>
 
                                 <div class="postcard__bar"></div>
-                                <a href="">Daftar Sekarang <img src="<?php echo base_url('assets/icon/right-arrow.svg');?>" alt="" style="vertical-align: middle; height: 1.5em;">  </a>
+                                <a href="<?= site_url('nextstep/kelas/membership_class')?>">Daftar Sekarang <img src="<?php echo base_url('assets/icon/right-arrow.svg');?>" alt="" style="vertical-align: middle; height: 1.5em;">  </a>
                                 
                             </div>
 
@@ -375,7 +375,7 @@ use PhpParser\Node\Stmt\Echo_;
                                 <h1 class="postcard__title green"><a href="#">Foundation Class 2</a></h1>
 
                                 <div class="postcard__bar"></div>
-                                <a href="">Daftar Sekarang <img src="<?php echo base_url('assets/icon/right-arrow.svg');?>" alt="" style="vertical-align: middle; height: 1.5em;">  </a>
+                                <a href="<?= site_url('nextstep/kelas/foundation_class_2')?>">Daftar Sekarang <img src="<?php echo base_url('assets/icon/right-arrow.svg');?>" alt="" style="vertical-align: middle; height: 1.5em;">  </a>
                                 >
                             </div>
                         </article>
@@ -386,10 +386,10 @@ use PhpParser\Node\Stmt\Echo_;
                                 <img class="postcard__img" src="https://picsum.photos/501/501" alt="Image Title" />
                             </a>
                             <div class="postcard__text t-dark">
-                                <h1 class="postcard__title yellow"><a href="#">Foundation Class 3</a></h1>
+                                <h1 class="postcard__title yellow"><a href="<?= site_url('nextstep/kelas/foundation_class_3')?>">Foundation Class 3</a></h1>
 
                                 <div class="postcard__bar"></div>
-                                <a href="">Daftar Sekarang <img src="<?php echo base_url('assets/icon/right-arrow.svg');?>" alt="" style="vertical-align: middle; height: 1.5em;">  </a>
+                                <a href="<?= site_url('nextstep/kelas/foundation_class_3')?>">Daftar Sekarang <img src="<?php echo base_url('assets/icon/right-arrow.svg');?>" alt="" style="vertical-align: middle; height: 1.5em;">  </a>
                             </div>
                         </article>
                     </div>
@@ -401,13 +401,13 @@ use PhpParser\Node\Stmt\Echo_;
                                 <img class="postcard__img" src="https://picsum.photos/500/501" alt="Image Title" />
                             </a>
                             <div class="postcard__text t-dark">
-                                <h1 class="postcard__title green"><a href="#">Grade 1</a></h1>
+                                <h1 class="postcard__title green"><a href=" <?php base_url('nextstep/kelas')?>">Grade 1</a></h1>
 
                                 <div class="postcard__bar"></div>
-                                <a href="">Daftar Sekarang <img src="<?php echo base_url('assets/icon/right-arrow.svg');?>" alt="" style="vertical-align: middle; height: 1.5em;">  </a>
+                                <a href="<?= site_url('nextstep/kelas/grade_1')?>">Daftar Sekarang <img src="<?php echo base_url('assets/icon/right-arrow.svg');?>" alt="" style="vertical-align: middle; height: 1.5em;">  </a>
                                
                             </div>
-                        </article>
+                        </article>s
                     </div>
                     <div class="col-md-6">
                         <article class="postcard light yellow">
@@ -415,10 +415,10 @@ use PhpParser\Node\Stmt\Echo_;
                                 <img class="postcard__img" src="https://picsum.photos/501/501" alt="Image Title" />
                             </a>
                             <div class="postcard__text t-dark">
-                                <h1 class="postcard__title yellow"><a href="#">Grade 2</a></h1>
+                                <h1 class="postcard__title yellow"><a href="<?= site_url('nextstep/kelas/grade_2')?>">Grade 2</a></h1>
 
                                 <div class="postcard__bar"></div>
-                                <a href="">Daftar Sekarang <img src="<?php echo base_url('assets/icon/right-arrow.svg');?>" alt="" style="vertical-align: middle; height: 1.5em;">  </a>
+                                <a href="<?= site_url('nextstep/kelas/grade_2')?>">Daftar Sekarang <img src="<?php echo base_url('assets/icon/right-arrow.svg');?>" alt="" style="vertical-align: middle; height: 1.5em;">  </a>
                                
                             </div>
                         </article>
@@ -433,7 +433,7 @@ use PhpParser\Node\Stmt\Echo_;
                                     <h1 class="postcard__title green"><a href="#">Grade 3</a></h1>
 
                                     <div class="postcard__bar"></div>
-                                    <a href="">Daftar Sekarang <img src="<?php echo base_url('assets/icon/right-arrow.svg');?>" alt="" style="vertical-align: middle; height: 1.5em;">  </a>
+                                    <a href="<?= site_url('nextstep/kelas/grade_3')?>">Daftar Sekarang <img src="<?php echo base_url('assets/icon/right-arrow.svg');?>" alt="" style="vertical-align: middle; height: 1.5em;">  </a>
                                     
                                 </div>
                             </article>
@@ -447,7 +447,7 @@ use PhpParser\Node\Stmt\Echo_;
                                     <h1 class="postcard__title yellow"><a href="#">Volunteer Class</a></h1>
 
                                     <div class="postcard__bar"></div>
-                                    <a href="">Daftar Sekarang <img src="<?php echo base_url('assets/icon/right-arrow.svg');?>" alt="" style="vertical-align: middle; height: 1.5em;">  </a>
+                                    <a href="<?= site_url('nextstep/kelas/volunteer_class')?>">Daftar Sekarang <img src="<?php echo base_url('assets/icon/right-arrow.svg');?>" alt="" style="vertical-align: middle; height: 1.5em;">  </a>
 
                                 </div>
                             </article>
