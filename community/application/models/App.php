@@ -29,7 +29,7 @@ class App extends CI_Model
 			$config['upload_path']          = 'uploads/' . $foldername . '/';
 			$config['allowed_types']        = 'gif|jpg|png|jpeg';
 			$config['remove_space']         = TRUE;
-			$config['max_size']            = '2000KB';
+			// $config['max_size']            = '2000KB';
 
 
 			$this->load->library('upload', $config);
@@ -43,9 +43,49 @@ class App extends CI_Model
 		} else {
 			$foto = $namaFileLama;
 		}
+		// $this->compressImage($foto, $size);
 
 		return $foto;
 	}
+
+	public function compressImage($foto, $size)
+	{
+		$default_ukuran_foto = 200; // kb
+
+		// Validasi input
+		if (empty($foto) || $size <= 0) {
+			return "Parameter tidak valid";
+		}
+
+		// Hitung persentase kualitas
+		$persentasi_quality = max(10, min(100, (($size / $default_ukuran_foto) * 100)));
+
+		// Validasi file
+		$source_path = 'uploads/absensi/' . $foto;
+		if (!file_exists($source_path)) {
+			return "File tidak ditemukan";
+		}
+
+		// Konfigurasi library
+		$config['image_library'] = 'gd';
+		$config['source_image'] = $source_path;
+		$config['create_thumb'] = FALSE;
+		$config['maintain_ratio'] = TRUE;
+		$config['quality'] = $persentasi_quality . '%';
+		$config['width'] = 600; // Bisa disesuaikan
+		$config['height'] = 400; // Bisa disesuaikan
+		$config['new_image'] = 'uploads/absensi/compressed_' . $foto;
+
+		// Load library dan resize
+		$this->load->library('image_lib', $config);
+
+		if (!$this->image_lib->resize()) {
+			return $this->image_lib->display_errors();
+		}
+
+		return true;
+	}
+
 
 	public function sendEmailNextStep($email, $subject, $textemail)
 	{

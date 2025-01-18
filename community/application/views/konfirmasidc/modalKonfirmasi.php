@@ -19,27 +19,27 @@
                                     <tr>
                                         <td style="Width: 25%;">T. Lahir</td>
                                         <td style="Width: 5%;">:</td>
-                                        <td style="Width: 70%;" id="mtempatlahir"></td>
+                                        <td style="Width: 70%;" class="mtempatlahir"></td>
                                     </tr>
                                     <tr>
                                         <td style="Width: 25%;">Umur</td>
                                         <td style="Width: 5%;">:</td>
-                                        <td style="Width: 70%;" id="mumur"></td>
+                                        <td style="Width: 70%;" class="mumur"></td>
                                     </tr>
                                     <tr>
                                         <td style="Width: 25%;">J.Kelamin</td>
                                         <td style="Width: 5%;">:</td>
-                                        <td style="Width: 70%;" id="mjeniskelamin"></td>
+                                        <td style="Width: 70%;" class="mjeniskelamin"></td>
                                     </tr>
                                     <tr>
                                         <td style="Width: 25%;">Status</td>
                                         <td style="Width: 5%;">:</td>
-                                        <td style="Width: 70%;" id="mstatuspernikahan"></td>
+                                        <td style="Width: 70%;" class="mstatuspernikahan"></td>
                                     </tr>
                                     <tr>
                                         <td style="Width: 25%;">Keluarga</td>
                                         <td style="Width: 5%;">:</td>
-                                        <td style="Width: 70%;" id="mkeluarga">
+                                        <td style="Width: 70%;" class="mkeluarga">
                                             <!-- <i class="fa fa-hand-point-right"></i> Siti Susanti (Istri)
                                             <br><i class="fa fa-hand-point-right"></i> Budi (Anak) -->
 
@@ -48,22 +48,22 @@
                                     <tr>
                                         <td style="Width: 25%;">No HP</td>
                                         <td style="Width: 5%;">:</td>
-                                        <td style="Width: 70%;" id="mnohp"></td>
+                                        <td style="Width: 70%;" class="mnohp"></td>
                                     </tr>
                                     <tr>
                                         <td style="Width: 25%;">Email</td>
                                         <td style="Width: 5%;">:</td>
-                                        <td style="Width: 70%;" id="memail"></td>
+                                        <td style="Width: 70%;" class="memail"></td>
                                     </tr>
                                     <tr>
                                         <td style="Width: 25%;">Alamat</td>
                                         <td style="Width: 5%;">:</td>
-                                        <td style="Width: 70%;" id="malamatrumah"></td>
+                                        <td style="Width: 70%;" class="malamatrumah"></td>
                                     </tr>
                                     <tr>
                                         <td style="Width: 25%;">Next Step</td>
                                         <td style="Width: 5%;">:</td>
-                                        <td style="Width: 70%;" id="mnextstep">
+                                        <td style="Width: 70%;" class="mnextstep">
                                             <!-- <i class="fa fa-check-circle text-success"></i> Fondation Class 1
                                             <br><i class="fa fa-check-circle text-success"></i> Fondation Class 2
                                             <br><i class="fa fa-check-circle text-success"></i> Fondation Class 3 -->
@@ -104,23 +104,25 @@
                 },
             })
             .done(function(response) {
-                console.log(response);
+
                 var rowPermohonan = response.rowPermohonan;
                 var arrNextStep = response.arrNextStep;
                 var arrJemaatFamily = response.arrJemaatFamily;
 
+                console.log(rowPermohonan);
                 $('.modal-title').html(rowPermohonan['namalengkap']);
-                $('#mtempatlahir').html(rowPermohonan['tempatlahir']);
-                $('#mumur').html(rowPermohonan['umur']);
-                $('#mjeniskelamin').html(rowPermohonan['jeniskelamin']);
-                $('#mstatuspernikahan').html(rowPermohonan['statuspernikahan']);
-                $('#mnohp').html(rowPermohonan['nohp']);
-                $('#memail').html(rowPermohonan['email']);
-                $('#malamatrumah').html(rowPermohonan['alamatrumah']);
+                $('.mtempatlahir').html(rowPermohonan['tempatlahir']);
+                $('.mumur').html(rowPermohonan['umur']);
+                $('.mjeniskelamin').html(rowPermohonan['jeniskelamin']);
+                $('.mstatuspernikahan').html(rowPermohonan['statuspernikahan']);
+                $('.mnohp').html(rowPermohonan['nohp']);
+                $('.memail').html(rowPermohonan['email']);
+                $('.malamatrumah').html(rowPermohonan['alamatrumah']);
 
 
-                $('#mnextstep').empty();
-                $('#mkeluarga').empty();
+                $('.mnextstep').empty();
+                $('.mkeluarga').empty();
+
 
                 if (arrNextStep.length > 0) {
                     for (var i = 0; i < arrNextStep.length; i++) {
@@ -130,11 +132,11 @@
                             addText += '<br>';
                         }
                         addText += '<i class="fa fa-check-circle text-success"></i> ' + arrNextStep[i]['namakelas'];
-                        $('#mnextstep').append(addText);
+                        $('.mnextstep').append(addText);
                     }
                 } else {
                     addText = '<i class="fa fa-times text-danger"></i> Belum ada kelas';
-                    $('#mnextstep').html(addText);
+                    $('.mnextstep').html(addText);
                 }
 
                 if (arrJemaatFamily.length > 0) {
@@ -145,8 +147,13 @@
                             addText += '<br>';
                         }
                         addText += '<i class="fa fa-hand-point-right"></i> ' + arrJemaatFamily[i]['namalengkap'];
-                        $('#mkeluarga').append(addText);
+                        $('.mkeluarga').append(addText);
                     }
+                }
+
+                if (rowPermohonan['statuskonfirmasi'] != 'Menunggu Konfirmasi') {
+                    $('#btnTolak').hide();
+                    $('#btnKonfirmasi').hide();
                 }
             })
             .fail(function() {

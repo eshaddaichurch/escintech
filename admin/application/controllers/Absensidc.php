@@ -251,4 +251,69 @@ class Absensidc extends MY_Controller
 
         return $foto;
     }
+
+    public function getListAbsensi()
+    {
+        $tglawal = $this->input->get('tglawal');
+        $tglakhir = $this->input->get('tglakhir');
+
+        $rsAbsensi = $this->Absensidc_model->getListAbsensi($tglawal, $tglakhir);
+
+        $arrAbsen = array();
+        if ($rsAbsensi->num_rows() > 0) {
+
+            foreach ($rsAbsensi->result() as $row) {
+                $foto = base_url('images/nofoto.png');
+                if (!empty($row->foto)) {
+                    $urlCommunity = $this->App->getSettings('url_community');
+                    if (!empty($urlCommunity)) {
+                        $foto =  $urlCommunity . '/uploads/absensi/' . $row->foto;
+                    }
+                }
+                $arrAbsen[] = array(
+                    'idabsen' => $row->idabsen,
+                    'tglabsen' => formatHariTanggalJam($row->tglabsen),
+                    'foto' => $foto,
+                    'iddc' => $row->iddc,
+                    'totalpeserta' => $row->totalpeserta,
+                    'keterangan' => $row->keterangan,
+                    'namadc' => $row->namadc,
+                    'namadm' => $row->namadm,
+                    'urldetail' => site_url('absensidc/detail/' . $this->encrypt->encode($row->idabsen)),
+                );
+            }
+        }
+        echo json_encode($arrAbsen);
+    }
+
+    public function detail($idabsen)
+    {
+        $idabsen = $this->encrypt->decode($idabsen);
+        $rsAbsensi = $this->Absensidc_model->get_by_id($idabsen);
+        if ($rsAbsensi->num_rows() < 1) {
+            $pesan = '<div>
+                        <div class="alert alert-danger alert-dismissable">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+                            <strong>Ilegal!</strong> Data tidak ditemukan! 
+                        </div>
+                    </div>';
+            $this->session->set_flashdata('pesan', $pesan);
+            redirect('absensidc');
+            exit();
+        };
+
+        $foto = base_url('images/nofoto.png');
+        if (!empty($rsAbsensi->row()->foto)) {
+            $urlCommunity = $this->App->getSettings('url_community');
+            if (!empty($urlCommunity)) {
+                $foto =  $urlCommunity . '/uploads/absensi/' . $rsAbsensi->row()->foto;
+            }
+        }
+
+        $data['rowAbsensi'] = $rsAbsensi->row();
+        $data['foto'] = $foto;
+        $data['idabsen'] = $idabsen;
+        $data['menu'] = 'absensidc';
+        $this->load->view('absensidc/detail', $data);
+    }
 }

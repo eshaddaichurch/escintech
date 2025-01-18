@@ -22,6 +22,7 @@ class Absendc extends MY_Controller
 
     public function tambah()
     {
+        $data['idabsen'] = '';
         $data['rsDcmember'] = $this->DcmemberModel->get_all();
         $data['menu'] = 'ddcmember';
         $this->load->view('absendc/form', $data);

@@ -50,11 +50,11 @@
               <div class="form-group row">
                 <label for="tanggal" class="col-md-2 col-form-label">Tanggal</label>
                 <div class="col-md-2">
-                  <input type="date" name="tglawal" id="tglakhir" class="form-control" value="<?php echo date('Y-m-d') ?>">
+                  <input type="date" name="tglawal" id="tglawal" class="form-control" value="<?php echo date('Y-m-d') ?>">
                 </div>
                 <label for="tanggal" class="col-md-1 text-center col-form-label">s/d</label>
                 <div class="col-md-2">
-                  <input type="date" name="tglawal" id="tglakhir" class="form-control" value="<?php echo date('Y-m-d') ?>">
+                  <input type="date" name="tglakhir" id="tglakhir" class="form-control" value="<?php echo date('Y-m-d') ?>">
                 </div>
               </div>
             </div>
@@ -62,18 +62,12 @@
               <hr>
             </div>
 
-            <div class="col-md-3">
-              <div class="card">
-                <div class="card-body card-dc shadow">
-                  <div class="row">
-                    <div class="col-12">
-                      <span class="namadc">DC YERUSALEM</span>
-                      <span>Senin, 15 January 2024</span>
-                    </div>
-                  </div>
-                </div>
+            <div class="col-12">
+              <div class="row" id="divListAbsen">
+
               </div>
             </div>
+
 
 
 
@@ -95,9 +89,73 @@
     var table;
 
     $(document).ready(function() {
-
+      getListAbsensi();
 
     }); //end (document).ready
+
+    function getListAbsensi() {
+      var tglawal = $('#tglawal').val();
+      var tglakhir = $('#tglakhir').val();
+
+      console.log(tglawal);
+
+      $.ajax({
+          url: '<?= site_url('absensidc/getListAbsensi') ?>',
+          type: 'GET',
+          dataType: 'json',
+          data: {
+            'tglawal': tglawal,
+            'tglakhir': tglakhir
+          },
+        })
+        .done(function(response) {
+          console.log(response);
+
+          $('#divListAbsen').empty();
+
+          if (response.length > 0) {
+            for (var i = 0; i < response.length; i++) {
+
+              var addText = `
+                <div class="col-md-3">
+                  <div class="card">
+                    <div class="card-body card-dc shadow">
+                      <div class="row">
+                        <div class="col-12">
+                          <span class="namadc">` + response[i]['namadc'] + ` <span class="badge badge-warning">` + response[i]['totalpeserta'] + `</span></span>
+                          <span>` + response[i]['tglabsen'] + `</span>
+                        </div>
+                        <div class="col-12 mt-3">
+                          <img src="` + response[i]['foto'] + `" alt="" class="rounded" style="width: 100%; height: 200px;">
+                        </div>
+                        <div class="col-12 mt-3">
+                          <a href="` + response[i]['urldetail'] + `" class="btn btn-sm btn-primary btn-block">Lihat Detail</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              `
+
+              $('#divListAbsen').append(addText);
+            }
+
+          }
+        })
+        .fail(function() {
+          console.log('error');
+        });
+
+    }
+
+
+    $(document).on('change', '#tglawal', function() {
+      getListAbsensi();
+    });
+
+    $(document).on('change', '#tglakhir', function() {
+      getListAbsensi();
+    });
   </script>
 
   </body>
