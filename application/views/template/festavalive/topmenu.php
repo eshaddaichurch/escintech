@@ -14,7 +14,7 @@
 
                 <?php
                 $rsMenu1 = $this->db->query("SELECT * FROM v_frontmenus WHERE levels=1 ORDER BY nomorurut");
-                if ($rsMenu1->num_rows() > 0) {
+                if ($rsMenu1 && $rsMenu1->num_rows() > 0) {
                     foreach ($rsMenu1->result() as $row1) {
 
                         $urlmenu = '';
