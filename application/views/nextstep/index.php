@@ -255,16 +255,152 @@ use PhpParser\Node\Stmt\Echo_;
                     }
                 }
             }
-
-            
         
+        </style>
 
 
+<!-- baru -->
+        <style>
+            @import url('https://fonts.googleapis.com/css?family=Oswald:300,400,500,700');
 
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800');
 
+.gr-1 {
+    background: linear-gradient(170deg, #01E4F8 0%, #1D3EDE 100%);
+}
+.gr-2 {
+    background: linear-gradient(170deg, #B4EC51 0%, #429321 100%);
+}
+.gr-3 {
+    background: linear-gradient(170deg, #C86DD7 0%, #3023AE 100%);
+}
+.gr-4 {
+    background: linear-gradient(170deg, #f7b801 0%, #f35b04 100%);
+}
+.gr-5 {
+    background: linear-gradient(170deg, #ffa69e 0%, #d90429 100%);
+}
+.gr-6 {
+    background: linear-gradient(170deg, #a2d6f9 0%, #1e96fc 100%);
+}
+.gr-7{
+    background: linear-gradient(170deg, #d4e09b 0%, #a7c957 100%);
+}
+.gr-8 {
+    background: linear-gradient(170deg, #c4fff9 0%, #07beb8 100%);
+}
+.gr-9{
+    background: linear-gradient(170deg, #fae0e4 0%, #ff477e 100%);
+}
 
+*{transition: .5s;}
 
-           
+.h-100{height: 100vh !important;}
+.align-middle{
+  position: relative;
+  top:5%;
+  /* transform:translateY(-50%); */
+}
+
+.column{
+  margin-top:3rem;
+  padding-left:3rem;
+  &:hover{
+    padding-left:0;
+    .card .txt{
+      margin-left:1rem;
+      h1, p{
+        color:rgba(255,255,255,1);
+        opacity:1;
+      }
+    }
+    a{
+      color:rgba(255,255,255,1);
+      &:after{
+      width: 10%;
+      }
+    }
+  }
+}
+.card{
+  min-height:170px;
+  margin: 0;
+  padding: 1.7rem 1.2rem;
+  border: none;
+  border-radius: 0;
+  color:rgba(0,0,0,1);
+  letter-spacing: .05rem;
+  font-family: 'Oswald', sans-serif;
+  box-shadow: 0 0 21px rgba(0,0,0,.27);
+  .txt{
+    margin-left:-3rem;
+    z-index: 1;
+    h1{
+      font-size:1.5rem;
+      font-weight: 300;
+      text-transform: uppercase;
+    }
+    p{
+      font-size:.7rem;
+      font-family: 'Open Sans', sans-serif;
+      letter-spacing: 0rem;
+      margin-top:33px;
+      opacity:0;
+      color:rgba(255,255,255,1);
+    }
+  }
+  a{
+    z-index:3;
+    font-size: .9rem;
+    color:rgba(0,0,0,1);
+    margin-left:1rem;
+    position:relative;
+    bottom: -.5rem;
+    text-transform: uppercase;
+    &:after {
+      content:"";
+      display: inline-block;
+      height: 0.5em;
+      width: 0;
+      margin-right: -100%;
+      margin-left: 10px;
+      border-top: 1px solid rgba(255,255,255,1);
+      transition: .5s;
+    }
+  }
+  .ico-card{
+    position:absolute;
+    top: 0;
+    left:0;
+    bottom:0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  i{
+    position: relative;
+    right: -50%;
+    top:60%;
+    font-size: 12rem;
+    line-height: 0;
+    opacity: .2;
+    color:rgba(255,255,255,1);
+    z-index: 0;
+   }
+   .bi{
+    
+    position: relative;
+    right: -50%;
+    top:20%;
+    font-size: 12rem;
+    line-height: 0;
+    opacity: .2;
+    color:rgba(255,255,255,1);
+    z-index: 0;
+   
+   }
+}
         </style>
 
         <section>
@@ -303,7 +439,7 @@ use PhpParser\Node\Stmt\Echo_;
         </section>
 
 
-
+<!-- 
 
         <section class="">
             <div class="container py-2">
@@ -458,7 +594,133 @@ use PhpParser\Node\Stmt\Echo_;
 
             </div>
             </div>
-        </section>
+        </section> -->
+
+
+    <div class="container pb-5  ">
+     <div class="row align-middle">
+
+       <div class="col-md-6 col-lg-4 column">
+         <div class="card gr-1">
+           <div class="txt">
+             <h1>FOUNDATION CLASS 1 </br>BAPTISM & SALVATION</h1>
+             <p>Kelas Pengajaran tentang baptian dan keselamatan</p>
+           </div>
+           <a href="<?= site_url('nextstep/kelas/foundation_class_1')?>">Daftar sekarang</a>
+           <div class="ico-card">
+           <i class="bi bi-water"></i>
+         </div>
+         </div>
+       </div>
+
+       <div class="col-md-6 col-lg-4 column">
+         <div class="card gr-2">
+           <div class="txt">
+             <h1>Membership class </br>esc church</h1>
+             <p>kelas tentang bagaiamana kita mengenal profil ESC church</p>
+           </div>
+           <a href="<?= site_url('nextstep/kelas/membership_class')?>">Daftar sekarang</a>
+         <div class="ico-card">
+         <i class="fas fa-church"></i>
+         </div>
+         </div>
+       </div>
+
+       <div class="col-md-6 col-lg-4 column">
+         <div class="card gr-3">
+           <div class="txt">
+             <h1>foundation class 2 </br>prayer</h1>
+             <p>Kelas pengajaran tentang doa</p>
+           </div>
+           <a href="<?= site_url('nextstep/kelas/foundation_class_2')?>">Daftar sekarang</a>
+         <div class="ico-card">
+         <i class="fas fa-praying-hands"></i>
+         </div>
+         </div>
+       </div>
+
+       <div class="col-md-6 col-lg-4 column">
+         <div class="card gr-4">
+           <div class="txt">
+             <h1>FOUNDATION CLASS 3 </br>renewal life</h1>
+             <p>Kelas Pengajaran tentang baptian dan keselamatan</p>
+           </div>
+           <a href="<?= site_url('nextstep/kelas/foundation_class_3')?>">Daftar sekarang</a>
+           <div class="ico-card">
+           <i class="fas fa-pray"></i>
+         </div>
+         </div>
+       </div>
+
+       <div class="col-md-6 col-lg-4 column">
+         <div class="card gr-5">
+           <div class="txt">
+             <h1>grade 1 </br>the cross</h1>
+             <p>kelas tentang bagaiamana kita mengenal profil ESC church</p>
+           </div>
+           <a href="<?= site_url('nextstep/kelas/grade_1')?>">Daftar sekarang</a>
+         <div class="ico-card">
+         <i class="fas fa-bible"></i>
+         </div>
+         </div>
+       </div>
+
+       <div class="col-md-6 col-lg-4 column">
+         <div class="card gr-6">
+           <div class="txt">
+             <h1>grade 2 </br>the power</h1>
+             <p>Kelas pengajaran tentang doa</p>
+           </div>
+           <a href="<?= site_url('nextstep/kelas/grade_2')?>">Daftar sekarang</a>
+         <div class="ico-card">
+         <i class="bi bi-journal-bookmark bo"></i>
+         </div>
+         </div>
+       </div>
+
+       <div class="col-md-6 col-lg-4 column">
+         <div class="card gr-7">
+           <div class="txt">
+             <h1>grade 3 </br>the eternity</h1>
+             <p>Kelas Pengajaran tentang baptian dan keselamatan</p>
+           </div>
+           <a href="<?= site_url('nextstep/kelas/grade_3')?>">Daftar sekarang</a>
+           <div class="ico-card">
+           <i class="bi bi-journal-check"></i>
+         </div>
+         </div>
+       </div>
+
+       <div class="col-md-6 col-lg-4 column">
+         <div class="card gr-8">
+           <div class="txt">
+             <h1>volunteer class </br>volunteer</h1>
+             <p>kelas tentang bagaiamana kita mengenal profil ESC church</p>
+           </div>
+           <a href="<?= site_url('nextstep/kelas/volunteer_class')?>">Daftar sekarang</a>
+         <div class="ico-card">
+         <i class="bi bi-people-fill"></i>
+         </div>
+         </div>
+       </div>
+
+       <div class="col-md-6 col-lg-4 column">
+         <div class="card gr-9">
+           <div class="txt">
+             <h1>married class </br>Pernikahan</h1>
+             <p>Kelas pra nikah</p>
+           </div>
+           <a href="<?= site_url('nextstep/kelas/marriage_class')?>">Daftar sekarang</a>
+         <div class="ico-card">
+         <i class="bi bi-house-heart-fill"></i>
+         </div>
+         </div>
+       </div>
+       
+     </div>
+    </div>
+
+
 
 
     </main>

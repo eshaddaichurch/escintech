@@ -764,7 +764,7 @@
 
               <hr>
 
-              <a href="<?php echo base_url("Kids"); ?>" class="readmore stretched-link"><span>Read More</span><i
+              <a href="<?php echo base_url('kids/index/'. $this->encrypt->encode($menu)); ?>" class="readmore stretched-link"><span>Read More</span><i
                   class="bi bi-arrow-right"></i></a>
 
             </div>
@@ -791,7 +791,60 @@
 
               <hr>
 
-              <a href="" class="readmore stretched-link"><span>Read More</span><i
+              <a href="<?php echo base_url('youth/index/'. $this->encrypt->encode($menu)); ?>" class="readmore stretched-link"><span>Read More</span><i
+                  class="bi bi-arrow-right"></i></a>
+
+            </div>
+
+          </div>
+        </div><!-- End post list item -->
+
+        <div class="col-xl-4 col-md-6">
+          <div class="post-item position-relative h-100">
+
+            <div class="post-img position-relative overflow-hidden">
+              <img src="<?php echo base_url('assets/assetku/') ?>img/blog/dc.png" class="img-fluid" alt="">
+              <span class="post-date">ESC Young Adult</span>
+            </div>
+
+            <div class="post-content d-flex flex-column">
+
+              <h3 class="post-title">Young Adult</h3>
+
+
+              <p>
+              ESC Young Adult adalah sebuah komunitas yang ditujukan bagi para dewasa muda, umumnya berusia dari masa kuliah hingga mereka yang sudah bekerja tetapi belum menikah...
+              </p>
+
+              <hr>
+
+              <a href="<?php echo base_url('Youngadult/' . $this->encrypt->encode($menu)); ?>" class="readmore stretched-link"><span>Read More</span><i
+                  class="bi bi-arrow-right"></i></a>
+
+            </div>
+
+          </div>
+        </div><!-- End post list item -->
+        <div class="col-xl-4 col-md-6">
+          <div class="post-item position-relative h-100">
+
+            <div class="post-img position-relative overflow-hidden">
+              <img src="<?php echo base_url('assets/assetku/') ?>img/blog/dc.png" class="img-fluid" alt="">
+              <span class="post-date">ESC GOLD</span>
+            </div>
+
+            <div class="post-content d-flex flex-column">
+
+              <h3 class="post-title">Young Adult</h3>
+
+
+              <p>
+              ESC Young Adult adalah sebuah komunitas yang ditujukan bagi para dewasa muda, umumnya berusia dari masa kuliah hingga mereka yang sudah bekerja tetapi belum menikah...
+              </p>
+
+              <hr>
+
+              <a href="<?php echo base_url('Gold/' . $this->encrypt->encode($menu)); ?>" class="readmore stretched-link"><span>Read More</span><i
                   class="bi bi-arrow-right"></i></a>
 
             </div>
