@@ -8,4 +8,10 @@ class Disciples_community_model extends CI_Model
     {
         return $this->db->insert('dcmember_permohonan', $data);
     }
+
+    public function getDC($iddc)
+    {
+        $this->db->where('iddc',$iddc);
+        return $this->db->get('v_disciplescommunity');
+    }
 }
