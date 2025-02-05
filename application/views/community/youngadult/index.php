@@ -778,20 +778,17 @@ button:hover::before {
       <div class="container">
         
         <div>
-            <p>
-            ESC GOLD adalah sebuah komunitas yang berada di bawah naungan Gereja GBI Elshaddai, khusus diperuntukkan bagi anggota berusia 50 tahun ke atas. Komunitas ini hadir sebagai wadah bagi para senior untuk tetap aktif, bersosialisasi, dan bertumbuh secara rohani di tengah tahap kehidupan yang penuh kebijaksanaan dan pengalaman.
-            </p>
-            <p>
-            Tujuan utama ESC GOLD adalah memberikan ruang bagi para anggota untuk saling berbagi, mendukung, dan menginspirasi satu sama lain. Melalui berbagai kegiatan seperti ibadah, persekutuan, seminar kesehatan, dan kegiatan sosial, komunitas ini mendorong anggotanya untuk tetap produktif dan menjadi berkat bagi sesama.
-            </p>
-            <p>
-            ESC GOLD juga menekankan pentingnya menjaga hubungan dengan Tuhan dan sesama, serta memanfaatkan masa emas kehidupan untuk berkontribusi positif bagi gereja dan masyarakat. Dengan semangat kebersamaan dan pelayanan, komunitas ini menjadi tempat yang hangat dan penuh makna bagi para senior untuk terus bertumbuh dalam iman dan kasih.
-            </p>
-            <p>
-            Dengan visi yang jelas dan program-program yang relevan, ESC GOLD membuktikan bahwa usia bukanlah halangan untuk tetap aktif, bersukacita, dan menjadi terang bagi dunia sekitar.
-            </p>
+            <p>ESC Young Adult adalah sebuah komunitas yang ditujukan bagi para dewasa muda, umumnya berusia dari masa kuliah hingga mereka yang sudah bekerja tetapi belum menikah. Komunitas ini berada di bawah naungan Gereja Elshaddai, sebuah gereja yang dikenal dengan pendekatannya yang relevan dan dinamis bagi generasi muda.</p>
 
-                
+            <p>
+            Tujuan utama ESC Young Adult adalah menjadi wadah bagi para dewasa muda untuk bertumbuh secara rohani, sosial, dan personal. Melalui berbagai kegiatan seperti ibadah, kelompok kecil, seminar, dan kegiatan sosial, komunitas ini mendorong anggotanya untuk mengembangkan iman, membangun relasi yang sehat, serta berkontribusi positif bagi masyarakat.
+            </p>
+            <p>
+            ESC Young Adult juga menekankan pentingnya persahabatan dan dukungan antaranggota, sehingga mereka dapat saling menguatkan dalam menghadapi tantangan hidup sebagai dewasa muda. Dengan semangat kebersamaan dan pelayanan, komunitas ini berkomitmen untuk menjadi berkat bagi gereja dan masyarakat luas.
+            </p>
+            <p>
+            Dengan visi yang jelas dan program-program yang relevan, ESC Young Adult menjadi tempat yang ideal bagi para dewasa muda untuk bertumbuh dan menemukan identitas mereka dalam Kristus.
+            </p>
       </div>
 </section>
 <div class="container mt-5">
@@ -802,7 +799,7 @@ button:hover::before {
                           <div class="card-img-overlay">
                             <h5 class="card-title text-white m-3">KIDS</h5>
                             <p class="card-text text-white"> This is a wider card with supporting text below as a natural</p>
-                            <p class="card-text text-white"><a href="<?php echo base_url('Kids');?>"><b>JOIN KIDS</b></a></p>
+                            <p class="card-text text-white"><a href="<?php echo base_url('KIDS');?>"><b>JOIN KIDS</b></a></p>
                           </div>
                       </div>
                 </div>
@@ -810,9 +807,9 @@ button:hover::before {
                       <div class="card bg-dark text-white" style="height: 200px;">
                           <img src="<?php echo base_url('assets/gambar/back.jpg');?>" class="card-img" style="height:100%; object-fit:cover" alt="...">
                           <div class="card-img-overlay">
-                            <h5 class="card-title text-white m-3">Disciples Community</h5>
+                            <h5 class="card-title text-white m-3">GOLD</h5>
                             <p class="card-text text-white"> This is a wider card with supporting text below as a natural</p>
-                            <p class="card-text text-white"><a href="<?php echo base_url('Disciples_community');?>"><b>JOIN Disciples Community</b></a></p>
+                            <p class="card-text text-white"><a href="<?php echo base_url('gold');?>"><b>JOIN GOLD</b></a></p>
                           </div>
                       </div>
                 </div>

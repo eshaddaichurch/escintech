@@ -1,7 +1,6 @@
 <?php $this->load->view('template/festavalive/header'); ?>
 <?php $this->load->view('template/festavalive/topmenu'); ?>
 
-
 <body>
 
   <style>
@@ -702,17 +701,17 @@
 
   <section>
     <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs d-flex align-items-center" style="background-image: url('<?php echo base_url('assets/gambar/back.jpg'); ?>'); height: 300px; background-size: cover; background-position: center;">
+    <div class="breadcrumbs d-flex align-items-center"
+      style="background-image: url('<?php echo base_url('assets/gambar/back.jpg'); ?>'); height: 300px; background-size: cover; background-position: center;">
       <div class="container position-relative d-flex flex-column align-items-center" data-aos="fade">
 
         <h2><?php echo $title ?> </h2>
-
 
       </div>
     </div><!-- End Breadcrumbs -->
   </section>
 
-  <section id="blog" class="blog" style="padding-top: 70px;">
+  <section id="blog" class="blog" style="padding-top: 70px; padding-bottom: 50px">
     <div class="container" data-aos="fade-up" data-aos-delay="100">
 
       <div class="row gy-4 posts-list">
@@ -729,15 +728,15 @@
 
               <h3 class="post-title">Disciples Community (DC)</h3>
 
-
               <p>
-                Disciples Community (DC) adalah komunitas pemuridan berbasis cell group di GBI El Shaddai yang berfokus pada pertumbuhan iman, kebersamaan, dan penerapan ajaran Kristus dalam hidup.
+                Disciples Community (DC) adalah komunitas pemuridan berbasis cell group di GBI El Shaddai yang berfokus
+                pada pertumbuhan iman, kebersamaan, dan penerapan ajaran Kristus dalam hidup.
               </p>
 
               <hr>
 
-              <a href="<?php echo base_url('disciples_community/index/' . $this->encrypt->encode($menu)); ?>" class="readmore stretched-link"><span>Read More</span><i
-                  class="bi bi-arrow-right"></i></a>
+              <a href="<?php echo base_url('disciples_community/index/' . $this->encrypt->encode($menu)); ?>"
+                class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
 
             </div>
 
@@ -756,16 +755,16 @@
 
               <h3 class="post-title">KIDS</h3>
 
-
-
               <p>
-                KIDS adalah komunitas anak-anak di GBI Elshaddai yang dirancang khusus untuk usia mulai dari bayi hingga 11 tahun. Di komunitas ini, anak-anak dapat bertumbuh dalam nilai-nilai kekristenan, bermain, belajar, dan menjalin persahabatan.
+                KIDS adalah komunitas anak-anak di GBI Elshaddai yang dirancang khusus untuk usia mulai dari bayi hingga
+                11 tahun. Di komunitas ini, anak-anak dapat bertumbuh dalam nilai-nilai kekristenan, bermain, belajar,
+                dan menjalin persahabatan.
               </p>
 
               <hr>
 
-              <a href="<?php echo base_url('kids/index/'. $this->encrypt->encode($menu)); ?>" class="readmore stretched-link"><span>Read More</span><i
-                  class="bi bi-arrow-right"></i></a>
+              <a href="<?php echo base_url('kids/index/'. $this->encrypt->encode($menu)); ?>"
+                class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
 
             </div>
 
@@ -784,15 +783,15 @@
 
               <h3 class="post-title">ESC Youth</h3>
 
-
               <p>
-                Youth GBI Elshaddai: komunitas anak muda untuk mengenal Yesus, membangun iman yang kuat, dan membentuk jati diri yang benar di dalam Tuhan.
+                Youth GBI Elshaddai: komunitas anak muda untuk mengenal Yesus, membangun iman yang kuat, dan membentuk
+                jati diri yang benar di dalam Tuhan.
               </p>
 
               <hr>
 
-              <a href="<?php echo base_url('youth/index/'. $this->encrypt->encode($menu)); ?>" class="readmore stretched-link"><span>Read More</span><i
-                  class="bi bi-arrow-right"></i></a>
+              <a href="<?php echo base_url('youth/index/'. $this->encrypt->encode($menu)); ?>"
+                class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
 
             </div>
 
@@ -811,15 +810,15 @@
 
               <h3 class="post-title">Young Adult</h3>
 
-
               <p>
-              ESC Young Adult adalah sebuah komunitas yang ditujukan bagi para dewasa muda, umumnya berusia dari masa kuliah hingga mereka yang sudah bekerja tetapi belum menikah...
+                ESC Young Adult adalah sebuah komunitas yang ditujukan bagi para dewasa muda, umumnya berusia dari masa
+                kuliah hingga mereka yang sudah bekerja tetapi belum menikah...
               </p>
 
               <hr>
 
-              <a href="<?php echo base_url('Youngadult/' . $this->encrypt->encode($menu)); ?>" class="readmore stretched-link"><span>Read More</span><i
-                  class="bi bi-arrow-right"></i></a>
+              <a href="<?php echo base_url('Youngadult/' . $this->encrypt->encode($menu)); ?>"
+                class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
 
             </div>
 
@@ -835,25 +834,54 @@
 
             <div class="post-content d-flex flex-column">
 
-              <h3 class="post-title">Young Adult</h3>
-
+              <h3 class="post-title">GOLD</h3>
 
               <p>
-              ESC Young Adult adalah sebuah komunitas yang ditujukan bagi para dewasa muda, umumnya berusia dari masa kuliah hingga mereka yang sudah bekerja tetapi belum menikah...
+                ESC GOLD adalah sebuah komunitas yang berada di bawah naungan Gereja GBI Elshaddai, khusus diperuntukkan
+                bagi anggota berusia 50 tahun ke atas. Komunitas ini hadir sebagai wadah bagi para senior untuk tetap
+                aktif, bersosialisasi, dan bertumbuh secara rohani di tengah tahap kehidupan yang penuh kebijaksanaan
+                dan pengalaman.
               </p>
 
               <hr>
 
-              <a href="<?php echo base_url('Gold/' . $this->encrypt->encode($menu)); ?>" class="readmore stretched-link"><span>Read More</span><i
-                  class="bi bi-arrow-right"></i></a>
+              <a href="<?php echo base_url('Gold/' . $this->encrypt->encode($menu)); ?>"
+                class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
+
+            </div>
+
+          </div>
+        </div><!-- End post list item -->
+
+        <div class="col-xl-4 col-md-6">
+          <div class="post-item position-relative h-100">
+
+            <div class="post-img position-relative overflow-hidden">
+              <img src="<?php echo base_url('assets/assetku/') ?>img/blog/dc.png" class="img-fluid" alt="">
+              <span class="post-date">ESC WOMEN</span>
+            </div>
+
+            <div class="post-content d-flex flex-column">
+
+              <h3 class="post-title">WOMEN</h3>
+
+              <p>
+                ESC GOLD adalah sebuah komunitas yang berada di bawah naungan Gereja GBI Elshaddai, khusus diperuntukkan
+                bagi anggota berusia 50 tahun ke atas. Komunitas ini hadir sebagai wadah bagi para senior untuk tetap
+                aktif, bersosialisasi, dan bertumbuh secara rohani di tengah tahap kehidupan yang penuh kebijaksanaan
+                dan pengalaman.
+              </p>
+
+              <hr>
+
+              <a href="<?php echo base_url('Gold/' . $this->encrypt->encode($menu)); ?>"
+                class="readmore stretched-link"><span>Read More</span><i class="bi bi-arrow-right"></i></a>
 
             </div>
 
           </div>
         </div><!-- End post list item -->
   </section>
-
-
 
 </body>
 
