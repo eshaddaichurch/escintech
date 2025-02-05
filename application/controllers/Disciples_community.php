@@ -73,11 +73,25 @@ class Disciples_community extends MY_Controller
 		// Eksekusi query
 		$query = $this->db->get();
 
+		$data = array();
+
+		if ($query->num_rows()>0) {
+			foreach ($query->result() as $row) {
+				array_push($data, array(
+					'iddc' => $row->iddc,
+					'namadc' => $row->namadc,
+					'kategoridc' => $row->kategoridc,
+					'alamatdc' => $row->alamatdc,
+					'fotodc' => $row->fotodc,
+					'iddcEncrypt' => $this->encrypt->encode($row->iddc),
+				));
+			}
+		}
 
 		// Kirimkan respons JSON
 		echo json_encode([
 			'success' => true,
-			'data' => $query->result(),
+			'data' => $data,
 		]);
 	}
 
@@ -88,6 +102,9 @@ class Disciples_community extends MY_Controller
 		$idmenu = "";
 
 		$idmenu = $this->encrypt->decode($idmenu);
+		$rowDC = $this->Disciples_community_model->getDC($iddc);
+
+		$data['rowDC'] = $rowDC->row();
 		$data['iddc'] = $iddc;
 		$data['menu'] = $idmenu;
 		$data["rowinfogereja"] = $this->Home_model->get_infogereja();

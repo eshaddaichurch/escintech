@@ -31,8 +31,9 @@
                         <form action="<?php echo site_url('disciples_community/simpanpermohonanbergabung') ?>" method="POST" id="form">
 
                             <div class="row">
-                                <div class="col-md-12 mb-5">
+                                <div class="col-md-12 mb-5 text-center">
                                     <h5 id="lbljudul">Form Permohonan Bergabung Dengan Disciples Community</h5>
+                                    <h3><?php echo $rowDC->namadc ?></h3>
                                 </div>
                                 <div class="col-12">
                                     <input type="hidden" name="iddc" id="iddc" value="<?php echo $iddc; ?>">

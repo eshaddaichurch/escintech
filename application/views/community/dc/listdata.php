@@ -1012,6 +1012,7 @@
                     },
                 })
                 .done(function(response) {
+                    console.log(response);
                     if (response.success && response.data.length > 0) {
                         for (var i = 0; i < response.data.length; i++) {
                             var fotodm;
@@ -1032,7 +1033,7 @@
                                 <a href="#"><i class="fa fa-twitter"></i></a>
                                 <a href="#"><i class="fa fa-linkedin"></i></a>
                             </div>
-                            <a href="${baseURL}dc/bergabungsekarang" class="btn btn-primary profile-buttons">Bergabung Sekarang</a>
+                            <a href="${baseURL}disciples_community/bergabung/`+ response['data'][i]['iddcEncrypt']+`" class="btn btn-primary profile-buttons">Bergabung Sekarang</a>
                         </div>
                     </div>
                 `;
