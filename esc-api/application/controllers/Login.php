@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-Header('Access-Control-Allow-Origin: http://localhost:8081');
+Header('Access-Control-Allow-Origin: *'); //for allow any domain, insecure
 Header('Access-Control-Allow-Headers: *'); //for allow any headers, insecure
 Header('Access-Control-Allow-Methods: GET, POST, OPTIONS, PUT, DELETE'); //method allowed
 
@@ -21,19 +21,17 @@ class Login extends RestController  {
         echo '<H1>Selmat Datang</H1>';
     }
 
-    public function ceklogin_get()
+    public function ceklogin_post()
     {
-        $email        = $this->get('email');
-        $password        = $this->get('password');
+        $email        = $this->post('email');
+        $password        = $this->post('password');
 
         $rsLogin = $this->Login_model->ceklogin($email, $password);
         if ($rsLogin->num_rows()>0) {
             $rowLogin = $rsLogin->row();
             $data = array(
-                    'idjemaat'     => $rowLogin->idjemaat,
-                    'namalengkap'     => $rowLogin->namalengkap,
                     'token'     => '123',
-                    'user'     => 'Toni',
+                    'user'     => $rowLogin,
                 );
                 $this->response($data, RestController::HTTP_OK); // OK (200) being the HTTP response code
         }else{
