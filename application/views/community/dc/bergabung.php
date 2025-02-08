@@ -35,6 +35,32 @@
                                     <h5 id="lbljudul">Form Permohonan Bergabung Dengan Disciples Community</h5>
                                     <h3><?php echo $rowDC->namadc ?></h3>
                                 </div>
+                                <div class="col-12 mb-4">
+                                    <table class="table">
+                                        <tbody>
+                                            <tr>
+                                                <td style="width: 25%;">Nama DM</td>
+                                                <td style="width: 5%; text-align: center;">:</td>
+                                                <td style="width: 70%;"><?php echo $rowDC->namadm ?></td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 25%;">Alamat DC</td>
+                                                <td style="width: 5%; text-align: center;">:</td>
+                                                <td style="width: 70%;"><?php echo $rowDC->alamatdc ?></td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 25%;">Kategori</td>
+                                                <td style="width: 5%; text-align: center;">:</td>
+                                                <td style="width: 70%;"><?php echo $rowDC->kategoridc ?></td>                                                
+                                            </tr>
+                                            <tr>
+                                                <td style="width: 25%;">Hari</td>
+                                                <td style="width: 5%; text-align: center;">:</td>
+                                                <td style="width: 70%;"><?php echo $rowDC->haridc . ', Pukul: '. $rowDC->jamdc ?></td>                                                
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
                                 <div class="col-12">
                                     <input type="hidden" name="iddc" id="iddc" value="<?php echo $iddc; ?>">
 
