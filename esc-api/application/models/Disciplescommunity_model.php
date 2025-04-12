@@ -11,4 +11,13 @@ class Disciplescommunity_model extends CI_Model
             ");
         return $rsTemp;
     }
+
+
+    public function getDcMember($iddc)
+    {
+        $rsTemp = $this->db->query("
+                select * from v_dcmember where iddc='$iddc'
+            ");
+        return $rsTemp;
+    }
 }

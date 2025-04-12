@@ -24,14 +24,17 @@ class Disciplescommunity extends RestController
         echo '<H1>Selmat Datang</H1>';
     }
 
-    public function getDc()
+    public function getDc_post()
     {
         $iddc        = $this->post('iddc');
         $rsDc = $this->Disciplescommunity_model->getDc($iddc);
         if ($rsDc->num_rows() > 0) {
             $rowDc = $rsDc->row();
+            $rsDcMember = $this->Disciplescommunity_model->getDcMember($iddc);
+
             $data = array(
                 'data'     => $rowDc,
+                'member' => $rsDcMember->result(),
             );
             $this->response($data, RestController::HTTP_OK); // OK (200) being the HTTP response code
         } else {
