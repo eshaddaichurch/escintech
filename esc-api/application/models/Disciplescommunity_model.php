@@ -16,7 +16,15 @@ class Disciplescommunity_model extends CI_Model
     public function getDcMember($iddc)
     {
         $rsTemp = $this->db->query("
-                select * from v_dcmember where iddc='$iddc'
+                select * from v_dcmember where statuskeanggotaan='Anggota' and  iddc='$iddc'
+            ");
+        return $rsTemp;
+    }
+
+    public function getDcCT($iddc)
+    {
+        $rsTemp = $this->db->query("
+                select * from v_dcmember where statuskeanggotaan = 'Core Team' and  iddc='$iddc'
             ");
         return $rsTemp;
     }

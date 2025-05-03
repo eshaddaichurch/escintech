@@ -31,10 +31,12 @@ class Disciplescommunity extends RestController
         if ($rsDc->num_rows() > 0) {
             $rowDc = $rsDc->row();
             $rsDcMember = $this->Disciplescommunity_model->getDcMember($iddc);
+            $rsDcCT = $this->Disciplescommunity_model->getDcCT($iddc);
 
             $data = array(
                 'data'     => $rowDc,
                 'member' => $rsDcMember->result(),
+                'coreteam' => $rsDcCT->result(),
             );
             $this->response($data, RestController::HTTP_OK); // OK (200) being the HTTP response code
         } else {
