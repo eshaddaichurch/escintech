@@ -46,29 +46,57 @@ class Disciplescommunity extends RestController
         }
     }
     public function listDc_get()
-{
-    header("Access-Control-Allow-Origin: *");
-    header("Access-Control-Allow-Headers: Content-Type, ELSHADDAI-KEY");
-    header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
+    {
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Headers: Content-Type, ELSHADDAI-KEY");
+        header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 
-    if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-        http_response_code(200);
-        exit;
+        if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+            http_response_code(200);
+            exit;
+        }
+
+        $dcList = $this->Disciplescommunity_model->getAllDcNames();
+
+        if (!empty($dcList)) {
+            $this->response([
+                'status' => TRUE,
+                'data' => $dcList
+            ], RestController::HTTP_OK);
+        } else {
+            $this->response([
+                'status' => FALSE,
+                'message' => 'Data DC tidak ditemukan'
+            ], RestController::HTTP_NOT_FOUND);
+        }
     }
 
-    $dcList = $this->Disciplescommunity_model->getAllDcNames();
+    public function saveAttendance_post()
+    {
+        $iddc = $this->post('iddc');
+        $idjemaat = $this->post('idjemaat');
+        $attendance = $this->post('attendance');
+        // $attendance = array('2207240001', '2308260001');
 
-    if (!empty($dcList)) {
-        $this->response([
-            'status' => TRUE,
-            'data' => $dcList
-        ], RestController::HTTP_OK);
-    } else {
-        $this->response([
-            'status' => FALSE,
-            'message' => 'Data DC tidak ditemukan'
-        ], RestController::HTTP_NOT_FOUND);
+        $dataHeader = array(
+            'tglabsen' => date('Y-m-d H:i:s'),
+            'iddc' => $iddc,
+            'totalpeserta' => count($attendance),
+            'keterangan' => '',
+            'idpengguna' => $idjemaat,
+        );
+
+        $simpan = $this->Disciplescommunity_model->saveAttendance($dataHeader, $attendance);
+        if ($simpan) {
+            $this->response([
+                'status' => TRUE,
+                'message' => 'Data absen berhasil disimpan'
+            ], RestController::HTTP_OK);
+        } else {
+            $this->response([
+                'status' => FALSE,
+                'message' => 'Data Absen gagal disimpan'
+            ], RestController::HTTP_NOT_FOUND);
+        }
     }
-}
-    
 }

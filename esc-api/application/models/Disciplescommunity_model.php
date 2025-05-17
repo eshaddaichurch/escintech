@@ -33,4 +33,35 @@ class Disciplescommunity_model extends CI_Model
 
         return $query->num_rows() > 0 ? $query->result() : array();
     }
+
+    public function saveAttendance($dataHeader, $attendance)
+    {
+        try {
+            $this->db->trans_begin();
+
+            $this->db->insert('dcabsen', $dataHeader);
+            $idabsen = $this->db->insert_id();
+
+            $dataDetail = array();
+            foreach ($attendance as $value) {
+                array_push($dataDetail, array(
+                    'idabsen' => $idabsen,
+                    'idjemaat' => $value['idjemaat']
+                ));
+            };
+
+            $this->db->insert_batch('dcabsen_detail', $dataDetail);
+
+            if ($this->db->trans_status() === FALSE) {
+                $this->db->trans_rollback();
+                return false;
+            } else {
+                $this->db->trans_commit();
+                return true;
+            }
+        } catch (\Throwable $th) {
+            $this->db->trans_rollback();
+            return false;
+        }
+    }
 }

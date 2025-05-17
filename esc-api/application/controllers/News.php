@@ -1,4 +1,4 @@
-controller	<?php
+<?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
 Header('Access-Control-Allow-Origin: *'); //for allow any domain, insecure
@@ -10,13 +10,13 @@ require APPPATH . '/libraries/Format.php';
 
 use chriskacerguis\RestServer\RestController;
 
-class Disciplescommunity extends RestController
+class News extends RestController
 {
 
     function __construct($config = 'rest')
     {
         parent::__construct($config);
-        $this->load->model('Disciplescommunity_model');
+        $this->load->model('News_model');
     }
 
     public function index()
@@ -24,25 +24,30 @@ class Disciplescommunity extends RestController
         echo '<H1>Selmat Datang</H1>';
     }
 
-    public function getDc_post()
+    public function getnewsumum_get()
     {
-        $iddc        = $this->post('iddc');
-        $rsDc = $this->Disciplescommunity_model->getDc($iddc);
-        if ($rsDc->num_rows() > 0) {
-            $rowDc = $rsDc->row();
-            $rsDcMember = $this->Disciplescommunity_model->getDcMember($iddc);
-            $rsDcCT = $this->Disciplescommunity_model->getDcCT($iddc);
+        header("Access-Control-Allow-Origin: *");
+        header("Access-Control-Allow-Headers: Content-Type, ELSHADDAI-KEY");
+        header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
 
-            $data = array(
-                'data'     => $rowDc,
-                'member' => $rsDcMember->result(),
-                'coreteam' => $rsDcCT->result(),
-            );
-            $this->response($data, RestController::HTTP_OK); // OK (200) being the HTTP response code
+        if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
+            http_response_code(200);
+            exit;
+        }
+        $setlimit = $this->get('setlimit');
+
+        $rsNewsUmum = $this->News_model->getnewsumum($setlimit);
+
+        if ($rsNewsUmum->num_rows() > 0) {
+            $this->response([
+                'status' => TRUE,
+                'data' => $rsNewsUmum->result(),
+            ], RestController::HTTP_OK);
         } else {
             $this->response([
-                'message' => 'Data tidak ditemukan',
-            ], RestController::HTTP_BAD_REQUEST); // BAD_REQUEST (400) being the HTTP response code
+                'status' => FALSE,
+                'message' => 'Data DC tidak ditemukan'
+            ], RestController::HTTP_NOT_FOUND);
         }
     }
 }
