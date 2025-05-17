@@ -1,4 +1,4 @@
-<?php
+controller	<?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
 Header('Access-Control-Allow-Origin: *'); //for allow any domain, insecure
@@ -45,30 +45,4 @@ class Disciplescommunity extends RestController
             ], RestController::HTTP_BAD_REQUEST); // BAD_REQUEST (400) being the HTTP response code
         }
     }
-    public function listDc_get()
-{
-    header("Access-Control-Allow-Origin: *");
-    header("Access-Control-Allow-Headers: Content-Type, ELSHADDAI-KEY");
-    header("Access-Control-Allow-Methods: GET, POST, OPTIONS");
-
-    if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
-        http_response_code(200);
-        exit;
-    }
-
-    $dcList = $this->Disciplescommunity_model->getAllDcNames();
-
-    if (!empty($dcList)) {
-        $this->response([
-            'status' => TRUE,
-            'data' => $dcList
-        ], RestController::HTTP_OK);
-    } else {
-        $this->response([
-            'status' => FALSE,
-            'message' => 'Data DC tidak ditemukan'
-        ], RestController::HTTP_NOT_FOUND);
-    }
-}
-    
 }
