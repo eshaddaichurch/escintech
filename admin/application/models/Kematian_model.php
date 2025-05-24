@@ -8,8 +8,8 @@ class Kematian_model extends CI_Model
     var $tabel     = 'carekematian';
     var $idkematian = 'idkematian';
 
-    var $column_order = array(null, 'namalengkap', 'namajenispermohonandoa', 'tglinsert', 'email', 'nohp', 'status', null);
-    var $column_search = array('namalengkap', 'namajenispermohonandoa', 'tglinsert', 'email', 'nohp', 'status');
+    var $column_order = array(null, 'namalengkap', 'tglinsert', 'namayangmeninggal', 'nohpyangbisadihubungi', 'status', null);
+    var $column_search = array('namalengkap', 'tglinsert', 'namayangmeninggal', 'nohpyangbisadihubungi', 'status');
     var $order = array('idkematian' => 'desc'); // default order 
 
 

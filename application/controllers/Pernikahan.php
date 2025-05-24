@@ -120,7 +120,7 @@ class Pernikahan extends MY_Controller
         }
 
         $this->session->set_flashdata('pesan', $pesan);
-        redirect('pernikahan');
+        redirect('permohonansaya');
     }
 
     public function hapus($idpernikahan)
@@ -155,7 +155,7 @@ class Pernikahan extends MY_Controller
                         </script>";
         }
         $this->session->set_flashdata('pesan', $pesan);
-        redirect('pernikahan');
+        redirect('permohonansaya');
     }
 
     public function get_edit_data()

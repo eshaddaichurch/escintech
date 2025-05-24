@@ -107,13 +107,14 @@ class Kunjunganjemaat extends MY_Controller
         }
 
         $this->session->set_flashdata('pesan', $pesan);
-        redirect('kunjunganjemaat');
+        redirect('permohonansaya');
     }
 
     public function hapus($idkunjunganjemaat)
     {
         $idkunjunganjemaat = $this->encrypt->decode($idkunjunganjemaat);
         $rsKunjunganJemaat = $this->Kunjunganjemaat_model->getByID($idkunjunganjemaat);
+
         if ($rsKunjunganJemaat->num_rows() == 0) {
             $pesan = "<script>
                             swal('Upss', 'Data permohonan kunjungan tidak ditemukan.', 'warning');
@@ -142,7 +143,7 @@ class Kunjunganjemaat extends MY_Controller
                         </script>";
         }
         $this->session->set_flashdata('pesan', $pesan);
-        redirect('kunjunganjemaat');
+        redirect('permohonansaya');
     }
 
     public function get_edit_data()

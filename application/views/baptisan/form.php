@@ -49,12 +49,12 @@
                                     </div>
                                 </div>
                                 <div class="col-12 text-center mt-5 d-none d-md-block">
-                                    <a href="<?php echo site_url('baptisan') ?>" class="btn btn-default mr-1">Kembali</a>
+                                    <a href="<?php echo site_url('permohonansaya') ?>" class="btn btn-default mr-1">Kembali</a>
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Ajukan Permohonan</button>
                                 </div>
                                 <div class="col-12 text-center mt-5 d-md-none d-sm-block">
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Ajukan Permohonan</button>
-                                    <a href="<?php echo site_url('baptisan') ?>" class="btn btn-default mr-1">Kembali</a>
+                                    <a href="<?php echo site_url('permohonansaya') ?>" class="btn btn-default mr-1">Kembali</a>
                                 </div>
 
 

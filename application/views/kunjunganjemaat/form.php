@@ -62,23 +62,23 @@
                                     <div class="form-group row mb-3">
                                         <label for="" class="col-md-4">Alamat Lengkap</label>
                                         <div class="col-md-8">
-                                            <textarea name="alamatjemaat" id="alamatjemaat" class="form-control" rows="2" placeholder="Alamat / lokasi tempat yang akan di kunjungi"><?php echo $this->session->userdata('alamat'); ?></textarea>
+                                            <textarea name="alamatjemaat" id="alamatjemaat" class="form-control" rows="2" placeholder="Alamat / lokasi tempat yang akan di kunjungi"><?php echo $this->session->userdata('alamatrumah'); ?></textarea>
                                         </div>
                                     </div>
                                     <div class="form-group row mb-3">
                                         <label for="" class="col-md-4">Keterangan Permohonan</label>
                                         <div class="col-md-8">
-                                            <textarea name="keterangankunjungan" id="keterangankunjungan" class="form-control" rows="10" placeholder="Jelaskan maksud dan tujuan dari permohonan kunjungan"><?php echo $this->session->userdata('alamatrumah'); ?></textarea>
+                                            <textarea name="keterangankunjungan" id="keterangankunjungan" class="form-control" rows="10" placeholder="Jelaskan maksud dan tujuan dari permohonan kunjungan"></textarea>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-12 text-center mt-5 d-none d-md-block">
-                                    <a href="<?php echo site_url('kunjunganjemaat') ?>" class="btn btn-default mr-1">Kembali</a>
+                                    <a href="<?php echo site_url('permohonansaya') ?>" class="btn btn-default mr-1">Kembali</a>
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Ajukan Permohonan</button>
                                 </div>
                                 <div class="col-12 text-center mt-5 d-md-none d-sm-block">
                                     <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Ajukan Permohonan</button>
-                                    <a href="<?php echo site_url('kunjunganjemaat') ?>" class="btn btn-default mr-1">Kembali</a>
+                                    <a href="<?php echo site_url('permohonansaya') ?>" class="btn btn-default mr-1">Kembali</a>
                                 </div>
 
 

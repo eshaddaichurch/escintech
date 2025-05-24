@@ -104,7 +104,7 @@ class Konseling extends MY_Controller
         }
 
         $this->session->set_flashdata('pesan', $pesan);
-        redirect('konseling');
+        redirect('permohonansaya');
     }
 
     public function hapus($idcarekonseling)
@@ -139,7 +139,7 @@ class Konseling extends MY_Controller
                         </script>";
         }
         $this->session->set_flashdata('pesan', $pesan);
-        redirect('konseling');
+        redirect('permohonansaya');
     }
 
     public function get_edit_data()

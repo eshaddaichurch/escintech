@@ -13,8 +13,6 @@ class Disciples_community extends MY_Controller
 
 	public function index($idmenu = null)
 	{
-
-
 		$data['title'] = 'DISCIPLES COMMUNITY';
 		$idmenu = $this->encrypt->decode($idmenu);
 		$data['menu'] = $idmenu;
@@ -75,7 +73,7 @@ class Disciples_community extends MY_Controller
 
 		$data = array();
 
-		if ($query->num_rows()>0) {
+		if ($query->num_rows() > 0) {
 			foreach ($query->result() as $row) {
 				array_push($data, array(
 					'iddc' => $row->iddc,

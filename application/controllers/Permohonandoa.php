@@ -104,7 +104,7 @@ class Permohonandoa extends MY_Controller
         }
 
         $this->session->set_flashdata('pesan', $pesan);
-        redirect('permohonandoa');
+        redirect('permohonansaya');
     }
 
     public function hapus($idpermohonan)
@@ -139,7 +139,7 @@ class Permohonandoa extends MY_Controller
                         </script>";
         }
         $this->session->set_flashdata('pesan', $pesan);
-        redirect('permohonandoa');
+        redirect('permohonansaya');
     }
 
     public function get_edit_data()

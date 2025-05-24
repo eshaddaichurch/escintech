@@ -127,7 +127,7 @@ class Kematian extends MY_Controller
         }
 
         $this->session->set_flashdata('pesan', $pesan);
-        redirect('kematian');
+        redirect('permohonansaya');
     }
 
     public function hapus($idkematian)
@@ -163,7 +163,7 @@ class Kematian extends MY_Controller
                         </script>";
         }
         $this->session->set_flashdata('pesan', $pesan);
-        redirect('kematian');
+        redirect('permohonansaya');
     }
 
     public function get_edit_data()
